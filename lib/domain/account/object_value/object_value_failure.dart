@@ -13,5 +13,5 @@ class SignUpObjectValueFailure<T, E>
 
   const factory SignUpObjectValueFailure.invalidEmail({
     required T failedValue,
-  }) = EmptyField<T, E>;
+  }) = InvalidEmail<T, E>;
 }

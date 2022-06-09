@@ -12,33 +12,7 @@ part of 'status_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$StatusStateTearOff {
-  const _$StatusStateTearOff();
-
-  _Initial<T> initial<T>() {
-    return _Initial<T>();
-  }
-
-  _Success<T> success<T>() {
-    return _Success<T>();
-  }
-
-  _Loading<T> loading<T>() {
-    return _Loading<T>();
-  }
-
-  _Failure<T> failure<T>({required T failure}) {
-    return _Failure<T>(
-      failure: failure,
-    );
-  }
-}
-
-/// @nodoc
-const $StatusState = _$StatusStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$StatusState<T> {
@@ -112,20 +86,22 @@ class _$StatusStateCopyWithImpl<T, $Res>
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<T, $Res> {
-  factory _$InitialCopyWith(
-          _Initial<T> value, $Res Function(_Initial<T>) then) =
-      __$InitialCopyWithImpl<T, $Res>;
+abstract class _$$_InitialCopyWith<T, $Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial<T> value, $Res Function(_$_Initial<T>) then) =
+      __$$_InitialCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<T, $Res> extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$InitialCopyWith<T, $Res> {
-  __$InitialCopyWithImpl(_Initial<T> _value, $Res Function(_Initial<T>) _then)
-      : super(_value, (v) => _then(v as _Initial<T>));
+class __$$_InitialCopyWithImpl<T, $Res>
+    extends _$StatusStateCopyWithImpl<T, $Res>
+    implements _$$_InitialCopyWith<T, $Res> {
+  __$$_InitialCopyWithImpl(
+      _$_Initial<T> _value, $Res Function(_$_Initial<T>) _then)
+      : super(_value, (v) => _then(v as _$_Initial<T>));
 
   @override
-  _Initial<T> get _value => super._value as _Initial<T>;
+  _$_Initial<T> get _value => super._value as _$_Initial<T>;
 }
 
 /// @nodoc
@@ -141,13 +117,13 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'StatusState<$T>.initial'));
+    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial<T>);
+        (other.runtimeType == runtimeType && other is _$_Initial<T>);
   }
 
   @override
@@ -233,20 +209,22 @@ abstract class _Initial<T> implements StatusState<T> {
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<T, $Res> {
-  factory _$SuccessCopyWith(
-          _Success<T> value, $Res Function(_Success<T>) then) =
-      __$SuccessCopyWithImpl<T, $Res>;
+abstract class _$$_SuccessCopyWith<T, $Res> {
+  factory _$$_SuccessCopyWith(
+          _$_Success<T> value, $Res Function(_$_Success<T>) then) =
+      __$$_SuccessCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<T, $Res> extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$SuccessCopyWith<T, $Res> {
-  __$SuccessCopyWithImpl(_Success<T> _value, $Res Function(_Success<T>) _then)
-      : super(_value, (v) => _then(v as _Success<T>));
+class __$$_SuccessCopyWithImpl<T, $Res>
+    extends _$StatusStateCopyWithImpl<T, $Res>
+    implements _$$_SuccessCopyWith<T, $Res> {
+  __$$_SuccessCopyWithImpl(
+      _$_Success<T> _value, $Res Function(_$_Success<T>) _then)
+      : super(_value, (v) => _then(v as _$_Success<T>));
 
   @override
-  _Success<T> get _value => super._value as _Success<T>;
+  _$_Success<T> get _value => super._value as _$_Success<T>;
 }
 
 /// @nodoc
@@ -262,13 +240,13 @@ class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'StatusState<$T>.success'));
+    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.success'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Success<T>);
+        (other.runtimeType == runtimeType && other is _$_Success<T>);
   }
 
   @override
@@ -354,20 +332,22 @@ abstract class _Success<T> implements StatusState<T> {
 }
 
 /// @nodoc
-abstract class _$LoadingCopyWith<T, $Res> {
-  factory _$LoadingCopyWith(
-          _Loading<T> value, $Res Function(_Loading<T>) then) =
-      __$LoadingCopyWithImpl<T, $Res>;
+abstract class _$$_LoadingCopyWith<T, $Res> {
+  factory _$$_LoadingCopyWith(
+          _$_Loading<T> value, $Res Function(_$_Loading<T>) then) =
+      __$$_LoadingCopyWithImpl<T, $Res>;
 }
 
 /// @nodoc
-class __$LoadingCopyWithImpl<T, $Res> extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$LoadingCopyWith<T, $Res> {
-  __$LoadingCopyWithImpl(_Loading<T> _value, $Res Function(_Loading<T>) _then)
-      : super(_value, (v) => _then(v as _Loading<T>));
+class __$$_LoadingCopyWithImpl<T, $Res>
+    extends _$StatusStateCopyWithImpl<T, $Res>
+    implements _$$_LoadingCopyWith<T, $Res> {
+  __$$_LoadingCopyWithImpl(
+      _$_Loading<T> _value, $Res Function(_$_Loading<T>) _then)
+      : super(_value, (v) => _then(v as _$_Loading<T>));
 
   @override
-  _Loading<T> get _value => super._value as _Loading<T>;
+  _$_Loading<T> get _value => super._value as _$_Loading<T>;
 }
 
 /// @nodoc
@@ -383,13 +363,13 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'StatusState<$T>.loading'));
+    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Loading<T>);
+        (other.runtimeType == runtimeType && other is _$_Loading<T>);
   }
 
   @override
@@ -475,27 +455,29 @@ abstract class _Loading<T> implements StatusState<T> {
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<T, $Res> {
-  factory _$FailureCopyWith(
-          _Failure<T> value, $Res Function(_Failure<T>) then) =
-      __$FailureCopyWithImpl<T, $Res>;
+abstract class _$$_FailureCopyWith<T, $Res> {
+  factory _$$_FailureCopyWith(
+          _$_Failure<T> value, $Res Function(_$_Failure<T>) then) =
+      __$$_FailureCopyWithImpl<T, $Res>;
   $Res call({T failure});
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<T, $Res> extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$FailureCopyWith<T, $Res> {
-  __$FailureCopyWithImpl(_Failure<T> _value, $Res Function(_Failure<T>) _then)
-      : super(_value, (v) => _then(v as _Failure<T>));
+class __$$_FailureCopyWithImpl<T, $Res>
+    extends _$StatusStateCopyWithImpl<T, $Res>
+    implements _$$_FailureCopyWith<T, $Res> {
+  __$$_FailureCopyWithImpl(
+      _$_Failure<T> _value, $Res Function(_$_Failure<T>) _then)
+      : super(_value, (v) => _then(v as _$_Failure<T>));
 
   @override
-  _Failure<T> get _value => super._value as _Failure<T>;
+  _$_Failure<T> get _value => super._value as _$_Failure<T>;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_Failure<T>(
+    return _then(_$_Failure<T>(
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -529,7 +511,7 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Failure<T> &&
+            other is _$_Failure<T> &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -539,8 +521,8 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$FailureCopyWith<T, _Failure<T>> get copyWith =>
-      __$FailureCopyWithImpl<T, _Failure<T>>(this, _$identity);
+  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
+      __$$_FailureCopyWithImpl<T, _$_Failure<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -618,10 +600,10 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
 }
 
 abstract class _Failure<T> implements StatusState<T> {
-  const factory _Failure({required T failure}) = _$_Failure<T>;
+  const factory _Failure({required final T failure}) = _$_Failure<T>;
 
-  T get failure;
+  T get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$FailureCopyWith<T, _Failure<T>> get copyWith =>
+  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

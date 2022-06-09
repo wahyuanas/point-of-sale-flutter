@@ -39,19 +39,19 @@ mixin _$SignUpObjectValueFailure<T, E> {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
-    required TResult Function(EmptyField<T, E> value) invalidEmail,
+    required TResult Function(InvalidEmail<T, E> value) invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -203,7 +203,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
-    required TResult Function(EmptyField<T, E> value) invalidEmail,
+    required TResult Function(InvalidEmail<T, E> value) invalidEmail,
   }) {
     return emptyField(this);
   }
@@ -212,7 +212,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
   }) {
     return emptyField?.call(this);
   }
@@ -221,7 +221,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
     required TResult orElse(),
   }) {
     if (emptyField != null) {
@@ -243,31 +243,31 @@ abstract class EmptyField<T, E> implements SignUpObjectValueFailure<T, E> {
 }
 
 /// @nodoc
-abstract class _$$EmptyFieldCopyWith<T, E, $Res>
+abstract class _$$InvalidEmailCopyWith<T, E, $Res>
     implements $SignUpObjectValueFailureCopyWith<T, E, $Res> {
-  factory _$$EmptyFieldCopyWith(
-          _$EmptyField<T, E> value, $Res Function(_$EmptyField<T, E>) then) =
-      __$$EmptyFieldCopyWithImpl<T, E, $Res>;
+  factory _$$InvalidEmailCopyWith(_$InvalidEmail<T, E> value,
+          $Res Function(_$InvalidEmail<T, E>) then) =
+      __$$InvalidEmailCopyWithImpl<T, E, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$$EmptyFieldCopyWithImpl<T, E, $Res>
+class __$$InvalidEmailCopyWithImpl<T, E, $Res>
     extends _$SignUpObjectValueFailureCopyWithImpl<T, E, $Res>
-    implements _$$EmptyFieldCopyWith<T, E, $Res> {
-  __$$EmptyFieldCopyWithImpl(
-      _$EmptyField<T, E> _value, $Res Function(_$EmptyField<T, E>) _then)
-      : super(_value, (v) => _then(v as _$EmptyField<T, E>));
+    implements _$$InvalidEmailCopyWith<T, E, $Res> {
+  __$$InvalidEmailCopyWithImpl(
+      _$InvalidEmail<T, E> _value, $Res Function(_$InvalidEmail<T, E>) _then)
+      : super(_value, (v) => _then(v as _$InvalidEmail<T, E>));
 
   @override
-  _$EmptyField<T, E> get _value => super._value as _$EmptyField<T, E>;
+  _$InvalidEmail<T, E> get _value => super._value as _$InvalidEmail<T, E>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_$EmptyField<T, E>(
+    return _then(_$InvalidEmail<T, E>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -278,10 +278,10 @@ class __$$EmptyFieldCopyWithImpl<T, E, $Res>
 
 /// @nodoc
 
-class _$EmptyField<T, E>
+class _$InvalidEmail<T, E>
     with DiagnosticableTreeMixin
-    implements EmptyField<T, E> {
-  const _$EmptyField({required this.failedValue});
+    implements InvalidEmail<T, E> {
+  const _$InvalidEmail({required this.failedValue});
 
   @override
   final T failedValue;
@@ -304,7 +304,7 @@ class _$EmptyField<T, E>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmptyField<T, E> &&
+            other is _$InvalidEmail<T, E> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -315,8 +315,9 @@ class _$EmptyField<T, E>
 
   @JsonKey(ignore: true)
   @override
-  _$$EmptyFieldCopyWith<T, E, _$EmptyField<T, E>> get copyWith =>
-      __$$EmptyFieldCopyWithImpl<T, E, _$EmptyField<T, E>>(this, _$identity);
+  _$$InvalidEmailCopyWith<T, E, _$InvalidEmail<T, E>> get copyWith =>
+      __$$InvalidEmailCopyWithImpl<T, E, _$InvalidEmail<T, E>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -353,7 +354,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
-    required TResult Function(EmptyField<T, E> value) invalidEmail,
+    required TResult Function(InvalidEmail<T, E> value) invalidEmail,
   }) {
     return invalidEmail(this);
   }
@@ -362,7 +363,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
   }) {
     return invalidEmail?.call(this);
   }
@@ -371,7 +372,7 @@ class _$EmptyField<T, E>
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
-    TResult Function(EmptyField<T, E> value)? invalidEmail,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -381,13 +382,14 @@ class _$EmptyField<T, E>
   }
 }
 
-abstract class EmptyField<T, E> implements SignUpObjectValueFailure<T, E> {
-  const factory EmptyField({required final T failedValue}) = _$EmptyField<T, E>;
+abstract class InvalidEmail<T, E> implements SignUpObjectValueFailure<T, E> {
+  const factory InvalidEmail({required final T failedValue}) =
+      _$InvalidEmail<T, E>;
 
   @override
   T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$EmptyFieldCopyWith<T, E, _$EmptyField<T, E>> get copyWith =>
+  _$$InvalidEmailCopyWith<T, E, _$InvalidEmail<T, E>> get copyWith =>
       throw _privateConstructorUsedError;
 }

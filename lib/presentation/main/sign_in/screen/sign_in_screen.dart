@@ -40,12 +40,8 @@ class SignInScreen extends StatelessWidget {
               // BlocProvider.of<ModalCubit>(modalContext).onModalPop();
             },
             failure: (f) {
-              f.when(requestFailure: (e) {
-                BlocProvider.of<ModalCubit>(modalContext!).onModalFailure(e);
-              }, networkOrServerFailure: (e) {
-                BlocProvider.of<ModalCubit>(modalContext!)
-                    .onModalFailure(FailureExceptions.getErrorMessage(e));
-              });
+              BlocProvider.of<ModalCubit>(modalContext!)
+                  .onModalFailure(FailureExceptions.getErrorMessage(f));
             });
       },
       child: Scaffold(
