@@ -4,9 +4,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:pos/application/main/introduction/cubit/introduction_cubit.dart';
-import 'package:pos/application/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/di/injection.dart';
+import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
+import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
+import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -54,6 +55,7 @@ class PosAppState extends State<PosApp> {
       BlocProvider(
         create: (context) => getIt<RouteCubit>(),
       ),
+      BlocProvider(create: (context) => getIt<AuthCubit>()),
     ], child: const PosAppView());
   }
 }
@@ -71,6 +73,8 @@ class PosAppViewState extends State<PosAppView> {
   //NavigatorState get _navigator => _navigatorKey.currentState!;
   @override
   void initState() {
+    BlocProvider.of<AuthCubit>(context).authStarted();
+
     super.initState();
   }
 

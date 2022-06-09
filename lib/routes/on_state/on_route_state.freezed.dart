@@ -12,35 +12,7 @@ part of 'on_route_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$OnRouteStateTearOff {
-  const _$OnRouteStateTearOff();
-
-  _Cart cart() {
-    return const _Cart();
-  }
-
-  _ItemDetail itemDetail() {
-    return const _ItemDetail();
-  }
-
-  _CategoryItemList categoryItemList() {
-    return const _CategoryItemList();
-  }
-
-  _SearchFilterPickUp searchFilterPickUp() {
-    return const _SearchFilterPickUp();
-  }
-
-  _Login login() {
-    return const _Login();
-  }
-}
-
-/// @nodoc
-const $OnRouteState = _$OnRouteStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$OnRouteState {
@@ -119,19 +91,19 @@ class _$OnRouteStateCopyWithImpl<$Res> implements $OnRouteStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$CartCopyWith<$Res> {
-  factory _$CartCopyWith(_Cart value, $Res Function(_Cart) then) =
-      __$CartCopyWithImpl<$Res>;
+abstract class _$$_CartCopyWith<$Res> {
+  factory _$$_CartCopyWith(_$_Cart value, $Res Function(_$_Cart) then) =
+      __$$_CartCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CartCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$CartCopyWith<$Res> {
-  __$CartCopyWithImpl(_Cart _value, $Res Function(_Cart) _then)
-      : super(_value, (v) => _then(v as _Cart));
+class __$$_CartCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
+    implements _$$_CartCopyWith<$Res> {
+  __$$_CartCopyWithImpl(_$_Cart _value, $Res Function(_$_Cart) _then)
+      : super(_value, (v) => _then(v as _$_Cart));
 
   @override
-  _Cart get _value => super._value as _Cart;
+  _$_Cart get _value => super._value as _$_Cart;
 }
 
 /// @nodoc
@@ -147,13 +119,13 @@ class _$_Cart with DiagnosticableTreeMixin implements _Cart {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OnRouteState.cart'));
+    properties.add(DiagnosticsProperty('type', 'OnRouteState.cart'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Cart);
+        (other.runtimeType == runtimeType && other is _$_Cart);
   }
 
   @override
@@ -245,21 +217,21 @@ abstract class _Cart implements OnRouteState {
 }
 
 /// @nodoc
-abstract class _$ItemDetailCopyWith<$Res> {
-  factory _$ItemDetailCopyWith(
-          _ItemDetail value, $Res Function(_ItemDetail) then) =
-      __$ItemDetailCopyWithImpl<$Res>;
+abstract class _$$_ItemDetailCopyWith<$Res> {
+  factory _$$_ItemDetailCopyWith(
+          _$_ItemDetail value, $Res Function(_$_ItemDetail) then) =
+      __$$_ItemDetailCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ItemDetailCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$ItemDetailCopyWith<$Res> {
-  __$ItemDetailCopyWithImpl(
-      _ItemDetail _value, $Res Function(_ItemDetail) _then)
-      : super(_value, (v) => _then(v as _ItemDetail));
+class __$$_ItemDetailCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
+    implements _$$_ItemDetailCopyWith<$Res> {
+  __$$_ItemDetailCopyWithImpl(
+      _$_ItemDetail _value, $Res Function(_$_ItemDetail) _then)
+      : super(_value, (v) => _then(v as _$_ItemDetail));
 
   @override
-  _ItemDetail get _value => super._value as _ItemDetail;
+  _$_ItemDetail get _value => super._value as _$_ItemDetail;
 }
 
 /// @nodoc
@@ -275,13 +247,13 @@ class _$_ItemDetail with DiagnosticableTreeMixin implements _ItemDetail {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OnRouteState.itemDetail'));
+    properties.add(DiagnosticsProperty('type', 'OnRouteState.itemDetail'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ItemDetail);
+        (other.runtimeType == runtimeType && other is _$_ItemDetail);
   }
 
   @override
@@ -373,22 +345,22 @@ abstract class _ItemDetail implements OnRouteState {
 }
 
 /// @nodoc
-abstract class _$CategoryItemListCopyWith<$Res> {
-  factory _$CategoryItemListCopyWith(
-          _CategoryItemList value, $Res Function(_CategoryItemList) then) =
-      __$CategoryItemListCopyWithImpl<$Res>;
+abstract class _$$_CategoryItemListCopyWith<$Res> {
+  factory _$$_CategoryItemListCopyWith(
+          _$_CategoryItemList value, $Res Function(_$_CategoryItemList) then) =
+      __$$_CategoryItemListCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$CategoryItemListCopyWithImpl<$Res>
+class __$$_CategoryItemListCopyWithImpl<$Res>
     extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$CategoryItemListCopyWith<$Res> {
-  __$CategoryItemListCopyWithImpl(
-      _CategoryItemList _value, $Res Function(_CategoryItemList) _then)
-      : super(_value, (v) => _then(v as _CategoryItemList));
+    implements _$$_CategoryItemListCopyWith<$Res> {
+  __$$_CategoryItemListCopyWithImpl(
+      _$_CategoryItemList _value, $Res Function(_$_CategoryItemList) _then)
+      : super(_value, (v) => _then(v as _$_CategoryItemList));
 
   @override
-  _CategoryItemList get _value => super._value as _CategoryItemList;
+  _$_CategoryItemList get _value => super._value as _$_CategoryItemList;
 }
 
 /// @nodoc
@@ -407,13 +379,13 @@ class _$_CategoryItemList
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.categoryItemList'));
+        .add(DiagnosticsProperty('type', 'OnRouteState.categoryItemList'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _CategoryItemList);
+        (other.runtimeType == runtimeType && other is _$_CategoryItemList);
   }
 
   @override
@@ -505,22 +477,22 @@ abstract class _CategoryItemList implements OnRouteState {
 }
 
 /// @nodoc
-abstract class _$SearchFilterPickUpCopyWith<$Res> {
-  factory _$SearchFilterPickUpCopyWith(
-          _SearchFilterPickUp value, $Res Function(_SearchFilterPickUp) then) =
-      __$SearchFilterPickUpCopyWithImpl<$Res>;
+abstract class _$$_SearchFilterPickUpCopyWith<$Res> {
+  factory _$$_SearchFilterPickUpCopyWith(_$_SearchFilterPickUp value,
+          $Res Function(_$_SearchFilterPickUp) then) =
+      __$$_SearchFilterPickUpCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SearchFilterPickUpCopyWithImpl<$Res>
+class __$$_SearchFilterPickUpCopyWithImpl<$Res>
     extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$SearchFilterPickUpCopyWith<$Res> {
-  __$SearchFilterPickUpCopyWithImpl(
-      _SearchFilterPickUp _value, $Res Function(_SearchFilterPickUp) _then)
-      : super(_value, (v) => _then(v as _SearchFilterPickUp));
+    implements _$$_SearchFilterPickUpCopyWith<$Res> {
+  __$$_SearchFilterPickUpCopyWithImpl(
+      _$_SearchFilterPickUp _value, $Res Function(_$_SearchFilterPickUp) _then)
+      : super(_value, (v) => _then(v as _$_SearchFilterPickUp));
 
   @override
-  _SearchFilterPickUp get _value => super._value as _SearchFilterPickUp;
+  _$_SearchFilterPickUp get _value => super._value as _$_SearchFilterPickUp;
 }
 
 /// @nodoc
@@ -539,13 +511,13 @@ class _$_SearchFilterPickUp
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.searchFilterPickUp'));
+        .add(DiagnosticsProperty('type', 'OnRouteState.searchFilterPickUp'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SearchFilterPickUp);
+        (other.runtimeType == runtimeType && other is _$_SearchFilterPickUp);
   }
 
   @override
@@ -637,19 +609,19 @@ abstract class _SearchFilterPickUp implements OnRouteState {
 }
 
 /// @nodoc
-abstract class _$LoginCopyWith<$Res> {
-  factory _$LoginCopyWith(_Login value, $Res Function(_Login) then) =
-      __$LoginCopyWithImpl<$Res>;
+abstract class _$$_LoginCopyWith<$Res> {
+  factory _$$_LoginCopyWith(_$_Login value, $Res Function(_$_Login) then) =
+      __$$_LoginCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoginCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$LoginCopyWith<$Res> {
-  __$LoginCopyWithImpl(_Login _value, $Res Function(_Login) _then)
-      : super(_value, (v) => _then(v as _Login));
+class __$$_LoginCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
+    implements _$$_LoginCopyWith<$Res> {
+  __$$_LoginCopyWithImpl(_$_Login _value, $Res Function(_$_Login) _then)
+      : super(_value, (v) => _then(v as _$_Login));
 
   @override
-  _Login get _value => super._value as _Login;
+  _$_Login get _value => super._value as _$_Login;
 }
 
 /// @nodoc
@@ -665,13 +637,13 @@ class _$_Login with DiagnosticableTreeMixin implements _Login {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'OnRouteState.login'));
+    properties.add(DiagnosticsProperty('type', 'OnRouteState.login'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Login);
+        (other.runtimeType == runtimeType && other is _$_Login);
   }
 
   @override

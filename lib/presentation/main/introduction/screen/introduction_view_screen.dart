@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/application/main/introduction/cubit/introduction_cubit.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 
 class IntroductionViewScreen extends StatefulWidget {
   const IntroductionViewScreen({Key? key}) : super(key: key);

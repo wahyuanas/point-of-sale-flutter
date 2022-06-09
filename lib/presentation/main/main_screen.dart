@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/application/main/introduction/cubit/introduction_cubit.dart';
-import 'package:pos/application/main/modal/cubit/modal_cubit.dart';
+import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/introduction/screen/introduction_view_screen.dart';
+import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
 class MainScreen extends StatefulWidget {
@@ -51,7 +51,7 @@ class MainScreenState extends State<MainScreen> {
         builder: (context, state) {
           return state.introductionState.maybeWhen(
               unDone: () => const IntroductionViewScreen(),
-              done: () => ,
+              done: () => Container(),
               orElse: () => Center(
                       child: Container(
                     color: Colors.blue[100],

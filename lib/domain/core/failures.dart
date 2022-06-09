@@ -1,3 +1,0 @@
-class ValueFailure {
-  //const ValueFailure();
-}

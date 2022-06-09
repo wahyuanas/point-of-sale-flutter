@@ -12,26 +12,7 @@ part of 'route_cubit.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$RouteStateTearOff {
-  const _$RouteStateTearOff();
-
-  _RouteState call(
-      {required OnRouteState? onRoute,
-      required Object? args,
-      required bool? route}) {
-    return _RouteState(
-      onRoute: onRoute,
-      args: args,
-      route: route,
-    );
-  }
-}
-
-/// @nodoc
-const $RouteState = _$RouteStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$RouteState {
@@ -94,10 +75,11 @@ class _$RouteStateCopyWithImpl<$Res> implements $RouteStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RouteStateCopyWith<$Res> implements $RouteStateCopyWith<$Res> {
-  factory _$RouteStateCopyWith(
-          _RouteState value, $Res Function(_RouteState) then) =
-      __$RouteStateCopyWithImpl<$Res>;
+abstract class _$$_RouteStateCopyWith<$Res>
+    implements $RouteStateCopyWith<$Res> {
+  factory _$$_RouteStateCopyWith(
+          _$_RouteState value, $Res Function(_$_RouteState) then) =
+      __$$_RouteStateCopyWithImpl<$Res>;
   @override
   $Res call({OnRouteState? onRoute, Object? args, bool? route});
 
@@ -106,14 +88,14 @@ abstract class _$RouteStateCopyWith<$Res> implements $RouteStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$RouteStateCopyWithImpl<$Res> extends _$RouteStateCopyWithImpl<$Res>
-    implements _$RouteStateCopyWith<$Res> {
-  __$RouteStateCopyWithImpl(
-      _RouteState _value, $Res Function(_RouteState) _then)
-      : super(_value, (v) => _then(v as _RouteState));
+class __$$_RouteStateCopyWithImpl<$Res> extends _$RouteStateCopyWithImpl<$Res>
+    implements _$$_RouteStateCopyWith<$Res> {
+  __$$_RouteStateCopyWithImpl(
+      _$_RouteState _value, $Res Function(_$_RouteState) _then)
+      : super(_value, (v) => _then(v as _$_RouteState));
 
   @override
-  _RouteState get _value => super._value as _RouteState;
+  _$_RouteState get _value => super._value as _$_RouteState;
 
   @override
   $Res call({
@@ -121,7 +103,7 @@ class __$RouteStateCopyWithImpl<$Res> extends _$RouteStateCopyWithImpl<$Res>
     Object? args = freezed,
     Object? route = freezed,
   }) {
-    return _then(_RouteState(
+    return _then(_$_RouteState(
       onRoute: onRoute == freezed
           ? _value.onRoute
           : onRoute // ignore: cast_nullable_to_non_nullable
@@ -167,7 +149,7 @@ class _$_RouteState with DiagnosticableTreeMixin implements _RouteState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _RouteState &&
+            other is _$_RouteState &&
             const DeepCollectionEquality().equals(other.onRoute, onRoute) &&
             const DeepCollectionEquality().equals(other.args, args) &&
             const DeepCollectionEquality().equals(other.route, route));
@@ -182,24 +164,24 @@ class _$_RouteState with DiagnosticableTreeMixin implements _RouteState {
 
   @JsonKey(ignore: true)
   @override
-  _$RouteStateCopyWith<_RouteState> get copyWith =>
-      __$RouteStateCopyWithImpl<_RouteState>(this, _$identity);
+  _$$_RouteStateCopyWith<_$_RouteState> get copyWith =>
+      __$$_RouteStateCopyWithImpl<_$_RouteState>(this, _$identity);
 }
 
 abstract class _RouteState implements RouteState {
   const factory _RouteState(
-      {required OnRouteState? onRoute,
-      required Object? args,
-      required bool? route}) = _$_RouteState;
+      {required final OnRouteState? onRoute,
+      required final Object? args,
+      required final bool? route}) = _$_RouteState;
 
   @override
-  OnRouteState? get onRoute;
+  OnRouteState? get onRoute => throw _privateConstructorUsedError;
   @override
-  Object? get args;
+  Object? get args => throw _privateConstructorUsedError;
   @override
-  bool? get route;
+  bool? get route => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RouteStateCopyWith<_RouteState> get copyWith =>
+  _$$_RouteStateCopyWith<_$_RouteState> get copyWith =>
       throw _privateConstructorUsedError;
 }
