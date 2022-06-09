@@ -3,11 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
-import 'package:pos/presentation/main/sign_in/cubit/sign_in_cubit.dart';
+import 'package:pos/presentation/main/sign/cubit/in/sign_in_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
 import '../delegate/sign_in_delegate.dart';
-import '../widget/sign_in_widget.dart';
+import '../widget/in/sign_in_widget.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);

@@ -16,7 +16,7 @@ class AccountRepository implements IAccountRepository {
       final a = tdoR.toDomain();
       return right(a);
     } catch (e) {
-      return left(FailureExceptions);
+      return left(FailureExceptions.getDioException(e));
     }
   }
 }
