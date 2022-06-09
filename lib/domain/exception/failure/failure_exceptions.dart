@@ -96,8 +96,8 @@ class FailureExceptions with _$FailureExceptions {
         return const FailureExceptions.unexpectedError();
       }
     } else {
-      var _z = error.toString().contains("is not a subtype of");
-      debugPrint("Failure EXCEPTIONS $_z");
+      var z = error.toString().contains("is not a subtype of");
+      debugPrint("Failure EXCEPTIONS $z");
       if (error.toString().contains("is not a subtype of")) {
         return const FailureExceptions.unableToProcess();
       } else {

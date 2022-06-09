@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/foundation.dart';
 import 'package:pos/domain/core/object_value/common_interfaces.dart';
 import 'package:pos/domain/core/object_value/errors.dart';
 import 'package:pos/domain/core/object_value/failures.dart';

@@ -9,17 +9,28 @@ import 'package:pos/presentation/utils/colors.dart';
 import '../delegate/sign_in_delegate.dart';
 import '../widget/sign_in_widget.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key}) : super(key: key);
+
+  @override
+  State<SignInScreen> createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
+  BuildContext? modalContext, context3;
+  @override
+  void initState() {
+    modalContext = BlocProvider.of<ModalCubit>(context).state.modalContext;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    BuildContext? modalContext =
-        BlocProvider.of<ModalCubit>(context).state.modalContext;
 
     return BlocListener<SignInCubit, SignInState>(
-      listener: (context3, state) {
+      listener: (context5, state) {
+        context3 = context5;
         state.status.when(
             initial: (() => null),
             loading: () {
@@ -31,8 +42,8 @@ class SignInScreen extends StatelessWidget {
               BlocProvider.of<ModalCubit>(modalContext!)
                   .onModalContent("Anda Berhasil SignIn");
               await Future.delayed(const Duration(milliseconds: 1000));
-              BlocProvider.of<ModalCubit>(modalContext).onModalPop();
-              Navigator.of(context3).pop();
+              BlocProvider.of<ModalCubit>(modalContext!).onModalPop();
+              Navigator.of(context3!).pop();
               // BlocProvider.of<ModalCubit>(modalContext!)
               //     .onModalPush("Anda Berhasil SignIn");
               // //_showDialog(context);
