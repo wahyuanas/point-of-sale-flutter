@@ -7,7 +7,7 @@ import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/domain/account/object_value/account_object_value.dart';
 import 'package:pos/domain/account/object_value/object_value.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
-import 'package:pos/presentation/common/state/status_state.dart';
+import 'package:pos/presentation/common/state/state_status.dart';
 
 part 'sign_up_state.dart';
 part 'sign_up_cubit.freezed.dart';
@@ -54,18 +54,18 @@ class SignUpCubit extends Cubit<SignUpState> {
   }
 
   onSignUp() {
-    emit(state.copyWith(status: const StatusState.loading()));
+    emit(state.copyWith(status: const StateStatus.loading()));
   }
 
   onSignUpSubmit() async {
     if (state.signUp.failureOption.isSome()) {
       emit(state.copyWith(failOrUnit: !state.failOrUnit));
     } else {
-      emit(state.copyWith(status: const StatusState.loading()));
+      emit(state.copyWith(status: const StateStatus.loading()));
       final failureOrSuccess = await accountService.signUp(state.signUp);
       failureOrSuccess.fold(
-          (l) => emit(state.copyWith(status: StatusState.failure(failure: l))),
-          (r) => emit(state.copyWith(status: StatusState.success(data: r))));
+          (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
+          (r) => emit(state.copyWith(status: StateStatus.success(data: r))));
     }
   }
 }

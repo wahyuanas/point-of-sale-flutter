@@ -3,8 +3,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/application/account/i_account_service.dart';
+import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
-import 'package:pos/presentation/common/state/status_state.dart';
+import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/auth/model/auth.dart';
 
@@ -19,6 +20,6 @@ class SignInCubit extends Cubit<SignInState> {
       : super(SignInState.initial());
 
   onSignIn() {
-    emit(state.copyWith(status: const StatusState.loading()));
+    emit(state.copyWith(status: const StateStatus.loading()));
   }
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'status_state.dart';
+part of 'state_status.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$StatusState<T, E> {
+mixin _$StateStatus<T, E> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
@@ -69,20 +69,20 @@ mixin _$StatusState<T, E> {
 }
 
 /// @nodoc
-abstract class $StatusStateCopyWith<T, E, $Res> {
-  factory $StatusStateCopyWith(
-          StatusState<T, E> value, $Res Function(StatusState<T, E>) then) =
-      _$StatusStateCopyWithImpl<T, E, $Res>;
+abstract class $StateStatusCopyWith<T, E, $Res> {
+  factory $StateStatusCopyWith(
+          StateStatus<T, E> value, $Res Function(StateStatus<T, E>) then) =
+      _$StateStatusCopyWithImpl<T, E, $Res>;
 }
 
 /// @nodoc
-class _$StatusStateCopyWithImpl<T, E, $Res>
-    implements $StatusStateCopyWith<T, E, $Res> {
-  _$StatusStateCopyWithImpl(this._value, this._then);
+class _$StateStatusCopyWithImpl<T, E, $Res>
+    implements $StateStatusCopyWith<T, E, $Res> {
+  _$StateStatusCopyWithImpl(this._value, this._then);
 
-  final StatusState<T, E> _value;
+  final StateStatus<T, E> _value;
   // ignore: unused_field
-  final $Res Function(StatusState<T, E>) _then;
+  final $Res Function(StateStatus<T, E>) _then;
 }
 
 /// @nodoc
@@ -94,7 +94,7 @@ abstract class _$$_InitialCopyWith<T, E, $Res> {
 
 /// @nodoc
 class __$$_InitialCopyWithImpl<T, E, $Res>
-    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    extends _$StateStatusCopyWithImpl<T, E, $Res>
     implements _$$_InitialCopyWith<T, E, $Res> {
   __$$_InitialCopyWithImpl(
       _$_Initial<T, E> _value, $Res Function(_$_Initial<T, E>) _then)
@@ -111,13 +111,13 @@ class _$_Initial<T, E> with DiagnosticableTreeMixin implements _Initial<T, E> {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T, $E>.initial()';
+    return 'StateStatus<$T, $E>.initial()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StatusState<$T, $E>.initial'));
+    properties.add(DiagnosticsProperty('type', 'StateStatus<$T, $E>.initial'));
   }
 
   @override
@@ -204,7 +204,7 @@ class _$_Initial<T, E> with DiagnosticableTreeMixin implements _Initial<T, E> {
   }
 }
 
-abstract class _Initial<T, E> implements StatusState<T, E> {
+abstract class _Initial<T, E> implements StateStatus<T, E> {
   const factory _Initial() = _$_Initial<T, E>;
 }
 
@@ -218,7 +218,7 @@ abstract class _$$_SuccessCopyWith<T, E, $Res> {
 
 /// @nodoc
 class __$$_SuccessCopyWithImpl<T, E, $Res>
-    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    extends _$StateStatusCopyWithImpl<T, E, $Res>
     implements _$$_SuccessCopyWith<T, E, $Res> {
   __$$_SuccessCopyWithImpl(
       _$_Success<T, E> _value, $Res Function(_$_Success<T, E>) _then)
@@ -250,14 +250,14 @@ class _$_Success<T, E> with DiagnosticableTreeMixin implements _Success<T, E> {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T, $E>.success(data: $data)';
+    return 'StateStatus<$T, $E>.success(data: $data)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'StatusState<$T, $E>.success'))
+      ..add(DiagnosticsProperty('type', 'StateStatus<$T, $E>.success'))
       ..add(DiagnosticsProperty('data', data));
   }
 
@@ -353,7 +353,7 @@ class _$_Success<T, E> with DiagnosticableTreeMixin implements _Success<T, E> {
   }
 }
 
-abstract class _Success<T, E> implements StatusState<T, E> {
+abstract class _Success<T, E> implements StateStatus<T, E> {
   const factory _Success({required final E data}) = _$_Success<T, E>;
 
   E get data => throw _privateConstructorUsedError;
@@ -371,7 +371,7 @@ abstract class _$$_LoadingCopyWith<T, E, $Res> {
 
 /// @nodoc
 class __$$_LoadingCopyWithImpl<T, E, $Res>
-    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    extends _$StateStatusCopyWithImpl<T, E, $Res>
     implements _$$_LoadingCopyWith<T, E, $Res> {
   __$$_LoadingCopyWithImpl(
       _$_Loading<T, E> _value, $Res Function(_$_Loading<T, E>) _then)
@@ -388,13 +388,13 @@ class _$_Loading<T, E> with DiagnosticableTreeMixin implements _Loading<T, E> {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T, $E>.loading()';
+    return 'StateStatus<$T, $E>.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StatusState<$T, $E>.loading'));
+    properties.add(DiagnosticsProperty('type', 'StateStatus<$T, $E>.loading'));
   }
 
   @override
@@ -481,7 +481,7 @@ class _$_Loading<T, E> with DiagnosticableTreeMixin implements _Loading<T, E> {
   }
 }
 
-abstract class _Loading<T, E> implements StatusState<T, E> {
+abstract class _Loading<T, E> implements StateStatus<T, E> {
   const factory _Loading() = _$_Loading<T, E>;
 }
 
@@ -495,7 +495,7 @@ abstract class _$$_FailureCopyWith<T, E, $Res> {
 
 /// @nodoc
 class __$$_FailureCopyWithImpl<T, E, $Res>
-    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    extends _$StateStatusCopyWithImpl<T, E, $Res>
     implements _$$_FailureCopyWith<T, E, $Res> {
   __$$_FailureCopyWithImpl(
       _$_Failure<T, E> _value, $Res Function(_$_Failure<T, E>) _then)
@@ -527,14 +527,14 @@ class _$_Failure<T, E> with DiagnosticableTreeMixin implements _Failure<T, E> {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T, $E>.failure(failure: $failure)';
+    return 'StateStatus<$T, $E>.failure(failure: $failure)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'StatusState<$T, $E>.failure'))
+      ..add(DiagnosticsProperty('type', 'StateStatus<$T, $E>.failure'))
       ..add(DiagnosticsProperty('failure', failure));
   }
 
@@ -630,7 +630,7 @@ class _$_Failure<T, E> with DiagnosticableTreeMixin implements _Failure<T, E> {
   }
 }
 
-abstract class _Failure<T, E> implements StatusState<T, E> {
+abstract class _Failure<T, E> implements StateStatus<T, E> {
   const factory _Failure({required final T failure}) = _$_Failure<T, E>;
 
   T get failure => throw _privateConstructorUsedError;
