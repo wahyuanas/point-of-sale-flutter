@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/application/account/i_account_service.dart';
+import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/domain/account/object_value/account_object_value.dart';
 import 'package:pos/domain/account/object_value/object_value.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
@@ -56,7 +57,15 @@ class SignUpCubit extends Cubit<SignUpState> {
     emit(state.copyWith(status: const StatusState.loading()));
   }
 
-  onSignUpSubmit() {
-    emit(state.copyWith(failOrUnit: !state.failOrUnit));
+  onSignUpSubmit() async {
+    if (state.signUp.failureOption.isSome()) {
+      emit(state.copyWith(failOrUnit: !state.failOrUnit));
+    } else {
+      emit(state.copyWith(status: const StatusState.loading()));
+      final failureOrSuccess = await accountService.signUp(state.signUp);
+      failureOrSuccess.fold(
+          (l) => emit(state.copyWith(status: StatusState.failure(failure: l))),
+          (r) => emit(state.copyWith(status: StatusState.success(data: r))));
+    }
   }
 }

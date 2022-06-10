@@ -15,11 +15,11 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$StatusState<T> {
+mixin _$StatusState<T, E> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(E data) success,
     required TResult Function() loading,
     required TResult Function(T failure) failure,
   }) =>
@@ -27,7 +27,7 @@ mixin _$StatusState<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
   }) =>
@@ -35,7 +35,7 @@ mixin _$StatusState<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
     required TResult orElse(),
@@ -43,87 +43,87 @@ mixin _$StatusState<T> {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(_Success<T> value) success,
-    required TResult Function(_Loading<T> value) loading,
-    required TResult Function(_Failure<T> value) failure,
+    required TResult Function(_Initial<T, E> value) initial,
+    required TResult Function(_Success<T, E> value) success,
+    required TResult Function(_Loading<T, E> value) loading,
+    required TResult Function(_Failure<T, E> value) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $StatusStateCopyWith<T, $Res> {
+abstract class $StatusStateCopyWith<T, E, $Res> {
   factory $StatusStateCopyWith(
-          StatusState<T> value, $Res Function(StatusState<T>) then) =
-      _$StatusStateCopyWithImpl<T, $Res>;
+          StatusState<T, E> value, $Res Function(StatusState<T, E>) then) =
+      _$StatusStateCopyWithImpl<T, E, $Res>;
 }
 
 /// @nodoc
-class _$StatusStateCopyWithImpl<T, $Res>
-    implements $StatusStateCopyWith<T, $Res> {
+class _$StatusStateCopyWithImpl<T, E, $Res>
+    implements $StatusStateCopyWith<T, E, $Res> {
   _$StatusStateCopyWithImpl(this._value, this._then);
 
-  final StatusState<T> _value;
+  final StatusState<T, E> _value;
   // ignore: unused_field
-  final $Res Function(StatusState<T>) _then;
+  final $Res Function(StatusState<T, E>) _then;
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<T, $Res> {
+abstract class _$$_InitialCopyWith<T, E, $Res> {
   factory _$$_InitialCopyWith(
-          _$_Initial<T> value, $Res Function(_$_Initial<T>) then) =
-      __$$_InitialCopyWithImpl<T, $Res>;
+          _$_Initial<T, E> value, $Res Function(_$_Initial<T, E>) then) =
+      __$$_InitialCopyWithImpl<T, E, $Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<T, $Res>
-    extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$$_InitialCopyWith<T, $Res> {
+class __$$_InitialCopyWithImpl<T, E, $Res>
+    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    implements _$$_InitialCopyWith<T, E, $Res> {
   __$$_InitialCopyWithImpl(
-      _$_Initial<T> _value, $Res Function(_$_Initial<T>) _then)
-      : super(_value, (v) => _then(v as _$_Initial<T>));
+      _$_Initial<T, E> _value, $Res Function(_$_Initial<T, E>) _then)
+      : super(_value, (v) => _then(v as _$_Initial<T, E>));
 
   @override
-  _$_Initial<T> get _value => super._value as _$_Initial<T>;
+  _$_Initial<T, E> get _value => super._value as _$_Initial<T, E>;
 }
 
 /// @nodoc
 
-class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
+class _$_Initial<T, E> with DiagnosticableTreeMixin implements _Initial<T, E> {
   const _$_Initial();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T>.initial()';
+    return 'StatusState<$T, $E>.initial()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.initial'));
+    properties.add(DiagnosticsProperty('type', 'StatusState<$T, $E>.initial'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial<T>);
+        (other.runtimeType == runtimeType && other is _$_Initial<T, E>);
   }
 
   @override
@@ -133,7 +133,7 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(E data) success,
     required TResult Function() loading,
     required TResult Function(T failure) failure,
   }) {
@@ -144,7 +144,7 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
   }) {
@@ -155,7 +155,7 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
     required TResult orElse(),
@@ -169,10 +169,10 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(_Success<T> value) success,
-    required TResult Function(_Loading<T> value) loading,
-    required TResult Function(_Failure<T> value) failure,
+    required TResult Function(_Initial<T, E> value) initial,
+    required TResult Function(_Success<T, E> value) success,
+    required TResult Function(_Loading<T, E> value) loading,
+    required TResult Function(_Failure<T, E> value) failure,
   }) {
     return initial(this);
   }
@@ -180,10 +180,10 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
   }) {
     return initial?.call(this);
   }
@@ -191,10 +191,10 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -204,87 +204,113 @@ class _$_Initial<T> with DiagnosticableTreeMixin implements _Initial<T> {
   }
 }
 
-abstract class _Initial<T> implements StatusState<T> {
-  const factory _Initial() = _$_Initial<T>;
+abstract class _Initial<T, E> implements StatusState<T, E> {
+  const factory _Initial() = _$_Initial<T, E>;
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<T, $Res> {
+abstract class _$$_SuccessCopyWith<T, E, $Res> {
   factory _$$_SuccessCopyWith(
-          _$_Success<T> value, $Res Function(_$_Success<T>) then) =
-      __$$_SuccessCopyWithImpl<T, $Res>;
+          _$_Success<T, E> value, $Res Function(_$_Success<T, E>) then) =
+      __$$_SuccessCopyWithImpl<T, E, $Res>;
+  $Res call({E data});
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<T, $Res>
-    extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$$_SuccessCopyWith<T, $Res> {
+class __$$_SuccessCopyWithImpl<T, E, $Res>
+    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    implements _$$_SuccessCopyWith<T, E, $Res> {
   __$$_SuccessCopyWithImpl(
-      _$_Success<T> _value, $Res Function(_$_Success<T>) _then)
-      : super(_value, (v) => _then(v as _$_Success<T>));
+      _$_Success<T, E> _value, $Res Function(_$_Success<T, E>) _then)
+      : super(_value, (v) => _then(v as _$_Success<T, E>));
 
   @override
-  _$_Success<T> get _value => super._value as _$_Success<T>;
+  _$_Success<T, E> get _value => super._value as _$_Success<T, E>;
+
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$_Success<T, E>(
+      data: data == freezed
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as E,
+    ));
+  }
 }
 
 /// @nodoc
 
-class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
-  const _$_Success();
+class _$_Success<T, E> with DiagnosticableTreeMixin implements _Success<T, E> {
+  const _$_Success({required this.data});
+
+  @override
+  final E data;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T>.success()';
+    return 'StatusState<$T, $E>.success(data: $data)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.success'));
+    properties
+      ..add(DiagnosticsProperty('type', 'StatusState<$T, $E>.success'))
+      ..add(DiagnosticsProperty('data', data));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success<T>);
+        (other.runtimeType == runtimeType &&
+            other is _$_Success<T, E> &&
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_SuccessCopyWith<T, E, _$_Success<T, E>> get copyWith =>
+      __$$_SuccessCopyWithImpl<T, E, _$_Success<T, E>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(E data) success,
     required TResult Function() loading,
     required TResult Function(T failure) failure,
   }) {
-    return success();
+    return success(data);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
   }) {
-    return success?.call();
+    return success?.call(data);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success();
+      return success(data);
     }
     return orElse();
   }
@@ -292,10 +318,10 @@ class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(_Success<T> value) success,
-    required TResult Function(_Loading<T> value) loading,
-    required TResult Function(_Failure<T> value) failure,
+    required TResult Function(_Initial<T, E> value) initial,
+    required TResult Function(_Success<T, E> value) success,
+    required TResult Function(_Loading<T, E> value) loading,
+    required TResult Function(_Failure<T, E> value) failure,
   }) {
     return success(this);
   }
@@ -303,10 +329,10 @@ class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
   }) {
     return success?.call(this);
   }
@@ -314,10 +340,10 @@ class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -327,49 +353,54 @@ class _$_Success<T> with DiagnosticableTreeMixin implements _Success<T> {
   }
 }
 
-abstract class _Success<T> implements StatusState<T> {
-  const factory _Success() = _$_Success<T>;
+abstract class _Success<T, E> implements StatusState<T, E> {
+  const factory _Success({required final E data}) = _$_Success<T, E>;
+
+  E get data => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_SuccessCopyWith<T, E, _$_Success<T, E>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<T, $Res> {
+abstract class _$$_LoadingCopyWith<T, E, $Res> {
   factory _$$_LoadingCopyWith(
-          _$_Loading<T> value, $Res Function(_$_Loading<T>) then) =
-      __$$_LoadingCopyWithImpl<T, $Res>;
+          _$_Loading<T, E> value, $Res Function(_$_Loading<T, E>) then) =
+      __$$_LoadingCopyWithImpl<T, E, $Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<T, $Res>
-    extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$$_LoadingCopyWith<T, $Res> {
+class __$$_LoadingCopyWithImpl<T, E, $Res>
+    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    implements _$$_LoadingCopyWith<T, E, $Res> {
   __$$_LoadingCopyWithImpl(
-      _$_Loading<T> _value, $Res Function(_$_Loading<T>) _then)
-      : super(_value, (v) => _then(v as _$_Loading<T>));
+      _$_Loading<T, E> _value, $Res Function(_$_Loading<T, E>) _then)
+      : super(_value, (v) => _then(v as _$_Loading<T, E>));
 
   @override
-  _$_Loading<T> get _value => super._value as _$_Loading<T>;
+  _$_Loading<T, E> get _value => super._value as _$_Loading<T, E>;
 }
 
 /// @nodoc
 
-class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
+class _$_Loading<T, E> with DiagnosticableTreeMixin implements _Loading<T, E> {
   const _$_Loading();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T>.loading()';
+    return 'StatusState<$T, $E>.loading()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties.add(DiagnosticsProperty('type', 'StatusState<$T>.loading'));
+    properties.add(DiagnosticsProperty('type', 'StatusState<$T, $E>.loading'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading<T>);
+        (other.runtimeType == runtimeType && other is _$_Loading<T, E>);
   }
 
   @override
@@ -379,7 +410,7 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(E data) success,
     required TResult Function() loading,
     required TResult Function(T failure) failure,
   }) {
@@ -390,7 +421,7 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
   }) {
@@ -401,7 +432,7 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
     required TResult orElse(),
@@ -415,10 +446,10 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(_Success<T> value) success,
-    required TResult Function(_Loading<T> value) loading,
-    required TResult Function(_Failure<T> value) failure,
+    required TResult Function(_Initial<T, E> value) initial,
+    required TResult Function(_Success<T, E> value) success,
+    required TResult Function(_Loading<T, E> value) loading,
+    required TResult Function(_Failure<T, E> value) failure,
   }) {
     return loading(this);
   }
@@ -426,10 +457,10 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
   }) {
     return loading?.call(this);
   }
@@ -437,10 +468,10 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -450,34 +481,34 @@ class _$_Loading<T> with DiagnosticableTreeMixin implements _Loading<T> {
   }
 }
 
-abstract class _Loading<T> implements StatusState<T> {
-  const factory _Loading() = _$_Loading<T>;
+abstract class _Loading<T, E> implements StatusState<T, E> {
+  const factory _Loading() = _$_Loading<T, E>;
 }
 
 /// @nodoc
-abstract class _$$_FailureCopyWith<T, $Res> {
+abstract class _$$_FailureCopyWith<T, E, $Res> {
   factory _$$_FailureCopyWith(
-          _$_Failure<T> value, $Res Function(_$_Failure<T>) then) =
-      __$$_FailureCopyWithImpl<T, $Res>;
+          _$_Failure<T, E> value, $Res Function(_$_Failure<T, E>) then) =
+      __$$_FailureCopyWithImpl<T, E, $Res>;
   $Res call({T failure});
 }
 
 /// @nodoc
-class __$$_FailureCopyWithImpl<T, $Res>
-    extends _$StatusStateCopyWithImpl<T, $Res>
-    implements _$$_FailureCopyWith<T, $Res> {
+class __$$_FailureCopyWithImpl<T, E, $Res>
+    extends _$StatusStateCopyWithImpl<T, E, $Res>
+    implements _$$_FailureCopyWith<T, E, $Res> {
   __$$_FailureCopyWithImpl(
-      _$_Failure<T> _value, $Res Function(_$_Failure<T>) _then)
-      : super(_value, (v) => _then(v as _$_Failure<T>));
+      _$_Failure<T, E> _value, $Res Function(_$_Failure<T, E>) _then)
+      : super(_value, (v) => _then(v as _$_Failure<T, E>));
 
   @override
-  _$_Failure<T> get _value => super._value as _$_Failure<T>;
+  _$_Failure<T, E> get _value => super._value as _$_Failure<T, E>;
 
   @override
   $Res call({
     Object? failure = freezed,
   }) {
-    return _then(_$_Failure<T>(
+    return _then(_$_Failure<T, E>(
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -488,7 +519,7 @@ class __$$_FailureCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
+class _$_Failure<T, E> with DiagnosticableTreeMixin implements _Failure<T, E> {
   const _$_Failure({required this.failure});
 
   @override
@@ -496,14 +527,14 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'StatusState<$T>.failure(failure: $failure)';
+    return 'StatusState<$T, $E>.failure(failure: $failure)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'StatusState<$T>.failure'))
+      ..add(DiagnosticsProperty('type', 'StatusState<$T, $E>.failure'))
       ..add(DiagnosticsProperty('failure', failure));
   }
 
@@ -511,7 +542,7 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Failure<T> &&
+            other is _$_Failure<T, E> &&
             const DeepCollectionEquality().equals(other.failure, failure));
   }
 
@@ -521,14 +552,14 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
 
   @JsonKey(ignore: true)
   @override
-  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
-      __$$_FailureCopyWithImpl<T, _$_Failure<T>>(this, _$identity);
+  _$$_FailureCopyWith<T, E, _$_Failure<T, E>> get copyWith =>
+      __$$_FailureCopyWithImpl<T, E, _$_Failure<T, E>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() success,
+    required TResult Function(E data) success,
     required TResult Function() loading,
     required TResult Function(T failure) failure,
   }) {
@@ -539,7 +570,7 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
   }) {
@@ -550,7 +581,7 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? success,
+    TResult Function(E data)? success,
     TResult Function()? loading,
     TResult Function(T failure)? failure,
     required TResult orElse(),
@@ -564,10 +595,10 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial<T> value) initial,
-    required TResult Function(_Success<T> value) success,
-    required TResult Function(_Loading<T> value) loading,
-    required TResult Function(_Failure<T> value) failure,
+    required TResult Function(_Initial<T, E> value) initial,
+    required TResult Function(_Success<T, E> value) success,
+    required TResult Function(_Loading<T, E> value) loading,
+    required TResult Function(_Failure<T, E> value) failure,
   }) {
     return failure(this);
   }
@@ -575,10 +606,10 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
   }) {
     return failure?.call(this);
   }
@@ -586,10 +617,10 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial<T> value)? initial,
-    TResult Function(_Success<T> value)? success,
-    TResult Function(_Loading<T> value)? loading,
-    TResult Function(_Failure<T> value)? failure,
+    TResult Function(_Initial<T, E> value)? initial,
+    TResult Function(_Success<T, E> value)? success,
+    TResult Function(_Loading<T, E> value)? loading,
+    TResult Function(_Failure<T, E> value)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -599,11 +630,11 @@ class _$_Failure<T> with DiagnosticableTreeMixin implements _Failure<T> {
   }
 }
 
-abstract class _Failure<T> implements StatusState<T> {
-  const factory _Failure({required final T failure}) = _$_Failure<T>;
+abstract class _Failure<T, E> implements StatusState<T, E> {
+  const factory _Failure({required final T failure}) = _$_Failure<T, E>;
 
   T get failure => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$$_FailureCopyWith<T, _$_Failure<T>> get copyWith =>
+  _$$_FailureCopyWith<T, E, _$_Failure<T, E>> get copyWith =>
       throw _privateConstructorUsedError;
 }

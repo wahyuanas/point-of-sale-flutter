@@ -32,7 +32,7 @@ abstract class $SignInStateCopyWith<$Res> {
       _$SignInStateCopyWithImpl<$Res>;
   $Res call({StatusState<FailureExceptions> status, Auth? auth});
 
-  $StatusStateCopyWith<FailureExceptions, $Res> get status;
+  $StatusStateCopyWith<dynamic, dynamic, $Res> get status;
   $AuthCopyWith<$Res>? get auth;
 }
 
@@ -62,9 +62,8 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
   }
 
   @override
-  $StatusStateCopyWith<FailureExceptions, $Res> get status {
-    return $StatusStateCopyWith<FailureExceptions, $Res>(_value.status,
-        (value) {
+  $StatusStateCopyWith<dynamic, dynamic, $Res> get status {
+    return $StatusStateCopyWith<dynamic, dynamic, $Res>(_value.status, (value) {
       return _then(_value.copyWith(status: value));
     });
   }
@@ -91,7 +90,7 @@ abstract class _$$_SignInStateCopyWith<$Res>
   $Res call({StatusState<FailureExceptions> status, Auth? auth});
 
   @override
-  $StatusStateCopyWith<FailureExceptions, $Res> get status;
+  $StatusStateCopyWith<dynamic, dynamic, $Res> get status;
   @override
   $AuthCopyWith<$Res>? get auth;
 }

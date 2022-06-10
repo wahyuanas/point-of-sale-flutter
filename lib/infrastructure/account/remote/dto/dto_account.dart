@@ -23,7 +23,7 @@ class DtoAccountRequest with _$DtoAccountRequest {
       companyName: cmd.companyName.getOrCrash(),
       phoneNumber: cmd.phoneNumber.getOrCrash(),
       email: cmd.email.getOrCrash(),
-      address: cmd.addres.getOrCrash(),
+      address: cmd.address.getOrCrash(),
       outletsNumber: cmd.outletsNumber.getOrCrash(),
       businessType: cmd.businessType.getOrCrash(),
     );

@@ -37,7 +37,7 @@ class _SignInScreenState extends State<SignInScreen> {
               BlocProvider.of<ModalCubit>(modalContext!)
                   .onModalPush("Sedang Proses...");
             },
-            success: () async {
+            success: (r) async {
               await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!)
                   .onModalContent("Anda Berhasil SignIn");
