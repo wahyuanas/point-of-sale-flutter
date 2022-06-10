@@ -45,6 +45,18 @@ class DtoAccountResponse with _$DtoAccountResponse {
   factory DtoAccountResponse.fromJson(Map<String, dynamic> json) =>
       _$DtoAccountResponseFromJson(json);
 
+  factory DtoAccountResponse.fromApi(Map<String, dynamic> data) {
+    return DtoAccountResponse(
+      id: data["id"],
+      companyName: data["companyName"],
+      phoneNumber: data["phoneNumber"],
+      email: data["email"],
+      address: data["address"],
+      outletsNumber: data["outletsNumber"],
+      businessType: data["businessType"],
+    );
+  }
+
   Account toDomain() {
     return Account(
       id: id,

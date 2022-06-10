@@ -24,5 +24,5 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<AuthCubit>(() => AuthCubit());
   g.registerLazySingleton<SignInCubit>(
       () => SignInCubit(authCubit: g(), accountService: g()));
-  g.registerLazySingleton<SignUpCubit>(() => SignUpCubit(accountService: g()));
+  //g.registerLazySingleton<SignUpCubit>(() => SignUpCubit(accountService: g()));
 }

@@ -12,8 +12,8 @@ class AccountRepository implements IAccountRepository {
   @override
   Future<Either<FailureExceptions, Account>> signUp(SignUp cmd) async {
     try {
-      final tdoR = await accountApi.signUp(DtoAccountRequest.fromDomain(cmd));
-      final a = tdoR.toDomain();
+      final dtoR = await accountApi.signUp(DtoAccountRequest.fromDomain(cmd));
+      final a = dtoR.toDomain();
       return right(a);
     } catch (e) {
       return left(FailureExceptions.getDioException(e));

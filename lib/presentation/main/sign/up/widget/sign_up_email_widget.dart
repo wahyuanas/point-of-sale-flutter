@@ -15,7 +15,7 @@ class _SignUpEmailWidgetState extends State<SignUpEmailWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onEmailChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onEmailChanged("");
     super.initState();
   }
 

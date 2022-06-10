@@ -16,7 +16,7 @@ class _SignUpCompanyNameWidgetState extends State<SignUpCompanyNameWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
     super.initState();
   }
 

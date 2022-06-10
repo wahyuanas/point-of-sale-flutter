@@ -16,7 +16,7 @@ class _SignUpPhoneNumberWidgetState extends State<SignUpPhoneNumberWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onPhoneNumberChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onPhoneNumberChanged("");
     super.initState();
   }
 

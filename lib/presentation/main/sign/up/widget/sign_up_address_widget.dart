@@ -15,7 +15,7 @@ class _SignUpAddressWidgetState extends State<SignUpAddressWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onAddressChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onAddressChanged("");
     super.initState();
   }
 

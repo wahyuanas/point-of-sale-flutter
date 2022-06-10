@@ -22,7 +22,7 @@ Either<SignUpObjectValueFailure<String, String>, int> validateFieldIntNotEmpty(
 
 Either<SignUpObjectValueFailure<String, String>, String> validateEmail(input) {
   bool emailValid = RegExp(
-          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+          r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~-]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
       .hasMatch(input);
   if (input.isEmpty) {
     return left(SignUpObjectValueFailure.emptyField(failedValue: input));

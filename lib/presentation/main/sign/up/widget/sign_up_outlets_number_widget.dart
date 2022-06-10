@@ -16,7 +16,7 @@ class _SignUpOutletsNumberWidgetState extends State<SignUpOutletsNumberWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onOutletsNumberChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onOutletsNumberChanged("");
     super.initState();
   }
 

@@ -16,7 +16,7 @@ class _SignUpBusinessTypeWidgetState extends State<SignUpBusinessTypeWidget> {
   @override
   void initState() {
     _initial = true;
-    BlocProvider.of<SignUpCubit>(context).onBusinessTypeChanged("");
+    //BlocProvider.of<SignUpCubit>(context).onBusinessTypeChanged("");
     super.initState();
   }
 
