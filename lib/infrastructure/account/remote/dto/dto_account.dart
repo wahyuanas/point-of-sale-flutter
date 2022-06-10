@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/domain/account/object_value/account_object_value.dart';
-import 'package:pos/domain/core/object_value/entity.dart';
 
 part 'dto_account.freezed.dart';
 part 'dto_account.g.dart';

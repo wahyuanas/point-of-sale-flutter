@@ -17,7 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$SignUp {
   SignUpCompanyName get companyName => throw _privateConstructorUsedError;
-  SignUpAddress get addres => throw _privateConstructorUsedError;
+  SignUpAddress get address => throw _privateConstructorUsedError;
   SignUpEmail get email => throw _privateConstructorUsedError;
   SignUpPhoneNumber get phoneNumber => throw _privateConstructorUsedError;
   SignUpOutletsNumber get outletsNumber => throw _privateConstructorUsedError;
@@ -33,7 +33,7 @@ abstract class $SignUpCopyWith<$Res> {
       _$SignUpCopyWithImpl<$Res>;
   $Res call(
       {SignUpCompanyName companyName,
-      SignUpAddress addres,
+      SignUpAddress address,
       SignUpEmail email,
       SignUpPhoneNumber phoneNumber,
       SignUpOutletsNumber outletsNumber,
@@ -51,7 +51,7 @@ class _$SignUpCopyWithImpl<$Res> implements $SignUpCopyWith<$Res> {
   @override
   $Res call({
     Object? companyName = freezed,
-    Object? addres = freezed,
+    Object? address = freezed,
     Object? email = freezed,
     Object? phoneNumber = freezed,
     Object? outletsNumber = freezed,
@@ -62,9 +62,9 @@ class _$SignUpCopyWithImpl<$Res> implements $SignUpCopyWith<$Res> {
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as SignUpCompanyName,
-      addres: addres == freezed
-          ? _value.addres
-          : addres // ignore: cast_nullable_to_non_nullable
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as SignUpAddress,
       email: email == freezed
           ? _value.email
@@ -93,7 +93,7 @@ abstract class _$$_SignUpCopyWith<$Res> implements $SignUpCopyWith<$Res> {
   @override
   $Res call(
       {SignUpCompanyName companyName,
-      SignUpAddress addres,
+      SignUpAddress address,
       SignUpEmail email,
       SignUpPhoneNumber phoneNumber,
       SignUpOutletsNumber outletsNumber,
@@ -112,7 +112,7 @@ class __$$_SignUpCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
   @override
   $Res call({
     Object? companyName = freezed,
-    Object? addres = freezed,
+    Object? address = freezed,
     Object? email = freezed,
     Object? phoneNumber = freezed,
     Object? outletsNumber = freezed,
@@ -123,9 +123,9 @@ class __$$_SignUpCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
               as SignUpCompanyName,
-      addres: addres == freezed
-          ? _value.addres
-          : addres // ignore: cast_nullable_to_non_nullable
+      address: address == freezed
+          ? _value.address
+          : address // ignore: cast_nullable_to_non_nullable
               as SignUpAddress,
       email: email == freezed
           ? _value.email
@@ -152,7 +152,7 @@ class __$$_SignUpCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
 class _$_SignUp implements _SignUp {
   const _$_SignUp(
       {required this.companyName,
-      required this.addres,
+      required this.address,
       required this.email,
       required this.phoneNumber,
       required this.outletsNumber,
@@ -161,7 +161,7 @@ class _$_SignUp implements _SignUp {
   @override
   final SignUpCompanyName companyName;
   @override
-  final SignUpAddress addres;
+  final SignUpAddress address;
   @override
   final SignUpEmail email;
   @override
@@ -173,7 +173,7 @@ class _$_SignUp implements _SignUp {
 
   @override
   String toString() {
-    return 'SignUp(companyName: $companyName, addres: $addres, email: $email, phoneNumber: $phoneNumber, outletsNumber: $outletsNumber, businessType: $businessType)';
+    return 'SignUp(companyName: $companyName, address: $address, email: $email, phoneNumber: $phoneNumber, outletsNumber: $outletsNumber, businessType: $businessType)';
   }
 
   @override
@@ -183,7 +183,7 @@ class _$_SignUp implements _SignUp {
             other is _$_SignUp &&
             const DeepCollectionEquality()
                 .equals(other.companyName, companyName) &&
-            const DeepCollectionEquality().equals(other.addres, addres) &&
+            const DeepCollectionEquality().equals(other.address, address) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
@@ -197,7 +197,7 @@ class _$_SignUp implements _SignUp {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(companyName),
-      const DeepCollectionEquality().hash(addres),
+      const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(outletsNumber),
@@ -212,7 +212,7 @@ class _$_SignUp implements _SignUp {
 abstract class _SignUp implements SignUp {
   const factory _SignUp(
       {required final SignUpCompanyName companyName,
-      required final SignUpAddress addres,
+      required final SignUpAddress address,
       required final SignUpEmail email,
       required final SignUpPhoneNumber phoneNumber,
       required final SignUpOutletsNumber outletsNumber,
@@ -221,7 +221,7 @@ abstract class _SignUp implements SignUp {
   @override
   SignUpCompanyName get companyName => throw _privateConstructorUsedError;
   @override
-  SignUpAddress get addres => throw _privateConstructorUsedError;
+  SignUpAddress get address => throw _privateConstructorUsedError;
   @override
   SignUpEmail get email => throw _privateConstructorUsedError;
   @override

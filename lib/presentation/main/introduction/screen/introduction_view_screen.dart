@@ -8,10 +8,10 @@ class IntroductionViewScreen extends StatefulWidget {
   const IntroductionViewScreen({Key? key}) : super(key: key);
 
   @override
-  _IntroductionViewScreenState createState() => _IntroductionViewScreenState();
+  IntroductionViewScreenState createState() => IntroductionViewScreenState();
 }
 
-class _IntroductionViewScreenState extends State<IntroductionViewScreen> {
+class IntroductionViewScreenState extends State<IntroductionViewScreen> {
   final introKey = GlobalKey<IntroductionScreenState>();
 
   void _onIntroEnd(context) {
@@ -109,15 +109,15 @@ class _IntroductionViewScreenState extends State<IntroductionViewScreen> {
             onPressed: () {
               introKey.currentState?.animateScroll(0);
             },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
             style: ElevatedButton.styleFrom(
               primary: Colors.lightBlue,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
+            ),
+            child: const Text(
+              'FooButton',
+              style: TextStyle(color: Colors.white),
             ),
           ),
           decoration: pageDecoration,

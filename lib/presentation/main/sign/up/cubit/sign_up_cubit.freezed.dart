@@ -18,7 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SignUpState {
   StatusState<FailureExceptions> get status =>
       throw _privateConstructorUsedError;
-  Auth? get auth => throw _privateConstructorUsedError;
+  SignUp get signUp => throw _privateConstructorUsedError;
+  bool get failOrUnit => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignUpStateCopyWith<SignUpState> get copyWith =>
@@ -30,10 +31,11 @@ abstract class $SignUpStateCopyWith<$Res> {
   factory $SignUpStateCopyWith(
           SignUpState value, $Res Function(SignUpState) then) =
       _$SignUpStateCopyWithImpl<$Res>;
-  $Res call({StatusState<FailureExceptions> status, Auth? auth});
+  $Res call(
+      {StatusState<FailureExceptions> status, SignUp signUp, bool failOrUnit});
 
   $StatusStateCopyWith<FailureExceptions, $Res> get status;
-  $AuthCopyWith<$Res>? get auth;
+  $SignUpCopyWith<$Res> get signUp;
 }
 
 /// @nodoc
@@ -47,17 +49,22 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
   @override
   $Res call({
     Object? status = freezed,
-    Object? auth = freezed,
+    Object? signUp = freezed,
+    Object? failOrUnit = freezed,
   }) {
     return _then(_value.copyWith(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as StatusState<FailureExceptions>,
-      auth: auth == freezed
-          ? _value.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as Auth?,
+      signUp: signUp == freezed
+          ? _value.signUp
+          : signUp // ignore: cast_nullable_to_non_nullable
+              as SignUp,
+      failOrUnit: failOrUnit == freezed
+          ? _value.failOrUnit
+          : failOrUnit // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 
@@ -70,13 +77,9 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
   }
 
   @override
-  $AuthCopyWith<$Res>? get auth {
-    if (_value.auth == null) {
-      return null;
-    }
-
-    return $AuthCopyWith<$Res>(_value.auth!, (value) {
-      return _then(_value.copyWith(auth: value));
+  $SignUpCopyWith<$Res> get signUp {
+    return $SignUpCopyWith<$Res>(_value.signUp, (value) {
+      return _then(_value.copyWith(signUp: value));
     });
   }
 }
@@ -88,12 +91,13 @@ abstract class _$$_SignUpStateCopyWith<$Res>
           _$_SignUpState value, $Res Function(_$_SignUpState) then) =
       __$$_SignUpStateCopyWithImpl<$Res>;
   @override
-  $Res call({StatusState<FailureExceptions> status, Auth? auth});
+  $Res call(
+      {StatusState<FailureExceptions> status, SignUp signUp, bool failOrUnit});
 
   @override
   $StatusStateCopyWith<FailureExceptions, $Res> get status;
   @override
-  $AuthCopyWith<$Res>? get auth;
+  $SignUpCopyWith<$Res> get signUp;
 }
 
 /// @nodoc
@@ -109,17 +113,22 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? status = freezed,
-    Object? auth = freezed,
+    Object? signUp = freezed,
+    Object? failOrUnit = freezed,
   }) {
     return _then(_$_SignUpState(
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
               as StatusState<FailureExceptions>,
-      auth: auth == freezed
-          ? _value.auth
-          : auth // ignore: cast_nullable_to_non_nullable
-              as Auth?,
+      signUp: signUp == freezed
+          ? _value.signUp
+          : signUp // ignore: cast_nullable_to_non_nullable
+              as SignUp,
+      failOrUnit: failOrUnit == freezed
+          ? _value.failOrUnit
+          : failOrUnit // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -127,16 +136,19 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
-  const _$_SignUpState({required this.status, required this.auth});
+  const _$_SignUpState(
+      {required this.status, required this.signUp, required this.failOrUnit});
 
   @override
   final StatusState<FailureExceptions> status;
   @override
-  final Auth? auth;
+  final SignUp signUp;
+  @override
+  final bool failOrUnit;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SignUpState(status: $status, auth: $auth)';
+    return 'SignUpState(status: $status, signUp: $signUp, failOrUnit: $failOrUnit)';
   }
 
   @override
@@ -145,7 +157,8 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
     properties
       ..add(DiagnosticsProperty('type', 'SignUpState'))
       ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('auth', auth));
+      ..add(DiagnosticsProperty('signUp', signUp))
+      ..add(DiagnosticsProperty('failOrUnit', failOrUnit));
   }
 
   @override
@@ -154,14 +167,17 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
         (other.runtimeType == runtimeType &&
             other is _$_SignUpState &&
             const DeepCollectionEquality().equals(other.status, status) &&
-            const DeepCollectionEquality().equals(other.auth, auth));
+            const DeepCollectionEquality().equals(other.signUp, signUp) &&
+            const DeepCollectionEquality()
+                .equals(other.failOrUnit, failOrUnit));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(status),
-      const DeepCollectionEquality().hash(auth));
+      const DeepCollectionEquality().hash(signUp),
+      const DeepCollectionEquality().hash(failOrUnit));
 
   @JsonKey(ignore: true)
   @override
@@ -172,13 +188,16 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
 abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {required final StatusState<FailureExceptions> status,
-      required final Auth? auth}) = _$_SignUpState;
+      required final SignUp signUp,
+      required final bool failOrUnit}) = _$_SignUpState;
 
   @override
   StatusState<FailureExceptions> get status =>
       throw _privateConstructorUsedError;
   @override
-  Auth? get auth => throw _privateConstructorUsedError;
+  SignUp get signUp => throw _privateConstructorUsedError;
+  @override
+  bool get failOrUnit => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpStateCopyWith<_$_SignUpState> get copyWith =>

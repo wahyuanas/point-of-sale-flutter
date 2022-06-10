@@ -5,7 +5,7 @@ import 'package:pos/domain/account/object_value/account_object_value.dart';
 import 'package:pos/domain/account/repository/i_account_repository.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 
-class AccountService implements IAccountServise {
+class AccountService implements IAccountService {
   final IAccountRepository accountRepository;
   AccountService({required this.accountRepository});
   @override

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/introduction/screen/introduction_view_screen.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
+import 'package:pos/presentation/main/sign/in_out/screen/sign_in_screen.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
 class MainScreen extends StatefulWidget {
@@ -34,15 +36,7 @@ class MainScreenState extends State<MainScreen> {
         BlocListener<RouteCubit, RouteState>(
           listener: (context, state) {
             state.onRoute?.when(
-              cart: () => Navigator.pushNamed(context, '/cart'),
-              itemDetail: () => Navigator.pushNamed(context, '/itemDetail',
-                  arguments: state.args),
-              categoryItemList: () => Navigator.pushNamed(
-                  context, '/categoryItemList',
-                  arguments: state.args),
-              searchFilterPickUp: () =>
-                  Navigator.pushNamed(context, '/searchFilterPickUp'),
-              login: () => Navigator.pushNamed(context, '/login'),
+              signUp: () => Navigator.pushNamed(context, '/signUp'),
             );
           },
         ),
@@ -51,7 +45,9 @@ class MainScreenState extends State<MainScreen> {
         builder: (context, state) {
           return state.introductionState.maybeWhen(
               unDone: () => const IntroductionViewScreen(),
-              done: () => Container(),
+              done: () => BlocProvider.of<AuthCubit>(context).state.auth == null
+                  ? const SignInScreen()
+                  : Container(),
               orElse: () => Center(
                       child: Container(
                     color: Colors.blue[100],

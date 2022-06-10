@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos/presentation/main/main_screen.dart';
+import 'package:pos/presentation/main/sign/up/screen/sign_up_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -8,6 +9,8 @@ class RouteGenerator {
     switch (settings.name) {
       case '/':
         return MaterialPageRoute(builder: (_) => const MainScreen());
+      case '/signUp':
+        return MaterialPageRoute(builder: (_) => const SignUpScreen());
       // case '/cart':
       //   return MaterialPageRoute(builder: (_) => const CartWidget());
       // case '/itemDetail':

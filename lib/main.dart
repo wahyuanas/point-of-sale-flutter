@@ -8,6 +8,8 @@ import 'package:pos/di/injection.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
+import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
+import 'package:pos/presentation/main/sign/up/cubit/sign_up_cubit.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -54,6 +56,12 @@ class PosAppState extends State<PosApp> {
       ),
       BlocProvider(
         create: (context) => getIt<RouteCubit>(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<SignInCubit>(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<SignUpCubit>(),
       ),
       BlocProvider(create: (context) => getIt<AuthCubit>()),
     ], child: const PosAppView());

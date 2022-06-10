@@ -191,31 +191,31 @@ class _SignInScreenState extends State<SignInScreen> {
                   SliverToBoxAdapter(
                     child: SizedBox(height: size.height * 0.03),
                   ),
-                  const SignInWithWidget(),
-                  const SignInWithMediaSocial()
+                  //const SignInWithWidget(),
+                  //const SignInWithMediaSocial()
                 ],
               ),
-              Positioned(
-                top: 40,
-                left: 10,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      primary: const Color.fromARGB(255, 255, 255, 255),
-                      //onPrimary: const Color.fromARGB(255, 177, 175, 174),
-                      shape: const CircleBorder(),
-                      minimumSize: const Size(35, 35)
-                      //padding: EdgeInsets.fromLTRB(0, 0, 0, 0)
-                      ),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.black,
-                    size: 25,
-                  ),
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                ),
-              ),
+              // Positioned(
+              //   top: 40,
+              //   left: 10,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //         primary: const Color.fromARGB(255, 255, 255, 255),
+              //         //onPrimary: const Color.fromARGB(255, 177, 175, 174),
+              //         shape: const CircleBorder(),
+              //         minimumSize: const Size(35, 35)
+              //         //padding: EdgeInsets.fromLTRB(0, 0, 0, 0)
+              //         ),
+              //     child: const Icon(
+              //       Icons.arrow_back,
+              //       color: Colors.black,
+              //       size: 25,
+              //     ),
+              //     onPressed: () {
+              //       Navigator.pop(context);
+              //     },
+              //   ),
+              // ),
             ],
           )),
     );

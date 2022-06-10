@@ -30,9 +30,9 @@ abstract class ObjectValue<T> implements IValidatable {
   }
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
-    return o is ObjectValue<T> && o.value == value;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is ObjectValue<T> && other.value == value;
   }
 
   @override
