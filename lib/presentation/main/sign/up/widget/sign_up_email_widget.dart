@@ -42,7 +42,7 @@ class _SignUpEmailWidgetState extends State<SignUpEmailWidget> {
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.email_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

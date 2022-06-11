@@ -22,6 +22,10 @@ mixin _$SignUp {
   SignUpPhoneNumber get phoneNumber => throw _privateConstructorUsedError;
   SignUpOutletsNumber get outletsNumber => throw _privateConstructorUsedError;
   SignUpBusinessType get businessType => throw _privateConstructorUsedError;
+  SignUpMainBusinessType get mainBusinessType =>
+      throw _privateConstructorUsedError;
+  SignUpCoreBusinessType get coreBusinessType =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignUpCopyWith<SignUp> get copyWith => throw _privateConstructorUsedError;
@@ -37,7 +41,9 @@ abstract class $SignUpCopyWith<$Res> {
       SignUpEmail email,
       SignUpPhoneNumber phoneNumber,
       SignUpOutletsNumber outletsNumber,
-      SignUpBusinessType businessType});
+      SignUpBusinessType businessType,
+      SignUpMainBusinessType mainBusinessType,
+      SignUpCoreBusinessType coreBusinessType});
 }
 
 /// @nodoc
@@ -56,6 +62,8 @@ class _$SignUpCopyWithImpl<$Res> implements $SignUpCopyWith<$Res> {
     Object? phoneNumber = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_value.copyWith(
       companyName: companyName == freezed
@@ -82,6 +90,14 @@ class _$SignUpCopyWithImpl<$Res> implements $SignUpCopyWith<$Res> {
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as SignUpBusinessType,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as SignUpMainBusinessType,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as SignUpCoreBusinessType,
     ));
   }
 }
@@ -97,7 +113,9 @@ abstract class _$$_SignUpCopyWith<$Res> implements $SignUpCopyWith<$Res> {
       SignUpEmail email,
       SignUpPhoneNumber phoneNumber,
       SignUpOutletsNumber outletsNumber,
-      SignUpBusinessType businessType});
+      SignUpBusinessType businessType,
+      SignUpMainBusinessType mainBusinessType,
+      SignUpCoreBusinessType coreBusinessType});
 }
 
 /// @nodoc
@@ -117,6 +135,8 @@ class __$$_SignUpCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_$_SignUp(
       companyName: companyName == freezed
@@ -143,6 +163,14 @@ class __$$_SignUpCopyWithImpl<$Res> extends _$SignUpCopyWithImpl<$Res>
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as SignUpBusinessType,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as SignUpMainBusinessType,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as SignUpCoreBusinessType,
     ));
   }
 }
@@ -156,7 +184,9 @@ class _$_SignUp implements _SignUp {
       required this.email,
       required this.phoneNumber,
       required this.outletsNumber,
-      required this.businessType});
+      required this.businessType,
+      required this.mainBusinessType,
+      required this.coreBusinessType});
 
   @override
   final SignUpCompanyName companyName;
@@ -170,10 +200,14 @@ class _$_SignUp implements _SignUp {
   final SignUpOutletsNumber outletsNumber;
   @override
   final SignUpBusinessType businessType;
+  @override
+  final SignUpMainBusinessType mainBusinessType;
+  @override
+  final SignUpCoreBusinessType coreBusinessType;
 
   @override
   String toString() {
-    return 'SignUp(companyName: $companyName, address: $address, email: $email, phoneNumber: $phoneNumber, outletsNumber: $outletsNumber, businessType: $businessType)';
+    return 'SignUp(companyName: $companyName, address: $address, email: $email, phoneNumber: $phoneNumber, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
@@ -190,7 +224,11 @@ class _$_SignUp implements _SignUp {
             const DeepCollectionEquality()
                 .equals(other.outletsNumber, outletsNumber) &&
             const DeepCollectionEquality()
-                .equals(other.businessType, businessType));
+                .equals(other.businessType, businessType) &&
+            const DeepCollectionEquality()
+                .equals(other.mainBusinessType, mainBusinessType) &&
+            const DeepCollectionEquality()
+                .equals(other.coreBusinessType, coreBusinessType));
   }
 
   @override
@@ -201,7 +239,9 @@ class _$_SignUp implements _SignUp {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(outletsNumber),
-      const DeepCollectionEquality().hash(businessType));
+      const DeepCollectionEquality().hash(businessType),
+      const DeepCollectionEquality().hash(mainBusinessType),
+      const DeepCollectionEquality().hash(coreBusinessType));
 
   @JsonKey(ignore: true)
   @override
@@ -216,7 +256,9 @@ abstract class _SignUp implements SignUp {
       required final SignUpEmail email,
       required final SignUpPhoneNumber phoneNumber,
       required final SignUpOutletsNumber outletsNumber,
-      required final SignUpBusinessType businessType}) = _$_SignUp;
+      required final SignUpBusinessType businessType,
+      required final SignUpMainBusinessType mainBusinessType,
+      required final SignUpCoreBusinessType coreBusinessType}) = _$_SignUp;
 
   @override
   SignUpCompanyName get companyName => throw _privateConstructorUsedError;
@@ -230,6 +272,12 @@ abstract class _SignUp implements SignUp {
   SignUpOutletsNumber get outletsNumber => throw _privateConstructorUsedError;
   @override
   SignUpBusinessType get businessType => throw _privateConstructorUsedError;
+  @override
+  SignUpMainBusinessType get mainBusinessType =>
+      throw _privateConstructorUsedError;
+  @override
+  SignUpCoreBusinessType get coreBusinessType =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpCopyWith<_$_SignUp> get copyWith =>

@@ -13,7 +13,9 @@ class SignUp with _$SignUp {
       required SignUpEmail email,
       required SignUpPhoneNumber phoneNumber,
       required SignUpOutletsNumber outletsNumber,
-      required SignUpBusinessType businessType}) = _SignUp;
+      required SignUpBusinessType businessType,
+      required SignUpMainBusinessType mainBusinessType,
+      required SignUpCoreBusinessType coreBusinessType}) = _SignUp;
 
   factory SignUp.empty() => SignUp(
         companyName: SignUpCompanyName(''),
@@ -21,6 +23,8 @@ class SignUp with _$SignUp {
         email: SignUpEmail(''),
         address: SignUpAddress(''),
         businessType: SignUpBusinessType(''),
+        mainBusinessType: SignUpMainBusinessType(null),
+        coreBusinessType: SignUpCoreBusinessType(null),
         outletsNumber: SignUpOutletsNumber(''),
       );
 }
@@ -32,7 +36,17 @@ extension SignUpX on SignUp {
         .andThen(phoneNumber.failureOrUnit)
         .andThen(address.failureOrUnit)
         .andThen(businessType.failureOrUnit)
+        .andThen(mainBusinessType.failureOrUnit)
+        .andThen(coreBusinessType.failureOrUnit)
         .andThen(outletsNumber.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }
+
+  // Option<ObjectValueFailure> get failureOptionx {
+  //   return mainBusinessType.failureOrUnit.fold((l) => some(l), (r) => none());
+  // }
+
+  // Option<ObjectValueFailure> get failureOptionc {
+  //   return coreBusinessType.failureOrUnit.fold((l) => some(l), (r) => none());
+  // }
 }

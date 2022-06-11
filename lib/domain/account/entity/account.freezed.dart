@@ -20,13 +20,15 @@ Account _$AccountFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Account {
-  int? get id => throw _privateConstructorUsedError;
-  String? get companyName => throw _privateConstructorUsedError;
-  String? get phoneNumber => throw _privateConstructorUsedError;
-  String? get email => throw _privateConstructorUsedError;
-  String? get address => throw _privateConstructorUsedError;
-  int? get outletsNumber => throw _privateConstructorUsedError;
-  int? get businessType => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get companyName => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
+  int get outletsNumber => throw _privateConstructorUsedError;
+  int get businessType => throw _privateConstructorUsedError;
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  String? get coreBusinessType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,13 +40,15 @@ abstract class $AccountCopyWith<$Res> {
   factory $AccountCopyWith(Account value, $Res Function(Account) then) =
       _$AccountCopyWithImpl<$Res>;
   $Res call(
-      {int? id,
-      String? companyName,
-      String? phoneNumber,
-      String? email,
-      String? address,
-      int? outletsNumber,
-      int? businessType});
+      {int id,
+      String companyName,
+      String phoneNumber,
+      String email,
+      String address,
+      int outletsNumber,
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -64,36 +68,46 @@ class _$AccountCopyWithImpl<$Res> implements $AccountCopyWith<$Res> {
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       companyName: companyName == freezed
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       outletsNumber: outletsNumber == freezed
           ? _value.outletsNumber
           : outletsNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       businessType: businessType == freezed
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
+              as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
               as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -105,13 +119,15 @@ abstract class _$$_AccountCopyWith<$Res> implements $AccountCopyWith<$Res> {
       __$$_AccountCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int? id,
-      String? companyName,
-      String? phoneNumber,
-      String? email,
-      String? address,
-      int? outletsNumber,
-      int? businessType});
+      {int id,
+      String companyName,
+      String phoneNumber,
+      String email,
+      String address,
+      int outletsNumber,
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -132,36 +148,46 @@ class __$$_AccountCopyWithImpl<$Res> extends _$AccountCopyWithImpl<$Res>
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_$_Account(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       companyName: companyName == freezed
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       phoneNumber: phoneNumber == freezed
           ? _value.phoneNumber
           : phoneNumber // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       address: address == freezed
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
       outletsNumber: outletsNumber == freezed
           ? _value.outletsNumber
           : outletsNumber // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
       businessType: businessType == freezed
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
+              as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
               as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -176,29 +202,35 @@ class _$_Account implements _Account {
       required this.email,
       required this.address,
       required this.outletsNumber,
-      required this.businessType});
+      required this.businessType,
+      required this.mainBusinessType,
+      required this.coreBusinessType});
 
   factory _$_Account.fromJson(Map<String, dynamic> json) =>
       _$$_AccountFromJson(json);
 
   @override
-  final int? id;
+  final int id;
   @override
-  final String? companyName;
+  final String companyName;
   @override
-  final String? phoneNumber;
+  final String phoneNumber;
   @override
-  final String? email;
+  final String email;
   @override
-  final String? address;
+  final String address;
   @override
-  final int? outletsNumber;
+  final int outletsNumber;
   @override
-  final int? businessType;
+  final int businessType;
+  @override
+  final int? mainBusinessType;
+  @override
+  final String? coreBusinessType;
 
   @override
   String toString() {
-    return 'Account(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType)';
+    return 'Account(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
@@ -216,7 +248,11 @@ class _$_Account implements _Account {
             const DeepCollectionEquality()
                 .equals(other.outletsNumber, outletsNumber) &&
             const DeepCollectionEquality()
-                .equals(other.businessType, businessType));
+                .equals(other.businessType, businessType) &&
+            const DeepCollectionEquality()
+                .equals(other.mainBusinessType, mainBusinessType) &&
+            const DeepCollectionEquality()
+                .equals(other.coreBusinessType, coreBusinessType));
   }
 
   @JsonKey(ignore: true)
@@ -229,7 +265,9 @@ class _$_Account implements _Account {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(outletsNumber),
-      const DeepCollectionEquality().hash(businessType));
+      const DeepCollectionEquality().hash(businessType),
+      const DeepCollectionEquality().hash(mainBusinessType),
+      const DeepCollectionEquality().hash(coreBusinessType));
 
   @JsonKey(ignore: true)
   @override
@@ -244,30 +282,36 @@ class _$_Account implements _Account {
 
 abstract class _Account implements Account {
   const factory _Account(
-      {required final int? id,
-      required final String? companyName,
-      required final String? phoneNumber,
-      required final String? email,
-      required final String? address,
-      required final int? outletsNumber,
-      required final int? businessType}) = _$_Account;
+      {required final int id,
+      required final String companyName,
+      required final String phoneNumber,
+      required final String email,
+      required final String address,
+      required final int outletsNumber,
+      required final int businessType,
+      required final int? mainBusinessType,
+      required final String? coreBusinessType}) = _$_Account;
 
   factory _Account.fromJson(Map<String, dynamic> json) = _$_Account.fromJson;
 
   @override
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @override
-  String? get companyName => throw _privateConstructorUsedError;
+  String get companyName => throw _privateConstructorUsedError;
   @override
-  String? get phoneNumber => throw _privateConstructorUsedError;
+  String get phoneNumber => throw _privateConstructorUsedError;
   @override
-  String? get email => throw _privateConstructorUsedError;
+  String get email => throw _privateConstructorUsedError;
   @override
-  String? get address => throw _privateConstructorUsedError;
+  String get address => throw _privateConstructorUsedError;
   @override
-  int? get outletsNumber => throw _privateConstructorUsedError;
+  int get outletsNumber => throw _privateConstructorUsedError;
   @override
-  int? get businessType => throw _privateConstructorUsedError;
+  int get businessType => throw _privateConstructorUsedError;
+  @override
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  @override
+  String? get coreBusinessType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_AccountCopyWith<_$_Account> get copyWith =>

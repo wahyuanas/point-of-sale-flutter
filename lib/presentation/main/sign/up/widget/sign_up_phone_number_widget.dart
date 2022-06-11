@@ -43,11 +43,11 @@ class _SignUpPhoneNumberWidgetState extends State<SignUpPhoneNumberWidget> {
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.phone_android_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Nomor Handphone",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

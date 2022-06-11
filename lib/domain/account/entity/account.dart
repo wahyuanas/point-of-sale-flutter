@@ -7,13 +7,15 @@ part 'account.g.dart';
 @freezed
 class Account with _$Account implements IEntity {
   const factory Account(
-      {required int? id,
-      required String? companyName,
-      required String? phoneNumber,
-      required String? email,
-      required String? address,
-      required int? outletsNumber,
-      required int? businessType}) = _Account;
+      {required int id,
+      required String companyName,
+      required String phoneNumber,
+      required String email,
+      required String address,
+      required int outletsNumber,
+      required int businessType,
+      required int? mainBusinessType,
+      required String? coreBusinessType}) = _Account;
 
   // factory Account.empty() => const Account(
   //     id: null,

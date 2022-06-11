@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SignInState {
-  dynamic get status => throw _privateConstructorUsedError;
+  StateStatus<FailureExceptions, Account> get status =>
+      throw _privateConstructorUsedError;
   Auth? get auth => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,8 +30,9 @@ abstract class $SignInStateCopyWith<$Res> {
   factory $SignInStateCopyWith(
           SignInState value, $Res Function(SignInState) then) =
       _$SignInStateCopyWithImpl<$Res>;
-  $Res call({dynamic status, Auth? auth});
+  $Res call({StateStatus<FailureExceptions, Account> status, Auth? auth});
 
+  $StateStatusCopyWith<FailureExceptions, Account, $Res> get status;
   $AuthCopyWith<$Res>? get auth;
 }
 
@@ -51,12 +53,20 @@ class _$SignInStateCopyWithImpl<$Res> implements $SignInStateCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as StateStatus<FailureExceptions, Account>,
       auth: auth == freezed
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
               as Auth?,
     ));
+  }
+
+  @override
+  $StateStatusCopyWith<FailureExceptions, Account, $Res> get status {
+    return $StateStatusCopyWith<FailureExceptions, Account, $Res>(_value.status,
+        (value) {
+      return _then(_value.copyWith(status: value));
+    });
   }
 
   @override
@@ -78,8 +88,10 @@ abstract class _$$_SignInStateCopyWith<$Res>
           _$_SignInState value, $Res Function(_$_SignInState) then) =
       __$$_SignInStateCopyWithImpl<$Res>;
   @override
-  $Res call({dynamic status, Auth? auth});
+  $Res call({StateStatus<FailureExceptions, Account> status, Auth? auth});
 
+  @override
+  $StateStatusCopyWith<FailureExceptions, Account, $Res> get status;
   @override
   $AuthCopyWith<$Res>? get auth;
 }
@@ -100,7 +112,10 @@ class __$$_SignInStateCopyWithImpl<$Res> extends _$SignInStateCopyWithImpl<$Res>
     Object? auth = freezed,
   }) {
     return _then(_$_SignInState(
-      status: status == freezed ? _value.status : status,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as StateStatus<FailureExceptions, Account>,
       auth: auth == freezed
           ? _value.auth
           : auth // ignore: cast_nullable_to_non_nullable
@@ -115,7 +130,7 @@ class _$_SignInState with DiagnosticableTreeMixin implements _SignInState {
   const _$_SignInState({required this.status, required this.auth});
 
   @override
-  final dynamic status;
+  final StateStatus<FailureExceptions, Account> status;
   @override
   final Auth? auth;
 
@@ -156,11 +171,12 @@ class _$_SignInState with DiagnosticableTreeMixin implements _SignInState {
 
 abstract class _SignInState implements SignInState {
   const factory _SignInState(
-      {required final dynamic status,
+      {required final StateStatus<FailureExceptions, Account> status,
       required final Auth? auth}) = _$_SignInState;
 
   @override
-  dynamic get status => throw _privateConstructorUsedError;
+  StateStatus<FailureExceptions, Account> get status =>
+      throw _privateConstructorUsedError;
   @override
   Auth? get auth => throw _privateConstructorUsedError;
   @override

@@ -16,7 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$SignUpState {
-  dynamic get status => throw _privateConstructorUsedError;
+  StateStatus<FailureExceptions, Account?> get status =>
+      throw _privateConstructorUsedError;
   SignUp get signUp => throw _privateConstructorUsedError;
   bool get failOrUnit => throw _privateConstructorUsedError;
 
@@ -30,8 +31,12 @@ abstract class $SignUpStateCopyWith<$Res> {
   factory $SignUpStateCopyWith(
           SignUpState value, $Res Function(SignUpState) then) =
       _$SignUpStateCopyWithImpl<$Res>;
-  $Res call({dynamic status, SignUp signUp, bool failOrUnit});
+  $Res call(
+      {StateStatus<FailureExceptions, Account?> status,
+      SignUp signUp,
+      bool failOrUnit});
 
+  $StateStatusCopyWith<FailureExceptions, Account?, $Res> get status;
   $SignUpCopyWith<$Res> get signUp;
 }
 
@@ -53,7 +58,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
       status: status == freezed
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as StateStatus<FailureExceptions, Account?>,
       signUp: signUp == freezed
           ? _value.signUp
           : signUp // ignore: cast_nullable_to_non_nullable
@@ -63,6 +68,14 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           : failOrUnit // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  @override
+  $StateStatusCopyWith<FailureExceptions, Account?, $Res> get status {
+    return $StateStatusCopyWith<FailureExceptions, Account?, $Res>(
+        _value.status, (value) {
+      return _then(_value.copyWith(status: value));
+    });
   }
 
   @override
@@ -80,8 +93,13 @@ abstract class _$$_SignUpStateCopyWith<$Res>
           _$_SignUpState value, $Res Function(_$_SignUpState) then) =
       __$$_SignUpStateCopyWithImpl<$Res>;
   @override
-  $Res call({dynamic status, SignUp signUp, bool failOrUnit});
+  $Res call(
+      {StateStatus<FailureExceptions, Account?> status,
+      SignUp signUp,
+      bool failOrUnit});
 
+  @override
+  $StateStatusCopyWith<FailureExceptions, Account?, $Res> get status;
   @override
   $SignUpCopyWith<$Res> get signUp;
 }
@@ -103,7 +121,10 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? failOrUnit = freezed,
   }) {
     return _then(_$_SignUpState(
-      status: status == freezed ? _value.status : status,
+      status: status == freezed
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as StateStatus<FailureExceptions, Account?>,
       signUp: signUp == freezed
           ? _value.signUp
           : signUp // ignore: cast_nullable_to_non_nullable
@@ -123,7 +144,7 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
       {required this.status, required this.signUp, required this.failOrUnit});
 
   @override
-  final dynamic status;
+  final StateStatus<FailureExceptions, Account?> status;
   @override
   final SignUp signUp;
   @override
@@ -170,12 +191,13 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
 
 abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
-      {required final dynamic status,
+      {required final StateStatus<FailureExceptions, Account?> status,
       required final SignUp signUp,
       required final bool failOrUnit}) = _$_SignUpState;
 
   @override
-  dynamic get status => throw _privateConstructorUsedError;
+  StateStatus<FailureExceptions, Account?> get status =>
+      throw _privateConstructorUsedError;
   @override
   SignUp get signUp => throw _privateConstructorUsedError;
   @override

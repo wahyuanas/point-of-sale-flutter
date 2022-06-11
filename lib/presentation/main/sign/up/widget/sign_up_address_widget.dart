@@ -42,7 +42,7 @@ class _SignUpAddressWidgetState extends State<SignUpAddressWidget> {
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.home_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

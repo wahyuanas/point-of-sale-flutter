@@ -39,11 +39,14 @@ class _SignUpOutletsNumberWidgetState extends State<SignUpOutletsNumberWidget> {
                     ? state.signUp.outletsNumber.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            notIntField: (v) => "*wajib berupa angka",
+                            noSpaceAllowed: (v) =>
+                                "*tidak boleh mengandung spasi",
                             orElse: () => null),
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.outlet_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

@@ -19,32 +19,38 @@ mixin _$OnRouteState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() signUp,
+    required TResult Function() signUpNotif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signUp,
+    TResult Function()? signUpNotif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUp,
+    TResult Function()? signUpNotif,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUp value) signUp,
+    required TResult Function(_SignUpNotif value) signUpNotif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -111,6 +117,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() signUp,
+    required TResult Function() signUpNotif,
   }) {
     return signUp();
   }
@@ -119,6 +126,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signUp,
+    TResult Function()? signUpNotif,
   }) {
     return signUp?.call();
   }
@@ -127,6 +135,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUp,
+    TResult Function()? signUpNotif,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -139,6 +148,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUp value) signUp,
+    required TResult Function(_SignUpNotif value) signUpNotif,
   }) {
     return signUp(this);
   }
@@ -147,6 +157,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
   }) {
     return signUp?.call(this);
   }
@@ -155,6 +166,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -166,4 +178,115 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
 
 abstract class _SignUp implements OnRouteState {
   const factory _SignUp() = _$_SignUp;
+}
+
+/// @nodoc
+abstract class _$$_SignUpNotifCopyWith<$Res> {
+  factory _$$_SignUpNotifCopyWith(
+          _$_SignUpNotif value, $Res Function(_$_SignUpNotif) then) =
+      __$$_SignUpNotifCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_SignUpNotifCopyWithImpl<$Res>
+    extends _$OnRouteStateCopyWithImpl<$Res>
+    implements _$$_SignUpNotifCopyWith<$Res> {
+  __$$_SignUpNotifCopyWithImpl(
+      _$_SignUpNotif _value, $Res Function(_$_SignUpNotif) _then)
+      : super(_value, (v) => _then(v as _$_SignUpNotif));
+
+  @override
+  _$_SignUpNotif get _value => super._value as _$_SignUpNotif;
+}
+
+/// @nodoc
+
+class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
+  const _$_SignUpNotif();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnRouteState.signUpNotif()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'OnRouteState.signUpNotif'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_SignUpNotif);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUp,
+    required TResult Function() signUpNotif,
+  }) {
+    return signUpNotif();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUp,
+    TResult Function()? signUpNotif,
+  }) {
+    return signUpNotif?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUp,
+    TResult Function()? signUpNotif,
+    required TResult orElse(),
+  }) {
+    if (signUpNotif != null) {
+      return signUpNotif();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignUp value) signUp,
+    required TResult Function(_SignUpNotif value) signUpNotif,
+  }) {
+    return signUpNotif(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
+  }) {
+    return signUpNotif?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
+    required TResult orElse(),
+  }) {
+    if (signUpNotif != null) {
+      return signUpNotif(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SignUpNotif implements OnRouteState {
+  const factory _SignUpNotif() = _$_SignUpNotif;
 }

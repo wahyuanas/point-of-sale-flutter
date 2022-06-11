@@ -14,6 +14,8 @@ _$_DtoAccountRequest _$$_DtoAccountRequestFromJson(Map<String, dynamic> json) =>
       address: json['address'] as String,
       outletsNumber: json['outletsNumber'] as int,
       businessType: json['businessType'] as int,
+      mainBusinessType: json['mainBusinessType'] as int?,
+      coreBusinessType: json['coreBusinessType'] as String?,
     );
 
 Map<String, dynamic> _$$_DtoAccountRequestToJson(
@@ -25,6 +27,8 @@ Map<String, dynamic> _$$_DtoAccountRequestToJson(
       'address': instance.address,
       'outletsNumber': instance.outletsNumber,
       'businessType': instance.businessType,
+      'mainBusinessType': instance.mainBusinessType,
+      'coreBusinessType': instance.coreBusinessType,
     };
 
 _$_DtoAccountResponse _$$_DtoAccountResponseFromJson(
@@ -37,6 +41,8 @@ _$_DtoAccountResponse _$$_DtoAccountResponseFromJson(
       address: json['address'] as String,
       outletsNumber: json['outletsNumber'] as int,
       businessType: json['businessType'] as int,
+      mainBusinessType: json['mainBusinessType'] as int?,
+      coreBusinessType: json['coreBusinessType'] as String?,
     );
 
 Map<String, dynamic> _$$_DtoAccountResponseToJson(
@@ -49,4 +55,6 @@ Map<String, dynamic> _$$_DtoAccountResponseToJson(
       'address': instance.address,
       'outletsNumber': instance.outletsNumber,
       'businessType': instance.businessType,
+      'mainBusinessType': instance.mainBusinessType,
+      'coreBusinessType': instance.coreBusinessType,
     };

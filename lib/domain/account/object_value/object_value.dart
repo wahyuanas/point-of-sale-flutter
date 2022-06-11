@@ -53,7 +53,7 @@ class SignUpOutletsNumber extends ObjectValue<int> {
   final Either<SignUpObjectValueFailure<String, String>, int> value;
 
   factory SignUpOutletsNumber(String input) {
-    return SignUpOutletsNumber._(validateFieldIntNotEmpty(input));
+    return SignUpOutletsNumber._(validateFieldNotIntAndNotEmpty(input));
   }
 
   const SignUpOutletsNumber._(this.value);
@@ -64,8 +64,30 @@ class SignUpBusinessType extends ObjectValue<int> {
   final Either<SignUpObjectValueFailure<String, String>, int> value;
 
   factory SignUpBusinessType(String input) {
-    return SignUpBusinessType._(validateFieldIntNotEmpty(input));
+    return SignUpBusinessType._(validateFieldNotIntAndNotEmpty(input));
   }
 
   const SignUpBusinessType._(this.value);
+}
+
+class SignUpMainBusinessType extends ObjectValue<int?> {
+  @override
+  final Either<SignUpObjectValueFailure<String, String>, int?> value;
+
+  factory SignUpMainBusinessType(String? input) {
+    return SignUpMainBusinessType._(validateFieldNullNotIntAndNotEmpty(input));
+  }
+
+  const SignUpMainBusinessType._(this.value);
+}
+
+class SignUpCoreBusinessType extends ObjectValue<String?> {
+  @override
+  final Either<SignUpObjectValueFailure<String, String>, String?> value;
+
+  factory SignUpCoreBusinessType(String? input) {
+    return SignUpCoreBusinessType._(validateFieldNullNotEmpty(input));
+  }
+
+  const SignUpCoreBusinessType._(this.value);
 }

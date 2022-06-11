@@ -5,6 +5,8 @@ import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/up/cubit/sign_up_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
+import 'package:pos/routes/cubit/route_cubit.dart';
+import 'package:pos/routes/on_state/on_route_state.dart';
 
 import '../delegate/sign_up_delegate_header.dart';
 import '../widget/sign_up_export_widget.dart';
@@ -40,10 +42,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
             success: (r) async {
               await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!)
-                  .onModalContent("Anda Berhasil SignUp");
+                  .onModalContent("Anda Berhasil Sign Up");
               await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!).onModalPop();
               Navigator.of(context3!).pop();
+              BlocProvider.of<RouteCubit>(context3!)
+                  .onRoute(const OnRouteState.signUpNotif(), r);
+
               // BlocProvider.of<ModalCubit>(modalContext!)
               //     .onModalPush("Anda Berhasil SignUp");
               // //_showDialog(context);
@@ -173,7 +178,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   // ),
 
                   SliverPersistentHeader(
-                    pinned: true,
+                    //pinned: true,
                     //floating: true,
                     delegate: SignUpDelegateHeader(),
                   ),
@@ -184,7 +189,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                   const SignUpAddressWidget(),
                   const SignUpPhoneNumberWidget(),
                   const SignUpEmailWidget(),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(height: 20),
+                  ),
                   const SignUpBusinessTypeWidget(),
+                  const SliverToBoxAdapter(
+                    child: SizedBox(height: 20),
+                  ),
+                  const SignUpMainBusinessTypeWidget(),
+                  const SignUpCoreBusinessTypeWidget(),
                   const SignUpOutletsNumberWidget(),
                   SliverToBoxAdapter(
                     child: SizedBox(height: size.height * 0.03),

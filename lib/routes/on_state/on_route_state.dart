@@ -6,4 +6,5 @@ part 'on_route_state.freezed.dart';
 @freezed
 class OnRouteState with _$OnRouteState {
   const factory OnRouteState.signUp() = _SignUp;
+  const factory OnRouteState.signUpNotif() = _SignUpNotif;
 }

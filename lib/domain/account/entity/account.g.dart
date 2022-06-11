@@ -7,13 +7,15 @@ part of 'account.dart';
 // **************************************************************************
 
 _$_Account _$$_AccountFromJson(Map<String, dynamic> json) => _$_Account(
-      id: json['id'] as int?,
-      companyName: json['companyName'] as String?,
-      phoneNumber: json['phoneNumber'] as String?,
-      email: json['email'] as String?,
-      address: json['address'] as String?,
-      outletsNumber: json['outletsNumber'] as int?,
-      businessType: json['businessType'] as int?,
+      id: json['id'] as int,
+      companyName: json['companyName'] as String,
+      phoneNumber: json['phoneNumber'] as String,
+      email: json['email'] as String,
+      address: json['address'] as String,
+      outletsNumber: json['outletsNumber'] as int,
+      businessType: json['businessType'] as int,
+      mainBusinessType: json['mainBusinessType'] as int?,
+      coreBusinessType: json['coreBusinessType'] as String?,
     );
 
 Map<String, dynamic> _$$_AccountToJson(_$_Account instance) =>
@@ -25,4 +27,6 @@ Map<String, dynamic> _$$_AccountToJson(_$_Account instance) =>
       'address': instance.address,
       'outletsNumber': instance.outletsNumber,
       'businessType': instance.businessType,
+      'mainBusinessType': instance.mainBusinessType,
+      'coreBusinessType': instance.coreBusinessType,
     };

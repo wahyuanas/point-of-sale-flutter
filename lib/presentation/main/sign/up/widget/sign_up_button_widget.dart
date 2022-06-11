@@ -48,7 +48,7 @@ class SignUpButtonWidget extends StatelessWidget {
               BlocProvider.of<SignUpCubit>(context).onSignUpSubmit();
             },
             child: const Text(
-              "SignIn",
+              "Sign Up",
               style: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w400,

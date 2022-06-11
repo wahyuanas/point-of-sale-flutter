@@ -21,18 +21,24 @@ mixin _$SignUpObjectValueFailure<T, E> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) noSpaceAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -40,18 +46,24 @@ mixin _$SignUpObjectValueFailure<T, E> {
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(InvalidEmail<T, E> value) invalidEmail,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,6 +185,8 @@ class _$EmptyField<T, E>
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) noSpaceAllowed,
   }) {
     return emptyField(failedValue);
   }
@@ -182,6 +196,8 @@ class _$EmptyField<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
   }) {
     return emptyField?.call(failedValue);
   }
@@ -191,6 +207,8 @@ class _$EmptyField<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
     required TResult orElse(),
   }) {
     if (emptyField != null) {
@@ -204,6 +222,8 @@ class _$EmptyField<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(InvalidEmail<T, E> value) invalidEmail,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
   }) {
     return emptyField(this);
   }
@@ -213,6 +233,8 @@ class _$EmptyField<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
   }) {
     return emptyField?.call(this);
   }
@@ -222,6 +244,8 @@ class _$EmptyField<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
     required TResult orElse(),
   }) {
     if (emptyField != null) {
@@ -324,6 +348,8 @@ class _$InvalidEmail<T, E>
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) noSpaceAllowed,
   }) {
     return invalidEmail(failedValue);
   }
@@ -333,6 +359,8 @@ class _$InvalidEmail<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
   }) {
     return invalidEmail?.call(failedValue);
   }
@@ -342,6 +370,8 @@ class _$InvalidEmail<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -355,6 +385,8 @@ class _$InvalidEmail<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(InvalidEmail<T, E> value) invalidEmail,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
   }) {
     return invalidEmail(this);
   }
@@ -364,6 +396,8 @@ class _$InvalidEmail<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
   }) {
     return invalidEmail?.call(this);
   }
@@ -373,6 +407,8 @@ class _$InvalidEmail<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
     required TResult orElse(),
   }) {
     if (invalidEmail != null) {
@@ -391,5 +427,332 @@ abstract class InvalidEmail<T, E> implements SignUpObjectValueFailure<T, E> {
   @override
   @JsonKey(ignore: true)
   _$$InvalidEmailCopyWith<T, E, _$InvalidEmail<T, E>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotIntFieldCopyWith<T, E, $Res>
+    implements $SignUpObjectValueFailureCopyWith<T, E, $Res> {
+  factory _$$NotIntFieldCopyWith(
+          _$NotIntField<T, E> value, $Res Function(_$NotIntField<T, E>) then) =
+      __$$NotIntFieldCopyWithImpl<T, E, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$NotIntFieldCopyWithImpl<T, E, $Res>
+    extends _$SignUpObjectValueFailureCopyWithImpl<T, E, $Res>
+    implements _$$NotIntFieldCopyWith<T, E, $Res> {
+  __$$NotIntFieldCopyWithImpl(
+      _$NotIntField<T, E> _value, $Res Function(_$NotIntField<T, E>) _then)
+      : super(_value, (v) => _then(v as _$NotIntField<T, E>));
+
+  @override
+  _$NotIntField<T, E> get _value => super._value as _$NotIntField<T, E>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$NotIntField<T, E>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NotIntField<T, E>
+    with DiagnosticableTreeMixin
+    implements NotIntField<T, E> {
+  const _$NotIntField({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SignUpObjectValueFailure<$T, $E>.notIntField(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignUpObjectValueFailure<$T, $E>.notIntField'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotIntField<T, E> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$NotIntFieldCopyWith<T, E, _$NotIntField<T, E>> get copyWith =>
+      __$$NotIntFieldCopyWithImpl<T, E, _$NotIntField<T, E>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) noSpaceAllowed,
+  }) {
+    return notIntField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+  }) {
+    return notIntField?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+    required TResult orElse(),
+  }) {
+    if (notIntField != null) {
+      return notIntField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyField<T, E> value) emptyField,
+    required TResult Function(InvalidEmail<T, E> value) invalidEmail,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
+  }) {
+    return notIntField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+  }) {
+    return notIntField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+    required TResult orElse(),
+  }) {
+    if (notIntField != null) {
+      return notIntField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotIntField<T, E> implements SignUpObjectValueFailure<T, E> {
+  const factory NotIntField({required final T failedValue}) =
+      _$NotIntField<T, E>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotIntFieldCopyWith<T, E, _$NotIntField<T, E>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NoSpaceAllowedCopyWith<T, E, $Res>
+    implements $SignUpObjectValueFailureCopyWith<T, E, $Res> {
+  factory _$$NoSpaceAllowedCopyWith(_$NoSpaceAllowed<T, E> value,
+          $Res Function(_$NoSpaceAllowed<T, E>) then) =
+      __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>
+    extends _$SignUpObjectValueFailureCopyWithImpl<T, E, $Res>
+    implements _$$NoSpaceAllowedCopyWith<T, E, $Res> {
+  __$$NoSpaceAllowedCopyWithImpl(_$NoSpaceAllowed<T, E> _value,
+      $Res Function(_$NoSpaceAllowed<T, E>) _then)
+      : super(_value, (v) => _then(v as _$NoSpaceAllowed<T, E>));
+
+  @override
+  _$NoSpaceAllowed<T, E> get _value => super._value as _$NoSpaceAllowed<T, E>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$NoSpaceAllowed<T, E>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NoSpaceAllowed<T, E>
+    with DiagnosticableTreeMixin
+    implements NoSpaceAllowed<T, E> {
+  const _$NoSpaceAllowed({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SignUpObjectValueFailure<$T, $E>.noSpaceAllowed(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SignUpObjectValueFailure<$T, $E>.noSpaceAllowed'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NoSpaceAllowed<T, E> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$NoSpaceAllowedCopyWith<T, E, _$NoSpaceAllowed<T, E>> get copyWith =>
+      __$$NoSpaceAllowedCopyWithImpl<T, E, _$NoSpaceAllowed<T, E>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue) invalidEmail,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) noSpaceAllowed,
+  }) {
+    return noSpaceAllowed(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+  }) {
+    return noSpaceAllowed?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? invalidEmail,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+    required TResult orElse(),
+  }) {
+    if (noSpaceAllowed != null) {
+      return noSpaceAllowed(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyField<T, E> value) emptyField,
+    required TResult Function(InvalidEmail<T, E> value) invalidEmail,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
+  }) {
+    return noSpaceAllowed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+  }) {
+    return noSpaceAllowed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(InvalidEmail<T, E> value)? invalidEmail,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+    required TResult orElse(),
+  }) {
+    if (noSpaceAllowed != null) {
+      return noSpaceAllowed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NoSpaceAllowed<T, E> implements SignUpObjectValueFailure<T, E> {
+  const factory NoSpaceAllowed({required final T failedValue}) =
+      _$NoSpaceAllowed<T, E>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$NoSpaceAllowedCopyWith<T, E, _$NoSpaceAllowed<T, E>> get copyWith =>
       throw _privateConstructorUsedError;
 }

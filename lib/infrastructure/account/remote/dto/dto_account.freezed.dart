@@ -26,6 +26,8 @@ mixin _$DtoAccountRequest {
   String get address => throw _privateConstructorUsedError;
   int get outletsNumber => throw _privateConstructorUsedError;
   int get businessType => throw _privateConstructorUsedError;
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  String? get coreBusinessType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -44,7 +46,9 @@ abstract class $DtoAccountRequestCopyWith<$Res> {
       String email,
       String address,
       int outletsNumber,
-      int businessType});
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -64,6 +68,8 @@ class _$DtoAccountRequestCopyWithImpl<$Res>
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_value.copyWith(
       companyName: companyName == freezed
@@ -90,6 +96,14 @@ class _$DtoAccountRequestCopyWithImpl<$Res>
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -107,7 +121,9 @@ abstract class _$$_DtoAccountRequestCopyWith<$Res>
       String email,
       String address,
       int outletsNumber,
-      int businessType});
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -129,6 +145,8 @@ class __$$_DtoAccountRequestCopyWithImpl<$Res>
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_$_DtoAccountRequest(
       companyName: companyName == freezed
@@ -155,6 +173,14 @@ class __$$_DtoAccountRequestCopyWithImpl<$Res>
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -168,7 +194,9 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
       required this.email,
       required this.address,
       required this.outletsNumber,
-      required this.businessType});
+      required this.businessType,
+      required this.mainBusinessType,
+      required this.coreBusinessType});
 
   factory _$_DtoAccountRequest.fromJson(Map<String, dynamic> json) =>
       _$$_DtoAccountRequestFromJson(json);
@@ -185,10 +213,14 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
   final int outletsNumber;
   @override
   final int businessType;
+  @override
+  final int? mainBusinessType;
+  @override
+  final String? coreBusinessType;
 
   @override
   String toString() {
-    return 'DtoAccountRequest(companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType)';
+    return 'DtoAccountRequest(companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
@@ -205,7 +237,11 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
             const DeepCollectionEquality()
                 .equals(other.outletsNumber, outletsNumber) &&
             const DeepCollectionEquality()
-                .equals(other.businessType, businessType));
+                .equals(other.businessType, businessType) &&
+            const DeepCollectionEquality()
+                .equals(other.mainBusinessType, mainBusinessType) &&
+            const DeepCollectionEquality()
+                .equals(other.coreBusinessType, coreBusinessType));
   }
 
   @JsonKey(ignore: true)
@@ -217,7 +253,9 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(outletsNumber),
-      const DeepCollectionEquality().hash(businessType));
+      const DeepCollectionEquality().hash(businessType),
+      const DeepCollectionEquality().hash(mainBusinessType),
+      const DeepCollectionEquality().hash(coreBusinessType));
 
   @JsonKey(ignore: true)
   @override
@@ -238,7 +276,9 @@ abstract class _DtoAccountRequest implements DtoAccountRequest {
       required final String email,
       required final String address,
       required final int outletsNumber,
-      required final int businessType}) = _$_DtoAccountRequest;
+      required final int businessType,
+      required final int? mainBusinessType,
+      required final String? coreBusinessType}) = _$_DtoAccountRequest;
 
   factory _DtoAccountRequest.fromJson(Map<String, dynamic> json) =
       _$_DtoAccountRequest.fromJson;
@@ -255,6 +295,10 @@ abstract class _DtoAccountRequest implements DtoAccountRequest {
   int get outletsNumber => throw _privateConstructorUsedError;
   @override
   int get businessType => throw _privateConstructorUsedError;
+  @override
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  @override
+  String? get coreBusinessType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_DtoAccountRequestCopyWith<_$_DtoAccountRequest> get copyWith =>
@@ -274,6 +318,8 @@ mixin _$DtoAccountResponse {
   String get address => throw _privateConstructorUsedError;
   int get outletsNumber => throw _privateConstructorUsedError;
   int get businessType => throw _privateConstructorUsedError;
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  String? get coreBusinessType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -293,7 +339,9 @@ abstract class $DtoAccountResponseCopyWith<$Res> {
       String email,
       String address,
       int outletsNumber,
-      int businessType});
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -314,6 +362,8 @@ class _$DtoAccountResponseCopyWithImpl<$Res>
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -344,6 +394,14 @@ class _$DtoAccountResponseCopyWithImpl<$Res>
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -362,7 +420,9 @@ abstract class _$$_DtoAccountResponseCopyWith<$Res>
       String email,
       String address,
       int outletsNumber,
-      int businessType});
+      int businessType,
+      int? mainBusinessType,
+      String? coreBusinessType});
 }
 
 /// @nodoc
@@ -385,6 +445,8 @@ class __$$_DtoAccountResponseCopyWithImpl<$Res>
     Object? address = freezed,
     Object? outletsNumber = freezed,
     Object? businessType = freezed,
+    Object? mainBusinessType = freezed,
+    Object? coreBusinessType = freezed,
   }) {
     return _then(_$_DtoAccountResponse(
       id: id == freezed
@@ -415,6 +477,14 @@ class __$$_DtoAccountResponseCopyWithImpl<$Res>
           ? _value.businessType
           : businessType // ignore: cast_nullable_to_non_nullable
               as int,
+      mainBusinessType: mainBusinessType == freezed
+          ? _value.mainBusinessType
+          : mainBusinessType // ignore: cast_nullable_to_non_nullable
+              as int?,
+      coreBusinessType: coreBusinessType == freezed
+          ? _value.coreBusinessType
+          : coreBusinessType // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -429,7 +499,9 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
       required this.email,
       required this.address,
       required this.outletsNumber,
-      required this.businessType})
+      required this.businessType,
+      required this.mainBusinessType,
+      required this.coreBusinessType})
       : super._();
 
   factory _$_DtoAccountResponse.fromJson(Map<String, dynamic> json) =>
@@ -449,10 +521,14 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
   final int outletsNumber;
   @override
   final int businessType;
+  @override
+  final int? mainBusinessType;
+  @override
+  final String? coreBusinessType;
 
   @override
   String toString() {
-    return 'DtoAccountResponse(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType)';
+    return 'DtoAccountResponse(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
@@ -470,7 +546,11 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
             const DeepCollectionEquality()
                 .equals(other.outletsNumber, outletsNumber) &&
             const DeepCollectionEquality()
-                .equals(other.businessType, businessType));
+                .equals(other.businessType, businessType) &&
+            const DeepCollectionEquality()
+                .equals(other.mainBusinessType, mainBusinessType) &&
+            const DeepCollectionEquality()
+                .equals(other.coreBusinessType, coreBusinessType));
   }
 
   @JsonKey(ignore: true)
@@ -483,7 +563,9 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(address),
       const DeepCollectionEquality().hash(outletsNumber),
-      const DeepCollectionEquality().hash(businessType));
+      const DeepCollectionEquality().hash(businessType),
+      const DeepCollectionEquality().hash(mainBusinessType),
+      const DeepCollectionEquality().hash(coreBusinessType));
 
   @JsonKey(ignore: true)
   @override
@@ -505,7 +587,9 @@ abstract class _DtoAccountResponse extends DtoAccountResponse {
       required final String email,
       required final String address,
       required final int outletsNumber,
-      required final int businessType}) = _$_DtoAccountResponse;
+      required final int businessType,
+      required final int? mainBusinessType,
+      required final String? coreBusinessType}) = _$_DtoAccountResponse;
   const _DtoAccountResponse._() : super._();
 
   factory _DtoAccountResponse.fromJson(Map<String, dynamic> json) =
@@ -525,6 +609,10 @@ abstract class _DtoAccountResponse extends DtoAccountResponse {
   int get outletsNumber => throw _privateConstructorUsedError;
   @override
   int get businessType => throw _privateConstructorUsedError;
+  @override
+  int? get mainBusinessType => throw _privateConstructorUsedError;
+  @override
+  String? get coreBusinessType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_DtoAccountResponseCopyWith<_$_DtoAccountResponse> get copyWith =>

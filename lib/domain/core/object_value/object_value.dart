@@ -10,7 +10,7 @@ abstract class ObjectValue<T> implements IValidatable {
   Either<ObjectValueFailure, T> get value;
 
   T getOrCrash() {
-    return value.fold((f) => throw UnexpectedValueError(f), id);
+    return value.fold((f) => throw UnexpectedObjectValueError(f), id);
   }
 
   T getOrElse(T dflt) {

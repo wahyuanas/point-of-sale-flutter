@@ -14,4 +14,12 @@ class SignUpObjectValueFailure<T, E>
   const factory SignUpObjectValueFailure.invalidEmail({
     required T failedValue,
   }) = InvalidEmail<T, E>;
+
+  const factory SignUpObjectValueFailure.notIntField({
+    required T failedValue,
+  }) = NotIntField<T, E>;
+
+  const factory SignUpObjectValueFailure.noSpaceAllowed({
+    required T failedValue,
+  }) = NoSpaceAllowed<T, E>;
 }

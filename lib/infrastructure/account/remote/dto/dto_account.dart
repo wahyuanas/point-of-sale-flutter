@@ -13,7 +13,9 @@ class DtoAccountRequest with _$DtoAccountRequest {
       required String email,
       required String address,
       required int outletsNumber,
-      required int businessType}) = _DtoAccountRequest;
+      required int businessType,
+      required int? mainBusinessType,
+      required String? coreBusinessType}) = _DtoAccountRequest;
 
   factory DtoAccountRequest.fromJson(Map<String, dynamic> json) =>
       _$DtoAccountRequestFromJson(json);
@@ -26,6 +28,8 @@ class DtoAccountRequest with _$DtoAccountRequest {
       address: cmd.address.getOrCrash(),
       outletsNumber: cmd.outletsNumber.getOrCrash(),
       businessType: cmd.businessType.getOrCrash(),
+      mainBusinessType: cmd.mainBusinessType.getOrCrash(),
+      coreBusinessType: cmd.coreBusinessType.getOrCrash(),
     );
   }
 }
@@ -40,32 +44,36 @@ class DtoAccountResponse with _$DtoAccountResponse {
       required String email,
       required String address,
       required int outletsNumber,
-      required int businessType}) = _DtoAccountResponse;
+      required int businessType,
+      required int? mainBusinessType,
+      required String? coreBusinessType}) = _DtoAccountResponse;
 
   factory DtoAccountResponse.fromJson(Map<String, dynamic> json) =>
       _$DtoAccountResponseFromJson(json);
 
   factory DtoAccountResponse.fromApi(Map<String, dynamic> data) {
     return DtoAccountResponse(
-      id: data["id"],
-      companyName: data["companyName"],
-      phoneNumber: data["phoneNumber"],
-      email: data["email"],
-      address: data["address"],
-      outletsNumber: data["outletsNumber"],
-      businessType: data["businessType"],
-    );
+        id: data["id"],
+        companyName: data["companyName"],
+        phoneNumber: data["phoneNumber"],
+        email: data["email"],
+        address: data["address"],
+        outletsNumber: data["outletsNumber"],
+        businessType: data["businessType"],
+        mainBusinessType: data["mainBusinessType"],
+        coreBusinessType: data["coreBusinessType"]);
   }
 
   Account toDomain() {
     return Account(
-      id: id,
-      companyName: companyName,
-      phoneNumber: phoneNumber,
-      email: email,
-      address: address,
-      outletsNumber: outletsNumber,
-      businessType: businessType,
-    );
+        id: id,
+        companyName: companyName,
+        phoneNumber: phoneNumber,
+        email: email,
+        address: address,
+        outletsNumber: outletsNumber,
+        businessType: businessType,
+        mainBusinessType: mainBusinessType,
+        coreBusinessType: coreBusinessType);
   }
 }

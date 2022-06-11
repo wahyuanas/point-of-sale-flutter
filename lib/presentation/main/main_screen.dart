@@ -37,6 +37,7 @@ class MainScreenState extends State<MainScreen> {
           listener: (context, state) {
             state.onRoute?.when(
               signUp: () => Navigator.pushNamed(context, '/signUp'),
+              signUpNotif: () => Navigator.pushNamed(context, '/signUpotif'),
             );
           },
         ),

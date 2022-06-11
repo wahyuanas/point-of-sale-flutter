@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/presentation/main/main_screen.dart';
+import 'package:pos/presentation/main/sign/up/screen/sign_up_notif_screen.dart';
 import 'package:pos/presentation/main/sign/up/screen/sign_up_screen.dart';
 
 class RouteGenerator {
@@ -13,12 +15,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
       // case '/cart':
       //   return MaterialPageRoute(builder: (_) => const CartWidget());
-      // case '/itemDetail':
-      //   final item = settings.arguments as Item;
-      //   return MaterialPageRoute(
-      //       builder: (_) => ItemDetailWidget(
-      //             item: item,
-      //           ));
+      case '/signUpNotif':
+        final account = settings.arguments as Account;
+        return MaterialPageRoute(
+            builder: (_) => SignUpNotifScreen(
+                  account: account,
+                ));
 
       // case '/categoryItemList':
       //   final category = settings.arguments as Category;

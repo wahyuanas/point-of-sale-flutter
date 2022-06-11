@@ -53,6 +53,20 @@ class SignUpCubit extends Cubit<SignUpState> {
     ));
   }
 
+  void onMainBusinessTypeChanged(String? v) {
+    emit(state.copyWith(
+      signUp:
+          state.signUp.copyWith(mainBusinessType: SignUpMainBusinessType(v)),
+    ));
+  }
+
+  void onCoreBusinessTypeChanged(String? v) {
+    emit(state.copyWith(
+      signUp:
+          state.signUp.copyWith(coreBusinessType: SignUpCoreBusinessType(v)),
+    ));
+  }
+
   onSignUp() {
     emit(state.copyWith(status: const StateStatus.loading()));
   }
