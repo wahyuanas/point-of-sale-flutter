@@ -5,7 +5,7 @@ import 'package:pos/presentation/main/sign/up/delegate/sign_up_delegate_header.d
 import 'package:pos/presentation/utils/colors.dart';
 
 class SignUpNotifScreen extends StatelessWidget {
-  final Account account;
+  final Account? account;
   const SignUpNotifScreen({Key? key, required this.account}) : super(key: key);
 
   @override
@@ -77,21 +77,160 @@ class SignUpNotifScreen extends StatelessWidget {
                 SliverToBoxAdapter(
                   child: Column(
                     children: [
-                      Container(
-                        alignment: Alignment.center,
-                        margin: const EdgeInsets.symmetric(horizontal: 10),
-                        child: const Text("Selamat "),
+                      const SizedBox(
+                        height: 20,
                       ),
                       Container(
                         alignment: Alignment.center,
                         margin: const EdgeInsets.symmetric(horizontal: 10),
-                        child: const Text("Anda Berhasil mendaftar"),
+                        child: const Text(
+                          "Selamat",
+                          style: TextStyle(fontSize: 20, color: Colors.blue),
+                        ),
                       ),
                       Container(
                         alignment: Alignment.center,
                         margin: const EdgeInsets.symmetric(horizontal: 10),
-                        child: const Text("Data Anda"),
+                        child: const Text(
+                          "Anda Berhasil mendaftar",
+                          style: TextStyle(fontSize: 17),
+                        ),
                       ),
+                      const SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        margin: const EdgeInsets.symmetric(horizontal: 10),
+                        child: const Text(
+                          "Profil Usaha Anda",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Column(
+                        children: [
+                          Column(
+                            children: [
+                              const Text(
+                                "Nama Perusahaan",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "${account?.companyName}",
+                                style: const TextStyle(fontSize: 17),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Alamat",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "${account?.address}",
+                                style: const TextStyle(fontSize: 17),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Nomor handphone",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "${account?.phoneNumber}",
+                                style: const TextStyle(fontSize: 17),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Email",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "${account?.email}",
+                                style: const TextStyle(fontSize: 17),
+                              )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Jenis Usaha",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              account?.businessType == 1
+                                  ? const Text(
+                                      "Otomotif",
+                                      style: TextStyle(fontSize: 17),
+                                    )
+                                  : const Text(
+                                      "Umum",
+                                      style: TextStyle(fontSize: 17),
+                                    )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Jenis Sub Usaha",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              account?.businessType == 1
+                                  ? account?.mainBusinessType == 1
+                                      ? const Text(
+                                          "Mobil",
+                                          style: TextStyle(fontSize: 17),
+                                        )
+                                      : const Text(
+                                          "Motor",
+                                          style: TextStyle(fontSize: 17),
+                                        )
+                                  : Text(
+                                      "${account?.coreBusinessType}",
+                                      style: const TextStyle(fontSize: 17),
+                                    )
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 15,
+                          ),
+                          Column(
+                            children: [
+                              const Text(
+                                "Jumlah Outlet",
+                                style: TextStyle(fontSize: 17),
+                              ),
+                              Text(
+                                "${account?.outletsNumber}",
+                                style: const TextStyle(fontSize: 17),
+                              )
+                            ],
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),

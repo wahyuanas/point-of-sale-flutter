@@ -58,7 +58,6 @@ class _SignUpCoreBusinessTypeWidgetState
         }
         return false;
       }, builder: (context, state) {
-        debugPrint("BUILDDDDDDDDD $_initial");
         return _show == true
             ? Container(
                 alignment: Alignment.center,

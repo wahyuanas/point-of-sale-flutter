@@ -24,7 +24,7 @@ class SignUpDelegateHeader extends SliverPersistentHeaderDelegate {
           ],
         )),
         child: const Center(
-          child: Text("Sign Up",
+          child: Text("Profil",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w400,

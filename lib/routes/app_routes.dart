@@ -16,7 +16,7 @@ class RouteGenerator {
       // case '/cart':
       //   return MaterialPageRoute(builder: (_) => const CartWidget());
       case '/signUpNotif':
-        final account = settings.arguments as Account;
+        final account = settings.arguments as Account?;
         return MaterialPageRoute(
             builder: (_) => SignUpNotifScreen(
                   account: account,
