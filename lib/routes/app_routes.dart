@@ -31,7 +31,9 @@ class RouteGenerator {
         appBar: AppBar(title: Builder(builder: (context) {
           return const Text("Error");
         })),
-        body: const Center(child: Text('Error page')),
+        body: const Center(
+            child: Text(
+                'Error page ini muncul karena route yang dituju tidak ditemukan')),
       );
     });
   }
