@@ -32,7 +32,7 @@ class SignInHaveNoAccountYetWidget extends StatelessWidget {
                 style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w400,
-                    color: Color.fromARGB(255, 38, 250, 126)),
+                    color: Color.fromARGB(255, 41, 28, 66)),
               ),
             ),
           ],

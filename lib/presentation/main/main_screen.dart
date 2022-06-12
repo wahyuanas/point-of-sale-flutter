@@ -79,9 +79,14 @@ class MainScreenState extends State<MainScreen> {
                 actions: state.onModalState!.maybeWhen(
                   failure: () => [
                     GestureDetector(
-                      child: const Text("Ok",
-                          style: TextStyle(
-                              fontSize: 15.0, fontWeight: FontWeight.normal)),
+                      child: const Padding(
+                        padding: EdgeInsets.only(right: 25.0, bottom: 15.0),
+                        child: Text("Ok",
+                            style: TextStyle(
+                                fontSize: 17.0,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue)),
+                      ),
                       onTap: () => Navigator.of(context).pop(),
                     )
                   ],
@@ -92,9 +97,31 @@ class MainScreenState extends State<MainScreen> {
                 title: const Text('Progress',
                     style: TextStyle(
                         fontSize: 17.0, fontWeight: FontWeight.normal)),
-                content: Text(state.content ?? "",
-                    style: const TextStyle(
-                        fontSize: 15.0, fontWeight: FontWeight.normal)),
+                content: state.onModalState!.maybeWhen(
+                  failure: () => Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      const Icon(
+                        Icons.warning_outlined,
+                        color: Colors.blue,
+                        size: 40.0, /*Color(0xff22stat4597)*/
+                      ),
+                      Text(
+                          state.content != null
+                              ? "Error : ${state.content!}"
+                              : "",
+                          style: const TextStyle(
+                              fontSize: 15.0, fontWeight: FontWeight.normal))
+                    ],
+                  ),
+                  orElse: () => Text(state.content ?? "",
+                      style: const TextStyle(
+                          fontSize: 15.0, fontWeight: FontWeight.normal)),
+                ),
+
+                // Text(state.content ?? "",
+                //     style: const TextStyle(
+                //         fontSize: 15.0, fontWeight: FontWeight.normal)),
               );
             }),
           );

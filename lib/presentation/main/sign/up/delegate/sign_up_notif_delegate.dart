@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
-class SignUpDelegateHeader extends SliverPersistentHeaderDelegate {
+class SignUpNotifDelegateHeader extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
@@ -24,7 +24,7 @@ class SignUpDelegateHeader extends SliverPersistentHeaderDelegate {
           ],
         )),
         child: const Center(
-          child: Text("Sign Up",
+          child: Text("Profil",
               textAlign: TextAlign.center,
               style: TextStyle(
                   fontWeight: FontWeight.w400,

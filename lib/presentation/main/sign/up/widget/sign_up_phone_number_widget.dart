@@ -33,7 +33,7 @@ class _SignUpPhoneNumberWidgetState extends State<SignUpPhoneNumberWidget> {
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.signUp.phoneNumber.value.fold(

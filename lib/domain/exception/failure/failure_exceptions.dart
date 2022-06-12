@@ -133,7 +133,7 @@ class FailureExceptions with _$FailureExceptions {
     }, requestTimeout: () {
       errorMessage = "Connection request timeout";
     }, noInternetConnection: () {
-      errorMessage = "Tidak Ada Koneksi Internet";
+      errorMessage = "No Connection, Check Your Internet Or Server Network";
     }, conflict: () {
       errorMessage = "Error due to a conflict";
     }, sendTimeout: () {

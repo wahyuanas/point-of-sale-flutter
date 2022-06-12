@@ -31,7 +31,7 @@ class _SignUpEmailWidgetState extends State<SignUpEmailWidget> {
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.signUp.email.value.fold(

@@ -8,6 +8,7 @@ class SignInPasswordWidget extends StatefulWidget {
 }
 
 class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
+  bool _obscure = true;
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
@@ -16,11 +17,11 @@ class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
         margin: const EdgeInsets.symmetric(horizontal: 10),
         child: TextFormField(
             //controller: _passwordController,
-            //obscureText: _obscure,
+            obscureText: _obscure,
             autofocus: false,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
-              errorText: '*Wajib Diisi',
+              //errorText: '*Wajib Diisi',
               icon: const Icon(
                 Icons.lock_outlined,
                 color: Colors.blue,
@@ -35,10 +36,12 @@ class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
                 borderSide: BorderSide(color: Colors.black54),
               ),
               suffixIcon: GestureDetector(
-                onTap: null,
-                child: const Icon(
-                  Icons.visibility,
-                  color: Colors.blue,
+                onTap: () => setState(() {
+                  _obscure = !_obscure;
+                }),
+                child: Icon(
+                  _obscure ? Icons.visibility : Icons.visibility_off,
+                  color: _obscure ? Colors.blue : Colors.black,
                 ),
               ),
               //border: InputBorder.none,

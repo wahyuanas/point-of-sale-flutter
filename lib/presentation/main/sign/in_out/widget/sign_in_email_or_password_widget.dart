@@ -22,7 +22,7 @@ class _SignInEmailOrPasswordWidgetState
             autofocus: false,
             keyboardType: TextInputType.text,
             decoration: InputDecoration(
-              errorText: '*Wajib Diisi',
+              //errorText: '*Wajib Diisi',
               icon: Column(
                 children: const [
                   Icon(

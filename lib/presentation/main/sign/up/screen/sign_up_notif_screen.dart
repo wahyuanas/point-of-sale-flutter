@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pos/domain/account/entity/account.dart';
-import 'package:pos/presentation/main/sign/up/delegate/sign_up_delegate_header.dart';
+import 'package:pos/presentation/main/sign/up/delegate/sign_up_notif_delegate.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
 class SignUpNotifScreen extends StatelessWidget {
@@ -72,7 +72,7 @@ class SignUpNotifScreen extends StatelessWidget {
                 SliverPersistentHeader(
                   //pinned: true,
                   //floating: true,
-                  delegate: SignUpDelegateHeader(),
+                  delegate: SignUpNotifDelegateHeader(),
                 ),
                 SliverToBoxAdapter(
                   child: Column(
@@ -92,7 +92,7 @@ class SignUpNotifScreen extends StatelessWidget {
                         alignment: Alignment.center,
                         margin: const EdgeInsets.symmetric(horizontal: 10),
                         child: const Text(
-                          "Anda Berhasil mendaftar",
+                          "Anda Berhasil Mendaftar, Silahkan Cek Email Anda Untuk Melakukan Verifikasi",
                           style: TextStyle(fontSize: 17),
                         ),
                       ),
