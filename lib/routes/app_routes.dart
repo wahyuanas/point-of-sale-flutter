@@ -13,28 +13,12 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const MainScreen());
       case '/signUp':
         return MaterialPageRoute(builder: (_) => const SignUpScreen());
-      // case '/cart':
-      //   return MaterialPageRoute(builder: (_) => const CartWidget());
       case '/signUpNotif':
         final account = settings.arguments as Account?;
         return MaterialPageRoute(
             builder: (_) => SignUpNotifScreen(
                   account: account,
                 ));
-
-      // case '/categoryItemList':
-      //   final category = settings.arguments as Category;
-      //   return MaterialPageRoute(
-      //       builder: (_) => CategoryProductScreen(
-      //             category: category,
-      //           ));
-
-      // case '/searchFilterPickUp':
-      //   return MaterialPageRoute(
-      //       builder: (_) => const SearchFilterPickUpScreen());
-
-      // case '/login':
-      //   return MaterialPageRoute(builder: (_) => const LoginScreen());
 
       default:
         return _errorRoute();
