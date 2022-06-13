@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "410087498156",
+    "project_id": "gawaipos",
+    "storage_bucket": "gawaipos.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410087498156:android:41b8cdcf407b7e02259a09",
+        "android_client_info": {
+          "package_name": "com.example.pos"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410087498156-selgslujt122mvvacpio16fhm82ci9ub.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWBYSrpGkfOY8iz9g6lx1_7EgwEyUGf6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410087498156-selgslujt122mvvacpio16fhm82ci9ub.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

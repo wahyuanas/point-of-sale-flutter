@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'dto_account.dart';
+part of 'dto_sign_up.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_DtoAccountRequest _$$_DtoAccountRequestFromJson(Map<String, dynamic> json) =>
-    _$_DtoAccountRequest(
+_$_DtoSignUpRequest _$$_DtoSignUpRequestFromJson(Map<String, dynamic> json) =>
+    _$_DtoSignUpRequest(
       companyName: json['companyName'] as String,
       phoneNumber: json['phoneNumber'] as String,
       email: json['email'] as String,
@@ -18,8 +18,7 @@ _$_DtoAccountRequest _$$_DtoAccountRequestFromJson(Map<String, dynamic> json) =>
       coreBusinessType: json['coreBusinessType'] as String?,
     );
 
-Map<String, dynamic> _$$_DtoAccountRequestToJson(
-        _$_DtoAccountRequest instance) =>
+Map<String, dynamic> _$$_DtoSignUpRequestToJson(_$_DtoSignUpRequest instance) =>
     <String, dynamic>{
       'companyName': instance.companyName,
       'phoneNumber': instance.phoneNumber,
@@ -31,9 +30,8 @@ Map<String, dynamic> _$$_DtoAccountRequestToJson(
       'coreBusinessType': instance.coreBusinessType,
     };
 
-_$_DtoAccountResponse _$$_DtoAccountResponseFromJson(
-        Map<String, dynamic> json) =>
-    _$_DtoAccountResponse(
+_$_DtoSignUpResponse _$$_DtoSignUpResponseFromJson(Map<String, dynamic> json) =>
+    _$_DtoSignUpResponse(
       id: json['id'] as int,
       companyName: json['companyName'] as String,
       phoneNumber: json['phoneNumber'] as String,
@@ -45,8 +43,8 @@ _$_DtoAccountResponse _$$_DtoAccountResponseFromJson(
       coreBusinessType: json['coreBusinessType'] as String?,
     );
 
-Map<String, dynamic> _$$_DtoAccountResponseToJson(
-        _$_DtoAccountResponse instance) =>
+Map<String, dynamic> _$$_DtoSignUpResponseToJson(
+        _$_DtoSignUpResponse instance) =>
     <String, dynamic>{
       'id': instance.id,
       'companyName': instance.companyName,

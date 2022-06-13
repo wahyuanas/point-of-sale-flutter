@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pos/domain/account/object_value/object_value.dart';
+import 'package:pos/domain/account/object_value/sign_up/object_value.dart';
 import 'package:pos/domain/core/object_value/failures.dart';
 
 part "account_object_value.freezed.dart";

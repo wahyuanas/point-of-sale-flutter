@@ -139,7 +139,7 @@ class __$$_SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
+class _$_SignUpState implements _SignUpState {
   const _$_SignUpState(
       {required this.status, required this.signUp, required this.failOrUnit});
 
@@ -151,18 +151,8 @@ class _$_SignUpState with DiagnosticableTreeMixin implements _SignUpState {
   final bool failOrUnit;
 
   @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+  String toString() {
     return 'SignUpState(status: $status, signUp: $signUp, failOrUnit: $failOrUnit)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SignUpState'))
-      ..add(DiagnosticsProperty('status', status))
-      ..add(DiagnosticsProperty('signUp', signUp))
-      ..add(DiagnosticsProperty('failOrUnit', failOrUnit));
   }
 
   @override

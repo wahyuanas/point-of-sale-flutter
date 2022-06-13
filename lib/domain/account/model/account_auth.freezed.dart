@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'auth.dart';
+part of 'account_auth.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,36 +14,38 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Auth _$AuthFromJson(Map<String, dynamic> json) {
-  return _Auth.fromJson(json);
+AccountAuth _$AccountAuthFromJson(Map<String, dynamic> json) {
+  return _AccountAuth.fromJson(json);
 }
 
 /// @nodoc
-mixin _$Auth {
+mixin _$AccountAuth {
   Account get account => throw _privateConstructorUsedError;
   String get token => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $AuthCopyWith<Auth> get copyWith => throw _privateConstructorUsedError;
+  $AccountAuthCopyWith<AccountAuth> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AuthCopyWith<$Res> {
-  factory $AuthCopyWith(Auth value, $Res Function(Auth) then) =
-      _$AuthCopyWithImpl<$Res>;
+abstract class $AccountAuthCopyWith<$Res> {
+  factory $AccountAuthCopyWith(
+          AccountAuth value, $Res Function(AccountAuth) then) =
+      _$AccountAuthCopyWithImpl<$Res>;
   $Res call({Account account, String token});
 
   $AccountCopyWith<$Res> get account;
 }
 
 /// @nodoc
-class _$AuthCopyWithImpl<$Res> implements $AuthCopyWith<$Res> {
-  _$AuthCopyWithImpl(this._value, this._then);
+class _$AccountAuthCopyWithImpl<$Res> implements $AccountAuthCopyWith<$Res> {
+  _$AccountAuthCopyWithImpl(this._value, this._then);
 
-  final Auth _value;
+  final AccountAuth _value;
   // ignore: unused_field
-  final $Res Function(Auth) _then;
+  final $Res Function(AccountAuth) _then;
 
   @override
   $Res call({
@@ -71,9 +73,11 @@ class _$AuthCopyWithImpl<$Res> implements $AuthCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
-  factory _$$_AuthCopyWith(_$_Auth value, $Res Function(_$_Auth) then) =
-      __$$_AuthCopyWithImpl<$Res>;
+abstract class _$$_AccountAuthCopyWith<$Res>
+    implements $AccountAuthCopyWith<$Res> {
+  factory _$$_AccountAuthCopyWith(
+          _$_AccountAuth value, $Res Function(_$_AccountAuth) then) =
+      __$$_AccountAuthCopyWithImpl<$Res>;
   @override
   $Res call({Account account, String token});
 
@@ -82,20 +86,21 @@ abstract class _$$_AuthCopyWith<$Res> implements $AuthCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res>
-    implements _$$_AuthCopyWith<$Res> {
-  __$$_AuthCopyWithImpl(_$_Auth _value, $Res Function(_$_Auth) _then)
-      : super(_value, (v) => _then(v as _$_Auth));
+class __$$_AccountAuthCopyWithImpl<$Res> extends _$AccountAuthCopyWithImpl<$Res>
+    implements _$$_AccountAuthCopyWith<$Res> {
+  __$$_AccountAuthCopyWithImpl(
+      _$_AccountAuth _value, $Res Function(_$_AccountAuth) _then)
+      : super(_value, (v) => _then(v as _$_AccountAuth));
 
   @override
-  _$_Auth get _value => super._value as _$_Auth;
+  _$_AccountAuth get _value => super._value as _$_AccountAuth;
 
   @override
   $Res call({
     Object? account = freezed,
     Object? token = freezed,
   }) {
-    return _then(_$_Auth(
+    return _then(_$_AccountAuth(
       account: account == freezed
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
@@ -110,10 +115,11 @@ class __$$_AuthCopyWithImpl<$Res> extends _$AuthCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Auth implements _Auth {
-  const _$_Auth({required this.account, required this.token});
+class _$_AccountAuth implements _AccountAuth {
+  const _$_AccountAuth({required this.account, required this.token});
 
-  factory _$_Auth.fromJson(Map<String, dynamic> json) => _$$_AuthFromJson(json);
+  factory _$_AccountAuth.fromJson(Map<String, dynamic> json) =>
+      _$$_AccountAuthFromJson(json);
 
   @override
   final Account account;
@@ -122,14 +128,14 @@ class _$_Auth implements _Auth {
 
   @override
   String toString() {
-    return 'Auth(account: $account, token: $token)';
+    return 'AccountAuth(account: $account, token: $token)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Auth &&
+            other is _$_AccountAuth &&
             const DeepCollectionEquality().equals(other.account, account) &&
             const DeepCollectionEquality().equals(other.token, token));
   }
@@ -143,20 +149,22 @@ class _$_Auth implements _Auth {
 
   @JsonKey(ignore: true)
   @override
-  _$$_AuthCopyWith<_$_Auth> get copyWith =>
-      __$$_AuthCopyWithImpl<_$_Auth>(this, _$identity);
+  _$$_AccountAuthCopyWith<_$_AccountAuth> get copyWith =>
+      __$$_AccountAuthCopyWithImpl<_$_AccountAuth>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_AuthToJson(this);
+    return _$$_AccountAuthToJson(this);
   }
 }
 
-abstract class _Auth implements Auth {
-  const factory _Auth(
-      {required final Account account, required final String token}) = _$_Auth;
+abstract class _AccountAuth implements AccountAuth {
+  const factory _AccountAuth(
+      {required final Account account,
+      required final String token}) = _$_AccountAuth;
 
-  factory _Auth.fromJson(Map<String, dynamic> json) = _$_Auth.fromJson;
+  factory _AccountAuth.fromJson(Map<String, dynamic> json) =
+      _$_AccountAuth.fromJson;
 
   @override
   Account get account => throw _privateConstructorUsedError;
@@ -164,5 +172,6 @@ abstract class _Auth implements Auth {
   String get token => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_AuthCopyWith<_$_Auth> get copyWith => throw _privateConstructorUsedError;
+  _$$_AccountAuthCopyWith<_$_AccountAuth> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'dto_account.dart';
+part of 'dto_sign_up.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-DtoAccountRequest _$DtoAccountRequestFromJson(Map<String, dynamic> json) {
-  return _DtoAccountRequest.fromJson(json);
+DtoSignUpRequest _$DtoSignUpRequestFromJson(Map<String, dynamic> json) {
+  return _DtoSignUpRequest.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DtoAccountRequest {
+mixin _$DtoSignUpRequest {
   String get companyName => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -31,15 +31,15 @@ mixin _$DtoAccountRequest {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DtoAccountRequestCopyWith<DtoAccountRequest> get copyWith =>
+  $DtoSignUpRequestCopyWith<DtoSignUpRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DtoAccountRequestCopyWith<$Res> {
-  factory $DtoAccountRequestCopyWith(
-          DtoAccountRequest value, $Res Function(DtoAccountRequest) then) =
-      _$DtoAccountRequestCopyWithImpl<$Res>;
+abstract class $DtoSignUpRequestCopyWith<$Res> {
+  factory $DtoSignUpRequestCopyWith(
+          DtoSignUpRequest value, $Res Function(DtoSignUpRequest) then) =
+      _$DtoSignUpRequestCopyWithImpl<$Res>;
   $Res call(
       {String companyName,
       String phoneNumber,
@@ -52,13 +52,13 @@ abstract class $DtoAccountRequestCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DtoAccountRequestCopyWithImpl<$Res>
-    implements $DtoAccountRequestCopyWith<$Res> {
-  _$DtoAccountRequestCopyWithImpl(this._value, this._then);
+class _$DtoSignUpRequestCopyWithImpl<$Res>
+    implements $DtoSignUpRequestCopyWith<$Res> {
+  _$DtoSignUpRequestCopyWithImpl(this._value, this._then);
 
-  final DtoAccountRequest _value;
+  final DtoSignUpRequest _value;
   // ignore: unused_field
-  final $Res Function(DtoAccountRequest) _then;
+  final $Res Function(DtoSignUpRequest) _then;
 
   @override
   $Res call({
@@ -109,11 +109,11 @@ class _$DtoAccountRequestCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_DtoAccountRequestCopyWith<$Res>
-    implements $DtoAccountRequestCopyWith<$Res> {
-  factory _$$_DtoAccountRequestCopyWith(_$_DtoAccountRequest value,
-          $Res Function(_$_DtoAccountRequest) then) =
-      __$$_DtoAccountRequestCopyWithImpl<$Res>;
+abstract class _$$_DtoSignUpRequestCopyWith<$Res>
+    implements $DtoSignUpRequestCopyWith<$Res> {
+  factory _$$_DtoSignUpRequestCopyWith(
+          _$_DtoSignUpRequest value, $Res Function(_$_DtoSignUpRequest) then) =
+      __$$_DtoSignUpRequestCopyWithImpl<$Res>;
   @override
   $Res call(
       {String companyName,
@@ -127,15 +127,15 @@ abstract class _$$_DtoAccountRequestCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DtoAccountRequestCopyWithImpl<$Res>
-    extends _$DtoAccountRequestCopyWithImpl<$Res>
-    implements _$$_DtoAccountRequestCopyWith<$Res> {
-  __$$_DtoAccountRequestCopyWithImpl(
-      _$_DtoAccountRequest _value, $Res Function(_$_DtoAccountRequest) _then)
-      : super(_value, (v) => _then(v as _$_DtoAccountRequest));
+class __$$_DtoSignUpRequestCopyWithImpl<$Res>
+    extends _$DtoSignUpRequestCopyWithImpl<$Res>
+    implements _$$_DtoSignUpRequestCopyWith<$Res> {
+  __$$_DtoSignUpRequestCopyWithImpl(
+      _$_DtoSignUpRequest _value, $Res Function(_$_DtoSignUpRequest) _then)
+      : super(_value, (v) => _then(v as _$_DtoSignUpRequest));
 
   @override
-  _$_DtoAccountRequest get _value => super._value as _$_DtoAccountRequest;
+  _$_DtoSignUpRequest get _value => super._value as _$_DtoSignUpRequest;
 
   @override
   $Res call({
@@ -148,7 +148,7 @@ class __$$_DtoAccountRequestCopyWithImpl<$Res>
     Object? mainBusinessType = freezed,
     Object? coreBusinessType = freezed,
   }) {
-    return _then(_$_DtoAccountRequest(
+    return _then(_$_DtoSignUpRequest(
       companyName: companyName == freezed
           ? _value.companyName
           : companyName // ignore: cast_nullable_to_non_nullable
@@ -187,8 +187,8 @@ class __$$_DtoAccountRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DtoAccountRequest implements _DtoAccountRequest {
-  const _$_DtoAccountRequest(
+class _$_DtoSignUpRequest extends _DtoSignUpRequest {
+  const _$_DtoSignUpRequest(
       {required this.companyName,
       required this.phoneNumber,
       required this.email,
@@ -196,10 +196,11 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
       required this.outletsNumber,
       required this.businessType,
       required this.mainBusinessType,
-      required this.coreBusinessType});
+      required this.coreBusinessType})
+      : super._();
 
-  factory _$_DtoAccountRequest.fromJson(Map<String, dynamic> json) =>
-      _$$_DtoAccountRequestFromJson(json);
+  factory _$_DtoSignUpRequest.fromJson(Map<String, dynamic> json) =>
+      _$$_DtoSignUpRequestFromJson(json);
 
   @override
   final String companyName;
@@ -220,14 +221,14 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
 
   @override
   String toString() {
-    return 'DtoAccountRequest(companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
+    return 'DtoSignUpRequest(companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DtoAccountRequest &&
+            other is _$_DtoSignUpRequest &&
             const DeepCollectionEquality()
                 .equals(other.companyName, companyName) &&
             const DeepCollectionEquality()
@@ -259,18 +260,17 @@ class _$_DtoAccountRequest implements _DtoAccountRequest {
 
   @JsonKey(ignore: true)
   @override
-  _$$_DtoAccountRequestCopyWith<_$_DtoAccountRequest> get copyWith =>
-      __$$_DtoAccountRequestCopyWithImpl<_$_DtoAccountRequest>(
-          this, _$identity);
+  _$$_DtoSignUpRequestCopyWith<_$_DtoSignUpRequest> get copyWith =>
+      __$$_DtoSignUpRequestCopyWithImpl<_$_DtoSignUpRequest>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DtoAccountRequestToJson(this);
+    return _$$_DtoSignUpRequestToJson(this);
   }
 }
 
-abstract class _DtoAccountRequest implements DtoAccountRequest {
-  const factory _DtoAccountRequest(
+abstract class _DtoSignUpRequest extends DtoSignUpRequest {
+  const factory _DtoSignUpRequest(
       {required final String companyName,
       required final String phoneNumber,
       required final String email,
@@ -278,10 +278,11 @@ abstract class _DtoAccountRequest implements DtoAccountRequest {
       required final int outletsNumber,
       required final int businessType,
       required final int? mainBusinessType,
-      required final String? coreBusinessType}) = _$_DtoAccountRequest;
+      required final String? coreBusinessType}) = _$_DtoSignUpRequest;
+  const _DtoSignUpRequest._() : super._();
 
-  factory _DtoAccountRequest.fromJson(Map<String, dynamic> json) =
-      _$_DtoAccountRequest.fromJson;
+  factory _DtoSignUpRequest.fromJson(Map<String, dynamic> json) =
+      _$_DtoSignUpRequest.fromJson;
 
   @override
   String get companyName => throw _privateConstructorUsedError;
@@ -301,16 +302,16 @@ abstract class _DtoAccountRequest implements DtoAccountRequest {
   String? get coreBusinessType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_DtoAccountRequestCopyWith<_$_DtoAccountRequest> get copyWith =>
+  _$$_DtoSignUpRequestCopyWith<_$_DtoSignUpRequest> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
-DtoAccountResponse _$DtoAccountResponseFromJson(Map<String, dynamic> json) {
-  return _DtoAccountResponse.fromJson(json);
+DtoSignUpResponse _$DtoSignUpResponseFromJson(Map<String, dynamic> json) {
+  return _DtoSignUpResponse.fromJson(json);
 }
 
 /// @nodoc
-mixin _$DtoAccountResponse {
+mixin _$DtoSignUpResponse {
   int get id => throw _privateConstructorUsedError;
   String get companyName => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
@@ -323,15 +324,15 @@ mixin _$DtoAccountResponse {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $DtoAccountResponseCopyWith<DtoAccountResponse> get copyWith =>
+  $DtoSignUpResponseCopyWith<DtoSignUpResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DtoAccountResponseCopyWith<$Res> {
-  factory $DtoAccountResponseCopyWith(
-          DtoAccountResponse value, $Res Function(DtoAccountResponse) then) =
-      _$DtoAccountResponseCopyWithImpl<$Res>;
+abstract class $DtoSignUpResponseCopyWith<$Res> {
+  factory $DtoSignUpResponseCopyWith(
+          DtoSignUpResponse value, $Res Function(DtoSignUpResponse) then) =
+      _$DtoSignUpResponseCopyWithImpl<$Res>;
   $Res call(
       {int id,
       String companyName,
@@ -345,13 +346,13 @@ abstract class $DtoAccountResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DtoAccountResponseCopyWithImpl<$Res>
-    implements $DtoAccountResponseCopyWith<$Res> {
-  _$DtoAccountResponseCopyWithImpl(this._value, this._then);
+class _$DtoSignUpResponseCopyWithImpl<$Res>
+    implements $DtoSignUpResponseCopyWith<$Res> {
+  _$DtoSignUpResponseCopyWithImpl(this._value, this._then);
 
-  final DtoAccountResponse _value;
+  final DtoSignUpResponse _value;
   // ignore: unused_field
-  final $Res Function(DtoAccountResponse) _then;
+  final $Res Function(DtoSignUpResponse) _then;
 
   @override
   $Res call({
@@ -407,11 +408,11 @@ class _$DtoAccountResponseCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_DtoAccountResponseCopyWith<$Res>
-    implements $DtoAccountResponseCopyWith<$Res> {
-  factory _$$_DtoAccountResponseCopyWith(_$_DtoAccountResponse value,
-          $Res Function(_$_DtoAccountResponse) then) =
-      __$$_DtoAccountResponseCopyWithImpl<$Res>;
+abstract class _$$_DtoSignUpResponseCopyWith<$Res>
+    implements $DtoSignUpResponseCopyWith<$Res> {
+  factory _$$_DtoSignUpResponseCopyWith(_$_DtoSignUpResponse value,
+          $Res Function(_$_DtoSignUpResponse) then) =
+      __$$_DtoSignUpResponseCopyWithImpl<$Res>;
   @override
   $Res call(
       {int id,
@@ -426,15 +427,15 @@ abstract class _$$_DtoAccountResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_DtoAccountResponseCopyWithImpl<$Res>
-    extends _$DtoAccountResponseCopyWithImpl<$Res>
-    implements _$$_DtoAccountResponseCopyWith<$Res> {
-  __$$_DtoAccountResponseCopyWithImpl(
-      _$_DtoAccountResponse _value, $Res Function(_$_DtoAccountResponse) _then)
-      : super(_value, (v) => _then(v as _$_DtoAccountResponse));
+class __$$_DtoSignUpResponseCopyWithImpl<$Res>
+    extends _$DtoSignUpResponseCopyWithImpl<$Res>
+    implements _$$_DtoSignUpResponseCopyWith<$Res> {
+  __$$_DtoSignUpResponseCopyWithImpl(
+      _$_DtoSignUpResponse _value, $Res Function(_$_DtoSignUpResponse) _then)
+      : super(_value, (v) => _then(v as _$_DtoSignUpResponse));
 
   @override
-  _$_DtoAccountResponse get _value => super._value as _$_DtoAccountResponse;
+  _$_DtoSignUpResponse get _value => super._value as _$_DtoSignUpResponse;
 
   @override
   $Res call({
@@ -448,7 +449,7 @@ class __$$_DtoAccountResponseCopyWithImpl<$Res>
     Object? mainBusinessType = freezed,
     Object? coreBusinessType = freezed,
   }) {
-    return _then(_$_DtoAccountResponse(
+    return _then(_$_DtoSignUpResponse(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -491,8 +492,8 @@ class __$$_DtoAccountResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DtoAccountResponse extends _DtoAccountResponse {
-  const _$_DtoAccountResponse(
+class _$_DtoSignUpResponse extends _DtoSignUpResponse {
+  const _$_DtoSignUpResponse(
       {required this.id,
       required this.companyName,
       required this.phoneNumber,
@@ -504,8 +505,8 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
       required this.coreBusinessType})
       : super._();
 
-  factory _$_DtoAccountResponse.fromJson(Map<String, dynamic> json) =>
-      _$$_DtoAccountResponseFromJson(json);
+  factory _$_DtoSignUpResponse.fromJson(Map<String, dynamic> json) =>
+      _$$_DtoSignUpResponseFromJson(json);
 
   @override
   final int id;
@@ -528,14 +529,14 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
 
   @override
   String toString() {
-    return 'DtoAccountResponse(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
+    return 'DtoSignUpResponse(id: $id, companyName: $companyName, phoneNumber: $phoneNumber, email: $email, address: $address, outletsNumber: $outletsNumber, businessType: $businessType, mainBusinessType: $mainBusinessType, coreBusinessType: $coreBusinessType)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DtoAccountResponse &&
+            other is _$_DtoSignUpResponse &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality()
                 .equals(other.companyName, companyName) &&
@@ -569,18 +570,18 @@ class _$_DtoAccountResponse extends _DtoAccountResponse {
 
   @JsonKey(ignore: true)
   @override
-  _$$_DtoAccountResponseCopyWith<_$_DtoAccountResponse> get copyWith =>
-      __$$_DtoAccountResponseCopyWithImpl<_$_DtoAccountResponse>(
+  _$$_DtoSignUpResponseCopyWith<_$_DtoSignUpResponse> get copyWith =>
+      __$$_DtoSignUpResponseCopyWithImpl<_$_DtoSignUpResponse>(
           this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_DtoAccountResponseToJson(this);
+    return _$$_DtoSignUpResponseToJson(this);
   }
 }
 
-abstract class _DtoAccountResponse extends DtoAccountResponse {
-  const factory _DtoAccountResponse(
+abstract class _DtoSignUpResponse extends DtoSignUpResponse {
+  const factory _DtoSignUpResponse(
       {required final int id,
       required final String companyName,
       required final String phoneNumber,
@@ -589,11 +590,11 @@ abstract class _DtoAccountResponse extends DtoAccountResponse {
       required final int outletsNumber,
       required final int businessType,
       required final int? mainBusinessType,
-      required final String? coreBusinessType}) = _$_DtoAccountResponse;
-  const _DtoAccountResponse._() : super._();
+      required final String? coreBusinessType}) = _$_DtoSignUpResponse;
+  const _DtoSignUpResponse._() : super._();
 
-  factory _DtoAccountResponse.fromJson(Map<String, dynamic> json) =
-      _$_DtoAccountResponse.fromJson;
+  factory _DtoSignUpResponse.fromJson(Map<String, dynamic> json) =
+      _$_DtoSignUpResponse.fromJson;
 
   @override
   int get id => throw _privateConstructorUsedError;
@@ -615,6 +616,6 @@ abstract class _DtoAccountResponse extends DtoAccountResponse {
   String? get coreBusinessType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_DtoAccountResponseCopyWith<_$_DtoAccountResponse> get copyWith =>
+  _$$_DtoSignUpResponseCopyWith<_$_DtoSignUpResponse> get copyWith =>
       throw _privateConstructorUsedError;
 }
