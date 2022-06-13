@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$FailureExceptions {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -41,6 +42,7 @@ mixin _$FailureExceptions {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -64,6 +66,7 @@ mixin _$FailureExceptions {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -88,6 +91,7 @@ mixin _$FailureExceptions {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -111,6 +115,7 @@ mixin _$FailureExceptions {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -134,6 +139,7 @@ mixin _$FailureExceptions {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -173,6 +179,248 @@ class _$FailureExceptionsCopyWithImpl<$Res>
   final FailureExceptions _value;
   // ignore: unused_field
   final $Res Function(FailureExceptions) _then;
+}
+
+/// @nodoc
+abstract class _$$ApiFailureCopyWith<$Res> {
+  factory _$$ApiFailureCopyWith(
+          _$ApiFailure value, $Res Function(_$ApiFailure) then) =
+      __$$ApiFailureCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$ApiFailureCopyWithImpl<$Res>
+    extends _$FailureExceptionsCopyWithImpl<$Res>
+    implements _$$ApiFailureCopyWith<$Res> {
+  __$$ApiFailureCopyWithImpl(
+      _$ApiFailure _value, $Res Function(_$ApiFailure) _then)
+      : super(_value, (v) => _then(v as _$ApiFailure));
+
+  @override
+  _$ApiFailure get _value => super._value as _$ApiFailure;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$ApiFailure(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ApiFailure implements ApiFailure {
+  const _$ApiFailure(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'FailureExceptions.apiFailure(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ApiFailure &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$ApiFailureCopyWith<_$ApiFailure> get copyWith =>
+      __$$ApiFailureCopyWithImpl<_$ApiFailure>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
+    required TResult Function() requestCancelled,
+    required TResult Function() unauthorizedRequest,
+    required TResult Function() forbiddenRequest,
+    required TResult Function() badRequest,
+    required TResult Function(String reason) notFound,
+    required TResult Function() methodNotAllowed,
+    required TResult Function() notAcceptable,
+    required TResult Function() requestTimeout,
+    required TResult Function() sendTimeout,
+    required TResult Function() conflict,
+    required TResult Function() serverError,
+    required TResult Function() internalServerError,
+    required TResult Function() notImplemented,
+    required TResult Function() serviceUnavailable,
+    required TResult Function() noInternetConnection,
+    required TResult Function(FormatException e) formatExceptions,
+    required TResult Function() unableToProcess,
+    required TResult Function(String error) defaultError,
+    required TResult Function() unexpectedError,
+  }) {
+    return apiFailure(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorizedRequest,
+    TResult Function()? forbiddenRequest,
+    TResult Function()? badRequest,
+    TResult Function(String reason)? notFound,
+    TResult Function()? methodNotAllowed,
+    TResult Function()? notAcceptable,
+    TResult Function()? requestTimeout,
+    TResult Function()? sendTimeout,
+    TResult Function()? conflict,
+    TResult Function()? serverError,
+    TResult Function()? internalServerError,
+    TResult Function()? notImplemented,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(FormatException e)? formatExceptions,
+    TResult Function()? unableToProcess,
+    TResult Function(String error)? defaultError,
+    TResult Function()? unexpectedError,
+  }) {
+    return apiFailure?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
+    TResult Function()? requestCancelled,
+    TResult Function()? unauthorizedRequest,
+    TResult Function()? forbiddenRequest,
+    TResult Function()? badRequest,
+    TResult Function(String reason)? notFound,
+    TResult Function()? methodNotAllowed,
+    TResult Function()? notAcceptable,
+    TResult Function()? requestTimeout,
+    TResult Function()? sendTimeout,
+    TResult Function()? conflict,
+    TResult Function()? serverError,
+    TResult Function()? internalServerError,
+    TResult Function()? notImplemented,
+    TResult Function()? serviceUnavailable,
+    TResult Function()? noInternetConnection,
+    TResult Function(FormatException e)? formatExceptions,
+    TResult Function()? unableToProcess,
+    TResult Function(String error)? defaultError,
+    TResult Function()? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (apiFailure != null) {
+      return apiFailure(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
+    required TResult Function(RequestCancelled value) requestCancelled,
+    required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
+    required TResult Function(ForbiddenRequest value) forbiddenRequest,
+    required TResult Function(BadRequest value) badRequest,
+    required TResult Function(NotFound value) notFound,
+    required TResult Function(MethodNotAllowed value) methodNotAllowed,
+    required TResult Function(NotAcceptable value) notAcceptable,
+    required TResult Function(RequestTimeout value) requestTimeout,
+    required TResult Function(SendTimeout value) sendTimeout,
+    required TResult Function(Conflict value) conflict,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(InternalServerError value) internalServerError,
+    required TResult Function(NotImplemented value) notImplemented,
+    required TResult Function(ServiceUnavailable value) serviceUnavailable,
+    required TResult Function(NoInternetConnection value) noInternetConnection,
+    required TResult Function(FormatExceptions value) formatExceptions,
+    required TResult Function(UnableToProcess value) unableToProcess,
+    required TResult Function(DefaultError value) defaultError,
+    required TResult Function(UnexpectedError value) unexpectedError,
+  }) {
+    return apiFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult Function(ForbiddenRequest value)? forbiddenRequest,
+    TResult Function(BadRequest value)? badRequest,
+    TResult Function(NotFound value)? notFound,
+    TResult Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(NotAcceptable value)? notAcceptable,
+    TResult Function(RequestTimeout value)? requestTimeout,
+    TResult Function(SendTimeout value)? sendTimeout,
+    TResult Function(Conflict value)? conflict,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(InternalServerError value)? internalServerError,
+    TResult Function(NotImplemented value)? notImplemented,
+    TResult Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(FormatExceptions value)? formatExceptions,
+    TResult Function(UnableToProcess value)? unableToProcess,
+    TResult Function(DefaultError value)? defaultError,
+    TResult Function(UnexpectedError value)? unexpectedError,
+  }) {
+    return apiFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
+    TResult Function(RequestCancelled value)? requestCancelled,
+    TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
+    TResult Function(ForbiddenRequest value)? forbiddenRequest,
+    TResult Function(BadRequest value)? badRequest,
+    TResult Function(NotFound value)? notFound,
+    TResult Function(MethodNotAllowed value)? methodNotAllowed,
+    TResult Function(NotAcceptable value)? notAcceptable,
+    TResult Function(RequestTimeout value)? requestTimeout,
+    TResult Function(SendTimeout value)? sendTimeout,
+    TResult Function(Conflict value)? conflict,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(InternalServerError value)? internalServerError,
+    TResult Function(NotImplemented value)? notImplemented,
+    TResult Function(ServiceUnavailable value)? serviceUnavailable,
+    TResult Function(NoInternetConnection value)? noInternetConnection,
+    TResult Function(FormatExceptions value)? formatExceptions,
+    TResult Function(UnableToProcess value)? unableToProcess,
+    TResult Function(DefaultError value)? defaultError,
+    TResult Function(UnexpectedError value)? unexpectedError,
+    required TResult orElse(),
+  }) {
+    if (apiFailure != null) {
+      return apiFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ApiFailure implements FailureExceptions {
+  const factory ApiFailure(final String message) = _$ApiFailure;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$ApiFailureCopyWith<_$ApiFailure> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -216,6 +464,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -242,6 +491,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -268,6 +518,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -298,6 +549,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -324,6 +576,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -350,6 +603,7 @@ class _$RequestCancelled implements RequestCancelled {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -423,6 +677,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -449,6 +704,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -475,6 +731,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -505,6 +762,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -531,6 +789,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -557,6 +816,7 @@ class _$UnauthorizedRequest implements UnauthorizedRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -630,6 +890,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -656,6 +917,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -682,6 +944,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -712,6 +975,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -738,6 +1002,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -764,6 +1029,7 @@ class _$ForbiddenRequest implements ForbiddenRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -837,6 +1103,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -863,6 +1130,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -889,6 +1157,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -919,6 +1188,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -945,6 +1215,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -971,6 +1242,7 @@ class _$BadRequest implements BadRequest {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1067,6 +1339,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -1093,6 +1366,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1119,6 +1393,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1149,6 +1424,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -1175,6 +1451,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1201,6 +1478,7 @@ class _$NotFound implements NotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1279,6 +1557,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -1305,6 +1584,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1331,6 +1611,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1361,6 +1642,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -1387,6 +1669,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1413,6 +1696,7 @@ class _$MethodNotAllowed implements MethodNotAllowed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1486,6 +1770,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -1512,6 +1797,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1538,6 +1824,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1568,6 +1855,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -1594,6 +1882,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1620,6 +1909,7 @@ class _$NotAcceptable implements NotAcceptable {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1693,6 +1983,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -1719,6 +2010,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1745,6 +2037,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1775,6 +2068,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -1801,6 +2095,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1827,6 +2122,7 @@ class _$RequestTimeout implements RequestTimeout {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -1900,6 +2196,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -1926,6 +2223,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1952,6 +2250,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -1982,6 +2281,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -2008,6 +2308,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2034,6 +2335,7 @@ class _$SendTimeout implements SendTimeout {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2106,6 +2408,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -2132,6 +2435,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2158,6 +2462,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2188,6 +2493,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -2214,6 +2520,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2240,6 +2547,7 @@ class _$Conflict implements Conflict {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2313,6 +2621,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -2339,6 +2648,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2365,6 +2675,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2395,6 +2706,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -2421,6 +2733,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2447,6 +2760,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2520,6 +2834,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -2546,6 +2861,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2572,6 +2888,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2602,6 +2919,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -2628,6 +2946,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2654,6 +2973,7 @@ class _$InternalServerError implements InternalServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2727,6 +3047,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -2753,6 +3074,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2779,6 +3101,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2809,6 +3132,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -2835,6 +3159,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2861,6 +3186,7 @@ class _$NotImplemented implements NotImplemented {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -2934,6 +3260,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -2960,6 +3287,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -2986,6 +3314,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3016,6 +3345,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -3042,6 +3372,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3068,6 +3399,7 @@ class _$ServiceUnavailable implements ServiceUnavailable {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3141,6 +3473,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -3167,6 +3500,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3193,6 +3527,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3223,6 +3558,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -3249,6 +3585,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3275,6 +3612,7 @@ class _$NoInternetConnection implements NoInternetConnection {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3372,6 +3710,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -3398,6 +3737,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3424,6 +3764,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3454,6 +3795,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -3480,6 +3822,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3506,6 +3849,7 @@ class _$FormatExceptions implements FormatExceptions {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3584,6 +3928,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -3610,6 +3955,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3636,6 +3982,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3666,6 +4013,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -3692,6 +4040,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3718,6 +4067,7 @@ class _$UnableToProcess implements UnableToProcess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3815,6 +4165,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -3841,6 +4192,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3867,6 +4219,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -3897,6 +4250,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -3923,6 +4277,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -3949,6 +4304,7 @@ class _$DefaultError implements DefaultError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -4027,6 +4383,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(String message) apiFailure,
     required TResult Function() requestCancelled,
     required TResult Function() unauthorizedRequest,
     required TResult Function() forbiddenRequest,
@@ -4053,6 +4410,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -4079,6 +4437,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String message)? apiFailure,
     TResult Function()? requestCancelled,
     TResult Function()? unauthorizedRequest,
     TResult Function()? forbiddenRequest,
@@ -4109,6 +4468,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ApiFailure value) apiFailure,
     required TResult Function(RequestCancelled value) requestCancelled,
     required TResult Function(UnauthorizedRequest value) unauthorizedRequest,
     required TResult Function(ForbiddenRequest value) forbiddenRequest,
@@ -4135,6 +4495,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,
@@ -4161,6 +4522,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ApiFailure value)? apiFailure,
     TResult Function(RequestCancelled value)? requestCancelled,
     TResult Function(UnauthorizedRequest value)? unauthorizedRequest,
     TResult Function(ForbiddenRequest value)? forbiddenRequest,

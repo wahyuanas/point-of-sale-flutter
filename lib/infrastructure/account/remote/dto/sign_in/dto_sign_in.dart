@@ -51,4 +51,20 @@ class DtoSignInResponse with _$DtoSignInResponse {
           coreBusinessType: dtoAccount.coreBusinessType),
     );
   }
+
+  factory DtoSignInResponse.fromApi(Map<String, dynamic> data) {
+    return DtoSignInResponse(
+      dtoAccount: DtoAccount(
+          id: data["id"],
+          companyName: data["companyName"],
+          phoneNumber: data["phoneNumber"],
+          email: data["email"],
+          address: data["address"],
+          outletsNumber: data["outletsNumber"],
+          businessType: data["businessType"],
+          mainBusinessType: data["mainBusinessType"],
+          coreBusinessType: data["coreBusinessType"]),
+      token: '',
+    );
+  }
 }

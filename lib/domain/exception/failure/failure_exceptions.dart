@@ -4,11 +4,13 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:pos/infrastructure/account/remote/api/account_api.dart';
 
 part 'failure_exceptions.freezed.dart';
 
 @freezed
 class FailureExceptions with _$FailureExceptions {
+  const factory FailureExceptions.apiFailure(String message) = ApiFailure;
   const factory FailureExceptions.requestCancelled() = RequestCancelled;
   const factory FailureExceptions.unauthorizedRequest() = UnauthorizedRequest;
   const factory FailureExceptions.forbiddenRequest() = ForbiddenRequest;
@@ -84,9 +86,13 @@ class FailureExceptions with _$FailureExceptions {
           return FailureExceptions.formatExceptions(error);
         } else if (error is PlatformException) {
           return const FailureExceptions.serverError();
+        } else if (error is ApiFailureException) {
+          return FailureExceptions.apiFailure(error.err);
         } else {
           return const FailureExceptions.unexpectedError();
         }
+      } on ApiFailureException catch (e) {
+        return FailureExceptions.apiFailure(e.err);
       } on FormatException catch (e) {
         // Helper.printError(e.toString());
         return FailureExceptions.formatExceptions(e);
@@ -146,6 +152,8 @@ class FailureExceptions with _$FailureExceptions {
       errorMessage = "Unexpected error occurred ${e.toString()}";
     }, notAcceptable: () {
       errorMessage = "Not acceptable";
+    }, apiFailure: (message) {
+      errorMessage = message;
     });
     return errorMessage;
   }

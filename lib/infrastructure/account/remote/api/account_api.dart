@@ -6,10 +6,23 @@ import 'package:flutter/foundation.dart';
 import 'package:pos/infrastructure/service/dio_service.dart' as c;
 import 'package:uuid/uuid.dart';
 
-import '../dto/core/dto_account.dart';
 import '../dto/sign_in/dto_sign_in.dart';
 import '../dto/sign_up/dto_sign_up.dart';
 import 'i_account_api.dart';
+
+class ApiFailureException implements Exception {
+  /// {@macro sign_up_with_email_and_password_failure}
+  const ApiFailureException([
+    this.err = '',
+  ]);
+
+  factory ApiFailureException.fromMessage(String err) {
+    return ApiFailureException(err);
+  }
+
+  /// The associated error message.
+  final String err;
+}
 
 class AccountApi extends c.DioServiceApi implements IAccountApi {
   AccountApi({required this.firebaseFirestore});
@@ -51,13 +64,14 @@ class AccountApi extends c.DioServiceApi implements IAccountApi {
       //debugPrint("DATA RESPONS $response");
 
       //return DtoAccountResponse.fromJson(response.data["data"]["account"]);
+
       String uUid = const Uuid().v4();
-      firebaseFirestore
+      return firebaseFirestore
           .collection('account')
           .doc(uUid)
-          .set(dto.toFirestoreCollection(uUid));
-
-      return DtoSignUpResponse.fromDtoSignUpRequest(dto);
+          .set(dto.toFirestoreCollection(uUid))
+          .then((value) => DtoSignUpResponse.fromDtoSignUpRequest(dto))
+          .catchError((error) => throw (FormatException));
     } on FormatException catch (_) {
       debugPrint("FormatException ERROR");
       throw const FormatException("Tidak Dapat Memproses Data");
@@ -114,20 +128,55 @@ class AccountApi extends c.DioServiceApi implements IAccountApi {
       //debugPrint("DATA RESPONS $response");
 
       //return DtoAccountResponse.fromJson(response.data["data"]["account"]);
-      return DtoSignInResponse(
-        dtoAccount: DtoAccount(
-          id: Random().nextInt(1000),
-          address: "Jl. Dummy No. 1",
-          businessType: 1,
-          companyName: 'PT. Dummy',
-          coreBusinessType: null,
-          email: 'dummy@dummy.com',
-          mainBusinessType: 1,
-          outletsNumber: 3,
-          phoneNumber: '0987654321',
-        ),
-        token: "%436%7*#565677762@@56",
-      );
+
+      if (dto.emailOrPhoneNumber.contains("@")) {
+        return firebaseFirestore
+            .collection('account')
+            .where("email", isEqualTo: dto.emailOrPhoneNumber)
+            .get()
+            .then((querySnapshot) {
+          if (querySnapshot.docChanges.isEmpty) {
+            throw (ApiFailureException.fromMessage(
+                "Data Yang Anda Masukkan Tidak Valid !!!"));
+          } else {
+            return DtoSignInResponse.fromApi(
+                querySnapshot.docChanges[0].doc.data() ?? {});
+          }
+        }).catchError((e) {
+          throw (FormatException);
+        });
+      } else {
+        return firebaseFirestore
+            .collection('account')
+            .where("phoneNumber", isEqualTo: dto.emailOrPhoneNumber)
+            .get()
+            .then((querySnapshot) {
+          if (querySnapshot.docChanges.isEmpty) {
+            throw (ApiFailureException.fromMessage(
+                "Data Yang Anda Masukkan Tidak Valid !!!"));
+          } else {
+            return DtoSignInResponse.fromApi(
+                querySnapshot.docChanges[0].doc.data() ?? {});
+          }
+        }).catchError((e) {
+          throw (FormatException);
+        });
+      }
+
+      //return DtoSignInResponse(
+      //   dtoAccount: DtoAccount(
+      //     id: Random().nextInt(1000),
+      //     address: "Jl. Dummy No. 1",
+      //     businessType: 1,
+      //     companyName: 'PT. Dummy',
+      //     coreBusinessType: null,
+      //     email: 'dummy@dummy.com',
+      //     mainBusinessType: 1,
+      //     outletsNumber: 3,
+      //     phoneNumber: '0987654321',
+      //   ),
+      //   token: "%436%7*#565677762@@56",
+      // );
     } on FormatException catch (_) {
       debugPrint("FormatException ERROR");
       throw const FormatException("Tidak Dapat Memproses Data");
