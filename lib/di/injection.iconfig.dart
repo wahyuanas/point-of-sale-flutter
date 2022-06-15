@@ -12,6 +12,7 @@ import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
+import 'package:pos/presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
 void $initGetIt(GetIt g) {
@@ -28,6 +29,8 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<IAccountService>(
       () => AccountService(accountRepository: g()));
   g.registerLazySingleton<IntroductionCubit>(() => IntroductionCubit());
+  g.registerLazySingleton<BottomNavigationBarCubit>(
+      () => BottomNavigationBarCubit());
   g.registerLazySingleton<ModalCubit>(() => ModalCubit());
   g.registerLazySingleton<RouteCubit>(() => RouteCubit());
   g.registerLazySingleton<AuthCubit>(() => AuthCubit());

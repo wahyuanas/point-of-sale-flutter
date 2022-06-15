@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/utils/colors.dart';
+
+import '../cubit/sign_in_cubit.dart';
 
 class SignInButtonWidget extends StatelessWidget {
   const SignInButtonWidget({Key? key}) : super(key: key);
@@ -42,7 +45,9 @@ class SignInButtonWidget extends StatelessWidget {
               // elevation: MaterialStateProperty.all(3),
               shadowColor: MaterialStateProperty.all(Colors.transparent),
             ),
-            onPressed: () {},
+            onPressed: () {
+              BlocProvider.of<SignInCubit>(context).onSignInSubmit();
+            },
             child: const Text(
               "SignIn",
               style: TextStyle(

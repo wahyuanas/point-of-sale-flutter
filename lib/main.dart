@@ -13,6 +13,8 @@ import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
+import 'presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -53,6 +55,9 @@ class PosAppState extends State<PosApp> {
         create: (context) => getIt<IntroductionCubit>(),
       ),
       BlocProvider(
+        create: (context) => getIt<BottomNavigationBarCubit>(),
+      ),
+      BlocProvider(
         create: (context) => getIt<ModalCubit>(),
       ),
       BlocProvider(
@@ -79,7 +84,7 @@ class PosAppViewState extends State<PosAppView> {
   //NavigatorState get _navigator => _navigatorKey.currentState!;
   @override
   void initState() {
-    BlocProvider.of<AuthCubit>(context).authStarted();
+    //BlocProvider.of<AuthCubit>(context).authStarted();
     BlocProvider.of<ModalCubit>(context).onModalStarted(context);
     super.initState();
   }

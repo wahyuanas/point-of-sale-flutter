@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/expense/screen/main/page_view_expanse_screen.dart';
+import 'package:pos/presentation/page_view/home/screen/main/page_view_home_screen.dart';
+import 'package:pos/presentation/page_view/menu/screen/main/page_view_menu_screen.dart';
+import 'package:pos/presentation/page_view/pos/screen/main/page_view_pos_screen.dart';
 
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
@@ -45,22 +49,18 @@ class PageViewWidgetState extends State<PageViewWidget> {
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: [
-            Container()
-            // PageViewHomeScreen(
-            //     navigatorKey: widget.navigatorKeys[TabItem.home]!,
-            //     tabItem: TabItem.home),
-            // PageViewSearchScreen(
-            //     navigatorKey: widget.navigatorKeys[TabItem.search]!,
-            //     tabItem: TabItem.search),
-            // PageViewFavouriteScreen(
-            //     navigatorKey: widget.navigatorKeys[TabItem.favourite]!,
-            //     tabItem: TabItem.favourite),
-            // PageViewNotificationScreen(
-            //     navigatorKey: widget.navigatorKeys[TabItem.notification]!,
-            //     tabItem: TabItem.notification),
-            // PageViewProfileScreen(
-            //     navigatorKey: widget.navigatorKeys[TabItem.profile]!,
-            //     tabItem: TabItem.profile),
+            PageViewHomeScreen(
+                navigatorKey: widget.navigatorKeys[TabItem.home]!,
+                tabItem: TabItem.home),
+            PageViewPosScreen(
+                navigatorKey: widget.navigatorKeys[TabItem.pos]!,
+                tabItem: TabItem.pos),
+            PageViewExpanseScreen(
+                navigatorKey: widget.navigatorKeys[TabItem.expense]!,
+                tabItem: TabItem.expense),
+            PageViewMenuScreen(
+                navigatorKey: widget.navigatorKeys[TabItem.menu]!,
+                tabItem: TabItem.menu)
           ],
         ));
   }

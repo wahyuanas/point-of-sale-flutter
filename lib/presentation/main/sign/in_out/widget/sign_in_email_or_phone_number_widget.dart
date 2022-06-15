@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 
-class SignInPasswordWidget extends StatefulWidget {
-  const SignInPasswordWidget({Key? key}) : super(key: key);
+class SignInEmailOrPhoneNumberWidget extends StatefulWidget {
+  const SignInEmailOrPhoneNumberWidget({Key? key}) : super(key: key);
 
   @override
-  State<SignInPasswordWidget> createState() => _SignInPasswordWidgetState();
+  State<SignInEmailOrPhoneNumberWidget> createState() =>
+      _SignInEmailOrPhoneNumberWidgetState();
 }
 
-class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
-  bool _obscure = true;
+class _SignInEmailOrPhoneNumberWidgetState
+    extends State<SignInEmailOrPhoneNumberWidget> {
   late bool _initial;
 
   @override
@@ -24,7 +25,7 @@ class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
     return SliverToBoxAdapter(
       child: BlocBuilder<SignInCubit, SignInState>(buildWhen: (p, c) {
         _initial = false;
-        return p.signIn.password != c.signIn.password ||
+        return p.signIn.emailOrPhoneNumber != c.signIn.emailOrPhoneNumber ||
             p.failOrUnit != c.failOrUnit;
       }, builder: (context, state) {
         return Container(
@@ -32,23 +33,32 @@ class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
               //controller: _passwordController,
-              obscureText: _obscure,
+              //obscureText: _obscure,
               autofocus: false,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.signIn.password.value.fold(
+                    ? state.signIn.emailOrPhoneNumber.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
                         (r) => null)
                     : null,
-                icon: const Icon(
-                  Icons.lock_outlined,
-                  color: Colors.blue,
-                  size: 26.0, /*Color(0xff224597)*/
+                icon: Column(
+                  children: const [
+                    Icon(
+                      Icons.email_outlined,
+                      color: Colors.blue,
+                      size: 26.0, /*Color(0xff224597)*/
+                    ),
+                    Icon(
+                      Icons.phone_android_outlined,
+                      color: Colors.blue,
+                      size: 26.0, /*Color(0xff224597)*/
+                    ),
+                  ],
                 ),
-                labelText: "Password",
+                labelText: "Email/No. HP",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -56,19 +66,11 @@ class _SignInPasswordWidgetState extends State<SignInPasswordWidget> {
                 focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black54),
                 ),
-                suffixIcon: GestureDetector(
-                  onTap: () => setState(() {
-                    _obscure = !_obscure;
-                  }),
-                  child: Icon(
-                    _obscure ? Icons.visibility : Icons.visibility_off,
-                    color: _obscure ? Colors.blue : Colors.black,
-                  ),
-                ),
+
                 //border: InputBorder.none,
               ),
-              onChanged: (v) =>
-                  BlocProvider.of<SignInCubit>(context).onPasswordChanged(v)),
+              onChanged: (v) => BlocProvider.of<SignInCubit>(context)
+                  .onEmailOrPhoneNumberChanged(v)),
         );
       }),
     );

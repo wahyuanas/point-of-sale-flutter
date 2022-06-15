@@ -21,7 +21,7 @@ final Map<int, TabItem> indexTab = {
 final Map<TabItem, String> tabName = {
   TabItem.home: 'Home',
   TabItem.pos: 'Pos',
-  TabItem.expense: 'expense',
+  TabItem.expense: 'Pengeluaran',
   TabItem.menu: 'Menu',
 };
 

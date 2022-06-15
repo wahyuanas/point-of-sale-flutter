@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/account/entity/account.dart';
 import 'package:pos/domain/account/model/account_auth.dart';
@@ -55,15 +56,15 @@ class DtoSignInResponse with _$DtoSignInResponse {
   factory DtoSignInResponse.fromApi(Map<String, dynamic> data) {
     return DtoSignInResponse(
       dtoAccount: DtoAccount(
-          id: data["id"],
-          companyName: data["companyName"],
-          phoneNumber: data["phoneNumber"],
-          email: data["email"],
-          address: data["address"],
+          id: 123,
+          companyName: data["companyName"].toString(),
+          phoneNumber: data["phoneNumber"].toString(),
+          email: data["email"].toString(),
+          address: data["address"].toString(),
           outletsNumber: data["outletsNumber"],
           businessType: data["businessType"],
           mainBusinessType: data["mainBusinessType"],
-          coreBusinessType: data["coreBusinessType"]),
+          coreBusinessType: data["coreBusinessType"]?.toString()),
       token: '',
     );
   }

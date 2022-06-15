@@ -43,7 +43,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   .onModalContent("Anda Berhasil SignIn");
               await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!).onModalPop();
-              Navigator.of(context3!).pop();
+              //Navigator.of(context3!).pop();
               // BlocProvider.of<ModalCubit>(modalContext!)
               //     .onModalPush("Anda Berhasil SignIn");
               // //_showDialog(context);
@@ -180,7 +180,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   SliverToBoxAdapter(
                     child: SizedBox(height: size.height * 0.07),
                   ),
-                  const SignInEmailOrPasswordWidget(),
+                  const SignInEmailOrPhoneNumberWidget(),
                   const SignInPasswordWidget(),
                   const SignInForgotPassword(),
                   SliverToBoxAdapter(
