@@ -14,19 +14,6 @@ class PageViewHomeScreen extends StatefulWidget {
 }
 
 class PageViewHomeScreenState extends State<PageViewHomeScreen> {
-  final _scrollController = ScrollController();
-
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Navigator(

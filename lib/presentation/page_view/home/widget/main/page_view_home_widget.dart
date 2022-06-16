@@ -86,7 +86,7 @@ class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
             "Home",
             style: TextStyle(color: Colors.blue),
           ),
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.blue, // navigation bar color
             statusBarColor: Colors.white, // status bar color
             statusBarBrightness: Brightness.dark, //status bar brigtness
@@ -288,19 +288,19 @@ class _tab1State extends State<tab1> with AutomaticKeepAliveClientMixin<tab1> {
                         "#Rp.${faktur[i]["rp"]}",
                         style: const TextStyle(fontSize: 17.0),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Padding(
                         padding: const EdgeInsets.only(right: 20.0),
                         child: Column(
-                          children: [
-                            const Icon(
+                          children: const [
+                            Icon(
                               Icons.euro_symbol_outlined,
                               //size: 30.0,
                             ),
                             Text(
                               "View",
-                              style: const TextStyle(
-                                  fontSize: 13.0, color: Colors.blue),
+                              style:
+                                  TextStyle(fontSize: 13.0, color: Colors.blue),
                             ),
                           ],
                         ),
@@ -496,7 +496,7 @@ class DelegateHome extends SliverPersistentHeaderDelegate {
                       "User,",
                       style: TextStyle(fontSize: 12),
                     ),
-                    Text("Cemang vvxvvxvx", style: TextStyle(fontSize: 12)),
+                    Text("Mr. Cemang", style: TextStyle(fontSize: 12)),
                   ],
                 )
               ],
@@ -593,27 +593,25 @@ class DelegateHome1 extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       color: Color.fromARGB(255, 250, 251, 251),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 25.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.dashboard_customize_outlined),
-                SizedBox(
-                  width: 10,
-                ),
-                Text('Faktur Hari Ini Belum Lunas',
-                    style: TextStyle(fontSize: 17, color: Colors.blue)),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SearchFaktur()
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(Icons.dashboard_customize_outlined),
+              SizedBox(
+                width: 10,
+              ),
+              Text('Faktur Hari Ini Belum Lunas',
+                  style: TextStyle(fontSize: 17, color: Colors.blue)),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const SearchFaktur()
+        ],
       ),
     );
   }

@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
+
 part 'pos_state.dart';
 part 'pos_event.dart';
 part 'pos_bloc.freezed.dart';
