@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class PageViewMenuWidget extends StatefulWidget {
@@ -42,9 +43,20 @@ class _PageViewMenuWidgetState extends State<PageViewMenuWidget>
     //  statusBarHeight; // +
     //kToolbarHeight;
     return Scaffold(
-      appBar: AppBar(title: Builder(builder: (context) {
-        return const Text("MENU");
-      })),
+      appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            // Status bar color
+            statusBarColor: Colors.blue,
+
+            // Status bar brightness (optional)
+            statusBarIconBrightness:
+                Brightness.dark, // For Android (dark icons)
+            statusBarBrightness: Brightness.light, // For iOS (dark icons)
+          ),
+          backgroundColor: Colors.blue,
+          title: Builder(builder: (context) {
+            return const Text("MENU");
+          })),
       body: const Center(child: Text('MENU')),
     );
   }

@@ -105,7 +105,9 @@ class __$$_DtoSignInRequestCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DtoSignInRequest implements _DtoSignInRequest {
+class _$_DtoSignInRequest
+    with DiagnosticableTreeMixin
+    implements _DtoSignInRequest {
   const _$_DtoSignInRequest(
       {required this.emailOrPhoneNumber, required this.password});
 
@@ -118,8 +120,17 @@ class _$_DtoSignInRequest implements _DtoSignInRequest {
   final String password;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DtoSignInRequest(emailOrPhoneNumber: $emailOrPhoneNumber, password: $password)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DtoSignInRequest'))
+      ..add(DiagnosticsProperty('emailOrPhoneNumber', emailOrPhoneNumber))
+      ..add(DiagnosticsProperty('password', password));
   }
 
   @override
@@ -271,7 +282,8 @@ class __$$_DtoSignInResponseCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_DtoSignInResponse extends _DtoSignInResponse {
+class _$_DtoSignInResponse extends _DtoSignInResponse
+    with DiagnosticableTreeMixin {
   const _$_DtoSignInResponse({required this.dtoAccount, required this.token})
       : super._();
 
@@ -284,8 +296,17 @@ class _$_DtoSignInResponse extends _DtoSignInResponse {
   final String token;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'DtoSignInResponse(dtoAccount: $dtoAccount, token: $token)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'DtoSignInResponse'))
+      ..add(DiagnosticsProperty('dtoAccount', dtoAccount))
+      ..add(DiagnosticsProperty('token', token));
   }
 
   @override

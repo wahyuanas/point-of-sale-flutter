@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 class PageViewExpanseWidget extends StatefulWidget {
@@ -42,9 +43,20 @@ class _PageViewExpanseWidgetState extends State<PageViewExpanseWidget>
     //  statusBarHeight; // +
     //kToolbarHeight;
     return Scaffold(
-      appBar: AppBar(title: Builder(builder: (context) {
-        return const Text("MENU");
-      })),
+      appBar: AppBar(
+          systemOverlayStyle: SystemUiOverlayStyle(
+            // Status bar color
+            statusBarColor: Colors.brown,
+
+            // Status bar brightness (optional)
+            statusBarIconBrightness:
+                Brightness.dark, // For Android (dark icons)
+            statusBarBrightness: Brightness.light, // For iOS (dark icons)
+          ),
+          backgroundColor: Colors.brown,
+          title: Builder(builder: (context) {
+            return const Text("MENU");
+          })),
       body: const Center(child: Text('EXPANSE')),
     );
   }

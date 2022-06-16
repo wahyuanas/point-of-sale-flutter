@@ -1,9 +1,8 @@
 import 'dart:async';
-import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:pos/presentation/common/config/system_overlay_style.dart';
 import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
-import 'package:pos/presentation/utils/colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
@@ -78,16 +77,25 @@ class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
     return Scaffold(
         appBar: AppBar(
           elevation: 0.3,
-          backgroundColor: const Color.fromARGB(255, 252, 254, 252),
+          backgroundColor: Colors.white,
           leading: const Icon(
             Icons.logo_dev_outlined,
             color: Colors.blue,
           ),
-          systemOverlayStyle: SystemUiOverlayStyleApp.setSystemUIOverlayStyle(
-              Colors.white, Brightness.dark, Brightness.dark),
           title: const Text(
             "Home",
             style: TextStyle(color: Colors.blue),
+          ),
+          systemOverlayStyle: SystemUiOverlayStyle(
+            systemNavigationBarColor: Colors.blue, // navigation bar color
+            statusBarColor: Colors.white, // status bar color
+            statusBarBrightness: Brightness.dark, //status bar brigtness
+            statusBarIconBrightness:
+                Brightness.dark, //status barIcon Brightness
+            systemNavigationBarDividerColor:
+                Colors.greenAccent, //Navigation bar divider color
+            systemNavigationBarIconBrightness:
+                Brightness.light, //navigation bar icon
           ),
           centerTitle: true,
           actions: const [
