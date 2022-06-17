@@ -16,7 +16,7 @@ _$_Item _$$_ItemFromJson(Map<String, dynamic> json) => _$_Item(
       sellDisc: json['sellDisc'] as int?,
       purchasePrice: json['purchasePrice'] as int,
       purchaseDisc: json['purchaseDisc'] as int?,
-      stock: json['stock'] as int,
+      stock: json['stock'] as int?,
       category: json['category'] as int,
       image: json['image'] as String?,
     );

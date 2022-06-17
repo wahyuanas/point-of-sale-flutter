@@ -10,6 +10,7 @@ class Pos with _$Pos implements IEntity {
   const Pos._();
   const factory Pos({
     required int? sumPrice,
+    required int? qty,
     required Item item,
   }) = _Pos;
 

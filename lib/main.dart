@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pos/di/injection.dart';
@@ -10,6 +11,7 @@ import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
+import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -66,6 +68,9 @@ class PosAppState extends State<PosApp> {
       BlocProvider(
         create: (context) => getIt<SignInCubit>(),
       ),
+      BlocProvider(
+        create: (context) => getIt<PosBloc>(),
+      ),
       BlocProvider(create: (context) => getIt<AuthCubit>()),
     ], child: const PosAppView());
   }
@@ -103,7 +108,7 @@ class PosAppViewState extends State<PosAppView> {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFFBFBFD),
         primarySwatch: Colors.blue,
-        fontFamily: "Gordita",
+        fontFamily: GoogleFonts.raleway().fontFamily,
         // appBarTheme: const AppBarTheme(
         //   backgroundColor: Colors.transparent,
         //   elevation: 0,

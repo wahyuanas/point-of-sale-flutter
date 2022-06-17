@@ -13,6 +13,7 @@ import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
+import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
 void $initGetIt(GetIt g) {
@@ -36,7 +37,7 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<AuthCubit>(() => AuthCubit());
   g.registerLazySingleton<SignInCubit>(
       () => SignInCubit(authCubit: g(), accountService: g()));
-  //g.registerLazySingleton<SignUpCubit>(() => SignUpCubit(accountService: g()));
+  g.registerLazySingleton<PosBloc>(() => PosBloc());
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

@@ -17,7 +17,7 @@ class Item with _$Item implements IEntity {
       required int? sellDisc,
       required int purchasePrice,
       required int? purchaseDisc,
-      required int stock,
+      required int? stock,
       required int category,
       required String? image}) = _Item;
 

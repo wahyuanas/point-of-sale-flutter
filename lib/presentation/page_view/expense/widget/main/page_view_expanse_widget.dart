@@ -44,7 +44,7 @@ class _PageViewExpanseWidgetState extends State<PageViewExpanseWidget>
     //kToolbarHeight;
     return Scaffold(
       appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             // Status bar color
             statusBarColor: Colors.brown,
 

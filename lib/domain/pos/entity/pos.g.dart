@@ -8,10 +8,12 @@ part of 'pos.dart';
 
 _$_Pos _$$_PosFromJson(Map<String, dynamic> json) => _$_Pos(
       sumPrice: json['sumPrice'] as int?,
+      qty: json['qty'] as int?,
       item: Item.fromJson(json['item'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_PosToJson(_$_Pos instance) => <String, dynamic>{
       'sumPrice': instance.sumPrice,
+      'qty': instance.qty,
       'item': instance.item,
     };

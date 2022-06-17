@@ -19,6 +19,8 @@ class RouteGenerator {
             builder: (_) => SignUpNotifScreen(
                   account: account,
                 ));
+      case '/listPosItem':
+        return MaterialPageRoute(builder: (_) => const SignUpScreen());
 
       default:
         return _errorRoute();

@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'item_cubit.dart';
+part of 'catalog_item_pos_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,28 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ItemState {
+mixin _$CatalogItemPosState {
   List<Item>? get items => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $ItemStateCopyWith<ItemState> get copyWith =>
+  $CatalogItemPosStateCopyWith<CatalogItemPosState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ItemStateCopyWith<$Res> {
-  factory $ItemStateCopyWith(ItemState value, $Res Function(ItemState) then) =
-      _$ItemStateCopyWithImpl<$Res>;
+abstract class $CatalogItemPosStateCopyWith<$Res> {
+  factory $CatalogItemPosStateCopyWith(
+          CatalogItemPosState value, $Res Function(CatalogItemPosState) then) =
+      _$CatalogItemPosStateCopyWithImpl<$Res>;
   $Res call({List<Item>? items});
 }
 
 /// @nodoc
-class _$ItemStateCopyWithImpl<$Res> implements $ItemStateCopyWith<$Res> {
-  _$ItemStateCopyWithImpl(this._value, this._then);
+class _$CatalogItemPosStateCopyWithImpl<$Res>
+    implements $CatalogItemPosStateCopyWith<$Res> {
+  _$CatalogItemPosStateCopyWithImpl(this._value, this._then);
 
-  final ItemState _value;
+  final CatalogItemPosState _value;
   // ignore: unused_field
-  final $Res Function(ItemState) _then;
+  final $Res Function(CatalogItemPosState) _then;
 
   @override
   $Res call({
@@ -52,29 +54,31 @@ class _$ItemStateCopyWithImpl<$Res> implements $ItemStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_ItemStateCopyWith<$Res> implements $ItemStateCopyWith<$Res> {
-  factory _$$_ItemStateCopyWith(
-          _$_ItemState value, $Res Function(_$_ItemState) then) =
-      __$$_ItemStateCopyWithImpl<$Res>;
+abstract class _$$_CatalogItemPosStateCopyWith<$Res>
+    implements $CatalogItemPosStateCopyWith<$Res> {
+  factory _$$_CatalogItemPosStateCopyWith(_$_CatalogItemPosState value,
+          $Res Function(_$_CatalogItemPosState) then) =
+      __$$_CatalogItemPosStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Item>? items});
 }
 
 /// @nodoc
-class __$$_ItemStateCopyWithImpl<$Res> extends _$ItemStateCopyWithImpl<$Res>
-    implements _$$_ItemStateCopyWith<$Res> {
-  __$$_ItemStateCopyWithImpl(
-      _$_ItemState _value, $Res Function(_$_ItemState) _then)
-      : super(_value, (v) => _then(v as _$_ItemState));
+class __$$_CatalogItemPosStateCopyWithImpl<$Res>
+    extends _$CatalogItemPosStateCopyWithImpl<$Res>
+    implements _$$_CatalogItemPosStateCopyWith<$Res> {
+  __$$_CatalogItemPosStateCopyWithImpl(_$_CatalogItemPosState _value,
+      $Res Function(_$_CatalogItemPosState) _then)
+      : super(_value, (v) => _then(v as _$_CatalogItemPosState));
 
   @override
-  _$_ItemState get _value => super._value as _$_ItemState;
+  _$_CatalogItemPosState get _value => super._value as _$_CatalogItemPosState;
 
   @override
   $Res call({
     Object? items = freezed,
   }) {
-    return _then(_$_ItemState(
+    return _then(_$_CatalogItemPosState(
       items: items == freezed
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -85,8 +89,11 @@ class __$$_ItemStateCopyWithImpl<$Res> extends _$ItemStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ItemState with DiagnosticableTreeMixin implements _ItemState {
-  const _$_ItemState({required final List<Item>? items}) : _items = items;
+class _$_CatalogItemPosState
+    with DiagnosticableTreeMixin
+    implements _CatalogItemPosState {
+  const _$_CatalogItemPosState({required final List<Item>? items})
+      : _items = items;
 
   final List<Item>? _items;
   @override
@@ -99,14 +106,14 @@ class _$_ItemState with DiagnosticableTreeMixin implements _ItemState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ItemState(items: $items)';
+    return 'CatalogItemPosState(items: $items)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ItemState'))
+      ..add(DiagnosticsProperty('type', 'CatalogItemPosState'))
       ..add(DiagnosticsProperty('items', items));
   }
 
@@ -114,7 +121,7 @@ class _$_ItemState with DiagnosticableTreeMixin implements _ItemState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ItemState &&
+            other is _$_CatalogItemPosState &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
@@ -124,17 +131,19 @@ class _$_ItemState with DiagnosticableTreeMixin implements _ItemState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_ItemStateCopyWith<_$_ItemState> get copyWith =>
-      __$$_ItemStateCopyWithImpl<_$_ItemState>(this, _$identity);
+  _$$_CatalogItemPosStateCopyWith<_$_CatalogItemPosState> get copyWith =>
+      __$$_CatalogItemPosStateCopyWithImpl<_$_CatalogItemPosState>(
+          this, _$identity);
 }
 
-abstract class _ItemState implements ItemState {
-  const factory _ItemState({required final List<Item>? items}) = _$_ItemState;
+abstract class _CatalogItemPosState implements CatalogItemPosState {
+  const factory _CatalogItemPosState({required final List<Item>? items}) =
+      _$_CatalogItemPosState;
 
   @override
   List<Item>? get items => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_ItemStateCopyWith<_$_ItemState> get copyWith =>
+  _$$_CatalogItemPosStateCopyWith<_$_CatalogItemPosState> get copyWith =>
       throw _privateConstructorUsedError;
 }

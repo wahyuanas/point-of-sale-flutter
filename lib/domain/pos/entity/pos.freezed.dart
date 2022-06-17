@@ -21,6 +21,7 @@ Pos _$PosFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Pos {
   int? get sumPrice => throw _privateConstructorUsedError;
+  int? get qty => throw _privateConstructorUsedError;
   Item get item => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -32,7 +33,7 @@ mixin _$Pos {
 abstract class $PosCopyWith<$Res> {
   factory $PosCopyWith(Pos value, $Res Function(Pos) then) =
       _$PosCopyWithImpl<$Res>;
-  $Res call({int? sumPrice, Item item});
+  $Res call({int? sumPrice, int? qty, Item item});
 
   $ItemCopyWith<$Res> get item;
 }
@@ -48,12 +49,17 @@ class _$PosCopyWithImpl<$Res> implements $PosCopyWith<$Res> {
   @override
   $Res call({
     Object? sumPrice = freezed,
+    Object? qty = freezed,
     Object? item = freezed,
   }) {
     return _then(_value.copyWith(
       sumPrice: sumPrice == freezed
           ? _value.sumPrice
           : sumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      qty: qty == freezed
+          ? _value.qty
+          : qty // ignore: cast_nullable_to_non_nullable
               as int?,
       item: item == freezed
           ? _value.item
@@ -75,7 +81,7 @@ abstract class _$$_PosCopyWith<$Res> implements $PosCopyWith<$Res> {
   factory _$$_PosCopyWith(_$_Pos value, $Res Function(_$_Pos) then) =
       __$$_PosCopyWithImpl<$Res>;
   @override
-  $Res call({int? sumPrice, Item item});
+  $Res call({int? sumPrice, int? qty, Item item});
 
   @override
   $ItemCopyWith<$Res> get item;
@@ -93,12 +99,17 @@ class __$$_PosCopyWithImpl<$Res> extends _$PosCopyWithImpl<$Res>
   @override
   $Res call({
     Object? sumPrice = freezed,
+    Object? qty = freezed,
     Object? item = freezed,
   }) {
     return _then(_$_Pos(
       sumPrice: sumPrice == freezed
           ? _value.sumPrice
           : sumPrice // ignore: cast_nullable_to_non_nullable
+              as int?,
+      qty: qty == freezed
+          ? _value.qty
+          : qty // ignore: cast_nullable_to_non_nullable
               as int?,
       item: item == freezed
           ? _value.item
@@ -111,18 +122,21 @@ class __$$_PosCopyWithImpl<$Res> extends _$PosCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Pos extends _Pos {
-  const _$_Pos({required this.sumPrice, required this.item}) : super._();
+  const _$_Pos({required this.sumPrice, required this.qty, required this.item})
+      : super._();
 
   factory _$_Pos.fromJson(Map<String, dynamic> json) => _$$_PosFromJson(json);
 
   @override
   final int? sumPrice;
   @override
+  final int? qty;
+  @override
   final Item item;
 
   @override
   String toString() {
-    return 'Pos(sumPrice: $sumPrice, item: $item)';
+    return 'Pos(sumPrice: $sumPrice, qty: $qty, item: $item)';
   }
 
   @override
@@ -131,6 +145,7 @@ class _$_Pos extends _Pos {
         (other.runtimeType == runtimeType &&
             other is _$_Pos &&
             const DeepCollectionEquality().equals(other.sumPrice, sumPrice) &&
+            const DeepCollectionEquality().equals(other.qty, qty) &&
             const DeepCollectionEquality().equals(other.item, item));
   }
 
@@ -139,6 +154,7 @@ class _$_Pos extends _Pos {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(sumPrice),
+      const DeepCollectionEquality().hash(qty),
       const DeepCollectionEquality().hash(item));
 
   @JsonKey(ignore: true)
@@ -153,14 +169,18 @@ class _$_Pos extends _Pos {
 }
 
 abstract class _Pos extends Pos {
-  const factory _Pos({required final int? sumPrice, required final Item item}) =
-      _$_Pos;
+  const factory _Pos(
+      {required final int? sumPrice,
+      required final int? qty,
+      required final Item item}) = _$_Pos;
   const _Pos._() : super._();
 
   factory _Pos.fromJson(Map<String, dynamic> json) = _$_Pos.fromJson;
 
   @override
   int? get sumPrice => throw _privateConstructorUsedError;
+  @override
+  int? get qty => throw _privateConstructorUsedError;
   @override
   Item get item => throw _privateConstructorUsedError;
   @override

@@ -20,18 +20,21 @@ mixin _$OnRouteState {
   TResult when<TResult extends Object?>({
     required TResult Function() signUp,
     required TResult Function() signUpNotif,
+    required TResult Function() listPosItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$OnRouteState {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
+    required TResult Function(_ListPosItem value) listPosItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -118,6 +124,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult when<TResult extends Object?>({
     required TResult Function() signUp,
     required TResult Function() signUpNotif,
+    required TResult Function() listPosItem,
   }) {
     return signUp();
   }
@@ -127,6 +134,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
   }) {
     return signUp?.call();
   }
@@ -136,6 +144,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -149,6 +158,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
+    required TResult Function(_ListPosItem value) listPosItem,
   }) {
     return signUp(this);
   }
@@ -158,6 +168,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
   }) {
     return signUp?.call(this);
   }
@@ -167,6 +178,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -229,6 +241,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult when<TResult extends Object?>({
     required TResult Function() signUp,
     required TResult Function() signUpNotif,
+    required TResult Function() listPosItem,
   }) {
     return signUpNotif();
   }
@@ -238,6 +251,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
   }) {
     return signUpNotif?.call();
   }
@@ -247,6 +261,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? signUp,
     TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -260,6 +275,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult map<TResult extends Object?>({
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
+    required TResult Function(_ListPosItem value) listPosItem,
   }) {
     return signUpNotif(this);
   }
@@ -269,6 +285,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
   }) {
     return signUpNotif?.call(this);
   }
@@ -278,6 +295,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -289,4 +307,121 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
 
 abstract class _SignUpNotif implements OnRouteState {
   const factory _SignUpNotif() = _$_SignUpNotif;
+}
+
+/// @nodoc
+abstract class _$$_ListPosItemCopyWith<$Res> {
+  factory _$$_ListPosItemCopyWith(
+          _$_ListPosItem value, $Res Function(_$_ListPosItem) then) =
+      __$$_ListPosItemCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ListPosItemCopyWithImpl<$Res>
+    extends _$OnRouteStateCopyWithImpl<$Res>
+    implements _$$_ListPosItemCopyWith<$Res> {
+  __$$_ListPosItemCopyWithImpl(
+      _$_ListPosItem _value, $Res Function(_$_ListPosItem) _then)
+      : super(_value, (v) => _then(v as _$_ListPosItem));
+
+  @override
+  _$_ListPosItem get _value => super._value as _$_ListPosItem;
+}
+
+/// @nodoc
+
+class _$_ListPosItem with DiagnosticableTreeMixin implements _ListPosItem {
+  const _$_ListPosItem();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnRouteState.listPosItem()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'OnRouteState.listPosItem'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$_ListPosItem);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() signUp,
+    required TResult Function() signUpNotif,
+    required TResult Function() listPosItem,
+  }) {
+    return listPosItem();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? signUp,
+    TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
+  }) {
+    return listPosItem?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? signUp,
+    TResult Function()? signUpNotif,
+    TResult Function()? listPosItem,
+    required TResult orElse(),
+  }) {
+    if (listPosItem != null) {
+      return listPosItem();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignUp value) signUp,
+    required TResult Function(_SignUpNotif value) signUpNotif,
+    required TResult Function(_ListPosItem value) listPosItem,
+  }) {
+    return listPosItem(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
+  }) {
+    return listPosItem?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignUp value)? signUp,
+    TResult Function(_SignUpNotif value)? signUpNotif,
+    TResult Function(_ListPosItem value)? listPosItem,
+    required TResult orElse(),
+  }) {
+    if (listPosItem != null) {
+      return listPosItem(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ListPosItem implements OnRouteState {
+  const factory _ListPosItem() = _$_ListPosItem;
 }

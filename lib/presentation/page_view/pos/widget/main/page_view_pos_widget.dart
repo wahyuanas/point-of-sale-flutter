@@ -1,7 +1,12 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
+import 'package:pos/routes/cubit/route_cubit.dart';
+import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PageViewPosWidget extends StatefulWidget {
   const PageViewPosWidget({Key? key}) : super(key: key);
@@ -57,40 +62,37 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
               // ),
               title: Container(
                 decoration: const BoxDecoration(
-                  //color: Colors.green,
-                  border: Border(
-                      bottom: BorderSide(
-                    color: Colors.blue,
-                    //width: 3.0,
-                  )),
-                ),
+                    //color: Colors.green,
+                    // border: Border(
+                    //     bottom: BorderSide(
+                    //   color: Colors.blue,
+                    //   //width: 3.0,
+                    // )),
+                    ),
                 //height: 100,
                 //color: Color.fromARGB(255, 252, 254, 252),
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(8, 0, 12, 8),
+                  padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                   child: Row(
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.add_card_outlined,
                         color: Color.fromARGB(255, 13, 77, 203),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       const Text(
-                        "Pos",
-                        style: TextStyle(
-                            color: Colors.blue,
-                            fontSize: 25,
-                            fontWeight: FontWeight.w600),
+                        "POS",
+                        style: TextStyle(color: Colors.blue),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Icon(
-                            Icons.notifications_outlined,
-                            size: 30.0,
+                            Icons.person_outline,
+                            size: 40.0,
                             color: Colors.blue,
                           ),
                           const SizedBox(
@@ -104,14 +106,16 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
                               Text(
                                 "User,",
                                 style: TextStyle(
-                                    fontSize: 17,
+                                    fontSize: 15,
                                     color: Colors.blue,
-                                    fontWeight: FontWeight.w600),
+                                    fontWeight: FontWeight.w500),
                               ),
                               Text(
-                                "Mr. Cemang",
-                                style:
-                                    TextStyle(fontSize: 15, color: Colors.blue),
+                                "Mr. Anyone",
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    color: Colors.blue,
+                                    fontWeight: FontWeight.normal),
                               ),
                             ],
                           ),
@@ -207,6 +211,17 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
                 pinned: true,
                 //floating: true,
                 delegate: DelegatePos2()),
+            BlocProvider.of<PosBloc>(context).state.poss == null
+                ? SliverFillRemaining(
+                    child: Center(
+                      child: Text(
+                        "Tidak ada item",
+                        style: GoogleFonts.raleway(
+                            fontSize: 20, color: Colors.blue),
+                      ),
+                    ),
+                  )
+                : Container()
           ],
         ));
   }
@@ -219,76 +234,121 @@ class DelegatePos extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      decoration: const BoxDecoration(
-        //color: Colors.green,
-        border: Border(
-            bottom: BorderSide(
-          color: Colors.blue,
-          //width: 3.0,
-        )),
-      ),
-      height: 100,
-      //color: Color.fromARGB(255, 252, 254, 252),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 0, 12, 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(
-                  Icons.add_card_outlined,
-                  color: Color.fromARGB(255, 13, 77, 203),
+    return Padding(
+      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+      child: Container(
+        decoration: const BoxDecoration(
+          //color: Colors.green,
+          border: Border(
+              bottom: BorderSide(
+            color: Colors.blue,
+            //width: 3.0,
+          )),
+        ),
+        height: 100,
+        //color: Color.fromARGB(255, 252, 254, 252),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () => BlocProvider.of<RouteCubit>(context)
+                    .onRoute(const OnRouteState.listPosItem(), null),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: Colors.blue, width: 0.5),
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: SizedBox(
+                    height: 60,
+                    width: 80,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.add_circle_outline,
+                          color: Colors.blue,
+                        ),
+                        Text(
+                          "Tambah",
+                          style: TextStyle(
+                              fontSize: 13,
+                              //fontWeight: FontWeight.w500,
+                              color: Colors.blue),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
-                Text(
-                  "Tambah",
-                  style: TextStyle(
-                      fontSize: 13,
-                      //fontWeight: FontWeight.w500,
-                      color: Colors.blue),
-                )
-              ],
-            ),
-            const Spacer(),
-            Row(
-              children: [
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.cancel_outlined),
-                    Text(
-                      "Batal",
-                      style: TextStyle(
-                          fontSize: 13,
-                          //fontWeight: FontWeight.w500,
-                          color: Colors.blue),
-                    )
-                  ],
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [
-                    Icon(Icons.payment_outlined),
-                    Text(
-                      "Bayar",
-                      style: TextStyle(
-                          fontSize: 13,
-                          //fontWeight: FontWeight.w500,
-                          color: Colors.blue),
-                    )
-                  ],
-                )
-              ],
-            ),
-          ],
+              ),
+              const Spacer(),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Card(
+                      shape: RoundedRectangleBorder(
+                          side:
+                              const BorderSide(color: Colors.blue, width: 0.5),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 60,
+                        width: 80,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Icon(
+                              Icons.cancel_outlined,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Batal",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  //fontWeight: FontWeight.w500,
+                                  color: Colors.blue),
+                            )
+                          ],
+                        ),
+                      )),
+                  // const SizedBox(
+                  //   width: 10,
+                  // ),
+                  Card(
+                      shape: RoundedRectangleBorder(
+                          side:
+                              const BorderSide(color: Colors.blue, width: 0.5),
+                          borderRadius: BorderRadius.circular(10.0)),
+                      child: Container(
+                        alignment: Alignment.center,
+                        height: 60,
+                        width: 80,
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Icon(
+                              Icons.near_me_outlined,
+                              color: Colors.blue,
+                            ),
+                            Text(
+                              "Bayar",
+                              style: TextStyle(
+                                  fontSize: 13,
+                                  //fontWeight: FontWeight.w500,
+                                  color: Colors.blue),
+                            )
+                          ],
+                        ),
+                      )),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -312,7 +372,7 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: 70,
-      color: Color.fromARGB(255, 251, 252, 252),
+      color: const Color.fromARGB(255, 251, 252, 252),
       child: Padding(
         padding: const EdgeInsets.only(left: 30.0, right: 30.0),
         child: Row(
@@ -346,16 +406,21 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: 30,
-      color: Color.fromARGB(255, 250, 251, 251),
+      color: const Color.fromARGB(255, 250, 251, 251),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: const [
-          Icon(Icons.dashboard_customize_outlined),
-          SizedBox(
+        children: [
+          const Icon(
+            Icons.add_shopping_cart_outlined,
+            color: Colors.blue,
+          ),
+          const SizedBox(
             width: 10,
           ),
-          Text('Item Transaksi',
-              style: TextStyle(fontSize: 17, color: Colors.blue)),
+          Text(
+            "Item transaksi",
+            style: GoogleFonts.raleway(fontSize: 17, color: Colors.blue),
+          ),
         ],
       ),
     );
@@ -393,22 +458,16 @@ class DelegatePos3 extends SliverPersistentHeaderDelegate {
         child: Row(
           //mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Icon(
                 Icons.add_card_outlined,
                 color: Color.fromARGB(255, 13, 77, 203),
               ),
             ),
-            Spacer(),
-            const Text(
-              "Pos",
-              style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600),
-            ),
-            Spacer(),
+            const Spacer(),
+            const Text("POS"),
+            const Spacer(),
             Padding(
               padding: const EdgeInsets.only(right: 8.0),
               child: Row(
@@ -416,7 +475,7 @@ class DelegatePos3 extends SliverPersistentHeaderDelegate {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Icon(
-                    Icons.notifications_outlined,
+                    Icons.person_pin_circle_outlined,
                     size: 30.0,
                     color: Colors.blue,
                   ),
@@ -431,7 +490,7 @@ class DelegatePos3 extends SliverPersistentHeaderDelegate {
                       Text(
                         "User,",
                         style: TextStyle(
-                            fontSize: 17,
+                            fontSize: 15,
                             color: Colors.blue,
                             fontWeight: FontWeight.w600),
                       ),

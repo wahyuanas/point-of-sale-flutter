@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:pos/presentation/common/config/system_overlay_style.dart';
 import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -183,8 +182,8 @@ class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
               //     ],
               //   ),
               // ),
-              tab1(),
-              tab2(),
+              Tab1(),
+              Tab2(),
             ],
           ),
         ));
@@ -194,16 +193,16 @@ class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
   bool get wantKeepAlive => true;
 }
 
-class tab1 extends StatefulWidget {
-  const tab1({
+class Tab1 extends StatefulWidget {
+  const Tab1({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<tab1> createState() => _tab1State();
+  State<Tab1> createState() => _Tab1State();
 }
 
-class _tab1State extends State<tab1> with AutomaticKeepAliveClientMixin<tab1> {
+class _Tab1State extends State<Tab1> with AutomaticKeepAliveClientMixin<Tab1> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -230,8 +229,9 @@ class _tab1State extends State<tab1> with AutomaticKeepAliveClientMixin<tab1> {
                     //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        Icons.document_scanner_outlined,
+                        Icons.description_outlined,
                         size: 50.0,
+                        color: Colors.blue,
                       ),
                       const SizedBox(
                         width: 10.0,
@@ -294,7 +294,8 @@ class _tab1State extends State<tab1> with AutomaticKeepAliveClientMixin<tab1> {
                         child: Column(
                           children: const [
                             Icon(
-                              Icons.euro_symbol_outlined,
+                              Icons.remove_red_eye_outlined,
+                              color: Colors.blue,
                               //size: 30.0,
                             ),
                             Text(
@@ -320,16 +321,16 @@ class _tab1State extends State<tab1> with AutomaticKeepAliveClientMixin<tab1> {
   bool get wantKeepAlive => true;
 }
 
-class tab2 extends StatefulWidget {
-  const tab2({
+class Tab2 extends StatefulWidget {
+  const Tab2({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<tab2> createState() => tab2State();
+  State<Tab2> createState() => Tab2State();
 }
 
-class tab2State extends State<tab2> with AutomaticKeepAliveClientMixin<tab2> {
+class Tab2State extends State<Tab2> with AutomaticKeepAliveClientMixin<Tab2> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -346,18 +347,14 @@ class tab2State extends State<tab2> with AutomaticKeepAliveClientMixin<tab2> {
               onTap: () async {},
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                //mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    //mainAxisSize: MainAxisSize.min,
-                    //crossAxisAlignment: CrossAxisAlignment.center,
-                    //mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Icon(
-                        Icons.document_scanner_outlined,
-                        size: 50.0,
+                        Icons.inventory_outlined,
+                        color: Colors.blue,
+                        size: 50,
                       ),
                       const SizedBox(
                         width: 10.0,
@@ -367,12 +364,12 @@ class tab2State extends State<tab2> with AutomaticKeepAliveClientMixin<tab2> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "Mr. ${inventory[i]["kode"]}",
+                            "${inventory[i]["kode"]}",
                             style: const TextStyle(color: Colors.blue),
                           ),
                           Text(
-                            "Mr. ${inventory[i]["nama"]}",
-                            style: const TextStyle(color: Colors.blue),
+                            "${inventory[i]["nama"]}",
+                            style: const TextStyle(color: Colors.black),
                           ),
                         ],
                       ),
@@ -448,43 +445,44 @@ class DelegateHome extends SliverPersistentHeaderDelegate {
       height: 100,
       //color: Color.fromARGB(255, 252, 254, 252),
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 0, 12, 8),
+        padding: const EdgeInsets.fromLTRB(8, 0, 12, 0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      side: const BorderSide(
-                          width: 2, color: Color.fromARGB(255, 16, 53, 218)),
-                      primary: const Color.fromARGB(255, 73, 69, 103),
-                      onPrimary: const Color.fromARGB(255, 14, 142, 33),
-                      shape: const CircleBorder(),
-                      minimumSize: const Size(20, 20)
-                      //padding: EdgeInsets.fromLTRB(0, 0, 0, 0)
-                      ),
-                  child: const Icon(
-                    Icons.add,
-                    size: 25,
-                    color: Color.fromARGB(255, 13, 77, 203),
-                  ),
-                  onPressed: () {},
+            Card(
+              shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: Colors.blue, width: 0.5),
+                  borderRadius: BorderRadius.circular(10.0)),
+              child: SizedBox(
+                height: 60,
+                width: 120,
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Icon(
+                      Icons.add_circle_outline,
+                      color: Colors.blue,
+                    ),
+                    Text(
+                      "Modal Kasir",
+                      style: TextStyle(
+                          fontSize: 13,
+                          //fontWeight: FontWeight.w500,
+                          color: Colors.blue),
+                    )
+                  ],
                 ),
-                const Text(
-                  "Modal Kasir",
-                  style: TextStyle(
-                      fontSize: 13,
-                      //fontWeight: FontWeight.w500,
-                      color: Colors.blue),
-                )
-              ],
+              ),
             ),
             const Spacer(),
             Row(
               children: [
-                const Icon(Icons.person),
+                const Icon(
+                  Icons.person_outline,
+                  size: 40.0,
+                  color: Colors.blue,
+                ),
                 const SizedBox(
                   width: 10,
                 ),
@@ -494,9 +492,18 @@ class DelegateHome extends SliverPersistentHeaderDelegate {
                   children: const [
                     Text(
                       "User,",
-                      style: TextStyle(fontSize: 12),
+                      style: TextStyle(
+                          fontSize: 15,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.w500),
                     ),
-                    Text("Mr. Cemang", style: TextStyle(fontSize: 12)),
+                    Text(
+                      "Mr. Anyone",
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.blue,
+                          fontWeight: FontWeight.normal),
+                    ),
                   ],
                 )
               ],
@@ -531,7 +538,7 @@ class DelegateSearchForm extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Color.fromARGB(255, 250, 251, 251),
+      color: const Color.fromARGB(255, 250, 251, 251),
       child: TabBar(
           onTap: (c) {
             pageController.jumpToPage(c);
@@ -548,7 +555,7 @@ class DelegateSearchForm extends SliverPersistentHeaderDelegate {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(
-                  Icons.document_scanner_outlined,
+                  Icons.content_copy_outlined,
                   color: Colors.blue,
                 ),
                 SizedBox(
@@ -562,7 +569,7 @@ class DelegateSearchForm extends SliverPersistentHeaderDelegate {
               mainAxisSize: MainAxisSize.min,
               children: const [
                 Icon(
-                  Icons.document_scanner_outlined,
+                  Icons.inventory_outlined,
                   color: Colors.blue,
                 ),
                 SizedBox(
@@ -592,14 +599,21 @@ class DelegateHome1 extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Color.fromARGB(255, 250, 251, 251),
+      color: const Color.fromARGB(255, 250, 251, 251),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const SizedBox(
+            height: 10,
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
-              Icon(Icons.dashboard_customize_outlined),
+              Icon(
+                Icons.content_copy_outlined,
+                color: Colors.blue,
+                size: 50,
+              ),
               SizedBox(
                 width: 10,
               ),
@@ -617,10 +631,10 @@ class DelegateHome1 extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 130;
+  double get maxExtent => 140;
 
   @override
-  double get minExtent => 130;
+  double get minExtent => 140;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
@@ -633,37 +647,42 @@ class DelegateHome2 extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Color.fromARGB(255, 250, 251, 251),
-      child: Padding(
-        padding: const EdgeInsets.only(top: 25.0),
-        child: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Icon(Icons.dashboard_customize_outlined),
-                SizedBox(
-                  width: 10,
-                ),
-                Text('Inventory Tersedia',
-                    style: TextStyle(fontSize: 17, color: Colors.blue)),
-              ],
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            const SearchInventory()
-          ],
-        ),
+      color: const Color.fromARGB(255, 250, 251, 251),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          const SizedBox(
+            height: 10,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Icon(
+                Icons.inventory_2_outlined,
+                color: Colors.blue,
+                size: 50,
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text('Inventory Tersedia',
+                  style: TextStyle(fontSize: 17, color: Colors.blue)),
+            ],
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          const SearchInventory()
+        ],
       ),
     );
   }
 
   @override
-  double get maxExtent => 130;
+  double get maxExtent => 140;
 
   @override
-  double get minExtent => 130;
+  double get minExtent => 140;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {

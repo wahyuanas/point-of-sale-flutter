@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart';
 import 'package:dartz/dartz.dart';
@@ -52,6 +51,7 @@ class PosBloc extends Bloc<PosEvent, PosState> {
     }
     Pos pos = Pos(
       item: event.item,
+      qty: 1,
       sumPrice: sumPrice,
     );
 
@@ -66,5 +66,83 @@ class PosBloc extends Bloc<PosEvent, PosState> {
       idItem: event.item.id,
       poss: poss,
     ));
+  }
+
+  void onIncrementItem(
+      PosIncrementItemEvent event, Emitter<PosState> emit) async {
+    Pos? pos;
+    int? sumPrice;
+    List<Pos>? poss;
+    if (state.poss != null) {
+      int? index =
+          state.poss?.indexWhere((posc) => posc.item.id == event.item.id);
+      if (index != null) {
+        if (index >= 0) {
+          poss = List.from(state.poss!.toList());
+          pos = poss[index];
+          sumPrice = pos.sumPrice;
+          if (event.item.sellDisc == null) {
+            sumPrice = (pos.sumPrice ?? 0) + event.item.sellPrice;
+          } else {
+            sumPrice = (pos.sumPrice ?? 0) +
+                (event.item.sellPrice -
+                        (event.item.sellPrice * (event.item.sellDisc! / 100)))
+                    .round();
+          }
+
+          pos = pos.copyWith(sumPrice: sumPrice, qty: (pos.qty ?? 0) + 1);
+          poss[index] = pos;
+          emit(state.copyWith(idItem: event.item.id, poss: poss));
+        }
+      }
+    }
+  }
+
+  void onDecrementItem(
+      PosDecrementItemEvent event, Emitter<PosState> emit) async {
+    Pos? pos;
+    int? sumPrice;
+    List<Pos>? poss;
+    int? qty;
+    if (state.poss != null) {
+      int? index = state.poss?.indexWhere((posc) {
+        return posc.item.id == event.item.id;
+      });
+
+      if (index != null) {
+        if (index >= 0) {
+          poss = List.from(state.poss!.toList());
+          pos = poss[index];
+          qty = pos.qty;
+          sumPrice = pos.sumPrice;
+          if (event.item.sellDisc == null) {
+            sumPrice = (pos.sumPrice ?? 0) - event.item.sellPrice;
+          } else {
+            sumPrice = (pos.sumPrice ?? 0) -
+                (event.item.sellPrice -
+                        (event.item.sellPrice * (event.item.sellDisc! / 100)))
+                    .round();
+          }
+          qty = (qty ?? 0) - 1;
+
+          if (qty == 0) {
+            pos = pos.copyWith(qty: null, sumPrice: null);
+
+            poss.removeAt(index);
+            if (poss.isEmpty) {
+              poss = null;
+            }
+          } else {
+            pos = pos.copyWith(qty: qty, sumPrice: sumPrice);
+
+            poss[index] = pos;
+          }
+        }
+        emit(state.copyWith(
+          idItem: event.item.id,
+          poss: poss,
+        ));
+      }
+    }
   }
 }
