@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
+import 'package:pos/presentation/utils/colors.dart';
 
 class CatalogItemPosListCardWidget extends StatefulWidget {
   final Item item;
@@ -73,11 +75,11 @@ class _CatalogItemPosListCardWidgetState
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "${pos?.item.code}",
+                          widget.item.code,
                           style: const TextStyle(color: Colors.blue),
                         ),
                         Text(
-                          "${pos?.item.name}",
+                          widget.item.name,
                           style: const TextStyle(color: Colors.black),
                         ),
                       ],
@@ -86,7 +88,10 @@ class _CatalogItemPosListCardWidgetState
                 ),
                 Wrap(
                   children: [
-                    Text("Harga ${pos?.item.sellPrice}",
+                    Text(
+                        NumberFormat.currency(
+                                locale: 'id', symbol: 'Rp', decimalDigits: 0)
+                            .format(widget.item.sellPrice),
                         style: const TextStyle(
                           decoration: TextDecoration.underline,
                         )),
@@ -97,7 +102,7 @@ class _CatalogItemPosListCardWidgetState
                     const SizedBox(
                       width: 10.0,
                     ),
-                    Text("Disc ${pos?.item.sellDisc ?? 0}%",
+                    Text("Disc ${widget.item.sellDisc ?? 0}%",
                         style: const TextStyle(
                           decoration: TextDecoration.underline,
                         )),
@@ -108,23 +113,86 @@ class _CatalogItemPosListCardWidgetState
                     const SizedBox(
                       width: 10.0,
                     ),
-                    Text("Qty ${pos?.qty}",
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                        )),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    const Text("|"),
-                    const SizedBox(
-                      width: 10.0,
-                    ),
-                    Text("Sub total Rp ${pos?.sumPrice}",
+                    Text("Stok ${(widget.item.stock ?? 0) - (pos?.qty ?? 0)}",
                         style: const TextStyle(
                           decoration: TextDecoration.underline,
                         )),
                   ],
                 ),
+                const SizedBox(
+                  height: 10.0,
+                ),
+                pos?.qty == null
+                    ? Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Spacer(),
+                          Padding(
+                              padding: const EdgeInsets.only(right: 15.0),
+                              child: GestureDetector(
+                                onTap: () => BlocProvider.of<PosBloc>(context)
+                                    .add(PosAddItemEvent(item: widget.item)),
+                                child: Chip(
+                                    label: Row(
+                                  children: const [
+                                    Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.blue,
+                                    ),
+                                    Text(
+                                      "Tambah",
+                                      style: TextStyle(color: Colors.blue),
+                                    )
+                                  ],
+                                )),
+                              )),
+                        ],
+                      )
+                    : Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Spacer(),
+                          GestureDetector(
+                            onTap: () => BlocProvider.of<PosBloc>(context)
+                                .add(PosDecrementItemEvent(item: widget.item)),
+                            child: const Icon(
+                              Icons.remove_circle_outline,
+                              color: Colors.blue,
+                              size: 30,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          Text("${pos?.qty}",
+                              style: const TextStyle(
+                                  color: Colors.blue, fontSize: 17.0)),
+                          const SizedBox(
+                            width: 10.0,
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 20.0),
+                            child: (widget.item.stock ?? 0) - (pos?.qty ?? 0) ==
+                                    0
+                                ? const Icon(
+                                    Icons.add_circle_outline,
+                                    color: Color.fromARGB(255, 174, 179, 183),
+                                    size: 30,
+                                  )
+                                : GestureDetector(
+                                    onTap: () =>
+                                        BlocProvider.of<PosBloc>(context).add(
+                                            PosIncrementItemEvent(
+                                                item: widget.item)),
+                                    child: const Icon(
+                                      Icons.add_circle_outline,
+                                      color: Colors.blue,
+                                      size: 30,
+                                    ),
+                                  ),
+                          ),
+                        ],
+                      )
               ],
             ),
           ),

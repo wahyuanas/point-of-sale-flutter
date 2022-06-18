@@ -19,11 +19,20 @@ class _PageViewPosListItemWidgetState extends State<PageViewPosListItemWidget> {
     return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
       return state.poss == null
           ? SliverFillRemaining(
-              child: Center(
-                child: Text(
-                  "Tidak ada item",
-                  style: GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
-                ),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(
+                    Icons.block_outlined,
+                    size: 70.0,
+                  ),
+                  Text(
+                    "Tidak ada item",
+                    style:
+                        GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
+                  ),
+                ],
               ),
             )
           : SliverList(

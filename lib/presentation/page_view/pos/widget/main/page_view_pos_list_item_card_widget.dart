@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
+import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 
 class PageViewPosListItemCardWidget extends StatefulWidget {
   final Pos pos;
@@ -85,12 +88,60 @@ class _PageViewPosListItemCardWidgetState
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Text("Sub total Rp ${widget.pos.sumPrice}",
+                  Text(
+                      "Sub total Rp ${NumberFormat.currency(locale: 'id', symbol: 'Rp', decimalDigits: 0).format(widget.pos.sumPrice)}",
                       style: const TextStyle(
                         decoration: TextDecoration.underline,
                       )),
                 ],
               ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Spacer(),
+                  GestureDetector(
+                    onTap: () => BlocProvider.of<PosBloc>(context)
+                        .add(PosDecrementItemEvent(item: widget.pos.item)),
+                    child: const Icon(
+                      Icons.remove_circle_outline,
+                      color: Colors.blue,
+                      size: 30,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  Text("${widget.pos.qty}",
+                      style:
+                          const TextStyle(color: Colors.blue, fontSize: 17.0)),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: (widget.pos.item.stock ?? 0) -
+                                (widget.pos.qty ?? 0) ==
+                            0
+                        ? const Icon(
+                            Icons.add_circle_outline,
+                            color: Color.fromARGB(255, 174, 179, 183),
+                            size: 30,
+                          )
+                        : GestureDetector(
+                            onTap: () => BlocProvider.of<PosBloc>(context).add(
+                                PosIncrementItemEvent(item: widget.pos.item)),
+                            child: const Icon(
+                              Icons.add_circle_outline,
+                              color: Colors.blue,
+                              size: 30,
+                            ),
+                          ),
+                  ),
+                ],
+              )
             ],
           ),
         ),

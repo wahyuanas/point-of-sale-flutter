@@ -2,11 +2,14 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'page_view_pos_list_item_widget.dart';
 
 class PageViewPosWidget extends StatefulWidget {
   const PageViewPosWidget({Key? key}) : super(key: key);
@@ -137,63 +140,6 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
                     Brightness.light, //navigation bar icon
               ),
               centerTitle: true,
-              // actions: [
-              //   Padding(
-              //     padding: const EdgeInsets.only(right: 8.0),
-              //     child: Row(
-              //       mainAxisSize: MainAxisSize.min,
-              //       mainAxisAlignment: MainAxisAlignment.center,
-              //       children: [
-              //         const Icon(
-              //           Icons.notifications_outlined,
-              //           size: 30.0,
-              //           color: Colors.blue,
-              //         ),
-              //         const SizedBox(
-              //           width: 5,
-              //         ),
-              //         Column(
-              //           mainAxisSize: MainAxisSize.min,
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           //mainAxisAlignment: MainAxisAlignment.center,
-              //           children: const [
-              //             Text(
-              //               "User,",
-              //               style: TextStyle(
-              //                   fontSize: 17,
-              //                   color: Colors.blue,
-              //                   fontWeight: FontWeight.w600),
-              //             ),
-              //             Text(
-              //               "Mr. Cemang",
-              //               style: TextStyle(fontSize: 15, color: Colors.blue),
-              //             ),
-              //           ],
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-
-              //   // Row(
-              //   //   children: [
-              //   //     const Icon(Icons.person),
-              //   //     const SizedBox(
-              //   //       width: 10,
-              //   //     ),
-              //   //     Column(
-              //   //       mainAxisSize: MainAxisSize.min,
-              //   //       crossAxisAlignment: CrossAxisAlignment.start,
-              //   //       children: const [
-              //   //         Text(
-              //   //           "User,",
-              //   //           style: TextStyle(fontSize: 12),
-              //   //         ),
-              //   //         Text("Mr. Cemang", style: TextStyle(fontSize: 12)),
-              //   //       ],
-              //   //     )
-              //   //   ],
-              //   // ),
-              // ],
             ),
           ),
         ),
@@ -211,17 +157,7 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
                 pinned: true,
                 //floating: true,
                 delegate: DelegatePos2()),
-            BlocProvider.of<PosBloc>(context).state.poss == null
-                ? SliverFillRemaining(
-                    child: Center(
-                      child: Text(
-                        "Tidak ada item",
-                        style: GoogleFonts.raleway(
-                            fontSize: 20, color: Colors.blue),
-                      ),
-                    ),
-                  )
-                : Container()
+            const PageViewPosListItemWidget()
           ],
         ));
   }
@@ -370,22 +306,34 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      height: 70,
-      color: const Color.fromARGB(255, 251, 252, 252),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Text('FAK-XXXXXXXX1',
-                style: TextStyle(fontSize: 17, color: Colors.blue)),
-            Spacer(),
-            Text('Rp', style: TextStyle(fontSize: 17, color: Colors.blue)),
-          ],
+    return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
+      int total = 0;
+      state.poss?.forEach(
+        (pos) {
+          total = total + (pos.sumPrice ?? 0);
+        },
+      );
+      return Container(
+        height: 70,
+        color: const Color.fromARGB(255, 251, 252, 252),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('FAK-XXXXXXXX1',
+                  style: TextStyle(fontSize: 17, color: Colors.blue)),
+              const Spacer(),
+              Text(
+                  NumberFormat.currency(
+                          locale: 'id', symbol: 'Rp', decimalDigits: 0)
+                      .format(total),
+                  style: const TextStyle(fontSize: 17, color: Colors.blue)),
+            ],
+          ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   @override
@@ -409,17 +357,17 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
       color: const Color.fromARGB(255, 250, 251, 251),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Icon(
+        children: const [
+          Icon(
             Icons.add_shopping_cart_outlined,
             color: Colors.blue,
           ),
-          const SizedBox(
+          SizedBox(
             width: 10,
           ),
           Text(
-            "Item transaksi",
-            style: GoogleFonts.raleway(fontSize: 17, color: Colors.blue),
+            "Item Transaksi",
+            style: TextStyle(fontSize: 20.0, color: Colors.blue),
           ),
         ],
       ),

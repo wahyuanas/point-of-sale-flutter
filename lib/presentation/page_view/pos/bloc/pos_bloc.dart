@@ -18,10 +18,10 @@ class PosBloc extends Bloc<PosEvent, PosState> {
         // , addItem: (i, n) async =>
         //   onAddItem(event as PosAddItemEvent, emit)
         ,
-        // incrementItem: (i) async =>
-        //     onIncrementItem(event as PosIncrementItemEvent, emit),
-        // decrementItem: (i) async =>
-        //     onDecrementItem(event as PosDecrementItemEvent, emit),
+        incrementItem: (i) async =>
+            onIncrementItem(event as PosIncrementItemEvent, emit),
+        decrementItem: (i) async =>
+            onDecrementItem(event as PosDecrementItemEvent, emit),
         orElse: () {},
       );
     }, transformer: restartable());
@@ -93,6 +93,7 @@ class PosBloc extends Bloc<PosEvent, PosState> {
           pos = pos.copyWith(sumPrice: sumPrice, qty: (pos.qty ?? 0) + 1);
           poss[index] = pos;
           emit(state.copyWith(idItem: event.item.id, poss: poss));
+          debugPrint("POS BLOC");
         }
       }
     }
