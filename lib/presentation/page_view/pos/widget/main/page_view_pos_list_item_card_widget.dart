@@ -77,19 +77,19 @@ class _PageViewPosListItemCardWidgetState
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Text("Qty ${widget.pos.qty}",
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                      )),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  const Text("|"),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
+                  // Text("Qty ${widget.pos.qty}",
+                  //     style: const TextStyle(
+                  //       decoration: TextDecoration.underline,
+                  //     )),
+                  // const SizedBox(
+                  //   width: 10.0,
+                  // ),
+                  //const Text("|"),
+                  // const SizedBox(
+                  //   width: 10.0,
+                  // ),
                   Text(
-                      "Sub total Rp ${NumberFormat.currency(locale: 'id', symbol: 'Rp', decimalDigits: 0).format(widget.pos.sumPrice)}",
+                      "Sub total ${NumberFormat.currency(locale: 'id', symbol: 'Rp', decimalDigits: 0).format(widget.pos.sumPrice)}",
                       style: const TextStyle(
                         decoration: TextDecoration.underline,
                       )),
@@ -127,7 +127,7 @@ class _PageViewPosListItemCardWidgetState
                             0
                         ? const Icon(
                             Icons.add_circle_outline,
-                            color: Color.fromARGB(255, 174, 179, 183),
+                            color: Color.fromARGB(255, 167, 153, 153),
                             size: 30,
                           )
                         : GestureDetector(

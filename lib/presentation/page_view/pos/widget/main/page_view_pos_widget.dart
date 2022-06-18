@@ -7,7 +7,6 @@ import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'page_view_pos_list_item_widget.dart';
 
@@ -170,124 +169,197 @@ class DelegatePos extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-      child: Container(
-        decoration: const BoxDecoration(
-          //color: Colors.green,
-          border: Border(
-              bottom: BorderSide(
-            color: Colors.blue,
-            //width: 3.0,
-          )),
-        ),
-        height: 100,
-        //color: Color.fromARGB(255, 252, 254, 252),
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              GestureDetector(
-                onTap: () => BlocProvider.of<RouteCubit>(context)
-                    .onRoute(const OnRouteState.listPosItem(), null),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: Colors.blue, width: 0.5),
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: SizedBox(
-                    height: 60,
-                    width: 80,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          Icons.add_circle_outline,
-                          color: Colors.blue,
-                        ),
-                        Text(
-                          "Tambah",
-                          style: TextStyle(
-                              fontSize: 13,
-                              //fontWeight: FontWeight.w500,
-                              color: Colors.blue),
-                        )
-                      ],
+    return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
+      return Padding(
+        padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+        child: Container(
+          decoration: const BoxDecoration(
+            //color: Colors.green,
+            border: Border(
+                bottom: BorderSide(
+              color: Colors.blue,
+              //width: 3.0,
+            )),
+          ),
+          height: 100,
+          //color: Color.fromARGB(255, 252, 254, 252),
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () => BlocProvider.of<RouteCubit>(context)
+                      .onRoute(const OnRouteState.listPosItem(), null),
+                  child: Card(
+                    shape: RoundedRectangleBorder(
+                        side: const BorderSide(color: Colors.blue, width: 0.5),
+                        borderRadius: BorderRadius.circular(10.0)),
+                    child: SizedBox(
+                      height: 60,
+                      width: 80,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.add_circle_outline,
+                            color: Colors.blue,
+                          ),
+                          Text(
+                            "Tambah",
+                            style: TextStyle(
+                                fontSize: 13,
+                                //fontWeight: FontWeight.w500,
+                                color: Colors.blue),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-              const Spacer(),
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Card(
-                      shape: RoundedRectangleBorder(
-                          side:
-                              const BorderSide(color: Colors.blue, width: 0.5),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 60,
-                        width: 80,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.cancel_outlined,
-                              color: Colors.blue,
+                const Spacer(),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    state.poss != null
+                        ? GestureDetector(
+                            onTap: () => _showMyDialog(context),
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                    side: const BorderSide(
+                                        color: Colors.blue, width: 0.5),
+                                    borderRadius: BorderRadius.circular(10.0)),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  height: 60,
+                                  width: 80,
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: const [
+                                      Icon(
+                                        Icons.cancel_outlined,
+                                        color: Colors.blue,
+                                      ),
+                                      Text(
+                                        "Batal",
+                                        style: TextStyle(
+                                            fontSize: 13,
+                                            //fontWeight: FontWeight.w500,
+                                            color: Colors.blue),
+                                      )
+                                    ],
+                                  ),
+                                )),
+                          )
+                        : Container(
+                            decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(
+                                        10.0) //                 <--- border radius here
+                                    ),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 167, 153, 153))),
+                            alignment: Alignment.center,
+                            height: 60,
+                            width: 80,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Icon(
+                                  Icons.cancel_outlined,
+                                  color: Color.fromARGB(255, 167, 153, 153),
+                                ),
+                                Text("Batal",
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        //fontWeight: FontWeight.w500,
+                                        color:
+                                            Color.fromARGB(255, 167, 153, 153)))
+                              ],
                             ),
-                            Text(
-                              "Batal",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  //fontWeight: FontWeight.w500,
-                                  color: Colors.blue),
-                            )
-                          ],
-                        ),
-                      )),
-                  // const SizedBox(
-                  //   width: 10,
-                  // ),
-                  Card(
-                      shape: RoundedRectangleBorder(
-                          side:
-                              const BorderSide(color: Colors.blue, width: 0.5),
-                          borderRadius: BorderRadius.circular(10.0)),
-                      child: Container(
-                        alignment: Alignment.center,
-                        height: 60,
-                        width: 80,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Icon(
-                              Icons.near_me_outlined,
-                              color: Colors.blue,
+                          ),
+                    state.poss == null
+                        ? const SizedBox(
+                            width: 10.0,
+                          )
+                        : Container(),
+                    state.poss != null
+                        ? Card(
+                            shape: RoundedRectangleBorder(
+                                side: const BorderSide(
+                                    color: Colors.blue, width: 0.5),
+                                borderRadius: BorderRadius.circular(10.0)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              height: 60,
+                              width: 80,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Icon(
+                                    Icons.near_me_outlined,
+                                    color: Colors.blue,
+                                  ),
+                                  Text(
+                                    "Bayar",
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        //fontWeight: FontWeight.w500,
+                                        color: Colors.blue),
+                                  )
+                                ],
+                              ),
+                            ))
+                        : Container(
+                            decoration: BoxDecoration(
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(
+                                        10.0) //                 <--- border radius here
+                                    ),
+                                border: Border.all(
+                                    color: const Color.fromARGB(
+                                        255, 167, 153, 153))),
+                            alignment: Alignment.center,
+                            height: 60,
+                            width: 80,
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Icon(Icons.near_me_outlined,
+                                    color: Color.fromARGB(255, 167, 153, 153)),
+                                Text(
+                                  "Bayar",
+                                  style: TextStyle(
+                                      fontSize: 13,
+                                      //fontWeight: FontWeight.w500,
+                                      color:
+                                          Color.fromARGB(255, 167, 153, 153)),
+                                )
+                              ],
                             ),
-                            Text(
-                              "Bayar",
-                              style: TextStyle(
-                                  fontSize: 13,
-                                  //fontWeight: FontWeight.w500,
-                                  color: Colors.blue),
-                            )
-                          ],
-                        ),
-                      )),
-                ],
-              ),
-            ],
+                          ),
+                    state.poss == null
+                        ? const SizedBox(
+                            width: 5.0,
+                          )
+                        : Container(),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );
+    });
   }
 
   @override
@@ -314,10 +386,10 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
         },
       );
       return Container(
-        height: 70,
-        color: const Color.fromARGB(255, 251, 252, 252),
+        height: 45,
+        color: Color.fromARGB(255, 253, 255, 255),
         child: Padding(
-          padding: const EdgeInsets.only(left: 30.0, right: 30.0),
+          padding: const EdgeInsets.only(left: 30.0, right: 30.0, top: 15.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -337,10 +409,10 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 70;
+  double get maxExtent => 45;
 
   @override
-  double get minExtent => 70;
+  double get minExtent => 45;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
@@ -353,8 +425,8 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      height: 30,
-      color: const Color.fromARGB(255, 250, 251, 251),
+      height: 50,
+      color: const Color.fromARGB(255, 252, 254, 254),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: const [
@@ -367,7 +439,7 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
           ),
           Text(
             "Item Transaksi",
-            style: TextStyle(fontSize: 20.0, color: Colors.blue),
+            style: TextStyle(fontSize: 17.0, color: Colors.blue),
           ),
         ],
       ),
@@ -375,10 +447,10 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
   }
 
   @override
-  double get maxExtent => 30;
+  double get maxExtent => 50;
 
   @override
-  double get minExtent => 30;
+  double get minExtent => 50;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
@@ -467,4 +539,37 @@ class DelegatePos3 extends SliverPersistentHeaderDelegate {
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
     return false;
   }
+}
+
+Future<void> _showMyDialog(BuildContext context) async {
+  return showDialog<void>(
+    context: context,
+    barrierDismissible: false, // user must tap button!
+    builder: (BuildContext context) {
+      return AlertDialog(
+        title: const Text(
+          'Pemberitahuan',
+          style: TextStyle(fontSize: 20),
+        ),
+        content: const Text('Yakin Ingin Membatalkan Transaksi ?'),
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(30.0))),
+        actions: <Widget>[
+          TextButton(
+            child: const Text('Tidak', style: TextStyle(fontSize: 17)),
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+          ),
+          TextButton(
+            child: const Text('Ya', style: TextStyle(fontSize: 17)),
+            onPressed: () {
+              BlocProvider.of<PosBloc>(context).add(const PosStartedEvent());
+              Navigator.of(context).pop();
+            },
+          ),
+        ],
+      );
+    },
+  );
 }

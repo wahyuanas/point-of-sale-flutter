@@ -132,19 +132,35 @@ class _CatalogItemPosListCardWidgetState
                               child: GestureDetector(
                                 onTap: () => BlocProvider.of<PosBloc>(context)
                                     .add(PosAddItemEvent(item: widget.item)),
-                                child: Chip(
-                                    label: Row(
-                                  children: const [
-                                    Icon(
-                                      Icons.add_circle_outline,
-                                      color: Colors.blue,
+                                child: Container(
+                                    width: 110.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(50),
+                                      color: const Color.fromARGB(
+                                          255, 239, 236, 236),
+                                      boxShadow: const [
+                                        BoxShadow(
+                                            color: Color.fromARGB(
+                                                255, 247, 246, 250),
+                                            spreadRadius: 0.5),
+                                      ],
                                     ),
-                                    Text(
-                                      "Tambah",
-                                      style: TextStyle(color: Colors.blue),
-                                    )
-                                  ],
-                                )),
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: const [
+                                        Icon(
+                                          Icons.add_circle_outline,
+                                          color: Colors.blue,
+                                          size: 30.0,
+                                        ),
+                                        Text(
+                                          "Tambah",
+                                          style: TextStyle(color: Colors.blue),
+                                        )
+                                      ],
+                                    )),
                               )),
                         ],
                       )
@@ -176,7 +192,7 @@ class _CatalogItemPosListCardWidgetState
                                     0
                                 ? const Icon(
                                     Icons.add_circle_outline,
-                                    color: Color.fromARGB(255, 174, 179, 183),
+                                    color: Color.fromARGB(255, 167, 153, 153),
                                     size: 30,
                                   )
                                 : GestureDetector(

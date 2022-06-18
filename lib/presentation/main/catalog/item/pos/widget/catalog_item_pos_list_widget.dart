@@ -31,19 +31,19 @@ class _CatalogItemPosListWidgetState extends State<CatalogItemPosListWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          titleSpacing: 0.0,
+          centerTitle: true,
           elevation: 0.3,
           backgroundColor: Colors.white,
-          leading: GestureDetector(
-            child: const Padding(
-              padding: EdgeInsets.only(left: 8.0),
-              child: Icon(
-                Icons.arrow_back_outlined,
-                color: Colors.blue,
-              ),
-            ),
-            onTap: () => Navigator.of(context).pop(),
-          ),
+          // leading: GestureDetector(
+          //   child: const Padding(
+          //     padding: EdgeInsets.only(left: 8.0),
+          //     child: Icon(
+          //       Icons.arrow_back_outlined,
+          //       color: Colors.blue,
+          //     ),
+          //   ),
+          //   onTap: () => Navigator.of(context).pop(),
+          // ),
           title: const Text(
             "List Item",
             style: TextStyle(color: Colors.blue),
@@ -59,6 +59,19 @@ class _CatalogItemPosListWidgetState extends State<CatalogItemPosListWidget> {
             systemNavigationBarIconBrightness:
                 Brightness.light, //navigation bar icon
           ),
+          actions: [
+            GestureDetector(
+              child: const Padding(
+                padding: EdgeInsets.only(right: 20.0),
+                child: Icon(
+                  Icons.done_outlined,
+                  size: 35,
+                  color: Colors.blue,
+                ),
+              ),
+              onTap: () => Navigator.of(context).pop(),
+            ),
+          ],
         ),
         body: SmartRefresher(
           onRefresh: _onRefresh,
