@@ -3,22 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'page_view_pos_list_item_widget.dart';
+import '../bloc/pos_bloc.dart';
+import 'page_view_pos_main_item_transaction_widget.dart';
 
-class PageViewPosWidget extends StatefulWidget {
-  const PageViewPosWidget({Key? key}) : super(key: key);
+class PageViewPosMainWidget extends StatefulWidget {
+  const PageViewPosMainWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewPosWidget> createState() => _PageViewPosWidgetState();
+  State<PageViewPosMainWidget> createState() => _PageViewPosMainWidgetState();
 }
 
-class _PageViewPosWidgetState extends State<PageViewPosWidget>
-    with AutomaticKeepAliveClientMixin<PageViewPosWidget> {
+class _PageViewPosMainWidgetState extends State<PageViewPosMainWidget>
+    with AutomaticKeepAliveClientMixin<PageViewPosMainWidget> {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -156,7 +156,7 @@ class _PageViewPosWidgetState extends State<PageViewPosWidget>
                 pinned: true,
                 //floating: true,
                 delegate: DelegatePos2()),
-            const PageViewPosListItemWidget()
+            const PageViewPosMainItemTransactionWidget()
           ],
         ));
   }
@@ -287,7 +287,7 @@ class DelegatePos extends SliverPersistentHeaderDelegate {
                           ),
                     state.poss == null
                         ? const SizedBox(
-                            width: 10.0,
+                            width: 7.0,
                           )
                         : Container(),
                     state.poss != null

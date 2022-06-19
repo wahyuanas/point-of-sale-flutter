@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pos/presentation/main/catalog/item/pos/cubit/catalog_item_pos_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import 'catalog_item_pos_list_card_widget.dart';
+import '../cubit/pos_catalog_cubit.dart';
+import 'page_view_pos_catalog_card_widget.dart';
 
-class CatalogItemPosListWidget extends StatefulWidget {
-  const CatalogItemPosListWidget({Key? key}) : super(key: key);
+class PageViewPosCatalogWidget extends StatefulWidget {
+  const PageViewPosCatalogWidget({Key? key}) : super(key: key);
 
   @override
-  State<CatalogItemPosListWidget> createState() =>
-      _CatalogItemPosListWidgetState();
+  State<PageViewPosCatalogWidget> createState() =>
+      _PageViewPosCatalogWidgetState();
 }
 
-class _CatalogItemPosListWidgetState extends State<CatalogItemPosListWidget> {
+class _PageViewPosCatalogWidgetState extends State<PageViewPosCatalogWidget> {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -82,7 +82,7 @@ class _CatalogItemPosListWidgetState extends State<CatalogItemPosListWidget> {
                 pinned: true,
                 //floating: true,
                 delegate: DelegateCatalogItemPosList()),
-            BlocBuilder<CatalogItemPosCubit, CatalogItemPosState>(
+            BlocBuilder<PosCatalogCubit, PosCatalogState>(
                 builder: (context, state) {
               return state.items == null
                   ? SliverFillRemaining(
@@ -97,7 +97,7 @@ class _CatalogItemPosListWidgetState extends State<CatalogItemPosListWidget> {
                   : SliverList(
                       delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
-                        return CatalogItemPosListCardWidget(
+                        return PageViewPosCatalogCardWidget(
                             item: state.items![index]);
                       },
                       childCount: state.items?.length, // 1000 list items
@@ -142,16 +142,20 @@ class CatalogItemPosListSearchWidget extends StatefulWidget {
 class _CatalogItemPosListSearchWidgetState
     extends State<CatalogItemPosListSearchWidget> {
   late TextEditingController _controller;
+  bool _textFilled = false;
+  late FocusNode _focusNode;
 
   @override
   void initState() {
     _controller = TextEditingController();
+    _focusNode = FocusNode();
     super.initState();
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -163,13 +167,45 @@ class _CatalogItemPosListSearchWidgetState
           child: SizedBox(
         height: 60,
         child: TextFormField(
-          onChanged: ((value) =>
-              context.read<CatalogItemPosCubit>().onSearchKeyChanged(value)),
+          focusNode: _focusNode,
+          onChanged: ((value) {
+            context.read<PosCatalogCubit>().onSearchKeyChanged(value);
+            if (value.isNotEmpty) {
+              if (_textFilled == false) {
+                setState(() {
+                  _textFilled = true;
+                });
+              }
+            } else {
+              if (_textFilled == true) {
+                setState(() {
+                  _textFilled = false;
+                });
+              }
+            }
+          }),
           onTap: () async {},
           controller: _controller,
           //autofocus: true,
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
+            suffixIcon: _textFilled
+                ? GestureDetector(
+                    onTap: () {
+                      _controller.text = "";
+                      FocusScope.of(context).requestFocus(_focusNode);
+
+                      context.read<PosCatalogCubit>().onReset();
+                      setState(() {
+                        _textFilled = false;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      size: 23,
+                    ))
+                : null,
+
             filled: true,
             fillColor: Colors.white,
             hintText: "Cari Item...",

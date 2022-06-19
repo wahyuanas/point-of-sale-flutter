@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/home/cubit/home_order_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
 class SearchFaktur extends StatefulWidget {
@@ -10,16 +12,20 @@ class SearchFaktur extends StatefulWidget {
 
 class _SearchFakturState extends State<SearchFaktur> {
   late TextEditingController _controller;
+  bool _textFilled = false;
+  late FocusNode _focusNode;
 
   @override
   void initState() {
     _controller = TextEditingController();
+    _focusNode = FocusNode();
     super.initState();
   }
 
   @override
   void dispose() {
     _controller.dispose();
+    _focusNode.dispose();
     super.dispose();
   }
 
@@ -31,14 +37,47 @@ class _SearchFakturState extends State<SearchFaktur> {
           child: SizedBox(
         height: 50,
         child: TextFormField(
+          focusNode: _focusNode,
+          onChanged: ((value) {
+            context.read<HomeOrderCubit>().onSearchKeyChanged(value);
+            if (value.isNotEmpty) {
+              if (_textFilled == false) {
+                setState(() {
+                  _textFilled = true;
+                });
+              }
+            } else {
+              if (_textFilled == true) {
+                setState(() {
+                  _textFilled = false;
+                });
+              }
+            }
+          }),
           onTap: () async {},
           controller: _controller,
           //autofocus: true,
           textInputAction: TextInputAction.search,
           decoration: InputDecoration(
+            suffixIcon: _textFilled
+                ? GestureDetector(
+                    onTap: () {
+                      _controller.text = "";
+                      FocusScope.of(context).requestFocus(_focusNode);
+
+                      context.read<HomeOrderCubit>().onReset();
+                      setState(() {
+                        _textFilled = false;
+                      });
+                    },
+                    child: const Icon(
+                      Icons.close,
+                      size: 23,
+                    ))
+                : null,
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari...",
+            hintText: "Cari Faktur...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

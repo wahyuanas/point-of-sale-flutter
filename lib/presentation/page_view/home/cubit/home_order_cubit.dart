@@ -24,4 +24,8 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
       emit(HomeOrderState.initial());
     }
   }
+
+  onReset() {
+    emit(HomeOrderState.initial());
+  }
 }

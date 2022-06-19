@@ -11,7 +11,9 @@ import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
-import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
+import 'package:pos/presentation/page_view/home/cubit/home_inventory_cubit.dart';
+import 'package:pos/presentation/page_view/home/cubit/home_order_cubit.dart';
+import 'package:pos/presentation/page_view/pos/main/bloc/pos_bloc.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -70,6 +72,12 @@ class PosAppState extends State<PosApp> {
       ),
       BlocProvider(
         create: (context) => getIt<PosBloc>(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<HomeOrderCubit>(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<HomeInventoryCubit>(),
       ),
       BlocProvider(create: (context) => getIt<AuthCubit>()),
     ], child: const PosAppView());

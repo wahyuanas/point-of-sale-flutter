@@ -3,20 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/page_view/expense/screen/main/page_view_expanse_screen.dart';
 import 'package:pos/presentation/page_view/home/screen/main/page_view_home_screen.dart';
 import 'package:pos/presentation/page_view/menu/screen/main/page_view_menu_screen.dart';
-import 'package:pos/presentation/page_view/pos/screen/main/page_view_pos_screen.dart';
+import 'package:pos/presentation/page_view/pos/main/screen/page_view_pos_main_screen.dart';
 
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
 
-class PageViewWidget extends StatefulWidget {
+class PageViewMainWidget extends StatefulWidget {
   final Map<TabItem, GlobalKey<NavigatorState>> navigatorKeys;
-  const PageViewWidget({Key? key, required this.navigatorKeys})
+  const PageViewMainWidget({Key? key, required this.navigatorKeys})
       : super(key: key);
   @override
-  PageViewWidgetState createState() => PageViewWidgetState();
+  PageViewMainWidgetState createState() => PageViewMainWidgetState();
 }
 
-class PageViewWidgetState extends State<PageViewWidget> {
+class PageViewMainWidgetState extends State<PageViewMainWidget> {
   final PageController pageController = PageController(
     initialPage: 0,
     keepPage: true,
@@ -52,7 +52,7 @@ class PageViewWidgetState extends State<PageViewWidget> {
             PageViewHomeScreen(
                 navigatorKey: widget.navigatorKeys[TabItem.home]!,
                 tabItem: TabItem.home),
-            PageViewPosScreen(
+            PageViewPosMainScreen(
                 navigatorKey: widget.navigatorKeys[TabItem.pos]!,
                 tabItem: TabItem.pos),
             PageViewExpanseScreen(

@@ -4,11 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
 
-part 'catalog_item_pos_state.dart';
-part 'catalog_item_pos_cubit.freezed.dart';
+part 'pos_catalog_state.dart';
+part 'pos_catalog_cubit.freezed.dart';
 
-class CatalogItemPosCubit extends Cubit<CatalogItemPosState> {
-  CatalogItemPosCubit() : super(CatalogItemPosState.initial());
+class PosCatalogCubit extends Cubit<PosCatalogState> {
+  PosCatalogCubit() : super(PosCatalogState.initial());
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
       List<Item>? listItem; //= List.from(state.items!.toList());
@@ -20,7 +20,11 @@ class CatalogItemPosCubit extends Cubit<CatalogItemPosState> {
       }
       emit(state.copyWith(items: listItem));
     } else {
-      emit(CatalogItemPosState.initial());
+      emit(PosCatalogState.initial());
     }
+  }
+
+  onReset() {
+    emit(PosCatalogState.initial());
   }
 }

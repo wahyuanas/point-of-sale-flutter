@@ -5,8 +5,9 @@ import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart
 import 'package:pos/presentation/main/introduction/screen/introduction_view_screen.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/screen/sign_in_screen.dart';
-import 'package:pos/presentation/page_view/main/screen/page_view._screen.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
+
+import '../page_view/main/screen/page_view_main._screen.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -51,7 +52,7 @@ class MainScreenState extends State<MainScreen> {
               unDone: () => const IntroductionViewScreen(),
               done: () => BlocProvider.of<AuthCubit>(context).state.auth == null
                   ? const SignInScreen()
-                  : const PageViewScreen(), //Container(),
+                  : const PageViewMainScreen(), //Container(),
               orElse: () => Center(
                       child: Container(
                     color: Colors.blue[100],

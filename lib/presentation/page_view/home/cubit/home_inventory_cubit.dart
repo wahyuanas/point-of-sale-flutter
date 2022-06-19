@@ -24,4 +24,8 @@ class HomeInventoryCubit extends Cubit<HomeInventoryState> {
       emit(HomeInventoryState.initial());
     }
   }
+
+  onReset() {
+    emit(HomeInventoryState.initial());
+  }
 }

@@ -3,21 +3,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
-import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
-import 'package:pos/presentation/utils/colors.dart';
+import 'package:pos/presentation/page_view/pos/main/bloc/pos_bloc.dart';
 
-class CatalogItemPosListCardWidget extends StatefulWidget {
+class PageViewPosCatalogCardWidget extends StatefulWidget {
   final Item item;
-  const CatalogItemPosListCardWidget({Key? key, required this.item})
+  const PageViewPosCatalogCardWidget({Key? key, required this.item})
       : super(key: key);
 
   @override
-  State<CatalogItemPosListCardWidget> createState() =>
-      _CatalogItemPosListCardWidgetState();
+  State<PageViewPosCatalogCardWidget> createState() =>
+      _PageViewPosCatalogCardWidgetState();
 }
 
-class _CatalogItemPosListCardWidgetState
-    extends State<CatalogItemPosListCardWidget> {
+class _PageViewPosCatalogCardWidgetState
+    extends State<PageViewPosCatalogCardWidget> {
   Pos? pos;
 
   @override

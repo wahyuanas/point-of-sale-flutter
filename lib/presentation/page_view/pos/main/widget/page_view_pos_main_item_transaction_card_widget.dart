@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
-import 'package:pos/presentation/page_view/pos/bloc/pos_bloc.dart';
 
-class PageViewPosListItemCardWidget extends StatefulWidget {
+import '../bloc/pos_bloc.dart';
+
+class PageViewPosMainItemTransactionCardWidget extends StatefulWidget {
   final Pos pos;
-  const PageViewPosListItemCardWidget({Key? key, required this.pos})
+  const PageViewPosMainItemTransactionCardWidget({Key? key, required this.pos})
       : super(key: key);
 
   @override
-  State<PageViewPosListItemCardWidget> createState() =>
-      _PageViewPosListItemCardWidgetState();
+  State<PageViewPosMainItemTransactionCardWidget> createState() =>
+      _PageViewPosMainItemTransactionCardWidgetState();
 }
 
-class _PageViewPosListItemCardWidgetState
-    extends State<PageViewPosListItemCardWidget> {
+class _PageViewPosMainItemTransactionCardWidgetState
+    extends State<PageViewPosMainItemTransactionCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(

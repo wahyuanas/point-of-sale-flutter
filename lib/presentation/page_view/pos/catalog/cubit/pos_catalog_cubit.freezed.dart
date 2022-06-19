@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'catalog_item_pos_cubit.dart';
+part of 'pos_catalog_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,30 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$CatalogItemPosState {
+mixin _$PosCatalogState {
   List<Item>? get items => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CatalogItemPosStateCopyWith<CatalogItemPosState> get copyWith =>
+  $PosCatalogStateCopyWith<PosCatalogState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CatalogItemPosStateCopyWith<$Res> {
-  factory $CatalogItemPosStateCopyWith(
-          CatalogItemPosState value, $Res Function(CatalogItemPosState) then) =
-      _$CatalogItemPosStateCopyWithImpl<$Res>;
+abstract class $PosCatalogStateCopyWith<$Res> {
+  factory $PosCatalogStateCopyWith(
+          PosCatalogState value, $Res Function(PosCatalogState) then) =
+      _$PosCatalogStateCopyWithImpl<$Res>;
   $Res call({List<Item>? items});
 }
 
 /// @nodoc
-class _$CatalogItemPosStateCopyWithImpl<$Res>
-    implements $CatalogItemPosStateCopyWith<$Res> {
-  _$CatalogItemPosStateCopyWithImpl(this._value, this._then);
+class _$PosCatalogStateCopyWithImpl<$Res>
+    implements $PosCatalogStateCopyWith<$Res> {
+  _$PosCatalogStateCopyWithImpl(this._value, this._then);
 
-  final CatalogItemPosState _value;
+  final PosCatalogState _value;
   // ignore: unused_field
-  final $Res Function(CatalogItemPosState) _then;
+  final $Res Function(PosCatalogState) _then;
 
   @override
   $Res call({
@@ -54,31 +54,31 @@ class _$CatalogItemPosStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_CatalogItemPosStateCopyWith<$Res>
-    implements $CatalogItemPosStateCopyWith<$Res> {
-  factory _$$_CatalogItemPosStateCopyWith(_$_CatalogItemPosState value,
-          $Res Function(_$_CatalogItemPosState) then) =
-      __$$_CatalogItemPosStateCopyWithImpl<$Res>;
+abstract class _$$_PosCatalogStateCopyWith<$Res>
+    implements $PosCatalogStateCopyWith<$Res> {
+  factory _$$_PosCatalogStateCopyWith(
+          _$_PosCatalogState value, $Res Function(_$_PosCatalogState) then) =
+      __$$_PosCatalogStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Item>? items});
 }
 
 /// @nodoc
-class __$$_CatalogItemPosStateCopyWithImpl<$Res>
-    extends _$CatalogItemPosStateCopyWithImpl<$Res>
-    implements _$$_CatalogItemPosStateCopyWith<$Res> {
-  __$$_CatalogItemPosStateCopyWithImpl(_$_CatalogItemPosState _value,
-      $Res Function(_$_CatalogItemPosState) _then)
-      : super(_value, (v) => _then(v as _$_CatalogItemPosState));
+class __$$_PosCatalogStateCopyWithImpl<$Res>
+    extends _$PosCatalogStateCopyWithImpl<$Res>
+    implements _$$_PosCatalogStateCopyWith<$Res> {
+  __$$_PosCatalogStateCopyWithImpl(
+      _$_PosCatalogState _value, $Res Function(_$_PosCatalogState) _then)
+      : super(_value, (v) => _then(v as _$_PosCatalogState));
 
   @override
-  _$_CatalogItemPosState get _value => super._value as _$_CatalogItemPosState;
+  _$_PosCatalogState get _value => super._value as _$_PosCatalogState;
 
   @override
   $Res call({
     Object? items = freezed,
   }) {
-    return _then(_$_CatalogItemPosState(
+    return _then(_$_PosCatalogState(
       items: items == freezed
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
@@ -89,11 +89,10 @@ class __$$_CatalogItemPosStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CatalogItemPosState
+class _$_PosCatalogState
     with DiagnosticableTreeMixin
-    implements _CatalogItemPosState {
-  const _$_CatalogItemPosState({required final List<Item>? items})
-      : _items = items;
+    implements _PosCatalogState {
+  const _$_PosCatalogState({required final List<Item>? items}) : _items = items;
 
   final List<Item>? _items;
   @override
@@ -106,14 +105,14 @@ class _$_CatalogItemPosState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CatalogItemPosState(items: $items)';
+    return 'PosCatalogState(items: $items)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'CatalogItemPosState'))
+      ..add(DiagnosticsProperty('type', 'PosCatalogState'))
       ..add(DiagnosticsProperty('items', items));
   }
 
@@ -121,7 +120,7 @@ class _$_CatalogItemPosState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CatalogItemPosState &&
+            other is _$_PosCatalogState &&
             const DeepCollectionEquality().equals(other._items, _items));
   }
 
@@ -131,19 +130,18 @@ class _$_CatalogItemPosState
 
   @JsonKey(ignore: true)
   @override
-  _$$_CatalogItemPosStateCopyWith<_$_CatalogItemPosState> get copyWith =>
-      __$$_CatalogItemPosStateCopyWithImpl<_$_CatalogItemPosState>(
-          this, _$identity);
+  _$$_PosCatalogStateCopyWith<_$_PosCatalogState> get copyWith =>
+      __$$_PosCatalogStateCopyWithImpl<_$_PosCatalogState>(this, _$identity);
 }
 
-abstract class _CatalogItemPosState implements CatalogItemPosState {
-  const factory _CatalogItemPosState({required final List<Item>? items}) =
-      _$_CatalogItemPosState;
+abstract class _PosCatalogState implements PosCatalogState {
+  const factory _PosCatalogState({required final List<Item>? items}) =
+      _$_PosCatalogState;
 
   @override
   List<Item>? get items => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_CatalogItemPosStateCopyWith<_$_CatalogItemPosState> get copyWith =>
+  _$$_PosCatalogStateCopyWith<_$_PosCatalogState> get copyWith =>
       throw _privateConstructorUsedError;
 }

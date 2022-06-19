@@ -4,16 +4,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
 import '../widget/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
-import '../widget/page_view_widget.dart';
+import '../widget/page_view_main_widget.dart';
 
-class PageViewScreen extends StatefulWidget {
-  const PageViewScreen({Key? key}) : super(key: key);
+class PageViewMainScreen extends StatefulWidget {
+  const PageViewMainScreen({Key? key}) : super(key: key);
 
   @override
-  PageViewScreenState createState() => PageViewScreenState();
+  PageViewMainScreenState createState() => PageViewMainScreenState();
 }
 
-class PageViewScreenState extends State<PageViewScreen> {
+class PageViewMainScreenState extends State<PageViewMainScreen> {
   TabItem _currentTab = TabItem.home;
   late Map<TabItem, GlobalKey<NavigatorState>> _navigatorKeys;
 
@@ -68,7 +68,7 @@ class PageViewScreenState extends State<PageViewScreen> {
         return true;
       },
       child: Scaffold(
-        body: PageViewWidget(navigatorKeys: _navigatorKeys),
+        body: PageViewMainWidget(navigatorKeys: _navigatorKeys),
         bottomNavigationBar:
             BlocBuilder<BottomNavigationBarCubit, BottomNavigationBarState>(
                 builder: (context, state) {
