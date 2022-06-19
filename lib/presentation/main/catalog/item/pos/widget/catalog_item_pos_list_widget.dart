@@ -163,6 +163,8 @@ class _CatalogItemPosListSearchWidgetState
           child: SizedBox(
         height: 60,
         child: TextFormField(
+          onChanged: ((value) =>
+              context.read<CatalogItemPosCubit>().onSearchKeyChanged(value)),
           onTap: () async {},
           controller: _controller,
           //autofocus: true,
@@ -170,7 +172,7 @@ class _CatalogItemPosListSearchWidgetState
           decoration: InputDecoration(
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari...",
+            hintText: "Cari Item...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

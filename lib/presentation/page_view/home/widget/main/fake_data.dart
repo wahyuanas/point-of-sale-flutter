@@ -1,82 +1,105 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
 
-var faktur = [
-  {
-    "nama": "abcde",
-    "noReg": "C0001CA",
-    "noFak": "FAK-0001",
-    "tgl": "01 Juni 2022",
-    "rp": "100.000"
-  },
-  {
-    "nama": "efghi",
-    "noReg": "C0001CA",
-    "noFak": "FAK-0002",
-    "tgl": "01 Juni 2022",
-    "rp": "200.000"
-  },
-  {
-    "nama": "jklmn",
-    "noReg": "C0003CA",
-    "noFak": "FAK-0003",
-    "tgl": "01 Juni 2022",
-    "rp": "300.000"
-  },
-  {
-    "nama": "opqrs",
-    "noReg": "C0004CA",
-    "noFak": "FAK-0004",
-    "tgl": "01 Juni 2022",
-    "rp": "400.000"
-  },
-  {
-    "nama": "tuvwx",
-    "noReg": "C0005CA",
-    "noFak": "FAK-0005",
-    "tgl": "01 Juni 2022",
-    "rp": "500.000"
-  },
-  {
-    "nama": "yzabc",
-    "noReg": "C0006CA",
-    "noFak": "FAK-0006",
-    "tgl": "01 Juni 2022",
-    "rp": "600.000"
-  },
-  {
-    "nama": "defgh",
-    "noReg": "C0007CA",
-    "noFak": "FAK-0007",
-    "tgl": "07 Juni 2022",
-    "rp": "700.000"
-  },
+class Order {
+  Order(
+      {required this.id,
+      required this.code,
+      required this.date,
+      required this.amount,
+      required this.withName,
+      required this.regNumber});
+
+  int id;
+  String code;
+  String date;
+  int amount;
+  String withName;
+  String regNumber;
+}
+
+class Inventory {
+  Inventory({
+    required this.id,
+    required this.name,
+    required this.stock,
+    required this.code,
+    required this.disc,
+    required this.amount,
+    required this.type,
+  });
+
+  int id;
+  String code;
+  String name;
+  int disc;
+  int amount;
+  String type;
+  int stock;
+}
+
+var orders = [
+  Order(
+      id: 1,
+      code: "00001",
+      date: "01 Juni 2020",
+      amount: 1500000,
+      withName: "Bill Gates",
+      regNumber: "B1234UT"),
+  Order(
+      id: 2,
+      code: "00002",
+      date: "01 Juni 2020",
+      amount: 2500000,
+      withName: "Larry Page",
+      regNumber: "B5432BA"),
+  Order(
+      id: 3,
+      code: "00003",
+      date: "01 Juni 2020",
+      amount: 3500000,
+      withName: "Asep",
+      regNumber: "B3452TB"),
+  Order(
+      id: 4,
+      code: "00004",
+      date: "01 Juni 2020",
+      amount: 1500000,
+      withName: "Deden",
+      regNumber: "B7654HJ"),
+  Order(
+      id: 5,
+      code: "00005",
+      date: "01 Juni 2020",
+      amount: 4500000,
+      withName: "Hotman",
+      regNumber: "B4783UT")
 ];
 
-var inventory = [
-  {
-    "nama": "Aki GS NS70 ",
-    "kode": "AKGSNS70",
-    "stok": "10",
-    "disc": "3%",
-    "rp": "1.500.000",
-    "tipe": "Inventory"
-  },
-  {
-    "nama": "Spooring 4 X",
-    "kode": "SP4X",
-    "stok": "20",
-    "disc": "0%",
-    "rp": "200.000",
-    "tipe": "Service"
-  },
-  {
-    "nama": "Velg Hsr Skinny Yx629",
-    "kode": "VLHSRYX629",
-    "stok": "10",
-    "disc": "5%",
-    "rp": "4.600.000",
-    "tipe": "Inventory"
-  },
+var inventories = [
+  Inventory(
+      id: 1,
+      name: "Aki GS NS70",
+      stock: 10,
+      code: "AKGSNS70",
+      disc: 3,
+      amount: 1500000,
+      type: "Inventory"),
+  Inventory(
+      id: 2,
+      name: "Spooring 4 X",
+      stock: 20,
+      code: "SP4X",
+      disc: 5,
+      amount: 200000,
+      type: "Service"),
+  Inventory(
+      id: 3,
+      name: "Velg Hsr Skinny Yx629",
+      stock: 15,
+      code: "VLHSRYX629",
+      disc: 7,
+      amount: 4500000,
+      type: "Inventory"),
 ];
 
 var itemPos = <Item>[

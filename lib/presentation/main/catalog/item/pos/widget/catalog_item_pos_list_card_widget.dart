@@ -22,6 +22,21 @@ class _CatalogItemPosListCardWidgetState
 
   @override
   void initState() {
+    debugPrint(
+        "CATALOG ITEM POS LIST CARD WIDGET INITSTATE ${widget.item.name}");
+    // int? index = BlocProvider.of<PosBloc>(context)
+    //     .state
+    //     .poss
+    //     ?.indexWhere((posc) => posc.item.id == widget.item.id);
+    // if (index != null) {
+    //   if (index >= 0) {
+    //     pos = BlocProvider.of<PosBloc>(context).state.poss![index];
+    //   }
+    // }
+    super.initState();
+  }
+
+  Pos? getPos() {
     int? index = BlocProvider.of<PosBloc>(context)
         .state
         .poss
@@ -31,11 +46,16 @@ class _CatalogItemPosListCardWidgetState
         pos = BlocProvider.of<PosBloc>(context).state.poss![index];
       }
     }
-    super.initState();
+    return pos;
   }
 
   @override
   Widget build(BuildContext context) {
+    pos = getPos();
+    debugPrint("CATALOG ITEM POS LIST CARD WIDGET $pos");
+    if (pos?.item.id != widget.item.id) {
+      pos = null;
+    }
     return BlocListener<PosBloc, PosState>(
       listener: (context, state) async {
         if (state.idItem == widget.item.id) {

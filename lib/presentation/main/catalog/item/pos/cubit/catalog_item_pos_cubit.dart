@@ -9,4 +9,18 @@ part 'catalog_item_pos_cubit.freezed.dart';
 
 class CatalogItemPosCubit extends Cubit<CatalogItemPosState> {
   CatalogItemPosCubit() : super(CatalogItemPosState.initial());
+  onSearchKeyChanged(String v) {
+    if (v.isNotEmpty) {
+      List<Item>? listItem; //= List.from(state.items!.toList());
+      listItem = itemPos
+          .where((item) => item.name.toLowerCase().contains(v.toLowerCase()))
+          .toList();
+      if (listItem.isEmpty) {
+        listItem = null;
+      }
+      emit(state.copyWith(items: listItem));
+    } else {
+      emit(CatalogItemPosState.initial());
+    }
+  }
 }
