@@ -151,10 +151,10 @@ class _PageViewPosMainWidgetState extends State<PageViewPosMainWidget>
                 pinned: true,
                 //floating: true,
                 delegate: DelegatePos1()),
-            SliverPersistentHeader(
-                pinned: true,
-                //floating: true,
-                delegate: DelegatePos2()),
+            // SliverPersistentHeader(
+            //     pinned: true,
+            //     //floating: true,
+            //     delegate: DelegatePos2()),
             const PageViewPosMainItemTransactionWidget()
           ],
         ));
@@ -175,34 +175,65 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
           total = total + (pos.sumPrice ?? 0);
         },
       );
-      return Container(
-        height: 45,
-        color: const Color.fromARGB(255, 253, 255, 255),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 30.0, right: 30.0, top: 15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('FAK-XXXXXXXX1',
-                  style: TextStyle(fontSize: 17, color: Colors.blue)),
-              const Spacer(),
-              Text(
-                  NumberFormat.currency(
-                          locale: 'id', symbol: 'Rp', decimalDigits: 0)
-                      .format(total),
-                  style: const TextStyle(fontSize: 17, color: Colors.blue)),
-            ],
-          ),
-        ),
-      );
+      return state.poss == null
+          ? Container()
+          : Container(
+              height: 105,
+              color: const Color.fromARGB(255, 255, 255, 255),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        left: 30.0, right: 30.0, top: 0.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Text('FAK-XXXXXXXX1',
+                            style: TextStyle(fontSize: 17, color: Colors.blue)),
+                        const Spacer(),
+                        Text(
+                            NumberFormat.currency(
+                                    locale: 'id',
+                                    symbol: 'Rp ',
+                                    decimalDigits: 0)
+                                .format(total),
+                            style: const TextStyle(
+                                fontSize: 17, color: Colors.blue)),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Icon(
+                        Icons.add_shopping_cart_outlined,
+                        color: Colors.blue,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        "Item Transaksi",
+                        style: TextStyle(fontSize: 17.0, color: Colors.blue),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            );
     });
   }
 
   @override
-  double get maxExtent => 45;
+  double get maxExtent => 105;
 
   @override
-  double get minExtent => 45;
+  double get minExtent => 105;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
@@ -241,89 +272,6 @@ class DelegatePos2 extends SliverPersistentHeaderDelegate {
 
   @override
   double get minExtent => 50;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
-  }
-}
-
-class DelegatePos3 extends SliverPersistentHeaderDelegate {
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      decoration: const BoxDecoration(
-        //color: Colors.green,
-        border: Border(
-            bottom: BorderSide(
-          color: Colors.blue,
-          //width: 3.0,
-        )),
-      ),
-      height: 100,
-      //color: Color.fromARGB(255, 252, 254, 252),
-      child: Padding(
-        padding: const EdgeInsets.fromLTRB(8, 0, 12, 8),
-        child: Row(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Icon(
-                Icons.add_card_outlined,
-                color: Color.fromARGB(255, 13, 77, 203),
-              ),
-            ),
-            const Spacer(),
-            const Text("POS"),
-            const Spacer(),
-            Padding(
-              padding: const EdgeInsets.only(right: 8.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(
-                    Icons.person_pin_circle_outlined,
-                    size: 30.0,
-                    color: Colors.blue,
-                  ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    //mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        "User,",
-                        style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.blue,
-                            fontWeight: FontWeight.w600),
-                      ),
-                      Text(
-                        "Mr. Cemang",
-                        style: TextStyle(fontSize: 15, color: Colors.blue),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  @override
-  double get maxExtent => 80;
-
-  @override
-  double get minExtent => 80;
 
   @override
   bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {

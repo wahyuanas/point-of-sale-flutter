@@ -38,28 +38,40 @@ class _PageViewPosMainItemTransactionCardWidgetState
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Column(
-                    mainAxisSize: MainAxisSize.min,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        widget.pos.item.code,
-                        style: const TextStyle(color: Colors.blue),
-                      ),
-                      Text(
-                        widget.pos.item.name,
-                        style: const TextStyle(color: Colors.black),
-                      ),
-                    ],
+                  Expanded(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.pos.item.code,
+                          style: const TextStyle(color: Colors.blue),
+                        ),
+                        Text(
+                          widget.pos.item.name,
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 17.0),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
               Wrap(
                 children: [
-                  Text("Harga ${widget.pos.item.sellPrice}",
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                      )),
+                  Wrap(children: [
+                    const Text("Harga ",
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        )),
+                    Text(
+                        NumberFormat.currency(
+                                locale: 'id', symbol: 'Rp', decimalDigits: 0)
+                            .format(widget.pos.item.sellPrice),
+                        style: const TextStyle(
+                            decoration: TextDecoration.underline,
+                            color: Colors.blue)),
+                  ]),
                   const SizedBox(
                     width: 10.0,
                   ),
@@ -67,10 +79,19 @@ class _PageViewPosMainItemTransactionCardWidgetState
                   const SizedBox(
                     width: 10.0,
                   ),
-                  Text("Disc ${widget.pos.item.sellDisc ?? 0}%",
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                      )),
+                  Wrap(
+                    children: [
+                      const Text("Disc ",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          )),
+                      Text("${widget.pos.item.sellDisc ?? 0}%",
+                          style: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.blue)),
+                    ],
+                  ),
+
                   const SizedBox(
                     width: 10.0,
                   ),
@@ -89,11 +110,21 @@ class _PageViewPosMainItemTransactionCardWidgetState
                   // const SizedBox(
                   //   width: 10.0,
                   // ),
-                  Text(
-                      "Sub total ${NumberFormat.currency(locale: 'id', symbol: 'Rp', decimalDigits: 0).format(widget.pos.sumPrice)}",
-                      style: const TextStyle(
-                        decoration: TextDecoration.underline,
-                      )),
+                  Wrap(
+                    children: [
+                      const Text("Sub total ",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          )),
+                      Text(
+                          NumberFormat.currency(
+                                  locale: 'id', symbol: 'Rp', decimalDigits: 0)
+                              .format(widget.pos.sumPrice),
+                          style: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.blue)),
+                    ],
+                  )
                 ],
               ),
               const SizedBox(

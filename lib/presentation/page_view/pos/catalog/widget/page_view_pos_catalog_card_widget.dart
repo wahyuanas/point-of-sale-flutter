@@ -21,8 +21,6 @@ class _PageViewPosCatalogCardWidgetState
 
   @override
   void initState() {
-    debugPrint(
-        "CATALOG ITEM POS LIST CARD WIDGET INITSTATE ${widget.item.name}");
     // int? index = BlocProvider.of<PosBloc>(context)
     //     .state
     //     .poss
@@ -51,7 +49,6 @@ class _PageViewPosCatalogCardWidgetState
   @override
   Widget build(BuildContext context) {
     pos = getPos();
-    debugPrint("CATALOG ITEM POS LIST CARD WIDGET $pos");
     if (pos?.item.id != widget.item.id) {
       pos = null;
     }
@@ -89,31 +86,44 @@ class _PageViewPosCatalogCardWidgetState
                     const SizedBox(
                       width: 10.0,
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.item.code,
-                          style: const TextStyle(color: Colors.blue),
-                        ),
-                        Text(
-                          widget.item.name,
-                          style: const TextStyle(color: Colors.black),
-                        ),
-                      ],
+                    Expanded(
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            widget.item.code,
+                            style: const TextStyle(color: Colors.blue),
+                          ),
+                          Text(
+                            widget.item.name,
+                            style: const TextStyle(
+                                color: Colors.black, fontSize: 17.0),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
                 Wrap(
                   children: [
-                    Text(
-                        NumberFormat.currency(
-                                locale: 'id', symbol: 'Rp', decimalDigits: 0)
-                            .format(widget.item.sellPrice),
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                        )),
+                    Wrap(
+                      children: [
+                        const Text("Harga ",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                            )),
+                        Text(
+                            NumberFormat.currency(
+                                    locale: 'id',
+                                    symbol: 'Rp',
+                                    decimalDigits: 0)
+                                .format(widget.item.sellPrice),
+                            style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.blue)),
+                      ],
+                    ),
                     const SizedBox(
                       width: 10.0,
                     ),
@@ -121,10 +131,18 @@ class _PageViewPosCatalogCardWidgetState
                     const SizedBox(
                       width: 10.0,
                     ),
-                    Text("Disc ${widget.item.sellDisc ?? 0}%",
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                        )),
+                    Wrap(
+                      children: [
+                        const Text("Disc ",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                            )),
+                        Text("${widget.item.sellDisc ?? 0}%",
+                            style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.blue)),
+                      ],
+                    ),
                     const SizedBox(
                       width: 10.0,
                     ),
@@ -132,10 +150,16 @@ class _PageViewPosCatalogCardWidgetState
                     const SizedBox(
                       width: 10.0,
                     ),
-                    Text("Stok ${(widget.item.stock ?? 0) - (pos?.qty ?? 0)}",
-                        style: const TextStyle(
-                          decoration: TextDecoration.underline,
-                        )),
+                    Wrap(children: [
+                      const Text("Stok ",
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          )),
+                      Text("${(widget.item.stock ?? 0) - (pos?.qty ?? 0)}",
+                          style: const TextStyle(
+                              decoration: TextDecoration.underline,
+                              color: Colors.blue)),
+                    ])
                   ],
                 ),
                 const SizedBox(

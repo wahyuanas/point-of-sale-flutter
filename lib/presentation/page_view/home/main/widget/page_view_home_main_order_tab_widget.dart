@@ -61,53 +61,52 @@ class _PageViewHomeMainOrderTabWidgetState
                               const SizedBox(
                                 width: 10.0,
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Row(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        "Mr. ${state.orders?[i].withName}",
-                                        style:
-                                            const TextStyle(color: Colors.blue),
-                                      ),
-                                      const SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      Text(
-                                        "${state.orders?[i].regNumber}",
-                                        style: const TextStyle(
-                                            fontWeight: FontWeight.w700,
-                                            fontSize: 16.0),
-                                      ),
-                                    ],
-                                  ),
-                                  Row(
-                                    children: [
-                                      Text("${state.orders?[i].code}",
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Wrap(
+                                      children: [
+                                        Text(
+                                          "Mr. ${state.orders?[i].withName}",
                                           style: const TextStyle(
-                                            decoration:
-                                                TextDecoration.underline,
-                                          )),
-                                      const SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      const Text("|"),
-                                      const SizedBox(
-                                        width: 10.0,
-                                      ),
-                                      Text("${state.orders?[i].date}",
+                                              color: Colors.blue, fontSize: 15),
+                                        ),
+                                        const SizedBox(
+                                          width: 10.0,
+                                        ),
+                                        Text(
+                                          "${state.orders?[i].regNumber}",
                                           style: const TextStyle(
-                                            decoration:
-                                                TextDecoration.underline,
-                                          )),
-                                    ],
-                                  ),
-                                ],
+                                              fontWeight: FontWeight.w700,
+                                              fontSize: 15.0),
+                                        ),
+                                      ],
+                                    ),
+                                    Row(
+                                      children: [
+                                        Text("${state.orders?[i].code}",
+                                            style: const TextStyle(
+                                              decoration:
+                                                  TextDecoration.underline,
+                                            )),
+                                        const SizedBox(
+                                          width: 10.0,
+                                        ),
+                                        const Text("|"),
+                                        const SizedBox(
+                                          width: 10.0,
+                                        ),
+                                        Text("${state.orders?[i].date}",
+                                            style: const TextStyle(
+                                              decoration:
+                                                  TextDecoration.underline,
+                                            )),
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

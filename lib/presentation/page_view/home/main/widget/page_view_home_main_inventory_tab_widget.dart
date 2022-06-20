@@ -55,19 +55,23 @@ class PageViewHomeMainInventoryTabWidgetState
                               const SizedBox(
                                 width: 10.0,
                               ),
-                              Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    "${state.inventories?[i].code}",
-                                    style: const TextStyle(color: Colors.blue),
-                                  ),
-                                  Text(
-                                    "${state.inventories?[i].name}",
-                                    style: const TextStyle(color: Colors.black),
-                                  ),
-                                ],
+                              Expanded(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      "${state.inventories?[i].code}",
+                                      style:
+                                          const TextStyle(color: Colors.blue),
+                                    ),
+                                    Text(
+                                      "${state.inventories?[i].name}",
+                                      style: const TextStyle(
+                                          color: Colors.black, fontSize: 17.0),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ],
                           ),

@@ -17,17 +17,27 @@ class PageViewHomeMainOrderSearchDelegate
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
+            children: [
+              const Icon(
                 Icons.content_copy_outlined,
                 color: Colors.blue,
                 size: 50,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
-              Text('Faktur Hari Ini Belum Lunas',
-                  style: TextStyle(fontSize: 17, color: Colors.blue)),
+              Flexible(
+                child: Wrap(
+                  alignment: WrapAlignment.center,
+                  crossAxisAlignment: WrapCrossAlignment.center,
+                  children: const [
+                    Text(
+                      "Faktur Hari Ini Belum Lunas ",
+                      style: TextStyle(fontSize: 17, color: Colors.blue),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
           const SizedBox(

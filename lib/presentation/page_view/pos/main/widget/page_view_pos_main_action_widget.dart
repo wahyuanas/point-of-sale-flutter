@@ -18,100 +18,130 @@ class _PageViewPosMainActionWidgetState
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
-      return Padding(
+      return Container(
         padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-        child: Container(
-          decoration: const BoxDecoration(
-            color: Color.fromARGB(255, 252, 253, 252),
-            border: Border(
-                bottom: BorderSide(
-              color: Colors.blue,
-              //width: 3.0,
-            )),
-          ),
-          height: 100,
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () => BlocProvider.of<RouteCubit>(context)
-                      .onRoute(const OnRouteState.listPosItem(), null),
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                        side: const BorderSide(color: Colors.blue, width: 0.5),
-                        borderRadius: BorderRadius.circular(10.0)),
-                    child: SizedBox(
-                      height: 60,
-                      width: 80,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
-                          Icon(
-                            Icons.add_circle_outline,
-                            color: Colors.blue,
-                          ),
-                          Text(
-                            "Tambah",
-                            style: TextStyle(
-                                fontSize: 13,
-                                //fontWeight: FontWeight.w500,
-                                color: Colors.blue),
-                          )
-                        ],
-                      ),
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 255, 255, 255),
+          border: Border(
+              bottom: BorderSide(
+            color: Colors.blue,
+            //width: 3.0,
+          )),
+        ),
+        height: 100,
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8, 0, 8, 0),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () => BlocProvider.of<RouteCubit>(context)
+                    .onRoute(const OnRouteState.listPosItem(), null),
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: Colors.blue, width: 0.5),
+                      borderRadius: BorderRadius.circular(10.0)),
+                  child: SizedBox(
+                    height: 60,
+                    width: 80,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(
+                          Icons.add_circle_outline,
+                          color: Colors.blue,
+                        ),
+                        Text(
+                          "Tambah",
+                          style: TextStyle(
+                              fontSize: 13,
+                              //fontWeight: FontWeight.w500,
+                              color: Colors.blue),
+                        )
+                      ],
                     ),
                   ),
                 ),
-                const Spacer(),
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    state.poss != null
-                        ? GestureDetector(
-                            onTap: () => _showMyDialog(context),
-                            child: Card(
-                                shape: RoundedRectangleBorder(
-                                    side: const BorderSide(
-                                        color: Colors.blue, width: 0.5),
-                                    borderRadius: BorderRadius.circular(10.0)),
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  height: 60,
-                                  width: 80,
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: const [
-                                      Icon(
-                                        Icons.cancel_outlined,
-                                        color: Colors.blue,
-                                      ),
-                                      Text(
-                                        "Batal",
-                                        style: TextStyle(
-                                            fontSize: 13,
-                                            //fontWeight: FontWeight.w500,
-                                            color: Colors.blue),
-                                      )
-                                    ],
-                                  ),
-                                )),
-                          )
-                        : Container(
-                            decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(
-                                        10.0) //                 <--- border radius here
+              ),
+              const Spacer(),
+              Row(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  state.poss != null
+                      ? GestureDetector(
+                          onTap: () => _showMyDialog(context),
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      color: Colors.blue, width: 0.5),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              child: Container(
+                                alignment: Alignment.center,
+                                height: 60,
+                                width: 80,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Icon(
+                                      Icons.cancel_outlined,
+                                      color: Colors.blue,
                                     ),
-                                border: Border.all(
-                                    color: const Color.fromARGB(
-                                        255, 167, 153, 153))),
+                                    Text(
+                                      "Batal",
+                                      style: TextStyle(
+                                          fontSize: 13,
+                                          //fontWeight: FontWeight.w500,
+                                          color: Colors.blue),
+                                    )
+                                  ],
+                                ),
+                              )),
+                        )
+                      : Container(
+                          decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(
+                                      10.0) //                 <--- border radius here
+                                  ),
+                              border: Border.all(
+                                  color: const Color.fromARGB(
+                                      255, 167, 153, 153))),
+                          alignment: Alignment.center,
+                          height: 60,
+                          width: 80,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.cancel_outlined,
+                                color: Color.fromARGB(255, 167, 153, 153),
+                              ),
+                              Text("Batal",
+                                  style: TextStyle(
+                                      fontSize: 13,
+                                      //fontWeight: FontWeight.w500,
+                                      color:
+                                          Color.fromARGB(255, 167, 153, 153)))
+                            ],
+                          ),
+                        ),
+                  state.poss == null
+                      ? const SizedBox(
+                          width: 7.0,
+                        )
+                      : Container(),
+                  state.poss != null
+                      ? Card(
+                          shape: RoundedRectangleBorder(
+                              side: const BorderSide(
+                                  color: Colors.blue, width: 0.5),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          child: Container(
                             alignment: Alignment.center,
                             height: 60,
                             width: 80,
@@ -120,89 +150,55 @@ class _PageViewPosMainActionWidgetState
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: const [
                                 Icon(
-                                  Icons.cancel_outlined,
-                                  color: Color.fromARGB(255, 167, 153, 153),
+                                  Icons.near_me_outlined,
+                                  color: Colors.blue,
                                 ),
-                                Text("Batal",
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        //fontWeight: FontWeight.w500,
-                                        color:
-                                            Color.fromARGB(255, 167, 153, 153)))
-                              ],
-                            ),
-                          ),
-                    state.poss == null
-                        ? const SizedBox(
-                            width: 7.0,
-                          )
-                        : Container(),
-                    state.poss != null
-                        ? Card(
-                            shape: RoundedRectangleBorder(
-                                side: const BorderSide(
-                                    color: Colors.blue, width: 0.5),
-                                borderRadius: BorderRadius.circular(10.0)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: 60,
-                              width: 80,
-                              child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: const [
-                                  Icon(
-                                    Icons.near_me_outlined,
-                                    color: Colors.blue,
-                                  ),
-                                  Text(
-                                    "Bayar",
-                                    style: TextStyle(
-                                        fontSize: 13,
-                                        //fontWeight: FontWeight.w500,
-                                        color: Colors.blue),
-                                  )
-                                ],
-                              ),
-                            ))
-                        : Container(
-                            decoration: BoxDecoration(
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(
-                                        10.0) //                 <--- border radius here
-                                    ),
-                                border: Border.all(
-                                    color: const Color.fromARGB(
-                                        255, 167, 153, 153))),
-                            alignment: Alignment.center,
-                            height: 60,
-                            width: 80,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Icon(Icons.near_me_outlined,
-                                    color: Color.fromARGB(255, 167, 153, 153)),
                                 Text(
                                   "Bayar",
                                   style: TextStyle(
                                       fontSize: 13,
                                       //fontWeight: FontWeight.w500,
-                                      color:
-                                          Color.fromARGB(255, 167, 153, 153)),
+                                      color: Colors.blue),
                                 )
                               ],
                             ),
+                          ))
+                      : Container(
+                          decoration: BoxDecoration(
+                              borderRadius: const BorderRadius.all(
+                                  Radius.circular(
+                                      10.0) //                 <--- border radius here
+                                  ),
+                              border: Border.all(
+                                  color: const Color.fromARGB(
+                                      255, 167, 153, 153))),
+                          alignment: Alignment.center,
+                          height: 60,
+                          width: 80,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: const [
+                              Icon(Icons.near_me_outlined,
+                                  color: Color.fromARGB(255, 167, 153, 153)),
+                              Text(
+                                "Bayar",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    //fontWeight: FontWeight.w500,
+                                    color: Color.fromARGB(255, 167, 153, 153)),
+                              )
+                            ],
                           ),
-                    state.poss == null
-                        ? const SizedBox(
-                            width: 5.0,
-                          )
-                        : Container(),
-                  ],
-                ),
-              ],
-            ),
+                        ),
+                  state.poss == null
+                      ? const SizedBox(
+                          width: 5.0,
+                        )
+                      : Container(),
+                ],
+              ),
+            ],
           ),
         ),
       );
