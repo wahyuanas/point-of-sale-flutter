@@ -1,7 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
+
+import '../widget/fake_data.dart';
 
 part 'home_inventory_state.dart';
 part 'home_inventory_cubit.freezed.dart';

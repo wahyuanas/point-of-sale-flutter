@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/page_view/home/cubit/home_order_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
-class SearchFaktur extends StatefulWidget {
-  const SearchFaktur({Key? key}) : super(key: key);
+import '../cubit/home_order_cubit.dart';
+
+class PageViewHomeMainOrderSearch extends StatefulWidget {
+  const PageViewHomeMainOrderSearch({Key? key}) : super(key: key);
 
   @override
-  State<SearchFaktur> createState() => _SearchFakturState();
+  State<PageViewHomeMainOrderSearch> createState() =>
+      _PageViewHomeMainOrderSearchState();
 }
 
-class _SearchFakturState extends State<SearchFaktur> {
+class _PageViewHomeMainOrderSearchState
+    extends State<PageViewHomeMainOrderSearch> {
   late TextEditingController _controller;
   bool _textFilled = false;
   late FocusNode _focusNode;

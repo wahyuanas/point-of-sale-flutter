@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
-import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
+import 'package:pos/presentation/page_view/home/main/widget/fake_data.dart';
 
 part 'pos_catalog_state.dart';
 part 'pos_catalog_cubit.freezed.dart';

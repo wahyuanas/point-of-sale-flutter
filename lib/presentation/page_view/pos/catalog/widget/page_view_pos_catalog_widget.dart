@@ -114,7 +114,7 @@ class DelegateCatalogItemPosList extends SliverPersistentHeaderDelegate {
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: 65.0,
-      color: Color.fromARGB(255, 253, 254, 254),
+      color: const Color.fromARGB(255, 253, 254, 254),
       child: const CatalogItemPosListSearchWidget(),
     );
   }

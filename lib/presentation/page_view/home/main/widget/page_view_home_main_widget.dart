@@ -3,25 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
-import 'package:pos/presentation/page_view/home/cubit/home_inventory_cubit.dart';
-import 'package:pos/presentation/page_view/home/cubit/home_order_cubit.dart';
-import 'package:pos/presentation/page_view/home/widget/main/fake_data.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
-import 'tabbar_search.dart';
-import 'tabbar_serach_inventory.dart';
 
-class PageViewHomeWidget extends StatefulWidget {
-  const PageViewHomeWidget({Key? key}) : super(key: key);
+import '../cubit/home_inventory_cubit.dart';
+import '../cubit/home_order_cubit.dart';
+import 'page_view_home_main_inventory_search.dart.dart';
+import 'page_view_home_main_order_search.dart.dart';
+
+class PageViewHomeMainWidget extends StatefulWidget {
+  const PageViewHomeMainWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewHomeWidget> createState() => _PageViewHomeWidgetState();
+  State<PageViewHomeMainWidget> createState() => _PageViewHomeMainWidgetState();
 }
 
-class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
+class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
     with
-        AutomaticKeepAliveClientMixin<PageViewHomeWidget>,
+        AutomaticKeepAliveClientMixin<PageViewHomeMainWidget>,
         SingleTickerProviderStateMixin {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
@@ -182,7 +182,7 @@ class _PageViewHomeWidgetState extends State<PageViewHomeWidget>
               //       SizedBox(
               //         height: 20,
               //       ),
-              //       SearchFaktur()
+              //       PageViewHomeMainOrderSearch()
               //     ],
               //   ),
               // ),
@@ -663,7 +663,7 @@ class DelegateHome1 extends SliverPersistentHeaderDelegate {
           const SizedBox(
             height: 10,
           ),
-          const SearchFaktur()
+          const PageViewHomeMainOrderSearch()
         ],
       ),
     );
@@ -711,7 +711,7 @@ class DelegateHome2 extends SliverPersistentHeaderDelegate {
           const SizedBox(
             height: 10,
           ),
-          const SearchInventory()
+          const PageViewHomeMainInventorySearch()
         ],
       ),
     );

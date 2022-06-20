@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:pos/presentation/page_view/home/widget/main/page_view_home_widget.dart';
 import 'package:pos/presentation/page_view/main/config/tab_config.dart';
 
-class PageViewHomeScreen extends StatefulWidget {
+import '../widget/page_view_home_main_widget.dart';
+
+class PageViewHomeMainScreen extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
 
   final TabItem tabItem;
-  const PageViewHomeScreen(
+  const PageViewHomeMainScreen(
       {Key? key, required this.navigatorKey, required this.tabItem})
       : super(key: key);
   @override
-  PageViewHomeScreenState createState() => PageViewHomeScreenState();
+  PageViewHomeMainScreenState createState() => PageViewHomeMainScreenState();
 }
 
-class PageViewHomeScreenState extends State<PageViewHomeScreen> {
+class PageViewHomeMainScreenState extends State<PageViewHomeMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Navigator(
@@ -21,7 +22,7 @@ class PageViewHomeScreenState extends State<PageViewHomeScreen> {
       initialRoute: "/",
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
-            builder: (context) => const PageViewHomeWidget());
+            builder: (context) => const PageViewHomeMainWidget());
       },
     );
   }

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/page_view/home/cubit/home_inventory_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
-class SearchInventory extends StatefulWidget {
-  const SearchInventory({Key? key}) : super(key: key);
+import '../cubit/home_inventory_cubit.dart';
+
+class PageViewHomeMainInventorySearch extends StatefulWidget {
+  const PageViewHomeMainInventorySearch({Key? key}) : super(key: key);
 
   @override
-  State<SearchInventory> createState() => _SearchInventoryState();
+  State<PageViewHomeMainInventorySearch> createState() =>
+      _PageViewHomeMainInventorySearchState();
 }
 
-class _SearchInventoryState extends State<SearchInventory> {
+class _PageViewHomeMainInventorySearchState
+    extends State<PageViewHomeMainInventorySearch> {
   late TextEditingController _controller;
   bool _textFilled = false;
   late FocusNode _focusNode;

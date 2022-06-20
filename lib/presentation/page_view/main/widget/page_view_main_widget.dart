@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/page_view/expense/screen/main/page_view_expanse_screen.dart';
-import 'package:pos/presentation/page_view/home/screen/main/page_view_home_screen.dart';
+import 'package:pos/presentation/page_view/home/main/screen/page_view_home_main_screen.dart';
 import 'package:pos/presentation/page_view/menu/screen/main/page_view_menu_screen.dart';
 import 'package:pos/presentation/page_view/pos/main/screen/page_view_pos_main_screen.dart';
 
@@ -49,7 +49,7 @@ class PageViewMainWidgetState extends State<PageViewMainWidget> {
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: [
-            PageViewHomeScreen(
+            PageViewHomeMainScreen(
                 navigatorKey: widget.navigatorKeys[TabItem.home]!,
                 tabItem: TabItem.home),
             PageViewPosMainScreen(
