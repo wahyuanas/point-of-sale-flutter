@@ -44,7 +44,7 @@ class _PageViewMenuWidgetState extends State<PageViewMenuWidget>
     //kToolbarHeight;
     return Scaffold(
       appBar: AppBar(
-          systemOverlayStyle: SystemUiOverlayStyle(
+          systemOverlayStyle: const SystemUiOverlayStyle(
             // Status bar color
             statusBarColor: Colors.blue,
 

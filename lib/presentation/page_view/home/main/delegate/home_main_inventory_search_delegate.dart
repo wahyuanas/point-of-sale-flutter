@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../widget/page_view_home_main_order_search.dart.dart';
+import '../widget/home_main_inventory_search.dart.dart';
 
-class PageViewHomeMainOrderSearchDelegate
-    extends SliverPersistentHeaderDelegate {
+class HomeMainInventorySearchDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
@@ -17,33 +16,23 @@ class PageViewHomeMainOrderSearchDelegate
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Icon(
-                Icons.content_copy_outlined,
+            children: const [
+              Icon(
+                Icons.inventory_2_outlined,
                 color: Colors.blue,
                 size: 50,
               ),
-              const SizedBox(
+              SizedBox(
                 width: 10,
               ),
-              Flexible(
-                child: Wrap(
-                  alignment: WrapAlignment.center,
-                  crossAxisAlignment: WrapCrossAlignment.center,
-                  children: const [
-                    Text(
-                      "Faktur Hari Ini Belum Lunas ",
-                      style: TextStyle(fontSize: 17, color: Colors.blue),
-                    ),
-                  ],
-                ),
-              ),
+              Text('Inventory Tersedia',
+                  style: TextStyle(fontSize: 17, color: Colors.blue)),
             ],
           ),
           const SizedBox(
             height: 10,
           ),
-          const PageViewHomeMainOrderSearch()
+          const HomeMainInventorySearch()
         ],
       ),
     );

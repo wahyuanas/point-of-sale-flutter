@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/page_view/expense/screen/main/page_view_expanse_screen.dart';
-import 'package:pos/presentation/page_view/home/main/screen/page_view_home_main_screen.dart';
+import 'package:pos/presentation/page_view/home/main/screen/home_main_screen.dart';
 import 'package:pos/presentation/page_view/menu/screen/main/page_view_menu_screen.dart';
-import 'package:pos/presentation/page_view/pos/main/screen/page_view_pos_main_screen.dart';
+import 'package:pos/presentation/page_view/pos/main/screen/pos_main_screen.dart';
 
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
@@ -49,10 +49,10 @@ class PageViewMainWidgetState extends State<PageViewMainWidget> {
           physics: const NeverScrollableScrollPhysics(),
           controller: pageController,
           children: [
-            PageViewHomeMainScreen(
+            HomeMainScreen(
                 navigatorKey: widget.navigatorKeys[TabItem.home]!,
                 tabItem: TabItem.home),
-            PageViewPosMainScreen(
+            PosMainScreen(
                 navigatorKey: widget.navigatorKeys[TabItem.pos]!,
                 tabItem: TabItem.pos),
             PageViewExpanseScreen(

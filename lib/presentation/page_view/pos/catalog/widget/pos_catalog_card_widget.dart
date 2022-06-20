@@ -5,18 +5,15 @@ import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_bloc.dart';
 
-class PageViewPosCatalogCardWidget extends StatefulWidget {
+class PosCatalogCardWidget extends StatefulWidget {
   final Item item;
-  const PageViewPosCatalogCardWidget({Key? key, required this.item})
-      : super(key: key);
+  const PosCatalogCardWidget({Key? key, required this.item}) : super(key: key);
 
   @override
-  State<PageViewPosCatalogCardWidget> createState() =>
-      _PageViewPosCatalogCardWidgetState();
+  State<PosCatalogCardWidget> createState() => _PosCatalogCardWidgetState();
 }
 
-class _PageViewPosCatalogCardWidgetState
-    extends State<PageViewPosCatalogCardWidget> {
+class _PosCatalogCardWidgetState extends State<PosCatalogCardWidget> {
   Pos? pos;
 
   @override
@@ -76,6 +73,25 @@ class _PageViewPosCatalogCardWidgetState
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                ExpansionPanelList(
+                  children: [
+                    ExpansionPanel(
+                        headerBuilder: (context, isExpanded) {
+                          return ListTile(
+                            title: Text(
+                              'Click To Expand',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          );
+                        },
+                        body: ListTile(
+                          title: Text('Description text',
+                              style: TextStyle(color: Colors.black)),
+                          tileColor: Colors.white,
+                        ),
+                        backgroundColor: Colors.green),
+                  ],
+                ),
                 Row(
                   children: [
                     const Icon(
@@ -98,7 +114,7 @@ class _PageViewPosCatalogCardWidgetState
                           Text(
                             widget.item.name,
                             style: const TextStyle(
-                                color: Colors.black, fontSize: 17.0),
+                                color: Colors.black, fontSize: 16.0),
                           ),
                         ],
                       ),

@@ -4,24 +4,20 @@ import 'package:flutter/services.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 
-import 'page_view_home_main_inventory_tab_widget.dart';
-import 'page_view_home_main_order_tab_widget.dart';
+import '../delegate/home_main_delegate.dart';
+import 'home_main_inventory_tab_widget.dart';
+import 'home_main_order_tab_widget.dart';
 
-import '../delegate/page_view_home_main_header_delegate.dart';
-import '../delegate/page_view_home_main_inventory_search_delegate.dart';
-import '../delegate/page_view_home_main_order_search_delegate.dart';
-import '../delegate/page_view_home_main_tab_delegate.dart';
-
-class PageViewHomeMainWidget extends StatefulWidget {
-  const PageViewHomeMainWidget({Key? key}) : super(key: key);
+class HomeMainWidget extends StatefulWidget {
+  const HomeMainWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewHomeMainWidget> createState() => _PageViewHomeMainWidgetState();
+  State<HomeMainWidget> createState() => _HomeMainWidgetState();
 }
 
-class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
+class _HomeMainWidgetState extends State<HomeMainWidget>
     with
-        AutomaticKeepAliveClientMixin<PageViewHomeMainWidget>,
+        AutomaticKeepAliveClientMixin<HomeMainWidget>,
         SingleTickerProviderStateMixin {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
@@ -120,11 +116,11 @@ class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
               SliverPersistentHeader(
                   pinned: true,
                   //floating: true,
-                  delegate: PageViewHomeMainHeaderDelegate()),
+                  delegate: HomeMainHeaderDelegate()),
               SliverPersistentHeader(
                 pinned: true,
                 //floating: true,
-                delegate: PageViewHomeMainTabDelegate(
+                delegate: HomeMainTabDelegate(
                     tabController: _tabController,
                     pageController: _pageController,
                     onRebuild: reBuild),
@@ -134,14 +130,14 @@ class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
                 sliver: SliverPersistentHeader(
                     pinned: true,
                     //floating: true,
-                    delegate: PageViewHomeMainOrderSearchDelegate()),
+                    delegate: HomeMainOrderSearchDelegate()),
               ),
               SliverOffstage(
                 offstage: _c == 0 ? true : false,
                 sliver: SliverPersistentHeader(
                     pinned: true,
                     //floating: true,
-                    delegate: PageViewHomeMainInventorySearchDelegate()),
+                    delegate: HomeMainInventorySearchDelegate()),
               )
             ];
           },
@@ -182,12 +178,12 @@ class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
               //       SizedBox(
               //         height: 20,
               //       ),
-              //       PageViewHomeMainOrderSearch()
+              //       HomeMainOrderSearch()
               //     ],
               //   ),
               // ),
-              PageViewHomeMainOrderTabWidget(),
-              PageViewHomeMainInventoryTabWidget(),
+              HomeMainOrderTabWidget(),
+              HomeMainInventoryTabWidget(),
             ],
           ),
         ));

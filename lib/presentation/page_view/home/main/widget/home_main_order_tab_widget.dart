@@ -4,19 +4,17 @@ import 'package:intl/intl.dart';
 
 import '../cubit/home_order_cubit.dart';
 
-class PageViewHomeMainOrderTabWidget extends StatefulWidget {
-  const PageViewHomeMainOrderTabWidget({
+class HomeMainOrderTabWidget extends StatefulWidget {
+  const HomeMainOrderTabWidget({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PageViewHomeMainOrderTabWidget> createState() =>
-      _PageViewHomeMainOrderTabWidgetState();
+  State<HomeMainOrderTabWidget> createState() => _HomeMainOrderTabWidgetState();
 }
 
-class _PageViewHomeMainOrderTabWidgetState
-    extends State<PageViewHomeMainOrderTabWidget>
-    with AutomaticKeepAliveClientMixin<PageViewHomeMainOrderTabWidget> {
+class _HomeMainOrderTabWidgetState extends State<HomeMainOrderTabWidget>
+    with AutomaticKeepAliveClientMixin<HomeMainOrderTabWidget> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -31,8 +29,7 @@ class _PageViewHomeMainOrderTabWidgetState
             )
           : ListView.builder(
               //store Page state
-              key: const PageStorageKey<String>(
-                  'PageViewHomeMainOrderTabWidget'),
+              key: const PageStorageKey<String>('HomeMainOrderTabWidget'),
               physics: const ClampingScrollPhysics(),
               itemCount: state.orders?.length,
               itemBuilder: (BuildContext c, int i) {

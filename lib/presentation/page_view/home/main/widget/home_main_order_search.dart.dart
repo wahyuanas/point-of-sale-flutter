@@ -2,18 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
-import '../cubit/home_inventory_cubit.dart';
+import '../cubit/home_order_cubit.dart';
 
-class PageViewHomeMainInventorySearch extends StatefulWidget {
-  const PageViewHomeMainInventorySearch({Key? key}) : super(key: key);
+class HomeMainOrderSearch extends StatefulWidget {
+  const HomeMainOrderSearch({Key? key}) : super(key: key);
 
   @override
-  State<PageViewHomeMainInventorySearch> createState() =>
-      _PageViewHomeMainInventorySearchState();
+  State<HomeMainOrderSearch> createState() => _HomeMainOrderSearchState();
 }
 
-class _PageViewHomeMainInventorySearchState
-    extends State<PageViewHomeMainInventorySearch> {
+class _HomeMainOrderSearchState extends State<HomeMainOrderSearch> {
   late TextEditingController _controller;
   bool _textFilled = false;
   late FocusNode _focusNode;
@@ -42,7 +40,7 @@ class _PageViewHomeMainInventorySearchState
         child: TextFormField(
           focusNode: _focusNode,
           onChanged: ((value) {
-            context.read<HomeInventoryCubit>().onSearchKeyChanged(value);
+            context.read<HomeOrderCubit>().onSearchKeyChanged(value);
             if (value.isNotEmpty) {
               if (_textFilled == false) {
                 setState(() {
@@ -67,7 +65,8 @@ class _PageViewHomeMainInventorySearchState
                     onTap: () {
                       _controller.text = "";
                       FocusScope.of(context).requestFocus(_focusNode);
-                      context.read<HomeInventoryCubit>().onReset();
+
+                      context.read<HomeOrderCubit>().onReset();
                       setState(() {
                         _textFilled = false;
                       });
@@ -79,7 +78,7 @@ class _PageViewHomeMainInventorySearchState
                 : null,
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari Inventory...",
+            hintText: "Cari Faktur...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

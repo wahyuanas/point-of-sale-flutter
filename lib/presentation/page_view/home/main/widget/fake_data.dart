@@ -1,4 +1,5 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
+import 'package:pos/domain/customer/entity/customer.dart';
 
 class Order {
   Order(
@@ -142,4 +143,31 @@ var itemPos = <Item>[
       stock: 5,
       category: 3,
       image: null),
+];
+
+var customers = [
+  const Customer(
+      id: 1,
+      name: "Bill Gates",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      idNumber: "12345",
+      address: "Jl. ABC No. 1",
+      idAccount: 1),
+  const Customer(
+      id: 3,
+      name: "Asep",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      idNumber: "12345",
+      address: "Jl. ABC No. 1",
+      idAccount: 1),
+  const Customer(
+      id: 1,
+      name: "Deden",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      idNumber: "12345",
+      address: "Jl. ABC No. 1",
+      idAccount: 1),
 ];

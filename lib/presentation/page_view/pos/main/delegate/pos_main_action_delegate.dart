@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import '../widget/page_view_pos_main_action_widget.dart';
 
-class PageViewPosMainActionDelegate extends SliverPersistentHeaderDelegate {
+import '../widget/pos_main_action_widget.dart';
+
+class PosMainActionDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return const PageViewPosMainActionWidget();
+    return const PosMainActionWidget();
   }
 
   @override

@@ -6,18 +6,18 @@ import 'package:intl/intl.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../bloc/pos_bloc.dart';
-import '../delegate/page_view_pos_main_action_delegate.dart';
-import 'page_view_pos_main_item_transaction_widget.dart';
+import '../delegate/pos_main_action_delegate.dart';
+import 'pos_main_item_transaction_widget.dart';
 
-class PageViewPosMainWidget extends StatefulWidget {
-  const PageViewPosMainWidget({Key? key}) : super(key: key);
+class PosMainWidget extends StatefulWidget {
+  const PosMainWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewPosMainWidget> createState() => _PageViewPosMainWidgetState();
+  State<PosMainWidget> createState() => _PosMainWidgetState();
 }
 
-class _PageViewPosMainWidgetState extends State<PageViewPosMainWidget>
-    with AutomaticKeepAliveClientMixin<PageViewPosMainWidget> {
+class _PosMainWidgetState extends State<PosMainWidget>
+    with AutomaticKeepAliveClientMixin<PosMainWidget> {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -146,7 +146,7 @@ class _PageViewPosMainWidgetState extends State<PageViewPosMainWidget>
             SliverPersistentHeader(
                 pinned: true,
                 //floating: true,
-                delegate: PageViewPosMainActionDelegate()),
+                delegate: PosMainActionDelegate()),
             SliverPersistentHeader(
                 pinned: true,
                 //floating: true,
@@ -155,7 +155,7 @@ class _PageViewPosMainWidgetState extends State<PageViewPosMainWidget>
             //     pinned: true,
             //     //floating: true,
             //     delegate: DelegatePos2()),
-            const PageViewPosMainItemTransactionWidget()
+            const PosMainItemTransactionWidget()
           ],
         ));
   }

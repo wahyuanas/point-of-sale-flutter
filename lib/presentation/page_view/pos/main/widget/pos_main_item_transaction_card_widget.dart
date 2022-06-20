@@ -5,18 +5,18 @@ import 'package:pos/domain/pos/entity/pos.dart';
 
 import '../bloc/pos_bloc.dart';
 
-class PageViewPosMainItemTransactionCardWidget extends StatefulWidget {
+class PosMainItemTransactionCardWidget extends StatefulWidget {
   final Pos pos;
-  const PageViewPosMainItemTransactionCardWidget({Key? key, required this.pos})
+  const PosMainItemTransactionCardWidget({Key? key, required this.pos})
       : super(key: key);
 
   @override
-  State<PageViewPosMainItemTransactionCardWidget> createState() =>
-      _PageViewPosMainItemTransactionCardWidgetState();
+  State<PosMainItemTransactionCardWidget> createState() =>
+      _PosMainItemTransactionCardWidgetState();
 }
 
-class _PageViewPosMainItemTransactionCardWidgetState
-    extends State<PageViewPosMainItemTransactionCardWidget> {
+class _PosMainItemTransactionCardWidgetState
+    extends State<PosMainItemTransactionCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -50,7 +50,7 @@ class _PageViewPosMainItemTransactionCardWidgetState
                         Text(
                           widget.pos.item.name,
                           style: const TextStyle(
-                              color: Colors.black, fontSize: 17.0),
+                              color: Colors.black, fontSize: 16.0),
                         ),
                       ],
                     ),

@@ -5,16 +5,14 @@ import 'package:pos/routes/on_state/on_route_state.dart';
 
 import '../bloc/pos_bloc.dart';
 
-class PageViewPosMainActionWidget extends StatefulWidget {
-  const PageViewPosMainActionWidget({Key? key}) : super(key: key);
+class PosMainActionWidget extends StatefulWidget {
+  const PosMainActionWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewPosMainActionWidget> createState() =>
-      _PageViewPosMainActionWidgetState();
+  State<PosMainActionWidget> createState() => _PosMainActionWidgetState();
 }
 
-class _PageViewPosMainActionWidgetState
-    extends State<PageViewPosMainActionWidget> {
+class _PosMainActionWidgetState extends State<PosMainActionWidget> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PosBloc, PosState>(builder: (context, state) {

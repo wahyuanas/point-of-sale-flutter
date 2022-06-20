@@ -6,17 +6,16 @@ import 'package:pos/presentation/utils/colors.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../cubit/pos_catalog_cubit.dart';
-import 'page_view_pos_catalog_card_widget.dart';
+import 'pos_catalog_card_widget.dart';
 
-class PageViewPosCatalogWidget extends StatefulWidget {
-  const PageViewPosCatalogWidget({Key? key}) : super(key: key);
+class PosCatalogWidget extends StatefulWidget {
+  const PosCatalogWidget({Key? key}) : super(key: key);
 
   @override
-  State<PageViewPosCatalogWidget> createState() =>
-      _PageViewPosCatalogWidgetState();
+  State<PosCatalogWidget> createState() => _PosCatalogWidgetState();
 }
 
-class _PageViewPosCatalogWidgetState extends State<PageViewPosCatalogWidget> {
+class _PosCatalogWidgetState extends State<PosCatalogWidget> {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
 
@@ -97,8 +96,7 @@ class _PageViewPosCatalogWidgetState extends State<PageViewPosCatalogWidget> {
                   : SliverList(
                       delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
-                        return PageViewPosCatalogCardWidget(
-                            item: state.items![index]);
+                        return PosCatalogCardWidget(item: state.items![index]);
                       },
                       childCount: state.items?.length, // 1000 list items
                     ));

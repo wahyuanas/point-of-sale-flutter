@@ -4,7 +4,7 @@ import 'package:pos/presentation/main/main_screen.dart';
 import 'package:pos/presentation/main/sign/up/screen/sign_up_notif_screen.dart';
 import 'package:pos/presentation/main/sign/up/screen/sign_up_screen.dart';
 
-import '../presentation/page_view/pos/catalog/screen/page_view_pos_catalog_screen.dart';
+import '../presentation/page_view/pos/catalog/screen/pos_catalog_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -22,11 +22,9 @@ class RouteGenerator {
                   account: account,
                 ));
       case '/listPosItem':
-        return MaterialPageRoute(
-            builder: (_) => const PageViewPosCatalogScreen());
+        return MaterialPageRoute(builder: (_) => const PosCatalogScreen());
       case '/purchase':
-        return MaterialPageRoute(
-            builder: (_) => const PageViewPosCatalogScreen());
+        return MaterialPageRoute(builder: (_) => const PosCatalogScreen());
 
       default:
         return _errorRoute();

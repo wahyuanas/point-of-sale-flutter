@@ -4,19 +4,18 @@ import 'package:intl/intl.dart';
 
 import '../cubit/home_inventory_cubit.dart';
 
-class PageViewHomeMainInventoryTabWidget extends StatefulWidget {
-  const PageViewHomeMainInventoryTabWidget({
+class HomeMainInventoryTabWidget extends StatefulWidget {
+  const HomeMainInventoryTabWidget({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<PageViewHomeMainInventoryTabWidget> createState() =>
-      PageViewHomeMainInventoryTabWidgetState();
+  State<HomeMainInventoryTabWidget> createState() =>
+      HomeMainInventoryTabWidgetState();
 }
 
-class PageViewHomeMainInventoryTabWidgetState
-    extends State<PageViewHomeMainInventoryTabWidget>
-    with AutomaticKeepAliveClientMixin<PageViewHomeMainInventoryTabWidget> {
+class HomeMainInventoryTabWidgetState extends State<HomeMainInventoryTabWidget>
+    with AutomaticKeepAliveClientMixin<HomeMainInventoryTabWidget> {
   @override
   Widget build(BuildContext context) {
     super.build(context);
@@ -68,7 +67,7 @@ class PageViewHomeMainInventoryTabWidgetState
                                     Text(
                                       "${state.inventories?[i].name}",
                                       style: const TextStyle(
-                                          color: Colors.black, fontSize: 17.0),
+                                          color: Colors.black, fontSize: 16.0),
                                     ),
                                   ],
                                 ),

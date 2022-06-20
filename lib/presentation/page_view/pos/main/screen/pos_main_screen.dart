@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:pos/presentation/page_view/main/config/tab_config.dart';
 
-import '../widget/page_view_pos_main_widget.dart';
+import '../widget/pos_main_widget.dart';
 
-class PageViewPosMainScreen extends StatefulWidget {
+class PosMainScreen extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
 
   final TabItem tabItem;
-  const PageViewPosMainScreen(
+  const PosMainScreen(
       {Key? key, required this.navigatorKey, required this.tabItem})
       : super(key: key);
   @override
-  PageViewPosMainScreenState createState() => PageViewPosMainScreenState();
+  PosMainScreenState createState() => PosMainScreenState();
 }
 
-class PageViewPosMainScreenState extends State<PageViewPosMainScreen> {
+class PosMainScreenState extends State<PosMainScreen> {
   final _scrollController = ScrollController();
 
   @override
@@ -34,8 +34,7 @@ class PageViewPosMainScreenState extends State<PageViewPosMainScreen> {
       key: widget.navigatorKey,
       initialRoute: "/",
       onGenerateRoute: (routeSettings) {
-        return MaterialPageRoute(
-            builder: (context) => const PageViewPosMainWidget());
+        return MaterialPageRoute(builder: (context) => const PosMainWidget());
       },
     );
   }

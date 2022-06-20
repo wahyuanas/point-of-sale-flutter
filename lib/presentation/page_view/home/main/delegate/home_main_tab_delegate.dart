@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class PageViewHomeMainTabDelegate extends SliverPersistentHeaderDelegate {
+class HomeMainTabDelegate extends SliverPersistentHeaderDelegate {
   final TabController tabController;
   final PageController pageController;
   final Function(int) onRebuild;
-  PageViewHomeMainTabDelegate(
+  HomeMainTabDelegate(
       {required this.tabController,
       required this.pageController,
       required this.onRebuild});

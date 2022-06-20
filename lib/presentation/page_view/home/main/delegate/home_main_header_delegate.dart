@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class PageViewHomeMainHeaderDelegate extends SliverPersistentHeaderDelegate {
+class HomeMainHeaderDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
