@@ -1,20 +1,16 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-
 import 'package:extended_nested_scroll_view/extended_nested_scroll_view.dart';
 
-import '../cubit/home_inventory_cubit.dart';
-import '../cubit/home_order_cubit.dart';
-import '../delegate/page_view_home_main_header_delegate.dart';
-import '../delegate/page_view_home_main_tab_delegate.dart';
-import 'page_view_home_main_inventory_search.dart.dart';
 import 'page_view_home_main_inventory_tab_widget.dart';
-import 'page_view_home_main_order_search.dart.dart';
 import 'page_view_home_main_order_tab_widget.dart';
+
+import '../delegate/page_view_home_main_header_delegate.dart';
+import '../delegate/page_view_home_main_inventory_search_delegate.dart';
+import '../delegate/page_view_home_main_order_search_delegate.dart';
+import '../delegate/page_view_home_main_tab_delegate.dart';
 
 class PageViewHomeMainWidget extends StatefulWidget {
   const PageViewHomeMainWidget({Key? key}) : super(key: key);
@@ -138,14 +134,14 @@ class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
                 sliver: SliverPersistentHeader(
                     pinned: true,
                     //floating: true,
-                    delegate: DelegateHome1()),
+                    delegate: PageViewHomeMainOrderSearchDelegate()),
               ),
               SliverOffstage(
                 offstage: _c == 0 ? true : false,
                 sliver: SliverPersistentHeader(
                     pinned: true,
                     //floating: true,
-                    delegate: DelegateHome2()),
+                    delegate: PageViewHomeMainInventorySearchDelegate()),
               )
             ];
           },
@@ -199,100 +195,4 @@ class _PageViewHomeMainWidgetState extends State<PageViewHomeMainWidget>
 
   @override
   bool get wantKeepAlive => true;
-}
-
-class DelegateHome1 extends SliverPersistentHeaderDelegate {
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      color: const Color.fromARGB(255, 250, 251, 251),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.content_copy_outlined,
-                color: Colors.blue,
-                size: 50,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text('Faktur Hari Ini Belum Lunas',
-                  style: TextStyle(fontSize: 17, color: Colors.blue)),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const PageViewHomeMainOrderSearch()
-        ],
-      ),
-    );
-  }
-
-  @override
-  double get maxExtent => 140;
-
-  @override
-  double get minExtent => 140;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
-  }
-}
-
-class DelegateHome2 extends SliverPersistentHeaderDelegate {
-  @override
-  Widget build(
-      BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return Container(
-      color: const Color.fromARGB(255, 250, 251, 251),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Icon(
-                Icons.inventory_2_outlined,
-                color: Colors.blue,
-                size: 50,
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Text('Inventory Tersedia',
-                  style: TextStyle(fontSize: 17, color: Colors.blue)),
-            ],
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          const PageViewHomeMainInventorySearch()
-        ],
-      ),
-    );
-  }
-
-  @override
-  double get maxExtent => 140;
-
-  @override
-  double get minExtent => 140;
-
-  @override
-  bool shouldRebuild(SliverPersistentHeaderDelegate oldDelegate) {
-    return false;
-  }
 }
