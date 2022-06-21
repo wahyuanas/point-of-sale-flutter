@@ -1,5 +1,6 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
+import 'package:pos/domain/vehicle_owner/vehicle_owner.dart';
 
 class Order {
   Order(
@@ -151,10 +152,40 @@ var customers = [
       name: "Bill Gates",
       phoneNumber: "0987654321",
       email: "c@c.com",
-      idNumber: "12345",
+      address: "Jl. ABC No. 1",
+      idAccount: 1,
+      code: '001',
+      type: ''),
+  const Customer(
+      id: 3,
+      name: "Asep",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      code: '002',
+      type: '',
       address: "Jl. ABC No. 1",
       idAccount: 1),
   const Customer(
+      id: 1,
+      name: "Deden",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      code: '003',
+      type: '',
+      address: "Jl. ABC No. 1",
+      idAccount: 1),
+];
+
+var owners = [
+  const VehicleOwner(
+      id: 1,
+      name: "Bill Gates",
+      phoneNumber: "0987654321",
+      email: "c@c.com",
+      idNumber: "12345",
+      address: "Jl. ABC No. 1",
+      idAccount: 1),
+  const VehicleOwner(
       id: 3,
       name: "Asep",
       phoneNumber: "0987654321",
@@ -162,7 +193,7 @@ var customers = [
       idNumber: "12345",
       address: "Jl. ABC No. 1",
       idAccount: 1),
-  const Customer(
+  const VehicleOwner(
       id: 1,
       name: "Deden",
       phoneNumber: "0987654321",

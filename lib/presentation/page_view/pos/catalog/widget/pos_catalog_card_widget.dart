@@ -73,25 +73,6 @@ class _PosCatalogCardWidgetState extends State<PosCatalogCardWidget> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ExpansionPanelList(
-                  children: [
-                    ExpansionPanel(
-                        headerBuilder: (context, isExpanded) {
-                          return ListTile(
-                            title: Text(
-                              'Click To Expand',
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          );
-                        },
-                        body: ListTile(
-                          title: Text('Description text',
-                              style: TextStyle(color: Colors.black)),
-                          tileColor: Colors.white,
-                        ),
-                        backgroundColor: Colors.green),
-                  ],
-                ),
                 Row(
                   children: [
                     const Icon(
