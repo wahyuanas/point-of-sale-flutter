@@ -21,7 +21,7 @@ Order _$OrderFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Order {
   int get id => throw _privateConstructorUsedError;
-  String get fakturNumber => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   int get customerId => throw _privateConstructorUsedError;
   int get vehicleId => throw _privateConstructorUsedError;
   List<int> get employeeId => throw _privateConstructorUsedError;
@@ -49,7 +49,7 @@ abstract class $OrderCopyWith<$Res> {
       _$OrderCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String fakturNumber,
+      String code,
       int customerId,
       int vehicleId,
       List<int> employeeId,
@@ -78,7 +78,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? fakturNumber = freezed,
+    Object? code = freezed,
     Object? customerId = freezed,
     Object? vehicleId = freezed,
     Object? employeeId = freezed,
@@ -100,9 +100,9 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      fakturNumber: fakturNumber == freezed
-          ? _value.fakturNumber
-          : fakturNumber // ignore: cast_nullable_to_non_nullable
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
       customerId: customerId == freezed
           ? _value.customerId
@@ -175,7 +175,7 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      String fakturNumber,
+      String code,
       int customerId,
       int vehicleId,
       List<int> employeeId,
@@ -205,7 +205,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? fakturNumber = freezed,
+    Object? code = freezed,
     Object? customerId = freezed,
     Object? vehicleId = freezed,
     Object? employeeId = freezed,
@@ -227,9 +227,9 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      fakturNumber: fakturNumber == freezed
-          ? _value.fakturNumber
-          : fakturNumber // ignore: cast_nullable_to_non_nullable
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
       customerId: customerId == freezed
           ? _value.customerId
@@ -300,7 +300,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
 class _$_Order extends _Order {
   const _$_Order(
       {required this.id,
-      required this.fakturNumber,
+      required this.code,
       required this.customerId,
       required this.vehicleId,
       required final List<int> employeeId,
@@ -325,7 +325,7 @@ class _$_Order extends _Order {
   @override
   final int id;
   @override
-  final String fakturNumber;
+  final String code;
   @override
   final int customerId;
   @override
@@ -364,7 +364,7 @@ class _$_Order extends _Order {
 
   @override
   String toString() {
-    return 'Order(id: $id, fakturNumber: $fakturNumber, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
+    return 'Order(id: $id, code: $code, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
   }
 
   @override
@@ -373,8 +373,7 @@ class _$_Order extends _Order {
         (other.runtimeType == runtimeType &&
             other is _$_Order &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality()
-                .equals(other.fakturNumber, fakturNumber) &&
+            const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality()
                 .equals(other.customerId, customerId) &&
             const DeepCollectionEquality().equals(other.vehicleId, vehicleId) &&
@@ -406,7 +405,7 @@ class _$_Order extends _Order {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(fakturNumber),
+      const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(customerId),
       const DeepCollectionEquality().hash(vehicleId),
       const DeepCollectionEquality().hash(_employeeId),
@@ -437,7 +436,7 @@ class _$_Order extends _Order {
 abstract class _Order extends Order {
   const factory _Order(
       {required final int id,
-      required final String fakturNumber,
+      required final String code,
       required final int customerId,
       required final int vehicleId,
       required final List<int> employeeId,
@@ -460,7 +459,7 @@ abstract class _Order extends Order {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get fakturNumber => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   @override
   int get customerId => throw _privateConstructorUsedError;
   @override

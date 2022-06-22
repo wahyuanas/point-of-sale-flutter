@@ -8,7 +8,7 @@ part of 'order.dart';
 
 _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       id: json['id'] as int,
-      fakturNumber: json['fakturNumber'] as String,
+      code: json['code'] as String,
       customerId: json['customerId'] as int,
       vehicleId: json['vehicleId'] as int,
       employeeId:
@@ -29,7 +29,7 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
 
 Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'id': instance.id,
-      'fakturNumber': instance.fakturNumber,
+      'code': instance.code,
       'customerId': instance.customerId,
       'vehicleId': instance.vehicleId,
       'employeeId': instance.employeeId,

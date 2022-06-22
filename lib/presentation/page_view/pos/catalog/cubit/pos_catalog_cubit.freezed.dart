@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PosCatalogState {
   List<Item>? get items => throw _privateConstructorUsedError;
+  String? get keyWord => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PosCatalogStateCopyWith<PosCatalogState> get copyWith =>
@@ -28,7 +29,7 @@ abstract class $PosCatalogStateCopyWith<$Res> {
   factory $PosCatalogStateCopyWith(
           PosCatalogState value, $Res Function(PosCatalogState) then) =
       _$PosCatalogStateCopyWithImpl<$Res>;
-  $Res call({List<Item>? items});
+  $Res call({List<Item>? items, String? keyWord});
 }
 
 /// @nodoc
@@ -43,12 +44,17 @@ class _$PosCatalogStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? items = freezed,
+    Object? keyWord = freezed,
   }) {
     return _then(_value.copyWith(
       items: items == freezed
           ? _value.items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Item>?,
+      keyWord: keyWord == freezed
+          ? _value.keyWord
+          : keyWord // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -60,7 +66,7 @@ abstract class _$$_PosCatalogStateCopyWith<$Res>
           _$_PosCatalogState value, $Res Function(_$_PosCatalogState) then) =
       __$$_PosCatalogStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Item>? items});
+  $Res call({List<Item>? items, String? keyWord});
 }
 
 /// @nodoc
@@ -77,12 +83,17 @@ class __$$_PosCatalogStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? items = freezed,
+    Object? keyWord = freezed,
   }) {
     return _then(_$_PosCatalogState(
       items: items == freezed
           ? _value._items
           : items // ignore: cast_nullable_to_non_nullable
               as List<Item>?,
+      keyWord: keyWord == freezed
+          ? _value.keyWord
+          : keyWord // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -92,7 +103,9 @@ class __$$_PosCatalogStateCopyWithImpl<$Res>
 class _$_PosCatalogState
     with DiagnosticableTreeMixin
     implements _PosCatalogState {
-  const _$_PosCatalogState({required final List<Item>? items}) : _items = items;
+  const _$_PosCatalogState(
+      {required final List<Item>? items, required this.keyWord})
+      : _items = items;
 
   final List<Item>? _items;
   @override
@@ -104,8 +117,11 @@ class _$_PosCatalogState
   }
 
   @override
+  final String? keyWord;
+
+  @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'PosCatalogState(items: $items)';
+    return 'PosCatalogState(items: $items, keyWord: $keyWord)';
   }
 
   @override
@@ -113,7 +129,8 @@ class _$_PosCatalogState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'PosCatalogState'))
-      ..add(DiagnosticsProperty('items', items));
+      ..add(DiagnosticsProperty('items', items))
+      ..add(DiagnosticsProperty('keyWord', keyWord));
   }
 
   @override
@@ -121,12 +138,15 @@ class _$_PosCatalogState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_PosCatalogState &&
-            const DeepCollectionEquality().equals(other._items, _items));
+            const DeepCollectionEquality().equals(other._items, _items) &&
+            const DeepCollectionEquality().equals(other.keyWord, keyWord));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_items));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_items),
+      const DeepCollectionEquality().hash(keyWord));
 
   @JsonKey(ignore: true)
   @override
@@ -135,11 +155,14 @@ class _$_PosCatalogState
 }
 
 abstract class _PosCatalogState implements PosCatalogState {
-  const factory _PosCatalogState({required final List<Item>? items}) =
-      _$_PosCatalogState;
+  const factory _PosCatalogState(
+      {required final List<Item>? items,
+      required final String? keyWord}) = _$_PosCatalogState;
 
   @override
   List<Item>? get items => throw _privateConstructorUsedError;
+  @override
+  String? get keyWord => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_PosCatalogStateCopyWith<_$_PosCatalogState> get copyWith =>

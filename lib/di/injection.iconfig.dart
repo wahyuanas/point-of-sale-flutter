@@ -15,6 +15,7 @@ import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.da
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
+import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/cubit/list/vehicle_list_cubit.dart';
 import 'package:pos/presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
@@ -52,6 +53,7 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<EmployeeCubit>(() => EmployeeCubit());
   g.registerLazySingleton<VehicleCubit>(() => VehicleCubit());
   g.registerLazySingleton<OrderCubit>(() => OrderCubit());
+  g.registerLazySingleton<OrderDetailCubit>(() => OrderDetailCubit());
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

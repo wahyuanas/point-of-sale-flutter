@@ -1,25 +1,26 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
+import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle_owner/vehicle_owner.dart';
 import 'package:pos/domain/vehicle_type/vehicle_type.dart';
 
-class Order {
-  Order(
-      {required this.id,
-      required this.code,
-      required this.date,
-      required this.amount,
-      required this.withName,
-      required this.regNumber});
+// class Order {
+//   Order(
+//       {required this.id,
+//       required this.code,
+//       required this.date,
+//       required this.amount,
+//       required this.withName,
+//       required this.regNumber});
 
-  int id;
-  String code;
-  String date;
-  int amount;
-  String withName;
-  String regNumber;
-}
+//   int id;
+//   String code;
+//   String date;
+//   int amount;
+//   String withName;
+//   String regNumber;
+// }
 
 class Inventory {
   Inventory({
@@ -41,43 +42,43 @@ class Inventory {
   int stock;
 }
 
-var orders = [
-  Order(
-      id: 1,
-      code: "00001",
-      date: "01 Juni 2020",
-      amount: 1500000,
-      withName: "Bill Gates",
-      regNumber: "B1234UT"),
-  Order(
-      id: 2,
-      code: "00002",
-      date: "01 Juni 2020",
-      amount: 2500000,
-      withName: "Larry Page",
-      regNumber: "B5432BA"),
-  Order(
-      id: 3,
-      code: "00003",
-      date: "01 Juni 2020",
-      amount: 3500000,
-      withName: "Asep",
-      regNumber: "B3452TB"),
-  Order(
-      id: 4,
-      code: "00004",
-      date: "01 Juni 2020",
-      amount: 1500000,
-      withName: "Deden",
-      regNumber: "B7654HJ"),
-  Order(
-      id: 5,
-      code: "00005",
-      date: "01 Juni 2020",
-      amount: 4500000,
-      withName: "Hotman",
-      regNumber: "B4783UT")
-];
+// var orders = [
+//   Order(
+//       id: 1,
+//       code: "00001",
+//       date: "01 Juni 2020",
+//       amount: 1500000,
+//       withName: "Bill Gates",
+//       regNumber: "B1234UT"),
+//   Order(
+//       id: 2,
+//       code: "00002",
+//       date: "01 Juni 2020",
+//       amount: 2500000,
+//       withName: "Larry Page",
+//       regNumber: "B5432BA"),
+//   Order(
+//       id: 3,
+//       code: "00003",
+//       date: "01 Juni 2020",
+//       amount: 3500000,
+//       withName: "Asep",
+//       regNumber: "B3452TB"),
+//   Order(
+//       id: 4,
+//       code: "00004",
+//       date: "01 Juni 2020",
+//       amount: 1500000,
+//       withName: "Deden",
+//       regNumber: "B7654HJ"),
+//   Order(
+//       id: 5,
+//       code: "00005",
+//       date: "01 Juni 2020",
+//       amount: 4500000,
+//       withName: "Hotman",
+//       regNumber: "B4783UT")
+// ];
 
 var inventories = [
   Inventory(
@@ -182,7 +183,7 @@ var vehicleType = [
   const VehicleType(
       id: 1,
       manufacture: "Mercedes-Benz",
-      model: "GLA-",
+      model: "GLA-SUV",
       year: 2022,
       color: "Blue",
       description: "abcde",
@@ -197,7 +198,7 @@ var vehicleType = [
       idAccount: 1),
   const VehicleType(
       id: 3,
-      manufacture: "Mitshubisi",
+      manufacture: "Mitsubishi",
       model: "Pajero",
       year: 2020,
       color: "Metal",
@@ -303,3 +304,24 @@ var itemss = <Item>[
       category: 3,
       image: null),
 ];
+
+// var orders = [
+//   Order(
+//       id: 1,
+//       code: "0000001",
+//       customerId: 1,
+//       vehicleId: 1,
+//       employeeId: [1,2],
+//       date: "01 Juni 2022",
+//       amount: 3000000,
+//       grandAmount: 3150000,
+//       disc: disc,
+//       paymentType: paymentType,
+//       charge: charge,
+//       paidAmount: paidAmount,
+//       changeAmount: changeAmount,
+//       description: description,
+//       tax: tax,
+//       itemNumber: itemNumber,
+//       paidStatus: paidStatus)
+// ];

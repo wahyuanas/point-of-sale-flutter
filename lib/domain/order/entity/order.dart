@@ -9,7 +9,7 @@ class Order with _$Order implements IEntity {
   const Order._();
   const factory Order({
     required int id,
-    required String fakturNumber,
+    required String code,
     required int customerId,
     required int vehicleId,
     required List<int> employeeId,

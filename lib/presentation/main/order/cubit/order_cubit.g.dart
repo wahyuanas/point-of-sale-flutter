@@ -8,7 +8,9 @@ part of 'order_cubit.dart';
 
 _$_OrderState _$$_OrderStateFromJson(Map<String, dynamic> json) =>
     _$_OrderState(
-      orders: json['orders'] as List<dynamic>?,
+      orders: (json['orders'] as List<dynamic>?)
+          ?.map((e) => Order.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_OrderStateToJson(_$_OrderState instance) =>

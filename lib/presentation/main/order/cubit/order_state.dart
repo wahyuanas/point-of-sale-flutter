@@ -2,10 +2,10 @@ part of 'order_cubit.dart';
 
 @freezed
 class OrderState with _$OrderState {
-  const factory OrderState({required List<Item>? orders}) = _OrderState;
+  const factory OrderState({required List<Order>? orders}) = _OrderState;
 
-  factory OrderState.initial() => OrderState(orders: itemss);
-  factory OrderState.reLoad(List<Item>? orders) => OrderState(
+  factory OrderState.initial() => const OrderState(orders: null);
+  factory OrderState.reLoad(List<Order>? orders) => OrderState(
         orders: orders,
       );
 
