@@ -10,10 +10,10 @@ part 'customer_list_cubit.g.dart';
 class CustomerCubit extends HydratedCubit<CustomerState> {
   CustomerCubit() : super(CustomerState.initial());
 
-  void CustomerStarted() async {
-    //await Future<void>.delayed(const Duration(seconds: 1));
-    emit(state.copyWith(customers: state.customers));
-  }
+  // void customerStarted() async {
+  //   //await Future<void>.delayed(const Duration(seconds: 1));
+  //   emit(state.copyWith(customers: state.customers));
+  // }
 
   @override
   CustomerState fromJson(Map<String, dynamic> json) {

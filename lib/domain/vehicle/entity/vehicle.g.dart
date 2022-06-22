@@ -14,7 +14,7 @@ _$_Vehicle _$$_VehicleFromJson(Map<String, dynamic> json) => _$_Vehicle(
       description: json['description'] as String,
       idAccount: json['idAccount'] as int,
       idVehicleOwner: json['idVehicleOwner'] as int,
-      idType: json['idType'] as int?,
+      idVehicleType: json['idVehicleType'] as int?,
     );
 
 Map<String, dynamic> _$$_VehicleToJson(_$_Vehicle instance) =>
@@ -26,5 +26,5 @@ Map<String, dynamic> _$$_VehicleToJson(_$_Vehicle instance) =>
       'description': instance.description,
       'idAccount': instance.idAccount,
       'idVehicleOwner': instance.idVehicleOwner,
-      'idType': instance.idType,
+      'idVehicleType': instance.idVehicleType,
     };

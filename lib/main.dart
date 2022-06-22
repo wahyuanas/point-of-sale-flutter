@@ -6,6 +6,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:pos/bloc_observer.dart';
 import 'package:pos/di/injection.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
@@ -28,10 +29,8 @@ void main() async {
         ? HydratedStorage.webStorageDirectory
         : await getApplicationDocumentsDirectory(),
   );
-  HydratedBlocOverrides.runZoned(
-    () => runApp(const PosApp()),
-    storage: storage,
-  );
+  HydratedBlocOverrides.runZoned(() => runApp(const PosApp()),
+      storage: storage, blocObserver: BlocObserverX());
 }
 
 class PosApp extends StatefulWidget {

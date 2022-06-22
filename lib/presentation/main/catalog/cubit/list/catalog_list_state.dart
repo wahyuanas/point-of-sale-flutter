@@ -4,7 +4,7 @@ part of 'catalog_list_cubit.dart';
 class CatalogState with _$CatalogState {
   const factory CatalogState({required List<Item>? items}) = _CatalogState;
 
-  factory CatalogState.initial() => const CatalogState(items: null);
+  factory CatalogState.initial() => CatalogState(items: itemss);
   factory CatalogState.reLoad(List<Item>? items) => CatalogState(
         items: items,
       );

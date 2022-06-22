@@ -15,7 +15,7 @@ class Vehicle with _$Vehicle implements IEntity {
     required String description,
     required int idAccount,
     required int idVehicleOwner,
-    required int? idType,
+    required int? idVehicleType,
   }) = _Vehicle;
 
   factory Vehicle.fromJson(Map<String, dynamic> json) =>

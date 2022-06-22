@@ -1,6 +1,8 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
+import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle_owner/vehicle_owner.dart';
+import 'package:pos/domain/vehicle_type/vehicle_type.dart';
 
 class Order {
   Order(
@@ -176,6 +178,33 @@ var customers = [
       idAccount: 1),
 ];
 
+var vehicleType = [
+  const VehicleType(
+      id: 1,
+      manufacture: "Mercedes-Benz",
+      model: "GLA-",
+      year: 2022,
+      color: "Blue",
+      description: "abcde",
+      idAccount: 1),
+  const VehicleType(
+      id: 2,
+      manufacture: "Toyota",
+      model: "Fortuner",
+      year: 2021,
+      color: "Black",
+      description: "abcde",
+      idAccount: 1),
+  const VehicleType(
+      id: 3,
+      manufacture: "Mitshubisi",
+      model: "Pajero",
+      year: 2020,
+      color: "Metal",
+      description: "abcde",
+      idAccount: 1)
+];
+
 var owners = [
   const VehicleOwner(
       id: 1,
@@ -186,7 +215,7 @@ var owners = [
       address: "Jl. ABC No. 1",
       idAccount: 1),
   const VehicleOwner(
-      id: 3,
+      id: 2,
       name: "Asep",
       phoneNumber: "0987654321",
       email: "c@c.com",
@@ -194,11 +223,83 @@ var owners = [
       address: "Jl. ABC No. 1",
       idAccount: 1),
   const VehicleOwner(
-      id: 1,
+      id: 3,
       name: "Deden",
       phoneNumber: "0987654321",
       email: "c@c.com",
       idNumber: "12345",
       address: "Jl. ABC No. 1",
       idAccount: 1),
+];
+
+var vehicle = [
+  const Vehicle(
+      id: 1,
+      policyNumber: "B1234UT",
+      machineNumber: "08765-4321",
+      currentKm: 1500,
+      description: "abcdef",
+      idAccount: 1,
+      idVehicleOwner: 1,
+      idVehicleType: 1),
+  const Vehicle(
+      id: 2,
+      policyNumber: "B1234UT",
+      machineNumber: "08765-4321",
+      currentKm: 1500,
+      description: "abcdef",
+      idAccount: 1,
+      idVehicleOwner: 2,
+      idVehicleType: 2),
+  const Vehicle(
+      id: 3,
+      policyNumber: "B1234UT",
+      machineNumber: "08765-4321",
+      currentKm: 1500,
+      description: "abcdef",
+      idAccount: 1,
+      idVehicleOwner: 3,
+      idVehicleType: 3)
+];
+
+var itemss = <Item>[
+  const Item(
+      id: 1,
+      code: "AKGSNS70",
+      barcode: null,
+      name: "Aki GS NS70",
+      description: "Aki GS NS70",
+      sellPrice: 1500000,
+      sellDisc: null,
+      purchasePrice: 1300000,
+      purchaseDisc: null,
+      stock: 10,
+      category: 1,
+      image: null),
+  const Item(
+      id: 2,
+      code: "SP4X",
+      barcode: null,
+      name: "Spooring 4 X",
+      description: "Spooring 4 X",
+      sellPrice: 200000,
+      sellDisc: 2,
+      purchasePrice: 150000,
+      purchaseDisc: null,
+      stock: 15,
+      category: 2,
+      image: null),
+  const Item(
+      id: 3,
+      code: "VLHSRYX629",
+      barcode: null,
+      name: "Velg Hsr Skinny Yx629",
+      description: "Velg Hsr Skinny Yx629",
+      sellPrice: 4600000,
+      sellDisc: 3,
+      purchasePrice: 4000000,
+      purchaseDisc: null,
+      stock: 5,
+      category: 3,
+      image: null),
 ];
