@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../bloc/pos_bloc.dart';
+import '../bloc/pos_main_bloc.dart';
 import 'pos_main_item_transaction_card_widget.dart';
 
 class PosMainItemTransactionWidget extends StatefulWidget {
@@ -16,7 +16,7 @@ class _PosMainItemTransactionWidgetState
     extends State<PosMainItemTransactionWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
+    return BlocBuilder<PosMainBloc, PosMainState>(builder: (context, state) {
       if (state.poss == null) {
         return SliverToBoxAdapter(
           child: Column(

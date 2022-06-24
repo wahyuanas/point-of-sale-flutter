@@ -13,7 +13,7 @@ class Order with _$Order implements IEntity {
     required int customerId,
     required int vehicleId,
     required List<int> employeeId,
-    required String date,
+    required DateTime date,
     required int amount,
     required int grandAmount,
     required int disc,

@@ -9,7 +9,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:pos/bloc_observer.dart';
 import 'package:pos/di/injection.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
-import 'package:pos/presentation/main/catalog/cubit/list/catalog_list_cubit.dart';
+import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/cubit/list/customer_list_cubit.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
@@ -18,7 +18,7 @@ import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
 import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/cubit/list/vehicle_list_cubit.dart';
-import 'package:pos/presentation/page_view/pos/main/bloc/pos_bloc.dart';
+import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -76,7 +76,7 @@ class PosAppState extends State<PosApp> {
         create: (context) => getIt<SignInCubit>(),
       ),
       BlocProvider(
-        create: (context) => getIt<PosBloc>(),
+        create: (context) => getIt<PosMainBloc>(),
       ),
       BlocProvider(
         create: (context) => getIt<HomeOrderCubit>(),
@@ -85,7 +85,7 @@ class PosAppState extends State<PosApp> {
         create: (context) => getIt<HomeInventoryCubit>(),
       ),
       BlocProvider(create: (context) => getIt<AuthCubit>()),
-      BlocProvider(create: (context) => getIt<CatalogCubit>()),
+      BlocProvider(create: (context) => getIt<CatalogListCubit>()),
       BlocProvider(create: (context) => getIt<EmployeeCubit>()),
       BlocProvider(create: (context) => getIt<VehicleCubit>()),
       BlocProvider(create: (context) => getIt<CustomerCubit>()),

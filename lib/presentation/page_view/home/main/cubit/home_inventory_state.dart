@@ -6,5 +6,5 @@ class HomeInventoryState with _$HomeInventoryState {
       _HomeInventoryState;
 
   factory HomeInventoryState.initial() =>
-      HomeInventoryState(inventories: inventories);
+      const HomeInventoryState(inventories: null);
 }

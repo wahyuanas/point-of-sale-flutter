@@ -40,7 +40,7 @@ class _HomeMainOrderSearchState extends State<HomeMainOrderSearch> {
         child: TextFormField(
           focusNode: _focusNode,
           onChanged: ((value) {
-            context.read<HomeOrderCubit>().onSearchKeyChanged(value);
+            //context.read<HomeOrderCubit>().onSearchKeyChanged(value);
             if (value.isNotEmpty) {
               if (_textFilled == false) {
                 setState(() {

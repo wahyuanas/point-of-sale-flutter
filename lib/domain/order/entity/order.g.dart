@@ -13,7 +13,7 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       vehicleId: json['vehicleId'] as int,
       employeeId:
           (json['employeeId'] as List<dynamic>).map((e) => e as int).toList(),
-      date: json['date'] as String,
+      date: DateTime.parse(json['date'] as String),
       amount: json['amount'] as int,
       grandAmount: json['grandAmount'] as int,
       disc: json['disc'] as int,
@@ -33,7 +33,7 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'customerId': instance.customerId,
       'vehicleId': instance.vehicleId,
       'employeeId': instance.employeeId,
-      'date': instance.date,
+      'date': instance.date.toIso8601String(),
       'amount': instance.amount,
       'grandAmount': instance.grandAmount,
       'disc': instance.disc,

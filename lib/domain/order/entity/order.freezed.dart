@@ -25,7 +25,7 @@ mixin _$Order {
   int get customerId => throw _privateConstructorUsedError;
   int get vehicleId => throw _privateConstructorUsedError;
   List<int> get employeeId => throw _privateConstructorUsedError;
-  String get date => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   int get grandAmount => throw _privateConstructorUsedError;
   int get disc => throw _privateConstructorUsedError;
@@ -53,7 +53,7 @@ abstract class $OrderCopyWith<$Res> {
       int customerId,
       int vehicleId,
       List<int> employeeId,
-      String date,
+      DateTime date,
       int amount,
       int grandAmount,
       int disc,
@@ -119,7 +119,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       amount: amount == freezed
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -179,7 +179,7 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       int customerId,
       int vehicleId,
       List<int> employeeId,
-      String date,
+      DateTime date,
       int amount,
       int grandAmount,
       int disc,
@@ -246,7 +246,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DateTime,
       amount: amount == freezed
           ? _value.amount
           : amount // ignore: cast_nullable_to_non_nullable
@@ -338,7 +338,7 @@ class _$_Order extends _Order {
   }
 
   @override
-  final String date;
+  final DateTime date;
   @override
   final int amount;
   @override
@@ -440,7 +440,7 @@ abstract class _Order extends Order {
       required final int customerId,
       required final int vehicleId,
       required final List<int> employeeId,
-      required final String date,
+      required final DateTime date,
       required final int amount,
       required final int grandAmount,
       required final int disc,
@@ -467,7 +467,7 @@ abstract class _Order extends Order {
   @override
   List<int> get employeeId => throw _privateConstructorUsedError;
   @override
-  String get date => throw _privateConstructorUsedError;
+  DateTime get date => throw _privateConstructorUsedError;
   @override
   int get amount => throw _privateConstructorUsedError;
   @override

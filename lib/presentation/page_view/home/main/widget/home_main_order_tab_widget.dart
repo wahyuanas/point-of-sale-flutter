@@ -66,7 +66,7 @@ class _HomeMainOrderTabWidgetState extends State<HomeMainOrderTabWidget>
                                     Wrap(
                                       children: [
                                         Text(
-                                          "Mr. ${state.orders?[i].withName}",
+                                          "Mr. ${state.orders?[i].code}",
                                           style: const TextStyle(
                                               color: Colors.blue, fontSize: 15),
                                         ),
@@ -74,7 +74,7 @@ class _HomeMainOrderTabWidgetState extends State<HomeMainOrderTabWidget>
                                           width: 10.0,
                                         ),
                                         Text(
-                                          "${state.orders?[i].regNumber}",
+                                          "${state.orders?[i].code}",
                                           style: const TextStyle(
                                               fontWeight: FontWeight.w700,
                                               fontSize: 15.0),

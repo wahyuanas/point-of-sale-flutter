@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../bloc/pos_bloc.dart';
+import '../bloc/pos_main_bloc.dart';
 import '../delegate/pos_main_action_delegate.dart';
 import 'pos_main_item_transaction_widget.dart';
 
@@ -168,7 +168,7 @@ class DelegatePos1 extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
+    return BlocBuilder<PosMainBloc, PosMainState>(builder: (context, state) {
       int total = 0;
       state.poss?.forEach(
         (pos) {

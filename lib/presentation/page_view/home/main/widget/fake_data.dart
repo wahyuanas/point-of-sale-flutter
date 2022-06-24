@@ -1,6 +1,5 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
-import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle_owner/vehicle_owner.dart';
 import 'package:pos/domain/vehicle_type/vehicle_type.dart';

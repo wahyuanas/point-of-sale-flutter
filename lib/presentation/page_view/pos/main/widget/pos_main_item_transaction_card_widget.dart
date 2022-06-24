@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 
-import '../bloc/pos_bloc.dart';
+import '../bloc/pos_main_bloc.dart';
 
 class PosMainItemTransactionCardWidget extends StatefulWidget {
   final Pos pos;
@@ -135,7 +135,7 @@ class _PosMainItemTransactionCardWidgetState
                 children: [
                   const Spacer(),
                   GestureDetector(
-                    onTap: () => BlocProvider.of<PosBloc>(context)
+                    onTap: () => BlocProvider.of<PosMainBloc>(context)
                         .add(PosDecrementItemEvent(item: widget.pos.item)),
                     child: const Icon(
                       Icons.remove_circle_outline,
@@ -163,8 +163,9 @@ class _PosMainItemTransactionCardWidgetState
                             size: 30,
                           )
                         : GestureDetector(
-                            onTap: () => BlocProvider.of<PosBloc>(context).add(
-                                PosIncrementItemEvent(item: widget.pos.item)),
+                            onTap: () => BlocProvider.of<PosMainBloc>(context)
+                                .add(PosIncrementItemEvent(
+                                    item: widget.pos.item)),
                             child: const Icon(
                               Icons.add_circle_outline,
                               color: Colors.blue,

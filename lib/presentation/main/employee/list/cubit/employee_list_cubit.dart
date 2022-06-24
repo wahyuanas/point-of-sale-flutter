@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
-import 'package:pos/domain/employee/entity/employee.dart';
+import 'package:pos/domain/employee/entity/employees.dart';
 
 part 'employee_list_state.dart';
 part 'employee_list_cubit.freezed.dart';

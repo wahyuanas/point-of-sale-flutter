@@ -5,5 +5,5 @@ class HomeOrderState with _$HomeOrderState {
   const factory HomeOrderState({required List<Order>? orders}) =
       _HomeOrderState;
 
-  factory HomeOrderState.initial() => HomeOrderState(orders: orders);
+  factory HomeOrderState.initial() => const HomeOrderState(orders: null);
 }

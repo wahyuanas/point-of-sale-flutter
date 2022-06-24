@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 
-import '../bloc/pos_bloc.dart';
+import '../bloc/pos_main_bloc.dart';
 
 class PosMainActionWidget extends StatefulWidget {
   const PosMainActionWidget({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class PosMainActionWidget extends StatefulWidget {
 class _PosMainActionWidgetState extends State<PosMainActionWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<PosBloc, PosState>(builder: (context, state) {
+    return BlocBuilder<PosMainBloc, PosMainState>(builder: (context, state) {
       return Container(
         padding: const EdgeInsets.only(left: 8.0, right: 8.0),
         decoration: const BoxDecoration(
@@ -227,7 +227,8 @@ Future<void> _showMyDialog(BuildContext context) async {
           TextButton(
             child: const Text('Ya', style: TextStyle(fontSize: 17)),
             onPressed: () {
-              BlocProvider.of<PosBloc>(context).add(const PosStartedEvent());
+              BlocProvider.of<PosMainBloc>(context)
+                  .add(const PosStartedEvent());
               Navigator.of(context).pop();
             },
           ),

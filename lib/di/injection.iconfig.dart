@@ -9,7 +9,7 @@ import 'package:pos/infrastructure/account/remote/api/i_account_api.dart';
 import 'package:pos/infrastructure/account/repository/account_repository.dart';
 import 'package:pos/infrastructure/service/firebase_injectable_module.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
-import 'package:pos/presentation/main/catalog/cubit/list/catalog_list_cubit.dart';
+import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/cubit/list/customer_list_cubit.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
@@ -21,7 +21,7 @@ import 'package:pos/presentation/main/vehicle/cubit/list/vehicle_list_cubit.dart
 import 'package:pos/presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
 import 'package:pos/presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'package:pos/presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
-import 'package:pos/presentation/page_view/pos/main/bloc/pos_bloc.dart';
+import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
 void $initGetIt(GetIt g) {
@@ -45,10 +45,10 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<AuthCubit>(() => AuthCubit());
   g.registerLazySingleton<SignInCubit>(
       () => SignInCubit(authCubit: g(), accountService: g()));
-  g.registerLazySingleton<PosBloc>(() => PosBloc());
+  g.registerLazySingleton<PosMainBloc>(() => PosMainBloc());
   g.registerLazySingleton<HomeInventoryCubit>(() => HomeInventoryCubit());
   g.registerLazySingleton<HomeOrderCubit>(() => HomeOrderCubit());
-  g.registerLazySingleton<CatalogCubit>(() => CatalogCubit());
+  g.registerLazySingleton<CatalogListCubit>(() => CatalogListCubit());
   g.registerLazySingleton<CustomerCubit>(() => CustomerCubit());
   g.registerLazySingleton<EmployeeCubit>(() => EmployeeCubit());
   g.registerLazySingleton<VehicleCubit>(() => VehicleCubit());

@@ -41,12 +41,4 @@ extension SignUpX on SignUp {
         .andThen(outletsNumber.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }
-
-  // Option<ObjectValueFailure> get failureOptionx {
-  //   return mainBusinessType.failureOrUnit.fold((l) => some(l), (r) => none());
-  // }
-
-  // Option<ObjectValueFailure> get failureOptionc {
-  //   return coreBusinessType.failureOrUnit.fold((l) => some(l), (r) => none());
-  // }
 }
