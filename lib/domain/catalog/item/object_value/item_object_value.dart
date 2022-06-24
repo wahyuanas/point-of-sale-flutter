@@ -18,7 +18,7 @@ class CreateCatalogItem with _$CreateCatalogItem {
     required CreateCatalogItemPurchasePrice purchasePrice,
     required CreateCatalogItemPurchaseDisc purchaseDisc,
     required CreateCatalogItemStock stock,
-    required CreateCatalogItemCategry category,
+    required CreateCatalogItemCategory category,
     required CreateCatalogItemImage image,
   }) = _CreateCatalogItem;
 
@@ -32,7 +32,7 @@ class CreateCatalogItem with _$CreateCatalogItem {
       purchasePrice: CreateCatalogItemPurchasePrice(''),
       purchaseDisc: CreateCatalogItemPurchaseDisc(null),
       stock: CreateCatalogItemStock(''),
-      category: CreateCatalogItemCategry(''),
+      category: CreateCatalogItemCategory(''),
       image: CreateCatalogItemImage(null));
 }
 
@@ -64,7 +64,7 @@ class EditCatalogItem with _$EditCatalogItem {
     required EditCatalogItemPurchasePrice purchasePrice,
     required EditCatalogItemPurchaseDisc purchaseDisc,
     required EditCatalogItemStock stock,
-    required EditCatalogItemCategry category,
+    required EditCatalogItemCategory category,
     required EditCatalogItemImage image,
   }) = _EditCatalogItem;
 
@@ -79,7 +79,7 @@ class EditCatalogItem with _$EditCatalogItem {
       purchasePrice: EditCatalogItemPurchasePrice(''),
       purchaseDisc: EditCatalogItemPurchaseDisc(null),
       stock: EditCatalogItemStock(''),
-      category: EditCatalogItemCategry(''),
+      category: EditCatalogItemCategory(''),
       image: EditCatalogItemImage(null));
 }
 

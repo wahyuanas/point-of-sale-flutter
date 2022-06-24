@@ -83,4 +83,11 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
           state.createCatalogItem.copyWith(stock: CreateCatalogItemStock(v)),
     ));
   }
+
+  void onCreateCatalogItemCategoryChanged(String v) {
+    emit(state.copyWith(
+      createCatalogItem: state.createCatalogItem
+          .copyWith(category: CreateCatalogItemCategory(v)),
+    ));
+  }
 }

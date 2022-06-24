@@ -108,15 +108,15 @@ class CreateCatalogItemStock extends ObjectValue<int> {
   const CreateCatalogItemStock._(this.value);
 }
 
-class CreateCatalogItemCategry extends ObjectValue<int> {
+class CreateCatalogItemCategory extends ObjectValue<int> {
   @override
   final Either<FormItemObjectValueFailure<String, String>, int> value;
 
-  factory CreateCatalogItemCategry(String input) {
-    return CreateCatalogItemCategry._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateCatalogItemCategory(String input) {
+    return CreateCatalogItemCategory._(validateFieldNotIntAndNotEmpty(input));
   }
 
-  const CreateCatalogItemCategry._(this.value);
+  const CreateCatalogItemCategory._(this.value);
 }
 
 class CreateCatalogItemImage extends ObjectValue<String?> {
@@ -242,15 +242,15 @@ class EditCatalogItemStock extends ObjectValue<int> {
   const EditCatalogItemStock._(this.value);
 }
 
-class EditCatalogItemCategry extends ObjectValue<int> {
+class EditCatalogItemCategory extends ObjectValue<int> {
   @override
   final Either<FormItemObjectValueFailure<String, String>, int> value;
 
-  factory EditCatalogItemCategry(String input) {
-    return EditCatalogItemCategry._(validateFieldNotIntAndNotEmpty(input));
+  factory EditCatalogItemCategory(String input) {
+    return EditCatalogItemCategory._(validateFieldNotIntAndNotEmpty(input));
   }
 
-  const EditCatalogItemCategry._(this.value);
+  const EditCatalogItemCategory._(this.value);
 }
 
 class EditCatalogItemImage extends ObjectValue<String?> {

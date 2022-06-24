@@ -29,7 +29,7 @@ mixin _$CreateCatalogItem {
   CreateCatalogItemPurchaseDisc get purchaseDisc =>
       throw _privateConstructorUsedError;
   CreateCatalogItemStock get stock => throw _privateConstructorUsedError;
-  CreateCatalogItemCategry get category => throw _privateConstructorUsedError;
+  CreateCatalogItemCategory get category => throw _privateConstructorUsedError;
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -52,7 +52,7 @@ abstract class $CreateCatalogItemCopyWith<$Res> {
       CreateCatalogItemPurchasePrice purchasePrice,
       CreateCatalogItemPurchaseDisc purchaseDisc,
       CreateCatalogItemStock stock,
-      CreateCatalogItemCategry category,
+      CreateCatalogItemCategory category,
       CreateCatalogItemImage image});
 }
 
@@ -119,7 +119,7 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as CreateCatalogItemCategry,
+              as CreateCatalogItemCategory,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -145,7 +145,7 @@ abstract class _$$_CreateCatalogItemCopyWith<$Res>
       CreateCatalogItemPurchasePrice purchasePrice,
       CreateCatalogItemPurchaseDisc purchaseDisc,
       CreateCatalogItemStock stock,
-      CreateCatalogItemCategry category,
+      CreateCatalogItemCategory category,
       CreateCatalogItemImage image});
 }
 
@@ -214,7 +214,7 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as CreateCatalogItemCategry,
+              as CreateCatalogItemCategory,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -258,7 +258,7 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
   @override
   final CreateCatalogItemStock stock;
   @override
-  final CreateCatalogItemCategry category;
+  final CreateCatalogItemCategory category;
   @override
   final CreateCatalogItemImage image;
 
@@ -321,7 +321,7 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
       required final CreateCatalogItemPurchasePrice purchasePrice,
       required final CreateCatalogItemPurchaseDisc purchaseDisc,
       required final CreateCatalogItemStock stock,
-      required final CreateCatalogItemCategry category,
+      required final CreateCatalogItemCategory category,
       required final CreateCatalogItemImage image}) = _$_CreateCatalogItem;
 
   @override
@@ -347,7 +347,7 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
   @override
   CreateCatalogItemStock get stock => throw _privateConstructorUsedError;
   @override
-  CreateCatalogItemCategry get category => throw _privateConstructorUsedError;
+  CreateCatalogItemCategory get category => throw _privateConstructorUsedError;
   @override
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
   @override
@@ -371,7 +371,7 @@ mixin _$EditCatalogItem {
   EditCatalogItemPurchaseDisc get purchaseDisc =>
       throw _privateConstructorUsedError;
   EditCatalogItemStock get stock => throw _privateConstructorUsedError;
-  EditCatalogItemCategry get category => throw _privateConstructorUsedError;
+  EditCatalogItemCategory get category => throw _privateConstructorUsedError;
   EditCatalogItemImage get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -395,7 +395,7 @@ abstract class $EditCatalogItemCopyWith<$Res> {
       EditCatalogItemPurchasePrice purchasePrice,
       EditCatalogItemPurchaseDisc purchaseDisc,
       EditCatalogItemStock stock,
-      EditCatalogItemCategry category,
+      EditCatalogItemCategory category,
       EditCatalogItemImage image});
 }
 
@@ -467,7 +467,7 @@ class _$EditCatalogItemCopyWithImpl<$Res>
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as EditCatalogItemCategry,
+              as EditCatalogItemCategory,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -494,7 +494,7 @@ abstract class _$$_EditCatalogItemCopyWith<$Res>
       EditCatalogItemPurchasePrice purchasePrice,
       EditCatalogItemPurchaseDisc purchaseDisc,
       EditCatalogItemStock stock,
-      EditCatalogItemCategry category,
+      EditCatalogItemCategory category,
       EditCatalogItemImage image});
 }
 
@@ -568,7 +568,7 @@ class __$$_EditCatalogItemCopyWithImpl<$Res>
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
-              as EditCatalogItemCategry,
+              as EditCatalogItemCategory,
       image: image == freezed
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
@@ -615,7 +615,7 @@ class _$_EditCatalogItem implements _EditCatalogItem {
   @override
   final EditCatalogItemStock stock;
   @override
-  final EditCatalogItemCategry category;
+  final EditCatalogItemCategory category;
   @override
   final EditCatalogItemImage image;
 
@@ -680,7 +680,7 @@ abstract class _EditCatalogItem implements EditCatalogItem {
       required final EditCatalogItemPurchasePrice purchasePrice,
       required final EditCatalogItemPurchaseDisc purchaseDisc,
       required final EditCatalogItemStock stock,
-      required final EditCatalogItemCategry category,
+      required final EditCatalogItemCategory category,
       required final EditCatalogItemImage image}) = _$_EditCatalogItem;
 
   @override
@@ -707,7 +707,7 @@ abstract class _EditCatalogItem implements EditCatalogItem {
   @override
   EditCatalogItemStock get stock => throw _privateConstructorUsedError;
   @override
-  EditCatalogItemCategry get category => throw _privateConstructorUsedError;
+  EditCatalogItemCategory get category => throw _privateConstructorUsedError;
   @override
   EditCatalogItemImage get image => throw _privateConstructorUsedError;
   @override
