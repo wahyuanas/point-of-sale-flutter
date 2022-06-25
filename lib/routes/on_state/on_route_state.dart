@@ -10,5 +10,5 @@ class OnRouteState with _$OnRouteState {
   const factory OnRouteState.postCatalogList({required String r}) =
       _PostCatalogList;
   const factory OnRouteState.postCatalogform({required String r}) =
-      _PostCatalogList;
+      _PostCatalogform;
 }

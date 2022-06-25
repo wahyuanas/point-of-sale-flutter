@@ -42,6 +42,7 @@ class MainScreenState extends State<MainScreen> {
               signUpNotif: (r) =>
                   Navigator.pushNamed(context, r, arguments: state.args),
               postCatalogList: (r) => Navigator.pushNamed(context, r),
+              postCatalogform: (r) => Navigator.pushNamed(context, r),
             );
           },
         ),

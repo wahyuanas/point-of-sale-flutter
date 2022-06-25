@@ -30,10 +30,31 @@ Either<FormItemObjectValueFailure<String, String>, int>
     return left(FormItemObjectValueFailure.emptyField(failedValue: input));
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
-  } else if (int.tryParse(input) == null) {
+  }
+  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+    return left(
+        FormItemObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
+  } else if (int.tryParse(input.replaceAll('.', '')) == null) {
     return left(FormItemObjectValueFailure.notIntField(failedValue: input));
   } else {
-    return right(int.parse(input));
+    return right(int.parse(input.replaceAll('.', '')));
+  }
+}
+
+Either<FormItemObjectValueFailure<String, String>, double>
+    validateFieldNotIntAndNotEmptyButPoint(String input) {
+  if (input.isEmpty) {
+    return left(FormItemObjectValueFailure.emptyField(failedValue: input));
+  } else if (RegExp(r"\s").hasMatch(input)) {
+    return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
+  }
+  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+    return left(
+        FormItemObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
+  } else if (double.tryParse(input) == null) {
+    return left(FormItemObjectValueFailure.notDoubleField(failedValue: input));
+  } else {
+    return right(double.tryParse(input)!);
   }
 }
 
@@ -43,13 +64,19 @@ Either<FormItemObjectValueFailure<String, String>, int?>
     return right(null);
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
-  } else if (input.substring(0) == '0' || input.substring(0) == '.') {
-    return left(FormItemObjectValueFailure.noZeroAndPointFirstAllowed(
-        failedValue: input));
-  } else if (int.tryParse(input.replaceAll('.', '')) == null) {
-    return left(FormItemObjectValueFailure.notIntField(failedValue: input));
+  } else if (input.isNotEmpty) {
+    if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1)) &&
+        ((input.length > 1 && input.substring(0, 1) == '0') ||
+            (input.substring(0, 1) != '0'))) {
+      return left(FormItemObjectValueFailure.exceptOneToNineAllowed(
+          failedValue: input));
+    } else if (int.tryParse(input) == null) {
+      return left(FormItemObjectValueFailure.notIntField(failedValue: input));
+    } else {
+      return right(int.parse(input));
+    }
   } else {
-    return right(int.parse(input));
+    return right(null);
   }
 }
 
@@ -61,6 +88,17 @@ Either<FormItemObjectValueFailure<String, String>, int?>
     return left(FormItemObjectValueFailure.emptyField(failedValue: input));
   } else {
     return right(int.parse(input));
+  }
+}
+
+Either<FormItemObjectValueFailure<String, String>, String?>
+    validateFieldNullOrEmpty(String? input) {
+  if (input == null) {
+    return right(null);
+  } else if (input.isEmpty) {
+    return right(null);
+  } else {
+    return right(input);
   }
 }
 

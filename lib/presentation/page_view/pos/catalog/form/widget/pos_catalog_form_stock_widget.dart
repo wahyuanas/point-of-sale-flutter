@@ -40,9 +40,12 @@ class _PosCatalogFormStockWidgetState extends State<PosCatalogFormStockWidget> {
                     ? state.createCatalogItem.stock.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
-                            notIntField: (v) => "*wajib berupa angka",
+                            notDoubleField: (v) =>
+                                "*wajib berupa angka integer atau doble",
                             noSpaceAllowed: (v) =>
                                 "*tidak boleh mengandung spasi",
+                            exceptOneToNineAllowed: (v) =>
+                                "*tidak boleh diawali selain angka 1 - 9",
                             orElse: () => null),
                         (r) => null)
                     : null,

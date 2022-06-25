@@ -21,24 +21,27 @@ mixin _$FormItemObjectValueFailure<T, E> {
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
     required TResult Function(T failedValue) noSpaceAllowed,
-    required TResult Function(T failedValue) noZeroAndPointFirstAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,27 +49,30 @@ mixin _$FormItemObjectValueFailure<T, E> {
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
     required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
-    required TResult Function(NoZeroAndPointFirstAllowed<T, E> value)
-        noZeroAndPointFirstAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -188,8 +194,9 @@ class _$EmptyField<T, E>
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
     required TResult Function(T failedValue) noSpaceAllowed,
-    required TResult Function(T failedValue) noZeroAndPointFirstAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
   }) {
     return emptyField(failedValue);
   }
@@ -199,8 +206,9 @@ class _$EmptyField<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
   }) {
     return emptyField?.call(failedValue);
   }
@@ -210,8 +218,9 @@ class _$EmptyField<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (emptyField != null) {
@@ -225,9 +234,10 @@ class _$EmptyField<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
     required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
-    required TResult Function(NoZeroAndPointFirstAllowed<T, E> value)
-        noZeroAndPointFirstAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
   }) {
     return emptyField(this);
   }
@@ -237,9 +247,10 @@ class _$EmptyField<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
   }) {
     return emptyField?.call(this);
   }
@@ -249,9 +260,10 @@ class _$EmptyField<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (emptyField != null) {
@@ -353,8 +365,9 @@ class _$NotIntField<T, E>
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
     required TResult Function(T failedValue) noSpaceAllowed,
-    required TResult Function(T failedValue) noZeroAndPointFirstAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
   }) {
     return notIntField(failedValue);
   }
@@ -364,8 +377,9 @@ class _$NotIntField<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
   }) {
     return notIntField?.call(failedValue);
   }
@@ -375,8 +389,9 @@ class _$NotIntField<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (notIntField != null) {
@@ -390,9 +405,10 @@ class _$NotIntField<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
     required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
-    required TResult Function(NoZeroAndPointFirstAllowed<T, E> value)
-        noZeroAndPointFirstAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
   }) {
     return notIntField(this);
   }
@@ -402,9 +418,10 @@ class _$NotIntField<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
   }) {
     return notIntField?.call(this);
   }
@@ -414,9 +431,10 @@ class _$NotIntField<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (notIntField != null) {
@@ -435,6 +453,180 @@ abstract class NotIntField<T, E> implements FormItemObjectValueFailure<T, E> {
   @override
   @JsonKey(ignore: true)
   _$$NotIntFieldCopyWith<T, E, _$NotIntField<T, E>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$NotDoubleFieldCopyWith<T, E, $Res>
+    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+  factory _$$NotDoubleFieldCopyWith(_$NotDoubleField<T, E> value,
+          $Res Function(_$NotDoubleField<T, E>) then) =
+      __$$NotDoubleFieldCopyWithImpl<T, E, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class __$$NotDoubleFieldCopyWithImpl<T, E, $Res>
+    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    implements _$$NotDoubleFieldCopyWith<T, E, $Res> {
+  __$$NotDoubleFieldCopyWithImpl(_$NotDoubleField<T, E> _value,
+      $Res Function(_$NotDoubleField<T, E>) _then)
+      : super(_value, (v) => _then(v as _$NotDoubleField<T, E>));
+
+  @override
+  _$NotDoubleField<T, E> get _value => super._value as _$NotDoubleField<T, E>;
+
+  @override
+  $Res call({
+    Object? failedValue = freezed,
+  }) {
+    return _then(_$NotDoubleField<T, E>(
+      failedValue: failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$NotDoubleField<T, E>
+    with DiagnosticableTreeMixin
+    implements NotDoubleField<T, E> {
+  const _$NotDoubleField({required this.failedValue});
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'FormItemObjectValueFailure<$T, $E>.notDoubleField(failedValue: $failedValue)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'FormItemObjectValueFailure<$T, $E>.notDoubleField'))
+      ..add(DiagnosticsProperty('failedValue', failedValue));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$NotDoubleField<T, E> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$NotDoubleFieldCopyWith<T, E, _$NotDoubleField<T, E>> get copyWith =>
+      __$$NotDoubleFieldCopyWithImpl<T, E, _$NotDoubleField<T, E>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyField,
+    required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
+    required TResult Function(T failedValue) noSpaceAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
+  }) {
+    return notDoubleField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
+  }) {
+    return notDoubleField?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyField,
+    TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
+    TResult Function(T failedValue)? noSpaceAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
+    required TResult orElse(),
+  }) {
+    if (notDoubleField != null) {
+      return notDoubleField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyField<T, E> value) emptyField,
+    required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
+    required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
+  }) {
+    return notDoubleField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
+  }) {
+    return notDoubleField?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyField<T, E> value)? emptyField,
+    TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
+    TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
+    required TResult orElse(),
+  }) {
+    if (notDoubleField != null) {
+      return notDoubleField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class NotDoubleField<T, E>
+    implements FormItemObjectValueFailure<T, E> {
+  const factory NotDoubleField({required final T failedValue}) =
+      _$NotDoubleField<T, E>;
+
+  @override
+  T get failedValue => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$NotDoubleFieldCopyWith<T, E, _$NotDoubleField<T, E>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -520,8 +712,9 @@ class _$NoSpaceAllowed<T, E>
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
     required TResult Function(T failedValue) noSpaceAllowed,
-    required TResult Function(T failedValue) noZeroAndPointFirstAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
   }) {
     return noSpaceAllowed(failedValue);
   }
@@ -531,8 +724,9 @@ class _$NoSpaceAllowed<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
   }) {
     return noSpaceAllowed?.call(failedValue);
   }
@@ -542,8 +736,9 @@ class _$NoSpaceAllowed<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (noSpaceAllowed != null) {
@@ -557,9 +752,10 @@ class _$NoSpaceAllowed<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
     required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
-    required TResult Function(NoZeroAndPointFirstAllowed<T, E> value)
-        noZeroAndPointFirstAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
   }) {
     return noSpaceAllowed(this);
   }
@@ -569,9 +765,10 @@ class _$NoSpaceAllowed<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
   }) {
     return noSpaceAllowed?.call(this);
   }
@@ -581,9 +778,10 @@ class _$NoSpaceAllowed<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
     if (noSpaceAllowed != null) {
@@ -607,34 +805,33 @@ abstract class NoSpaceAllowed<T, E>
 }
 
 /// @nodoc
-abstract class _$$NoZeroAndPointFirstAllowedCopyWith<T, E, $Res>
+abstract class _$$exceptOneToNineAllowedCopyWith<T, E, $Res>
     implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
-  factory _$$NoZeroAndPointFirstAllowedCopyWith(
-          _$NoZeroAndPointFirstAllowed<T, E> value,
-          $Res Function(_$NoZeroAndPointFirstAllowed<T, E>) then) =
-      __$$NoZeroAndPointFirstAllowedCopyWithImpl<T, E, $Res>;
+  factory _$$exceptOneToNineAllowedCopyWith(
+          _$exceptOneToNineAllowed<T, E> value,
+          $Res Function(_$exceptOneToNineAllowed<T, E>) then) =
+      __$$exceptOneToNineAllowedCopyWithImpl<T, E, $Res>;
   @override
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class __$$NoZeroAndPointFirstAllowedCopyWithImpl<T, E, $Res>
+class __$$exceptOneToNineAllowedCopyWithImpl<T, E, $Res>
     extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
-    implements _$$NoZeroAndPointFirstAllowedCopyWith<T, E, $Res> {
-  __$$NoZeroAndPointFirstAllowedCopyWithImpl(
-      _$NoZeroAndPointFirstAllowed<T, E> _value,
-      $Res Function(_$NoZeroAndPointFirstAllowed<T, E>) _then)
-      : super(_value, (v) => _then(v as _$NoZeroAndPointFirstAllowed<T, E>));
+    implements _$$exceptOneToNineAllowedCopyWith<T, E, $Res> {
+  __$$exceptOneToNineAllowedCopyWithImpl(_$exceptOneToNineAllowed<T, E> _value,
+      $Res Function(_$exceptOneToNineAllowed<T, E>) _then)
+      : super(_value, (v) => _then(v as _$exceptOneToNineAllowed<T, E>));
 
   @override
-  _$NoZeroAndPointFirstAllowed<T, E> get _value =>
-      super._value as _$NoZeroAndPointFirstAllowed<T, E>;
+  _$exceptOneToNineAllowed<T, E> get _value =>
+      super._value as _$exceptOneToNineAllowed<T, E>;
 
   @override
   $Res call({
     Object? failedValue = freezed,
   }) {
-    return _then(_$NoZeroAndPointFirstAllowed<T, E>(
+    return _then(_$exceptOneToNineAllowed<T, E>(
       failedValue: failedValue == freezed
           ? _value.failedValue
           : failedValue // ignore: cast_nullable_to_non_nullable
@@ -645,25 +842,25 @@ class __$$NoZeroAndPointFirstAllowedCopyWithImpl<T, E, $Res>
 
 /// @nodoc
 
-class _$NoZeroAndPointFirstAllowed<T, E>
+class _$exceptOneToNineAllowed<T, E>
     with DiagnosticableTreeMixin
-    implements NoZeroAndPointFirstAllowed<T, E> {
-  const _$NoZeroAndPointFirstAllowed({required this.failedValue});
+    implements exceptOneToNineAllowed<T, E> {
+  const _$exceptOneToNineAllowed({required this.failedValue});
 
   @override
   final T failedValue;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.noZeroAndPointFirstAllowed(failedValue: $failedValue)';
+    return 'FormItemObjectValueFailure<$T, $E>.exceptOneToNineAllowed(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type',
-          'FormItemObjectValueFailure<$T, $E>.noZeroAndPointFirstAllowed'))
+      ..add(DiagnosticsProperty(
+          'type', 'FormItemObjectValueFailure<$T, $E>.exceptOneToNineAllowed'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -671,7 +868,7 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$NoZeroAndPointFirstAllowed<T, E> &&
+            other is _$exceptOneToNineAllowed<T, E> &&
             const DeepCollectionEquality()
                 .equals(other.failedValue, failedValue));
   }
@@ -682,20 +879,20 @@ class _$NoZeroAndPointFirstAllowed<T, E>
 
   @JsonKey(ignore: true)
   @override
-  _$$NoZeroAndPointFirstAllowedCopyWith<T, E,
-          _$NoZeroAndPointFirstAllowed<T, E>>
-      get copyWith => __$$NoZeroAndPointFirstAllowedCopyWithImpl<T, E,
-          _$NoZeroAndPointFirstAllowed<T, E>>(this, _$identity);
+  _$$exceptOneToNineAllowedCopyWith<T, E, _$exceptOneToNineAllowed<T, E>>
+      get copyWith => __$$exceptOneToNineAllowedCopyWithImpl<T, E,
+          _$exceptOneToNineAllowed<T, E>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(T failedValue) emptyField,
     required TResult Function(T failedValue) notIntField,
+    required TResult Function(T failedValue) notDoubleField,
     required TResult Function(T failedValue) noSpaceAllowed,
-    required TResult Function(T failedValue) noZeroAndPointFirstAllowed,
+    required TResult Function(T failedValue) exceptOneToNineAllowed,
   }) {
-    return noZeroAndPointFirstAllowed(failedValue);
+    return exceptOneToNineAllowed(failedValue);
   }
 
   @override
@@ -703,10 +900,11 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
   }) {
-    return noZeroAndPointFirstAllowed?.call(failedValue);
+    return exceptOneToNineAllowed?.call(failedValue);
   }
 
   @override
@@ -714,12 +912,13 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyField,
     TResult Function(T failedValue)? notIntField,
+    TResult Function(T failedValue)? notDoubleField,
     TResult Function(T failedValue)? noSpaceAllowed,
-    TResult Function(T failedValue)? noZeroAndPointFirstAllowed,
+    TResult Function(T failedValue)? exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
-    if (noZeroAndPointFirstAllowed != null) {
-      return noZeroAndPointFirstAllowed(failedValue);
+    if (exceptOneToNineAllowed != null) {
+      return exceptOneToNineAllowed(failedValue);
     }
     return orElse();
   }
@@ -729,11 +928,12 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   TResult map<TResult extends Object?>({
     required TResult Function(EmptyField<T, E> value) emptyField,
     required TResult Function(NotIntField<T, E> value) notIntField,
+    required TResult Function(NotDoubleField<T, E> value) notDoubleField,
     required TResult Function(NoSpaceAllowed<T, E> value) noSpaceAllowed,
-    required TResult Function(NoZeroAndPointFirstAllowed<T, E> value)
-        noZeroAndPointFirstAllowed,
+    required TResult Function(exceptOneToNineAllowed<T, E> value)
+        exceptOneToNineAllowed,
   }) {
-    return noZeroAndPointFirstAllowed(this);
+    return exceptOneToNineAllowed(this);
   }
 
   @override
@@ -741,11 +941,12 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
   }) {
-    return noZeroAndPointFirstAllowed?.call(this);
+    return exceptOneToNineAllowed?.call(this);
   }
 
   @override
@@ -753,28 +954,28 @@ class _$NoZeroAndPointFirstAllowed<T, E>
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyField<T, E> value)? emptyField,
     TResult Function(NotIntField<T, E> value)? notIntField,
+    TResult Function(NotDoubleField<T, E> value)? notDoubleField,
     TResult Function(NoSpaceAllowed<T, E> value)? noSpaceAllowed,
-    TResult Function(NoZeroAndPointFirstAllowed<T, E> value)?
-        noZeroAndPointFirstAllowed,
+    TResult Function(exceptOneToNineAllowed<T, E> value)?
+        exceptOneToNineAllowed,
     required TResult orElse(),
   }) {
-    if (noZeroAndPointFirstAllowed != null) {
-      return noZeroAndPointFirstAllowed(this);
+    if (exceptOneToNineAllowed != null) {
+      return exceptOneToNineAllowed(this);
     }
     return orElse();
   }
 }
 
-abstract class NoZeroAndPointFirstAllowed<T, E>
+abstract class exceptOneToNineAllowed<T, E>
     implements FormItemObjectValueFailure<T, E> {
-  const factory NoZeroAndPointFirstAllowed({required final T failedValue}) =
-      _$NoZeroAndPointFirstAllowed<T, E>;
+  const factory exceptOneToNineAllowed({required final T failedValue}) =
+      _$exceptOneToNineAllowed<T, E>;
 
   @override
   T get failedValue => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$NoZeroAndPointFirstAllowedCopyWith<T, E,
-          _$NoZeroAndPointFirstAllowed<T, E>>
+  _$$exceptOneToNineAllowedCopyWith<T, E, _$exceptOneToNineAllowed<T, E>>
       get copyWith => throw _privateConstructorUsedError;
 }

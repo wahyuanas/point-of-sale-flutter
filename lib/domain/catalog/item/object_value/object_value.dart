@@ -97,12 +97,13 @@ class CreateCatalogItemPurchaseDisc extends ObjectValue<int?> {
   const CreateCatalogItemPurchaseDisc._(this.value);
 }
 
-class CreateCatalogItemStock extends ObjectValue<int> {
+class CreateCatalogItemStock extends ObjectValue<double> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<FormItemObjectValueFailure<String, String>, double> value;
 
   factory CreateCatalogItemStock(String input) {
-    return CreateCatalogItemStock._(validateFieldNotIntAndNotEmpty(input));
+    return CreateCatalogItemStock._(
+        validateFieldNotIntAndNotEmptyButPoint(input));
   }
 
   const CreateCatalogItemStock._(this.value);
@@ -124,7 +125,7 @@ class CreateCatalogItemImage extends ObjectValue<String?> {
   final Either<FormItemObjectValueFailure<String, String>, String?> value;
 
   factory CreateCatalogItemImage(String? input) {
-    return CreateCatalogItemImage._(validateFieldNullNotEmpty(input));
+    return CreateCatalogItemImage._(validateFieldNullOrEmpty(input));
   }
 
   const CreateCatalogItemImage._(this.value);
@@ -242,12 +243,13 @@ class EditCatalogItemPurchaseDisc extends ObjectValue<int?> {
   const EditCatalogItemPurchaseDisc._(this.value);
 }
 
-class EditCatalogItemStock extends ObjectValue<int> {
+class EditCatalogItemStock extends ObjectValue<double> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<FormItemObjectValueFailure<String, String>, double> value;
 
   factory EditCatalogItemStock(String input) {
-    return EditCatalogItemStock._(validateFieldNotIntAndNotEmpty(input));
+    return EditCatalogItemStock._(
+        validateFieldNotIntAndNotEmptyButPoint(input));
   }
 
   const EditCatalogItemStock._(this.value);
@@ -269,7 +271,7 @@ class EditCatalogItemImage extends ObjectValue<String?> {
   final Either<FormItemObjectValueFailure<String, String>, String?> value;
 
   factory EditCatalogItemImage(String? input) {
-    return EditCatalogItemImage._(validateFieldNullNotEmpty(input));
+    return EditCatalogItemImage._(validateFieldNullOrEmpty(input));
   }
 
   const EditCatalogItemImage._(this.value);

@@ -15,11 +15,15 @@ class FormItemObjectValueFailure<T, E>
     required T failedValue,
   }) = NotIntField<T, E>;
 
+  const factory FormItemObjectValueFailure.notDoubleField({
+    required T failedValue,
+  }) = NotDoubleField<T, E>;
+
   const factory FormItemObjectValueFailure.noSpaceAllowed({
     required T failedValue,
   }) = NoSpaceAllowed<T, E>;
 
-  const factory FormItemObjectValueFailure.noZeroAndPointFirstAllowed({
+  const factory FormItemObjectValueFailure.exceptOneToNineAllowed({
     required T failedValue,
-  }) = NoZeroAndPointFirstAllowed<T, E>;
+  }) = exceptOneToNineAllowed<T, E>;
 }

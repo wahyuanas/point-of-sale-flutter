@@ -47,7 +47,7 @@ mixin _$OnRouteState {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
     required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogList value) postCatalogform,
+    required TResult Function(_PostCatalogform value) postCatalogform,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,7 +55,7 @@ mixin _$OnRouteState {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,7 +63,7 @@ mixin _$OnRouteState {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -213,7 +213,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
     required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogList value) postCatalogform,
+    required TResult Function(_PostCatalogform value) postCatalogform,
   }) {
     return signUp(this);
   }
@@ -224,7 +224,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
   }) {
     return signUp?.call(this);
   }
@@ -235,7 +235,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -371,7 +371,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
     required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogList value) postCatalogform,
+    required TResult Function(_PostCatalogform value) postCatalogform,
   }) {
     return signUpNotif(this);
   }
@@ -382,7 +382,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
   }) {
     return signUpNotif?.call(this);
   }
@@ -393,7 +393,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -531,7 +531,7 @@ class _$_PostCatalogList
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
     required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogList value) postCatalogform,
+    required TResult Function(_PostCatalogform value) postCatalogform,
   }) {
     return postCatalogList(this);
   }
@@ -542,7 +542,7 @@ class _$_PostCatalogList
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
   }) {
     return postCatalogList?.call(this);
   }
@@ -553,7 +553,7 @@ class _$_PostCatalogList
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
     required TResult orElse(),
   }) {
     if (postCatalogList != null) {
@@ -576,31 +576,31 @@ abstract class _PostCatalogList implements OnRouteState {
 }
 
 /// @nodoc
-abstract class _$$_PostCatalogListCopyWith<$Res>
+abstract class _$$_PostCatalogformCopyWith<$Res>
     implements $OnRouteStateCopyWith<$Res> {
-  factory _$$_PostCatalogListCopyWith(
-          _$_PostCatalogList value, $Res Function(_$_PostCatalogList) then) =
-      __$$_PostCatalogListCopyWithImpl<$Res>;
+  factory _$$_PostCatalogformCopyWith(
+          _$_PostCatalogform value, $Res Function(_$_PostCatalogform) then) =
+      __$$_PostCatalogformCopyWithImpl<$Res>;
   @override
   $Res call({String r});
 }
 
 /// @nodoc
-class __$$_PostCatalogListCopyWithImpl<$Res>
+class __$$_PostCatalogformCopyWithImpl<$Res>
     extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_PostCatalogListCopyWith<$Res> {
-  __$$_PostCatalogListCopyWithImpl(
-      _$_PostCatalogList _value, $Res Function(_$_PostCatalogList) _then)
-      : super(_value, (v) => _then(v as _$_PostCatalogList));
+    implements _$$_PostCatalogformCopyWith<$Res> {
+  __$$_PostCatalogformCopyWithImpl(
+      _$_PostCatalogform _value, $Res Function(_$_PostCatalogform) _then)
+      : super(_value, (v) => _then(v as _$_PostCatalogform));
 
   @override
-  _$_PostCatalogList get _value => super._value as _$_PostCatalogList;
+  _$_PostCatalogform get _value => super._value as _$_PostCatalogform;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_PostCatalogList(
+    return _then(_$_PostCatalogform(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
@@ -611,10 +611,10 @@ class __$$_PostCatalogListCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PostCatalogList
+class _$_PostCatalogform
     with DiagnosticableTreeMixin
-    implements _PostCatalogList {
-  const _$_PostCatalogList({required this.r});
+    implements _PostCatalogform {
+  const _$_PostCatalogform({required this.r});
 
   @override
   final String r;
@@ -636,7 +636,7 @@ class _$_PostCatalogList
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PostCatalogList &&
+            other is _$_PostCatalogform &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -646,8 +646,8 @@ class _$_PostCatalogList
 
   @JsonKey(ignore: true)
   @override
-  _$$_PostCatalogListCopyWith<_$_PostCatalogList> get copyWith =>
-      __$$_PostCatalogListCopyWithImpl<_$_PostCatalogList>(this, _$identity);
+  _$$_PostCatalogformCopyWith<_$_PostCatalogform> get copyWith =>
+      __$$_PostCatalogformCopyWithImpl<_$_PostCatalogform>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -692,7 +692,7 @@ class _$_PostCatalogList
     required TResult Function(_SignUp value) signUp,
     required TResult Function(_SignUpNotif value) signUpNotif,
     required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogList value) postCatalogform,
+    required TResult Function(_PostCatalogform value) postCatalogform,
   }) {
     return postCatalogform(this);
   }
@@ -703,7 +703,7 @@ class _$_PostCatalogList
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
   }) {
     return postCatalogform?.call(this);
   }
@@ -714,7 +714,7 @@ class _$_PostCatalogList
     TResult Function(_SignUp value)? signUp,
     TResult Function(_SignUpNotif value)? signUpNotif,
     TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogList value)? postCatalogform,
+    TResult Function(_PostCatalogform value)? postCatalogform,
     required TResult orElse(),
   }) {
     if (postCatalogform != null) {
@@ -724,14 +724,14 @@ class _$_PostCatalogList
   }
 }
 
-abstract class _PostCatalogList implements OnRouteState {
-  const factory _PostCatalogList({required final String r}) =
-      _$_PostCatalogList;
+abstract class _PostCatalogform implements OnRouteState {
+  const factory _PostCatalogform({required final String r}) =
+      _$_PostCatalogform;
 
   @override
   String get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_PostCatalogListCopyWith<_$_PostCatalogList> get copyWith =>
+  _$$_PostCatalogformCopyWith<_$_PostCatalogform> get copyWith =>
       throw _privateConstructorUsedError;
 }
