@@ -8,3 +8,4 @@ export 'pos_catalog_form_purchase_price_widget.dart';
 export 'pos_catalog_form_purchase_disc_widget.dart';
 export 'pos_catalog_form_stock_widget.dart';
 export 'pos_catalog_form_category_widget.dart';
+export 'pos_catalog_form_image_widget.dart';

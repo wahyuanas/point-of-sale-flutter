@@ -73,6 +73,17 @@ class PosCatalogFormWidget extends StatelessWidget {
         //PosCatalogFormPurchaseDiscWidget(),
         PosCatalogFormStockWidget(),
         PosCatalogFormCategoryWidget(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 20.0,
+          ),
+        ),
+        PosCatalogFormImageWidget(),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 50.0,
+          ),
+        ),
       ]),
     );
   }
