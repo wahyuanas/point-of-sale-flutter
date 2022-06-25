@@ -26,7 +26,7 @@ class SignInHaveNoAccountYetWidget extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () => BlocProvider.of<RouteCubit>(context)
-                  .onRoute(const OnRouteState.signUp(), null),
+                  .onRoute(const OnRouteState.signUp(r: '/signUp'), null),
               child: const Text(
                 "Daftar Disini",
                 style: TextStyle(

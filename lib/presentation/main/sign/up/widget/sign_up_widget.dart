@@ -46,8 +46,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
               await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!).onModalPop();
               Navigator.of(context3!).pop();
-              BlocProvider.of<RouteCubit>(context3!)
-                  .onRoute(const OnRouteState.signUpNotif(), r);
+              BlocProvider.of<RouteCubit>(context3!).onRoute(
+                  const OnRouteState.signUpNotif(r: '/signUpNotif'), r);
 
               // BlocProvider.of<ModalCubit>(modalContext!)
               //     .onModalPush("Anda Berhasil SignUp");

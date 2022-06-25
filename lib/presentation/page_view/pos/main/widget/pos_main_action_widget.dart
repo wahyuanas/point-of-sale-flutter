@@ -34,8 +34,9 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(
-                onTap: () => BlocProvider.of<RouteCubit>(context)
-                    .onRoute(const OnRouteState.listPosItem(), null),
+                onTap: () => BlocProvider.of<RouteCubit>(context).onRoute(
+                    const OnRouteState.postCatalogList(r: '/postCatalogList'),
+                    null),
                 child: Card(
                   shape: RoundedRectangleBorder(
                       side: const BorderSide(color: Colors.blue, width: 0.5),

@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pos/application/account/i_account_service.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/catalog/item/object_value/item_object_value.dart';
 import 'package:pos/domain/catalog/item/object_value/object_value.dart';
@@ -70,7 +69,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
     ));
   }
 
-  void onCreateCatalogItemPurchaseDiscChanged(String v) {
+  void onCreateCatalogItemPurchaseDiscChanged(String? v) {
     emit(state.copyWith(
       createCatalogItem: state.createCatalogItem
           .copyWith(purchaseDisc: CreateCatalogItemPurchaseDisc(v)),

@@ -1,0 +1,10 @@
+export 'pos_catalog_form_code_widget.dart';
+export 'pos_catalog_form_barcode_widget.dart';
+export 'pos_catalog_form_name_widget.dart';
+export 'pos_catalog_form_description_widget.dart';
+export 'pos_catalog_form_sell_price_widget.dart';
+export 'pos_catalog_form_sell_disc_widget.dart';
+export 'pos_catalog_form_purchase_price_widget.dart';
+export 'pos_catalog_form_purchase_disc_widget.dart';
+export 'pos_catalog_form_stock_widget.dart';
+export 'pos_catalog_form_category_widget.dart';

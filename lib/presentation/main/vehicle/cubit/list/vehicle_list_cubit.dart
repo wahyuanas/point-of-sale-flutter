@@ -10,7 +10,7 @@ part 'vehicle_list_cubit.g.dart';
 class VehicleCubit extends HydratedCubit<VehicleState> {
   VehicleCubit() : super(VehicleState.initial());
 
-  void VehicleStarted() async {
+  void vehicleStarted() async {
     //await Future<void>.delayed(const Duration(seconds: 1));
     emit(state.copyWith(vehicles: state.vehicles));
   }

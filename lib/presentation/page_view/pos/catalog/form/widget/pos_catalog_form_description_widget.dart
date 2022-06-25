@@ -35,6 +35,7 @@ class _PosCatalogFormDescriptionWidgetState
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
+              maxLines: 2,
               autofocus: false,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
@@ -50,7 +51,7 @@ class _PosCatalogFormDescriptionWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Keterangan",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

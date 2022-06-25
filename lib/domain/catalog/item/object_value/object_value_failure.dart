@@ -18,4 +18,8 @@ class FormItemObjectValueFailure<T, E>
   const factory FormItemObjectValueFailure.noSpaceAllowed({
     required T failedValue,
   }) = NoSpaceAllowed<T, E>;
+
+  const factory FormItemObjectValueFailure.noZeroAndPointFirstAllowed({
+    required T failedValue,
+  }) = NoZeroAndPointFirstAllowed<T, E>;
 }

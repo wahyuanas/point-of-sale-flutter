@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
-import 'package:pos/presentation/page_view/home/main/widget/fake_data.dart';
 
 part 'pos_catalog_list_state.dart';
 part 'pos_catalog_list_cubit.freezed.dart';
@@ -15,12 +14,13 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
   PosCatalogListCubit({required this.catalogListCubit})
       : _catalogListCubit = catalogListCubit,
         super(PosCatalogListState.initial()) {
-    _catalogSubscription = _catalogListCubit.stream.listen((catalogState) {
-      onCatalogChannged(catalogState);
+    _catalogListSubscription =
+        _catalogListCubit.stream.listen((catalogListState) {
+      onCatalogChannged(catalogListState);
     });
   }
   final CatalogListCubit _catalogListCubit;
-  late StreamSubscription _catalogSubscription;
+  late StreamSubscription _catalogListSubscription;
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
       List<Item>? listItem; //= List.from(state.items!.toList());
@@ -37,9 +37,9 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
     emit(PosCatalogListState.initial());
   }
 
-  onCatalogChannged(CatalogListState catalogState) {
+  onCatalogChannged(CatalogListState catalogListState) {
     if (state.keyWord == null) {
-      emit(state.copyWith(items: catalogState.items));
+      emit(state.copyWith(items: catalogListState.items));
     } else {
       List<Item>? listItem; //= List.from(state.items!.toList());
       listItem = catalogListCubit.state.items
@@ -52,7 +52,7 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
 
   @override
   Future<void> close() {
-    _catalogSubscription.cancel();
+    _catalogListSubscription.cancel();
     return super.close();
   }
 }

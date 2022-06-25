@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
 
 import 'object_value_failure.dart';
@@ -66,8 +67,7 @@ class CreateCatalogItemSellDisc extends ObjectValue<int?> {
   final Either<FormItemObjectValueFailure<String, String>, int?> value;
 
   factory CreateCatalogItemSellDisc(String? input) {
-    return CreateCatalogItemSellDisc._(
-        validateFieldNullNotIntAndNotEmpty(input));
+    return CreateCatalogItemSellDisc._(validateFieldNullNotIntAndEmpty(input));
   }
 
   const CreateCatalogItemSellDisc._(this.value);
@@ -91,7 +91,7 @@ class CreateCatalogItemPurchaseDisc extends ObjectValue<int?> {
 
   factory CreateCatalogItemPurchaseDisc(String? input) {
     return CreateCatalogItemPurchaseDisc._(
-        validateFieldNullNotIntAndNotEmpty(input));
+        validateFieldNullNotIntAndEmpty(input));
   }
 
   const CreateCatalogItemPurchaseDisc._(this.value);
@@ -128,6 +128,17 @@ class CreateCatalogItemImage extends ObjectValue<String?> {
   }
 
   const CreateCatalogItemImage._(this.value);
+}
+
+class CreateCatalogItemImageFile extends ObjectValue<XFile?> {
+  @override
+  final Either<FormItemObjectValueFailure<String, String>, XFile?> value;
+
+  factory CreateCatalogItemImageFile(XFile? input) {
+    return CreateCatalogItemImageFile._(validateFieldNullNotXFile(input));
+  }
+
+  const CreateCatalogItemImageFile._(this.value);
 }
 
 class EditCatalogItemId extends ObjectValue<int> {
@@ -201,7 +212,7 @@ class EditCatalogItemSellDisc extends ObjectValue<int?> {
   final Either<FormItemObjectValueFailure<String, String>, int?> value;
 
   factory EditCatalogItemSellDisc(String? input) {
-    return EditCatalogItemSellDisc._(validateFieldNullNotIntAndNotEmpty(input));
+    return EditCatalogItemSellDisc._(validateFieldNullNotIntAndEmpty(input));
   }
 
   const EditCatalogItemSellDisc._(this.value);
@@ -225,7 +236,7 @@ class EditCatalogItemPurchaseDisc extends ObjectValue<int?> {
 
   factory EditCatalogItemPurchaseDisc(String? input) {
     return EditCatalogItemPurchaseDisc._(
-        validateFieldNullNotIntAndNotEmpty(input));
+        validateFieldNullNotIntAndEmpty(input));
   }
 
   const EditCatalogItemPurchaseDisc._(this.value);
@@ -262,4 +273,15 @@ class EditCatalogItemImage extends ObjectValue<String?> {
   }
 
   const EditCatalogItemImage._(this.value);
+}
+
+class EditCatalogItemImageFile extends ObjectValue<XFile?> {
+  @override
+  final Either<FormItemObjectValueFailure<String, String>, XFile?> value;
+
+  factory EditCatalogItemImageFile(XFile? input) {
+    return EditCatalogItemImageFile._(validateFieldNullNotXFile(input));
+  }
+
+  const EditCatalogItemImageFile._(this.value);
 }

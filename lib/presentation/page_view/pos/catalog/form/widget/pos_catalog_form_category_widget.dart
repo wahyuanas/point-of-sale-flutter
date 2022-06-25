@@ -41,6 +41,9 @@ class _PosCatalogFormCategoryWidgetState
                     ? state.createCatalogItem.category.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            notIntField: (v) => "*wajib berupa angka",
+                            noSpaceAllowed: (v) =>
+                                "*tidak boleh mengandung spasi",
                             orElse: () => null),
                         (r) => null)
                     : null,
@@ -49,7 +52,7 @@ class _PosCatalogFormCategoryWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Kategori",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

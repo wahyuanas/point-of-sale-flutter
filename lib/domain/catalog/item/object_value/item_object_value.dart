@@ -20,6 +20,7 @@ class CreateCatalogItem with _$CreateCatalogItem {
     required CreateCatalogItemStock stock,
     required CreateCatalogItemCategory category,
     required CreateCatalogItemImage image,
+    required CreateCatalogItemImageFile imageFile,
   }) = _CreateCatalogItem;
 
   factory CreateCatalogItem.empty() => CreateCatalogItem(
@@ -33,7 +34,8 @@ class CreateCatalogItem with _$CreateCatalogItem {
       purchaseDisc: CreateCatalogItemPurchaseDisc(null),
       stock: CreateCatalogItemStock(''),
       category: CreateCatalogItemCategory(''),
-      image: CreateCatalogItemImage(null));
+      image: CreateCatalogItemImage(null),
+      imageFile: CreateCatalogItemImageFile(null));
 }
 
 extension CreateCatalogItemX on CreateCatalogItem {
@@ -47,6 +49,8 @@ extension CreateCatalogItemX on CreateCatalogItem {
         .andThen(purchaseDisc.failureOrUnit)
         .andThen(stock.failureOrUnit)
         .andThen(category.failureOrUnit)
+        .andThen(image.failureOrUnit)
+        .andThen(imageFile.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }
 }
@@ -66,6 +70,7 @@ class EditCatalogItem with _$EditCatalogItem {
     required EditCatalogItemStock stock,
     required EditCatalogItemCategory category,
     required EditCatalogItemImage image,
+    required EditCatalogItemImageFile imageFile,
   }) = _EditCatalogItem;
 
   factory EditCatalogItem.empty() => EditCatalogItem(
@@ -80,7 +85,8 @@ class EditCatalogItem with _$EditCatalogItem {
       purchaseDisc: EditCatalogItemPurchaseDisc(null),
       stock: EditCatalogItemStock(''),
       category: EditCatalogItemCategory(''),
-      image: EditCatalogItemImage(null));
+      image: EditCatalogItemImage(null),
+      imageFile: EditCatalogItemImageFile(null));
 }
 
 extension EditCatalogItemX on EditCatalogItem {
@@ -95,6 +101,8 @@ extension EditCatalogItemX on EditCatalogItem {
         .andThen(purchaseDisc.failureOrUnit)
         .andThen(stock.failureOrUnit)
         .andThen(category.failureOrUnit)
+        .andThen(image.failureOrUnit)
+        .andThen(imageFile.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }
 }

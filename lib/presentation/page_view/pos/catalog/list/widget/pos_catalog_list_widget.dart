@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pos/presentation/utils/colors.dart';
+import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
+import 'package:pos/routes/cubit/route_cubit.dart';
+import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../cubit/pos_catalog_list_cubit.dart';
@@ -59,7 +61,9 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               ),
             ),
             onTap: () {
-              //context.read<CatalogFormCubit>().onCreateItemCodeChanged('oke');
+              context.read<RouteCubit>().onRoute(
+                  const OnRouteState.postCatalogform(r: '/postCatalogform'),
+                  null);
             }, //PosCatalogFormScreen(),
           ),
           title: const Text(

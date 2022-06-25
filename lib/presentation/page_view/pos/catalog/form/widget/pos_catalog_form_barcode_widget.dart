@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
-import 'package:pos/presentation/main/sign/up/cubit/sign_up_cubit.dart';
 
 class PosCatalogFormBarcodeWidget extends StatefulWidget {
   const PosCatalogFormBarcodeWidget({Key? key}) : super(key: key);
@@ -39,7 +38,7 @@ class _PosCatalogFormBarcodeWidgetState
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createCatalogItem.name.value.fold(
+                    ? state.createCatalogItem.barcode.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
@@ -50,7 +49,7 @@ class _PosCatalogFormBarcodeWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Barcode",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

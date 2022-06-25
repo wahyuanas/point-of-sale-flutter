@@ -35,12 +35,15 @@ class _PosCatalogFormSellPriceWidgetState
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createCatalogItem.sellPrice.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            notIntField: (v) => "*wajib berupa angka",
+                            noSpaceAllowed: (v) =>
+                                "*tidak boleh mengandung spasi",
                             orElse: () => null),
                         (r) => null)
                     : null,
@@ -49,7 +52,7 @@ class _PosCatalogFormSellPriceWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Harga Jual",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

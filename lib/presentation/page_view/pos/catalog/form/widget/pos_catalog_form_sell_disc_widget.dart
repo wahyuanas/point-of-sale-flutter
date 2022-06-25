@@ -35,12 +35,17 @@ class _PosCatalogFormSellDiscWidgetState
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createCatalogItem.sellDisc.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            notIntField: (v) => "*wajib berupa angka",
+                            noSpaceAllowed: (v) =>
+                                "*tidak boleh mengandung spasi",
+                            noZeroAndPointFirstAllowed: (v) =>
+                                "*nol atau titik tidak boleh diawal",
                             orElse: () => null),
                         (r) => null)
                     : null,
@@ -49,7 +54,7 @@ class _PosCatalogFormSellDiscWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama Perusahaan",
+                labelText: "Discount Hatga Jual",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

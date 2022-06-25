@@ -31,6 +31,8 @@ mixin _$CreateCatalogItem {
   CreateCatalogItemStock get stock => throw _privateConstructorUsedError;
   CreateCatalogItemCategory get category => throw _privateConstructorUsedError;
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
+  CreateCatalogItemImageFile get imageFile =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateCatalogItemCopyWith<CreateCatalogItem> get copyWith =>
@@ -53,7 +55,8 @@ abstract class $CreateCatalogItemCopyWith<$Res> {
       CreateCatalogItemPurchaseDisc purchaseDisc,
       CreateCatalogItemStock stock,
       CreateCatalogItemCategory category,
-      CreateCatalogItemImage image});
+      CreateCatalogItemImage image,
+      CreateCatalogItemImageFile imageFile});
 }
 
 /// @nodoc
@@ -78,6 +81,7 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       code: code == freezed
@@ -124,6 +128,10 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItemImage,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemImageFile,
     ));
   }
 }
@@ -146,7 +154,8 @@ abstract class _$$_CreateCatalogItemCopyWith<$Res>
       CreateCatalogItemPurchaseDisc purchaseDisc,
       CreateCatalogItemStock stock,
       CreateCatalogItemCategory category,
-      CreateCatalogItemImage image});
+      CreateCatalogItemImage image,
+      CreateCatalogItemImageFile imageFile});
 }
 
 /// @nodoc
@@ -173,6 +182,7 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_$_CreateCatalogItem(
       code: code == freezed
@@ -219,6 +229,10 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItemImage,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemImageFile,
     ));
   }
 }
@@ -237,7 +251,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
       required this.purchaseDisc,
       required this.stock,
       required this.category,
-      required this.image});
+      required this.image,
+      required this.imageFile});
 
   @override
   final CreateCatalogItemCode code;
@@ -261,10 +276,12 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
   final CreateCatalogItemCategory category;
   @override
   final CreateCatalogItemImage image;
+  @override
+  final CreateCatalogItemImageFile imageFile;
 
   @override
   String toString() {
-    return 'CreateCatalogItem(code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image)';
+    return 'CreateCatalogItem(code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile)';
   }
 
   @override
@@ -285,7 +302,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
                 .equals(other.purchaseDisc, purchaseDisc) &&
             const DeepCollectionEquality().equals(other.stock, stock) &&
             const DeepCollectionEquality().equals(other.category, category) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.imageFile, imageFile));
   }
 
   @override
@@ -301,7 +319,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
       const DeepCollectionEquality().hash(purchaseDisc),
       const DeepCollectionEquality().hash(stock),
       const DeepCollectionEquality().hash(category),
-      const DeepCollectionEquality().hash(image));
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(imageFile));
 
   @JsonKey(ignore: true)
   @override
@@ -312,17 +331,19 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
 
 abstract class _CreateCatalogItem implements CreateCatalogItem {
   const factory _CreateCatalogItem(
-      {required final CreateCatalogItemCode code,
-      required final CreateCatalogItemBarcode barcode,
-      required final CreateCatalogItemName name,
-      required final CreateCatalogItemDescription description,
-      required final CreateCatalogItemSellPrice sellPrice,
-      required final CreateCatalogItemSellDisc sellDisc,
-      required final CreateCatalogItemPurchasePrice purchasePrice,
-      required final CreateCatalogItemPurchaseDisc purchaseDisc,
-      required final CreateCatalogItemStock stock,
-      required final CreateCatalogItemCategory category,
-      required final CreateCatalogItemImage image}) = _$_CreateCatalogItem;
+          {required final CreateCatalogItemCode code,
+          required final CreateCatalogItemBarcode barcode,
+          required final CreateCatalogItemName name,
+          required final CreateCatalogItemDescription description,
+          required final CreateCatalogItemSellPrice sellPrice,
+          required final CreateCatalogItemSellDisc sellDisc,
+          required final CreateCatalogItemPurchasePrice purchasePrice,
+          required final CreateCatalogItemPurchaseDisc purchaseDisc,
+          required final CreateCatalogItemStock stock,
+          required final CreateCatalogItemCategory category,
+          required final CreateCatalogItemImage image,
+          required final CreateCatalogItemImageFile imageFile}) =
+      _$_CreateCatalogItem;
 
   @override
   CreateCatalogItemCode get code => throw _privateConstructorUsedError;
@@ -351,6 +372,9 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
   @override
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
   @override
+  CreateCatalogItemImageFile get imageFile =>
+      throw _privateConstructorUsedError;
+  @override
   @JsonKey(ignore: true)
   _$$_CreateCatalogItemCopyWith<_$_CreateCatalogItem> get copyWith =>
       throw _privateConstructorUsedError;
@@ -373,6 +397,7 @@ mixin _$EditCatalogItem {
   EditCatalogItemStock get stock => throw _privateConstructorUsedError;
   EditCatalogItemCategory get category => throw _privateConstructorUsedError;
   EditCatalogItemImage get image => throw _privateConstructorUsedError;
+  EditCatalogItemImageFile get imageFile => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $EditCatalogItemCopyWith<EditCatalogItem> get copyWith =>
@@ -396,7 +421,8 @@ abstract class $EditCatalogItemCopyWith<$Res> {
       EditCatalogItemPurchaseDisc purchaseDisc,
       EditCatalogItemStock stock,
       EditCatalogItemCategory category,
-      EditCatalogItemImage image});
+      EditCatalogItemImage image,
+      EditCatalogItemImageFile imageFile});
 }
 
 /// @nodoc
@@ -422,6 +448,7 @@ class _$EditCatalogItemCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_value.copyWith(
       ids: ids == freezed
@@ -472,6 +499,10 @@ class _$EditCatalogItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as EditCatalogItemImage,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as EditCatalogItemImageFile,
     ));
   }
 }
@@ -495,7 +526,8 @@ abstract class _$$_EditCatalogItemCopyWith<$Res>
       EditCatalogItemPurchaseDisc purchaseDisc,
       EditCatalogItemStock stock,
       EditCatalogItemCategory category,
-      EditCatalogItemImage image});
+      EditCatalogItemImage image,
+      EditCatalogItemImageFile imageFile});
 }
 
 /// @nodoc
@@ -523,6 +555,7 @@ class __$$_EditCatalogItemCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? imageFile = freezed,
   }) {
     return _then(_$_EditCatalogItem(
       ids: ids == freezed
@@ -573,6 +606,10 @@ class __$$_EditCatalogItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as EditCatalogItemImage,
+      imageFile: imageFile == freezed
+          ? _value.imageFile
+          : imageFile // ignore: cast_nullable_to_non_nullable
+              as EditCatalogItemImageFile,
     ));
   }
 }
@@ -592,7 +629,8 @@ class _$_EditCatalogItem implements _EditCatalogItem {
       required this.purchaseDisc,
       required this.stock,
       required this.category,
-      required this.image});
+      required this.image,
+      required this.imageFile});
 
   @override
   final EditCatalogItemId ids;
@@ -618,10 +656,12 @@ class _$_EditCatalogItem implements _EditCatalogItem {
   final EditCatalogItemCategory category;
   @override
   final EditCatalogItemImage image;
+  @override
+  final EditCatalogItemImageFile imageFile;
 
   @override
   String toString() {
-    return 'EditCatalogItem(ids: $ids, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image)';
+    return 'EditCatalogItem(ids: $ids, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile)';
   }
 
   @override
@@ -643,7 +683,8 @@ class _$_EditCatalogItem implements _EditCatalogItem {
                 .equals(other.purchaseDisc, purchaseDisc) &&
             const DeepCollectionEquality().equals(other.stock, stock) &&
             const DeepCollectionEquality().equals(other.category, category) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.imageFile, imageFile));
   }
 
   @override
@@ -660,7 +701,8 @@ class _$_EditCatalogItem implements _EditCatalogItem {
       const DeepCollectionEquality().hash(purchaseDisc),
       const DeepCollectionEquality().hash(stock),
       const DeepCollectionEquality().hash(category),
-      const DeepCollectionEquality().hash(image));
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(imageFile));
 
   @JsonKey(ignore: true)
   @override
@@ -681,7 +723,8 @@ abstract class _EditCatalogItem implements EditCatalogItem {
       required final EditCatalogItemPurchaseDisc purchaseDisc,
       required final EditCatalogItemStock stock,
       required final EditCatalogItemCategory category,
-      required final EditCatalogItemImage image}) = _$_EditCatalogItem;
+      required final EditCatalogItemImage image,
+      required final EditCatalogItemImageFile imageFile}) = _$_EditCatalogItem;
 
   @override
   EditCatalogItemId get ids => throw _privateConstructorUsedError;
@@ -710,6 +753,8 @@ abstract class _EditCatalogItem implements EditCatalogItem {
   EditCatalogItemCategory get category => throw _privateConstructorUsedError;
   @override
   EditCatalogItemImage get image => throw _privateConstructorUsedError;
+  @override
+  EditCatalogItemImageFile get imageFile => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EditCatalogItemCopyWith<_$_EditCatalogItem> get copyWith =>

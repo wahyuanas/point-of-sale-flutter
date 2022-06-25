@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'pos_catalog_form_name_widget.dart';
+import 'pos_catalog_form_export_widget.dart';
 
 class PosCatalogFormWidget extends StatelessWidget {
   const PosCatalogFormWidget({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class PosCatalogFormWidget extends StatelessWidget {
         ),
         title: const Text(
           "Form Tambah Item",
-          style: TextStyle(color: Colors.blue),
+          style: TextStyle(color: Colors.blue, fontSize: 17.0),
         ),
         systemOverlayStyle: const SystemUiOverlayStyle(
           systemNavigationBarColor: Colors.blue, // navigation bar color
@@ -62,7 +62,18 @@ class PosCatalogFormWidget extends StatelessWidget {
           ),
         ],
       ),
-      body: const CustomScrollView(slivers: [PosCatalogFormNameWidget()]),
+      body: const CustomScrollView(slivers: [
+        PosCatalogFormCodeWidget(),
+        PosCatalogFormBarcodeWidget(),
+        PosCatalogFormNameWidget(),
+        PosCatalogFormDescriptionWidget(),
+        PosCatalogFormSellPriceWidget(),
+        PosCatalogFormSellDiscWidget(),
+        PosCatalogFormPurchasePriceWidget(),
+        PosCatalogFormPurchaseDiscWidget(),
+        PosCatalogFormStockWidget(),
+        PosCatalogFormCategoryWidget(),
+      ]),
     );
   }
 }

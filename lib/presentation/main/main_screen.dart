@@ -38,10 +38,10 @@ class MainScreenState extends State<MainScreen> {
         BlocListener<RouteCubit, RouteState>(
           listener: (context, state) {
             state.onRoute?.when(
-              signUp: () => Navigator.pushNamed(context, '/signUp'),
-              signUpNotif: () => Navigator.pushNamed(context, '/signUpNotif',
-                  arguments: state.args),
-              listPosItem: () => Navigator.pushNamed(context, '/listPosItem'),
+              signUp: (r) => Navigator.pushNamed(context, r),
+              signUpNotif: (r) =>
+                  Navigator.pushNamed(context, r, arguments: state.args),
+              postCatalogList: (r) => Navigator.pushNamed(context, r),
             );
           },
         ),
