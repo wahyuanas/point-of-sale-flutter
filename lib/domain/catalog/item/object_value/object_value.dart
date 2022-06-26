@@ -23,7 +23,7 @@ class CreateCatalogItemBarcode extends ObjectValue<String?> {
 
   factory CreateCatalogItemBarcode(String? input) {
     debugPrint("OBJECT CATALOG DOMAIN");
-    return CreateCatalogItemBarcode._(validateFieldNullNotEmpty(input));
+    return CreateCatalogItemBarcode._(validateFieldNullOrEmpty(input));
   }
 
   const CreateCatalogItemBarcode._(this.value);

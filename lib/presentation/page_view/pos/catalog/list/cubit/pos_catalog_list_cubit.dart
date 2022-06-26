@@ -21,6 +21,11 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
   }
   final CatalogListCubit _catalogListCubit;
   late StreamSubscription _catalogListSubscription;
+
+  onStarted() {
+    emit(state.copyWith(items: _catalogListCubit.state.items));
+  }
+
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
       List<Item>? listItem; //= List.from(state.items!.toList());

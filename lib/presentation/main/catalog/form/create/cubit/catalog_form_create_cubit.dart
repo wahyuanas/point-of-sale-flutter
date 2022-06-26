@@ -1,6 +1,8 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/catalog/item/object_value/item_object_value.dart';
 import 'package:pos/domain/catalog/item/object_value/object_value.dart';
@@ -97,8 +99,17 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
     ));
   }
 
+  void onCreateCatalogItemImageFileChanged(XFile? v) {
+    emit(state.copyWith(
+      createCatalogItem: state.createCatalogItem
+          .copyWith(imageFile: CreateCatalogItemImageFile(v)),
+    ));
+  }
+
   onCreate() async {
     if (state.createCatalogItem.failureOption.isSome()) {
+      debugPrint(
+          "Catalog Form create Cubit TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
       emit(state.copyWith(failOrUnit: !state.failOrUnit));
     } else {
       emit(state.copyWith(status: const StateStatus.loading()));
@@ -108,19 +119,23 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
           ? 1
           : _catalogListCubit.state.items?.length;
       final r = Item(
-          id: id == null ? 1 : id + 1,
-          code: state.createCatalogItem.code.getOrCrash(),
-          barcode: state.createCatalogItem.barcode.getOrCrash(),
-          name: state.createCatalogItem.name.getOrCrash(),
-          description: state.createCatalogItem.description.getOrCrash(),
-          sellPrice: state.createCatalogItem.sellPrice.getOrCrash(),
-          sellDisc: state.createCatalogItem.sellDisc.getOrCrash(),
-          purchasePrice: state.createCatalogItem.purchasePrice.getOrCrash(),
-          purchaseDisc: state.createCatalogItem.purchaseDisc.getOrCrash(),
-          stock: state.createCatalogItem.stock.getOrCrash(),
-          category: state.createCatalogItem.category.getOrCrash(),
-          image: state.createCatalogItem.image.getOrCrash());
+        id: id == null ? 1 : id + 1,
+        code: state.createCatalogItem.code.getOrCrash(),
+        barcode: state.createCatalogItem.barcode.getOrCrash(),
+        name: state.createCatalogItem.name.getOrCrash(),
+        description: state.createCatalogItem.description.getOrCrash(),
+        sellPrice: state.createCatalogItem.sellPrice.getOrCrash(),
+        sellDisc: state.createCatalogItem.sellDisc.getOrCrash(),
+        purchasePrice: state.createCatalogItem.purchasePrice.getOrCrash(),
+        purchaseDisc: state.createCatalogItem.purchaseDisc.getOrCrash(),
+        stock: state.createCatalogItem.stock.getOrCrash(),
+        category: state.createCatalogItem.category.getOrCrash(),
+        image: state.createCatalogItem.image.getOrCrash(),
+        //imageFile: state.createCatalogItem.imageFile.getOrCrash()
+      );
       emit(state.copyWith(status: StateStatus.success(data: r)));
+      _catalogListCubit.onAdditem(r);
+
       // failureOrSuccess.fold(
       //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
       //     (r) => emit(state.copyWith(status: StateStatus.success(data: r))));

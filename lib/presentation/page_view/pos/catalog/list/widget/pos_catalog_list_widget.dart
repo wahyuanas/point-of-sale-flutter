@@ -7,6 +7,8 @@ import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+
 import '../cubit/pos_catalog_list_cubit.dart';
 import '../delegate/pos_catalog_list_search_delegate.dart';
 import 'pos_catalog_list_card_widget.dart';
@@ -116,14 +118,44 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                         ),
                       ),
                     )
-                  : SliverList(
-                      delegate: SliverChildBuilderDelegate(
-                      (BuildContext context, int index) {
+                  :
+                  // SliverGrid(
+                  //     gridDelegate:
+                  //         const SliverGridDelegateWithFixedCrossAxisCount(
+                  //       mainAxisSpacing: 5.0,
+                  //       crossAxisSpacing: 5.0,
+                  //       crossAxisCount: 2,
+                  //       childAspectRatio: 0.6,
+                  //     ),
+                  //     delegate: SliverChildBuilderDelegate(
+                  //       (BuildContext context, int index) {
+                  //         return PosCatalogListCardWidget(
+                  //             item: state.items![index]);
+                  //       },
+                  //       childCount: state.items?.length,
+                  //     ),
+                  //   );
+
+                  SliverAlignedGrid.count(
+                      crossAxisCount: 2,
+                      itemCount: state.items?.length,
+                      itemBuilder: (context, index) {
+                        // debugPrint(
+                        //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
                         return PosCatalogListCardWidget(
                             item: state.items![index]);
                       },
-                      childCount: state.items?.length, // 1000 list items
-                    ));
+                      mainAxisSpacing: 5,
+                      crossAxisSpacing: 5.0,
+                    );
+
+              // SliverList(
+              //     delegate: SliverChildBuilderDelegate(
+              //   (BuildContext context, int index) {
+              //     return PosCatalogListCardWidget(item: state.items![index]);
+              //   },
+              //   childCount: state.items?.length, // 1000 list items
+              // ));
             })
           ]),
         ));

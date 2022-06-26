@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 import 'pos_catalog_form_export_widget.dart';
 
@@ -96,7 +98,9 @@ class PosCatalogFormWidget extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(29),
               child: ElevatedButton(
-                onPressed: () async {},
+                onPressed: () async {
+                  context.read<CatalogFormCreateCubit>().onCreate();
+                },
                 child: const Text(
                   "S i m p a n",
                   style: TextStyle(fontSize: 20.0),

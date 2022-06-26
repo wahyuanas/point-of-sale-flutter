@@ -13,7 +13,8 @@ class PosCatalogListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: ((context) =>
-          PosCatalogListCubit(catalogListCubit: getIt<CatalogListCubit>())),
+          PosCatalogListCubit(catalogListCubit: getIt<CatalogListCubit>())
+            ..onStarted()),
       child: const PosCatalogListWidget(),
     );
   }

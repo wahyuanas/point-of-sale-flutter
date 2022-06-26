@@ -102,11 +102,12 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
                                     borderRadius: BorderRadius.circular(8)),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12.0),
-                                  child: Image.memory(
-                                    base64.decode(r),
-                                    fit: BoxFit.cover,
-                                    width: 1100,
-                                  ),
+                                  child: Image.file(File(r)),
+                                  // Image.memory(
+                                  //   base64.decode(r),
+                                  //   fit: BoxFit.cover,
+                                  //   width: 1100,
+                                  // ),
                                 ),
                               ),
                               //Image.network(item, fit: BoxFit.cover, width: 1000.0),
@@ -165,11 +166,13 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
           if (pickedFile != null) {
             File file = File(pickedFile.path);
             Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-
+            debugPrint("OKEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ${file.path}");
             base64string = base64.encode(imagebytes);
             if (!mounted) return;
             BlocProvider.of<CatalogFormCreateCubit>(context)
-                .onCreateCatalogItemImageChanged(base64string);
+                .onCreateCatalogItemImageChanged(file.path);
+            BlocProvider.of<CatalogFormCreateCubit>(context)
+                .onCreateCatalogItemImageFileChanged(pickedFile);
           }
         },
         child: const Icon(Icons.image_outlined, size: 40, color: Colors.blue),
@@ -193,14 +196,13 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
           if (pickedFile != null) {
             File file = File(pickedFile.path);
             Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-            base64string =
-                base64.encode(imagebytes); //convert bytes to base64 string
+
+            base64string = base64.encode(imagebytes);
             if (!mounted) return;
             BlocProvider.of<CatalogFormCreateCubit>(context)
-                .onCreateCatalogItemImageChanged(base64string);
-
-            //debugPrint(base64string);
-
+                .onCreateCatalogItemImageChanged(file.path);
+            BlocProvider.of<CatalogFormCreateCubit>(context)
+                .onCreateCatalogItemImageFileChanged(pickedFile);
           }
         },
         child: const Icon(Icons.camera_outlined, size: 40, color: Colors.blue),

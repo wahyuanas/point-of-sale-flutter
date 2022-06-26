@@ -142,7 +142,9 @@ class __$$_CatalogFormCreateStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_CatalogFormCreateState implements _CatalogFormCreateState {
+class _$_CatalogFormCreateState
+    with DiagnosticableTreeMixin
+    implements _CatalogFormCreateState {
   const _$_CatalogFormCreateState(
       {required this.status,
       required this.createCatalogItem,
@@ -156,8 +158,18 @@ class _$_CatalogFormCreateState implements _CatalogFormCreateState {
   final bool failOrUnit;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'CatalogFormCreateState(status: $status, createCatalogItem: $createCatalogItem, failOrUnit: $failOrUnit)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'CatalogFormCreateState'))
+      ..add(DiagnosticsProperty('status', status))
+      ..add(DiagnosticsProperty('createCatalogItem', createCatalogItem))
+      ..add(DiagnosticsProperty('failOrUnit', failOrUnit));
   }
 
   @override
