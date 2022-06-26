@@ -67,48 +67,32 @@ class _PosCatalogListCardButtonWidgetState
         }
       },
       child: pos?.qty == null
-          ? Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Spacer(),
-                Padding(
-                    padding: const EdgeInsets.only(right: 15.0),
-                    child: GestureDetector(
-                      onTap: () => BlocProvider.of<PosMainBloc>(context)
-                          .add(PosAddItemEvent(item: widget.item)),
-                      child: Container(
-                          width: 110.0,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            color: const Color.fromARGB(255, 239, 236, 236),
-                            boxShadow: const [
-                              BoxShadow(
-                                  color: Color.fromARGB(255, 247, 246, 250),
-                                  spreadRadius: 0.5),
-                            ],
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
-                              Icon(
-                                Icons.add_circle_outline,
-                                color: Colors.blue,
-                                size: 30.0,
-                              ),
-                              Text(
-                                "Tambah",
-                                style: TextStyle(color: Colors.blue),
-                              )
-                            ],
-                          )),
+          ? Align(
+              child: GestureDetector(
+                onTap: () => BlocProvider.of<PosMainBloc>(context)
+                    .add(PosAddItemEvent(item: widget.item)),
+                child: Container(
+                    width: 100.0,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      color: const Color.fromARGB(255, 239, 236, 236),
+                      boxShadow: const [
+                        BoxShadow(
+                            color: Color.fromARGB(255, 247, 246, 250),
+                            spreadRadius: 0.5),
+                      ],
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Tambah",
+                        style: TextStyle(color: Colors.blue, fontSize: 15),
+                      ),
                     )),
-              ],
+              ),
             )
           : Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Spacer(),
                 GestureDetector(
                   onTap: () => BlocProvider.of<PosMainBloc>(context)
                       .add(PosDecrementItemEvent(item: widget.item)),
@@ -126,24 +110,21 @@ class _PosCatalogListCardButtonWidgetState
                 const SizedBox(
                   width: 10.0,
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
-                  child: (widget.item.stock ?? 0) - (pos?.qty ?? 0) == 0
-                      ? const Icon(
+                (widget.item.stock ?? 0) - (pos?.qty ?? 0) == 0
+                    ? const Icon(
+                        Icons.add_circle_outline,
+                        color: Color.fromARGB(255, 167, 153, 153),
+                        size: 30,
+                      )
+                    : GestureDetector(
+                        onTap: () => BlocProvider.of<PosMainBloc>(context)
+                            .add(PosIncrementItemEvent(item: widget.item)),
+                        child: const Icon(
                           Icons.add_circle_outline,
-                          color: Color.fromARGB(255, 167, 153, 153),
+                          color: Colors.blue,
                           size: 30,
-                        )
-                      : GestureDetector(
-                          onTap: () => BlocProvider.of<PosMainBloc>(context)
-                              .add(PosIncrementItemEvent(item: widget.item)),
-                          child: const Icon(
-                            Icons.add_circle_outline,
-                            color: Colors.blue,
-                            size: 30,
-                          ),
                         ),
-                ),
+                      ),
               ],
             ),
     );

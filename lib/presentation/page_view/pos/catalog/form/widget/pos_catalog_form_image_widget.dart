@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
@@ -163,13 +164,15 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
             // maxWidth: 300,
             // maxHeight: 300
           );
+
           if (pickedFile != null) {
             File file = File(pickedFile.path);
+
             Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-            debugPrint("OKEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE ${file.path}");
             base64string = base64.encode(imagebytes);
             if (!mounted) return;
             BlocProvider.of<CatalogFormCreateCubit>(context)
+                //.onCreateCatalogItemImageChanged(base64string);
                 .onCreateCatalogItemImageChanged(file.path);
             BlocProvider.of<CatalogFormCreateCubit>(context)
                 .onCreateCatalogItemImageFileChanged(pickedFile);
@@ -199,7 +202,9 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
 
             base64string = base64.encode(imagebytes);
             if (!mounted) return;
+
             BlocProvider.of<CatalogFormCreateCubit>(context)
+                //.onCreateCatalogItemImageChanged(base64string);
                 .onCreateCatalogItemImageChanged(file.path);
             BlocProvider.of<CatalogFormCreateCubit>(context)
                 .onCreateCatalogItemImageFileChanged(pickedFile);

@@ -103,8 +103,8 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
           controller: _refreshController,
           child: CustomScrollView(slivers: [
             SliverPersistentHeader(
-                pinned: true,
-                //floating: true,
+                //pinned: true,
+                floating: true,
                 delegate: PosCatalogListSearchDelegate()),
             BlocBuilder<PosCatalogListCubit, PosCatalogListState>(
                 builder: (context, state) {
@@ -145,8 +145,8 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                         return PosCatalogListCardWidget(
                             item: state.items![index]);
                       },
-                      mainAxisSpacing: 5,
-                      crossAxisSpacing: 5.0,
+                      mainAxisSpacing: 3.0,
+                      crossAxisSpacing: 0.0,
                     );
 
               // SliverList(

@@ -8,6 +8,7 @@ import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 
 import 'pos_catalog_list_card_button_widget.dart';
 import 'pos_catalog_list_card_content_widget.dart';
+import 'pos_catalog_list_card_image_widget.dart';
 
 class PosCatalogListCardWidget extends StatefulWidget {
   final Item item;
@@ -38,12 +39,26 @@ class _PosCatalogListCardWidgetState extends State<PosCatalogListCardWidget> {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.only(left: 20.0, top: 20.0, bottom: 20.0),
+        padding: const EdgeInsets.only(left: 15.0, top: 10.0, bottom: 20.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            PosCatalogListCardContentWidget(item: widget.item),
+            Flexible(
+              child: GestureDetector(
+                onTap: () async {},
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    PosCatalogListCardImageWidget(item: widget.item),
+                    const SizedBox(height: 8),
+                    PosCatalogListCardContentWidget(item: widget.item),
+                  ],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
             PosCatalogListCardButtonWidget(
               item: widget.item,
             )
