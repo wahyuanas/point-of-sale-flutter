@@ -16,6 +16,19 @@ class CatalogListCubit extends HydratedCubit<CatalogListState> {
   //   emit(state.copyWith(items: state.items));
   // }
 
+  onAdditem(Item item) {
+    List<Item> items = [];
+    if (state.items != null) {
+      items = List.from(state.items!.toList());
+      items.add(item);
+    } else {
+      items.add(item);
+    }
+    emit(state.copyWith(
+      items: items,
+    ));
+  }
+
   @override
   CatalogListState fromJson(Map<String, dynamic> json) {
     debugPrint("Catalog CUBIT FROM JSON");

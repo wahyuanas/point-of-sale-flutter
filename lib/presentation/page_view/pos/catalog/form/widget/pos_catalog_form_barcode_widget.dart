@@ -45,7 +45,7 @@ class _PosCatalogFormBarcodeWidgetState
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.qr_code_scanner_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

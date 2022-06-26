@@ -89,4 +89,41 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
           .copyWith(category: CreateCatalogItemCategory(v)),
     ));
   }
+
+  void onCreateCatalogItemImageChanged(String? v) {
+    emit(state.copyWith(
+      createCatalogItem:
+          state.createCatalogItem.copyWith(image: CreateCatalogItemImage(v)),
+    ));
+  }
+
+  onCreate() async {
+    if (state.createCatalogItem.failureOption.isSome()) {
+      emit(state.copyWith(failOrUnit: !state.failOrUnit));
+    } else {
+      emit(state.copyWith(status: const StateStatus.loading()));
+      //final failureOrSuccess = await accountService.signUp(state.signUp);
+      await Future.delayed(const Duration(seconds: 2));
+      final id = _catalogListCubit.state.items == null
+          ? 1
+          : _catalogListCubit.state.items?.length;
+      final r = Item(
+          id: id == null ? 1 : id + 1,
+          code: state.createCatalogItem.code.getOrCrash(),
+          barcode: state.createCatalogItem.barcode.getOrCrash(),
+          name: state.createCatalogItem.name.getOrCrash(),
+          description: state.createCatalogItem.description.getOrCrash(),
+          sellPrice: state.createCatalogItem.sellPrice.getOrCrash(),
+          sellDisc: state.createCatalogItem.sellDisc.getOrCrash(),
+          purchasePrice: state.createCatalogItem.purchasePrice.getOrCrash(),
+          purchaseDisc: state.createCatalogItem.purchaseDisc.getOrCrash(),
+          stock: state.createCatalogItem.stock.getOrCrash(),
+          category: state.createCatalogItem.category.getOrCrash(),
+          image: state.createCatalogItem.image.getOrCrash());
+      emit(state.copyWith(status: StateStatus.success(data: r)));
+      // failureOrSuccess.fold(
+      //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
+      //     (r) => emit(state.copyWith(status: StateStatus.success(data: r))));
+    }
+  }
 }

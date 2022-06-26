@@ -29,7 +29,7 @@ mixin _$Item {
   int? get sellDisc => throw _privateConstructorUsedError;
   int get purchasePrice => throw _privateConstructorUsedError;
   int? get purchaseDisc => throw _privateConstructorUsedError;
-  int? get stock => throw _privateConstructorUsedError;
+  double? get stock => throw _privateConstructorUsedError;
   int get category => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
 
@@ -52,7 +52,7 @@ abstract class $ItemCopyWith<$Res> {
       int? sellDisc,
       int purchasePrice,
       int? purchaseDisc,
-      int? stock,
+      double? stock,
       int category,
       String? image});
 }
@@ -120,7 +120,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       stock: stock == freezed
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -148,7 +148,7 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       int? sellDisc,
       int purchasePrice,
       int? purchaseDisc,
-      int? stock,
+      double? stock,
       int category,
       String? image});
 }
@@ -217,7 +217,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       stock: stock == freezed
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       category: category == freezed
           ? _value.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -269,7 +269,7 @@ class _$_Item extends _Item {
   @override
   final int? purchaseDisc;
   @override
-  final int? stock;
+  final double? stock;
   @override
   final int category;
   @override
@@ -341,7 +341,7 @@ abstract class _Item extends Item {
       required final int? sellDisc,
       required final int purchasePrice,
       required final int? purchaseDisc,
-      required final int? stock,
+      required final double? stock,
       required final int category,
       required final String? image}) = _$_Item;
   const _Item._() : super._();
@@ -367,7 +367,7 @@ abstract class _Item extends Item {
   @override
   int? get purchaseDisc => throw _privateConstructorUsedError;
   @override
-  int? get stock => throw _privateConstructorUsedError;
+  double? get stock => throw _privateConstructorUsedError;
   @override
   int get category => throw _privateConstructorUsedError;
   @override

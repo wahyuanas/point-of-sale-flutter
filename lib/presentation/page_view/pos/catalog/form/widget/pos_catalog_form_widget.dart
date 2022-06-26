@@ -10,30 +10,31 @@ class PosCatalogFormWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
+        titleSpacing: 0.0,
+        //centerTitle: true,
         elevation: 0.3,
         backgroundColor: Colors.white,
-        // leading: GestureDetector(
-        //   child: const Padding(
-        //     padding: EdgeInsets.only(left: 8.0),
-        //     child: Icon(
-        //       Icons.arrow_back_outlined,
-        //       color: Colors.blue,
-        //     ),
-        //   ),
-        //   onTap: () => Navigator.of(context).pop(),
-        // ),
         leading: GestureDetector(
           child: const Padding(
-            padding: EdgeInsets.only(right: 20.0),
+            padding: EdgeInsets.only(left: 8.0),
             child: Icon(
-              Icons.add_circle_outline,
-              size: 35,
+              Icons.arrow_back_outlined,
               color: Colors.blue,
             ),
           ),
-          onTap: () => const PosCatalogFormWidget(),
+          onTap: () => Navigator.of(context).pop(),
         ),
+        // leading: GestureDetector(
+        //   child: const Padding(
+        //     padding: EdgeInsets.only(right: 20.0),
+        //     child: Icon(
+        //       Icons.add_circle_outline,
+        //       size: 35,
+        //       color: Colors.blue,
+        //     ),
+        //   ),
+        //   onTap: () => const PosCatalogFormWidget(),
+        // ),
         title: const Text(
           "Form Tambah Item",
           style: TextStyle(color: Colors.blue, fontSize: 17.0),
@@ -49,20 +50,20 @@ class PosCatalogFormWidget extends StatelessWidget {
               Brightness.light, //navigation bar icon
         ),
         actions: [
-          GestureDetector(
-            child: const Padding(
-              padding: EdgeInsets.only(right: 20.0),
-              child: Icon(
-                Icons.done_outlined,
-                size: 35,
-                color: Colors.blue,
-              ),
-            ),
-            onTap: () => Navigator.of(context).pop(),
-          ),
+          // GestureDetector(
+          //   child: const Padding(
+          //     padding: EdgeInsets.only(right: 20.0),
+          //     child: Icon(
+          //       Icons.done_outlined,
+          //       size: 35,
+          //       color: Colors.blue,
+          //     ),
+          //   ),
+          //   onTap: () => Navigator.of(context).pop(),
+          // ),
         ],
       ),
-      body: const CustomScrollView(slivers: [
+      body: CustomScrollView(slivers: [
         PosCatalogFormCodeWidget(),
         PosCatalogFormBarcodeWidget(),
         PosCatalogFormNameWidget(),
@@ -78,8 +79,33 @@ class PosCatalogFormWidget extends StatelessWidget {
             height: 20.0,
           ),
         ),
-        PosCatalogFormImageWidget(),
+        const PosCatalogFormImageWidget(),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 30.0,
+          ),
+        ),
         SliverToBoxAdapter(
+            child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            //color: Colors.blue[300],
+            margin: EdgeInsets.symmetric(vertical: 1),
+            height: 50.0,
+            width: MediaQuery.of(context).size.width * 0.95,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(29),
+              child: ElevatedButton(
+                onPressed: () async {},
+                child: const Text(
+                  "S i m p a n",
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+            ),
+          ),
+        )),
+        const SliverToBoxAdapter(
           child: SizedBox(
             height: 50.0,
           ),

@@ -44,7 +44,7 @@ class _PosCatalogFormNameWidgetState extends State<PosCatalogFormNameWidget> {
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.sms_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

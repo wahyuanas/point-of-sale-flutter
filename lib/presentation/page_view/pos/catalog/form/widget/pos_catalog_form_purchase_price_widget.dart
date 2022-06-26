@@ -56,7 +56,7 @@ class _PosCatalogFormPurchasePriceWidgetState
                               (r) => null)
                           : null,
                       icon: const Icon(
-                        Icons.comment,
+                        Icons.work_outline,
                         color: Colors.blue,
                         size: 26.0, /*Color(0xff224597)*/
                       ),
@@ -106,7 +106,7 @@ class _PosCatalogFormPurchasePriceWidgetState
                               (r) => null)
                           : null,
                       icon: const Icon(
-                        Icons.comment,
+                        Icons.money_off_outlined,
                         color: Colors.blue,
                         size: 26.0, /*Color(0xff224597)*/
                       ),

@@ -37,6 +37,10 @@ class _PosCatalogFormCategoryWidgetState
               autofocus: false,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
+                suffixIcon: const Icon(
+                  Icons.expand_more_outlined,
+                  size: 30.0,
+                ),
                 errorText: _initial == false
                     ? state.createCatalogItem.category.value.fold(
                         (l) => l.maybeWhen(
@@ -48,7 +52,7 @@ class _PosCatalogFormCategoryWidgetState
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.format_list_bulleted_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

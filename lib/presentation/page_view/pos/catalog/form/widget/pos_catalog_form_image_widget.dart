@@ -3,7 +3,11 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:photo_view/photo_view.dart';
+import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormImageWidget extends StatefulWidget {
   const PosCatalogFormImageWidget({Key? key}) : super(key: key);
@@ -16,13 +20,26 @@ class PosCatalogFormImageWidget extends StatefulWidget {
 class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
   final ImagePicker _picker = ImagePicker();
   String? base64string;
+  late bool _initial;
+
+  @override
+  void initState() {
+    _initial = true;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    debugPrint("BUILDERRRRRRRRRRRRRRRRRRRRRRRRRRRR $base64string");
     return SliverToBoxAdapter(
-      child: Column(
+        child: BlocBuilder<CatalogFormCreateCubit, CatalogFormCreateState>(
+            buildWhen: (p, c) {
+      _initial = false;
+      return p.createCatalogItem.image != c.createCatalogItem.image ||
+          p.failOrUnit != c.failOrUnit;
+    }, builder: (context, state) {
+      return Column(
         children: [
-          Row(children: [
+          Row(mainAxisSize: MainAxisSize.min, children: [
             _pickGallery(),
             const Expanded(
                 child: Center(
@@ -52,130 +69,142 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
                 ),
               ],
             ),
-            child: base64string == null
-                ? const Center(
-                    child: Text(
-                      "Belum Ada Photo",
-                      style: TextStyle(fontSize: 15.0),
-                    ),
-                  )
-                : Image.memory(base64.decode(base64string!)),
+            child: state.createCatalogItem.image.value.fold(
+                (l) => null,
+                (r) => r == null
+                    ? const Center(
+                        child: Text(
+                          "Belum Ada Photo",
+                          style: TextStyle(fontSize: 15.0),
+                        ),
+                      )
+                    : GestureDetector(
+                        onTap: () {
+                          _hideKeyboard();
+                          _open(context, r);
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20.0),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0.0, 2.0),
+                                blurRadius: 6.0,
+                              ),
+                            ],
+                          ),
+                          child: Stack(
+                            children: <Widget>[
+                              Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(12.0),
+                                  child: Image.memory(
+                                    base64.decode(r),
+                                    fit: BoxFit.cover,
+                                    width: 1100,
+                                  ),
+                                ),
+                              ),
+                              //Image.network(item, fit: BoxFit.cover, width: 1000.0),
+                              Positioned(
+                                top: 10.0,
+                                right: 10.0,
+                                child: Container(
+                                  height: 37,
+                                  width: 37,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(50.0)),
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        BlocProvider.of<CatalogFormCreateCubit>(
+                                                context)
+                                            .onCreateCatalogItemImageChanged(
+                                                null);
+                                      },
+                                      icon: const Icon(
+                                        Icons.delete,
+                                        size: 23,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )),
           ),
-          // Card(
-          //   shape:
-          //       RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          //   child: GestureDetector(
-          //     onTap: () {},
-          //     child: Container(
-          //       decoration: BoxDecoration(
-          //         color: Colors.white,
-          //         borderRadius: BorderRadius.circular(20.0),
-          //         boxShadow: const [
-          //           BoxShadow(
-          //             color: Colors.black26,
-          //             offset: Offset(0.0, 2.0),
-          //             blurRadius: 6.0,
-          //           ),
-          //         ],
-          //       ),
-          //       child: Stack(
-          //         children: <Widget>[
-          //           Container(
-          //             decoration: BoxDecoration(
-          //               color: Colors.white,
-          //               borderRadius: BorderRadius.circular(20.0),
-          //               boxShadow: const [
-          //                 BoxShadow(
-          //                   color: Colors.black26,
-          //                   offset: Offset(0.0, 2.0),
-          //                   blurRadius: 6.0,
-          //                 ),
-          //               ],
-          //             ),
-          //             child: ClipRRect(
-          //               borderRadius: BorderRadius.circular(12.0),
-          //               child: Container(
-          //                 child: Text("OK"),
-          //               ),
-          //             ),
-          //           ),
-          //           //Image.network(item, fit: BoxFit.cover, width: 1000.0),
-          //           Positioned(
-          //             top: 10.0,
-          //             right: 10.0,
-          //             child: Container(
-          //               height: 37,
-          //               width: 37,
-          //               decoration: const BoxDecoration(
-          //                 color: Colors.white,
-          //                 borderRadius: BorderRadius.all(Radius.circular(50.0)),
-          //               ),
-          //               child: Align(
-          //                 alignment: Alignment.center,
-          //                 child: IconButton(
-          //                   onPressed: () {},
-          //                   icon: const Icon(
-          //                     Icons.delete,
-          //                     size: 23,
-          //                     color: Colors.black,
-          //                   ),
-          //                 ),
-          //               ),
-          //             ),
-          //           ),
-          //         ],
-          //       ),
-          //     ),
-          //   ),
-          // )
         ],
-      ),
-    );
+      );
+    }));
   }
 
   Widget _pickGallery() {
     return Expanded(
-        child: GestureDetector(
-      onTap: () async {
-        _hideKeyboard();
-        final pickedFile = await _picker.pickImage(
+        child: Align(
+      alignment: Alignment.centerRight,
+      child: GestureDetector(
+        onTap: () async {
+          _hideKeyboard();
+          final pickedFile = await _picker.pickImage(
             source: ImageSource.gallery,
-            imageQuality: 50,
-            maxWidth: 300,
-            maxHeight: 300);
-        if (pickedFile != null) {
-          File file = File(pickedFile.path);
-          Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-          base64string =
-              base64.encode(imagebytes); //convert bytes to base64 string
-          debugPrint(base64string);
-          setState(() {});
-        }
-      },
-      child: const Icon(Icons.image_outlined, size: 40, color: Colors.blue),
+            // imageQuality: 50,
+            // maxWidth: 300,
+            // maxHeight: 300
+          );
+          if (pickedFile != null) {
+            File file = File(pickedFile.path);
+            Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
+
+            base64string = base64.encode(imagebytes);
+            if (!mounted) return;
+            BlocProvider.of<CatalogFormCreateCubit>(context)
+                .onCreateCatalogItemImageChanged(base64string);
+          }
+        },
+        child: const Icon(Icons.image_outlined, size: 40, color: Colors.blue),
+      ),
     ));
   }
 
   Widget _pickCamera() {
     return Expanded(
-        child: GestureDetector(
-      onTap: () async {
-        _hideKeyboard();
-        final pickedFile = await _picker.pickImage(
+        child: Align(
+      alignment: Alignment.centerLeft,
+      child: GestureDetector(
+        onTap: () async {
+          _hideKeyboard();
+          final pickedFile = await _picker.pickImage(
             source: ImageSource.camera,
-            imageQuality: 70,
-            maxWidth: 1000,
-            maxHeight: 1000);
-        if (pickedFile != null) {
-          File file = File(pickedFile.path);
-          Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-          base64string =
-              base64.encode(imagebytes); //convert bytes to base64 string
-          debugPrint(base64string);
-          setState(() {});
-        }
-      },
-      child: const Icon(Icons.camera_outlined, size: 40, color: Colors.blue),
+            //imageQuality: 70,
+            //maxWidth: 1000,
+            //maxHeight: 1000
+          );
+          if (pickedFile != null) {
+            File file = File(pickedFile.path);
+            Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
+            base64string =
+                base64.encode(imagebytes); //convert bytes to base64 string
+            if (!mounted) return;
+            BlocProvider.of<CatalogFormCreateCubit>(context)
+                .onCreateCatalogItemImageChanged(base64string);
+
+            //debugPrint(base64string);
+
+          }
+        },
+        child: const Icon(Icons.camera_outlined, size: 40, color: Colors.blue),
+      ),
     ));
   }
 
@@ -185,5 +214,20 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
     if (!currentFocus.hasPrimaryFocus) {
       currentFocus.unfocus();
     }
+  }
+
+  void _open(BuildContext context, String r) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => AnnotatedRegion<SystemUiOverlayStyle>(
+                  value: const SystemUiOverlayStyle(
+                      statusBarColor: Colors.transparent),
+                  child: PhotoView(
+                    imageProvider: Image.memory(
+                      base64.decode(r),
+                    ).image,
+                  ),
+                )));
   }
 }

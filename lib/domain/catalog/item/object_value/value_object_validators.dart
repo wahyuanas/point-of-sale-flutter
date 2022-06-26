@@ -73,6 +73,9 @@ Either<FormItemObjectValueFailure<String, String>, int?>
     } else if (int.tryParse(input) == null) {
       return left(FormItemObjectValueFailure.notIntField(failedValue: input));
     } else {
+      if (input == '0') {
+        return right(null);
+      }
       return right(int.parse(input));
     }
   } else {

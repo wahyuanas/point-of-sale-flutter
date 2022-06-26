@@ -47,7 +47,7 @@ class _PosCatalogFormDescriptionWidgetState
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.comment_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

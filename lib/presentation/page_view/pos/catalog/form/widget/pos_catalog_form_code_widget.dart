@@ -44,7 +44,7 @@ class _PosCatalogFormCodeWidgetState extends State<PosCatalogFormCodeWidget> {
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.comment,
+                  Icons.code,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
