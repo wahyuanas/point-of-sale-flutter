@@ -55,10 +55,10 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
           // ),
           leading: GestureDetector(
             child: const Padding(
-              padding: EdgeInsets.only(right: 20.0),
+              padding: EdgeInsets.only(left: 20.0),
               child: Icon(
                 Icons.add_circle_outline,
-                size: 35,
+                size: 40,
                 color: Colors.blue,
               ),
             ),
@@ -89,7 +89,7 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                 padding: EdgeInsets.only(right: 20.0),
                 child: Icon(
                   Icons.done_outlined,
-                  size: 35,
+                  size: 40,
                   color: Colors.blue,
                 ),
               ),
@@ -108,46 +108,33 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                 delegate: PosCatalogListSearchDelegate()),
             BlocBuilder<PosCatalogListCubit, PosCatalogListState>(
                 builder: (context, state) {
-              return state.items == null
-                  ? SliverFillRemaining(
-                      child: Center(
-                        child: Text(
-                          "Tidak ada item",
-                          style: GoogleFonts.raleway(
-                              fontSize: 20, color: Colors.blue),
-                        ),
-                      ),
-                    )
-                  :
-                  // SliverGrid(
-                  //     gridDelegate:
-                  //         const SliverGridDelegateWithFixedCrossAxisCount(
-                  //       mainAxisSpacing: 5.0,
-                  //       crossAxisSpacing: 5.0,
-                  //       crossAxisCount: 2,
-                  //       childAspectRatio: 0.6,
-                  //     ),
-                  //     delegate: SliverChildBuilderDelegate(
-                  //       (BuildContext context, int index) {
-                  //         return PosCatalogListCardWidget(
-                  //             item: state.items![index]);
-                  //       },
-                  //       childCount: state.items?.length,
-                  //     ),
-                  //   );
-
-                  SliverAlignedGrid.count(
-                      crossAxisCount: 2,
-                      itemCount: state.items?.length,
-                      itemBuilder: (context, index) {
-                        // debugPrint(
-                        //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
-                        return PosCatalogListCardWidget(
-                            item: state.items![index]);
-                      },
-                      mainAxisSpacing: 3.0,
-                      crossAxisSpacing: 0.0,
-                    );
+              if (state.items == null) {
+                return SliverFillRemaining(
+                  child: Center(
+                    child: Text(
+                      "Tidak ada item",
+                      style:
+                          GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
+                    ),
+                  ),
+                );
+              } else {
+                return SliverPadding(
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
+                  sliver: SliverAlignedGrid.count(
+                    crossAxisCount: 2,
+                    itemCount: state.items?.length,
+                    itemBuilder: (context, index) {
+                      // debugPrint(
+                      //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
+                      return PosCatalogListCardWidget(
+                          item: state.items![index]);
+                    },
+                    mainAxisSpacing: 3.0,
+                    crossAxisSpacing: 0.0,
+                  ),
+                );
+              }
 
               // SliverList(
               //     delegate: SliverChildBuilderDelegate(

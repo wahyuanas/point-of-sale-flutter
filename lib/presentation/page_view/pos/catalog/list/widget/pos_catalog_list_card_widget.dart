@@ -39,7 +39,7 @@ class _PosCatalogListCardWidgetState extends State<PosCatalogListCardWidget> {
   Widget build(BuildContext context) {
     return Card(
       child: Padding(
-        padding: const EdgeInsets.only(left: 15.0, top: 10.0, bottom: 20.0),
+        padding: const EdgeInsets.only(top: 10.0, bottom: 20.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -17,12 +17,10 @@ class PosCatalogFormWidget extends StatelessWidget {
         elevation: 0.3,
         backgroundColor: Colors.white,
         leading: GestureDetector(
-          child: const Padding(
-            padding: EdgeInsets.only(left: 8.0),
-            child: Icon(
-              Icons.arrow_back_outlined,
-              color: Colors.blue,
-            ),
+          child: const Icon(
+            Icons.arrow_back_outlined,
+            color: Colors.blue,
+            size: 30.0,
           ),
           onTap: () => Navigator.of(context).pop(),
         ),
@@ -92,18 +90,29 @@ class PosCatalogFormWidget extends StatelessWidget {
           padding: const EdgeInsets.all(8.0),
           child: Container(
             //color: Colors.blue[300],
-            margin: EdgeInsets.symmetric(vertical: 1),
+            margin: const EdgeInsets.symmetric(vertical: 1),
             height: 50.0,
             width: MediaQuery.of(context).size.width * 0.95,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(29),
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize:
+                      Size(MediaQuery.of(context).size.width * 0.95, 31),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                  ),
+                  primary: const Color.fromARGB(255, 148, 187, 231),
+                  //padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+                  //textStyle:
+                  //  TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
+                ),
                 onPressed: () async {
                   context.read<CatalogFormCreateCubit>().onCreate();
                 },
                 child: const Text(
                   "S i m p a n",
-                  style: TextStyle(fontSize: 20.0),
+                  style: TextStyle(fontSize: 20.0, color: Colors.black),
                 ),
               ),
             ),

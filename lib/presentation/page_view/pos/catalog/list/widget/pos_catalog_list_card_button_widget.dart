@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
+import 'package:pos/presentation/utils/colors.dart';
 
 class PosCatalogListCardButtonWidget extends StatefulWidget {
   final Item item;
@@ -71,23 +72,24 @@ class _PosCatalogListCardButtonWidgetState
               child: GestureDetector(
                 onTap: () => BlocProvider.of<PosMainBloc>(context)
                     .add(PosAddItemEvent(item: widget.item)),
-                child: Container(
-                    width: 100.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      color: const Color.fromARGB(255, 239, 236, 236),
-                      boxShadow: const [
-                        BoxShadow(
-                            color: Color.fromARGB(255, 247, 246, 250),
-                            spreadRadius: 0.5),
-                      ],
-                    ),
-                    child: const Center(
-                      child: Text(
-                        "Tambah",
-                        style: TextStyle(color: Colors.blue, fontSize: 15),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                  child: Card(
+                    color: const Color.fromARGB(255, 148, 187, 231),
+                    shape: RoundedRectangleBorder(
+                        side: const BorderSide(color: Colors.blue, width: 0.5),
+                        borderRadius: BorderRadius.circular(50.0)),
+                    child: const SizedBox(
+                      height: 29,
+                      child: Center(
+                        child: Text(
+                          "Tambah",
+                          style: TextStyle(color: Colors.black, fontSize: 15),
+                        ),
                       ),
-                    )),
+                    ),
+                  ),
+                ),
               ),
             )
           : Row(

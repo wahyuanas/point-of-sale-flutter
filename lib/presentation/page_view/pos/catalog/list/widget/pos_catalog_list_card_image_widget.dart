@@ -27,29 +27,24 @@ class _PosCatalogListCardImageWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return widget.item.image == null
-            ? const Icon(
-                Icons.inventory_outlined,
-                color: Colors.blue,
-                size: 50,
-              )
-            : Image.file(
-                File(widget.item.image!),
-                gaplessPlayback: true,
-                fit: BoxFit.cover,
-                height: MediaQuery.of(context).size.width / 3,
-                width: MediaQuery.of(context).size.width / 2.5,
-              )
-
-        // Image.memory(
-        //     base64.decode(widget.item.image!),
-        //     gaplessPlayback: true,
-        //     fit: BoxFit.cover,
-        //     height: 100,
-        //     // width: 100,
-        //     //cacheWidth: 200 * window.devicePixelRatio.ceil(),
-        //     //cacheHeight: 200 * window.devicePixelRatio.ceil(),
-        //   ),
-        ;
+    if (widget.item.image == null) {
+      return Align(
+        child: const Icon(
+          Icons.inventory_outlined,
+          color: Colors.blue,
+          size: 50,
+        ),
+      );
+    } else {
+      return Align(
+        child: Image.file(
+          File(widget.item.image!),
+          gaplessPlayback: true,
+          fit: BoxFit.fill,
+          height: MediaQuery.of(context).size.width / 2.5,
+          width: MediaQuery.of(context).size.width / 2.1,
+        ),
+      );
+    }
   }
 }
