@@ -106,7 +106,7 @@ class _PosCatalogFormPurchasePriceWidgetState
                               (r) => null)
                           : null,
                       icon: const Icon(
-                        Icons.money_off_outlined,
+                        Icons.percent_outlined,
                         color: Colors.blue,
                         size: 26.0, /*Color(0xff224597)*/
                       ),

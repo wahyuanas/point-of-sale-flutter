@@ -12,7 +12,7 @@ class ThousandsSeparatorInputFormatter extends TextInputFormatter {
     }
 
     // Handle "deletion" of separator character
-    String oldValueText = oldValue.text.replaceAll(separator, '');
+    //String oldValueText = oldValue.text.replaceAll(separator, '');
     String newValueText = newValue.text.replaceAll(separator, '');
 
     if (oldValue.text.endsWith(separator) &&

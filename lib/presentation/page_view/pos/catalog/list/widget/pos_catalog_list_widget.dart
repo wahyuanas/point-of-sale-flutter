@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
+import 'package:flutter_intro/flutter_intro.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
@@ -38,113 +39,145 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          elevation: 0.3,
-          backgroundColor: Colors.white,
-          // leading: GestureDetector(
-          //   child: const Padding(
-          //     padding: EdgeInsets.only(left: 8.0),
-          //     child: Icon(
-          //       Icons.arrow_back_outlined,
-          //       color: Colors.blue,
-          //     ),
-          //   ),
-          //   onTap: () => Navigator.of(context).pop(),
-          // ),
-          leading: GestureDetector(
-            child: const Padding(
-              padding: EdgeInsets.only(left: 20.0),
-              child: Icon(
-                Icons.add_circle_outline,
-                size: 40,
-                color: Colors.blue,
-              ),
-            ),
-            onTap: () {
-              context.read<RouteCubit>().onRoute(
-                  const OnRouteState.postCatalogform(r: '/postCatalogform'),
-                  null);
-            }, //PosCatalogFormScreen(),
-          ),
-          title: const Text(
-            "List Item",
-            style: TextStyle(color: Colors.blue),
-          ),
-          systemOverlayStyle: const SystemUiOverlayStyle(
-            systemNavigationBarColor: Colors.blue, // navigation bar color
-            statusBarColor: Colors.white, // status bar color
-            statusBarBrightness: Brightness.dark, //status bar brigtness
-            statusBarIconBrightness:
-                Brightness.dark, //status barIcon Brightness
-            systemNavigationBarDividerColor:
-                Colors.greenAccent, //Navigation bar divider color
-            systemNavigationBarIconBrightness:
-                Brightness.light, //navigation bar icon
-          ),
-          actions: [
-            GestureDetector(
-              child: const Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: Icon(
-                  Icons.done_outlined,
-                  size: 40,
-                  color: Colors.blue,
-                ),
-              ),
-              onTap: () => Navigator.of(context).pop(),
-            ),
-          ],
-        ),
-        body: SmartRefresher(
-          onRefresh: _onRefresh,
-          enablePullDown: true,
-          controller: _refreshController,
-          child: CustomScrollView(slivers: [
-            SliverPersistentHeader(
-                //pinned: true,
-                floating: true,
-                delegate: PosCatalogListSearchDelegate()),
-            BlocBuilder<PosCatalogListCubit, PosCatalogListState>(
-                builder: (context, state) {
-              if (state.items == null) {
-                return SliverFillRemaining(
-                  child: Center(
-                    child: Text(
-                      "Tidak ada item",
-                      style:
-                          GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
-                    ),
-                  ),
-                );
-              } else {
-                return SliverPadding(
-                  padding: const EdgeInsets.symmetric(horizontal: 15),
-                  sliver: SliverAlignedGrid.count(
-                    crossAxisCount: 2,
-                    itemCount: state.items?.length,
-                    itemBuilder: (context, index) {
-                      // debugPrint(
-                      //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
-                      return PosCatalogListCardWidget(
-                          item: state.items![index]);
-                    },
-                    mainAxisSpacing: 3.0,
-                    crossAxisSpacing: 0.0,
-                  ),
-                );
-              }
+    return WillPopScope(
+      onWillPop: () async {
+        Intro intro = Intro.of(context);
 
-              // SliverList(
-              //     delegate: SliverChildBuilderDelegate(
-              //   (BuildContext context, int index) {
-              //     return PosCatalogListCardWidget(item: state.items![index]);
-              //   },
-              //   childCount: state.items?.length, // 1000 list items
-              // ));
-            })
-          ]),
-        ));
+        if (intro.status.isOpen == true) {
+          intro.dispose();
+          return false;
+        }
+        return true;
+      },
+      child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            elevation: 0.3,
+            backgroundColor: Colors.white,
+            // leading: GestureDetector(
+            //   child: const Padding(
+            //     padding: EdgeInsets.only(left: 8.0),
+            //     child: Icon(
+            //       Icons.arrow_back_outlined,
+            //       color: Colors.blue,
+            //     ),
+            //   ),
+            //   onTap: () => Navigator.of(context).pop(),
+            // ),
+            leading: IntroStepBuilder(
+              order: 1,
+              text: 'Tekan tombol + untuk menambah item catalog',
+              padding: const EdgeInsets.only(
+                bottom: 5,
+                left: 5,
+                right: 10,
+                top: 8,
+              ),
+              onWidgetLoad: () {
+                if (context.read<IntroCubit>().state.posCatalogList == false) {
+                  Intro.of(context).start();
+                } else {
+                  context.read<IntroCubit>().onReload(true);
+                }
+              },
+              onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
+              builder: (context, key) => GestureDetector(
+                  onTap: () {
+                    context.read<RouteCubit>().onRoute(
+                        const OnRouteState.postCatalogform(
+                            r: '/postCatalogform'),
+                        null);
+                  },
+                  key: key,
+                  child: const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
+                    child: Icon(
+                      Icons.add_outlined,
+                      size: 35,
+                      color: Colors.blue,
+                    ),
+                  ) //PosCatalogFormScreen(),
+                  ),
+            ),
+
+            title: const Text(
+              "List Item",
+              style: TextStyle(color: Colors.blue),
+            ),
+            systemOverlayStyle: const SystemUiOverlayStyle(
+              systemNavigationBarColor: Colors.blue, // navigation bar color
+              statusBarColor: Colors.white, // status bar color
+              statusBarBrightness: Brightness.dark, //status bar brigtness
+              statusBarIconBrightness:
+                  Brightness.dark, //status barIcon Brightness
+              systemNavigationBarDividerColor:
+                  Colors.greenAccent, //Navigation bar divider color
+              systemNavigationBarIconBrightness:
+                  Brightness.light, //navigation bar icon
+            ),
+            actions: [
+              GestureDetector(
+                child: const Padding(
+                  padding: EdgeInsets.only(right: 20.0),
+                  child: Icon(
+                    Icons.done_outlined,
+                    size: 35,
+                    color: Colors.blue,
+                  ),
+                ),
+                onTap: () => Navigator.of(context).pop(),
+              ),
+            ],
+          ),
+          body: SmartRefresher(
+            onRefresh: _onRefresh,
+            enablePullDown: true,
+            controller: _refreshController,
+            child: CustomScrollView(slivers: [
+              SliverPersistentHeader(
+                  //pinned: true,
+                  floating: true,
+                  delegate: PosCatalogListSearchDelegate()),
+              BlocBuilder<PosCatalogListCubit, PosCatalogListState>(
+                  builder: (context, state) {
+                if (state.items == null) {
+                  return SliverFillRemaining(
+                    child: Center(
+                      child: Text(
+                        "Tidak ada item",
+                        style: GoogleFonts.raleway(
+                            fontSize: 20, color: Colors.blue),
+                      ),
+                    ),
+                  );
+                } else {
+                  return SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    sliver: SliverAlignedGrid.count(
+                      crossAxisCount: 2,
+                      itemCount: state.items?.length,
+                      itemBuilder: (context, index) {
+                        // debugPrint(
+                        //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
+                        return PosCatalogListCardWidget(
+                            item: state.items![index]);
+                      },
+                      mainAxisSpacing: 3.0,
+                      crossAxisSpacing: 0.0,
+                    ),
+                  );
+                }
+
+                // SliverList(
+                //     delegate: SliverChildBuilderDelegate(
+                //   (BuildContext context, int index) {
+                //     return PosCatalogListCardWidget(item: state.items![index]);
+                //   },
+                //   childCount: state.items?.length, // 1000 list items
+                // ));
+              })
+            ]),
+          )),
+    );
   }
 }

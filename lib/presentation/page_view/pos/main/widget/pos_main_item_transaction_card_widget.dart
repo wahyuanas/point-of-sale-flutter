@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
@@ -30,11 +32,29 @@ class _PosMainItemTransactionCardWidgetState
             children: [
               Row(
                 children: [
-                  const Icon(
-                    Icons.inventory_outlined,
-                    color: Colors.blue,
-                    size: 50,
-                  ),
+                  widget.pos.item.image == null
+                      ? const Align(
+                          child: Icon(
+                            Icons.inventory_outlined,
+                            color: Colors.blue,
+                            size: 50,
+                          ),
+                        )
+                      : Align(
+                          child: Card(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            child: ClipRRect(
+                                borderRadius: BorderRadius.circular(12.0),
+                                child: Image.file(
+                                  File(widget.pos.item.image!),
+                                  gaplessPlayback: true,
+                                  fit: BoxFit.fill,
+                                  width: MediaQuery.of(context).size.width / 3,
+                                  height: MediaQuery.of(context).size.width / 3,
+                                )),
+                          ),
+                        ),
                   const SizedBox(
                     width: 10.0,
                   ),
@@ -45,86 +65,97 @@ class _PosMainItemTransactionCardWidgetState
                       children: [
                         Text(
                           widget.pos.item.code,
-                          style: const TextStyle(color: Colors.blue),
+                          style: const TextStyle(
+                              color: Colors.blue, fontSize: 15.0),
+                        ),
+                        const SizedBox(
+                          height: 5.0,
                         ),
                         Text(
                           widget.pos.item.name,
                           style: const TextStyle(
-                              color: Colors.black, fontSize: 16.0),
+                              color: Colors.black, fontSize: 14.0),
+                        ),
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Wrap(
+                          children: [
+                            Wrap(children: [
+                              const Text("Harga ",
+                                  style: TextStyle(
+                                    decoration: TextDecoration.underline,
+                                  )),
+                              Text(
+                                  NumberFormat.currency(
+                                          locale: 'id',
+                                          symbol: 'Rp',
+                                          decimalDigits: 0)
+                                      .format(widget.pos.item.sellPrice),
+                                  style: const TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      color: Colors.blue)),
+                            ]),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            const Text("|"),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            Wrap(
+                              children: [
+                                const Text("Disc ",
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                    )),
+                                Text("${widget.pos.item.sellDisc ?? 0}%",
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.blue)),
+                              ],
+                            ),
+
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            const Text("|"),
+                            const SizedBox(
+                              width: 10.0,
+                            ),
+                            // Text("Qty ${widget.pos.qty}",
+                            //     style: const TextStyle(
+                            //       decoration: TextDecoration.underline,
+                            //     )),
+                            // const SizedBox(
+                            //   width: 10.0,
+                            // ),
+                            //const Text("|"),
+                            // const SizedBox(
+                            //   width: 10.0,
+                            // ),
+                            Wrap(
+                              children: [
+                                const Text("Sub total ",
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                    )),
+                                Text(
+                                    NumberFormat.currency(
+                                            locale: 'id',
+                                            symbol: 'Rp',
+                                            decimalDigits: 0)
+                                        .format(widget.pos.sumPrice),
+                                    style: const TextStyle(
+                                        decoration: TextDecoration.underline,
+                                        color: Colors.blue)),
+                              ],
+                            )
+                          ],
                         ),
                       ],
                     ),
                   ),
-                ],
-              ),
-              Wrap(
-                children: [
-                  Wrap(children: [
-                    const Text("Harga ",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                        )),
-                    Text(
-                        NumberFormat.currency(
-                                locale: 'id', symbol: 'Rp', decimalDigits: 0)
-                            .format(widget.pos.item.sellPrice),
-                        style: const TextStyle(
-                            decoration: TextDecoration.underline,
-                            color: Colors.blue)),
-                  ]),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  const Text("|"),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Wrap(
-                    children: [
-                      const Text("Disc ",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          )),
-                      Text("${widget.pos.item.sellDisc ?? 0}%",
-                          style: const TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.blue)),
-                    ],
-                  ),
-
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  const Text("|"),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  // Text("Qty ${widget.pos.qty}",
-                  //     style: const TextStyle(
-                  //       decoration: TextDecoration.underline,
-                  //     )),
-                  // const SizedBox(
-                  //   width: 10.0,
-                  // ),
-                  //const Text("|"),
-                  // const SizedBox(
-                  //   width: 10.0,
-                  // ),
-                  Wrap(
-                    children: [
-                      const Text("Sub total ",
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          )),
-                      Text(
-                          NumberFormat.currency(
-                                  locale: 'id', symbol: 'Rp', decimalDigits: 0)
-                              .format(widget.pos.sumPrice),
-                          style: const TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.blue)),
-                    ],
-                  )
                 ],
               ),
               const SizedBox(

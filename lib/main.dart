@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +8,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pos/bloc_observer.dart';
 import 'package:pos/di/injection.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/cubit/list/customer_list_cubit.dart';
@@ -95,6 +94,7 @@ class PosAppState extends State<PosApp> {
       BlocProvider(create: (context) => getIt<CustomerCubit>()),
       BlocProvider(create: (context) => getIt<OrderCubit>()),
       BlocProvider(create: (context) => getIt<OrderDetailCubit>()),
+      BlocProvider(create: (context) => getIt<IntroCubit>()),
     ], child: const PosAppView());
   }
 }

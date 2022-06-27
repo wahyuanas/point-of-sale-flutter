@@ -8,6 +8,7 @@ import 'package:pos/infrastructure/account/remote/api/account_api.dart';
 import 'package:pos/infrastructure/account/remote/api/i_account_api.dart';
 import 'package:pos/infrastructure/account/repository/account_repository.dart';
 import 'package:pos/infrastructure/service/firebase_injectable_module.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/cubit/list/customer_list_cubit.dart';
@@ -54,6 +55,7 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<VehicleCubit>(() => VehicleCubit());
   g.registerLazySingleton<OrderCubit>(() => OrderCubit());
   g.registerLazySingleton<OrderDetailCubit>(() => OrderDetailCubit());
+  g.registerLazySingleton<IntroCubit>(() => IntroCubit());
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

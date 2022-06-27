@@ -3,8 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/order/entity/order.dart';
 
-import '../widget/fake_data.dart';
-
 part 'home_order_state.dart';
 part 'home_order_cubit.freezed.dart';
 

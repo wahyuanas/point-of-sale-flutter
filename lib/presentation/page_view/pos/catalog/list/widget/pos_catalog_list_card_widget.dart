@@ -1,10 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
-import 'package:pos/domain/pos/entity/pos.dart';
-import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 
 import 'pos_catalog_list_card_button_widget.dart';
 import 'pos_catalog_list_card_content_widget.dart';

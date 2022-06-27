@@ -49,32 +49,32 @@ class PosCatalogFormWidget extends StatelessWidget {
           systemNavigationBarIconBrightness:
               Brightness.light, //navigation bar icon
         ),
-        actions: [
-          // GestureDetector(
-          //   child: const Padding(
-          //     padding: EdgeInsets.only(right: 20.0),
-          //     child: Icon(
-          //       Icons.done_outlined,
-          //       size: 35,
-          //       color: Colors.blue,
-          //     ),
-          //   ),
-          //   onTap: () => Navigator.of(context).pop(),
-          // ),
-        ],
+        // actions: [
+        //   // GestureDetector(
+        //   //   child: const Padding(
+        //   //     padding: EdgeInsets.only(right: 20.0),
+        //   //     child: Icon(
+        //   //       Icons.done_outlined,
+        //   //       size: 35,
+        //   //       color: Colors.blue,
+        //   //     ),
+        //   //   ),
+        //   //   onTap: () => Navigator.of(context).pop(),
+        //   // ),
+        // ],
       ),
       body: CustomScrollView(slivers: [
-        PosCatalogFormCodeWidget(),
-        PosCatalogFormBarcodeWidget(),
-        PosCatalogFormNameWidget(),
-        PosCatalogFormDescriptionWidget(),
-        PosCatalogFormSellPriceWidget(),
+        const PosCatalogFormCodeWidget(),
+        const PosCatalogFormBarcodeWidget(),
+        const PosCatalogFormNameWidget(),
+        const PosCatalogFormDescriptionWidget(),
+        const PosCatalogFormSellPriceWidget(),
         //PosCatalogFormSellDiscWidget(),
-        PosCatalogFormPurchasePriceWidget(),
+        const PosCatalogFormPurchasePriceWidget(),
         //PosCatalogFormPurchaseDiscWidget(),
-        PosCatalogFormStockWidget(),
-        PosCatalogFormCategoryWidget(),
-        SliverToBoxAdapter(
+        const PosCatalogFormStockWidget(),
+        const PosCatalogFormCategoryWidget(),
+        const SliverToBoxAdapter(
           child: SizedBox(
             height: 20.0,
           ),

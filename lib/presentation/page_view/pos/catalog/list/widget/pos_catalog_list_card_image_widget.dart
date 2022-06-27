@@ -28,8 +28,8 @@ class _PosCatalogListCardImageWidgetState
   @override
   Widget build(BuildContext context) {
     if (widget.item.image == null) {
-      return Align(
-        child: const Icon(
+      return const Align(
+        child: Icon(
           Icons.inventory_outlined,
           color: Colors.blue,
           size: 50,
@@ -37,12 +37,17 @@ class _PosCatalogListCardImageWidgetState
       );
     } else {
       return Align(
-        child: Image.file(
-          File(widget.item.image!),
-          gaplessPlayback: true,
-          fit: BoxFit.fill,
-          height: MediaQuery.of(context).size.width / 2.5,
-          width: MediaQuery.of(context).size.width / 2.1,
+        child: Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          child: ClipRRect(
+              borderRadius: BorderRadius.circular(12.0),
+              child: Image.file(
+                File(widget.item.image!),
+                gaplessPlayback: true,
+                fit: BoxFit.fill,
+                height: MediaQuery.of(context).size.width / 2.5,
+                width: MediaQuery.of(context).size.width / 2.1,
+              )),
         ),
       );
     }

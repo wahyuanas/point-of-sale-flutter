@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:photo_view/photo_view.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
@@ -103,7 +102,11 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
                                     borderRadius: BorderRadius.circular(8)),
                                 child: ClipRRect(
                                   borderRadius: BorderRadius.circular(12.0),
-                                  child: Image.file(File(r)),
+                                  child: Image.file(
+                                    File(r),
+                                    fit: BoxFit.cover,
+                                    width: 1100.0,
+                                  ),
                                   // Image.memory(
                                   //   base64.decode(r),
                                   //   fit: BoxFit.cover,
@@ -231,9 +234,7 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
                   value: const SystemUiOverlayStyle(
                       statusBarColor: Colors.transparent),
                   child: PhotoView(
-                    imageProvider: Image.memory(
-                      base64.decode(r),
-                    ).image,
+                    imageProvider: Image.file(File(r)).image,
                   ),
                 )));
   }
