@@ -76,7 +76,6 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               onWidgetLoad: () {
                 if (context.read<IntroCubit>().state.posCatalogList == false) {
                   Intro.of(context).start();
-                } else {
                   context.read<IntroCubit>().onReload(true);
                 }
               },

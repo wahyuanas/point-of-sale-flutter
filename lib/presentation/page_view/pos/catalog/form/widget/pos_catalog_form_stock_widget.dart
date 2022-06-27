@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormStockWidget extends StatefulWidget {
@@ -12,6 +13,7 @@ class PosCatalogFormStockWidget extends StatefulWidget {
 
 class _PosCatalogFormStockWidgetState extends State<PosCatalogFormStockWidget> {
   late bool _initial;
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -21,18 +23,44 @@ class _PosCatalogFormStockWidgetState extends State<PosCatalogFormStockWidget> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
       child: BlocBuilder<CatalogFormCreateCubit, CatalogFormCreateState>(
           buildWhen: (p, c) {
-        _initial = false;
-        return p.createCatalogItem.stock != c.createCatalogItem.stock ||
-            p.failOrUnit != c.failOrUnit;
+        if (p.initial != c.initial) {
+          if (c.initial == false) {
+            if (_initial == true) _initial = false;
+            return true;
+          } else if (c.initial == true) {
+            if (_initial == false) _initial = true;
+            _controller.text = '';
+            return false;
+          }
+        } else if (p.status != c.status) {
+          c.status.maybeWhen(
+              initial: () {
+                if (_initial == false) _initial = true;
+                _controller.text = '';
+              },
+              orElse: () => null);
+          return false;
+        } else if (p.createCatalogItem.stock != c.createCatalogItem.stock) {
+          if (_initial == true) _initial = false;
+          return true;
+        }
+        return false;
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 10),
           child: TextFormField(
+              controller: _controller,
               autofocus: false,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(

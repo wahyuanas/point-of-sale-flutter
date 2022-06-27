@@ -5,10 +5,10 @@ class CatalogFormCreateState with _$CatalogFormCreateState {
   const factory CatalogFormCreateState(
       {required StateStatus<FailureExceptions, Item> status,
       required CreateCatalogItem createCatalogItem,
-      required bool failOrUnit}) = _CatalogFormCreateState;
+      required bool initial}) = _CatalogFormCreateState;
 
   factory CatalogFormCreateState.initial() => CatalogFormCreateState(
       status: const StateStatus.initial(),
       createCatalogItem: CreateCatalogItem.empty(),
-      failOrUnit: false);
+      initial: true);
 }

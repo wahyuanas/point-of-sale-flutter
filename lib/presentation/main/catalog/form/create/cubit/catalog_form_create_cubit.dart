@@ -108,9 +108,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
 
   onCreate() async {
     if (state.createCatalogItem.failureOption.isSome()) {
-      debugPrint(
-          "Catalog Form create Cubit TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT");
-      emit(state.copyWith(failOrUnit: !state.failOrUnit));
+      emit(state.copyWith(initial: false));
     } else {
       emit(state.copyWith(status: const StateStatus.loading()));
       //final failureOrSuccess = await accountService.signUp(state.signUp);
@@ -133,6 +131,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
         image: state.createCatalogItem.image.getOrCrash(),
         //imageFile: state.createCatalogItem.imageFile.getOrCrash()
       );
+      await Future.delayed(const Duration(seconds: 2));
       emit(state.copyWith(status: StateStatus.success(data: r)));
       _catalogListCubit.onAdditem(r);
 
@@ -140,5 +139,9 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
       //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
       //     (r) => emit(state.copyWith(status: StateStatus.success(data: r))));
     }
+  }
+
+  onInitial() {
+    emit(CatalogFormCreateState.initial());
   }
 }

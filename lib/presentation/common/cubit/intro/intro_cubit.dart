@@ -10,7 +10,7 @@ class IntroCubit extends HydratedCubit<IntroState> {
   IntroCubit() : super(IntroState.initial());
 
   onReload(bool posCatalogList) {
-    state.copyWith(posCatalogList: posCatalogList);
+    emit(state.copyWith(posCatalogList: posCatalogList));
   }
 
   @override

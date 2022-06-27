@@ -7,6 +7,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:photo_view/photo_view.dart';
+import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormImageWidget extends StatefulWidget {
@@ -21,6 +22,7 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
   final ImagePicker _picker = ImagePicker();
   String? base64string;
   late bool _initial;
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {
@@ -29,13 +31,38 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
         child: BlocBuilder<CatalogFormCreateCubit, CatalogFormCreateState>(
             buildWhen: (p, c) {
-      _initial = false;
-      return p.createCatalogItem.image != c.createCatalogItem.image ||
-          p.failOrUnit != c.failOrUnit;
+      if (p.initial != c.initial) {
+        if (c.initial == false) {
+          if (_initial == true) _initial = false;
+          return true;
+        } else if (c.initial == true) {
+          if (_initial == false) _initial = true;
+          //_controller.text = '';
+          return false;
+        }
+      } else if (p.status != c.status) {
+        c.status.maybeWhen(
+            initial: () {
+              if (_initial == false) _initial = true;
+              //_controller.text = '';
+            },
+            orElse: () => null);
+        return true;
+      } else if (p.createCatalogItem.image != c.createCatalogItem.image) {
+        if (_initial == true) _initial = false;
+        return true;
+      }
+      return false;
     }, builder: (context, state) {
       return Column(
         children: [
