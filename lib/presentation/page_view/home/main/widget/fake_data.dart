@@ -3,6 +3,7 @@ import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
 import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
+import 'package:uuid/uuid.dart';
 
 // class Order {
 //   Order(
@@ -107,8 +108,9 @@ var inventories = [
 ];
 
 var itemPos = <Item>[
-  const Item(
+  Item(
       id: 1,
+      uuid: const Uuid().v4(),
       code: "AKGSNS70",
       barcode: null,
       name: "Aki GS NS70",
@@ -120,8 +122,9 @@ var itemPos = <Item>[
       stock: 10,
       category: 1,
       image: null),
-  const Item(
+  Item(
       id: 2,
+      uuid: const Uuid().v4(),
       code: "SP4X",
       barcode: null,
       name: "Spooring 4 X",
@@ -133,8 +136,9 @@ var itemPos = <Item>[
       stock: 15,
       category: 2,
       image: null),
-  const Item(
+  Item(
       id: 3,
+      uuid: const Uuid().v4(),
       code: "VLHSRYX629",
       barcode: null,
       name: "Velg Hsr Skinny Yx629",
@@ -263,8 +267,9 @@ var vehicle = [
 ];
 
 var itemss = <Item>[
-  const Item(
+  Item(
       id: 1,
+      uuid: const Uuid().v4(),
       code: "AKGSNS70",
       barcode: null,
       name: "Aki GS NS70",
@@ -276,8 +281,9 @@ var itemss = <Item>[
       stock: 10,
       category: 1,
       image: null),
-  const Item(
+  Item(
       id: 2,
+      uuid: const Uuid().v4(),
       code: "SP4X",
       barcode: null,
       name: "Spooring 4 X",
@@ -289,8 +295,9 @@ var itemss = <Item>[
       stock: 15,
       category: 2,
       image: null),
-  const Item(
+  Item(
       id: 3,
+      uuid: const Uuid().v4(),
       code: "VLHSRYX629",
       barcode: null,
       name: "Velg Hsr Skinny Yx629",

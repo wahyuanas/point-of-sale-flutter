@@ -9,6 +9,7 @@ class Item with _$Item implements IEntity {
   const Item._();
   const factory Item({
     required int id,
+    required String uuid,
     required String code,
     required String? barcode,
     required String name,

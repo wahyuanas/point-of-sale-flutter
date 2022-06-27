@@ -22,6 +22,7 @@ Item _$ItemFromJson(Map<String, dynamic> json) {
 mixin _$Item {
   int get id => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   String? get barcode => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -45,6 +46,7 @@ abstract class $ItemCopyWith<$Res> {
   $Res call(
       {int id,
       String code,
+      String uuid,
       String? barcode,
       String name,
       String description,
@@ -69,6 +71,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
   $Res call({
     Object? id = freezed,
     Object? code = freezed,
+    Object? uuid = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
     Object? description = freezed,
@@ -88,6 +91,10 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       barcode: barcode == freezed
           ? _value.barcode
@@ -141,6 +148,7 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   $Res call(
       {int id,
       String code,
+      String uuid,
       String? barcode,
       String name,
       String description,
@@ -166,6 +174,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? code = freezed,
+    Object? uuid = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
     Object? description = freezed,
@@ -185,6 +194,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
+              as String,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       barcode: barcode == freezed
           ? _value.barcode
@@ -236,6 +249,7 @@ class _$_Item extends _Item {
   const _$_Item(
       {required this.id,
       required this.code,
+      required this.uuid,
       required this.barcode,
       required this.name,
       required this.description,
@@ -254,6 +268,8 @@ class _$_Item extends _Item {
   final int id;
   @override
   final String code;
+  @override
+  final String uuid;
   @override
   final String? barcode;
   @override
@@ -277,7 +293,7 @@ class _$_Item extends _Item {
 
   @override
   String toString() {
-    return 'Item(id: $id, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image)';
+    return 'Item(id: $id, code: $code, uuid: $uuid, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image)';
   }
 
   @override
@@ -287,6 +303,7 @@ class _$_Item extends _Item {
             other is _$_Item &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.barcode, barcode) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -308,6 +325,7 @@ class _$_Item extends _Item {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(barcode),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
@@ -334,6 +352,7 @@ abstract class _Item extends Item {
   const factory _Item(
       {required final int id,
       required final String code,
+      required final String uuid,
       required final String? barcode,
       required final String name,
       required final String description,
@@ -352,6 +371,8 @@ abstract class _Item extends Item {
   int get id => throw _privateConstructorUsedError;
   @override
   String get code => throw _privateConstructorUsedError;
+  @override
+  String get uuid => throw _privateConstructorUsedError;
   @override
   String? get barcode => throw _privateConstructorUsedError;
   @override

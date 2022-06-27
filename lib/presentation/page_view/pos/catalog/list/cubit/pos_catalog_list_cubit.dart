@@ -34,7 +34,8 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
           .toList();
       emit(state.copyWith(items: listItem, keyWord: v));
     } else {
-      emit(PosCatalogListState.initial());
+      List<Item>? listItem = catalogListCubit.state.items;
+      emit(state.copyWith(items: listItem));
     }
   }
 

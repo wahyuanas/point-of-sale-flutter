@@ -9,6 +9,7 @@ import 'package:pos/domain/catalog/item/object_value/object_value.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
+import 'package:uuid/uuid.dart';
 
 part 'catalog_form_create_state.dart';
 part 'catalog_form_create_cubit.freezed.dart';
@@ -118,6 +119,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
           : _catalogListCubit.state.items?.length;
       final r = Item(
         id: id == null ? 1 : id + 1,
+        uuid: const Uuid().v4(),
         code: state.createCatalogItem.code.getOrCrash(),
         barcode: state.createCatalogItem.barcode.getOrCrash(),
         name: state.createCatalogItem.name.getOrCrash(),
