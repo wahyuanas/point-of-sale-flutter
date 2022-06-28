@@ -51,9 +51,13 @@ class MainScreenState extends State<MainScreen> {
         builder: (context, state) {
           return state.introductionState.maybeWhen(
               unDone: () => const IntroductionViewScreen(),
-              done: () => BlocProvider.of<AuthCubit>(context).state.auth == null
-                  ? const SignInScreen()
-                  : const PageViewMainScreen(), //Container(),
+              done: () => BlocBuilder<AuthCubit, AuthState>(
+                    builder: (context, state) {
+                      return state.auth == null
+                          ? const SignInScreen()
+                          : const PageViewMainScreen();
+                    },
+                  ),
               orElse: () => Center(
                       child: Container(
                     color: Colors.blue[100],

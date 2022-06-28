@@ -17,13 +17,13 @@ class PosCatalogListCardImageWidget extends StatefulWidget {
 
 class _PosCatalogListCardImageWidgetState
     extends State<PosCatalogListCardImageWidget> {
-  @override
-  void didChangeDependencies() {
-    if (widget.item.image != null) {
-      precacheImage(Image.file(File(widget.item.image!)).image, context);
-    }
-    super.didChangeDependencies();
-  }
+  // @override
+  // void didChangeDependencies() {
+  //   if (widget.item.image != null) {
+  //     precacheImage(Image.file(File(widget.item.image!)).image, context);
+  //   }
+  //   super.didChangeDependencies();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +43,15 @@ class _PosCatalogListCardImageWidgetState
               borderRadius: BorderRadius.circular(12.0),
               child: Image.file(
                 File(widget.item.image!),
+                errorBuilder: (context, error, stackTrace) {
+                  return SizedBox(
+                    height: MediaQuery.of(context).size.width / 2.5,
+                    width: MediaQuery.of(context).size.width / 2.1,
+                    child: const Align(
+                        child: Text(
+                            "Photo tidak ditemukan, kemungkinan sudah terhapus")),
+                  );
+                },
                 gaplessPlayback: true,
                 fit: BoxFit.fill,
                 height: MediaQuery.of(context).size.width / 2.5,

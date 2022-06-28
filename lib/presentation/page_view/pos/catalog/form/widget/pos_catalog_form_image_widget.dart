@@ -7,7 +7,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:photo_view/photo_view.dart';
-import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormImageWidget extends StatefulWidget {
@@ -22,6 +21,7 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
   final ImagePicker _picker = ImagePicker();
   String? base64string;
   late bool _initial;
+  File? file;
   final TextEditingController _controller = TextEditingController();
 
   @override
@@ -33,6 +33,9 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
   @override
   void dispose() {
     _controller.dispose();
+    if (file != null) {
+      file?.delete();
+    }
     super.dispose();
   }
 
@@ -55,6 +58,9 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
             initial: () {
               if (_initial == false) _initial = true;
               //_controller.text = '';
+            },
+            success: (v) {
+              file = null;
             },
             orElse: () => null);
         return true;
@@ -161,6 +167,8 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
                                                 context)
                                             .onCreateCatalogItemImageChanged(
                                                 null);
+                                        file?.delete();
+                                        file = null;
                                       },
                                       icon: const Icon(
                                         Icons.delete,
@@ -188,24 +196,28 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
       child: GestureDetector(
         onTap: () async {
           _hideKeyboard();
-          final pickedFile = await _picker.pickImage(
-            source: ImageSource.gallery,
-            // imageQuality: 50,
-            // maxWidth: 300,
-            // maxHeight: 300
-          );
+          try {
+            var pickedFile = await _picker.pickImage(
+              source: ImageSource.gallery,
+              // imageQuality: 50,
+              // maxWidth: 300,
+              // maxHeight: 300
+            );
 
-          if (pickedFile != null) {
-            File file = File(pickedFile.path);
-
-            Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
-            base64string = base64.encode(imagebytes);
-            if (!mounted) return;
-            BlocProvider.of<CatalogFormCreateCubit>(context)
-                //.onCreateCatalogItemImageChanged(base64string);
-                .onCreateCatalogItemImageChanged(file.path);
-            BlocProvider.of<CatalogFormCreateCubit>(context)
-                .onCreateCatalogItemImageFileChanged(pickedFile);
+            if (pickedFile != null) {
+              file = File(pickedFile.path);
+              Uint8List imagebytes =
+                  await file!.readAsBytes(); //convert to bytes
+              base64string = base64.encode(imagebytes);
+              if (!mounted) return;
+              BlocProvider.of<CatalogFormCreateCubit>(context)
+                  //.onCreateCatalogItemImageChanged(base64string);
+                  .onCreateCatalogItemImageChanged(file?.path);
+              BlocProvider.of<CatalogFormCreateCubit>(context)
+                  .onCreateCatalogItemImageFileChanged(pickedFile);
+            }
+          } catch (e) {
+            debugPrint(e.toString());
           }
         },
         child: const Icon(Icons.image_outlined, size: 40, color: Colors.blue),
@@ -220,24 +232,28 @@ class _PosCatalogFormImageWidgetState extends State<PosCatalogFormImageWidget> {
       child: GestureDetector(
         onTap: () async {
           _hideKeyboard();
-          final pickedFile = await _picker.pickImage(
-            source: ImageSource.camera,
-            //imageQuality: 70,
-            //maxWidth: 1000,
-            //maxHeight: 1000
-          );
-          if (pickedFile != null) {
-            File file = File(pickedFile.path);
-            Uint8List imagebytes = await file.readAsBytes(); //convert to bytes
+          try {
+            var pickedFile = await _picker.pickImage(
+              source: ImageSource.camera,
+              // imageQuality: 50,
+              // maxWidth: 300,
+              // maxHeight: 300
+            );
 
-            base64string = base64.encode(imagebytes);
-            if (!mounted) return;
-
-            BlocProvider.of<CatalogFormCreateCubit>(context)
-                //.onCreateCatalogItemImageChanged(base64string);
-                .onCreateCatalogItemImageChanged(file.path);
-            BlocProvider.of<CatalogFormCreateCubit>(context)
-                .onCreateCatalogItemImageFileChanged(pickedFile);
+            if (pickedFile != null) {
+              file = File(pickedFile.path);
+              Uint8List imagebytes =
+                  await file!.readAsBytes(); //convert to bytes
+              base64string = base64.encode(imagebytes);
+              if (!mounted) return;
+              BlocProvider.of<CatalogFormCreateCubit>(context)
+                  //.onCreateCatalogItemImageChanged(base64string);
+                  .onCreateCatalogItemImageChanged(file?.path);
+              BlocProvider.of<CatalogFormCreateCubit>(context)
+                  .onCreateCatalogItemImageFileChanged(pickedFile);
+            }
+          } catch (e) {
+            debugPrint(e.toString());
           }
         },
         child: const Icon(Icons.camera_outlined, size: 40, color: Colors.blue),

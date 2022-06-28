@@ -36,6 +36,7 @@ class AppColors {
   static const Color searchContainerBackgroundColor = Color(0xFFFBFBFD);
   static const Color searchFillColor = Color(0xFFFFFFFF);
   static const Color searchBorderSideColor = Color(0xFF4CAF50);
+  static const Color searchBorderSideColor1 = Color(0xFF94BBE7);
   static const Color searchFilterButtonColor = Color(0xFF748F78);
 
   //SNACKBAR

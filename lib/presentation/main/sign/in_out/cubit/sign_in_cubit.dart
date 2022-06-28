@@ -43,9 +43,10 @@ class SignInCubit extends Cubit<SignInState> {
       await Future.delayed(const Duration(seconds: 2));
       failureOrSuccess.fold(
           (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
-          (r) {
-        authCubit.onAuthReload(Auth.fromSignIn(r));
+          (r) async {
         emit(state.copyWith(status: StateStatus.success(data: r)));
+        await Future.delayed(const Duration(milliseconds: 500));
+        authCubit.onAuthReload(Auth.fromSignIn(r));
       });
     }
   }

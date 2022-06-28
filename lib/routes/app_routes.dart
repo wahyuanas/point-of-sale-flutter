@@ -6,6 +6,8 @@ import 'package:pos/presentation/main/sign/up/screen/sign_up_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/form/screen/pos_catalog_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_list_screen.dart';
 
+import '../presentation/page_view/main/screen/page_view_main._screen.dart';
+
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // final args = settings.arguments;
@@ -21,6 +23,8 @@ class RouteGenerator {
             builder: (_) => SignUpNotifScreen(
                   account: account,
                 ));
+      case '/pageViewMainScreen':
+        return MaterialPageRoute(builder: (_) => const PageViewMainScreen());
       case '/postCatalogList':
         return MaterialPageRoute(builder: (_) => const PosCatalogListScreen());
       case '/postCatalogform':

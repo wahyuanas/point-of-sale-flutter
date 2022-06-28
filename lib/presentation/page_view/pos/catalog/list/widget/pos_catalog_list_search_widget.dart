@@ -91,11 +91,11 @@ class _PosCatalogListSearchWidgetState
             border: const OutlineInputBorder(
               borderRadius: BorderRadius.all(Radius.circular(15)),
               borderSide: BorderSide(
-                  color: AppColors.searchBorderSideColor, width: 0.5),
+                  color: AppColors.searchBorderSideColor1, width: 0.5),
             ),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(
-                  color: AppColors.searchBorderSideColor, width: 0.5),
+                  color: AppColors.searchBorderSideColor1, width: 0.5),
               borderRadius: BorderRadius.circular(15.0),
             ),
             focusedBorder: const OutlineInputBorder(

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
+import 'package:pos/presentation/page_view/main/screen/page_view_main._screen.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
 import '../cubit/sign_in_cubit.dart';
@@ -38,7 +39,6 @@ class _SignInScreenState extends State<SignInScreen> {
                   .onModalPush("Sedang Proses...");
             },
             success: (r) async {
-              await Future.delayed(const Duration(milliseconds: 1000));
               BlocProvider.of<ModalCubit>(modalContext!)
                   .onModalContent("Anda Berhasil SignIn");
               await Future.delayed(const Duration(milliseconds: 1000));
