@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormStockWidget extends StatefulWidget {

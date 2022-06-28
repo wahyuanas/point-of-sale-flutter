@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 
 class PosCatalogFormCodeWidget extends StatefulWidget {
@@ -13,7 +12,7 @@ class PosCatalogFormCodeWidget extends StatefulWidget {
 
 class _PosCatalogFormCodeWidgetState extends State<PosCatalogFormCodeWidget> {
   late bool _initial;
-  TextEditingController _controller = TextEditingController();
+  final TextEditingController _controller = TextEditingController();
 
   @override
   void initState() {

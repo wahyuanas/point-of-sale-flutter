@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
-import 'package:pos/presentation/utils/colors.dart';
 
 class PosCatalogListCardButtonWidget extends StatefulWidget {
   final Item item;
