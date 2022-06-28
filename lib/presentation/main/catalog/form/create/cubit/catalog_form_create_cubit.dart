@@ -114,26 +114,10 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
       emit(state.copyWith(status: const StateStatus.loading()));
       //final failureOrSuccess = await accountService.signUp(state.signUp);
       await Future.delayed(const Duration(microseconds: 500));
-      int id = _catalogListCubit.state.items == null
+      final id = _catalogListCubit.state.items == null
           ? 1
           : _catalogListCubit.state.items!.length + 1;
-      final r = Item(
-          id: id,
-          uuid: const Uuid().v4(),
-          code: state.createCatalogItem.code.getOrCrash(),
-          barcode: state.createCatalogItem.barcode.getOrCrash(),
-          name: state.createCatalogItem.name.getOrCrash(),
-          description: state.createCatalogItem.description.getOrCrash(),
-          sellPrice: state.createCatalogItem.sellPrice.getOrCrash(),
-          sellDisc: state.createCatalogItem.sellDisc.getOrCrash(),
-          purchasePrice: state.createCatalogItem.purchasePrice.getOrCrash(),
-          purchaseDisc: state.createCatalogItem.purchaseDisc.getOrCrash(),
-          stock: state.createCatalogItem.stock.getOrCrash(),
-          category: state.createCatalogItem.category.getOrCrash(),
-          image: state.createCatalogItem.image.getOrCrash(),
-          accountId: 1
-          //imageFile: state.createCatalogItem.imageFile.getOrCrash()
-          );
+      Item r = Item.createCatalogItem(id, state.createCatalogItem);
       await Future.delayed(const Duration(milliseconds: 500));
       emit(state.copyWith(status: StateStatus.success(data: r)));
       _catalogListCubit.onAdditem(r);

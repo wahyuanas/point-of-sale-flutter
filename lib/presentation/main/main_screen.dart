@@ -43,6 +43,9 @@ class MainScreenState extends State<MainScreen> {
                   Navigator.pushNamed(context, r, arguments: state.args),
               postCatalogList: (r) => Navigator.pushNamed(context, r),
               postCatalogform: (r) => Navigator.pushNamed(context, r),
+              purchase: (r) => Navigator.pushNamed(context, r),
+              posCatalogItemDetail: (r) =>
+                  Navigator.pushNamed(context, r, arguments: state.args),
             );
           },
         ),

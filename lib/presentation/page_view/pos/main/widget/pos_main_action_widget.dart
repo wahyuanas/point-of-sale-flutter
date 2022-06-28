@@ -135,33 +135,40 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                         )
                       : Container(),
                   state.poss != null
-                      ? Card(
-                          shape: RoundedRectangleBorder(
-                              side: const BorderSide(
-                                  color: Colors.blue, width: 0.5),
-                              borderRadius: BorderRadius.circular(10.0)),
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 60,
-                            width: 80,
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Icon(
-                                  Icons.near_me_outlined,
-                                  color: Colors.blue,
+                      ? GestureDetector(
+                          onTap: () => BlocProvider.of<RouteCubit>(context)
+                              .onRoute(
+                                  const OnRouteState.postCatalogList(
+                                      r: '/purchase'),
+                                  null),
+                          child: Card(
+                              shape: RoundedRectangleBorder(
+                                  side: const BorderSide(
+                                      color: Colors.blue, width: 0.5),
+                                  borderRadius: BorderRadius.circular(10.0)),
+                              child: Container(
+                                alignment: Alignment.center,
+                                height: 60,
+                                width: 80,
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: const [
+                                    Icon(
+                                      Icons.near_me_outlined,
+                                      color: Colors.blue,
+                                    ),
+                                    Text(
+                                      "Bayar",
+                                      style: TextStyle(
+                                          fontSize: 13,
+                                          //fontWeight: FontWeight.w500,
+                                          color: Colors.blue),
+                                    )
+                                  ],
                                 ),
-                                Text(
-                                  "Bayar",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      //fontWeight: FontWeight.w500,
-                                      color: Colors.blue),
-                                )
-                              ],
-                            ),
-                          ))
+                              )),
+                        )
                       : Container(
                           decoration: BoxDecoration(
                               borderRadius: const BorderRadius.all(

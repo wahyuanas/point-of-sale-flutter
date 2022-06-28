@@ -11,4 +11,7 @@ class OnRouteState with _$OnRouteState {
       _PostCatalogList;
   const factory OnRouteState.postCatalogform({required String r}) =
       _PostCatalogform;
+  const factory OnRouteState.purchase({required String r}) = _Purchase;
+  const factory OnRouteState.posCatalogItemDetail({required String r}) =
+      _PosCatalogItemDetail;
 }

@@ -46,11 +46,11 @@ class _PosPaymentActionWidgetState extends State<PosPaymentActionWidget> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: const [
                       Icon(
-                        Icons.add_circle_outline,
+                        Icons.arrow_back_outlined,
                         color: Colors.blue,
                       ),
                       Text(
-                        "Tambah",
+                        "Kembali",
                         style: TextStyle(
                             fontSize: 13,
                             //fontWeight: FontWeight.w500,
@@ -60,6 +60,14 @@ class _PosPaymentActionWidgetState extends State<PosPaymentActionWidget> {
                   ),
                 ),
               ),
+            ),
+            const Spacer(),
+            const Text(
+              "FAK-XXXXX1",
+              style: TextStyle(
+                  fontSize: 15,
+                  //fontWeight: FontWeight.w500,
+                  color: Colors.blue),
             ),
             const Spacer(),
             Row(

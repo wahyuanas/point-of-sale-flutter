@@ -56,7 +56,7 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget>
                       ),
                       const Spacer(),
                       const Text(
-                        "POS",
+                        "Pembayaran",
                         style: TextStyle(color: Colors.blue),
                       ),
                       const Spacer(),

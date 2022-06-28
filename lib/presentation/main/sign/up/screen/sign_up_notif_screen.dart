@@ -5,7 +5,7 @@ import 'package:pos/presentation/main/sign/up/delegate/sign_up_notif_delegate.da
 import 'package:pos/presentation/utils/colors.dart';
 
 class SignUpNotifScreen extends StatelessWidget {
-  final Account? account;
+  final Account account;
   const SignUpNotifScreen({Key? key, required this.account}) : super(key: key);
 
   @override
@@ -119,7 +119,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 17),
                               ),
                               Text(
-                                "${account?.companyName}",
+                                account.companyName,
                                 style: const TextStyle(fontSize: 17),
                               )
                             ],
@@ -134,7 +134,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 17),
                               ),
                               Text(
-                                "${account?.address}",
+                                account.address,
                                 style: const TextStyle(fontSize: 17),
                               )
                             ],
@@ -149,7 +149,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 17),
                               ),
                               Text(
-                                "${account?.phoneNumber}",
+                                account.phoneNumber,
                                 style: const TextStyle(fontSize: 17),
                               )
                             ],
@@ -164,7 +164,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 17),
                               ),
                               Text(
-                                "${account?.email}",
+                                account.email,
                                 style: const TextStyle(fontSize: 17),
                               )
                             ],
@@ -178,7 +178,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 "Jenis Usaha",
                                 style: TextStyle(fontSize: 17),
                               ),
-                              account?.businessType == 1
+                              account.businessType == 1
                                   ? const Text(
                                       "Otomotif",
                                       style: TextStyle(fontSize: 17),
@@ -198,8 +198,8 @@ class SignUpNotifScreen extends StatelessWidget {
                                 "Jenis Sub Usaha",
                                 style: TextStyle(fontSize: 17),
                               ),
-                              account?.businessType == 1
-                                  ? account?.mainBusinessType == 1
+                              account.businessType == 1
+                                  ? account.mainBusinessType == 1
                                       ? const Text(
                                           "Mobil",
                                           style: TextStyle(fontSize: 17),
@@ -209,7 +209,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                           style: TextStyle(fontSize: 17),
                                         )
                                   : Text(
-                                      "${account?.coreBusinessType}",
+                                      "${account.coreBusinessType}",
                                       style: const TextStyle(fontSize: 17),
                                     )
                             ],
@@ -224,7 +224,7 @@ class SignUpNotifScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 17),
                               ),
                               Text(
-                                "${account?.outletsNumber}",
+                                "${account.outletsNumber}",
                                 style: const TextStyle(fontSize: 17),
                               )
                             ],
