@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CreateCatalogItem {
+  CreateCatalogItemUuid get uuid => throw _privateConstructorUsedError;
   CreateCatalogItemCode get code => throw _privateConstructorUsedError;
   CreateCatalogItemBarcode get barcode => throw _privateConstructorUsedError;
   CreateCatalogItemName get name => throw _privateConstructorUsedError;
@@ -45,7 +46,8 @@ abstract class $CreateCatalogItemCopyWith<$Res> {
           CreateCatalogItem value, $Res Function(CreateCatalogItem) then) =
       _$CreateCatalogItemCopyWithImpl<$Res>;
   $Res call(
-      {CreateCatalogItemCode code,
+      {CreateCatalogItemUuid uuid,
+      CreateCatalogItemCode code,
       CreateCatalogItemBarcode barcode,
       CreateCatalogItemName name,
       CreateCatalogItemDescription description,
@@ -70,6 +72,7 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? uuid = freezed,
     Object? code = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
@@ -84,6 +87,10 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
     Object? imageFile = freezed,
   }) {
     return _then(_value.copyWith(
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemUuid,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -144,7 +151,8 @@ abstract class _$$_CreateCatalogItemCopyWith<$Res>
       __$$_CreateCatalogItemCopyWithImpl<$Res>;
   @override
   $Res call(
-      {CreateCatalogItemCode code,
+      {CreateCatalogItemUuid uuid,
+      CreateCatalogItemCode code,
       CreateCatalogItemBarcode barcode,
       CreateCatalogItemName name,
       CreateCatalogItemDescription description,
@@ -171,6 +179,7 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? uuid = freezed,
     Object? code = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
@@ -185,6 +194,10 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
     Object? imageFile = freezed,
   }) {
     return _then(_$_CreateCatalogItem(
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemUuid,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -241,7 +254,8 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
 
 class _$_CreateCatalogItem implements _CreateCatalogItem {
   const _$_CreateCatalogItem(
-      {required this.code,
+      {required this.uuid,
+      required this.code,
       required this.barcode,
       required this.name,
       required this.description,
@@ -254,6 +268,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
       required this.image,
       required this.imageFile});
 
+  @override
+  final CreateCatalogItemUuid uuid;
   @override
   final CreateCatalogItemCode code;
   @override
@@ -281,7 +297,7 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
 
   @override
   String toString() {
-    return 'CreateCatalogItem(code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile)';
+    return 'CreateCatalogItem(uuid: $uuid, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile)';
   }
 
   @override
@@ -289,6 +305,7 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CreateCatalogItem &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality().equals(other.barcode, barcode) &&
             const DeepCollectionEquality().equals(other.name, name) &&
@@ -309,6 +326,7 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(barcode),
       const DeepCollectionEquality().hash(name),
@@ -331,7 +349,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
 
 abstract class _CreateCatalogItem implements CreateCatalogItem {
   const factory _CreateCatalogItem(
-          {required final CreateCatalogItemCode code,
+          {required final CreateCatalogItemUuid uuid,
+          required final CreateCatalogItemCode code,
           required final CreateCatalogItemBarcode barcode,
           required final CreateCatalogItemName name,
           required final CreateCatalogItemDescription description,
@@ -345,6 +364,8 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
           required final CreateCatalogItemImageFile imageFile}) =
       _$_CreateCatalogItem;
 
+  @override
+  CreateCatalogItemUuid get uuid => throw _privateConstructorUsedError;
   @override
   CreateCatalogItemCode get code => throw _privateConstructorUsedError;
   @override

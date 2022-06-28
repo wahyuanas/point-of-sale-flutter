@@ -9,13 +9,14 @@ class Customer with _$Customer implements IEntity {
   const Customer._();
   const factory Customer({
     required int id,
+    required String uuid,
     required String name,
     required String code,
     required String phoneNumber,
     required String email,
     required String type,
     required String address,
-    required int idAccount,
+    required int accountId,
   }) = _Customer;
 
   factory Customer.fromJson(Map<String, dynamic> json) =>

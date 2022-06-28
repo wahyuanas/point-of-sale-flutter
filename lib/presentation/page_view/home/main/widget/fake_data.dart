@@ -121,7 +121,8 @@ var itemPos = <Item>[
       purchaseDisc: null,
       stock: 10,
       category: 1,
-      image: null),
+      image: null,
+      accountId: 1),
   Item(
       id: 2,
       uuid: const Uuid().v4(),
@@ -135,7 +136,8 @@ var itemPos = <Item>[
       purchaseDisc: null,
       stock: 15,
       category: 2,
-      image: null),
+      image: null,
+      accountId: 1),
   Item(
       id: 3,
       uuid: const Uuid().v4(),
@@ -149,38 +151,40 @@ var itemPos = <Item>[
       purchaseDisc: null,
       stock: 5,
       category: 3,
-      image: null),
+      image: null,
+      accountId: 1),
 ];
 
-var customers = [
-  const Customer(
-      id: 1,
-      name: "Bill Gates",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      address: "Jl. ABC No. 1",
-      idAccount: 1,
-      code: '001',
-      type: ''),
-  const Customer(
-      id: 3,
-      name: "Asep",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      code: '002',
-      type: '',
-      address: "Jl. ABC No. 1",
-      idAccount: 1),
-  const Customer(
-      id: 1,
-      name: "Deden",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      code: '003',
-      type: '',
-      address: "Jl. ABC No. 1",
-      idAccount: 1),
-];
+// var customers = [
+//   Customer(
+//       id: 1,
+//       name: "Bill Gates",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       address: "Jl. ABC No. 1",
+//       code: '001',
+//       type: '',
+//       accountId: 1,
+//       uuid: Uuid().v4()),
+//   const Customer(
+//       id: 3,
+//       name: "Asep",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       code: '002',
+//       type: '',
+//       address: "Jl. ABC No. 1",
+//       idAccount: 1),
+//   const Customer(
+//       id: 1,
+//       name: "Deden",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       code: '003',
+//       type: '',
+//       address: "Jl. ABC No. 1",
+//       idAccount: 1),
+// ];
 
 var vehicleType = [
   const VehicleType(
@@ -280,7 +284,8 @@ var itemss = <Item>[
       purchaseDisc: null,
       stock: 10,
       category: 1,
-      image: null),
+      image: null,
+      accountId: 1),
   Item(
       id: 2,
       uuid: const Uuid().v4(),
@@ -294,7 +299,8 @@ var itemss = <Item>[
       purchaseDisc: null,
       stock: 15,
       category: 2,
-      image: null),
+      image: null,
+      accountId: 1),
   Item(
       id: 3,
       uuid: const Uuid().v4(),
@@ -308,7 +314,8 @@ var itemss = <Item>[
       purchaseDisc: null,
       stock: 5,
       category: 3,
-      image: null),
+      image: null,
+      accountId: 1),
 ];
 
 // var orders = [

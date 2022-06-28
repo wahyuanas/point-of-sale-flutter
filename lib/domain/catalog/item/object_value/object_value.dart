@@ -6,6 +6,17 @@ import 'package:pos/domain/core/object_value/object_value.dart';
 import 'object_value_failure.dart';
 import 'value_object_validators.dart';
 
+class CreateCatalogItemUuid extends ObjectValue<String> {
+  @override
+  final Either<FormItemObjectValueFailure<String, String>, String> value;
+
+  factory CreateCatalogItemUuid(String input) {
+    return CreateCatalogItemUuid._(validateFieldStringNotEmpty(input));
+  }
+
+  const CreateCatalogItemUuid._(this.value);
+}
+
 class CreateCatalogItemCode extends ObjectValue<String> {
   @override
   final Either<FormItemObjectValueFailure<String, String>, String> value;

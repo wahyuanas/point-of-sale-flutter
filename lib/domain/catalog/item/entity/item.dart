@@ -21,6 +21,7 @@ class Item with _$Item implements IEntity {
     required double? stock,
     required int category,
     required String? image,
+    required int accountId,
   }) = _Item;
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);

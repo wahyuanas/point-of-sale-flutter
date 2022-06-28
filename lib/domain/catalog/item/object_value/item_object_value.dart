@@ -9,6 +9,7 @@ part "item_object_value.freezed.dart";
 @freezed
 class CreateCatalogItem with _$CreateCatalogItem {
   const factory CreateCatalogItem({
+    required CreateCatalogItemUuid uuid,
     required CreateCatalogItemCode code,
     required CreateCatalogItemBarcode barcode,
     required CreateCatalogItemName name,
@@ -24,6 +25,7 @@ class CreateCatalogItem with _$CreateCatalogItem {
   }) = _CreateCatalogItem;
 
   factory CreateCatalogItem.empty() => CreateCatalogItem(
+      uuid: CreateCatalogItemUuid(''),
       code: CreateCatalogItemCode(''),
       barcode: CreateCatalogItemBarcode(null),
       name: CreateCatalogItemName(''),

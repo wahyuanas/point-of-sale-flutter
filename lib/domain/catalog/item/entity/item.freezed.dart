@@ -21,8 +21,8 @@ Item _$ItemFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Item {
   int get id => throw _privateConstructorUsedError;
-  String get code => throw _privateConstructorUsedError;
   String get uuid => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   String? get barcode => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
@@ -33,6 +33,7 @@ mixin _$Item {
   double? get stock => throw _privateConstructorUsedError;
   int get category => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -45,8 +46,8 @@ abstract class $ItemCopyWith<$Res> {
       _$ItemCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      String code,
       String uuid,
+      String code,
       String? barcode,
       String name,
       String description,
@@ -56,7 +57,8 @@ abstract class $ItemCopyWith<$Res> {
       int? purchaseDisc,
       double? stock,
       int category,
-      String? image});
+      String? image,
+      int accountId});
 }
 
 /// @nodoc
@@ -70,8 +72,8 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
-    Object? code = freezed,
     Object? uuid = freezed,
+    Object? code = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
     Object? description = freezed,
@@ -82,19 +84,20 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
       barcode: barcode == freezed
           ? _value.barcode
@@ -136,6 +139,10 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -147,8 +154,8 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
   @override
   $Res call(
       {int id,
-      String code,
       String uuid,
+      String code,
       String? barcode,
       String name,
       String description,
@@ -158,7 +165,8 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       int? purchaseDisc,
       double? stock,
       int category,
-      String? image});
+      String? image,
+      int accountId});
 }
 
 /// @nodoc
@@ -173,8 +181,8 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
-    Object? code = freezed,
     Object? uuid = freezed,
+    Object? code = freezed,
     Object? barcode = freezed,
     Object? name = freezed,
     Object? description = freezed,
@@ -185,19 +193,20 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? category = freezed,
     Object? image = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_Item(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      code: code == freezed
-          ? _value.code
-          : code // ignore: cast_nullable_to_non_nullable
-              as String,
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
               as String,
       barcode: barcode == freezed
           ? _value.barcode
@@ -239,6 +248,10 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
           ? _value.image
           : image // ignore: cast_nullable_to_non_nullable
               as String?,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -248,8 +261,8 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
 class _$_Item extends _Item {
   const _$_Item(
       {required this.id,
-      required this.code,
       required this.uuid,
+      required this.code,
       required this.barcode,
       required this.name,
       required this.description,
@@ -259,7 +272,8 @@ class _$_Item extends _Item {
       required this.purchaseDisc,
       required this.stock,
       required this.category,
-      required this.image})
+      required this.image,
+      required this.accountId})
       : super._();
 
   factory _$_Item.fromJson(Map<String, dynamic> json) => _$$_ItemFromJson(json);
@@ -267,9 +281,9 @@ class _$_Item extends _Item {
   @override
   final int id;
   @override
-  final String code;
-  @override
   final String uuid;
+  @override
+  final String code;
   @override
   final String? barcode;
   @override
@@ -290,10 +304,12 @@ class _$_Item extends _Item {
   final int category;
   @override
   final String? image;
+  @override
+  final int accountId;
 
   @override
   String toString() {
-    return 'Item(id: $id, code: $code, uuid: $uuid, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image)';
+    return 'Item(id: $id, uuid: $uuid, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, accountId: $accountId)';
   }
 
   @override
@@ -302,8 +318,8 @@ class _$_Item extends _Item {
         (other.runtimeType == runtimeType &&
             other is _$_Item &&
             const DeepCollectionEquality().equals(other.id, id) &&
-            const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
+            const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality().equals(other.barcode, barcode) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
@@ -316,7 +332,8 @@ class _$_Item extends _Item {
                 .equals(other.purchaseDisc, purchaseDisc) &&
             const DeepCollectionEquality().equals(other.stock, stock) &&
             const DeepCollectionEquality().equals(other.category, category) &&
-            const DeepCollectionEquality().equals(other.image, image));
+            const DeepCollectionEquality().equals(other.image, image) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -324,8 +341,8 @@ class _$_Item extends _Item {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
-      const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(uuid),
+      const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(barcode),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(description),
@@ -335,7 +352,8 @@ class _$_Item extends _Item {
       const DeepCollectionEquality().hash(purchaseDisc),
       const DeepCollectionEquality().hash(stock),
       const DeepCollectionEquality().hash(category),
-      const DeepCollectionEquality().hash(image));
+      const DeepCollectionEquality().hash(image),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -351,8 +369,8 @@ class _$_Item extends _Item {
 abstract class _Item extends Item {
   const factory _Item(
       {required final int id,
-      required final String code,
       required final String uuid,
+      required final String code,
       required final String? barcode,
       required final String name,
       required final String description,
@@ -362,7 +380,8 @@ abstract class _Item extends Item {
       required final int? purchaseDisc,
       required final double? stock,
       required final int category,
-      required final String? image}) = _$_Item;
+      required final String? image,
+      required final int accountId}) = _$_Item;
   const _Item._() : super._();
 
   factory _Item.fromJson(Map<String, dynamic> json) = _$_Item.fromJson;
@@ -370,9 +389,9 @@ abstract class _Item extends Item {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  String get code => throw _privateConstructorUsedError;
-  @override
   String get uuid => throw _privateConstructorUsedError;
+  @override
+  String get code => throw _privateConstructorUsedError;
   @override
   String? get barcode => throw _privateConstructorUsedError;
   @override
@@ -393,6 +412,8 @@ abstract class _Item extends Item {
   int get category => throw _privateConstructorUsedError;
   @override
   String? get image => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ItemCopyWith<_$_Item> get copyWith => throw _privateConstructorUsedError;

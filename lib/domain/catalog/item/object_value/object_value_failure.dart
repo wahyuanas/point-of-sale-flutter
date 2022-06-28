@@ -25,5 +25,5 @@ class FormItemObjectValueFailure<T, E>
 
   const factory FormItemObjectValueFailure.exceptOneToNineAllowed({
     required T failedValue,
-  }) = exceptOneToNineAllowed<T, E>;
+  }) = ExceptOneToNineAllowed<T, E>;
 }

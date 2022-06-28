@@ -8,23 +8,25 @@ part of 'customer.dart';
 
 _$_Customer _$$_CustomerFromJson(Map<String, dynamic> json) => _$_Customer(
       id: json['id'] as int,
+      uuid: json['uuid'] as String,
       name: json['name'] as String,
       code: json['code'] as String,
       phoneNumber: json['phoneNumber'] as String,
       email: json['email'] as String,
       type: json['type'] as String,
       address: json['address'] as String,
-      idAccount: json['idAccount'] as int,
+      accountId: json['accountId'] as int,
     );
 
 Map<String, dynamic> _$$_CustomerToJson(_$_Customer instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'uuid': instance.uuid,
       'name': instance.name,
       'code': instance.code,
       'phoneNumber': instance.phoneNumber,
       'email': instance.email,
       'type': instance.type,
       'address': instance.address,
-      'idAccount': instance.idAccount,
+      'accountId': instance.accountId,
     };
