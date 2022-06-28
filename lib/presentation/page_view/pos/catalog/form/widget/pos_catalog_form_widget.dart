@@ -29,7 +29,7 @@ class _PosCatalogFormWidgetState extends State<PosCatalogFormWidget> {
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context)
                   .onModalContent("Berhasil Create Data");
-              //await Future.delayed(const Duration(milliseconds: 1000));
+              await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
               BlocProvider.of<CatalogFormCreateCubit>(context).onInitial();

@@ -113,7 +113,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
     } else {
       emit(state.copyWith(status: const StateStatus.loading()));
       //final failureOrSuccess = await accountService.signUp(state.signUp);
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(microseconds: 500));
       final id = _catalogListCubit.state.items == null
           ? 1
           : _catalogListCubit.state.items?.length;
@@ -133,7 +133,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
         image: state.createCatalogItem.image.getOrCrash(),
         //imageFile: state.createCatalogItem.imageFile.getOrCrash()
       );
-      await Future.delayed(const Duration(seconds: 2));
+      await Future.delayed(const Duration(milliseconds: 500));
       emit(state.copyWith(status: StateStatus.success(data: r)));
       _catalogListCubit.onAdditem(r);
 
