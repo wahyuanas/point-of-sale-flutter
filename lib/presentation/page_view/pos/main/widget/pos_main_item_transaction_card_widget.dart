@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
+import 'package:pos/routes/cubit/route_cubit.dart';
+import 'package:pos/routes/on_state/on_route_state.dart';
 
 import '../bloc/pos_main_bloc.dart';
 
@@ -24,13 +26,18 @@ class _PosMainItemTransactionCardWidgetState
     return Card(
       child: Padding(
         padding: const EdgeInsets.only(left: 20.0, top: 20.0, bottom: 20.0),
-        child: GestureDetector(
-          onTap: () async {},
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () async {
+                BlocProvider.of<RouteCubit>(context).onRoute(
+                    const OnRouteState.posCatalogItemDetail(
+                        r: '/posCatalogItemDetail'),
+                    widget.pos.item);
+              },
+              child: Row(
                 children: [
                   widget.pos.item.image == null
                       ? const Align(
@@ -158,56 +165,54 @@ class _PosMainItemTransactionCardWidgetState
                   ),
                 ],
               ),
-              const SizedBox(
-                height: 10.0,
-              ),
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Spacer(),
-                  GestureDetector(
-                    onTap: () => BlocProvider.of<PosMainBloc>(context)
-                        .add(PosDecrementItemEvent(item: widget.pos.item)),
-                    child: const Icon(
-                      Icons.remove_circle_outline,
-                      color: Colors.blue,
-                      size: 30,
-                    ),
+            ),
+            const SizedBox(
+              height: 10.0,
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Spacer(),
+                GestureDetector(
+                  onTap: () => BlocProvider.of<PosMainBloc>(context)
+                      .add(PosDecrementItemEvent(item: widget.pos.item)),
+                  child: const Icon(
+                    Icons.remove_circle_outline,
+                    color: Colors.blue,
+                    size: 30,
                   ),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Text("${widget.pos.qty}",
-                      style:
-                          const TextStyle(color: Colors.blue, fontSize: 17.0)),
-                  const SizedBox(
-                    width: 10.0,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 20.0),
-                    child: (widget.pos.item.stock ?? 0) -
-                                (widget.pos.qty ?? 0) ==
-                            0
-                        ? const Icon(
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Text("${widget.pos.qty}",
+                    style: const TextStyle(color: Colors.blue, fontSize: 17.0)),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: (widget.pos.item.stock ?? 0) - (widget.pos.qty ?? 0) ==
+                          0
+                      ? const Icon(
+                          Icons.add_circle_outline,
+                          color: Color.fromARGB(255, 167, 153, 153),
+                          size: 30,
+                        )
+                      : GestureDetector(
+                          onTap: () => BlocProvider.of<PosMainBloc>(context)
+                              .add(
+                                  PosIncrementItemEvent(item: widget.pos.item)),
+                          child: const Icon(
                             Icons.add_circle_outline,
-                            color: Color.fromARGB(255, 167, 153, 153),
+                            color: Colors.blue,
                             size: 30,
-                          )
-                        : GestureDetector(
-                            onTap: () => BlocProvider.of<PosMainBloc>(context)
-                                .add(PosIncrementItemEvent(
-                                    item: widget.pos.item)),
-                            child: const Icon(
-                              Icons.add_circle_outline,
-                              color: Colors.blue,
-                              size: 30,
-                            ),
                           ),
-                  ),
-                ],
-              )
-            ],
-          ),
+                        ),
+                ),
+              ],
+            )
+          ],
         ),
       ),
     );

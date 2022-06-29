@@ -155,7 +155,12 @@ class _PosMainWidgetState extends State<PosMainWidget>
             //     pinned: true,
             //     //floating: true,
             //     delegate: DelegatePos2()),
-            const PosMainItemTransactionWidget()
+            const PosMainItemTransactionWidget(),
+            const SliverToBoxAdapter(
+              child: SizedBox(
+                height: 20.0,
+              ),
+            )
           ],
         ));
   }

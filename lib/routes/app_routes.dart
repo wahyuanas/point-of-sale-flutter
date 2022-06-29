@@ -5,7 +5,7 @@ import 'package:pos/presentation/main/main_screen.dart';
 import 'package:pos/presentation/main/sign/up/screen/sign_up_notif_screen.dart';
 import 'package:pos/presentation/main/sign/up/screen/sign_up_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/form/screen/pos_catalog_form_screen.dart';
-import 'package:pos/presentation/page_view/pos/catalog/item/pos_catalog_item_detail_widget.dart';
+import 'package:pos/presentation/page_view/pos/catalog/item/screen/pos_catalog_item_detail_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_list_screen.dart';
 
 import '../presentation/page_view/main/screen/page_view_main._screen.dart';
@@ -36,7 +36,7 @@ class RouteGenerator {
       case '/posCatalogItemDetail':
         final item = settings.arguments as Item;
         return MaterialPageRoute(
-            builder: (_) => PosCatalogItemDetailWidget(
+            builder: (_) => PosCatalogItemDetailScreen(
                   item: item,
                 ));
 

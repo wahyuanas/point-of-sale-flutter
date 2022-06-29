@@ -174,7 +174,12 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                 //   },
                 //   childCount: state.items?.length, // 1000 list items
                 // ));
-              })
+              }),
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 20.0,
+                ),
+              )
             ]),
           )),
     );
