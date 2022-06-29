@@ -42,7 +42,7 @@ class _PosMainItemTransactionCardWidgetState
                   widget.pos.item.image == null
                       ? Align(
                           child: Image.asset(
-                            "assets/images/not-found.png",
+                            "assets/images/no-image.png",
                             gaplessPlayback: true,
                             fit: BoxFit.fill,
                             width: MediaQuery.of(context).size.width / 3,
@@ -57,6 +57,18 @@ class _PosMainItemTransactionCardWidgetState
                                 borderRadius: BorderRadius.circular(12.0),
                                 child: Image.file(
                                   File(widget.pos.item.image!),
+                                  errorBuilder: (context, error, stackTrace) =>
+                                      Align(
+                                    child: Image.asset(
+                                      "assets/images/not-found.png",
+                                      gaplessPlayback: true,
+                                      fit: BoxFit.fill,
+                                      width:
+                                          MediaQuery.of(context).size.width / 3,
+                                      height:
+                                          MediaQuery.of(context).size.width / 3,
+                                    ),
+                                  ),
                                   gaplessPlayback: true,
                                   fit: BoxFit.fill,
                                   width: MediaQuery.of(context).size.width / 3,

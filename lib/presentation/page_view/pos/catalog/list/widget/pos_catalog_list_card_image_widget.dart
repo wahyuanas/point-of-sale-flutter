@@ -30,14 +30,13 @@ class _PosCatalogListCardImageWidgetState
     if (widget.item.image == null) {
       return Align(
         child: Image.asset(
-          "assets/images/not-found.png",
+          "assets/images/no-image.png",
           gaplessPlayback: true,
           fit: BoxFit.fill,
           height: MediaQuery.of(context).size.width / 2.5,
           width: MediaQuery.of(context).size.width / 2.1,
         ),
       );
-      ;
     } else {
       return Align(
         child: Card(
@@ -47,12 +46,14 @@ class _PosCatalogListCardImageWidgetState
               child: Image.file(
                 File(widget.item.image!),
                 errorBuilder: (context, error, stackTrace) {
-                  return SizedBox(
-                    height: MediaQuery.of(context).size.width / 2.5,
-                    width: MediaQuery.of(context).size.width / 2.1,
-                    child: const Align(
-                        child: Text(
-                            "Photo tidak ditemukan, kemungkinan sudah terhapus")),
+                  return Align(
+                    child: Image.asset(
+                      "assets/images/not-found.png",
+                      gaplessPlayback: true,
+                      fit: BoxFit.fill,
+                      height: MediaQuery.of(context).size.width / 2.5,
+                      width: MediaQuery.of(context).size.width / 2.1,
+                    ),
                   );
                 },
                 gaplessPlayback: true,

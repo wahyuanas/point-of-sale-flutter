@@ -199,22 +199,32 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               //const SizedBox(height: 30),
-              ClipRRect(
-                borderRadius: BorderRadius.circular(15.0),
-                child: Image.file(
-                  File(widget.item.image ?? ""),
-                  fit: BoxFit.cover,
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.3,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Image.asset(
-                      "assets/images/not-found.png",
-                      width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height * 0.3,
-                    );
-                  },
-                ),
-              ),
+              widget.item.image == null
+                  ? Align(
+                      child: Image.asset(
+                        "assets/images/no-image.png",
+                        gaplessPlayback: true,
+                        fit: BoxFit.fill,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.3,
+                      ),
+                    )
+                  : ClipRRect(
+                      borderRadius: BorderRadius.circular(15.0),
+                      child: Image.file(
+                        File(widget.item.image ?? ""),
+                        fit: BoxFit.cover,
+                        width: MediaQuery.of(context).size.width,
+                        height: MediaQuery.of(context).size.height * 0.3,
+                        errorBuilder: (context, error, stackTrace) {
+                          return Image.asset(
+                            "assets/images/not-found.png",
+                            width: MediaQuery.of(context).size.width,
+                            height: MediaQuery.of(context).size.height * 0.3,
+                          );
+                        },
+                      ),
+                    ),
               const SizedBox(
                 height: 20,
               ),
