@@ -28,13 +28,16 @@ class _PosCatalogListCardImageWidgetState
   @override
   Widget build(BuildContext context) {
     if (widget.item.image == null) {
-      return const Align(
-        child: Icon(
-          Icons.inventory_outlined,
-          color: Colors.blue,
-          size: 50,
+      return Align(
+        child: Image.asset(
+          "assets/images/not-found.png",
+          gaplessPlayback: true,
+          fit: BoxFit.fill,
+          height: MediaQuery.of(context).size.width / 2.5,
+          width: MediaQuery.of(context).size.width / 2.1,
         ),
       );
+      ;
     } else {
       return Align(
         child: Card(

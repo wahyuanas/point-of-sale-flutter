@@ -40,11 +40,13 @@ class _PosMainItemTransactionCardWidgetState
               child: Row(
                 children: [
                   widget.pos.item.image == null
-                      ? const Align(
-                          child: Icon(
-                            Icons.inventory_outlined,
-                            color: Colors.blue,
-                            size: 50,
+                      ? Align(
+                          child: Image.asset(
+                            "assets/images/not-found.png",
+                            gaplessPlayback: true,
+                            fit: BoxFit.fill,
+                            width: MediaQuery.of(context).size.width / 3,
+                            height: MediaQuery.of(context).size.width / 3,
                           ),
                         )
                       : Align(

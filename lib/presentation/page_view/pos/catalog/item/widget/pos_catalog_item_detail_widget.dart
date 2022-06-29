@@ -199,15 +199,20 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               //const SizedBox(height: 30),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.3,
-                decoration: BoxDecoration(
-                  color: Colors.black12,
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
-                  image: DecorationImage(
-                    image: Image.file(File(widget.item.image!)).image,
-                    fit: BoxFit.cover,
-                  ),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(15.0),
+                child: Image.file(
+                  File(widget.item.image ?? ""),
+                  fit: BoxFit.cover,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.3,
+                  errorBuilder: (context, error, stackTrace) {
+                    return Image.asset(
+                      "assets/images/not-found.png",
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height * 0.3,
+                    );
+                  },
                 ),
               ),
               const SizedBox(
@@ -217,7 +222,7 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                 padding: const EdgeInsets.only(left: 20.0),
                 child: Text(
                   widget.item.name,
-                  style: const TextStyle(fontSize: 17),
+                  style: const TextStyle(fontSize: 20),
                 ),
               ),
               const SizedBox(

@@ -42,19 +42,38 @@ Either<FormItemObjectValueFailure<String, String>, int>
 }
 
 Either<FormItemObjectValueFailure<String, String>, double>
-    validateFieldNotIntAndNotEmptyButPoint(String input) {
+    validateFieldNotDoubleAndNotEmpty(String input) {
   if (input.isEmpty) {
     return left(FormItemObjectValueFailure.emptyField(failedValue: input));
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
   }
-  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+  if (!RegExp(r'^[0-9]+$').hasMatch(input.substring(0, 1))) {
     return left(
         FormItemObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
   } else if (double.tryParse(input) == null) {
     return left(FormItemObjectValueFailure.notDoubleField(failedValue: input));
   } else {
     return right(double.tryParse(input)!);
+  }
+}
+
+Either<FormItemObjectValueFailure<String, String>, double?>
+    validateFieldNotDoubleAndEmpty(String? input) {
+  if (input == null) {
+    return right(null);
+  }
+  if (input.isEmpty) {
+    return right(null);
+  } else if (RegExp(r"\s").hasMatch(input)) {
+    return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
+  } else if (!RegExp(r'^[0-9]+$').hasMatch(input.substring(0, 1))) {
+    return left(
+        FormItemObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
+  } else if (double.tryParse(input) == null) {
+    return left(FormItemObjectValueFailure.notDoubleField(failedValue: input));
+  } else {
+    return right(double.tryParse(input));
   }
 }
 
@@ -80,17 +99,6 @@ Either<FormItemObjectValueFailure<String, String>, int?>
     }
   } else {
     return right(null);
-  }
-}
-
-Either<FormItemObjectValueFailure<String, String>, int?>
-    validateFieldNullNotIntAndNotEmpty(String? input) {
-  if (input == null) {
-    return right(null);
-  } else if (input.isEmpty) {
-    return left(FormItemObjectValueFailure.emptyField(failedValue: input));
-  } else {
-    return right(int.parse(input));
   }
 }
 

@@ -70,6 +70,7 @@ class _PosCatalogFormSellDiscWidgetState
                     ? state.createCatalogItem.sellDisc.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            notDoubleField: (v) => "*tidak valid",
                             notIntField: (v) => "*wajib berupa angka",
                             noSpaceAllowed: (v) =>
                                 "*tidak boleh mengandung spasi",

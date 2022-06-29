@@ -38,9 +38,9 @@ void main() async {
         ? HydratedStorage.webStorageDirectory
         : await getApplicationDocumentsDirectory(),
   );
-  Directory? appDocDir = await getApplicationDocumentsDirectory();
-  String appDocPath = appDocDir.path;
-  debugPrint("APPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPp $appDocPath");
+  // Directory? appDocDir = await getApplicationDocumentsDirectory();
+  // String appDocPath = appDocDir.path;
+  // debugPrint("APPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPPp $appDocPath");
   HydratedBlocOverrides.runZoned(() => runApp(const PosApp()),
       storage: storage, blocObserver: BlocObserverX());
 }

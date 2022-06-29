@@ -27,9 +27,9 @@ mixin _$Item {
   String get name => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get sellPrice => throw _privateConstructorUsedError;
-  int? get sellDisc => throw _privateConstructorUsedError;
+  double? get sellDisc => throw _privateConstructorUsedError;
   int get purchasePrice => throw _privateConstructorUsedError;
-  int? get purchaseDisc => throw _privateConstructorUsedError;
+  double? get purchaseDisc => throw _privateConstructorUsedError;
   double? get stock => throw _privateConstructorUsedError;
   int get category => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
@@ -52,9 +52,9 @@ abstract class $ItemCopyWith<$Res> {
       String name,
       String description,
       int sellPrice,
-      int? sellDisc,
+      double? sellDisc,
       int purchasePrice,
-      int? purchaseDisc,
+      double? purchaseDisc,
       double? stock,
       int category,
       String? image,
@@ -118,7 +118,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       sellDisc: sellDisc == freezed
           ? _value.sellDisc
           : sellDisc // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       purchasePrice: purchasePrice == freezed
           ? _value.purchasePrice
           : purchasePrice // ignore: cast_nullable_to_non_nullable
@@ -126,7 +126,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
       purchaseDisc: purchaseDisc == freezed
           ? _value.purchaseDisc
           : purchaseDisc // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       stock: stock == freezed
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
@@ -160,9 +160,9 @@ abstract class _$$_ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       String name,
       String description,
       int sellPrice,
-      int? sellDisc,
+      double? sellDisc,
       int purchasePrice,
-      int? purchaseDisc,
+      double? purchaseDisc,
       double? stock,
       int category,
       String? image,
@@ -227,7 +227,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       sellDisc: sellDisc == freezed
           ? _value.sellDisc
           : sellDisc // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       purchasePrice: purchasePrice == freezed
           ? _value.purchasePrice
           : purchasePrice // ignore: cast_nullable_to_non_nullable
@@ -235,7 +235,7 @@ class __$$_ItemCopyWithImpl<$Res> extends _$ItemCopyWithImpl<$Res>
       purchaseDisc: purchaseDisc == freezed
           ? _value.purchaseDisc
           : purchaseDisc // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as double?,
       stock: stock == freezed
           ? _value.stock
           : stock // ignore: cast_nullable_to_non_nullable
@@ -293,11 +293,11 @@ class _$_Item extends _Item {
   @override
   final int sellPrice;
   @override
-  final int? sellDisc;
+  final double? sellDisc;
   @override
   final int purchasePrice;
   @override
-  final int? purchaseDisc;
+  final double? purchaseDisc;
   @override
   final double? stock;
   @override
@@ -375,9 +375,9 @@ abstract class _Item extends Item {
       required final String name,
       required final String description,
       required final int sellPrice,
-      required final int? sellDisc,
+      required final double? sellDisc,
       required final int purchasePrice,
-      required final int? purchaseDisc,
+      required final double? purchaseDisc,
       required final double? stock,
       required final int category,
       required final String? image,
@@ -401,11 +401,11 @@ abstract class _Item extends Item {
   @override
   int get sellPrice => throw _privateConstructorUsedError;
   @override
-  int? get sellDisc => throw _privateConstructorUsedError;
+  double? get sellDisc => throw _privateConstructorUsedError;
   @override
   int get purchasePrice => throw _privateConstructorUsedError;
   @override
-  int? get purchaseDisc => throw _privateConstructorUsedError;
+  double? get purchaseDisc => throw _privateConstructorUsedError;
   @override
   double? get stock => throw _privateConstructorUsedError;
   @override

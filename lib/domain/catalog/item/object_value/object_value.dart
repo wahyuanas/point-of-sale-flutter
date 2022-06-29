@@ -73,12 +73,12 @@ class CreateCatalogItemSellPrice extends ObjectValue<int> {
   const CreateCatalogItemSellPrice._(this.value);
 }
 
-class CreateCatalogItemSellDisc extends ObjectValue<int?> {
+class CreateCatalogItemSellDisc extends ObjectValue<double?> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int?> value;
+  final Either<FormItemObjectValueFailure<String, String>, double?> value;
 
   factory CreateCatalogItemSellDisc(String? input) {
-    return CreateCatalogItemSellDisc._(validateFieldNullNotIntAndEmpty(input));
+    return CreateCatalogItemSellDisc._(validateFieldNotDoubleAndEmpty(input));
   }
 
   const CreateCatalogItemSellDisc._(this.value);
@@ -96,13 +96,13 @@ class CreateCatalogItemPurchasePrice extends ObjectValue<int> {
   const CreateCatalogItemPurchasePrice._(this.value);
 }
 
-class CreateCatalogItemPurchaseDisc extends ObjectValue<int?> {
+class CreateCatalogItemPurchaseDisc extends ObjectValue<double?> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int?> value;
+  final Either<FormItemObjectValueFailure<String, String>, double?> value;
 
   factory CreateCatalogItemPurchaseDisc(String? input) {
     return CreateCatalogItemPurchaseDisc._(
-        validateFieldNullNotIntAndEmpty(input));
+        validateFieldNotDoubleAndEmpty(input));
   }
 
   const CreateCatalogItemPurchaseDisc._(this.value);
@@ -113,8 +113,7 @@ class CreateCatalogItemStock extends ObjectValue<double> {
   final Either<FormItemObjectValueFailure<String, String>, double> value;
 
   factory CreateCatalogItemStock(String input) {
-    return CreateCatalogItemStock._(
-        validateFieldNotIntAndNotEmptyButPoint(input));
+    return CreateCatalogItemStock._(validateFieldNotDoubleAndNotEmpty(input));
   }
 
   const CreateCatalogItemStock._(this.value);
@@ -259,8 +258,7 @@ class EditCatalogItemStock extends ObjectValue<double> {
   final Either<FormItemObjectValueFailure<String, String>, double> value;
 
   factory EditCatalogItemStock(String input) {
-    return EditCatalogItemStock._(
-        validateFieldNotIntAndNotEmptyButPoint(input));
+    return EditCatalogItemStock._(validateFieldNotDoubleAndNotEmpty(input));
   }
 
   const EditCatalogItemStock._(this.value);
