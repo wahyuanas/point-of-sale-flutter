@@ -54,6 +54,7 @@ class _PosMainWidgetState extends State<PosMainWidget>
           child: Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: AppBar(
+              automaticallyImplyLeading: false,
               titleSpacing: 0.0,
               elevation: 0.3,
               backgroundColor: Colors.white,
