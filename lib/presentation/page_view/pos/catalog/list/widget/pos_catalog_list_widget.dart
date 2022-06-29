@@ -153,7 +153,10 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                   return SliverPadding(
                     padding: const EdgeInsets.symmetric(horizontal: 15),
                     sliver: SliverAlignedGrid.count(
-                      crossAxisCount: 2,
+                      crossAxisCount: MediaQuery.of(context).orientation ==
+                              Orientation.portrait
+                          ? 2
+                          : 4,
                       itemCount: state.items?.length,
                       itemBuilder: (context, index) {
                         // debugPrint(
