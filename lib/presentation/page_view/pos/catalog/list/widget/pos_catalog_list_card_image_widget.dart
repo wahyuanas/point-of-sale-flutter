@@ -25,16 +25,17 @@ class _PosCatalogListCardImageWidgetState
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     if (widget.item.image == null) {
       return Align(
         child: Image.asset(
           "assets/images/no-image.png",
           gaplessPlayback: true,
           fit: BoxFit.fill,
-          height: MediaQuery.of(context).orientation == Orientation.portrait
-              ? MediaQuery.of(context).size.width / 2.5
-              : MediaQuery.of(context).size.width / 4.5,
-          width: MediaQuery.of(context).size.width / 2.1,
+          height: mq.orientation == Orientation.portrait
+              ? mq.size.width / 2.5
+              : mq.size.width / 4.5,
+          width: mq.size.width / 2.1,
         ),
       );
     } else {
@@ -51,21 +52,19 @@ class _PosCatalogListCardImageWidgetState
                       "assets/images/not-found.png",
                       gaplessPlayback: true,
                       fit: BoxFit.fill,
-                      height: MediaQuery.of(context).orientation ==
-                              Orientation.portrait
-                          ? MediaQuery.of(context).size.width / 2.5
-                          : MediaQuery.of(context).size.width / 4.5,
-                      width: MediaQuery.of(context).size.width / 2.1,
+                      height: mq.orientation == Orientation.portrait
+                          ? mq.size.width / 2.5
+                          : mq.size.width / 4.5,
+                      width: mq.size.width / 2.1,
                     ),
                   );
                 },
                 gaplessPlayback: true,
                 fit: BoxFit.fill,
-                height:
-                    MediaQuery.of(context).orientation == Orientation.portrait
-                        ? MediaQuery.of(context).size.width / 2.5
-                        : MediaQuery.of(context).size.width / 4.5,
-                width: MediaQuery.of(context).size.width / 2.1,
+                height: mq.orientation == Orientation.portrait
+                    ? mq.size.width / 2.5
+                    : mq.size.width / 4.5,
+                width: mq.size.width / 2.1,
               )),
         ),
       );

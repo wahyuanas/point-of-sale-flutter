@@ -16,6 +16,7 @@ class _PosMainItemTransactionWidgetState
     extends State<PosMainItemTransactionWidget> {
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     return BlocBuilder<PosMainBloc, PosMainState>(builder: (context, state) {
       if (state.poss == null) {
         return SliverToBoxAdapter(
@@ -28,7 +29,7 @@ class _PosMainItemTransactionWidgetState
               //   size: 70.0,
               // ),
               SizedBox(
-                height: (MediaQuery.of(context).size.height / 7),
+                height: (mq.size.height / 7),
               ),
               Padding(
                 padding: const EdgeInsets.only(right: 20.0, left: 20.0),

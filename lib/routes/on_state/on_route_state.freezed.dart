@@ -15,91 +15,99 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$OnRouteState {
-  String get r => throw _privateConstructorUsedError;
+mixin _$OnRouteState<T> {
+  T get r => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OnRouteStateCopyWith<OnRouteState> get copyWith =>
+  $OnRouteStateCopyWith<T, OnRouteState<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OnRouteStateCopyWith<$Res> {
+abstract class $OnRouteStateCopyWith<T, $Res> {
   factory $OnRouteStateCopyWith(
-          OnRouteState value, $Res Function(OnRouteState) then) =
-      _$OnRouteStateCopyWithImpl<$Res>;
-  $Res call({String r});
+          OnRouteState<T> value, $Res Function(OnRouteState<T>) then) =
+      _$OnRouteStateCopyWithImpl<T, $Res>;
+  $Res call({T r});
 }
 
 /// @nodoc
-class _$OnRouteStateCopyWithImpl<$Res> implements $OnRouteStateCopyWith<$Res> {
+class _$OnRouteStateCopyWithImpl<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
   _$OnRouteStateCopyWithImpl(this._value, this._then);
 
-  final OnRouteState _value;
+  final OnRouteState<T> _value;
   // ignore: unused_field
-  final $Res Function(OnRouteState) _then;
+  final $Res Function(OnRouteState<T>) _then;
 
   @override
   $Res call({
@@ -109,59 +117,63 @@ class _$OnRouteStateCopyWithImpl<$Res> implements $OnRouteStateCopyWith<$Res> {
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$$_SignUpCopyWith<$Res> implements $OnRouteStateCopyWith<$Res> {
-  factory _$$_SignUpCopyWith(_$_SignUp value, $Res Function(_$_SignUp) then) =
-      __$$_SignUpCopyWithImpl<$Res>;
+abstract class _$$_SignUpCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_SignUpCopyWith(
+          _$_SignUp<T> value, $Res Function(_$_SignUp<T>) then) =
+      __$$_SignUpCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_SignUpCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_SignUpCopyWith<$Res> {
-  __$$_SignUpCopyWithImpl(_$_SignUp _value, $Res Function(_$_SignUp) _then)
-      : super(_value, (v) => _then(v as _$_SignUp));
+class __$$_SignUpCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_SignUpCopyWith<T, $Res> {
+  __$$_SignUpCopyWithImpl(
+      _$_SignUp<T> _value, $Res Function(_$_SignUp<T>) _then)
+      : super(_value, (v) => _then(v as _$_SignUp<T>));
 
   @override
-  _$_SignUp get _value => super._value as _$_SignUp;
+  _$_SignUp<T> get _value => super._value as _$_SignUp<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_SignUp(
+    return _then(_$_SignUp<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
+class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
   const _$_SignUp({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.signUp(r: $r)';
+    return 'OnRouteState<$T>.signUp(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.signUp'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.signUp'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -169,7 +181,7 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignUp &&
+            other is _$_SignUp<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -179,18 +191,19 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignUpCopyWith<_$_SignUp> get copyWith =>
-      __$$_SignUpCopyWithImpl<_$_SignUp>(this, _$identity);
+  _$$_SignUpCopyWith<T, _$_SignUp<T>> get copyWith =>
+      __$$_SignUpCopyWithImpl<T, _$_SignUp<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return signUp(r);
   }
@@ -198,12 +211,13 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return signUp?.call(r);
   }
@@ -211,12 +225,13 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -228,12 +243,14 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return signUp(this);
   }
@@ -241,12 +258,13 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return signUp?.call(this);
   }
@@ -254,12 +272,13 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -269,69 +288,71 @@ class _$_SignUp with DiagnosticableTreeMixin implements _SignUp {
   }
 }
 
-abstract class _SignUp implements OnRouteState {
-  const factory _SignUp({required final String r}) = _$_SignUp;
+abstract class _SignUp<T> implements OnRouteState<T> {
+  const factory _SignUp({required final T r}) = _$_SignUp<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_SignUpCopyWith<_$_SignUp> get copyWith =>
+  _$$_SignUpCopyWith<T, _$_SignUp<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SignUpNotifCopyWith<$Res>
-    implements $OnRouteStateCopyWith<$Res> {
+abstract class _$$_SignUpNotifCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
   factory _$$_SignUpNotifCopyWith(
-          _$_SignUpNotif value, $Res Function(_$_SignUpNotif) then) =
-      __$$_SignUpNotifCopyWithImpl<$Res>;
+          _$_SignUpNotif<T> value, $Res Function(_$_SignUpNotif<T>) then) =
+      __$$_SignUpNotifCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_SignUpNotifCopyWithImpl<$Res>
-    extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_SignUpNotifCopyWith<$Res> {
+class __$$_SignUpNotifCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_SignUpNotifCopyWith<T, $Res> {
   __$$_SignUpNotifCopyWithImpl(
-      _$_SignUpNotif _value, $Res Function(_$_SignUpNotif) _then)
-      : super(_value, (v) => _then(v as _$_SignUpNotif));
+      _$_SignUpNotif<T> _value, $Res Function(_$_SignUpNotif<T>) _then)
+      : super(_value, (v) => _then(v as _$_SignUpNotif<T>));
 
   @override
-  _$_SignUpNotif get _value => super._value as _$_SignUpNotif;
+  _$_SignUpNotif<T> get _value => super._value as _$_SignUpNotif<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_SignUpNotif(
+    return _then(_$_SignUpNotif<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
+class _$_SignUpNotif<T>
+    with DiagnosticableTreeMixin
+    implements _SignUpNotif<T> {
   const _$_SignUpNotif({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.signUpNotif(r: $r)';
+    return 'OnRouteState<$T>.signUpNotif(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.signUpNotif'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.signUpNotif'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -339,7 +360,7 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SignUpNotif &&
+            other is _$_SignUpNotif<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -349,18 +370,19 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
 
   @JsonKey(ignore: true)
   @override
-  _$$_SignUpNotifCopyWith<_$_SignUpNotif> get copyWith =>
-      __$$_SignUpNotifCopyWithImpl<_$_SignUpNotif>(this, _$identity);
+  _$$_SignUpNotifCopyWith<T, _$_SignUpNotif<T>> get copyWith =>
+      __$$_SignUpNotifCopyWithImpl<T, _$_SignUpNotif<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return signUpNotif(r);
   }
@@ -368,12 +390,13 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return signUpNotif?.call(r);
   }
@@ -381,12 +404,13 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -398,12 +422,14 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return signUpNotif(this);
   }
@@ -411,12 +437,13 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return signUpNotif?.call(this);
   }
@@ -424,12 +451,13 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -439,71 +467,71 @@ class _$_SignUpNotif with DiagnosticableTreeMixin implements _SignUpNotif {
   }
 }
 
-abstract class _SignUpNotif implements OnRouteState {
-  const factory _SignUpNotif({required final String r}) = _$_SignUpNotif;
+abstract class _SignUpNotif<T> implements OnRouteState<T> {
+  const factory _SignUpNotif({required final T r}) = _$_SignUpNotif<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_SignUpNotifCopyWith<_$_SignUpNotif> get copyWith =>
+  _$$_SignUpNotifCopyWith<T, _$_SignUpNotif<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PostCatalogListCopyWith<$Res>
-    implements $OnRouteStateCopyWith<$Res> {
-  factory _$$_PostCatalogListCopyWith(
-          _$_PostCatalogList value, $Res Function(_$_PostCatalogList) then) =
-      __$$_PostCatalogListCopyWithImpl<$Res>;
+abstract class _$$_PostCatalogListCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_PostCatalogListCopyWith(_$_PostCatalogList<T> value,
+          $Res Function(_$_PostCatalogList<T>) then) =
+      __$$_PostCatalogListCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_PostCatalogListCopyWithImpl<$Res>
-    extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_PostCatalogListCopyWith<$Res> {
+class __$$_PostCatalogListCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PostCatalogListCopyWith<T, $Res> {
   __$$_PostCatalogListCopyWithImpl(
-      _$_PostCatalogList _value, $Res Function(_$_PostCatalogList) _then)
-      : super(_value, (v) => _then(v as _$_PostCatalogList));
+      _$_PostCatalogList<T> _value, $Res Function(_$_PostCatalogList<T>) _then)
+      : super(_value, (v) => _then(v as _$_PostCatalogList<T>));
 
   @override
-  _$_PostCatalogList get _value => super._value as _$_PostCatalogList;
+  _$_PostCatalogList<T> get _value => super._value as _$_PostCatalogList<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_PostCatalogList(
+    return _then(_$_PostCatalogList<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_PostCatalogList
+class _$_PostCatalogList<T>
     with DiagnosticableTreeMixin
-    implements _PostCatalogList {
+    implements _PostCatalogList<T> {
   const _$_PostCatalogList({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.postCatalogList(r: $r)';
+    return 'OnRouteState<$T>.postCatalogList(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.postCatalogList'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.postCatalogList'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -511,7 +539,7 @@ class _$_PostCatalogList
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PostCatalogList &&
+            other is _$_PostCatalogList<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -521,18 +549,20 @@ class _$_PostCatalogList
 
   @JsonKey(ignore: true)
   @override
-  _$$_PostCatalogListCopyWith<_$_PostCatalogList> get copyWith =>
-      __$$_PostCatalogListCopyWithImpl<_$_PostCatalogList>(this, _$identity);
+  _$$_PostCatalogListCopyWith<T, _$_PostCatalogList<T>> get copyWith =>
+      __$$_PostCatalogListCopyWithImpl<T, _$_PostCatalogList<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return postCatalogList(r);
   }
@@ -540,12 +570,13 @@ class _$_PostCatalogList
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return postCatalogList?.call(r);
   }
@@ -553,12 +584,13 @@ class _$_PostCatalogList
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (postCatalogList != null) {
@@ -570,12 +602,14 @@ class _$_PostCatalogList
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return postCatalogList(this);
   }
@@ -583,12 +617,13 @@ class _$_PostCatalogList
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return postCatalogList?.call(this);
   }
@@ -596,12 +631,13 @@ class _$_PostCatalogList
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (postCatalogList != null) {
@@ -611,72 +647,71 @@ class _$_PostCatalogList
   }
 }
 
-abstract class _PostCatalogList implements OnRouteState {
-  const factory _PostCatalogList({required final String r}) =
-      _$_PostCatalogList;
+abstract class _PostCatalogList<T> implements OnRouteState<T> {
+  const factory _PostCatalogList({required final T r}) = _$_PostCatalogList<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_PostCatalogListCopyWith<_$_PostCatalogList> get copyWith =>
+  _$$_PostCatalogListCopyWith<T, _$_PostCatalogList<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PostCatalogformCopyWith<$Res>
-    implements $OnRouteStateCopyWith<$Res> {
-  factory _$$_PostCatalogformCopyWith(
-          _$_PostCatalogform value, $Res Function(_$_PostCatalogform) then) =
-      __$$_PostCatalogformCopyWithImpl<$Res>;
+abstract class _$$_PostCatalogformCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_PostCatalogformCopyWith(_$_PostCatalogform<T> value,
+          $Res Function(_$_PostCatalogform<T>) then) =
+      __$$_PostCatalogformCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_PostCatalogformCopyWithImpl<$Res>
-    extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_PostCatalogformCopyWith<$Res> {
+class __$$_PostCatalogformCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PostCatalogformCopyWith<T, $Res> {
   __$$_PostCatalogformCopyWithImpl(
-      _$_PostCatalogform _value, $Res Function(_$_PostCatalogform) _then)
-      : super(_value, (v) => _then(v as _$_PostCatalogform));
+      _$_PostCatalogform<T> _value, $Res Function(_$_PostCatalogform<T>) _then)
+      : super(_value, (v) => _then(v as _$_PostCatalogform<T>));
 
   @override
-  _$_PostCatalogform get _value => super._value as _$_PostCatalogform;
+  _$_PostCatalogform<T> get _value => super._value as _$_PostCatalogform<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_PostCatalogform(
+    return _then(_$_PostCatalogform<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_PostCatalogform
+class _$_PostCatalogform<T>
     with DiagnosticableTreeMixin
-    implements _PostCatalogform {
+    implements _PostCatalogform<T> {
   const _$_PostCatalogform({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.postCatalogform(r: $r)';
+    return 'OnRouteState<$T>.postCatalogform(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.postCatalogform'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.postCatalogform'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -684,7 +719,7 @@ class _$_PostCatalogform
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PostCatalogform &&
+            other is _$_PostCatalogform<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -694,18 +729,20 @@ class _$_PostCatalogform
 
   @JsonKey(ignore: true)
   @override
-  _$$_PostCatalogformCopyWith<_$_PostCatalogform> get copyWith =>
-      __$$_PostCatalogformCopyWithImpl<_$_PostCatalogform>(this, _$identity);
+  _$$_PostCatalogformCopyWith<T, _$_PostCatalogform<T>> get copyWith =>
+      __$$_PostCatalogformCopyWithImpl<T, _$_PostCatalogform<T>>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return postCatalogform(r);
   }
@@ -713,12 +750,13 @@ class _$_PostCatalogform
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return postCatalogform?.call(r);
   }
@@ -726,12 +764,13 @@ class _$_PostCatalogform
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (postCatalogform != null) {
@@ -743,12 +782,14 @@ class _$_PostCatalogform
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return postCatalogform(this);
   }
@@ -756,12 +797,13 @@ class _$_PostCatalogform
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return postCatalogform?.call(this);
   }
@@ -769,12 +811,13 @@ class _$_PostCatalogform
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (postCatalogform != null) {
@@ -784,69 +827,69 @@ class _$_PostCatalogform
   }
 }
 
-abstract class _PostCatalogform implements OnRouteState {
-  const factory _PostCatalogform({required final String r}) =
-      _$_PostCatalogform;
+abstract class _PostCatalogform<T> implements OnRouteState<T> {
+  const factory _PostCatalogform({required final T r}) = _$_PostCatalogform<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_PostCatalogformCopyWith<_$_PostCatalogform> get copyWith =>
+  _$$_PostCatalogformCopyWith<T, _$_PostCatalogform<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PurchaseCopyWith<$Res>
-    implements $OnRouteStateCopyWith<$Res> {
+abstract class _$$_PurchaseCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
   factory _$$_PurchaseCopyWith(
-          _$_Purchase value, $Res Function(_$_Purchase) then) =
-      __$$_PurchaseCopyWithImpl<$Res>;
+          _$_Purchase<T> value, $Res Function(_$_Purchase<T>) then) =
+      __$$_PurchaseCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_PurchaseCopyWithImpl<$Res> extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_PurchaseCopyWith<$Res> {
+class __$$_PurchaseCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PurchaseCopyWith<T, $Res> {
   __$$_PurchaseCopyWithImpl(
-      _$_Purchase _value, $Res Function(_$_Purchase) _then)
-      : super(_value, (v) => _then(v as _$_Purchase));
+      _$_Purchase<T> _value, $Res Function(_$_Purchase<T>) _then)
+      : super(_value, (v) => _then(v as _$_Purchase<T>));
 
   @override
-  _$_Purchase get _value => super._value as _$_Purchase;
+  _$_Purchase<T> get _value => super._value as _$_Purchase<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_Purchase(
+    return _then(_$_Purchase<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
+class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
   const _$_Purchase({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.purchase(r: $r)';
+    return 'OnRouteState<$T>.purchase(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.purchase'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.purchase'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -854,7 +897,7 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Purchase &&
+            other is _$_Purchase<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -864,18 +907,19 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
 
   @JsonKey(ignore: true)
   @override
-  _$$_PurchaseCopyWith<_$_Purchase> get copyWith =>
-      __$$_PurchaseCopyWithImpl<_$_Purchase>(this, _$identity);
+  _$$_PurchaseCopyWith<T, _$_Purchase<T>> get copyWith =>
+      __$$_PurchaseCopyWithImpl<T, _$_Purchase<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return purchase(r);
   }
@@ -883,12 +927,13 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return purchase?.call(r);
   }
@@ -896,12 +941,13 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -913,12 +959,14 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return purchase(this);
   }
@@ -926,12 +974,13 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return purchase?.call(this);
   }
@@ -939,12 +988,13 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -954,71 +1004,73 @@ class _$_Purchase with DiagnosticableTreeMixin implements _Purchase {
   }
 }
 
-abstract class _Purchase implements OnRouteState {
-  const factory _Purchase({required final String r}) = _$_Purchase;
+abstract class _Purchase<T> implements OnRouteState<T> {
+  const factory _Purchase({required final T r}) = _$_Purchase<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_PurchaseCopyWith<_$_Purchase> get copyWith =>
+  _$$_PurchaseCopyWith<T, _$_Purchase<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_PosCatalogItemDetailCopyWith<$Res>
-    implements $OnRouteStateCopyWith<$Res> {
-  factory _$$_PosCatalogItemDetailCopyWith(_$_PosCatalogItemDetail value,
-          $Res Function(_$_PosCatalogItemDetail) then) =
-      __$$_PosCatalogItemDetailCopyWithImpl<$Res>;
+abstract class _$$_PosCatalogItemDetailCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_PosCatalogItemDetailCopyWith(_$_PosCatalogItemDetail<T> value,
+          $Res Function(_$_PosCatalogItemDetail<T>) then) =
+      __$$_PosCatalogItemDetailCopyWithImpl<T, $Res>;
   @override
-  $Res call({String r});
+  $Res call({T r});
 }
 
 /// @nodoc
-class __$$_PosCatalogItemDetailCopyWithImpl<$Res>
-    extends _$OnRouteStateCopyWithImpl<$Res>
-    implements _$$_PosCatalogItemDetailCopyWith<$Res> {
-  __$$_PosCatalogItemDetailCopyWithImpl(_$_PosCatalogItemDetail _value,
-      $Res Function(_$_PosCatalogItemDetail) _then)
-      : super(_value, (v) => _then(v as _$_PosCatalogItemDetail));
+class __$$_PosCatalogItemDetailCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PosCatalogItemDetailCopyWith<T, $Res> {
+  __$$_PosCatalogItemDetailCopyWithImpl(_$_PosCatalogItemDetail<T> _value,
+      $Res Function(_$_PosCatalogItemDetail<T>) _then)
+      : super(_value, (v) => _then(v as _$_PosCatalogItemDetail<T>));
 
   @override
-  _$_PosCatalogItemDetail get _value => super._value as _$_PosCatalogItemDetail;
+  _$_PosCatalogItemDetail<T> get _value =>
+      super._value as _$_PosCatalogItemDetail<T>;
 
   @override
   $Res call({
     Object? r = freezed,
   }) {
-    return _then(_$_PosCatalogItemDetail(
+    return _then(_$_PosCatalogItemDetail<T>(
       r: r == freezed
           ? _value.r
           : r // ignore: cast_nullable_to_non_nullable
-              as String,
+              as T,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_PosCatalogItemDetail
+class _$_PosCatalogItemDetail<T>
     with DiagnosticableTreeMixin
-    implements _PosCatalogItemDetail {
+    implements _PosCatalogItemDetail<T> {
   const _$_PosCatalogItemDetail({required this.r});
 
   @override
-  final String r;
+  final T r;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState.posCatalogItemDetail(r: $r)';
+    return 'OnRouteState<$T>.posCatalogItemDetail(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState.posCatalogItemDetail'))
+      ..add(
+          DiagnosticsProperty('type', 'OnRouteState<$T>.posCatalogItemDetail'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -1026,7 +1078,7 @@ class _$_PosCatalogItemDetail
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PosCatalogItemDetail &&
+            other is _$_PosCatalogItemDetail<T> &&
             const DeepCollectionEquality().equals(other.r, r));
   }
 
@@ -1036,19 +1088,21 @@ class _$_PosCatalogItemDetail
 
   @JsonKey(ignore: true)
   @override
-  _$$_PosCatalogItemDetailCopyWith<_$_PosCatalogItemDetail> get copyWith =>
-      __$$_PosCatalogItemDetailCopyWithImpl<_$_PosCatalogItemDetail>(
-          this, _$identity);
+  _$$_PosCatalogItemDetailCopyWith<T, _$_PosCatalogItemDetail<T>>
+      get copyWith =>
+          __$$_PosCatalogItemDetailCopyWithImpl<T, _$_PosCatalogItemDetail<T>>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String r) signUp,
-    required TResult Function(String r) signUpNotif,
-    required TResult Function(String r) postCatalogList,
-    required TResult Function(String r) postCatalogform,
-    required TResult Function(String r) purchase,
-    required TResult Function(String r) posCatalogItemDetail,
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
   }) {
     return posCatalogItemDetail(r);
   }
@@ -1056,12 +1110,13 @@ class _$_PosCatalogItemDetail
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
   }) {
     return posCatalogItemDetail?.call(r);
   }
@@ -1069,12 +1124,13 @@ class _$_PosCatalogItemDetail
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String r)? signUp,
-    TResult Function(String r)? signUpNotif,
-    TResult Function(String r)? postCatalogList,
-    TResult Function(String r)? postCatalogform,
-    TResult Function(String r)? purchase,
-    TResult Function(String r)? posCatalogItemDetail,
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1086,12 +1142,14 @@ class _$_PosCatalogItemDetail
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_SignUp value) signUp,
-    required TResult Function(_SignUpNotif value) signUpNotif,
-    required TResult Function(_PostCatalogList value) postCatalogList,
-    required TResult Function(_PostCatalogform value) postCatalogform,
-    required TResult Function(_Purchase value) purchase,
-    required TResult Function(_PosCatalogItemDetail value) posCatalogItemDetail,
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
   }) {
     return posCatalogItemDetail(this);
   }
@@ -1099,12 +1157,13 @@ class _$_PosCatalogItemDetail
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
   }) {
     return posCatalogItemDetail?.call(this);
   }
@@ -1112,12 +1171,13 @@ class _$_PosCatalogItemDetail
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_SignUp value)? signUp,
-    TResult Function(_SignUpNotif value)? signUpNotif,
-    TResult Function(_PostCatalogList value)? postCatalogList,
-    TResult Function(_PostCatalogform value)? postCatalogform,
-    TResult Function(_Purchase value)? purchase,
-    TResult Function(_PosCatalogItemDetail value)? posCatalogItemDetail,
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1127,14 +1187,195 @@ class _$_PosCatalogItemDetail
   }
 }
 
-abstract class _PosCatalogItemDetail implements OnRouteState {
-  const factory _PosCatalogItemDetail({required final String r}) =
-      _$_PosCatalogItemDetail;
+abstract class _PosCatalogItemDetail<T> implements OnRouteState<T> {
+  const factory _PosCatalogItemDetail({required final T r}) =
+      _$_PosCatalogItemDetail<T>;
 
   @override
-  String get r => throw _privateConstructorUsedError;
+  T get r => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_PosCatalogItemDetailCopyWith<_$_PosCatalogItemDetail> get copyWith =>
+  _$$_PosCatalogItemDetailCopyWith<T, _$_PosCatalogItemDetail<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PostCustomerListCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_PostCustomerListCopyWith(_$_PostCustomerList<T> value,
+          $Res Function(_$_PostCustomerList<T>) then) =
+      __$$_PostCustomerListCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T r});
+}
+
+/// @nodoc
+class __$$_PostCustomerListCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PostCustomerListCopyWith<T, $Res> {
+  __$$_PostCustomerListCopyWithImpl(_$_PostCustomerList<T> _value,
+      $Res Function(_$_PostCustomerList<T>) _then)
+      : super(_value, (v) => _then(v as _$_PostCustomerList<T>));
+
+  @override
+  _$_PostCustomerList<T> get _value => super._value as _$_PostCustomerList<T>;
+
+  @override
+  $Res call({
+    Object? r = freezed,
+  }) {
+    return _then(_$_PostCustomerList<T>(
+      r: r == freezed
+          ? _value.r
+          : r // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PostCustomerList<T>
+    with DiagnosticableTreeMixin
+    implements _PostCustomerList<T> {
+  const _$_PostCustomerList({required this.r});
+
+  @override
+  final T r;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnRouteState<$T>.postCustomerList(r: $r)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.postCustomerList'))
+      ..add(DiagnosticsProperty('r', r));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PostCustomerList<T> &&
+            const DeepCollectionEquality().equals(other.r, r));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(r));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PostCustomerListCopyWith<T, _$_PostCustomerList<T>> get copyWith =>
+      __$$_PostCustomerListCopyWithImpl<T, _$_PostCustomerList<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) postCustomerList,
+  }) {
+    return postCustomerList(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
+  }) {
+    return postCustomerList?.call(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? postCustomerList,
+    required TResult orElse(),
+  }) {
+    if (postCustomerList != null) {
+      return postCustomerList(r);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+  }) {
+    return postCustomerList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+  }) {
+    return postCustomerList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    required TResult orElse(),
+  }) {
+    if (postCustomerList != null) {
+      return postCustomerList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PostCustomerList<T> implements OnRouteState<T> {
+  const factory _PostCustomerList({required final T r}) =
+      _$_PostCustomerList<T>;
+
+  @override
+  T get r => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PostCustomerListCopyWith<T, _$_PostCustomerList<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

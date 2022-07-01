@@ -67,20 +67,21 @@ class _PosCatalogListCardButtonWidgetState
         }
       },
       child: pos?.qty == null
-          ? Align(
-              child: GestureDetector(
-                onTap: () => BlocProvider.of<PosMainBloc>(context)
-                    .add(PosAddItemEvent(item: widget.item)),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                  child: Card(
-                    color: const Color.fromARGB(255, 148, 187, 231),
-                    shape: RoundedRectangleBorder(
-                        side: const BorderSide(color: Colors.blue, width: 0.5),
-                        borderRadius: BorderRadius.circular(50.0)),
-                    child: const SizedBox(
-                      height: 29,
-                      child: Center(
+          ? SizedBox(
+              height: 34,
+              child: Align(
+                child: GestureDetector(
+                  onTap: () => BlocProvider.of<PosMainBloc>(context)
+                      .add(PosAddItemEvent(item: widget.item)),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
+                    child: Card(
+                      color: const Color.fromARGB(255, 148, 187, 231),
+                      shape: RoundedRectangleBorder(
+                          side:
+                              const BorderSide(color: Colors.blue, width: 0.5),
+                          borderRadius: BorderRadius.circular(50.0)),
+                      child: const Center(
                         child: Text(
                           "Tambah",
                           style: TextStyle(color: Colors.black, fontSize: 15),
@@ -91,42 +92,47 @@ class _PosCatalogListCardButtonWidgetState
                 ),
               ),
             )
-          : Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                GestureDetector(
-                  onTap: () => BlocProvider.of<PosMainBloc>(context)
-                      .add(PosDecrementItemEvent(item: widget.item)),
-                  child: const Icon(
-                    Icons.remove_circle_outline,
-                    color: Colors.blue,
-                    size: 30,
+          : SizedBox(
+              height: 34,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  GestureDetector(
+                    onTap: () => BlocProvider.of<PosMainBloc>(context)
+                        .add(PosDecrementItemEvent(item: widget.item)),
+                    child: const Icon(
+                      Icons.remove_circle_outline,
+                      color: Colors.blue,
+                      size: 30,
+                    ),
                   ),
-                ),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                Text("${pos?.qty}",
-                    style: const TextStyle(color: Colors.blue, fontSize: 17.0)),
-                const SizedBox(
-                  width: 10.0,
-                ),
-                (widget.item.stock ?? 0) - (pos?.qty ?? 0) == 0
-                    ? const Icon(
-                        Icons.add_circle_outline,
-                        color: Color.fromARGB(255, 167, 153, 153),
-                        size: 30,
-                      )
-                    : GestureDetector(
-                        onTap: () => BlocProvider.of<PosMainBloc>(context)
-                            .add(PosIncrementItemEvent(item: widget.item)),
-                        child: const Icon(
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  Text("${pos?.qty}",
+                      textAlign: TextAlign.center,
+                      style:
+                          const TextStyle(color: Colors.blue, fontSize: 15.0)),
+                  const SizedBox(
+                    width: 10.0,
+                  ),
+                  (widget.item.stock ?? 0) - (pos?.qty ?? 0) == 0
+                      ? const Icon(
                           Icons.add_circle_outline,
-                          color: Colors.blue,
+                          color: Color.fromARGB(255, 167, 153, 153),
                           size: 30,
+                        )
+                      : GestureDetector(
+                          onTap: () => BlocProvider.of<PosMainBloc>(context)
+                              .add(PosIncrementItemEvent(item: widget.item)),
+                          child: const Icon(
+                            Icons.add_circle_outline,
+                            color: Colors.blue,
+                            size: 30,
+                          ),
                         ),
-                      ),
-              ],
+                ],
+              ),
             ),
     );
   }

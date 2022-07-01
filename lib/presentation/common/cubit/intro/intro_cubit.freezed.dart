@@ -21,6 +21,7 @@ IntroState _$IntroStateFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$IntroState {
   bool get posCatalogList => throw _privateConstructorUsedError;
+  bool get posCustomerList => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +34,7 @@ abstract class $IntroStateCopyWith<$Res> {
   factory $IntroStateCopyWith(
           IntroState value, $Res Function(IntroState) then) =
       _$IntroStateCopyWithImpl<$Res>;
-  $Res call({bool posCatalogList});
+  $Res call({bool posCatalogList, bool posCustomerList});
 }
 
 /// @nodoc
@@ -47,11 +48,16 @@ class _$IntroStateCopyWithImpl<$Res> implements $IntroStateCopyWith<$Res> {
   @override
   $Res call({
     Object? posCatalogList = freezed,
+    Object? posCustomerList = freezed,
   }) {
     return _then(_value.copyWith(
       posCatalogList: posCatalogList == freezed
           ? _value.posCatalogList
           : posCatalogList // ignore: cast_nullable_to_non_nullable
+              as bool,
+      posCustomerList: posCustomerList == freezed
+          ? _value.posCustomerList
+          : posCustomerList // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -64,7 +70,7 @@ abstract class _$$_IntroStateCopyWith<$Res>
           _$_IntroState value, $Res Function(_$_IntroState) then) =
       __$$_IntroStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool posCatalogList});
+  $Res call({bool posCatalogList, bool posCustomerList});
 }
 
 /// @nodoc
@@ -80,11 +86,16 @@ class __$$_IntroStateCopyWithImpl<$Res> extends _$IntroStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? posCatalogList = freezed,
+    Object? posCustomerList = freezed,
   }) {
     return _then(_$_IntroState(
       posCatalogList: posCatalogList == freezed
           ? _value.posCatalogList
           : posCatalogList // ignore: cast_nullable_to_non_nullable
+              as bool,
+      posCustomerList: posCustomerList == freezed
+          ? _value.posCustomerList
+          : posCustomerList // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -93,17 +104,20 @@ class __$$_IntroStateCopyWithImpl<$Res> extends _$IntroStateCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_IntroState with DiagnosticableTreeMixin implements _IntroState {
-  const _$_IntroState({required this.posCatalogList});
+  const _$_IntroState(
+      {required this.posCatalogList, required this.posCustomerList});
 
   factory _$_IntroState.fromJson(Map<String, dynamic> json) =>
       _$$_IntroStateFromJson(json);
 
   @override
   final bool posCatalogList;
+  @override
+  final bool posCustomerList;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'IntroState(posCatalogList: $posCatalogList)';
+    return 'IntroState(posCatalogList: $posCatalogList, posCustomerList: $posCustomerList)';
   }
 
   @override
@@ -111,7 +125,8 @@ class _$_IntroState with DiagnosticableTreeMixin implements _IntroState {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'IntroState'))
-      ..add(DiagnosticsProperty('posCatalogList', posCatalogList));
+      ..add(DiagnosticsProperty('posCatalogList', posCatalogList))
+      ..add(DiagnosticsProperty('posCustomerList', posCustomerList));
   }
 
   @override
@@ -120,13 +135,17 @@ class _$_IntroState with DiagnosticableTreeMixin implements _IntroState {
         (other.runtimeType == runtimeType &&
             other is _$_IntroState &&
             const DeepCollectionEquality()
-                .equals(other.posCatalogList, posCatalogList));
+                .equals(other.posCatalogList, posCatalogList) &&
+            const DeepCollectionEquality()
+                .equals(other.posCustomerList, posCustomerList));
   }
 
   @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(posCatalogList));
+      runtimeType,
+      const DeepCollectionEquality().hash(posCatalogList),
+      const DeepCollectionEquality().hash(posCustomerList));
 
   @JsonKey(ignore: true)
   @override
@@ -140,14 +159,17 @@ class _$_IntroState with DiagnosticableTreeMixin implements _IntroState {
 }
 
 abstract class _IntroState implements IntroState {
-  const factory _IntroState({required final bool posCatalogList}) =
-      _$_IntroState;
+  const factory _IntroState(
+      {required final bool posCatalogList,
+      required final bool posCustomerList}) = _$_IntroState;
 
   factory _IntroState.fromJson(Map<String, dynamic> json) =
       _$_IntroState.fromJson;
 
   @override
   bool get posCatalogList => throw _privateConstructorUsedError;
+  @override
+  bool get posCustomerList => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_IntroStateCopyWith<_$_IntroState> get copyWith =>

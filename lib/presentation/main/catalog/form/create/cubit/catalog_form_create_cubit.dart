@@ -7,6 +7,8 @@ import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/domain/catalog/item/object_value/item_object_value.dart';
 import 'package:pos/domain/catalog/item/object_value/object_value.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
+import 'package:pos/domain/order/object_value/object_value.dart';
+import 'package:pos/domain/order/object_value/order_object_value.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:uuid/uuid.dart';
@@ -22,6 +24,16 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
         super(CatalogFormCreateState.initial());
 
   final CatalogListCubit _catalogListCubit;
+
+  void onTest(String v) {
+    emit(state.copyWith(
+        createOrder: state.createOrder?.copyWith(
+            paymentCardInfo: CreateOrderPaymentCardInfo(CraetePaymentCardInfo(
+                name: CraetePaymentCardInfoName(v),
+                number: CraetePaymentCardInfoNumber(v),
+                numberRef: CraetePaymentCardInfoNumberRef(v),
+                remarks: CraetePaymentCardInfoRemarks(v))))));
+  }
 
   void onCreateCatalogItemCodeChanged(String v) {
     emit(state.copyWith(

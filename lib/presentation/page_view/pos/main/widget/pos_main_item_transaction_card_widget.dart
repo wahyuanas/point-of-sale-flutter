@@ -23,6 +23,7 @@ class _PosMainItemTransactionCardWidgetState
     extends State<PosMainItemTransactionCardWidget> {
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.only(left: 20.0, top: 20.0, bottom: 20.0),
@@ -45,8 +46,8 @@ class _PosMainItemTransactionCardWidgetState
                             "assets/images/no-image.png",
                             gaplessPlayback: true,
                             fit: BoxFit.fill,
-                            width: MediaQuery.of(context).size.width / 3,
-                            height: MediaQuery.of(context).size.width / 3,
+                            width: mq.size.width / 3,
+                            height: mq.size.width / 3,
                           ),
                         )
                       : Align(
@@ -63,16 +64,14 @@ class _PosMainItemTransactionCardWidgetState
                                       "assets/images/not-found.png",
                                       gaplessPlayback: true,
                                       fit: BoxFit.fill,
-                                      width:
-                                          MediaQuery.of(context).size.width / 3,
-                                      height:
-                                          MediaQuery.of(context).size.width / 3,
+                                      width: mq.size.width / 3,
+                                      height: mq.size.width / 3,
                                     ),
                                   ),
                                   gaplessPlayback: true,
                                   fit: BoxFit.fill,
-                                  width: MediaQuery.of(context).size.width / 3,
-                                  height: MediaQuery.of(context).size.width / 3,
+                                  width: mq.size.width / 3,
+                                  height: mq.size.width / 3,
                                 )),
                           ),
                         ),
@@ -90,23 +89,23 @@ class _PosMainItemTransactionCardWidgetState
                               color: Colors.blue, fontSize: 15.0),
                         ),
                         const SizedBox(
-                          height: 5.0,
+                          height: 0.0,
                         ),
                         Text(
                           widget.pos.item.name,
                           style: const TextStyle(
-                              color: Colors.black, fontSize: 14.0),
+                              color: Colors.black, fontSize: 14.0, height: 1.2),
                         ),
                         const SizedBox(
-                          height: 5.0,
+                          height: 3.0,
                         ),
                         Wrap(
                           children: [
                             Wrap(children: [
                               const Text("Harga ",
                                   style: TextStyle(
-                                    decoration: TextDecoration.underline,
-                                  )),
+                                      decoration: TextDecoration.underline,
+                                      height: 1.2)),
                               Text(
                                   NumberFormat.currency(
                                           locale: 'id',
@@ -115,12 +114,16 @@ class _PosMainItemTransactionCardWidgetState
                                       .format(widget.pos.item.sellPrice),
                                   style: const TextStyle(
                                       decoration: TextDecoration.underline,
-                                      color: Colors.blue)),
+                                      color: Colors.blue,
+                                      height: 1.2)),
                             ]),
                             const SizedBox(
                               width: 10.0,
                             ),
-                            const Text("|"),
+                            const Text(
+                              "|",
+                              style: TextStyle(height: 1.2),
+                            ),
                             const SizedBox(
                               width: 10.0,
                             ),
@@ -128,19 +131,34 @@ class _PosMainItemTransactionCardWidgetState
                               children: [
                                 const Text("Disc ",
                                     style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                    )),
-                                Text("${widget.pos.item.sellDisc ?? 0}%",
-                                    style: const TextStyle(
                                         decoration: TextDecoration.underline,
-                                        color: Colors.blue)),
+                                        height: 1.2)),
+                                (widget.pos.item.sellDisc ?? 0)
+                                                .toString()
+                                                .split('.')[1]
+                                                .length ==
+                                            1 &&
+                                        (widget.pos.item.sellDisc ?? 0)
+                                                .toString()
+                                                .split('.')[1] ==
+                                            '0'
+                                    ? Text(
+                                        "${(widget.pos.item.sellDisc ?? 0).toString().split('.')[0]}%",
+                                        style: const TextStyle(
+                                            color: Colors.blue, height: 1.2))
+                                    : Text("${widget.pos.item.sellDisc ?? 0}%",
+                                        style: const TextStyle(
+                                            color: Colors.blue, height: 1.2)),
                               ],
                             ),
 
                             const SizedBox(
                               width: 10.0,
                             ),
-                            const Text("|"),
+                            const Text(
+                              "|",
+                              style: TextStyle(height: 1.2),
+                            ),
                             const SizedBox(
                               width: 10.0,
                             ),
@@ -159,8 +177,8 @@ class _PosMainItemTransactionCardWidgetState
                               children: [
                                 const Text("Sub total ",
                                     style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                    )),
+                                        decoration: TextDecoration.underline,
+                                        height: 1.2)),
                                 Text(
                                     NumberFormat.currency(
                                             locale: 'id',
@@ -169,7 +187,8 @@ class _PosMainItemTransactionCardWidgetState
                                         .format(widget.pos.sumPrice),
                                     style: const TextStyle(
                                         decoration: TextDecoration.underline,
-                                        color: Colors.blue)),
+                                        color: Colors.blue,
+                                        height: 1.2)),
                               ],
                             )
                           ],
@@ -190,17 +209,21 @@ class _PosMainItemTransactionCardWidgetState
                 GestureDetector(
                   onTap: () => BlocProvider.of<PosMainBloc>(context)
                       .add(PosDecrementItemEvent(item: widget.pos.item)),
-                  child: const Icon(
+                  child: Icon(
                     Icons.remove_circle_outline,
                     color: Colors.blue,
-                    size: 30,
+                    size: mq.orientation == Orientation.portrait ? 30 : 35,
                   ),
                 ),
                 const SizedBox(
                   width: 10.0,
                 ),
                 Text("${widget.pos.qty}",
-                    style: const TextStyle(color: Colors.blue, fontSize: 17.0)),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                        color: Colors.blue,
+                        fontSize:
+                            mq.orientation == Orientation.portrait ? 15 : 18)),
                 const SizedBox(
                   width: 10.0,
                 ),
@@ -208,19 +231,22 @@ class _PosMainItemTransactionCardWidgetState
                   padding: const EdgeInsets.only(right: 20.0),
                   child: (widget.pos.item.stock ?? 0) - (widget.pos.qty ?? 0) ==
                           0
-                      ? const Icon(
+                      ? Icon(
                           Icons.add_circle_outline,
-                          color: Color.fromARGB(255, 167, 153, 153),
-                          size: 30,
+                          color: const Color.fromARGB(255, 167, 153, 153),
+                          size:
+                              mq.orientation == Orientation.portrait ? 30 : 35,
                         )
                       : GestureDetector(
                           onTap: () => BlocProvider.of<PosMainBloc>(context)
                               .add(
                                   PosIncrementItemEvent(item: widget.pos.item)),
-                          child: const Icon(
+                          child: Icon(
                             Icons.add_circle_outline,
                             color: Colors.blue,
-                            size: 30,
+                            size: mq.orientation == Orientation.portrait
+                                ? 30
+                                : 35,
                           ),
                         ),
                 ),

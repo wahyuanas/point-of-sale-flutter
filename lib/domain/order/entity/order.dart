@@ -9,6 +9,7 @@ class Order with _$Order implements IEntity {
   const Order._();
   const factory Order({
     required int id,
+    required String uuid,
     required String code,
     required int customerId,
     required int vehicleId,
@@ -18,6 +19,7 @@ class Order with _$Order implements IEntity {
     required int grandAmount,
     required int disc,
     required int paymentType,
+    required PaymentCardInfo paymentCardInfo,
     required int charge,
     required int paidAmount,
     required int changeAmount,
@@ -28,4 +30,19 @@ class Order with _$Order implements IEntity {
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
+}
+
+@freezed
+class PaymentCardInfo with _$PaymentCardInfo implements IEntity {
+  const PaymentCardInfo._();
+  const factory PaymentCardInfo({
+    required int id,
+    required String name,
+    required String number,
+    required String numberRef,
+    required String remarks,
+  }) = _PaymentCardInfo;
+
+  factory PaymentCardInfo.fromJson(Map<String, dynamic> json) =>
+      _$PaymentCardInfoFromJson(json);
 }

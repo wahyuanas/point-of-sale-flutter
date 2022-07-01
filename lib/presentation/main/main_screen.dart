@@ -37,16 +37,25 @@ class MainScreenState extends State<MainScreen> {
         ),
         BlocListener<RouteCubit, RouteState>(
           listener: (context, state) {
-            state.onRoute?.when(
-              signUp: (r) => Navigator.pushNamed(context, r),
-              signUpNotif: (r) =>
-                  Navigator.pushNamed(context, r, arguments: state.args),
-              postCatalogList: (r) => Navigator.pushNamed(context, r),
-              postCatalogform: (r) => Navigator.pushNamed(context, r),
-              purchase: (r) => Navigator.pushNamed(context, r),
-              posCatalogItemDetail: (r) =>
-                  Navigator.pushNamed(context, r, arguments: state.args),
-            );
+            if (state.onRoute != null) {
+              if (state.args == null) {
+                Navigator.pushNamed(context, state.onRoute!.r);
+              } else {
+                Navigator.pushNamed(context, state.onRoute!.r,
+                    arguments: state.args);
+              }
+            }
+            // state.onRoute?.when(
+            //   signUp: (r) => Navigator.pushNamed(context, r),
+            //   signUpNotif: (r) =>
+            //       Navigator.pushNamed(context, r, arguments: state.args),
+            //   postCatalogList: (r) => Navigator.pushNamed(context, r),
+            //   postCatalogform: (r) => Navigator.pushNamed(context, r),
+            //   purchase: (r) => Navigator.pushNamed(context, r),
+            //   posCatalogItemDetail: (r) =>
+            //       Navigator.pushNamed(context, r, arguments: state.args),
+            //   postCustomerList: (r) => Navigator.pushNamed(context, r),
+            // );
           },
         ),
       ],

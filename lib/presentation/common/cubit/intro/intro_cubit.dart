@@ -9,8 +9,12 @@ part 'intro_cubit.g.dart';
 class IntroCubit extends HydratedCubit<IntroState> {
   IntroCubit() : super(IntroState.initial());
 
-  onReload(bool posCatalogList) {
+  onPosCatalogListChanged(bool posCatalogList) {
     emit(state.copyWith(posCatalogList: posCatalogList));
+  }
+
+  onPosCustomerListChanged(bool posCustomerList) {
+    emit(state.copyWith(posCustomerList: posCustomerList));
   }
 
   @override

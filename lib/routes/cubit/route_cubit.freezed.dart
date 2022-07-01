@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$RouteState {
-  OnRouteState? get onRoute => throw _privateConstructorUsedError;
+  OnRouteState<String>? get onRoute => throw _privateConstructorUsedError;
   Object? get args => throw _privateConstructorUsedError;
   bool? get route => throw _privateConstructorUsedError;
 
@@ -30,9 +30,9 @@ abstract class $RouteStateCopyWith<$Res> {
   factory $RouteStateCopyWith(
           RouteState value, $Res Function(RouteState) then) =
       _$RouteStateCopyWithImpl<$Res>;
-  $Res call({OnRouteState? onRoute, Object? args, bool? route});
+  $Res call({OnRouteState<String>? onRoute, Object? args, bool? route});
 
-  $OnRouteStateCopyWith<$Res>? get onRoute;
+  $OnRouteStateCopyWith<String, $Res>? get onRoute;
 }
 
 /// @nodoc
@@ -53,7 +53,7 @@ class _$RouteStateCopyWithImpl<$Res> implements $RouteStateCopyWith<$Res> {
       onRoute: onRoute == freezed
           ? _value.onRoute
           : onRoute // ignore: cast_nullable_to_non_nullable
-              as OnRouteState?,
+              as OnRouteState<String>?,
       args: args == freezed ? _value.args : args,
       route: route == freezed
           ? _value.route
@@ -63,12 +63,12 @@ class _$RouteStateCopyWithImpl<$Res> implements $RouteStateCopyWith<$Res> {
   }
 
   @override
-  $OnRouteStateCopyWith<$Res>? get onRoute {
+  $OnRouteStateCopyWith<String, $Res>? get onRoute {
     if (_value.onRoute == null) {
       return null;
     }
 
-    return $OnRouteStateCopyWith<$Res>(_value.onRoute!, (value) {
+    return $OnRouteStateCopyWith<String, $Res>(_value.onRoute!, (value) {
       return _then(_value.copyWith(onRoute: value));
     });
   }
@@ -81,10 +81,10 @@ abstract class _$$_RouteStateCopyWith<$Res>
           _$_RouteState value, $Res Function(_$_RouteState) then) =
       __$$_RouteStateCopyWithImpl<$Res>;
   @override
-  $Res call({OnRouteState? onRoute, Object? args, bool? route});
+  $Res call({OnRouteState<String>? onRoute, Object? args, bool? route});
 
   @override
-  $OnRouteStateCopyWith<$Res>? get onRoute;
+  $OnRouteStateCopyWith<String, $Res>? get onRoute;
 }
 
 /// @nodoc
@@ -107,7 +107,7 @@ class __$$_RouteStateCopyWithImpl<$Res> extends _$RouteStateCopyWithImpl<$Res>
       onRoute: onRoute == freezed
           ? _value.onRoute
           : onRoute // ignore: cast_nullable_to_non_nullable
-              as OnRouteState?,
+              as OnRouteState<String>?,
       args: args == freezed ? _value.args : args,
       route: route == freezed
           ? _value.route
@@ -124,7 +124,7 @@ class _$_RouteState with DiagnosticableTreeMixin implements _RouteState {
       {required this.onRoute, required this.args, required this.route});
 
   @override
-  final OnRouteState? onRoute;
+  final OnRouteState<String>? onRoute;
   @override
   final Object? args;
   @override
@@ -170,12 +170,12 @@ class _$_RouteState with DiagnosticableTreeMixin implements _RouteState {
 
 abstract class _RouteState implements RouteState {
   const factory _RouteState(
-      {required final OnRouteState? onRoute,
+      {required final OnRouteState<String>? onRoute,
       required final Object? args,
       required final bool? route}) = _$_RouteState;
 
   @override
-  OnRouteState? get onRoute => throw _privateConstructorUsedError;
+  OnRouteState<String>? get onRoute => throw _privateConstructorUsedError;
   @override
   Object? get args => throw _privateConstructorUsedError;
   @override

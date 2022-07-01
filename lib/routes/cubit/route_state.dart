@@ -3,7 +3,7 @@ part of 'route_cubit.dart';
 @freezed
 class RouteState with _$RouteState {
   const factory RouteState(
-      {required OnRouteState? onRoute,
+      {required OnRouteState<String>? onRoute,
       required Object? args,
       required bool? route}) = _RouteState;
 

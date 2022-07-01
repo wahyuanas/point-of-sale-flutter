@@ -76,7 +76,7 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               onWidgetLoad: () {
                 if (context.read<IntroCubit>().state.posCatalogList == false) {
                   Intro.of(context).start();
-                  context.read<IntroCubit>().onReload(true);
+                  context.read<IntroCubit>().onPosCatalogListChanged(true);
                 }
               },
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
@@ -101,7 +101,8 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
 
             title: const Text(
               "List Item",
-              style: TextStyle(color: Colors.blue),
+              style:
+                  TextStyle(color: Colors.blue, fontWeight: FontWeight.normal),
             ),
             systemOverlayStyle: const SystemUiOverlayStyle(
               systemNavigationBarColor: Colors.blue, // navigation bar color

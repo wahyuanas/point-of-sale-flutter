@@ -19,6 +19,7 @@ mixin _$CatalogFormCreateState {
   StateStatus<FailureExceptions, Item> get status =>
       throw _privateConstructorUsedError;
   CreateCatalogItem get createCatalogItem => throw _privateConstructorUsedError;
+  CreateOrder? get createOrder => throw _privateConstructorUsedError;
   bool get initial => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,6 +35,7 @@ abstract class $CatalogFormCreateStateCopyWith<$Res> {
   $Res call(
       {StateStatus<FailureExceptions, Item> status,
       CreateCatalogItem createCatalogItem,
+      CreateOrder? createOrder,
       bool initial});
 
   $StateStatusCopyWith<FailureExceptions, Item, $Res> get status;
@@ -53,6 +55,7 @@ class _$CatalogFormCreateStateCopyWithImpl<$Res>
   $Res call({
     Object? status = freezed,
     Object? createCatalogItem = freezed,
+    Object? createOrder = freezed,
     Object? initial = freezed,
   }) {
     return _then(_value.copyWith(
@@ -64,6 +67,10 @@ class _$CatalogFormCreateStateCopyWithImpl<$Res>
           ? _value.createCatalogItem
           : createCatalogItem // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItem,
+      createOrder: createOrder == freezed
+          ? _value.createOrder
+          : createOrder // ignore: cast_nullable_to_non_nullable
+              as CreateOrder?,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -97,6 +104,7 @@ abstract class _$$_CatalogFormCreateStateCopyWith<$Res>
   $Res call(
       {StateStatus<FailureExceptions, Item> status,
       CreateCatalogItem createCatalogItem,
+      CreateOrder? createOrder,
       bool initial});
 
   @override
@@ -121,6 +129,7 @@ class __$$_CatalogFormCreateStateCopyWithImpl<$Res>
   $Res call({
     Object? status = freezed,
     Object? createCatalogItem = freezed,
+    Object? createOrder = freezed,
     Object? initial = freezed,
   }) {
     return _then(_$_CatalogFormCreateState(
@@ -132,6 +141,10 @@ class __$$_CatalogFormCreateStateCopyWithImpl<$Res>
           ? _value.createCatalogItem
           : createCatalogItem // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItem,
+      createOrder: createOrder == freezed
+          ? _value.createOrder
+          : createOrder // ignore: cast_nullable_to_non_nullable
+              as CreateOrder?,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -148,6 +161,7 @@ class _$_CatalogFormCreateState
   const _$_CatalogFormCreateState(
       {required this.status,
       required this.createCatalogItem,
+      required this.createOrder,
       required this.initial});
 
   @override
@@ -155,11 +169,13 @@ class _$_CatalogFormCreateState
   @override
   final CreateCatalogItem createCatalogItem;
   @override
+  final CreateOrder? createOrder;
+  @override
   final bool initial;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CatalogFormCreateState(status: $status, createCatalogItem: $createCatalogItem, initial: $initial)';
+    return 'CatalogFormCreateState(status: $status, createCatalogItem: $createCatalogItem, createOrder: $createOrder, initial: $initial)';
   }
 
   @override
@@ -169,6 +185,7 @@ class _$_CatalogFormCreateState
       ..add(DiagnosticsProperty('type', 'CatalogFormCreateState'))
       ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('createCatalogItem', createCatalogItem))
+      ..add(DiagnosticsProperty('createOrder', createOrder))
       ..add(DiagnosticsProperty('initial', initial));
   }
 
@@ -180,6 +197,8 @@ class _$_CatalogFormCreateState
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
                 .equals(other.createCatalogItem, createCatalogItem) &&
+            const DeepCollectionEquality()
+                .equals(other.createOrder, createOrder) &&
             const DeepCollectionEquality().equals(other.initial, initial));
   }
 
@@ -188,6 +207,7 @@ class _$_CatalogFormCreateState
       runtimeType,
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(createCatalogItem),
+      const DeepCollectionEquality().hash(createOrder),
       const DeepCollectionEquality().hash(initial));
 
   @JsonKey(ignore: true)
@@ -201,6 +221,7 @@ abstract class _CatalogFormCreateState implements CatalogFormCreateState {
   const factory _CatalogFormCreateState(
       {required final StateStatus<FailureExceptions, Item> status,
       required final CreateCatalogItem createCatalogItem,
+      required final CreateOrder? createOrder,
       required final bool initial}) = _$_CatalogFormCreateState;
 
   @override
@@ -208,6 +229,8 @@ abstract class _CatalogFormCreateState implements CatalogFormCreateState {
       throw _privateConstructorUsedError;
   @override
   CreateCatalogItem get createCatalogItem => throw _privateConstructorUsedError;
+  @override
+  CreateOrder? get createOrder => throw _privateConstructorUsedError;
   @override
   bool get initial => throw _privateConstructorUsedError;
   @override

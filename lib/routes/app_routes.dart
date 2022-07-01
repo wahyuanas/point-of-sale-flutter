@@ -8,6 +8,7 @@ import 'package:pos/presentation/page_view/main/screen/page_view_main._screen.da
 import 'package:pos/presentation/page_view/pos/catalog/form/screen/pos_catalog_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/item/screen/pos_catalog_item_detail_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 
 class RouteGenerator {
@@ -39,6 +40,8 @@ class RouteGenerator {
             builder: (_) => PosCatalogItemDetailScreen(
                   item: item,
                 ));
+      case '/postCustomerList':
+        return MaterialPageRoute(builder: (_) => const PosCustomerListScreen());
 
       default:
         return _errorRoute();

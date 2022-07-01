@@ -13,7 +13,7 @@ import 'package:pos/di/injection.dart';
 import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
-import 'package:pos/presentation/main/customer/cubit/list/customer_list_cubit.dart';
+import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
@@ -28,9 +28,24 @@ import 'package:pos/routes/cubit/route_cubit.dart';
 import 'presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
 import 'presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+  // AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+  // debugPrint(
+  //     'Running onNNNNNNNNNNNNNNNNNNNNNNNNNNN 1 ${androidInfo.model}'); // e.g. "Moto G (4)"
+
+  // IosDeviceInfo iosInfo = await deviceInfo.iosInfo;
+  // debugPrint(
+  //     'Running onVVVVVVVVVVVVVVVVVVVVVVVVVVVV 2  ${iosInfo.utsname.machine}'); // e.g. "iPod7,1"
+
+  // WebBrowserInfo webBrowserInfo = await deviceInfo.webBrowserInfo;
+  // debugPrint(
+  //     'Running onNNNNNNNNNNNNNNNNNNNNNNNNNNNN 3 ${webBrowserInfo.userAgent}');
+
   await Firebase.initializeApp();
   await configureGetIt();
   final storage = await HydratedStorage.build(
@@ -94,7 +109,7 @@ class PosAppState extends State<PosApp> {
       BlocProvider(create: (context) => getIt<CatalogListCubit>()),
       BlocProvider(create: (context) => getIt<EmployeeCubit>()),
       BlocProvider(create: (context) => getIt<VehicleCubit>()),
-      BlocProvider(create: (context) => getIt<CustomerCubit>()),
+      BlocProvider(create: (context) => getIt<CustomerListCubit>()),
       BlocProvider(create: (context) => getIt<OrderCubit>()),
       BlocProvider(create: (context) => getIt<OrderDetailCubit>()),
       BlocProvider(create: (context) => getIt<IntroCubit>()),
@@ -134,7 +149,8 @@ class PosAppViewState extends State<PosAppView> {
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFFBFBFD),
         primarySwatch: Colors.blue,
-        fontFamily: GoogleFonts.raleway().fontFamily,
+        fontFamily: GoogleFonts.mavenPro().fontFamily,
+        //fontFamily: "Gordita",
         // appBarTheme: const AppBarTheme(
         //   backgroundColor: Colors.transparent,
         //   elevation: 0,

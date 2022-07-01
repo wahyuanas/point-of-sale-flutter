@@ -64,8 +64,9 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
   }
 
   orientationChanged() async {
-    _heightImage = MediaQuery.of(context).size.height * 0.3;
-    _heightStatusBar = MediaQuery.of(context).viewPadding.top;
+    final mq = MediaQuery.of(context);
+    _heightImage = mq.size.height * 0.3;
+    _heightStatusBar = mq.viewPadding.top;
     _heightAppBar = 50;
     _heightIconBackArrow = 5;
 
@@ -96,6 +97,7 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
 
   @override
   Widget build(BuildContext context) {
+    final mq = MediaQuery.of(context);
     return Scaffold(
         extendBodyBehindAppBar: true,
         //backgroundColor: AppColors.scaffoldBackgroundColor,
@@ -205,8 +207,8 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                         "assets/images/no-image.png",
                         gaplessPlayback: true,
                         fit: BoxFit.fill,
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: mq.size.width,
+                        height: mq.size.height * 0.3,
                       ),
                     )
                   : ClipRRect(
@@ -214,13 +216,13 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                       child: Image.file(
                         File(widget.item.image ?? ""),
                         fit: BoxFit.cover,
-                        width: MediaQuery.of(context).size.width,
-                        height: MediaQuery.of(context).size.height * 0.3,
+                        width: mq.size.width,
+                        height: mq.size.height * 0.3,
                         errorBuilder: (context, error, stackTrace) {
                           return Image.asset(
                             "assets/images/not-found.png",
-                            width: MediaQuery.of(context).size.width,
-                            height: MediaQuery.of(context).size.height * 0.3,
+                            width: mq.size.width,
+                            height: mq.size.height * 0.3,
                           );
                         },
                       ),
@@ -266,7 +268,8 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                 padding: const EdgeInsets.only(left: 30.0),
                 child: Text(
                   widget.item.description,
-                  style: const TextStyle(fontSize: 17),
+                  style: const TextStyle(
+                      fontSize: 17, color: Colors.black, height: 1),
                 ),
               ),
               const SizedBox(
@@ -298,13 +301,21 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                   style: TextStyle(fontSize: 15, color: Colors.blue),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 30.0),
-                child: Text(
-                  '${widget.item.sellDisc ?? 0}%',
-                  style: const TextStyle(fontSize: 17),
-                ),
-              ),
+              (widget.item.sellDisc ?? 0).toString().split('.')[1].length ==
+                          1 &&
+                      (widget.item.sellDisc ?? 0).toString().split('.')[1] ==
+                          '0'
+                  ? Padding(
+                      padding: const EdgeInsets.only(left: 30.0),
+                      child: Text(
+                          "${(widget.item.sellDisc ?? 0).toString().split('.')[0]}%",
+                          style: const TextStyle(fontSize: 17)),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.only(left: 30.0),
+                      child: Text("${widget.item.sellDisc ?? 0}%",
+                          style: const TextStyle(fontSize: 17)),
+                    ),
               const SizedBox(
                 height: 10.0,
               ),

@@ -10,7 +10,7 @@ part 'route_cubit.freezed.dart';
 class RouteCubit extends Cubit<RouteState> {
   RouteCubit() : super(RouteState.initial());
 
-  void onRoute(OnRouteState onRoute, Object? args) {
+  void onRoute(OnRouteState<String> onRoute, Object? args) {
     emit(state.copyWith(onRoute: onRoute, route: !state.route!, args: args));
   }
 }

@@ -25,7 +25,7 @@ class SignInButtonWidget extends StatelessWidget {
               end: Alignment.bottomRight,
               stops: [0.0, 1.0],
               colors: [
-                AppColors.itemCardAddRemoveIconPrimaryColor,
+                Color.fromARGB(255, 148, 187, 231),
                 Color.fromARGB(255, 161, 200, 231),
               ],
             ),

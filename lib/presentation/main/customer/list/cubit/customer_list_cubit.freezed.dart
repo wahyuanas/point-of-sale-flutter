@@ -14,36 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-CustomerState _$CustomerStateFromJson(Map<String, dynamic> json) {
-  return _CustomerState.fromJson(json);
+CustomerListState _$CustomerListStateFromJson(Map<String, dynamic> json) {
+  return _CustomerListState.fromJson(json);
 }
 
 /// @nodoc
-mixin _$CustomerState {
+mixin _$CustomerListState {
   List<Customer>? get customers => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $CustomerStateCopyWith<CustomerState> get copyWith =>
+  $CustomerListStateCopyWith<CustomerListState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CustomerStateCopyWith<$Res> {
-  factory $CustomerStateCopyWith(
-          CustomerState value, $Res Function(CustomerState) then) =
-      _$CustomerStateCopyWithImpl<$Res>;
+abstract class $CustomerListStateCopyWith<$Res> {
+  factory $CustomerListStateCopyWith(
+          CustomerListState value, $Res Function(CustomerListState) then) =
+      _$CustomerListStateCopyWithImpl<$Res>;
   $Res call({List<Customer>? customers});
 }
 
 /// @nodoc
-class _$CustomerStateCopyWithImpl<$Res>
-    implements $CustomerStateCopyWith<$Res> {
-  _$CustomerStateCopyWithImpl(this._value, this._then);
+class _$CustomerListStateCopyWithImpl<$Res>
+    implements $CustomerListStateCopyWith<$Res> {
+  _$CustomerListStateCopyWithImpl(this._value, this._then);
 
-  final CustomerState _value;
+  final CustomerListState _value;
   // ignore: unused_field
-  final $Res Function(CustomerState) _then;
+  final $Res Function(CustomerListState) _then;
 
   @override
   $Res call({
@@ -59,31 +59,31 @@ class _$CustomerStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_CustomerStateCopyWith<$Res>
-    implements $CustomerStateCopyWith<$Res> {
-  factory _$$_CustomerStateCopyWith(
-          _$_CustomerState value, $Res Function(_$_CustomerState) then) =
-      __$$_CustomerStateCopyWithImpl<$Res>;
+abstract class _$$_CustomerListStateCopyWith<$Res>
+    implements $CustomerListStateCopyWith<$Res> {
+  factory _$$_CustomerListStateCopyWith(_$_CustomerListState value,
+          $Res Function(_$_CustomerListState) then) =
+      __$$_CustomerListStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Customer>? customers});
 }
 
 /// @nodoc
-class __$$_CustomerStateCopyWithImpl<$Res>
-    extends _$CustomerStateCopyWithImpl<$Res>
-    implements _$$_CustomerStateCopyWith<$Res> {
-  __$$_CustomerStateCopyWithImpl(
-      _$_CustomerState _value, $Res Function(_$_CustomerState) _then)
-      : super(_value, (v) => _then(v as _$_CustomerState));
+class __$$_CustomerListStateCopyWithImpl<$Res>
+    extends _$CustomerListStateCopyWithImpl<$Res>
+    implements _$$_CustomerListStateCopyWith<$Res> {
+  __$$_CustomerListStateCopyWithImpl(
+      _$_CustomerListState _value, $Res Function(_$_CustomerListState) _then)
+      : super(_value, (v) => _then(v as _$_CustomerListState));
 
   @override
-  _$_CustomerState get _value => super._value as _$_CustomerState;
+  _$_CustomerListState get _value => super._value as _$_CustomerListState;
 
   @override
   $Res call({
     Object? customers = freezed,
   }) {
-    return _then(_$_CustomerState(
+    return _then(_$_CustomerListState(
       customers: customers == freezed
           ? _value._customers
           : customers // ignore: cast_nullable_to_non_nullable
@@ -94,12 +94,14 @@ class __$$_CustomerStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CustomerState with DiagnosticableTreeMixin implements _CustomerState {
-  const _$_CustomerState({required final List<Customer>? customers})
+class _$_CustomerListState
+    with DiagnosticableTreeMixin
+    implements _CustomerListState {
+  const _$_CustomerListState({required final List<Customer>? customers})
       : _customers = customers;
 
-  factory _$_CustomerState.fromJson(Map<String, dynamic> json) =>
-      _$$_CustomerStateFromJson(json);
+  factory _$_CustomerListState.fromJson(Map<String, dynamic> json) =>
+      _$$_CustomerListStateFromJson(json);
 
   final List<Customer>? _customers;
   @override
@@ -112,14 +114,14 @@ class _$_CustomerState with DiagnosticableTreeMixin implements _CustomerState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'CustomerState(customers: $customers)';
+    return 'CustomerListState(customers: $customers)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'CustomerState'))
+      ..add(DiagnosticsProperty('type', 'CustomerListState'))
       ..add(DiagnosticsProperty('customers', customers));
   }
 
@@ -127,7 +129,7 @@ class _$_CustomerState with DiagnosticableTreeMixin implements _CustomerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CustomerState &&
+            other is _$_CustomerListState &&
             const DeepCollectionEquality()
                 .equals(other._customers, _customers));
   }
@@ -139,26 +141,27 @@ class _$_CustomerState with DiagnosticableTreeMixin implements _CustomerState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_CustomerStateCopyWith<_$_CustomerState> get copyWith =>
-      __$$_CustomerStateCopyWithImpl<_$_CustomerState>(this, _$identity);
+  _$$_CustomerListStateCopyWith<_$_CustomerListState> get copyWith =>
+      __$$_CustomerListStateCopyWithImpl<_$_CustomerListState>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CustomerStateToJson(this);
+    return _$$_CustomerListStateToJson(this);
   }
 }
 
-abstract class _CustomerState implements CustomerState {
-  const factory _CustomerState({required final List<Customer>? customers}) =
-      _$_CustomerState;
+abstract class _CustomerListState implements CustomerListState {
+  const factory _CustomerListState({required final List<Customer>? customers}) =
+      _$_CustomerListState;
 
-  factory _CustomerState.fromJson(Map<String, dynamic> json) =
-      _$_CustomerState.fromJson;
+  factory _CustomerListState.fromJson(Map<String, dynamic> json) =
+      _$_CustomerListState.fromJson;
 
   @override
   List<Customer>? get customers => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_CustomerStateCopyWith<_$_CustomerState> get copyWith =>
+  _$$_CustomerListStateCopyWith<_$_CustomerListState> get copyWith =>
       throw _privateConstructorUsedError;
 }

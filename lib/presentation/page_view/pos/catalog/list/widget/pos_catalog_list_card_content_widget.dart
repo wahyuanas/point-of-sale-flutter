@@ -84,17 +84,18 @@ class _PosCatalogListCardContentWidgetState
               children: [
                 Text(
                   widget.item.code,
-                  style: const TextStyle(color: Colors.blue, fontSize: 15.0),
+                  style: const TextStyle(color: Colors.blue, fontSize: 13.0),
                 ),
                 const SizedBox(
-                  height: 5.0,
+                  height: 0.0,
                 ),
                 Text(
                   widget.item.name,
-                  style: const TextStyle(color: Colors.black, fontSize: 14.0),
+                  style: const TextStyle(
+                      color: Colors.black, fontSize: 14.0, height: 1.2),
                 ),
                 const SizedBox(
-                  height: 5.0,
+                  height: 0.0,
                 ),
                 Text(
                     NumberFormat.currency(
@@ -109,26 +110,41 @@ class _PosCatalogListCardContentWidgetState
                       children: [
                         const Text("Disc ",
                             style: TextStyle(
-                              decoration: TextDecoration.underline,
-                            )),
-                        Text("${widget.item.sellDisc ?? 0}%",
-                            style: const TextStyle(
                                 decoration: TextDecoration.underline,
-                                color: Colors.blue)),
+                                height: 1.2)),
+                        (widget.item.sellDisc ?? 0)
+                                        .toString()
+                                        .split('.')[1]
+                                        .length ==
+                                    1 &&
+                                (widget.item.sellDisc ?? 0)
+                                        .toString()
+                                        .split('.')[1] ==
+                                    '0'
+                            ? Text(
+                                "${(widget.item.sellDisc ?? 0).toString().split('.')[0]}%",
+                                style: const TextStyle(
+                                    color: Colors.blue, height: 1.2))
+                            : Text("${widget.item.sellDisc ?? 0}%",
+                                style: const TextStyle(
+                                    color: Colors.blue, height: 1.2)),
                       ],
                     ),
                     const SizedBox(
                       width: 10.0,
                     ),
-                    const Text("|"),
+                    const Text(
+                      "|",
+                      style: TextStyle(height: 1.2),
+                    ),
                     const SizedBox(
                       width: 10.0,
                     ),
                     Wrap(children: [
                       const Text("Stok ",
                           style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          )),
+                              decoration: TextDecoration.underline,
+                              height: 1.2)),
                       ((widget.item.stock ?? 0) - (pos?.qty ?? 0))
                                       .toString()
                                       .split('.')[1]
@@ -144,11 +160,13 @@ class _PosCatalogListCardContentWidgetState
                                   .split('.')[0],
                               style: const TextStyle(
                                   decoration: TextDecoration.underline,
+                                  height: 1.2,
                                   color: Colors.blue))
                           : Text(
                               "${(widget.item.stock ?? 0) - (pos?.qty ?? 0)}",
                               style: const TextStyle(
                                   decoration: TextDecoration.underline,
+                                  height: 1.2,
                                   color: Colors.blue)),
                     ])
                   ],

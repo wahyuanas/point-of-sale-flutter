@@ -4,14 +4,16 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'on_route_state.freezed.dart';
 
 @freezed
-class OnRouteState with _$OnRouteState {
-  const factory OnRouteState.signUp({required String r}) = _SignUp;
-  const factory OnRouteState.signUpNotif({required String r}) = _SignUpNotif;
-  const factory OnRouteState.postCatalogList({required String r}) =
-      _PostCatalogList;
-  const factory OnRouteState.postCatalogform({required String r}) =
-      _PostCatalogform;
-  const factory OnRouteState.purchase({required String r}) = _Purchase;
-  const factory OnRouteState.posCatalogItemDetail({required String r}) =
-      _PosCatalogItemDetail;
+class OnRouteState<T> with _$OnRouteState<T> {
+  const factory OnRouteState.signUp({required T r}) = _SignUp<T>;
+  const factory OnRouteState.signUpNotif({required T r}) = _SignUpNotif<T>;
+  const factory OnRouteState.postCatalogList({required T r}) =
+      _PostCatalogList<T>;
+  const factory OnRouteState.postCatalogform({required T r}) =
+      _PostCatalogform<T>;
+  const factory OnRouteState.purchase({required T r}) = _Purchase<T>;
+  const factory OnRouteState.posCatalogItemDetail({required T r}) =
+      _PosCatalogItemDetail<T>;
+  const factory OnRouteState.postCustomerList({required T r}) =
+      _PostCustomerList<T>;
 }
