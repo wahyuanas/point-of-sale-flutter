@@ -20,7 +20,8 @@ class CreateOrder with _$CreateOrder {
     required CreateOrderGrandAmount grandAmount,
     required CreateOrderDisc disc,
     required CreateOrderPaymentType paymentType,
-    required CreateOrderPaymentCardInfo paymentCardInfo,
+    //required CreateOrderPaymentCardInfo paymentCardInfo,
+    required CraetePaymentCardInfo? paymentCardInfo,
     required CreateOrderCharge charge,
     required CreateOrderPaidAmount paidAmount,
     required CreateOrderChangeAmount changeAmount,
@@ -41,7 +42,7 @@ class CreateOrder with _$CreateOrder {
         grandAmount: CreateOrderGrandAmount(''),
         disc: CreateOrderDisc(''),
         paymentType: CreateOrderPaymentType(null),
-        paymentCardInfo: CreateOrderPaymentCardInfo(null),
+        paymentCardInfo: null,
         charge: CreateOrderCharge(''),
         paidAmount: CreateOrderPaidAmount(''),
         changeAmount: CreateOrderChangeAmount(''),
@@ -106,9 +107,6 @@ class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
       number: number,
       numberRef: numberRef,
       remarks: CraetePaymentCardInfoRemarks(v ?? ''));
-
-  factory CraetePaymentCardInfo.fromJson(Map<String, dynamic> json) =>
-      _$CraetePaymentCardInfoFromJson(json);
 }
 
 extension CraetePaymentCardInfoX on CraetePaymentCardInfo {

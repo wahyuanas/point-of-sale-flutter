@@ -56,6 +56,7 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                           const OnRouteState.postCatalogList(
                               r: '/postCatalogList'),
                           null),
+                      key: key,
                       child: Card(
                         shape: RoundedRectangleBorder(
                             side: const BorderSide(
@@ -131,12 +132,6 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                             right: 10,
                             top: 8,
                           ),
-                          onWidgetLoad: () {
-                            // if (context.read<IntroCubit>().state.posCatalogList == false) {
-                            Intro.of(context).start();
-                            // context.read<IntroCubit>().onPosCatalogListChanged(true);
-                            //}
-                          },
                           onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
                           builder: (context, key) {
                             return Container(
@@ -151,6 +146,7 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                               alignment: Alignment.center,
                               height: 60,
                               width: 80,
+                              key: key,
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -219,12 +215,6 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                             right: 10,
                             top: 8,
                           ),
-                          onWidgetLoad: () {
-                            // if (context.read<IntroCubit>().state.posCatalogList == false) {
-                            Intro.of(context).start();
-                            // context.read<IntroCubit>().onPosCatalogListChanged(true);
-                            //}
-                          },
                           onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
                           builder: (context, key) {
                             return Container(
@@ -239,6 +229,7 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                               alignment: Alignment.center,
                               height: 60,
                               width: 80,
+                              key: key,
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.center,

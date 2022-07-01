@@ -55,10 +55,7 @@ dependencies:
   image_picker: ^0.8.5+3
   photo_view: ^0.14.0
   flutter_staggered_grid_view: ^0.6.1
-  extended_image: ^6.2.1
-  cached_network_image: ^3.2.1
   flutter_intro: ^3.0.2
-  device_info_plus: ^4.0.0
 
 
   cupertino_icons: ^1.0.2
@@ -80,16 +77,6 @@ flutter:
     - assets/images/
     - assets/images/introduction/
 
-  fonts:
-    - family: Gordita
-      fonts:
-        - asset: assets/fonts/Gordita_Regular.otf
-        - asset: assets/fonts/Gordita_Medium.otf
-          weight: 500
-        - asset: assets/fonts/Gordita_Bold.otf
-          weight: 700
-        - asset: assets/fonts/Gordita_Light.otf
-          weight: 300
     
 
   

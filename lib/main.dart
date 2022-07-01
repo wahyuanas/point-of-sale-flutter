@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +26,6 @@ import 'package:pos/routes/cubit/route_cubit.dart';
 import 'presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
 import 'presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
-import 'package:device_info_plus/device_info_plus.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

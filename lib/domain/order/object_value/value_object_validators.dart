@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
 
 import 'object_value_failure.dart';
 import 'order_object_value.dart';
@@ -85,6 +86,7 @@ Either<FormItemObjectValueFailure<String, String>, double?>
 
 Either<FormItemObjectValueFailure<String, String>, CraetePaymentCardInfo?>
     validateFieldPaymentCardInfo(CraetePaymentCardInfo? input) {
+  debugPrint("ORDER VALUE OBJECT VALIDATOR ");
   if (input == null) {
     return right(null);
   } else {

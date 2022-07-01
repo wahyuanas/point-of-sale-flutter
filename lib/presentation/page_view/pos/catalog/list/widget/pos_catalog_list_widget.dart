@@ -81,12 +81,9 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               },
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
               builder: (context, key) => GestureDetector(
-                  onTap: () {
-                    context.read<RouteCubit>().onRoute(
-                        const OnRouteState.postCatalogform(
-                            r: '/postCatalogform'),
-                        null);
-                  },
+                  onTap: () => context.read<RouteCubit>().onRoute(
+                      const OnRouteState.postCatalogform(r: '/postCatalogform'),
+                      null),
                   key: key,
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0),

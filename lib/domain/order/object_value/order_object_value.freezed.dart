@@ -25,8 +25,9 @@ mixin _$CreateOrder {
   CreateOrderAmount get amount => throw _privateConstructorUsedError;
   CreateOrderGrandAmount get grandAmount => throw _privateConstructorUsedError;
   CreateOrderDisc get disc => throw _privateConstructorUsedError;
-  CreateOrderPaymentType get paymentType => throw _privateConstructorUsedError;
-  CreateOrderPaymentCardInfo get paymentCardInfo =>
+  CreateOrderPaymentType get paymentType =>
+      throw _privateConstructorUsedError; //required CreateOrderPaymentCardInfo paymentCardInfo,
+  CraetePaymentCardInfo? get paymentCardInfo =>
       throw _privateConstructorUsedError;
   CreateOrderCharge get charge => throw _privateConstructorUsedError;
   CreateOrderPaidAmount get paidAmount => throw _privateConstructorUsedError;
@@ -58,7 +59,7 @@ abstract class $CreateOrderCopyWith<$Res> {
       CreateOrderGrandAmount grandAmount,
       CreateOrderDisc disc,
       CreateOrderPaymentType paymentType,
-      CreateOrderPaymentCardInfo paymentCardInfo,
+      CraetePaymentCardInfo? paymentCardInfo,
       CreateOrderCharge charge,
       CreateOrderPaidAmount paidAmount,
       CreateOrderChangeAmount changeAmount,
@@ -66,6 +67,8 @@ abstract class $CreateOrderCopyWith<$Res> {
       CreateOrderTax tax,
       CreateOrderItemNumber itemNumber,
       CreateOrderPaidStatus paidStatus});
+
+  $CraetePaymentCardInfoCopyWith<$Res>? get paymentCardInfo;
 }
 
 /// @nodoc
@@ -141,7 +144,7 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as CreateOrderPaymentCardInfo,
+              as CraetePaymentCardInfo?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
@@ -172,6 +175,18 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
               as CreateOrderPaidStatus,
     ));
   }
+
+  @override
+  $CraetePaymentCardInfoCopyWith<$Res>? get paymentCardInfo {
+    if (_value.paymentCardInfo == null) {
+      return null;
+    }
+
+    return $CraetePaymentCardInfoCopyWith<$Res>(_value.paymentCardInfo!,
+        (value) {
+      return _then(_value.copyWith(paymentCardInfo: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -192,7 +207,7 @@ abstract class _$$_CreateOrderCopyWith<$Res>
       CreateOrderGrandAmount grandAmount,
       CreateOrderDisc disc,
       CreateOrderPaymentType paymentType,
-      CreateOrderPaymentCardInfo paymentCardInfo,
+      CraetePaymentCardInfo? paymentCardInfo,
       CreateOrderCharge charge,
       CreateOrderPaidAmount paidAmount,
       CreateOrderChangeAmount changeAmount,
@@ -200,6 +215,9 @@ abstract class _$$_CreateOrderCopyWith<$Res>
       CreateOrderTax tax,
       CreateOrderItemNumber itemNumber,
       CreateOrderPaidStatus paidStatus});
+
+  @override
+  $CraetePaymentCardInfoCopyWith<$Res>? get paymentCardInfo;
 }
 
 /// @nodoc
@@ -277,7 +295,7 @@ class __$$_CreateOrderCopyWithImpl<$Res> extends _$CreateOrderCopyWithImpl<$Res>
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as CreateOrderPaymentCardInfo,
+              as CraetePaymentCardInfo?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
@@ -353,8 +371,9 @@ class _$_CreateOrder implements _CreateOrder {
   final CreateOrderDisc disc;
   @override
   final CreateOrderPaymentType paymentType;
+//required CreateOrderPaymentCardInfo paymentCardInfo,
   @override
-  final CreateOrderPaymentCardInfo paymentCardInfo;
+  final CraetePaymentCardInfo? paymentCardInfo;
   @override
   final CreateOrderCharge charge;
   @override
@@ -450,7 +469,7 @@ abstract class _CreateOrder implements CreateOrder {
       required final CreateOrderGrandAmount grandAmount,
       required final CreateOrderDisc disc,
       required final CreateOrderPaymentType paymentType,
-      required final CreateOrderPaymentCardInfo paymentCardInfo,
+      required final CraetePaymentCardInfo? paymentCardInfo,
       required final CreateOrderCharge charge,
       required final CreateOrderPaidAmount paidAmount,
       required final CreateOrderChangeAmount changeAmount,
@@ -479,8 +498,8 @@ abstract class _CreateOrder implements CreateOrder {
   CreateOrderDisc get disc => throw _privateConstructorUsedError;
   @override
   CreateOrderPaymentType get paymentType => throw _privateConstructorUsedError;
-  @override
-  CreateOrderPaymentCardInfo get paymentCardInfo =>
+  @override //required CreateOrderPaymentCardInfo paymentCardInfo,
+  CraetePaymentCardInfo? get paymentCardInfo =>
       throw _privateConstructorUsedError;
   @override
   CreateOrderCharge get charge => throw _privateConstructorUsedError;
@@ -503,11 +522,6 @@ abstract class _CreateOrder implements CreateOrder {
       throw _privateConstructorUsedError;
 }
 
-CraetePaymentCardInfo _$CraetePaymentCardInfoFromJson(
-    Map<String, dynamic> json) {
-  return _CraetePaymentCardInfo.fromJson(json);
-}
-
 /// @nodoc
 mixin _$CraetePaymentCardInfo {
   CraetePaymentCardInfoName get name => throw _privateConstructorUsedError;
@@ -517,7 +531,6 @@ mixin _$CraetePaymentCardInfo {
   CraetePaymentCardInfoRemarks get remarks =>
       throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CraetePaymentCardInfoCopyWith<CraetePaymentCardInfo> get copyWith =>
       throw _privateConstructorUsedError;
@@ -627,7 +640,7 @@ class __$$_CraetePaymentCardInfoCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
 class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
   const _$_CraetePaymentCardInfo(
       {required this.name,
@@ -635,9 +648,6 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
       required this.numberRef,
       required this.remarks})
       : super._();
-
-  factory _$_CraetePaymentCardInfo.fromJson(Map<String, dynamic> json) =>
-      _$$_CraetePaymentCardInfoFromJson(json);
 
   @override
   final CraetePaymentCardInfoName name;
@@ -664,7 +674,6 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
             const DeepCollectionEquality().equals(other.remarks, remarks));
   }
 
-  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -678,11 +687,6 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
   _$$_CraetePaymentCardInfoCopyWith<_$_CraetePaymentCardInfo> get copyWith =>
       __$$_CraetePaymentCardInfoCopyWithImpl<_$_CraetePaymentCardInfo>(
           this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_CraetePaymentCardInfoToJson(this);
-  }
 }
 
 abstract class _CraetePaymentCardInfo extends CraetePaymentCardInfo {
@@ -693,9 +697,6 @@ abstract class _CraetePaymentCardInfo extends CraetePaymentCardInfo {
           required final CraetePaymentCardInfoRemarks remarks}) =
       _$_CraetePaymentCardInfo;
   const _CraetePaymentCardInfo._() : super._();
-
-  factory _CraetePaymentCardInfo.fromJson(Map<String, dynamic> json) =
-      _$_CraetePaymentCardInfo.fromJson;
 
   @override
   CraetePaymentCardInfoName get name => throw _privateConstructorUsedError;

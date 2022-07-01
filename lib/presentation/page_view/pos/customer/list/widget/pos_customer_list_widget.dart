@@ -8,8 +8,6 @@ import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_intro/flutter_intro.dart';
 
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
 import '../cubit/pos_customer_list_cubit.dart';
 import '../delegate/pos_customer_list_search_delegate.dart';
 import 'pos_customer_list_card_widget.dart';

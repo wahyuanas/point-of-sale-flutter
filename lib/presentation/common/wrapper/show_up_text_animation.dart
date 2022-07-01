@@ -50,10 +50,10 @@ class ShowUpAnimation extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _ShowUpAnimationState createState() => _ShowUpAnimationState();
+  ShowUpAnimationState createState() => ShowUpAnimationState();
 }
 
-class _ShowUpAnimationState extends State<ShowUpAnimation>
+class ShowUpAnimationState extends State<ShowUpAnimation>
     with SingleTickerProviderStateMixin {
   Animation<Offset>? _animationSlide;
 

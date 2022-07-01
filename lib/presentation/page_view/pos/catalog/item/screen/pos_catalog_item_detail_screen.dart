@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
 import 'package:pos/presentation/page_view/pos/catalog/item/cubit/pos_catalog_item_transition_app_bar_cubit.dart';
 

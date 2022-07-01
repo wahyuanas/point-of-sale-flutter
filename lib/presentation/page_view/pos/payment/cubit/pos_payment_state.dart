@@ -7,6 +7,8 @@ class PosPaymentState with _$PosPaymentState {
       required CreateOrder? createOrder,
       required bool initial}) = _PosPaymentState;
 
-  factory PosPaymentState.initial() => const PosPaymentState(
-      status: StateStatus.initial(), createOrder: null, initial: true);
+  factory PosPaymentState.initial() => PosPaymentState(
+      status: const StateStatus.initial(),
+      createOrder: CreateOrder.empty(),
+      initial: true);
 }

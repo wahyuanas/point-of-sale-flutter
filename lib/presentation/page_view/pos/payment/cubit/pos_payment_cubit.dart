@@ -14,50 +14,56 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
   PosPaymentCubit() : super(PosPaymentState.initial());
 
   void onPaymentCardInfoNameChanged(String v) {
-    state.copyWith(
+    // emit(state.copyWith(
+    //     createOrder: state.createOrder?.copyWith(
+    //         paymentCardInfo: CreateOrderPaymentCardInfo(
+    //             state.createOrder?.paymentCardInfo.value.fold((l) {
+    //   debugPrint("POS PAYMENT CUBIT 3");
+    //   return null;
+    // }, (r) {
+    //   debugPrint("POS PAYMENT CUBIT 1");
+    //   return r?.copyWithName(v);
+    // })))));
+
+    emit(state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo: CreateOrderPaymentCardInfo(state
-                .createOrder?.paymentCardInfo.value
-                .fold((l) => null, (r) => r?.copyWithName(v)))));
+            paymentCardInfo:
+                state.createOrder!.paymentCardInfo?.copyWithName(v))));
   }
 
   void onPaymentCardInfoNumberChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo: CreateOrderPaymentCardInfo(state
-                .createOrder?.paymentCardInfo.value
-                .fold((l) => null, (r) => r?.copyWithNumber(v)))));
+            paymentCardInfo:
+                state.createOrder!.paymentCardInfo?.copyWithNumber(v)));
   }
 
   void onPaymentCardInfoNumberRefChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo: CreateOrderPaymentCardInfo(state
-                .createOrder?.paymentCardInfo.value
-                .fold((l) => null, (r) => r?.copyWithNumberRef(v)))));
+            paymentCardInfo:
+                state.createOrder!.paymentCardInfo?.copyWithNumberRef(v)));
   }
 
   void onPaymentCardInfoRemarksChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo: CreateOrderPaymentCardInfo(state
-                .createOrder?.paymentCardInfo.value
-                .fold((l) => null, (r) => r?.copyWithRemarks(v)))));
+            paymentCardInfo:
+                state.createOrder!.paymentCardInfo?.copyWithRemarks(v)));
   }
 
   void onPaymentTypeChanged(int? v) {
     if (v != 1 && v != null) {
-      emit(state.copyWith(
-        createOrder: state.createOrder?.copyWith(
-            paymentType: CreateOrderPaymentType(v),
-            paymentCardInfo:
-                CreateOrderPaymentCardInfo(CraetePaymentCardInfo.empty())),
-      ));
+      emit(
+        state.copyWith(
+            createOrder: state.createOrder?.copyWith(
+                paymentType: CreateOrderPaymentType(v),
+                paymentCardInfo: CraetePaymentCardInfo.empty())),
+      );
     } else {
       emit(state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentType: CreateOrderPaymentType(v),
-            paymentCardInfo: CreateOrderPaymentCardInfo(null)),
+            paymentType: CreateOrderPaymentType(v), paymentCardInfo: null),
       ));
     }
   }

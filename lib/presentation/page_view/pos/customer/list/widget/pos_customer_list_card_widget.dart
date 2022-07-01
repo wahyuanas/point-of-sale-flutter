@@ -1,12 +1,5 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
-import 'package:pos/domain/pos/entity/pos.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
 
 class PosCustomerListCardWidget extends StatefulWidget {
   final Customer customer;

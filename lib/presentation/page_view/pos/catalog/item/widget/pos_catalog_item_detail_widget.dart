@@ -160,7 +160,7 @@ class _PosCatalogItemDetailWidgetState extends State<PosCatalogItemDetailWidget>
                       ),
                     ),
                   ),
-                  actions: [],
+                  //actions: [],
                   title: state.builder1 == true
                       ? ShowUpAnimation(
                           curve: Curves.decelerate,
