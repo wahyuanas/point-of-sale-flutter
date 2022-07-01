@@ -29,6 +29,15 @@ Either<FormItemObjectValueFailure<String, String>, int>
   }
 }
 
+Either<FormItemObjectValueFailure<int?, String>, int?>
+    validateFieldNotIntAndNotEmpty1(int? input) {
+  if (input == null) {
+    return left(FormItemObjectValueFailure.emptyField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
 Either<FormItemObjectValueFailure<String, String>, DateTime>
     validateFieldNotDateTimeAndNotEmpty(String input) {
   if (input.isEmpty) {
@@ -79,10 +88,6 @@ Either<FormItemObjectValueFailure<String, String>, CraetePaymentCardInfo?>
   if (input == null) {
     return right(null);
   } else {
-    return right(CraetePaymentCardInfo(
-        name: input.name,
-        number: input.number,
-        numberRef: input.numberRef,
-        remarks: input.remarks));
+    return right(input);
   }
 }

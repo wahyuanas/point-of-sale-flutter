@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 
+import '../cubit/pos_payment_cubit.dart';
 import '../delegate/pos_payment_action_delegate.dart';
 
 class PosPaymentWidget extends StatefulWidget {
@@ -263,6 +264,24 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget>
                       ),
                     ],
                   ),
+                  TextFormField(
+                      autofocus: false,
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        labelText: "Keterangan",
+                        labelStyle:
+                            TextStyle(color: Colors.black54, fontSize: 15.0),
+                        hintText: '',
+                        //enabledBorder: InputBorder.none,
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.black54),
+                        ),
+
+                        //border: InputBorder.none,
+                      ),
+                      onChanged: (v) =>
+                          BlocProvider.of<PosPaymentCubit>(context)
+                              .onPaymentCardInfoNameChanged(v)),
                 ],
               ),
             )

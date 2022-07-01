@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_intro/flutter_intro.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 
@@ -33,37 +34,57 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              GestureDetector(
-                onTap: () => BlocProvider.of<RouteCubit>(context).onRoute(
-                    const OnRouteState.postCatalogList(r: '/postCatalogList'),
-                    null),
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      side: const BorderSide(color: Colors.blue, width: 0.5),
-                      borderRadius: BorderRadius.circular(10.0)),
-                  child: SizedBox(
-                    height: 60,
-                    width: 80,
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(
-                          Icons.add_circle_outline,
-                          color: Colors.blue,
-                        ),
-                        Text(
-                          "Tambah",
-                          style: TextStyle(
-                              fontSize: 13,
-                              //fontWeight: FontWeight.w500,
-                              color: Colors.blue),
-                        )
-                      ],
-                    ),
+              IntroStepBuilder(
+                  order: 1,
+                  text: 'Tekan tombol "Tambah" untuk menambah item transaksi',
+                  padding: const EdgeInsets.only(
+                    bottom: 5,
+                    left: 5,
+                    right: 10,
+                    top: 8,
                   ),
-                ),
-              ),
+                  onWidgetLoad: () {
+                    // if (context.read<IntroCubit>().state.posCatalogList == false) {
+                    Intro.of(context).start();
+                    // context.read<IntroCubit>().onPosCatalogListChanged(true);
+                    //}
+                  },
+                  onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
+                  builder: (context, key) {
+                    return GestureDetector(
+                      onTap: () => BlocProvider.of<RouteCubit>(context).onRoute(
+                          const OnRouteState.postCatalogList(
+                              r: '/postCatalogList'),
+                          null),
+                      child: Card(
+                        shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                                color: Colors.blue, width: 0.5),
+                            borderRadius: BorderRadius.circular(10.0)),
+                        child: SizedBox(
+                          height: 60,
+                          width: 80,
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: const [
+                              Icon(
+                                Icons.add_circle_outline,
+                                color: Colors.blue,
+                              ),
+                              Text(
+                                "Tambah",
+                                style: TextStyle(
+                                    fontSize: 13,
+                                    //fontWeight: FontWeight.w500,
+                                    color: Colors.blue),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
               const Spacer(),
               Row(
                 mainAxisSize: MainAxisSize.min,
@@ -100,35 +121,54 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                                 ),
                               )),
                         )
-                      : Container(
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(
-                                      10.0) //                 <--- border radius here
-                                  ),
-                              border: Border.all(
-                                  color: const Color.fromARGB(
-                                      255, 167, 153, 153))),
-                          alignment: Alignment.center,
-                          height: 60,
-                          width: 80,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Icon(
-                                Icons.cancel_outlined,
-                                color: Color.fromARGB(255, 167, 153, 153),
-                              ),
-                              Text("Batal",
-                                  style: TextStyle(
-                                      fontSize: 13,
-                                      //fontWeight: FontWeight.w500,
-                                      color:
-                                          Color.fromARGB(255, 167, 153, 153)))
-                            ],
+                      : IntroStepBuilder(
+                          order: 2,
+                          text:
+                              'Tekan tombol "Batal" untuk membatalkan transaksi',
+                          padding: const EdgeInsets.only(
+                            bottom: 5,
+                            left: 5,
+                            right: 10,
+                            top: 8,
                           ),
-                        ),
+                          onWidgetLoad: () {
+                            // if (context.read<IntroCubit>().state.posCatalogList == false) {
+                            Intro.of(context).start();
+                            // context.read<IntroCubit>().onPosCatalogListChanged(true);
+                            //}
+                          },
+                          onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
+                          builder: (context, key) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(
+                                          10.0) //                 <--- border radius here
+                                      ),
+                                  border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 167, 153, 153))),
+                              alignment: Alignment.center,
+                              height: 60,
+                              width: 80,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Icon(
+                                    Icons.cancel_outlined,
+                                    color: Color.fromARGB(255, 167, 153, 153),
+                                  ),
+                                  Text("Batal",
+                                      style: TextStyle(
+                                          fontSize: 13,
+                                          //fontWeight: FontWeight.w500,
+                                          color: Color.fromARGB(
+                                              255, 167, 153, 153)))
+                                ],
+                              ),
+                            );
+                          }),
                   state.poss == null
                       ? const SizedBox(
                           width: 7.0,
@@ -169,34 +209,55 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                                 ),
                               )),
                         )
-                      : Container(
-                          decoration: BoxDecoration(
-                              borderRadius: const BorderRadius.all(
-                                  Radius.circular(
-                                      10.0) //                 <--- border radius here
-                                  ),
-                              border: Border.all(
-                                  color: const Color.fromARGB(
-                                      255, 167, 153, 153))),
-                          alignment: Alignment.center,
-                          height: 60,
-                          width: 80,
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: const [
-                              Icon(Icons.near_me_outlined,
-                                  color: Color.fromARGB(255, 167, 153, 153)),
-                              Text(
-                                "Bayar",
-                                style: TextStyle(
-                                    fontSize: 13,
-                                    //fontWeight: FontWeight.w500,
-                                    color: Color.fromARGB(255, 167, 153, 153)),
-                              )
-                            ],
+                      : IntroStepBuilder(
+                          order: 3,
+                          text:
+                              'Tekan tombol "Bayar" untuk melakukan pembayaran',
+                          padding: const EdgeInsets.only(
+                            bottom: 5,
+                            left: 5,
+                            right: 10,
+                            top: 8,
                           ),
-                        ),
+                          onWidgetLoad: () {
+                            // if (context.read<IntroCubit>().state.posCatalogList == false) {
+                            Intro.of(context).start();
+                            // context.read<IntroCubit>().onPosCatalogListChanged(true);
+                            //}
+                          },
+                          onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
+                          builder: (context, key) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(
+                                          10.0) //                 <--- border radius here
+                                      ),
+                                  border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 167, 153, 153))),
+                              alignment: Alignment.center,
+                              height: 60,
+                              width: 80,
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: const [
+                                  Icon(Icons.near_me_outlined,
+                                      color:
+                                          Color.fromARGB(255, 167, 153, 153)),
+                                  Text(
+                                    "Bayar",
+                                    style: TextStyle(
+                                        fontSize: 13,
+                                        //fontWeight: FontWeight.w500,
+                                        color:
+                                            Color.fromARGB(255, 167, 153, 153)),
+                                  )
+                                ],
+                              ),
+                            );
+                          }),
                   state.poss == null
                       ? const SizedBox(
                           width: 5.0,

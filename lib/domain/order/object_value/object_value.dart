@@ -106,12 +106,12 @@ class CreateOrderDisc extends ObjectValue<double?> {
   const CreateOrderDisc._(this.value);
 }
 
-class CreateOrderPaymentType extends ObjectValue<int> {
+class CreateOrderPaymentType extends ObjectValue<int?> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<FormItemObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateOrderPaymentType(String input) {
-    return CreateOrderPaymentType._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderPaymentType(int? input) {
+    return CreateOrderPaymentType._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateOrderPaymentType._(this.value);

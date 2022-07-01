@@ -40,7 +40,7 @@ class CreateOrder with _$CreateOrder {
         amount: CreateOrderAmount(''),
         grandAmount: CreateOrderGrandAmount(''),
         disc: CreateOrderDisc(''),
-        paymentType: CreateOrderPaymentType(''),
+        paymentType: CreateOrderPaymentType(null),
         paymentCardInfo: CreateOrderPaymentCardInfo(null),
         charge: CreateOrderCharge(''),
         paidAmount: CreateOrderPaidAmount(''),
@@ -82,6 +82,30 @@ class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
         numberRef: CraetePaymentCardInfoNumberRef(''),
         remarks: CraetePaymentCardInfoRemarks(''),
       );
+
+  CraetePaymentCardInfo copyWithName(String? v) => CraetePaymentCardInfo(
+      name: CraetePaymentCardInfoName(v ?? ''),
+      number: number,
+      numberRef: numberRef,
+      remarks: remarks);
+
+  CraetePaymentCardInfo copyWithNumber(String? v) => CraetePaymentCardInfo(
+      name: name,
+      number: CraetePaymentCardInfoNumber(v ?? ''),
+      numberRef: numberRef,
+      remarks: remarks);
+
+  CraetePaymentCardInfo copyWithNumberRef(String? v) => CraetePaymentCardInfo(
+      name: name,
+      number: number,
+      numberRef: CraetePaymentCardInfoNumberRef(v ?? ''),
+      remarks: remarks);
+
+  CraetePaymentCardInfo copyWithRemarks(String? v) => CraetePaymentCardInfo(
+      name: name,
+      number: number,
+      numberRef: numberRef,
+      remarks: CraetePaymentCardInfoRemarks(v ?? ''));
 
   factory CraetePaymentCardInfo.fromJson(Map<String, dynamic> json) =>
       _$CraetePaymentCardInfoFromJson(json);
