@@ -12,6 +12,7 @@ import 'package:flutter_intro/flutter_intro.dart';
 
 import '../cubit/pos_customer_list_cubit.dart';
 import '../delegate/pos_customer_list_search_delegate.dart';
+import 'pos_customer_list_card_widget.dart';
 
 class PosCustomerListWidget extends StatefulWidget {
   const PosCustomerListWidget({Key? key}) : super(key: key);
@@ -83,7 +84,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                   onTap: () {
                     context.read<PosRouteCubit>().onRoute(
                         const PosOnRouteState.postCatalogform(
-                            r: '/postCatalogform'),
+                            r: '/postCustomerform'),
                         null);
                   },
                   key: const Key('pos-customer-list'),
@@ -154,9 +155,8 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                     sliver: SliverList(
                         delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
-                        return Container();
-                        // PosCustomerListCardWidget(
-                        //     customer: state.customers![index]);
+                        return PosCustomerListCardWidget(
+                            customer: state.customers![index]);
                       },
                       childCount:
                           state.customers?.length, // 1000 list customers

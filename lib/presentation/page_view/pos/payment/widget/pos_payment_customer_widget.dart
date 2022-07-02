@@ -83,19 +83,31 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
               )),
               child: ListTile(
                   trailing: state.createOrder?.customer.value.fold(
-                      (l) => GestureDetector(
-                            onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                                .onRoute(
-                                    const PosOnRouteState.postCustomerList(
-                                        r: '/postCustomerList'),
-                                    null),
-                            child: const Icon(
-                              Icons.search_outlined,
-                              size: 25.0,
-                              color: Colors.blue,
-                            ),
-                          ),
-                      (r) => null),
+                    (l) => GestureDetector(
+                      onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                          .onRoute(
+                              const PosOnRouteState.postCustomerList(
+                                  r: '/postCustomerList'),
+                              null),
+                      child: const Icon(
+                        Icons.search_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    (r) => GestureDetector(
+                      onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                          .onRoute(
+                              const PosOnRouteState.postCustomerList(
+                                  r: '/postCustomerList'),
+                              null),
+                      child: const Icon(
+                        Icons.remove_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                   title: state.createOrder?.customer.value.fold(
                     (l) => const Text(
                       'pilih konsumen...',

@@ -15,10 +15,6 @@ class PosPaymentScreen extends StatefulWidget {
 class _PosPaymentScreenState extends State<PosPaymentScreen> {
   @override
   Widget build(BuildContext context) {
-    debugPrint("${BlocProvider.of<PosRouteCubit>(context)}");
-    return BlocProvider(
-      create: ((context) => PosPaymentCubit()),
-      child: const PosPaymentWidget(),
-    );
+    return const PosPaymentWidget();
   }
 }

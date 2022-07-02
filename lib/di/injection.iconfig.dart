@@ -23,6 +23,7 @@ import 'package:pos/presentation/page_view/home/main/cubit/home_inventory_cubit.
 import 'package:pos/presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'package:pos/presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
+import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -58,6 +59,7 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<OrderDetailCubit>(() => OrderDetailCubit());
   g.registerLazySingleton<PosRouteCubit>(() => PosRouteCubit());
   g.registerLazySingleton<IntroCubit>(() => IntroCubit());
+  g.registerLazySingleton<PosPaymentCubit>(() => PosPaymentCubit());
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}
