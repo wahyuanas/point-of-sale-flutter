@@ -18,9 +18,9 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CreateOrder {
   CreateOrderUuid get uuid => throw _privateConstructorUsedError;
   CreateOrderCode get code => throw _privateConstructorUsedError;
-  CreateOrderCustomerId get customerId => throw _privateConstructorUsedError;
-  CreateOrderVehicleId get vehicleId => throw _privateConstructorUsedError;
-  CreateOrderEmployeeId get employeeId => throw _privateConstructorUsedError;
+  CreateOrderCustomer get customer => throw _privateConstructorUsedError;
+  CreateOrderVehicle get vehicle => throw _privateConstructorUsedError;
+  CreateOrderEmployees get employees => throw _privateConstructorUsedError;
   CreateOrderDate get date => throw _privateConstructorUsedError;
   CreateOrderAmount get amount => throw _privateConstructorUsedError;
   CreateOrderGrandAmount get grandAmount => throw _privateConstructorUsedError;
@@ -51,9 +51,9 @@ abstract class $CreateOrderCopyWith<$Res> {
   $Res call(
       {CreateOrderUuid uuid,
       CreateOrderCode code,
-      CreateOrderCustomerId customerId,
-      CreateOrderVehicleId vehicleId,
-      CreateOrderEmployeeId employeeId,
+      CreateOrderCustomer customer,
+      CreateOrderVehicle vehicle,
+      CreateOrderEmployees employees,
       CreateOrderDate date,
       CreateOrderAmount amount,
       CreateOrderGrandAmount grandAmount,
@@ -83,9 +83,9 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
   $Res call({
     Object? uuid = freezed,
     Object? code = freezed,
-    Object? customerId = freezed,
-    Object? vehicleId = freezed,
-    Object? employeeId = freezed,
+    Object? customer = freezed,
+    Object? vehicle = freezed,
+    Object? employees = freezed,
     Object? date = freezed,
     Object? amount = freezed,
     Object? grandAmount = freezed,
@@ -109,18 +109,18 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CreateOrderCode,
-      customerId: customerId == freezed
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderCustomerId,
-      vehicleId: vehicleId == freezed
-          ? _value.vehicleId
-          : vehicleId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderVehicleId,
-      employeeId: employeeId == freezed
-          ? _value.employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderEmployeeId,
+      customer: customer == freezed
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as CreateOrderCustomer,
+      vehicle: vehicle == freezed
+          ? _value.vehicle
+          : vehicle // ignore: cast_nullable_to_non_nullable
+              as CreateOrderVehicle,
+      employees: employees == freezed
+          ? _value.employees
+          : employees // ignore: cast_nullable_to_non_nullable
+              as CreateOrderEmployees,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -199,9 +199,9 @@ abstract class _$$_CreateOrderCopyWith<$Res>
   $Res call(
       {CreateOrderUuid uuid,
       CreateOrderCode code,
-      CreateOrderCustomerId customerId,
-      CreateOrderVehicleId vehicleId,
-      CreateOrderEmployeeId employeeId,
+      CreateOrderCustomer customer,
+      CreateOrderVehicle vehicle,
+      CreateOrderEmployees employees,
       CreateOrderDate date,
       CreateOrderAmount amount,
       CreateOrderGrandAmount grandAmount,
@@ -234,9 +234,9 @@ class __$$_CreateOrderCopyWithImpl<$Res> extends _$CreateOrderCopyWithImpl<$Res>
   $Res call({
     Object? uuid = freezed,
     Object? code = freezed,
-    Object? customerId = freezed,
-    Object? vehicleId = freezed,
-    Object? employeeId = freezed,
+    Object? customer = freezed,
+    Object? vehicle = freezed,
+    Object? employees = freezed,
     Object? date = freezed,
     Object? amount = freezed,
     Object? grandAmount = freezed,
@@ -260,18 +260,18 @@ class __$$_CreateOrderCopyWithImpl<$Res> extends _$CreateOrderCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CreateOrderCode,
-      customerId: customerId == freezed
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderCustomerId,
-      vehicleId: vehicleId == freezed
-          ? _value.vehicleId
-          : vehicleId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderVehicleId,
-      employeeId: employeeId == freezed
-          ? _value.employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as CreateOrderEmployeeId,
+      customer: customer == freezed
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as CreateOrderCustomer,
+      vehicle: vehicle == freezed
+          ? _value.vehicle
+          : vehicle // ignore: cast_nullable_to_non_nullable
+              as CreateOrderVehicle,
+      employees: employees == freezed
+          ? _value.employees
+          : employees // ignore: cast_nullable_to_non_nullable
+              as CreateOrderEmployees,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -334,9 +334,9 @@ class _$_CreateOrder implements _CreateOrder {
   const _$_CreateOrder(
       {required this.uuid,
       required this.code,
-      required this.customerId,
-      required this.vehicleId,
-      required this.employeeId,
+      required this.customer,
+      required this.vehicle,
+      required this.employees,
       required this.date,
       required this.amount,
       required this.grandAmount,
@@ -356,11 +356,11 @@ class _$_CreateOrder implements _CreateOrder {
   @override
   final CreateOrderCode code;
   @override
-  final CreateOrderCustomerId customerId;
+  final CreateOrderCustomer customer;
   @override
-  final CreateOrderVehicleId vehicleId;
+  final CreateOrderVehicle vehicle;
   @override
-  final CreateOrderEmployeeId employeeId;
+  final CreateOrderEmployees employees;
   @override
   final CreateOrderDate date;
   @override
@@ -391,7 +391,7 @@ class _$_CreateOrder implements _CreateOrder {
 
   @override
   String toString() {
-    return 'CreateOrder(uuid: $uuid, code: $code, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
+    return 'CreateOrder(uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employees: $employees, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
   }
 
   @override
@@ -401,11 +401,9 @@ class _$_CreateOrder implements _CreateOrder {
             other is _$_CreateOrder &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.code, code) &&
-            const DeepCollectionEquality()
-                .equals(other.customerId, customerId) &&
-            const DeepCollectionEquality().equals(other.vehicleId, vehicleId) &&
-            const DeepCollectionEquality()
-                .equals(other.employeeId, employeeId) &&
+            const DeepCollectionEquality().equals(other.customer, customer) &&
+            const DeepCollectionEquality().equals(other.vehicle, vehicle) &&
+            const DeepCollectionEquality().equals(other.employees, employees) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality()
@@ -434,9 +432,9 @@ class _$_CreateOrder implements _CreateOrder {
       runtimeType,
       const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(code),
-      const DeepCollectionEquality().hash(customerId),
-      const DeepCollectionEquality().hash(vehicleId),
-      const DeepCollectionEquality().hash(employeeId),
+      const DeepCollectionEquality().hash(customer),
+      const DeepCollectionEquality().hash(vehicle),
+      const DeepCollectionEquality().hash(employees),
       const DeepCollectionEquality().hash(date),
       const DeepCollectionEquality().hash(amount),
       const DeepCollectionEquality().hash(grandAmount),
@@ -461,9 +459,9 @@ abstract class _CreateOrder implements CreateOrder {
   const factory _CreateOrder(
       {required final CreateOrderUuid uuid,
       required final CreateOrderCode code,
-      required final CreateOrderCustomerId customerId,
-      required final CreateOrderVehicleId vehicleId,
-      required final CreateOrderEmployeeId employeeId,
+      required final CreateOrderCustomer customer,
+      required final CreateOrderVehicle vehicle,
+      required final CreateOrderEmployees employees,
       required final CreateOrderDate date,
       required final CreateOrderAmount amount,
       required final CreateOrderGrandAmount grandAmount,
@@ -483,11 +481,11 @@ abstract class _CreateOrder implements CreateOrder {
   @override
   CreateOrderCode get code => throw _privateConstructorUsedError;
   @override
-  CreateOrderCustomerId get customerId => throw _privateConstructorUsedError;
+  CreateOrderCustomer get customer => throw _privateConstructorUsedError;
   @override
-  CreateOrderVehicleId get vehicleId => throw _privateConstructorUsedError;
+  CreateOrderVehicle get vehicle => throw _privateConstructorUsedError;
   @override
-  CreateOrderEmployeeId get employeeId => throw _privateConstructorUsedError;
+  CreateOrderEmployees get employees => throw _privateConstructorUsedError;
   @override
   CreateOrderDate get date => throw _privateConstructorUsedError;
   @override

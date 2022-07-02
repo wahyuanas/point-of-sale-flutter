@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
+import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
+import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 
 import '../cubit/pos_payment_cubit.dart';
 
@@ -41,7 +41,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
             },
             orElse: () => null);
         return false;
-      } else if (p.createOrder?.customerId != c.createOrder?.customerId) {
+      } else if (p.createOrder?.customer != c.createOrder?.customer) {
         if (_initial == true) _initial = false;
         return true;
       }
@@ -82,11 +82,11 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                 ),
               )),
               child: ListTile(
-                  trailing: state.createOrder?.customerId.value.fold(
+                  trailing: state.createOrder?.customer.value.fold(
                       (l) => GestureDetector(
-                            onTap: () => BlocProvider.of<RouteCubit>(context)
+                            onTap: () => BlocProvider.of<PosRouteCubit>(context)
                                 .onRoute(
-                                    const OnRouteState.postCustomerList(
+                                    const PosOnRouteState.postCustomerList(
                                         r: '/postCustomerList'),
                                     null),
                             child: const Icon(
@@ -96,20 +96,20 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                             ),
                           ),
                       (r) => null),
-                  title: state.createOrder?.customerId.value.fold(
+                  title: state.createOrder?.customer.value.fold(
                     (l) => const Text(
                       'pilih konsumen...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
                     ),
-                    (r) => const Text(
-                      'Mr. California',
-                      style: TextStyle(fontSize: 15),
+                    (r) => Text(
+                      r!.name,
+                      style: const TextStyle(fontSize: 15),
                     ),
                   )),
             ),
           ),
           _initial == false
-              ? state.createOrder!.customerId.value.fold(
+              ? state.createOrder!.customer.value.fold(
                   (l) => l.maybeWhen(
                       emptyField: (f) => const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),

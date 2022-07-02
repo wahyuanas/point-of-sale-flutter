@@ -1,5 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
+import 'package:pos/domain/customer/entity/customer.dart';
+import 'package:pos/domain/employee/entity/employees.dart';
+import 'package:pos/domain/vehicle/entity/vehicle.dart';
 
 import 'object_value_failure.dart';
 import 'order_object_value.dart';
@@ -38,37 +41,37 @@ class CreateOrderDescription extends ObjectValue<String> {
   const CreateOrderDescription._(this.value);
 }
 
-class CreateOrderCustomerId extends ObjectValue<int> {
+class CreateOrderCustomer extends ObjectValue<Customer?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<Customer?, String>, Customer?> value;
 
-  factory CreateOrderCustomerId(String input) {
-    return CreateOrderCustomerId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderCustomer(Customer? input) {
+    return CreateOrderCustomer._(validateFieldNotCustomerAndNotEmpty(input));
   }
 
-  const CreateOrderCustomerId._(this.value);
+  const CreateOrderCustomer._(this.value);
 }
 
-class CreateOrderVehicleId extends ObjectValue<int> {
+class CreateOrderVehicle extends ObjectValue<Vehicle?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<Vehicle?, String>, Vehicle?> value;
 
-  factory CreateOrderVehicleId(String input) {
-    return CreateOrderVehicleId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderVehicle(Vehicle? input) {
+    return CreateOrderVehicle._(validateFieldNotVehicleAndNotEmpty(input));
   }
 
-  const CreateOrderVehicleId._(this.value);
+  const CreateOrderVehicle._(this.value);
 }
 
-class CreateOrderEmployeeId extends ObjectValue<int> {
+class CreateOrderEmployees extends ObjectValue<Employees?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<Employees?, String>, Employees?> value;
 
-  factory CreateOrderEmployeeId(String input) {
-    return CreateOrderEmployeeId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderEmployees(Employees? input) {
+    return CreateOrderEmployees._(validateFieldNotEmployeesAndNotEmpty(input));
   }
 
-  const CreateOrderEmployeeId._(this.value);
+  const CreateOrderEmployees._(this.value);
 }
 
 class CreateOrderAmount extends ObjectValue<int> {

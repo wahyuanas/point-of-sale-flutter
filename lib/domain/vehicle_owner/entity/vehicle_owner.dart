@@ -9,6 +9,7 @@ class VehicleOwner with _$VehicleOwner implements IEntity {
   const VehicleOwner._();
   const factory VehicleOwner({
     required int id,
+    required int uuid,
     required String name,
     required String phoneNumber,
     required String email,

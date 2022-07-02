@@ -10,6 +10,8 @@ import 'package:flutter_intro/flutter_intro.dart';
 
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../../../routes/cubit/pos_route_cubit.dart';
+import '../../../routes/on_state/pos_on_route_state.dart';
 import '../cubit/pos_catalog_list_cubit.dart';
 import '../delegate/pos_catalog_list_search_delegate.dart';
 import 'pos_catalog_list_card_widget.dart';
@@ -81,8 +83,9 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               },
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
               builder: (context, key) => GestureDetector(
-                  onTap: () => context.read<RouteCubit>().onRoute(
-                      const OnRouteState.postCatalogform(r: '/postCatalogform'),
+                  onTap: () => context.read<PosRouteCubit>().onRoute(
+                      const PosOnRouteState.postCatalogform(
+                          r: '/postCatalogform'),
                       null),
                   key: const Key('pos-catalog-list'),
                   child: const Padding(

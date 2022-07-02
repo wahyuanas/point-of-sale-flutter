@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/catalog/item/entity/item.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
+import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
+import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 
 import 'pos_catalog_list_card_button_widget.dart';
 import 'pos_catalog_list_card_content_widget.dart';
@@ -45,8 +45,8 @@ class _PosCatalogListCardWidgetState extends State<PosCatalogListCardWidget> {
             Flexible(
               child: GestureDetector(
                 onTap: () async {
-                  BlocProvider.of<RouteCubit>(context).onRoute(
-                      const OnRouteState.posCatalogItemDetail(
+                  BlocProvider.of<PosRouteCubit>(context).onRoute(
+                      const PosOnRouteState.posCatalogItemDetail(
                           r: '/posCatalogItemDetail'),
                       widget.item);
                 },

@@ -20,6 +20,7 @@ import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/cubit/list/vehicle_list_cubit.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
+import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 
@@ -89,6 +90,9 @@ class PosAppState extends State<PosApp> {
       ),
       BlocProvider(
         create: (context) => getIt<RouteCubit>(),
+      ),
+      BlocProvider(
+        create: (context) => getIt<PosRouteCubit>(),
       ),
       BlocProvider(
         create: (context) => getIt<SignInCubit>(),

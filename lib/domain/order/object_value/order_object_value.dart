@@ -12,9 +12,9 @@ class CreateOrder with _$CreateOrder {
   const factory CreateOrder({
     required CreateOrderUuid uuid,
     required CreateOrderCode code,
-    required CreateOrderCustomerId customerId,
-    required CreateOrderVehicleId vehicleId,
-    required CreateOrderEmployeeId employeeId,
+    required CreateOrderCustomer customer,
+    required CreateOrderVehicle vehicle,
+    required CreateOrderEmployees employees,
     required CreateOrderDate date,
     required CreateOrderAmount amount,
     required CreateOrderGrandAmount grandAmount,
@@ -34,9 +34,9 @@ class CreateOrder with _$CreateOrder {
   factory CreateOrder.empty() => CreateOrder(
         uuid: CreateOrderUuid(''),
         code: CreateOrderCode(''),
-        customerId: CreateOrderCustomerId(''),
-        vehicleId: CreateOrderVehicleId(''),
-        employeeId: CreateOrderEmployeeId(''),
+        customer: CreateOrderCustomer(null),
+        vehicle: CreateOrderVehicle(null),
+        employees: CreateOrderEmployees(null),
         date: CreateOrderDate(''),
         amount: CreateOrderAmount(''),
         grandAmount: CreateOrderGrandAmount(''),
@@ -55,9 +55,9 @@ class CreateOrder with _$CreateOrder {
 
 extension CreateOrderX on CreateOrder {
   Option<ObjectValueFailure> get failureOption {
-    return customerId.failureOrUnit
-        .andThen(vehicleId.failureOrUnit)
-        .andThen(employeeId.failureOrUnit)
+    return customer.failureOrUnit
+        .andThen(vehicle.failureOrUnit)
+        .andThen(employees.failureOrUnit)
         .andThen(disc.failureOrUnit)
         .andThen(paymentType.failureOrUnit)
         .andThen(charge.failureOrUnit)

@@ -80,7 +80,7 @@ class _PosCustomerListSearchWidgetState
 
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari Item...",
+            hintText: "Cari Konsumen...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

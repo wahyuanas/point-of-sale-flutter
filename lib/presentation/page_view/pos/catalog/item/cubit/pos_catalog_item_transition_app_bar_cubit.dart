@@ -19,9 +19,6 @@ class PosCatalogItemTransitionAppBarCubit
   final ScrollController _scrollController;
 
   onScroll() {
-    debugPrint(
-        "${_scrollController.position.pixels} ${state.heightImage} ${state.heightStatusBar} ${state.heightIconBackArrow}");
-
     if (_scrollController.position.pixels >=
         ((state.heightImage ?? 0) - (state.heightStatusBar ?? 0))) {
       if (state.builder == false) {

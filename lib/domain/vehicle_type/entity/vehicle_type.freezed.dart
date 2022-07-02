@@ -21,6 +21,7 @@ VehicleType _$VehicleTypeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$VehicleType {
   int get id => throw _privateConstructorUsedError;
+  int get uuid => throw _privateConstructorUsedError;
   String get manufacture => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
   int get year => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $VehicleTypeCopyWith<$Res> {
       _$VehicleTypeCopyWithImpl<$Res>;
   $Res call(
       {int id,
+      int uuid,
       String manufacture,
       String model,
       int year,
@@ -60,6 +62,7 @@ class _$VehicleTypeCopyWithImpl<$Res> implements $VehicleTypeCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? manufacture = freezed,
     Object? model = freezed,
     Object? year = freezed,
@@ -71,6 +74,10 @@ class _$VehicleTypeCopyWithImpl<$Res> implements $VehicleTypeCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       manufacture: manufacture == freezed
           ? _value.manufacture
@@ -109,6 +116,7 @@ abstract class _$$_VehicleTypeCopyWith<$Res>
   @override
   $Res call(
       {int id,
+      int uuid,
       String manufacture,
       String model,
       int year,
@@ -130,6 +138,7 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? manufacture = freezed,
     Object? model = freezed,
     Object? year = freezed,
@@ -141,6 +150,10 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       manufacture: manufacture == freezed
           ? _value.manufacture
@@ -175,6 +188,7 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
 class _$_VehicleType extends _VehicleType {
   const _$_VehicleType(
       {required this.id,
+      required this.uuid,
       required this.manufacture,
       required this.model,
       required this.year,
@@ -188,6 +202,8 @@ class _$_VehicleType extends _VehicleType {
 
   @override
   final int id;
+  @override
+  final int uuid;
   @override
   final String manufacture;
   @override
@@ -203,7 +219,7 @@ class _$_VehicleType extends _VehicleType {
 
   @override
   String toString() {
-    return 'VehicleType(id: $id, manufacture: $manufacture, model: $model, year: $year, color: $color, description: $description, idAccount: $idAccount)';
+    return 'VehicleType(id: $id, uuid: $uuid, manufacture: $manufacture, model: $model, year: $year, color: $color, description: $description, idAccount: $idAccount)';
   }
 
   @override
@@ -212,6 +228,7 @@ class _$_VehicleType extends _VehicleType {
         (other.runtimeType == runtimeType &&
             other is _$_VehicleType &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality()
                 .equals(other.manufacture, manufacture) &&
             const DeepCollectionEquality().equals(other.model, model) &&
@@ -227,6 +244,7 @@ class _$_VehicleType extends _VehicleType {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(manufacture),
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(year),
@@ -248,6 +266,7 @@ class _$_VehicleType extends _VehicleType {
 abstract class _VehicleType extends VehicleType {
   const factory _VehicleType(
       {required final int id,
+      required final int uuid,
       required final String manufacture,
       required final String model,
       required final int year,
@@ -261,6 +280,8 @@ abstract class _VehicleType extends VehicleType {
 
   @override
   int get id => throw _privateConstructorUsedError;
+  @override
+  int get uuid => throw _privateConstructorUsedError;
   @override
   String get manufacture => throw _privateConstructorUsedError;
   @override

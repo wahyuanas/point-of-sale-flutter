@@ -8,6 +8,7 @@ part of 'vehicle.dart';
 
 _$_Vehicle _$$_VehicleFromJson(Map<String, dynamic> json) => _$_Vehicle(
       id: json['id'] as int,
+      uuid: json['uuid'] as int,
       policyNumber: json['policyNumber'] as String,
       machineNumber: json['machineNumber'] as String,
       currentKm: json['currentKm'] as int,
@@ -20,6 +21,7 @@ _$_Vehicle _$$_VehicleFromJson(Map<String, dynamic> json) => _$_Vehicle(
 Map<String, dynamic> _$$_VehicleToJson(_$_Vehicle instance) =>
     <String, dynamic>{
       'id': instance.id,
+      'uuid': instance.uuid,
       'policyNumber': instance.policyNumber,
       'machineNumber': instance.machineNumber,
       'currentKm': instance.currentKm,

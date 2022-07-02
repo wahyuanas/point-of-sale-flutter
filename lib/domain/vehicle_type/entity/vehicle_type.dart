@@ -9,6 +9,7 @@ class VehicleType with _$VehicleType implements IEntity {
   const VehicleType._();
   const factory VehicleType({
     required int id,
+    required int uuid,
     required String manufacture,
     required String model,
     required int year,

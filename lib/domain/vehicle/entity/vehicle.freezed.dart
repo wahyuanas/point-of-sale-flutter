@@ -21,6 +21,7 @@ Vehicle _$VehicleFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Vehicle {
   int get id => throw _privateConstructorUsedError;
+  int get uuid => throw _privateConstructorUsedError;
   String get policyNumber => throw _privateConstructorUsedError;
   String get machineNumber => throw _privateConstructorUsedError;
   int get currentKm => throw _privateConstructorUsedError;
@@ -40,6 +41,7 @@ abstract class $VehicleCopyWith<$Res> {
       _$VehicleCopyWithImpl<$Res>;
   $Res call(
       {int id,
+      int uuid,
       String policyNumber,
       String machineNumber,
       int currentKm,
@@ -60,6 +62,7 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? policyNumber = freezed,
     Object? machineNumber = freezed,
     Object? currentKm = freezed,
@@ -72,6 +75,10 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       policyNumber: policyNumber == freezed
           ? _value.policyNumber
@@ -113,6 +120,7 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
   @override
   $Res call(
       {int id,
+      int uuid,
       String policyNumber,
       String machineNumber,
       int currentKm,
@@ -134,6 +142,7 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? policyNumber = freezed,
     Object? machineNumber = freezed,
     Object? currentKm = freezed,
@@ -146,6 +155,10 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       policyNumber: policyNumber == freezed
           ? _value.policyNumber
@@ -184,6 +197,7 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
 class _$_Vehicle extends _Vehicle {
   const _$_Vehicle(
       {required this.id,
+      required this.uuid,
       required this.policyNumber,
       required this.machineNumber,
       required this.currentKm,
@@ -198,6 +212,8 @@ class _$_Vehicle extends _Vehicle {
 
   @override
   final int id;
+  @override
+  final int uuid;
   @override
   final String policyNumber;
   @override
@@ -215,7 +231,7 @@ class _$_Vehicle extends _Vehicle {
 
   @override
   String toString() {
-    return 'Vehicle(id: $id, policyNumber: $policyNumber, machineNumber: $machineNumber, currentKm: $currentKm, description: $description, idAccount: $idAccount, idVehicleOwner: $idVehicleOwner, idVehicleType: $idVehicleType)';
+    return 'Vehicle(id: $id, uuid: $uuid, policyNumber: $policyNumber, machineNumber: $machineNumber, currentKm: $currentKm, description: $description, idAccount: $idAccount, idVehicleOwner: $idVehicleOwner, idVehicleType: $idVehicleType)';
   }
 
   @override
@@ -224,6 +240,7 @@ class _$_Vehicle extends _Vehicle {
         (other.runtimeType == runtimeType &&
             other is _$_Vehicle &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality()
                 .equals(other.policyNumber, policyNumber) &&
             const DeepCollectionEquality()
@@ -243,6 +260,7 @@ class _$_Vehicle extends _Vehicle {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(policyNumber),
       const DeepCollectionEquality().hash(machineNumber),
       const DeepCollectionEquality().hash(currentKm),
@@ -265,6 +283,7 @@ class _$_Vehicle extends _Vehicle {
 abstract class _Vehicle extends Vehicle {
   const factory _Vehicle(
       {required final int id,
+      required final int uuid,
       required final String policyNumber,
       required final String machineNumber,
       required final int currentKm,
@@ -278,6 +297,8 @@ abstract class _Vehicle extends Vehicle {
 
   @override
   int get id => throw _privateConstructorUsedError;
+  @override
+  int get uuid => throw _privateConstructorUsedError;
   @override
   String get policyNumber => throw _privateConstructorUsedError;
   @override

@@ -185,89 +185,89 @@ var itemPos = <Item>[
 //       idAccount: 1),
 // ];
 
-var vehicleType = [
-  const VehicleType(
-      id: 1,
-      manufacture: "Mercedes-Benz",
-      model: "GLA-SUV",
-      year: 2022,
-      color: "Blue",
-      description: "abcde",
-      idAccount: 1),
-  const VehicleType(
-      id: 2,
-      manufacture: "Toyota",
-      model: "Fortuner",
-      year: 2021,
-      color: "Black",
-      description: "abcde",
-      idAccount: 1),
-  const VehicleType(
-      id: 3,
-      manufacture: "Mitsubishi",
-      model: "Pajero",
-      year: 2020,
-      color: "Metal",
-      description: "abcde",
-      idAccount: 1)
-];
+// var vehicleType = [
+//   const VehicleType(
+//       id: 1,
+//       manufacture: "Mercedes-Benz",
+//       model: "GLA-SUV",
+//       year: 2022,
+//       color: "Blue",
+//       description: "abcde",
+//       idAccount: 1),
+//   const VehicleType(
+//       id: 2,
+//       manufacture: "Toyota",
+//       model: "Fortuner",
+//       year: 2021,
+//       color: "Black",
+//       description: "abcde",
+//       idAccount: 1),
+//   const VehicleType(
+//       id: 3,
+//       manufacture: "Mitsubishi",
+//       model: "Pajero",
+//       year: 2020,
+//       color: "Metal",
+//       description: "abcde",
+//       idAccount: 1)
+// ];
 
-var owners = [
-  const VehicleOwner(
-      id: 1,
-      name: "Bill Gates",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      idNumber: "12345",
-      address: "Jl. ABC No. 1",
-      idAccount: 1),
-  const VehicleOwner(
-      id: 2,
-      name: "Asep",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      idNumber: "12345",
-      address: "Jl. ABC No. 1",
-      idAccount: 1),
-  const VehicleOwner(
-      id: 3,
-      name: "Deden",
-      phoneNumber: "0987654321",
-      email: "c@c.com",
-      idNumber: "12345",
-      address: "Jl. ABC No. 1",
-      idAccount: 1),
-];
+// var owners = [
+//   const VehicleOwner(
+//       id: 1,
+//       name: "Bill Gates",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       idNumber: "12345",
+//       address: "Jl. ABC No. 1",
+//       idAccount: 1),
+//   const VehicleOwner(
+//       id: 2,
+//       name: "Asep",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       idNumber: "12345",
+//       address: "Jl. ABC No. 1",
+//       idAccount: 1),
+//   const VehicleOwner(
+//       id: 3,
+//       name: "Deden",
+//       phoneNumber: "0987654321",
+//       email: "c@c.com",
+//       idNumber: "12345",
+//       address: "Jl. ABC No. 1",
+//       idAccount: 1),
+// ];
 
-var vehicle = [
-  const Vehicle(
-      id: 1,
-      policyNumber: "B1234UT",
-      machineNumber: "08765-4321",
-      currentKm: 1500,
-      description: "abcdef",
-      idAccount: 1,
-      idVehicleOwner: 1,
-      idVehicleType: 1),
-  const Vehicle(
-      id: 2,
-      policyNumber: "B1234UT",
-      machineNumber: "08765-4321",
-      currentKm: 1500,
-      description: "abcdef",
-      idAccount: 1,
-      idVehicleOwner: 2,
-      idVehicleType: 2),
-  const Vehicle(
-      id: 3,
-      policyNumber: "B1234UT",
-      machineNumber: "08765-4321",
-      currentKm: 1500,
-      description: "abcdef",
-      idAccount: 1,
-      idVehicleOwner: 3,
-      idVehicleType: 3)
-];
+// var vehicle = [
+//   const Vehicle(
+//       id: 1,
+//       policyNumber: "B1234UT",
+//       machineNumber: "08765-4321",
+//       currentKm: 1500,
+//       description: "abcdef",
+//       idAccount: 1,
+//       idVehicleOwner: 1,
+//       idVehicleType: 1),
+//   const Vehicle(
+//       id: 2,
+//       policyNumber: "B1234UT",
+//       machineNumber: "08765-4321",
+//       currentKm: 1500,
+//       description: "abcdef",
+//       idAccount: 1,
+//       idVehicleOwner: 2,
+//       idVehicleType: 2),
+//   const Vehicle(
+//       id: 3,
+//       policyNumber: "B1234UT",
+//       machineNumber: "08765-4321",
+//       currentKm: 1500,
+//       description: "abcdef",
+//       idAccount: 1,
+//       idVehicleOwner: 3,
+//       idVehicleType: 3)
+// ];
 
 var itemss = <Item>[
   Item(

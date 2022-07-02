@@ -21,6 +21,7 @@ VehicleOwner _$VehicleOwnerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$VehicleOwner {
   int get id => throw _privateConstructorUsedError;
+  int get uuid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
@@ -41,6 +42,7 @@ abstract class $VehicleOwnerCopyWith<$Res> {
       _$VehicleOwnerCopyWithImpl<$Res>;
   $Res call(
       {int id,
+      int uuid,
       String name,
       String phoneNumber,
       String email,
@@ -60,6 +62,7 @@ class _$VehicleOwnerCopyWithImpl<$Res> implements $VehicleOwnerCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
@@ -71,6 +74,10 @@ class _$VehicleOwnerCopyWithImpl<$Res> implements $VehicleOwnerCopyWith<$Res> {
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       name: name == freezed
           ? _value.name
@@ -109,6 +116,7 @@ abstract class _$$_VehicleOwnerCopyWith<$Res>
   @override
   $Res call(
       {int id,
+      int uuid,
       String name,
       String phoneNumber,
       String email,
@@ -131,6 +139,7 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
@@ -142,6 +151,10 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
+              as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as int,
       name: name == freezed
           ? _value.name
@@ -176,6 +189,7 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
 class _$_VehicleOwner extends _VehicleOwner {
   const _$_VehicleOwner(
       {required this.id,
+      required this.uuid,
       required this.name,
       required this.phoneNumber,
       required this.email,
@@ -189,6 +203,8 @@ class _$_VehicleOwner extends _VehicleOwner {
 
   @override
   final int id;
+  @override
+  final int uuid;
   @override
   final String name;
   @override
@@ -204,7 +220,7 @@ class _$_VehicleOwner extends _VehicleOwner {
 
   @override
   String toString() {
-    return 'VehicleOwner(id: $id, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address, idAccount: $idAccount)';
+    return 'VehicleOwner(id: $id, uuid: $uuid, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address, idAccount: $idAccount)';
   }
 
   @override
@@ -213,6 +229,7 @@ class _$_VehicleOwner extends _VehicleOwner {
         (other.runtimeType == runtimeType &&
             other is _$_VehicleOwner &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
@@ -227,6 +244,7 @@ class _$_VehicleOwner extends _VehicleOwner {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(email),
@@ -248,6 +266,7 @@ class _$_VehicleOwner extends _VehicleOwner {
 abstract class _VehicleOwner extends VehicleOwner {
   const factory _VehicleOwner(
       {required final int id,
+      required final int uuid,
       required final String name,
       required final String phoneNumber,
       required final String email,
@@ -261,6 +280,8 @@ abstract class _VehicleOwner extends VehicleOwner {
 
   @override
   int get id => throw _privateConstructorUsedError;
+  @override
+  int get uuid => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override

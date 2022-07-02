@@ -17,9 +17,6 @@ class PosCatalogListScreen extends StatelessWidget {
           PosCatalogListCubit(catalogListCubit: getIt<CatalogListCubit>())
             ..onStarted()),
       child: Intro(
-        padding: EdgeInsets.zero,
-        borderRadius: const BorderRadius.all(Radius.circular(5)),
-        maskColor: const Color.fromRGBO(0, 0, 0, .6),
         buttonTextBuilder: (order) => order == 1 ? 'OK' : 'Next',
         child: const PosCatalogListWidget(),
       ),

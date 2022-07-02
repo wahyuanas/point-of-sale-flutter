@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
+import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
+import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -10,7 +12,6 @@ import 'package:flutter_intro/flutter_intro.dart';
 
 import '../cubit/pos_customer_list_cubit.dart';
 import '../delegate/pos_customer_list_search_delegate.dart';
-import 'pos_customer_list_card_widget.dart';
 
 class PosCustomerListWidget extends StatefulWidget {
   const PosCustomerListWidget({Key? key}) : super(key: key);
@@ -64,7 +65,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
             // ),
             leading: IntroStepBuilder(
               order: 1,
-              text: 'Tekan tombol + untuk menambah data customer',
+              text: 'Tekan tombol + untuk menambah data konsumen',
               padding: const EdgeInsets.only(
                 bottom: 5,
                 left: 5,
@@ -80,12 +81,12 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
               builder: (context, key) => GestureDetector(
                   onTap: () {
-                    context.read<RouteCubit>().onRoute(
-                        const OnRouteState.postCatalogform(
+                    context.read<PosRouteCubit>().onRoute(
+                        const PosOnRouteState.postCatalogform(
                             r: '/postCatalogform'),
                         null);
                   },
-                  key: key,
+                  key: const Key('pos-customer-list'),
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0),
                     child: Icon(
@@ -98,7 +99,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
             ),
 
             title: const Text(
-              "List Item",
+              "List Konsumen",
               style: TextStyle(color: Colors.blue),
             ),
             systemOverlayStyle: const SystemUiOverlayStyle(
@@ -141,7 +142,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                   return SliverFillRemaining(
                     child: Center(
                       child: Text(
-                        "Tidak ada data customer",
+                        "Tidak ada data konsumen",
                         style: GoogleFonts.raleway(
                             fontSize: 20, color: Colors.blue),
                       ),
@@ -153,8 +154,9 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                     sliver: SliverList(
                         delegate: SliverChildBuilderDelegate(
                       (BuildContext context, int index) {
-                        return PosCustomerListCardWidget(
-                            customer: state.customers![index]);
+                        return Container();
+                        // PosCustomerListCardWidget(
+                        //     customer: state.customers![index]);
                       },
                       childCount:
                           state.customers?.length, // 1000 list customers

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pos/presentation/page_view/main/config/tab_config.dart';
 
-import '../widget/pos_main_widget.dart';
+import '../../routes/pos_app_routes.dart';
 
 class PosMainScreen extends StatefulWidget {
   final GlobalKey<NavigatorState> navigatorKey;
@@ -32,10 +32,7 @@ class PosMainScreenState extends State<PosMainScreen> {
   Widget build(BuildContext context) {
     return Navigator(
       key: widget.navigatorKey,
-      initialRoute: "/",
-      onGenerateRoute: (routeSettings) {
-        return MaterialPageRoute(builder: (context) => const PosMainWidget());
-      },
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
