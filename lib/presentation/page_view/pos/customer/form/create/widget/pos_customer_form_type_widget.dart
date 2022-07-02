@@ -75,7 +75,7 @@ class _PosCustomerFormTypeWidgetState extends State<PosCustomerFormTypeWidget> {
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama",
+                labelText: "Tipe",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

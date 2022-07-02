@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
+import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 
 import 'pos_customer_form_export_widget.dart';
@@ -17,7 +18,7 @@ class PosCustomerFormWidget extends StatefulWidget {
 class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CatalogFormCreateCubit, CatalogFormCreateState>(
+    return BlocListener<CustomerFormCreateCubit, CustomerFormCreateState>(
       listener: (context, state) {
         state.status.when(
             initial: (() => null),
@@ -32,7 +33,7 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
               await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
-              BlocProvider.of<CatalogFormCreateCubit>(context).onInitial();
+              BlocProvider.of<CustomerFormCreateCubit>(context).onInitial();
             },
             failure: (f) {
               BlocProvider.of<ModalCubit>(context)
@@ -133,7 +134,7 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
                     //  TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
                   ),
                   onPressed: () async {
-                    context.read<CatalogFormCreateCubit>().onCreate();
+                    context.read<CustomerFormCreateCubit>().onCreate();
                   },
                   child: const Text(
                     "S i m p a n",

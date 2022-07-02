@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/order/object_value/object_value.dart';
@@ -66,6 +67,13 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
             paymentType: CreateOrderPaymentType(v), paymentCardInfo: null),
       ));
     }
+  }
+
+  onCustomerChanged(Customer? customer) {
+    emit(state.copyWith(
+      createOrder:
+          state.createOrder?.copyWith(customer: CreateOrderCustomer(customer)),
+    ));
   }
 
   onReset() {

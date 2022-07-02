@@ -62,12 +62,13 @@ class _PosCustomerFormEmailWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createCustomer.email.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            invalidEmail: (v) => "email tidak valid",
                             orElse: () => null),
                         (r) => null)
                     : null,
@@ -76,7 +77,7 @@ class _PosCustomerFormEmailWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama",
+                labelText: "Email",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

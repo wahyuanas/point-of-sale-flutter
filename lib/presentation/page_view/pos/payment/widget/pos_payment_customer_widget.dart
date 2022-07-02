@@ -71,7 +71,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
-              height: 50,
+              //height: 50,
               //margin: const EdgeInsets.all(10.0),
               decoration: const BoxDecoration(
                   //color: Colors.blue,
@@ -86,8 +86,8 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                     (l) => GestureDetector(
                       onTap: () => BlocProvider.of<PosRouteCubit>(context)
                           .onRoute(
-                              const PosOnRouteState.postCustomerList(
-                                  r: '/postCustomerList'),
+                              const PosOnRouteState.posCustomerList(
+                                  r: '/posCustomerList'),
                               null),
                       child: const Icon(
                         Icons.search_outlined,
@@ -96,13 +96,10 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                       ),
                     ),
                     (r) => GestureDetector(
-                      onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                          .onRoute(
-                              const PosOnRouteState.postCustomerList(
-                                  r: '/postCustomerList'),
-                              null),
+                      onTap: () => BlocProvider.of<PosPaymentCubit>(context)
+                          .onCustomerChanged(null),
                       child: const Icon(
-                        Icons.remove_outlined,
+                        Icons.delete_outlined,
                         size: 25.0,
                         color: Colors.blue,
                       ),

@@ -8,6 +8,7 @@ import 'package:pos/presentation/page_view/main/screen/page_view_main._screen.da
 import 'package:pos/presentation/page_view/pos/catalog/form/screen/pos_catalog_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/item/screen/pos_catalog_item_detail_screen.dart';
 import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/customer/form/create/screen/pos_customer_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 
@@ -28,9 +29,9 @@ class RouteGenerator {
                 ));
       case '/pageViewMainScreen':
         return MaterialPageRoute(builder: (_) => const PageViewMainScreen());
-      case '/postCatalogList':
+      case '/posCatalogList':
         return MaterialPageRoute(builder: (_) => const PosCatalogListScreen());
-      case '/postCatalogform':
+      case '/posCatalogform':
         return MaterialPageRoute(builder: (_) => const PosCatalogFormScreen());
       case '/purchase':
         return MaterialPageRoute(builder: (_) => const PosPaymentScreen());
@@ -40,8 +41,10 @@ class RouteGenerator {
             builder: (_) => PosCatalogItemDetailScreen(
                   item: item,
                 ));
-      case '/postCustomerList':
+      case '/posCustomerList':
         return MaterialPageRoute(builder: (_) => const PosCustomerListScreen());
+      case '/posCustomerform':
+        return MaterialPageRoute(builder: (_) => const PosCustomerFormScreen());
 
       default:
         return _errorRoute();
@@ -51,13 +54,19 @@ class RouteGenerator {
   static Route<dynamic> _errorRoute() {
     return MaterialPageRoute(builder: (_) {
       return Scaffold(
-        appBar: AppBar(title: Builder(builder: (context) {
-          return const Text("Error");
-        })),
-        body: const Center(
-            child: Text(
-                'Error page ini muncul karena route yang dituju tidak ditemukan')),
-      );
+          appBar: AppBar(title: Builder(builder: (context) {
+            return const Text("Error");
+          })),
+          body: const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Text(
+                  'Error page ini muncul karena route yang dituju tidak ditemukan',
+                  style: TextStyle(
+                    fontSize: 17.0,
+                  )),
+            ),
+          ));
     });
   }
 }

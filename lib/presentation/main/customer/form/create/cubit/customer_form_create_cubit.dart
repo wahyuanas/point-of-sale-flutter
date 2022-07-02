@@ -63,28 +63,29 @@ class CustomerFormCreateCubit extends Cubit<CustomerFormCreateState> {
           state.createCustomer.copyWith(address: CreateCustomerAddress(v)),
     ));
   }
-  // onCreate() async {
-  //   if (state.CreateCustomer.failureOption.isSome()) {
-  //     emit(state.copyWith(initial: false));
-  //   } else {
-  //     emit(state.copyWith(status: const StateStatus.loading()));
-  //     //final failureOrSuccess = await accountService.signUp(state.signUp);
-  //     await Future.delayed(const Duration(microseconds: 500));
-  //     final id = _customerListCubit.state.items == null
-  //         ? 1
-  //         : _customerListCubit.state.items!.last.id + 1;
-  //     Item r = Item.CreateCustomer(id, state.CreateCustomer);
-  //     await Future.delayed(const Duration(milliseconds: 500));
-  //     emit(state.copyWith(status: StateStatus.success(data: r)));
-  //     _customerListCubit.onAdditem(r);
 
-  //     // failureOrSuccess.fold(
-  //     //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
-  //     //     (r) => emit(state.copyWith(status: StateStatus.success(data: r))));
-  //   }
-  // }
+  onCreate() async {
+    if (state.createCustomer.failureOption.isSome()) {
+      emit(state.copyWith(initial: false));
+    } else {
+      emit(state.copyWith(status: const StateStatus.loading()));
+      //final failureOrSuccess = await accountService.signUp(state.signUp);
+      await Future.delayed(const Duration(microseconds: 500));
+      final id = _customerListCubit.state.customers == null
+          ? 1
+          : _customerListCubit.state.customers!.last.id + 1;
+      Customer r = Customer.createCustomer(id, state.createCustomer);
+      await Future.delayed(const Duration(milliseconds: 500));
+      emit(state.copyWith(status: StateStatus.success(data: r)));
+      _customerListCubit.onAddCustomer(r);
 
-  // onInitial() {
-  //   emit(CustomerFormCreateState.initial());
-  // }
+      // failureOrSuccess.fold(
+      //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
+      //     (r) => emit(state.copyWith(status: StateStatus.success(data: r))));
+    }
+  }
+
+  onInitial() {
+    emit(CustomerFormCreateState.initial());
+  }
 }

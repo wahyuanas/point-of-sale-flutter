@@ -55,8 +55,8 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                       onTap: () {
                         //Intro.of(context).dispose();
                         BlocProvider.of<PosRouteCubit>(context).onRoute(
-                            const PosOnRouteState.postCatalogList(
-                                r: '/postCatalogList'),
+                            const PosOnRouteState.posCatalogList(
+                                r: '/posCatalogList'),
                             null);
                       },
                       key: key,

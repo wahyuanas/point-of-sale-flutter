@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/pos/entity/pos.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
 
 import 'pos_main_widget_item_transaction_export.dart';
 

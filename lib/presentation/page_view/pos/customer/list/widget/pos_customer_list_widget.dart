@@ -5,8 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_intro/flutter_intro.dart';
 
@@ -83,8 +81,8 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
               builder: (context, key) => GestureDetector(
                   onTap: () {
                     context.read<PosRouteCubit>().onRoute(
-                        const PosOnRouteState.postCatalogform(
-                            r: '/postCustomerform'),
+                        const PosOnRouteState.posCustomerForm(
+                            r: '/posCustomerform'),
                         null);
                   },
                   key: const Key('pos-customer-list'),

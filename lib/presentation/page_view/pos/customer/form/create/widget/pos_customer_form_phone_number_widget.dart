@@ -63,7 +63,7 @@ class _PosCustomerFormPhoneNumberWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createCustomer.phoneNumber.value.fold(
@@ -77,7 +77,7 @@ class _PosCustomerFormPhoneNumberWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama",
+                labelText: "Nomor Handphone",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

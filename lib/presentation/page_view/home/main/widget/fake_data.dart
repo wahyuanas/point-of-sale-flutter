@@ -1,7 +1,4 @@
 import 'package:pos/domain/catalog/item/entity/item.dart';
-import 'package:pos/domain/vehicle/entity/vehicle.dart';
-import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
-import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:uuid/uuid.dart';
 
 // class Order {

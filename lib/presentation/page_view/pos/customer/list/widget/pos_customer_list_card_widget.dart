@@ -26,7 +26,12 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
   Widget build(BuildContext context) {
     return BlocListener<PosPaymentCubit, PosPaymentState>(
       listener: (context, state) async {
-        state.createOrder?.customer.value.fold((l) => null, (r) {
+        state.createOrder?.customer.value.fold((l) {
+          if (_itsMe == true) {
+            _itsMe = false;
+            setState(() {});
+          }
+        }, (r) {
           if (r?.id == widget.customer.id) {
             if (_itsMe == false) {
               _itsMe = true;
@@ -44,7 +49,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
       },
       child: Card(
         child: Padding(
-          padding: const EdgeInsets.only(left: 20.0, top: 20.0, bottom: 20.0),
+          padding: const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,20 +63,29 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                 },
                 child: ListTile(
                   trailing: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      if (_itsMe == false) {
+                        BlocProvider.of<PosPaymentCubit>(context)
+                            .onCustomerChanged(widget.customer);
+                        Navigator.of(context).pop();
+                      } else {
+                        BlocProvider.of<PosPaymentCubit>(context)
+                            .onCustomerChanged(null);
+                      }
+                    },
                     child: Icon(
                       Icons.done_outlined,
-                      size: 25.0,
+                      size: 35.0,
                       color: _itsMe == true ? Colors.blue : Colors.black38,
                     ),
                   ),
                   title: Row(
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       const Icon(
-                        Icons.person,
-                        size: 40,
+                        Icons.person_outline,
+                        size: 50,
                       ),
-                      Container(),
                       const SizedBox(
                         width: 10.0,
                       ),

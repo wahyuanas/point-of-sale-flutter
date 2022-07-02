@@ -15,7 +15,7 @@ class CustomerListCubit extends HydratedCubit<CustomerListState> {
   //   emit(state.copyWith(customers: state.customers));
   // }
 
-  onAdditem(Customer customer) {
+  onAddCustomer(Customer customer) {
     List<Customer> customers = [];
     if (state.customers != null) {
       customers = List.from(state.customers!.toList());

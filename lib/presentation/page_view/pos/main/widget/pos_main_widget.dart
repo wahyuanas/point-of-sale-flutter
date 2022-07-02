@@ -2,11 +2,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../routes/cubit/pos_route_cubit.dart';
-import '../bloc/pos_main_bloc.dart';
 import '../delegate/pos_main_action_delegate.dart';
 import '../delegate/pos_main_info_delegate.dart';
 import 'pos_main_item_transaction_widget.dart';
@@ -52,6 +50,7 @@ class _PosMainWidgetState extends State<PosMainWidget>
     //kToolbarHeight;
     return BlocListener<PosRouteCubit, PosRouteState>(
       listener: (context, state) {
+        debugPrint("ok vv ${state.onRoute!.r}");
         if (state.onRoute != null) {
           if (state.args == null) {
             Navigator.of(context, rootNavigator: true)

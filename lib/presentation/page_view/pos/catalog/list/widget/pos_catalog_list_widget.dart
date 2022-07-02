@@ -3,8 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:flutter_intro/flutter_intro.dart';
 
@@ -84,8 +82,8 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
               builder: (context, key) => GestureDetector(
                   onTap: () => context.read<PosRouteCubit>().onRoute(
-                      const PosOnRouteState.postCatalogform(
-                          r: '/postCatalogform'),
+                      const PosOnRouteState.posCatalogform(
+                          r: '/posCatalogform'),
                       null),
                   key: const Key('pos-catalog-list'),
                   child: const Padding(

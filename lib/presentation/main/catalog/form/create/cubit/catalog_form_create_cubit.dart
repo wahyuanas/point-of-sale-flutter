@@ -120,7 +120,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
       Item r = Item.createCatalogItem(id, state.createCatalogItem);
       await Future.delayed(const Duration(milliseconds: 500));
       emit(state.copyWith(status: StateStatus.success(data: r)));
-      _catalogListCubit.onAdditem(r);
+      _catalogListCubit.onAddItem(r);
 
       // failureOrSuccess.fold(
       //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),
