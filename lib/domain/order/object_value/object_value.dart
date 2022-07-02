@@ -1,6 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
 
 import 'object_value_failure.dart';
@@ -9,7 +7,7 @@ import 'value_object_validators.dart';
 
 class CreateOrderUuid extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CreateOrderUuid(String input) {
     return CreateOrderUuid._(validateFieldStringNotEmpty(input));
@@ -20,7 +18,7 @@ class CreateOrderUuid extends ObjectValue<String> {
 
 class CreateOrderCode extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CreateOrderCode(String input) {
     return CreateOrderCode._(validateFieldStringNotEmpty(input));
@@ -31,7 +29,7 @@ class CreateOrderCode extends ObjectValue<String> {
 
 class CreateOrderDescription extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CreateOrderDescription(String input) {
     return CreateOrderDescription._(validateFieldStringNotEmpty(input));
@@ -42,7 +40,7 @@ class CreateOrderDescription extends ObjectValue<String> {
 
 class CreateOrderCustomerId extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderCustomerId(String input) {
     return CreateOrderCustomerId._(validateFieldNotIntAndNotEmpty(input));
@@ -53,7 +51,7 @@ class CreateOrderCustomerId extends ObjectValue<int> {
 
 class CreateOrderVehicleId extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderVehicleId(String input) {
     return CreateOrderVehicleId._(validateFieldNotIntAndNotEmpty(input));
@@ -64,7 +62,7 @@ class CreateOrderVehicleId extends ObjectValue<int> {
 
 class CreateOrderEmployeeId extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderEmployeeId(String input) {
     return CreateOrderEmployeeId._(validateFieldNotIntAndNotEmpty(input));
@@ -75,7 +73,7 @@ class CreateOrderEmployeeId extends ObjectValue<int> {
 
 class CreateOrderAmount extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderAmount(String input) {
     return CreateOrderAmount._(validateFieldNotIntAndNotEmpty(input));
@@ -86,7 +84,7 @@ class CreateOrderAmount extends ObjectValue<int> {
 
 class CreateOrderGrandAmount extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderGrandAmount(String input) {
     return CreateOrderGrandAmount._(validateFieldNotIntAndNotEmpty(input));
@@ -97,7 +95,7 @@ class CreateOrderGrandAmount extends ObjectValue<int> {
 
 class CreateOrderDisc extends ObjectValue<double?> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, double?> value;
+  final Either<OrderObjectValueFailure<String, String>, double?> value;
 
   factory CreateOrderDisc(String? input) {
     return CreateOrderDisc._(validateFieldNotDoubleAndEmpty(input));
@@ -108,7 +106,7 @@ class CreateOrderDisc extends ObjectValue<double?> {
 
 class CreateOrderPaymentType extends ObjectValue<int?> {
   @override
-  final Either<FormItemObjectValueFailure<int?, String>, int?> value;
+  final Either<OrderObjectValueFailure<int?, String>, int?> value;
 
   factory CreateOrderPaymentType(int? input) {
     return CreateOrderPaymentType._(validateFieldNotIntAndNotEmpty1(input));
@@ -119,7 +117,7 @@ class CreateOrderPaymentType extends ObjectValue<int?> {
 
 class CreateOrderCharge extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderCharge(String input) {
     return CreateOrderCharge._(validateFieldNotIntAndNotEmpty(input));
@@ -130,7 +128,7 @@ class CreateOrderCharge extends ObjectValue<int> {
 
 class CreateOrderPaidAmount extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderPaidAmount(String input) {
     return CreateOrderPaidAmount._(validateFieldNotIntAndNotEmpty(input));
@@ -141,7 +139,7 @@ class CreateOrderPaidAmount extends ObjectValue<int> {
 
 class CreateOrderChangeAmount extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderChangeAmount(String input) {
     return CreateOrderChangeAmount._(validateFieldNotIntAndNotEmpty(input));
@@ -152,7 +150,7 @@ class CreateOrderChangeAmount extends ObjectValue<int> {
 
 class CreateOrderTax extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderTax(String input) {
     return CreateOrderTax._(validateFieldNotIntAndNotEmpty(input));
@@ -163,7 +161,7 @@ class CreateOrderTax extends ObjectValue<int> {
 
 class CreateOrderItemNumber extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderItemNumber(String input) {
     return CreateOrderItemNumber._(validateFieldNotIntAndNotEmpty(input));
@@ -174,7 +172,7 @@ class CreateOrderItemNumber extends ObjectValue<int> {
 
 class CreateOrderPaidStatus extends ObjectValue<int> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<String, String>, int> value;
 
   factory CreateOrderPaidStatus(String input) {
     return CreateOrderPaidStatus._(validateFieldNotIntAndNotEmpty(input));
@@ -185,7 +183,7 @@ class CreateOrderPaidStatus extends ObjectValue<int> {
 
 class CreateOrderDate extends ObjectValue<DateTime> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, DateTime> value;
+  final Either<OrderObjectValueFailure<String, String>, DateTime> value;
 
   factory CreateOrderDate(String input) {
     return CreateOrderDate._(validateFieldNotDateTimeAndNotEmpty(input));
@@ -196,8 +194,8 @@ class CreateOrderDate extends ObjectValue<DateTime> {
 
 class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>,
-      CraetePaymentCardInfo?> value;
+  final Either<OrderObjectValueFailure<String, String>, CraetePaymentCardInfo?>
+      value;
 
   factory CreateOrderPaymentCardInfo(CraetePaymentCardInfo? input) {
     return CreateOrderPaymentCardInfo._(validateFieldPaymentCardInfo(input));
@@ -208,7 +206,7 @@ class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
 
 class CraetePaymentCardInfoName extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CraetePaymentCardInfoName(String input) {
     return CraetePaymentCardInfoName._(validateFieldStringNotEmpty(input));
@@ -219,7 +217,7 @@ class CraetePaymentCardInfoName extends ObjectValue<String> {
 
 class CraetePaymentCardInfoNumber extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CraetePaymentCardInfoNumber(String input) {
     return CraetePaymentCardInfoNumber._(validateFieldStringNotEmpty(input));
@@ -230,7 +228,7 @@ class CraetePaymentCardInfoNumber extends ObjectValue<String> {
 
 class CraetePaymentCardInfoNumberRef extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CraetePaymentCardInfoNumberRef(String input) {
     return CraetePaymentCardInfoNumberRef._(validateFieldStringNotEmpty(input));
@@ -241,7 +239,7 @@ class CraetePaymentCardInfoNumberRef extends ObjectValue<String> {
 
 class CraetePaymentCardInfoRemarks extends ObjectValue<String> {
   @override
-  final Either<FormItemObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String, String>, String> value;
 
   factory CraetePaymentCardInfoRemarks(String input) {
     return CraetePaymentCardInfoRemarks._(validateFieldStringNotEmpty(input));

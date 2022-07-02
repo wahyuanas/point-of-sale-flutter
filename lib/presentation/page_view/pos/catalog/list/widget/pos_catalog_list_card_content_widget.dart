@@ -92,7 +92,10 @@ class _PosCatalogListCardContentWidgetState
                 Text(
                   widget.item.name,
                   style: const TextStyle(
-                      color: Colors.black, fontSize: 14.0, height: 1.2),
+                      color: Colors.black,
+                      fontSize: 14.0,
+                      height: 1.2,
+                      fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(
                   height: 0.0,

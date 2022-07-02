@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FormItemObjectValueFailure<T, E> {
+mixin _$OrderObjectValueFailure<T, E> {
   T get failedValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -78,27 +78,26 @@ mixin _$FormItemObjectValueFailure<T, E> {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $FormItemObjectValueFailureCopyWith<T, E, FormItemObjectValueFailure<T, E>>
+  $OrderObjectValueFailureCopyWith<T, E, OrderObjectValueFailure<T, E>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FormItemObjectValueFailureCopyWith<T, E, $Res> {
-  factory $FormItemObjectValueFailureCopyWith(
-          FormItemObjectValueFailure<T, E> value,
-          $Res Function(FormItemObjectValueFailure<T, E>) then) =
-      _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>;
+abstract class $OrderObjectValueFailureCopyWith<T, E, $Res> {
+  factory $OrderObjectValueFailureCopyWith(OrderObjectValueFailure<T, E> value,
+          $Res Function(OrderObjectValueFailure<T, E>) then) =
+      _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>;
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
-  _$FormItemObjectValueFailureCopyWithImpl(this._value, this._then);
+class _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+  _$OrderObjectValueFailureCopyWithImpl(this._value, this._then);
 
-  final FormItemObjectValueFailure<T, E> _value;
+  final OrderObjectValueFailure<T, E> _value;
   // ignore: unused_field
-  final $Res Function(FormItemObjectValueFailure<T, E>) _then;
+  final $Res Function(OrderObjectValueFailure<T, E>) _then;
 
   @override
   $Res call({
@@ -115,7 +114,7 @@ class _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
 
 /// @nodoc
 abstract class _$$EmptyFieldCopyWith<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$EmptyFieldCopyWith(
           _$EmptyField<T, E> value, $Res Function(_$EmptyField<T, E>) then) =
       __$$EmptyFieldCopyWithImpl<T, E, $Res>;
@@ -125,7 +124,7 @@ abstract class _$$EmptyFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$EmptyFieldCopyWithImpl<T, E, $Res>
-    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$EmptyFieldCopyWith<T, E, $Res> {
   __$$EmptyFieldCopyWithImpl(
       _$EmptyField<T, E> _value, $Res Function(_$EmptyField<T, E>) _then)
@@ -159,7 +158,7 @@ class _$EmptyField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.emptyField(failedValue: $failedValue)';
+    return 'OrderObjectValueFailure<$T, $E>.emptyField(failedValue: $failedValue)';
   }
 
   @override
@@ -167,7 +166,7 @@ class _$EmptyField<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'FormItemObjectValueFailure<$T, $E>.emptyField'))
+          'type', 'OrderObjectValueFailure<$T, $E>.emptyField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -273,7 +272,7 @@ class _$EmptyField<T, E>
   }
 }
 
-abstract class EmptyField<T, E> implements FormItemObjectValueFailure<T, E> {
+abstract class EmptyField<T, E> implements OrderObjectValueFailure<T, E> {
   const factory EmptyField({required final T failedValue}) = _$EmptyField<T, E>;
 
   @override
@@ -286,7 +285,7 @@ abstract class EmptyField<T, E> implements FormItemObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$NotIntFieldCopyWith<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NotIntFieldCopyWith(
           _$NotIntField<T, E> value, $Res Function(_$NotIntField<T, E>) then) =
       __$$NotIntFieldCopyWithImpl<T, E, $Res>;
@@ -296,7 +295,7 @@ abstract class _$$NotIntFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NotIntFieldCopyWithImpl<T, E, $Res>
-    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NotIntFieldCopyWith<T, E, $Res> {
   __$$NotIntFieldCopyWithImpl(
       _$NotIntField<T, E> _value, $Res Function(_$NotIntField<T, E>) _then)
@@ -330,7 +329,7 @@ class _$NotIntField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.notIntField(failedValue: $failedValue)';
+    return 'OrderObjectValueFailure<$T, $E>.notIntField(failedValue: $failedValue)';
   }
 
   @override
@@ -338,7 +337,7 @@ class _$NotIntField<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'FormItemObjectValueFailure<$T, $E>.notIntField'))
+          'type', 'OrderObjectValueFailure<$T, $E>.notIntField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -444,7 +443,7 @@ class _$NotIntField<T, E>
   }
 }
 
-abstract class NotIntField<T, E> implements FormItemObjectValueFailure<T, E> {
+abstract class NotIntField<T, E> implements OrderObjectValueFailure<T, E> {
   const factory NotIntField({required final T failedValue}) =
       _$NotIntField<T, E>;
 
@@ -458,7 +457,7 @@ abstract class NotIntField<T, E> implements FormItemObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$NotDoubleFieldCopyWith<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NotDoubleFieldCopyWith(_$NotDoubleField<T, E> value,
           $Res Function(_$NotDoubleField<T, E>) then) =
       __$$NotDoubleFieldCopyWithImpl<T, E, $Res>;
@@ -468,7 +467,7 @@ abstract class _$$NotDoubleFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NotDoubleFieldCopyWithImpl<T, E, $Res>
-    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NotDoubleFieldCopyWith<T, E, $Res> {
   __$$NotDoubleFieldCopyWithImpl(_$NotDoubleField<T, E> _value,
       $Res Function(_$NotDoubleField<T, E>) _then)
@@ -502,7 +501,7 @@ class _$NotDoubleField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.notDoubleField(failedValue: $failedValue)';
+    return 'OrderObjectValueFailure<$T, $E>.notDoubleField(failedValue: $failedValue)';
   }
 
   @override
@@ -510,7 +509,7 @@ class _$NotDoubleField<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'FormItemObjectValueFailure<$T, $E>.notDoubleField'))
+          'type', 'OrderObjectValueFailure<$T, $E>.notDoubleField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -617,8 +616,7 @@ class _$NotDoubleField<T, E>
   }
 }
 
-abstract class NotDoubleField<T, E>
-    implements FormItemObjectValueFailure<T, E> {
+abstract class NotDoubleField<T, E> implements OrderObjectValueFailure<T, E> {
   const factory NotDoubleField({required final T failedValue}) =
       _$NotDoubleField<T, E>;
 
@@ -632,7 +630,7 @@ abstract class NotDoubleField<T, E>
 
 /// @nodoc
 abstract class _$$NoSpaceAllowedCopyWith<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NoSpaceAllowedCopyWith(_$NoSpaceAllowed<T, E> value,
           $Res Function(_$NoSpaceAllowed<T, E>) then) =
       __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>;
@@ -642,7 +640,7 @@ abstract class _$$NoSpaceAllowedCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>
-    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NoSpaceAllowedCopyWith<T, E, $Res> {
   __$$NoSpaceAllowedCopyWithImpl(_$NoSpaceAllowed<T, E> _value,
       $Res Function(_$NoSpaceAllowed<T, E>) _then)
@@ -676,7 +674,7 @@ class _$NoSpaceAllowed<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.noSpaceAllowed(failedValue: $failedValue)';
+    return 'OrderObjectValueFailure<$T, $E>.noSpaceAllowed(failedValue: $failedValue)';
   }
 
   @override
@@ -684,7 +682,7 @@ class _$NoSpaceAllowed<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'FormItemObjectValueFailure<$T, $E>.noSpaceAllowed'))
+          'type', 'OrderObjectValueFailure<$T, $E>.noSpaceAllowed'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -791,8 +789,7 @@ class _$NoSpaceAllowed<T, E>
   }
 }
 
-abstract class NoSpaceAllowed<T, E>
-    implements FormItemObjectValueFailure<T, E> {
+abstract class NoSpaceAllowed<T, E> implements OrderObjectValueFailure<T, E> {
   const factory NoSpaceAllowed({required final T failedValue}) =
       _$NoSpaceAllowed<T, E>;
 
@@ -806,7 +803,7 @@ abstract class NoSpaceAllowed<T, E>
 
 /// @nodoc
 abstract class _$$ExceptOneToNineAllowedCopyWith<T, E, $Res>
-    implements $FormItemObjectValueFailureCopyWith<T, E, $Res> {
+    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$ExceptOneToNineAllowedCopyWith(
           _$ExceptOneToNineAllowed<T, E> value,
           $Res Function(_$ExceptOneToNineAllowed<T, E>) then) =
@@ -817,7 +814,7 @@ abstract class _$$ExceptOneToNineAllowedCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$ExceptOneToNineAllowedCopyWithImpl<T, E, $Res>
-    extends _$FormItemObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$ExceptOneToNineAllowedCopyWith<T, E, $Res> {
   __$$ExceptOneToNineAllowedCopyWithImpl(_$ExceptOneToNineAllowed<T, E> _value,
       $Res Function(_$ExceptOneToNineAllowed<T, E>) _then)
@@ -852,7 +849,7 @@ class _$ExceptOneToNineAllowed<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'FormItemObjectValueFailure<$T, $E>.exceptOneToNineAllowed(failedValue: $failedValue)';
+    return 'OrderObjectValueFailure<$T, $E>.exceptOneToNineAllowed(failedValue: $failedValue)';
   }
 
   @override
@@ -860,7 +857,7 @@ class _$ExceptOneToNineAllowed<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'FormItemObjectValueFailure<$T, $E>.exceptOneToNineAllowed'))
+          'type', 'OrderObjectValueFailure<$T, $E>.exceptOneToNineAllowed'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -968,7 +965,7 @@ class _$ExceptOneToNineAllowed<T, E>
 }
 
 abstract class ExceptOneToNineAllowed<T, E>
-    implements FormItemObjectValueFailure<T, E> {
+    implements OrderObjectValueFailure<T, E> {
   const factory ExceptOneToNineAllowed({required final T failedValue}) =
       _$ExceptOneToNineAllowed<T, E>;
 

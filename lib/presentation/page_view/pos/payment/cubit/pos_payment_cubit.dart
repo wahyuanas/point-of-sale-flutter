@@ -27,29 +27,29 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
 
     emit(state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo:
-                state.createOrder!.paymentCardInfo?.copyWithName(v))));
+            paymentCardInfo: state.createOrder!.paymentCardInfo
+                ?.copyWith(name: CraetePaymentCardInfoName(v)))));
   }
 
   void onPaymentCardInfoNumberChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo:
-                state.createOrder!.paymentCardInfo?.copyWithNumber(v)));
+            paymentCardInfo: state.createOrder!.paymentCardInfo
+                ?.copyWith(number: CraetePaymentCardInfoNumber(v))));
   }
 
   void onPaymentCardInfoNumberRefChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo:
-                state.createOrder!.paymentCardInfo?.copyWithNumberRef(v)));
+            paymentCardInfo: state.createOrder!.paymentCardInfo
+                ?.copyWith(numberRef: CraetePaymentCardInfoNumberRef(v))));
   }
 
   void onPaymentCardInfoRemarksChanged(String v) {
     state.copyWith(
         createOrder: state.createOrder?.copyWith(
-            paymentCardInfo:
-                state.createOrder!.paymentCardInfo?.copyWithRemarks(v)));
+            paymentCardInfo: state.createOrder!.paymentCardInfo
+                ?.copyWith(remarks: CraetePaymentCardInfoRemarks(v))));
   }
 
   void onPaymentTypeChanged(int? v) {

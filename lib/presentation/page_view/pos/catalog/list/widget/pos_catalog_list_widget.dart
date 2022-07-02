@@ -74,17 +74,17 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                 top: 8,
               ),
               onWidgetLoad: () {
-                if (context.read<IntroCubit>().state.posCatalogList == false) {
-                  Intro.of(context).start();
-                  context.read<IntroCubit>().onPosCatalogListChanged(true);
-                }
+                //if (context.read<IntroCubit>().state.posCatalogList == false) {
+                Intro.of(context).start();
+                //context.read<IntroCubit>().onPosCatalogListChanged(true);
+                // }
               },
               onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
               builder: (context, key) => GestureDetector(
                   onTap: () => context.read<RouteCubit>().onRoute(
                       const OnRouteState.postCatalogform(r: '/postCatalogform'),
                       null),
-                  key: key,
+                  key: const Key('pos-catalog-list'),
                   child: const Padding(
                     padding: EdgeInsets.only(left: 20.0),
                     child: Icon(

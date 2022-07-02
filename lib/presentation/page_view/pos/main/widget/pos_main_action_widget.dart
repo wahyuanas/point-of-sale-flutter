@@ -44,18 +44,21 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                     top: 8,
                   ),
                   onWidgetLoad: () {
-                    // if (context.read<IntroCubit>().state.posCatalogList == false) {
+                    // if (context.read<IntroCubit>().state.posMain == false) {
                     Intro.of(context).start();
-                    // context.read<IntroCubit>().onPosCatalogListChanged(true);
+                    // context.read<IntroCubit>().onPosMainChanged(true);
                     //}
                   },
                   onHighlightWidgetTap: () => debugPrint("ON CLOSE"),
                   builder: (context, key) {
                     return GestureDetector(
-                      onTap: () => BlocProvider.of<RouteCubit>(context).onRoute(
-                          const OnRouteState.postCatalogList(
-                              r: '/postCatalogList'),
-                          null),
+                      onTap: () {
+                        //Intro.of(context).dispose();
+                        BlocProvider.of<RouteCubit>(context).onRoute(
+                            const OnRouteState.postCatalogList(
+                                r: '/postCatalogList'),
+                            null);
+                      },
                       key: key,
                       child: Card(
                         shape: RoundedRectangleBorder(
@@ -226,10 +229,10 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
                                   border: Border.all(
                                       color: const Color.fromARGB(
                                           255, 167, 153, 153))),
+                              key: key,
                               alignment: Alignment.center,
                               height: 60,
                               width: 80,
-                              key: key,
                               child: Column(
                                 mainAxisSize: MainAxisSize.min,
                                 crossAxisAlignment: CrossAxisAlignment.center,

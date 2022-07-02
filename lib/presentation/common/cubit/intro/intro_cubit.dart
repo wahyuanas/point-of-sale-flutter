@@ -17,6 +17,10 @@ class IntroCubit extends HydratedCubit<IntroState> {
     emit(state.copyWith(posCustomerList: posCustomerList));
   }
 
+  onPosMainChanged(bool posMain) {
+    emit(state.copyWith(posMain: posMain));
+  }
+
   @override
   IntroState fromJson(Map<String, dynamic> json) {
     debugPrint("INTRO CUBIT FROM JSON");

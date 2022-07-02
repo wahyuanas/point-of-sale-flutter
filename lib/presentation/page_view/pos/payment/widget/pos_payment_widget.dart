@@ -6,6 +6,7 @@ import 'package:pos/routes/on_state/on_route_state.dart';
 
 import '../cubit/pos_payment_cubit.dart';
 import '../delegate/pos_payment_action_delegate.dart';
+import 'pos_payment_export_widget.dart';
 
 class PosPaymentWidget extends StatefulWidget {
   const PosPaymentWidget({Key? key}) : super(key: key);
@@ -130,142 +131,9 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
             SliverToBoxAdapter(
               child: Column(
                 children: [
-                  Column(
-                    children: [
-                      const SizedBox(
-                        height: 30.0,
-                        child: ListTile(
-                          // trailing: Icon(
-                          //   Icons.expand_more_outlined,
-                          //   size: 30.0,
-                          //   color: Colors.blue,
-                          // ),
-                          title: Padding(
-                            padding: EdgeInsets.only(bottom: 6.0),
-                            child: Text(
-                              'Kendaraan',
-                              style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Container(
-                          height: 50,
-                          //margin: const EdgeInsets.all(10.0),
-                          decoration: const BoxDecoration(
-                              //color: Colors.blue,
-                              border: Border(
-                            bottom: BorderSide(
-                              color: Colors.blue,
-                              width: 0.5,
-                            ),
-                          )),
-                          child: const ListTile(
-                            trailing: Icon(
-                              Icons.search_outlined,
-                              size: 25.0,
-                              color: Colors.blue,
-                            ),
-                            title: Text(
-                              'Toyota Fortuner',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      const SizedBox(
-                        height: 30.0,
-                        child: ListTile(
-                          trailing: Padding(
-                            padding: EdgeInsets.only(right: 20.0),
-                            child: Icon(
-                              Icons.search_outlined,
-                              size: 25.0,
-                              color: Colors.blue,
-                            ),
-                          ),
-                          title: Padding(
-                            padding: EdgeInsets.only(bottom: 6.0),
-                            child: Text(
-                              'Mekanik',
-                              style:
-                                  TextStyle(color: Colors.blue, fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Container(
-                          height: 50,
-                          //margin: const EdgeInsets.all(10.0),
-                          decoration: const BoxDecoration(
-                              //color: Colors.blue,
-                              border: Border(
-                            bottom: BorderSide(
-                              color: Colors.blue,
-                              width: 0.5,
-                            ),
-                          )),
-                          child: const ListTile(
-                            title: Text(
-                              'Mr. California',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Container(
-                          height: 50,
-                          //margin: const EdgeInsets.all(10.0),
-                          decoration: const BoxDecoration(
-                              //color: Colors.blue,
-                              border: Border(
-                            bottom: BorderSide(
-                              color: Colors.blue,
-                              width: 0.5,
-                            ),
-                          )),
-                          child: const ListTile(
-                            title: Text(
-                              'Mr. California',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20),
-                        child: Container(
-                          height: 50,
-                          //margin: const EdgeInsets.all(10.0),
-                          decoration: const BoxDecoration(
-                              //color: Colors.blue,
-                              border: Border(
-                            bottom: BorderSide(
-                              color: Colors.blue,
-                              width: 0.5,
-                            ),
-                          )),
-                          child: const ListTile(
-                            title: Text(
-                              'Mr. California',
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const PosPaymentCustomerWidget(),
+                  const PosPaymentVehicleWidget(),
+                  const PosPaymentEmployeeWidget(),
                   BlocBuilder<PosPaymentCubit, PosPaymentState>(
                       buildWhen: (p, c) {
                     if (p.initial != c.initial) {

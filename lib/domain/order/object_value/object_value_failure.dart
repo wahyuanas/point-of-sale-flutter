@@ -5,25 +5,25 @@ import 'package:pos/domain/core/object_value/failures.dart';
 part 'object_value_failure.freezed.dart';
 
 @freezed
-class FormItemObjectValueFailure<T, E>
-    with _$FormItemObjectValueFailure<T, E>, ObjectValueFailure {
-  const factory FormItemObjectValueFailure.emptyField({
+class OrderObjectValueFailure<T, E>
+    with _$OrderObjectValueFailure<T, E>, ObjectValueFailure {
+  const factory OrderObjectValueFailure.emptyField({
     required T failedValue,
   }) = EmptyField<T, E>;
 
-  const factory FormItemObjectValueFailure.notIntField({
+  const factory OrderObjectValueFailure.notIntField({
     required T failedValue,
   }) = NotIntField<T, E>;
 
-  const factory FormItemObjectValueFailure.notDoubleField({
+  const factory OrderObjectValueFailure.notDoubleField({
     required T failedValue,
   }) = NotDoubleField<T, E>;
 
-  const factory FormItemObjectValueFailure.noSpaceAllowed({
+  const factory OrderObjectValueFailure.noSpaceAllowed({
     required T failedValue,
   }) = NoSpaceAllowed<T, E>;
 
-  const factory FormItemObjectValueFailure.exceptOneToNineAllowed({
+  const factory OrderObjectValueFailure.exceptOneToNineAllowed({
     required T failedValue,
   }) = ExceptOneToNineAllowed<T, E>;
 }

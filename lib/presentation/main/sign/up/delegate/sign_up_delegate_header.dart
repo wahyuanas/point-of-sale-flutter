@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pos/presentation/utils/colors.dart';
 
 class SignUpDelegateHeader extends SliverPersistentHeaderDelegate {
   @override
