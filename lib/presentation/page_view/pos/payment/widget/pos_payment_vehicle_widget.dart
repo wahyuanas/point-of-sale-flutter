@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
+import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
 import 'package:pos/routes/on_state/on_route_state.dart';
 
@@ -84,10 +86,10 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
               child: ListTile(
                   trailing: state.createOrder?.vehicle.value.fold(
                       (l) => GestureDetector(
-                            onTap: () => BlocProvider.of<RouteCubit>(context)
+                            onTap: () => BlocProvider.of<PosRouteCubit>(context)
                                 .onRoute(
-                                    const OnRouteState.postCustomerList(
-                                        r: '/postCustomerList'),
+                                    const PosOnRouteState.posVehicleList(
+                                        r: '/postVehicleList'),
                                     null),
                             child: const Icon(
                               Icons.search_outlined,

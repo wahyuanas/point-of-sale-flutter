@@ -14,6 +14,8 @@ class OnRouteState<T> with _$OnRouteState<T> {
   const factory OnRouteState.purchase({required T r}) = _Purchase<T>;
   const factory OnRouteState.posCatalogItemDetail({required T r}) =
       _PosCatalogItemDetail<T>;
-  const factory OnRouteState.postCustomerList({required T r}) =
+  const factory OnRouteState.posCustomerList({required T r}) =
       _PostCustomerList<T>;
+  const factory OnRouteState.posVehicleList({required T r}) =
+      _PosVehicleList<T>;
 }

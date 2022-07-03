@@ -27,28 +27,6 @@ Either<FormCustomerObjectValueFailure<String, String>, String> validateEmail(
   }
 }
 
-Either<FormCustomerObjectValueFailure<String, String>, String?>
-    validateFieldNullOrEmpty(String? input) {
-  if (input == null) {
-    return right(null);
-  } else if (input.isEmpty) {
-    return right(null);
-  } else {
-    return right(input);
-  }
-}
-
-Either<FormCustomerObjectValueFailure<String, String>, String?>
-    validateFieldNullNotEmpty(String? input) {
-  if (input == null) {
-    return right(null);
-  } else if (input.isEmpty) {
-    return left(FormCustomerObjectValueFailure.emptyField(failedValue: input));
-  } else {
-    return right(input);
-  }
-}
-
 Either<FormCustomerObjectValueFailure<String, String>, int>
     validateFieldNotIntAndNotEmpty(String input) {
   if (input.isEmpty) {
@@ -60,9 +38,9 @@ Either<FormCustomerObjectValueFailure<String, String>, int>
   if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
     return left(FormCustomerObjectValueFailure.exceptOneToNineAllowed(
         failedValue: input));
-  } else if (int.tryParse(input.replaceAll('.', '')) == null) {
+  } else if (int.tryParse(input) == null) {
     return left(FormCustomerObjectValueFailure.notIntField(failedValue: input));
   } else {
-    return right(int.parse(input.replaceAll('.', '')));
+    return right(int.parse(input));
   }
 }

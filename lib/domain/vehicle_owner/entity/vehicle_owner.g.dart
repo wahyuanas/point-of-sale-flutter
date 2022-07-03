@@ -9,13 +9,13 @@ part of 'vehicle_owner.dart';
 _$_VehicleOwner _$$_VehicleOwnerFromJson(Map<String, dynamic> json) =>
     _$_VehicleOwner(
       id: json['id'] as int,
-      uuid: json['uuid'] as int,
+      uuid: json['uuid'] as String,
       name: json['name'] as String,
       phoneNumber: json['phoneNumber'] as String,
       email: json['email'] as String,
       idNumber: json['idNumber'] as String,
       address: json['address'] as String,
-      idAccount: json['idAccount'] as int,
+      accountId: json['accountId'] as int,
     );
 
 Map<String, dynamic> _$$_VehicleOwnerToJson(_$_VehicleOwner instance) =>
@@ -27,5 +27,5 @@ Map<String, dynamic> _$$_VehicleOwnerToJson(_$_VehicleOwner instance) =>
       'email': instance.email,
       'idNumber': instance.idNumber,
       'address': instance.address,
-      'idAccount': instance.idAccount,
+      'accountId': instance.accountId,
     };

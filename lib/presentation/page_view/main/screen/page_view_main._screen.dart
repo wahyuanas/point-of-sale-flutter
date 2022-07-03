@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:showcaseview/showcaseview.dart';
 
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
@@ -53,6 +54,7 @@ class PageViewMainScreenState extends State<PageViewMainScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () async {
+        //ShowCaseWidget.of(context).dismiss();
         final idxTab = BlocProvider.of<BottomNavigationBarCubit>(context)
             .state
             .currentTabItem;

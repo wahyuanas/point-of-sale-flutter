@@ -21,13 +21,13 @@ VehicleOwner _$VehicleOwnerFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$VehicleOwner {
   int get id => throw _privateConstructorUsedError;
-  int get uuid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   String get idNumber => throw _privateConstructorUsedError;
   String get address => throw _privateConstructorUsedError;
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,13 +42,13 @@ abstract class $VehicleOwnerCopyWith<$Res> {
       _$VehicleOwnerCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      int uuid,
+      String uuid,
       String name,
       String phoneNumber,
       String email,
       String idNumber,
       String address,
-      int idAccount});
+      int accountId});
 }
 
 /// @nodoc
@@ -68,7 +68,7 @@ class _$VehicleOwnerCopyWithImpl<$Res> implements $VehicleOwnerCopyWith<$Res> {
     Object? email = freezed,
     Object? idNumber = freezed,
     Object? address = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -78,7 +78,7 @@ class _$VehicleOwnerCopyWithImpl<$Res> implements $VehicleOwnerCopyWith<$Res> {
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -99,9 +99,9 @@ class _$VehicleOwnerCopyWithImpl<$Res> implements $VehicleOwnerCopyWith<$Res> {
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -116,13 +116,13 @@ abstract class _$$_VehicleOwnerCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      int uuid,
+      String uuid,
       String name,
       String phoneNumber,
       String email,
       String idNumber,
       String address,
-      int idAccount});
+      int accountId});
 }
 
 /// @nodoc
@@ -145,7 +145,7 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
     Object? email = freezed,
     Object? idNumber = freezed,
     Object? address = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_VehicleOwner(
       id: id == freezed
@@ -155,7 +155,7 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -176,9 +176,9 @@ class __$$_VehicleOwnerCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -195,7 +195,7 @@ class _$_VehicleOwner extends _VehicleOwner {
       required this.email,
       required this.idNumber,
       required this.address,
-      required this.idAccount})
+      required this.accountId})
       : super._();
 
   factory _$_VehicleOwner.fromJson(Map<String, dynamic> json) =>
@@ -204,7 +204,7 @@ class _$_VehicleOwner extends _VehicleOwner {
   @override
   final int id;
   @override
-  final int uuid;
+  final String uuid;
   @override
   final String name;
   @override
@@ -216,11 +216,11 @@ class _$_VehicleOwner extends _VehicleOwner {
   @override
   final String address;
   @override
-  final int idAccount;
+  final int accountId;
 
   @override
   String toString() {
-    return 'VehicleOwner(id: $id, uuid: $uuid, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address, idAccount: $idAccount)';
+    return 'VehicleOwner(id: $id, uuid: $uuid, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address, accountId: $accountId)';
   }
 
   @override
@@ -236,7 +236,7 @@ class _$_VehicleOwner extends _VehicleOwner {
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.idNumber, idNumber) &&
             const DeepCollectionEquality().equals(other.address, address) &&
-            const DeepCollectionEquality().equals(other.idAccount, idAccount));
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -250,7 +250,7 @@ class _$_VehicleOwner extends _VehicleOwner {
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(idNumber),
       const DeepCollectionEquality().hash(address),
-      const DeepCollectionEquality().hash(idAccount));
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -266,13 +266,13 @@ class _$_VehicleOwner extends _VehicleOwner {
 abstract class _VehicleOwner extends VehicleOwner {
   const factory _VehicleOwner(
       {required final int id,
-      required final int uuid,
+      required final String uuid,
       required final String name,
       required final String phoneNumber,
       required final String email,
       required final String idNumber,
       required final String address,
-      required final int idAccount}) = _$_VehicleOwner;
+      required final int accountId}) = _$_VehicleOwner;
   const _VehicleOwner._() : super._();
 
   factory _VehicleOwner.fromJson(Map<String, dynamic> json) =
@@ -281,7 +281,7 @@ abstract class _VehicleOwner extends VehicleOwner {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  int get uuid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
   @override
@@ -293,7 +293,7 @@ abstract class _VehicleOwner extends VehicleOwner {
   @override
   String get address => throw _privateConstructorUsedError;
   @override
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleOwnerCopyWith<_$_VehicleOwner> get copyWith =>

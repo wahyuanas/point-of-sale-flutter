@@ -18,7 +18,7 @@ import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
 import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
-import 'package:pos/presentation/main/vehicle/cubit/list/vehicle_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
@@ -110,7 +110,7 @@ class PosAppState extends State<PosApp> {
       BlocProvider(create: (context) => getIt<AuthCubit>()),
       BlocProvider(create: (context) => getIt<CatalogListCubit>()),
       BlocProvider(create: (context) => getIt<EmployeeCubit>()),
-      BlocProvider(create: (context) => getIt<VehicleCubit>()),
+      BlocProvider(create: (context) => getIt<VehicleListCubit>()),
       BlocProvider(create: (context) => getIt<CustomerListCubit>()),
       BlocProvider(create: (context) => getIt<OrderCubit>()),
       BlocProvider(create: (context) => getIt<OrderDetailCubit>()),

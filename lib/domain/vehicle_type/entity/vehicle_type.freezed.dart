@@ -21,13 +21,13 @@ VehicleType _$VehicleTypeFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$VehicleType {
   int get id => throw _privateConstructorUsedError;
-  int get uuid => throw _privateConstructorUsedError;
-  String get manufacture => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
+  VehicleManufacture get manufacture => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
   int get year => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,13 +42,15 @@ abstract class $VehicleTypeCopyWith<$Res> {
       _$VehicleTypeCopyWithImpl<$Res>;
   $Res call(
       {int id,
-      int uuid,
-      String manufacture,
+      String uuid,
+      VehicleManufacture manufacture,
       String model,
       int year,
       String color,
       String description,
-      int idAccount});
+      int accountId});
+
+  $VehicleManufactureCopyWith<$Res> get manufacture;
 }
 
 /// @nodoc
@@ -68,7 +70,7 @@ class _$VehicleTypeCopyWithImpl<$Res> implements $VehicleTypeCopyWith<$Res> {
     Object? year = freezed,
     Object? color = freezed,
     Object? description = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -78,11 +80,11 @@ class _$VehicleTypeCopyWithImpl<$Res> implements $VehicleTypeCopyWith<$Res> {
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       manufacture: manufacture == freezed
           ? _value.manufacture
           : manufacture // ignore: cast_nullable_to_non_nullable
-              as String,
+              as VehicleManufacture,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -99,11 +101,18 @@ class _$VehicleTypeCopyWithImpl<$Res> implements $VehicleTypeCopyWith<$Res> {
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
+  }
+
+  @override
+  $VehicleManufactureCopyWith<$Res> get manufacture {
+    return $VehicleManufactureCopyWith<$Res>(_value.manufacture, (value) {
+      return _then(_value.copyWith(manufacture: value));
+    });
   }
 }
 
@@ -116,13 +125,16 @@ abstract class _$$_VehicleTypeCopyWith<$Res>
   @override
   $Res call(
       {int id,
-      int uuid,
-      String manufacture,
+      String uuid,
+      VehicleManufacture manufacture,
       String model,
       int year,
       String color,
       String description,
-      int idAccount});
+      int accountId});
+
+  @override
+  $VehicleManufactureCopyWith<$Res> get manufacture;
 }
 
 /// @nodoc
@@ -144,7 +156,7 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
     Object? year = freezed,
     Object? color = freezed,
     Object? description = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_VehicleType(
       id: id == freezed
@@ -154,11 +166,11 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       manufacture: manufacture == freezed
           ? _value.manufacture
           : manufacture // ignore: cast_nullable_to_non_nullable
-              as String,
+              as VehicleManufacture,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -175,9 +187,9 @@ class __$$_VehicleTypeCopyWithImpl<$Res> extends _$VehicleTypeCopyWithImpl<$Res>
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -194,7 +206,7 @@ class _$_VehicleType extends _VehicleType {
       required this.year,
       required this.color,
       required this.description,
-      required this.idAccount})
+      required this.accountId})
       : super._();
 
   factory _$_VehicleType.fromJson(Map<String, dynamic> json) =>
@@ -203,9 +215,9 @@ class _$_VehicleType extends _VehicleType {
   @override
   final int id;
   @override
-  final int uuid;
+  final String uuid;
   @override
-  final String manufacture;
+  final VehicleManufacture manufacture;
   @override
   final String model;
   @override
@@ -215,11 +227,11 @@ class _$_VehicleType extends _VehicleType {
   @override
   final String description;
   @override
-  final int idAccount;
+  final int accountId;
 
   @override
   String toString() {
-    return 'VehicleType(id: $id, uuid: $uuid, manufacture: $manufacture, model: $model, year: $year, color: $color, description: $description, idAccount: $idAccount)';
+    return 'VehicleType(id: $id, uuid: $uuid, manufacture: $manufacture, model: $model, year: $year, color: $color, description: $description, accountId: $accountId)';
   }
 
   @override
@@ -236,7 +248,7 @@ class _$_VehicleType extends _VehicleType {
             const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.idAccount, idAccount));
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -250,7 +262,7 @@ class _$_VehicleType extends _VehicleType {
       const DeepCollectionEquality().hash(year),
       const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(idAccount));
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -266,13 +278,13 @@ class _$_VehicleType extends _VehicleType {
 abstract class _VehicleType extends VehicleType {
   const factory _VehicleType(
       {required final int id,
-      required final int uuid,
-      required final String manufacture,
+      required final String uuid,
+      required final VehicleManufacture manufacture,
       required final String model,
       required final int year,
       required final String color,
       required final String description,
-      required final int idAccount}) = _$_VehicleType;
+      required final int accountId}) = _$_VehicleType;
   const _VehicleType._() : super._();
 
   factory _VehicleType.fromJson(Map<String, dynamic> json) =
@@ -281,9 +293,9 @@ abstract class _VehicleType extends VehicleType {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  int get uuid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   @override
-  String get manufacture => throw _privateConstructorUsedError;
+  VehicleManufacture get manufacture => throw _privateConstructorUsedError;
   @override
   String get model => throw _privateConstructorUsedError;
   @override
@@ -293,7 +305,7 @@ abstract class _VehicleType extends VehicleType {
   @override
   String get description => throw _privateConstructorUsedError;
   @override
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleTypeCopyWith<_$_VehicleType> get copyWith =>

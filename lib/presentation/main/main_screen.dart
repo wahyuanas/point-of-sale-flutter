@@ -68,6 +68,12 @@ class MainScreenState extends State<MainScreen> {
                       return state.auth == null
                           ? const SignInScreen()
                           : const PageViewMainScreen();
+                      // ShowCaseWidget(
+                      //     onStart: (index, key) {},
+                      //     builder: Builder(
+                      //         builder: (context) =>
+                      //             const PageViewMainScreen()),
+                      //   );
                     },
                   ),
               orElse: () => Center(

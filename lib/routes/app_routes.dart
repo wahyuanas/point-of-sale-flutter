@@ -11,6 +11,8 @@ import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_l
 import 'package:pos/presentation/page_view/pos/customer/form/create/screen/pos_customer_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -45,6 +47,11 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const PosCustomerListScreen());
       case '/posCustomerform':
         return MaterialPageRoute(builder: (_) => const PosCustomerFormScreen());
+
+      case '/posVehicleList':
+        return MaterialPageRoute(builder: (_) => const PosVehicleListScreen());
+      case '/posVehicleform':
+        return MaterialPageRoute(builder: (_) => const PosVehicleFormScreen());
 
       default:
         return _errorRoute();

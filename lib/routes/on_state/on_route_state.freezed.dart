@@ -25,7 +25,8 @@ mixin _$OnRouteState<T> {
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,7 +37,8 @@ mixin _$OnRouteState<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,7 +49,8 @@ mixin _$OnRouteState<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,7 +63,8 @@ mixin _$OnRouteState<T> {
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,7 +75,8 @@ mixin _$OnRouteState<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,7 +87,8 @@ mixin _$OnRouteState<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -203,7 +209,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return signUp(r);
   }
@@ -217,7 +224,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return signUp?.call(r);
   }
@@ -231,7 +239,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -250,7 +259,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return signUp(this);
   }
@@ -264,7 +274,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return signUp?.call(this);
   }
@@ -278,7 +289,8 @@ class _$_SignUp<T> with DiagnosticableTreeMixin implements _SignUp<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (signUp != null) {
@@ -382,7 +394,8 @@ class _$_SignUpNotif<T>
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return signUpNotif(r);
   }
@@ -396,7 +409,8 @@ class _$_SignUpNotif<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return signUpNotif?.call(r);
   }
@@ -410,7 +424,8 @@ class _$_SignUpNotif<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -429,7 +444,8 @@ class _$_SignUpNotif<T>
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return signUpNotif(this);
   }
@@ -443,7 +459,8 @@ class _$_SignUpNotif<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return signUpNotif?.call(this);
   }
@@ -457,7 +474,8 @@ class _$_SignUpNotif<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (signUpNotif != null) {
@@ -562,7 +580,8 @@ class _$_PostCatalogList<T>
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return postCatalogList(r);
   }
@@ -576,7 +595,8 @@ class _$_PostCatalogList<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return postCatalogList?.call(r);
   }
@@ -590,7 +610,8 @@ class _$_PostCatalogList<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (postCatalogList != null) {
@@ -609,7 +630,8 @@ class _$_PostCatalogList<T>
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return postCatalogList(this);
   }
@@ -623,7 +645,8 @@ class _$_PostCatalogList<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return postCatalogList?.call(this);
   }
@@ -637,7 +660,8 @@ class _$_PostCatalogList<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (postCatalogList != null) {
@@ -742,7 +766,8 @@ class _$_PostCatalogform<T>
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return postCatalogform(r);
   }
@@ -756,7 +781,8 @@ class _$_PostCatalogform<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return postCatalogform?.call(r);
   }
@@ -770,7 +796,8 @@ class _$_PostCatalogform<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (postCatalogform != null) {
@@ -789,7 +816,8 @@ class _$_PostCatalogform<T>
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return postCatalogform(this);
   }
@@ -803,7 +831,8 @@ class _$_PostCatalogform<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return postCatalogform?.call(this);
   }
@@ -817,7 +846,8 @@ class _$_PostCatalogform<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (postCatalogform != null) {
@@ -919,7 +949,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return purchase(r);
   }
@@ -933,7 +964,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return purchase?.call(r);
   }
@@ -947,7 +979,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -966,7 +999,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return purchase(this);
   }
@@ -980,7 +1014,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return purchase?.call(this);
   }
@@ -994,7 +1029,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -1102,7 +1138,8 @@ class _$_PosCatalogItemDetail<T>
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
     return posCatalogItemDetail(r);
   }
@@ -1116,7 +1153,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
     return posCatalogItemDetail?.call(r);
   }
@@ -1130,7 +1168,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1149,7 +1188,8 @@ class _$_PosCatalogItemDetail<T>
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
     return posCatalogItemDetail(this);
   }
@@ -1163,7 +1203,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
     return posCatalogItemDetail?.call(this);
   }
@@ -1177,7 +1218,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1245,14 +1287,14 @@ class _$_PostCustomerList<T>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OnRouteState<$T>.postCustomerList(r: $r)';
+    return 'OnRouteState<$T>.posCustomerList(r: $r)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.postCustomerList'))
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.posCustomerList'))
       ..add(DiagnosticsProperty('r', r));
   }
 
@@ -1283,9 +1325,10 @@ class _$_PostCustomerList<T>
     required TResult Function(T r) postCatalogform,
     required TResult Function(T r) purchase,
     required TResult Function(T r) posCatalogItemDetail,
-    required TResult Function(T r) postCustomerList,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
   }) {
-    return postCustomerList(r);
+    return posCustomerList(r);
   }
 
   @override
@@ -1297,9 +1340,10 @@ class _$_PostCustomerList<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
   }) {
-    return postCustomerList?.call(r);
+    return posCustomerList?.call(r);
   }
 
   @override
@@ -1311,11 +1355,12 @@ class _$_PostCustomerList<T>
     TResult Function(T r)? postCatalogform,
     TResult Function(T r)? purchase,
     TResult Function(T r)? posCatalogItemDetail,
-    TResult Function(T r)? postCustomerList,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
     required TResult orElse(),
   }) {
-    if (postCustomerList != null) {
-      return postCustomerList(r);
+    if (posCustomerList != null) {
+      return posCustomerList(r);
     }
     return orElse();
   }
@@ -1330,9 +1375,10 @@ class _$_PostCustomerList<T>
     required TResult Function(_Purchase<T> value) purchase,
     required TResult Function(_PosCatalogItemDetail<T> value)
         posCatalogItemDetail,
-    required TResult Function(_PostCustomerList<T> value) postCustomerList,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
   }) {
-    return postCustomerList(this);
+    return posCustomerList(this);
   }
 
   @override
@@ -1344,9 +1390,10 @@ class _$_PostCustomerList<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
   }) {
-    return postCustomerList?.call(this);
+    return posCustomerList?.call(this);
   }
 
   @override
@@ -1358,11 +1405,12 @@ class _$_PostCustomerList<T>
     TResult Function(_PostCatalogform<T> value)? postCatalogform,
     TResult Function(_Purchase<T> value)? purchase,
     TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
-    TResult Function(_PostCustomerList<T> value)? postCustomerList,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
     required TResult orElse(),
   }) {
-    if (postCustomerList != null) {
-      return postCustomerList(this);
+    if (posCustomerList != null) {
+      return posCustomerList(this);
     }
     return orElse();
   }
@@ -1377,5 +1425,191 @@ abstract class _PostCustomerList<T> implements OnRouteState<T> {
   @override
   @JsonKey(ignore: true)
   _$$_PostCustomerListCopyWith<T, _$_PostCustomerList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PosVehicleListCopyWith<T, $Res>
+    implements $OnRouteStateCopyWith<T, $Res> {
+  factory _$$_PosVehicleListCopyWith(_$_PosVehicleList<T> value,
+          $Res Function(_$_PosVehicleList<T>) then) =
+      __$$_PosVehicleListCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T r});
+}
+
+/// @nodoc
+class __$$_PosVehicleListCopyWithImpl<T, $Res>
+    extends _$OnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PosVehicleListCopyWith<T, $Res> {
+  __$$_PosVehicleListCopyWithImpl(
+      _$_PosVehicleList<T> _value, $Res Function(_$_PosVehicleList<T>) _then)
+      : super(_value, (v) => _then(v as _$_PosVehicleList<T>));
+
+  @override
+  _$_PosVehicleList<T> get _value => super._value as _$_PosVehicleList<T>;
+
+  @override
+  $Res call({
+    Object? r = freezed,
+  }) {
+    return _then(_$_PosVehicleList<T>(
+      r: r == freezed
+          ? _value.r
+          : r // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PosVehicleList<T>
+    with DiagnosticableTreeMixin
+    implements _PosVehicleList<T> {
+  const _$_PosVehicleList({required this.r});
+
+  @override
+  final T r;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'OnRouteState<$T>.posVehicleList(r: $r)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'OnRouteState<$T>.posVehicleList'))
+      ..add(DiagnosticsProperty('r', r));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PosVehicleList<T> &&
+            const DeepCollectionEquality().equals(other.r, r));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(r));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PosVehicleListCopyWith<T, _$_PosVehicleList<T>> get copyWith =>
+      __$$_PosVehicleListCopyWithImpl<T, _$_PosVehicleList<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T r) signUp,
+    required TResult Function(T r) signUpNotif,
+    required TResult Function(T r) postCatalogList,
+    required TResult Function(T r) postCatalogform,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posVehicleList,
+  }) {
+    return posVehicleList(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
+  }) {
+    return posVehicleList?.call(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T r)? signUp,
+    TResult Function(T r)? signUpNotif,
+    TResult Function(T r)? postCatalogList,
+    TResult Function(T r)? postCatalogform,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posVehicleList,
+    required TResult orElse(),
+  }) {
+    if (posVehicleList != null) {
+      return posVehicleList(r);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignUp<T> value) signUp,
+    required TResult Function(_SignUpNotif<T> value) signUpNotif,
+    required TResult Function(_PostCatalogList<T> value) postCatalogList,
+    required TResult Function(_PostCatalogform<T> value) postCatalogform,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PostCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
+  }) {
+    return posVehicleList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+  }) {
+    return posVehicleList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignUp<T> value)? signUp,
+    TResult Function(_SignUpNotif<T> value)? signUpNotif,
+    TResult Function(_PostCatalogList<T> value)? postCatalogList,
+    TResult Function(_PostCatalogform<T> value)? postCatalogform,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PostCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+    required TResult orElse(),
+  }) {
+    if (posVehicleList != null) {
+      return posVehicleList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PosVehicleList<T> implements OnRouteState<T> {
+  const factory _PosVehicleList({required final T r}) = _$_PosVehicleList<T>;
+
+  @override
+  T get r => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PosVehicleListCopyWith<T, _$_PosVehicleList<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

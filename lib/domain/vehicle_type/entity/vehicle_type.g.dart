@@ -9,13 +9,14 @@ part of 'vehicle_type.dart';
 _$_VehicleType _$$_VehicleTypeFromJson(Map<String, dynamic> json) =>
     _$_VehicleType(
       id: json['id'] as int,
-      uuid: json['uuid'] as int,
-      manufacture: json['manufacture'] as String,
+      uuid: json['uuid'] as String,
+      manufacture: VehicleManufacture.fromJson(
+          json['manufacture'] as Map<String, dynamic>),
       model: json['model'] as String,
       year: json['year'] as int,
       color: json['color'] as String,
       description: json['description'] as String,
-      idAccount: json['idAccount'] as int,
+      accountId: json['accountId'] as int,
     );
 
 Map<String, dynamic> _$$_VehicleTypeToJson(_$_VehicleType instance) =>
@@ -27,5 +28,5 @@ Map<String, dynamic> _$$_VehicleTypeToJson(_$_VehicleType instance) =>
       'year': instance.year,
       'color': instance.color,
       'description': instance.description,
-      'idAccount': instance.idAccount,
+      'accountId': instance.accountId,
     };

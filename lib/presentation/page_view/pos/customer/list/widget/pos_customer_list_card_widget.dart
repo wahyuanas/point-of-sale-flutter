@@ -67,7 +67,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                       if (_itsMe == false) {
                         BlocProvider.of<PosPaymentCubit>(context)
                             .onCustomerChanged(widget.customer);
-                        Navigator.of(context).pop();
+                        //Navigator.of(context).pop();
                       } else {
                         BlocProvider.of<PosPaymentCubit>(context)
                             .onCustomerChanged(null);

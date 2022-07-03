@@ -14,35 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-VehicleState _$VehicleStateFromJson(Map<String, dynamic> json) {
-  return _VehicleState.fromJson(json);
+VehicleListState _$VehicleListStateFromJson(Map<String, dynamic> json) {
+  return _VehicleListState.fromJson(json);
 }
 
 /// @nodoc
-mixin _$VehicleState {
+mixin _$VehicleListState {
   List<Vehicle>? get vehicles => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $VehicleStateCopyWith<VehicleState> get copyWith =>
+  $VehicleListStateCopyWith<VehicleListState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VehicleStateCopyWith<$Res> {
-  factory $VehicleStateCopyWith(
-          VehicleState value, $Res Function(VehicleState) then) =
-      _$VehicleStateCopyWithImpl<$Res>;
+abstract class $VehicleListStateCopyWith<$Res> {
+  factory $VehicleListStateCopyWith(
+          VehicleListState value, $Res Function(VehicleListState) then) =
+      _$VehicleListStateCopyWithImpl<$Res>;
   $Res call({List<Vehicle>? vehicles});
 }
 
 /// @nodoc
-class _$VehicleStateCopyWithImpl<$Res> implements $VehicleStateCopyWith<$Res> {
-  _$VehicleStateCopyWithImpl(this._value, this._then);
+class _$VehicleListStateCopyWithImpl<$Res>
+    implements $VehicleListStateCopyWith<$Res> {
+  _$VehicleListStateCopyWithImpl(this._value, this._then);
 
-  final VehicleState _value;
+  final VehicleListState _value;
   // ignore: unused_field
-  final $Res Function(VehicleState) _then;
+  final $Res Function(VehicleListState) _then;
 
   @override
   $Res call({
@@ -58,31 +59,31 @@ class _$VehicleStateCopyWithImpl<$Res> implements $VehicleStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$$_VehicleStateCopyWith<$Res>
-    implements $VehicleStateCopyWith<$Res> {
-  factory _$$_VehicleStateCopyWith(
-          _$_VehicleState value, $Res Function(_$_VehicleState) then) =
-      __$$_VehicleStateCopyWithImpl<$Res>;
+abstract class _$$_VehicleListStateCopyWith<$Res>
+    implements $VehicleListStateCopyWith<$Res> {
+  factory _$$_VehicleListStateCopyWith(
+          _$_VehicleListState value, $Res Function(_$_VehicleListState) then) =
+      __$$_VehicleListStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Vehicle>? vehicles});
 }
 
 /// @nodoc
-class __$$_VehicleStateCopyWithImpl<$Res>
-    extends _$VehicleStateCopyWithImpl<$Res>
-    implements _$$_VehicleStateCopyWith<$Res> {
-  __$$_VehicleStateCopyWithImpl(
-      _$_VehicleState _value, $Res Function(_$_VehicleState) _then)
-      : super(_value, (v) => _then(v as _$_VehicleState));
+class __$$_VehicleListStateCopyWithImpl<$Res>
+    extends _$VehicleListStateCopyWithImpl<$Res>
+    implements _$$_VehicleListStateCopyWith<$Res> {
+  __$$_VehicleListStateCopyWithImpl(
+      _$_VehicleListState _value, $Res Function(_$_VehicleListState) _then)
+      : super(_value, (v) => _then(v as _$_VehicleListState));
 
   @override
-  _$_VehicleState get _value => super._value as _$_VehicleState;
+  _$_VehicleListState get _value => super._value as _$_VehicleListState;
 
   @override
   $Res call({
     Object? vehicles = freezed,
   }) {
-    return _then(_$_VehicleState(
+    return _then(_$_VehicleListState(
       vehicles: vehicles == freezed
           ? _value._vehicles
           : vehicles // ignore: cast_nullable_to_non_nullable
@@ -93,12 +94,14 @@ class __$$_VehicleStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_VehicleState with DiagnosticableTreeMixin implements _VehicleState {
-  const _$_VehicleState({required final List<Vehicle>? vehicles})
+class _$_VehicleListState
+    with DiagnosticableTreeMixin
+    implements _VehicleListState {
+  const _$_VehicleListState({required final List<Vehicle>? vehicles})
       : _vehicles = vehicles;
 
-  factory _$_VehicleState.fromJson(Map<String, dynamic> json) =>
-      _$$_VehicleStateFromJson(json);
+  factory _$_VehicleListState.fromJson(Map<String, dynamic> json) =>
+      _$$_VehicleListStateFromJson(json);
 
   final List<Vehicle>? _vehicles;
   @override
@@ -111,14 +114,14 @@ class _$_VehicleState with DiagnosticableTreeMixin implements _VehicleState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'VehicleState(vehicles: $vehicles)';
+    return 'VehicleListState(vehicles: $vehicles)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'VehicleState'))
+      ..add(DiagnosticsProperty('type', 'VehicleListState'))
       ..add(DiagnosticsProperty('vehicles', vehicles));
   }
 
@@ -126,7 +129,7 @@ class _$_VehicleState with DiagnosticableTreeMixin implements _VehicleState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_VehicleState &&
+            other is _$_VehicleListState &&
             const DeepCollectionEquality().equals(other._vehicles, _vehicles));
   }
 
@@ -137,26 +140,26 @@ class _$_VehicleState with DiagnosticableTreeMixin implements _VehicleState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_VehicleStateCopyWith<_$_VehicleState> get copyWith =>
-      __$$_VehicleStateCopyWithImpl<_$_VehicleState>(this, _$identity);
+  _$$_VehicleListStateCopyWith<_$_VehicleListState> get copyWith =>
+      __$$_VehicleListStateCopyWithImpl<_$_VehicleListState>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_VehicleStateToJson(this);
+    return _$$_VehicleListStateToJson(this);
   }
 }
 
-abstract class _VehicleState implements VehicleState {
-  const factory _VehicleState({required final List<Vehicle>? vehicles}) =
-      _$_VehicleState;
+abstract class _VehicleListState implements VehicleListState {
+  const factory _VehicleListState({required final List<Vehicle>? vehicles}) =
+      _$_VehicleListState;
 
-  factory _VehicleState.fromJson(Map<String, dynamic> json) =
-      _$_VehicleState.fromJson;
+  factory _VehicleListState.fromJson(Map<String, dynamic> json) =
+      _$_VehicleListState.fromJson;
 
   @override
   List<Vehicle>? get vehicles => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_VehicleStateCopyWith<_$_VehicleState> get copyWith =>
+  _$$_VehicleListStateCopyWith<_$_VehicleListState> get copyWith =>
       throw _privateConstructorUsedError;
 }
