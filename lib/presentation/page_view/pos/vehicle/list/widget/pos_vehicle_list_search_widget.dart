@@ -80,7 +80,7 @@ class _PosVehicleListSearchWidgetState
 
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari Konsumen...",
+            hintText: "Cari Kendaraan...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

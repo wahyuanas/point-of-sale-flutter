@@ -94,6 +94,11 @@ class _PosVehicleFormWidgetState extends State<PosVehicleFormWidget> {
           // ],
         ),
         body: CustomScrollView(slivers: [
+          const SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20.0,
+            ),
+          ),
           const PosVehicleFormPolicyNumberWidget(),
           const PosVehicleFormMachineNumberWidget(),
           const PosVehicleFormCurrentKmWidget(),

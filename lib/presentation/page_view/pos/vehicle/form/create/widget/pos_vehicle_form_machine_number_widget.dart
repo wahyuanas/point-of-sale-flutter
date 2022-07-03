@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/Vehicle/form/create/cubit/Vehicle_form_create_cubit.dart';
+import 'package:pos/presentation/main/vehicle/form/create/cubit/vehicle_form_create_cubit.dart';
 
 class PosVehicleFormMachineNumberWidget extends StatefulWidget {
   const PosVehicleFormMachineNumberWidget({Key? key}) : super(key: key);
@@ -59,7 +59,7 @@ class _PosVehicleFormMachineNumberWidgetState
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           child: TextFormField(
               controller: _controller,
               autofocus: false,
@@ -77,7 +77,7 @@ class _PosVehicleFormMachineNumberWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Alamat",
+                labelText: "Nomor Mesin",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

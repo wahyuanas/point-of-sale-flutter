@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/Vehicle/form/create/cubit/Vehicle_form_create_cubit.dart';
+import 'package:pos/presentation/main/vehicle/form/create/cubit/vehicle_form_create_cubit.dart';
 
 class PosVehicleFormDescriptionWidget extends StatefulWidget {
   const PosVehicleFormDescriptionWidget({Key? key}) : super(key: key);
@@ -58,8 +58,9 @@ class _PosVehicleFormDescriptionWidgetState
       }, builder: (context, state) {
         return Container(
           alignment: Alignment.center,
-          margin: const EdgeInsets.symmetric(horizontal: 10),
+          margin: const EdgeInsets.symmetric(horizontal: 15),
           child: TextFormField(
+              maxLines: 2,
               controller: _controller,
               autofocus: false,
               keyboardType: TextInputType.text,
@@ -76,7 +77,7 @@ class _PosVehicleFormDescriptionWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Alamat",
+                labelText: "Keterangan",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

@@ -60,7 +60,7 @@ class _PosVehicleListWidgetState extends State<PosVehicleListWidget> {
           // ),
           leading: Showcase(
             key: _one,
-            description: "Tekan Tombol Tambah Untuk Menambah Data Konsumen",
+            description: "Tekan Tombol Tambah Untuk Menambah Data Kendaraan",
             //shapeBorder: const CircleBorder(),
             // container: Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -102,7 +102,7 @@ class _PosVehicleListWidgetState extends State<PosVehicleListWidget> {
           ),
 
           title: const Text(
-            "List Konsumen",
+            "List Kendaraan",
             style: TextStyle(color: Colors.blue),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(

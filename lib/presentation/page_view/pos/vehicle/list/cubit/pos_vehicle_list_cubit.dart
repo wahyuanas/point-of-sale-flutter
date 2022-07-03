@@ -3,9 +3,7 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
-import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
 
 part 'pos_vehicle_list_state.dart';
