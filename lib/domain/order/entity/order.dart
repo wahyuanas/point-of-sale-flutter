@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
-import 'package:pos/domain/payment_card_info/entity/payment_card_info.dart';
 
 part 'order.freezed.dart';
 part 'order.g.dart';

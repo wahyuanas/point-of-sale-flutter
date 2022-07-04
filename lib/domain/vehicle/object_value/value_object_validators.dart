@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
-import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
+import 'package:pos/presentation/main/vehicle_owner/model/vehicle_owner_model.dart';
+import 'package:pos/presentation/main/vehicle_type/model/vehicle_type_model.dart';
 
 import 'object_value_failure.dart';
 
@@ -31,8 +31,9 @@ Either<FormVehicleObjectValueFailure<String, String>, int>
   }
 }
 
-Either<FormVehicleObjectValueFailure<VehicleOwner?, String>, VehicleOwner?>
-    validateFieldNotVehicleOwnerAndNotNull(VehicleOwner? input) {
+Either<FormVehicleObjectValueFailure<VehicleOwnerModel?, String>,
+        VehicleOwnerModel?>
+    validateFieldNotVehicleOwnerAndNotNull(VehicleOwnerModel? input) {
   if (input == null) {
     return left(FormVehicleObjectValueFailure.emptyField(failedValue: input));
   } else {
@@ -40,8 +41,9 @@ Either<FormVehicleObjectValueFailure<VehicleOwner?, String>, VehicleOwner?>
   }
 }
 
-Either<FormVehicleObjectValueFailure<VehicleType?, String>, VehicleType?>
-    validateFieldNotVehicleTypeAndNotNull(VehicleType? input) {
+Either<FormVehicleObjectValueFailure<VehicleTypeModel?, String>,
+        VehicleTypeModel?>
+    validateFieldNotVehicleTypeAndNotNull(VehicleTypeModel? input) {
   if (input == null) {
     return left(FormVehicleObjectValueFailure.emptyField(failedValue: input));
   } else {

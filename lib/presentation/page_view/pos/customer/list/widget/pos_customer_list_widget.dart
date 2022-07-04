@@ -87,7 +87,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                 onTap: () {
                   context.read<PosRouteCubit>().onRoute(
                       const PosOnRouteState.posCustomerForm(
-                          r: '/posCustomerform'),
+                          r: '/posCustomerForm'),
                       null);
                 },
                 child: const Padding(

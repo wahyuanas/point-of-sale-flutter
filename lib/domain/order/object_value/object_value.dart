@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
-import 'package:pos/domain/employee/entity/employees.dart';
 import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 
 import 'object_value_failure.dart';
@@ -64,11 +64,12 @@ class CreateOrderVehicle extends ObjectValue<VehicleModel?> {
   const CreateOrderVehicle._(this.value);
 }
 
-class CreateOrderEmployees extends ObjectValue<Employees?> {
+class CreateOrderEmployees extends ObjectValue<EmployeesModel?> {
   @override
-  final Either<OrderObjectValueFailure<Employees?, String>, Employees?> value;
+  final Either<OrderObjectValueFailure<EmployeesModel?, String>,
+      EmployeesModel?> value;
 
-  factory CreateOrderEmployees(Employees? input) {
+  factory CreateOrderEmployees(EmployeesModel? input) {
     return CreateOrderEmployees._(validateFieldNotEmployeesAndNotEmpty(input));
   }
 

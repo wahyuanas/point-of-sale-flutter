@@ -95,7 +95,7 @@ class _PosVehicleFormVehicleOwnerWidgetState
                       child: GestureDetector(
                         onTap: () => BlocProvider.of<PosRouteCubit>(context)
                             .onRoute(
-                                const PosOnRouteState.posCustomerList(
+                                const PosOnRouteState.posVehicleOwnerList(
                                     r: '/posVehicleOwnerList'),
                                 null),
                         child: const Icon(

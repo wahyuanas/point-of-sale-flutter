@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
+import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 
 import 'object_value_failure.dart';
 
@@ -33,9 +34,10 @@ Either<FormVehicleTypeObjectValueFailure<String, String>, int>
   }
 }
 
-Either<FormVehicleTypeObjectValueFailure<VehicleManufacture?, String>,
-        VehicleManufacture?>
-    validateFieldNotVehicleManufactureAndNotEmpty(VehicleManufacture? input) {
+Either<FormVehicleTypeObjectValueFailure<VehicleManufactureModel?, String>,
+        VehicleManufactureModel?>
+    validateFieldNotVehicleManufactureAndNotEmpty(
+        VehicleManufactureModel? input) {
   if (input == null) {
     return left(
         FormVehicleTypeObjectValueFailure.emptyField(failedValue: input));

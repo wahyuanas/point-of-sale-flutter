@@ -19,12 +19,14 @@ import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
 import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_manufacture/list/cubit/vehicle_manufacture_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_owner/list/cubit/vehicle_owner_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/routes/app_routes.dart';
 import 'package:pos/routes/cubit/route_cubit.dart';
-
 import 'presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
 import 'presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
@@ -116,6 +118,9 @@ class PosAppState extends State<PosApp> {
       BlocProvider(create: (context) => getIt<OrderDetailCubit>()),
       BlocProvider(create: (context) => getIt<IntroCubit>()),
       BlocProvider(create: (context) => getIt<PosPaymentCubit>()),
+      BlocProvider(create: (context) => getIt<VehicleOwnerListCubit>()),
+      BlocProvider(create: (context) => getIt<VehicleTypeListCubit>()),
+      BlocProvider(create: (context) => getIt<VehicleManufactureListCubit>()),
     ], child: const PosAppView());
   }
 }

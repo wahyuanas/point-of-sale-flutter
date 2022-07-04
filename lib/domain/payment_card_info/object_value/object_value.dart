@@ -6,8 +6,8 @@ import 'value_object_validators.dart';
 
 class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, CraetePaymentCardInfo?>
-      value;
+  final Either<CraetePaymentCardInfoObjectValueFailure<String, String>,
+      CraetePaymentCardInfo?> value;
 
   factory CreateOrderPaymentCardInfo(CraetePaymentCardInfo? input) {
     return CreateOrderPaymentCardInfo._(validateFieldPaymentCardInfo(input));
@@ -18,7 +18,8 @@ class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
 
 class CraetePaymentCardInfoName extends ObjectValue<String> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
+  final Either<CraetePaymentCardInfoObjectValueFailure<String, String>, String>
+      value;
 
   factory CraetePaymentCardInfoName(String input) {
     return CraetePaymentCardInfoName._(validateFieldStringNotEmpty(input));
@@ -29,7 +30,8 @@ class CraetePaymentCardInfoName extends ObjectValue<String> {
 
 class CraetePaymentCardInfoNumber extends ObjectValue<String> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
+  final Either<CraetePaymentCardInfoObjectValueFailure<String, String>, String>
+      value;
 
   factory CraetePaymentCardInfoNumber(String input) {
     return CraetePaymentCardInfoNumber._(validateFieldStringNotEmpty(input));
@@ -40,7 +42,8 @@ class CraetePaymentCardInfoNumber extends ObjectValue<String> {
 
 class CraetePaymentCardInfoNumberRef extends ObjectValue<String> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
+  final Either<CraetePaymentCardInfoObjectValueFailure<String, String>, String>
+      value;
 
   factory CraetePaymentCardInfoNumberRef(String input) {
     return CraetePaymentCardInfoNumberRef._(validateFieldStringNotEmpty(input));
@@ -51,7 +54,8 @@ class CraetePaymentCardInfoNumberRef extends ObjectValue<String> {
 
 class CraetePaymentCardInfoRemarks extends ObjectValue<String> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
+  final Either<CraetePaymentCardInfoObjectValueFailure<String, String>, String>
+      value;
 
   factory CraetePaymentCardInfoRemarks(String input) {
     return CraetePaymentCardInfoRemarks._(validateFieldStringNotEmpty(input));

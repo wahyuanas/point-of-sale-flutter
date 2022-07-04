@@ -87,7 +87,7 @@ class _PosVehicleListWidgetState extends State<PosVehicleListWidget> {
                 onTap: () {
                   context.read<PosRouteCubit>().onRoute(
                       const PosOnRouteState.posVehicleForm(
-                          r: '/posVehicleform'),
+                          r: '/posVehicleForm'),
                       null);
                 },
                 child: const Padding(

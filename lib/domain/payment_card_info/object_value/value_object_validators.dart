@@ -4,16 +4,18 @@ import 'package:flutter/foundation.dart';
 import 'object_value_failure.dart';
 import 'payment_card_info_object_value.dart';
 
-Either<OrderObjectValueFailure<String, String>, String>
+Either<CraetePaymentCardInfoObjectValueFailure<String, String>, String>
     validateFieldStringNotEmpty(String input) {
   if (input.isEmpty) {
-    return left(OrderObjectValueFailure.emptyField(failedValue: input));
+    return left(
+        CraetePaymentCardInfoObjectValueFailure.emptyField(failedValue: input));
   } else {
     return right(input);
   }
 }
 
-Either<OrderObjectValueFailure<String, String>, CraetePaymentCardInfo?>
+Either<CraetePaymentCardInfoObjectValueFailure<String, String>,
+        CraetePaymentCardInfo?>
     validateFieldPaymentCardInfo(CraetePaymentCardInfo? input) {
   debugPrint("ORDER VALUE OBJECT VALIDATOR ");
   if (input == null) {

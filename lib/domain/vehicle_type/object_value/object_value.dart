@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
-import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
+import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 
 import 'object_value_failure.dart';
 import 'value_object_validators.dart';
@@ -16,12 +16,14 @@ class CreateVehicleTypeUuid extends ObjectValue<String> {
   const CreateVehicleTypeUuid._(this.value);
 }
 
-class CreateVehicleTypeManufacture extends ObjectValue<VehicleManufacture?> {
+class CreateVehicleTypeManufacture
+    extends ObjectValue<VehicleManufactureModel?> {
   @override
-  final Either<FormVehicleTypeObjectValueFailure<VehicleManufacture?, String>,
-      VehicleManufacture?> value;
+  final Either<
+      FormVehicleTypeObjectValueFailure<VehicleManufactureModel?, String>,
+      VehicleManufactureModel?> value;
 
-  factory CreateVehicleTypeManufacture(VehicleManufacture? input) {
+  factory CreateVehicleTypeManufacture(VehicleManufactureModel? input) {
     return CreateVehicleTypeManufacture._(
         validateFieldNotVehicleManufactureAndNotEmpty(input));
   }

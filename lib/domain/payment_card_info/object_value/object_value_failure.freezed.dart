@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$OrderObjectValueFailure<T, E> {
+mixin _$CraetePaymentCardInfoObjectValueFailure<T, E> {
   T get failedValue => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -78,26 +78,29 @@ mixin _$OrderObjectValueFailure<T, E> {
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $OrderObjectValueFailureCopyWith<T, E, OrderObjectValueFailure<T, E>>
+  $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E,
+          CraetePaymentCardInfoObjectValueFailure<T, E>>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $OrderObjectValueFailureCopyWith<T, E, $Res> {
-  factory $OrderObjectValueFailureCopyWith(OrderObjectValueFailure<T, E> value,
-          $Res Function(OrderObjectValueFailure<T, E>) then) =
-      _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>;
+abstract class $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
+  factory $CraetePaymentCardInfoObjectValueFailureCopyWith(
+          CraetePaymentCardInfoObjectValueFailure<T, E> value,
+          $Res Function(CraetePaymentCardInfoObjectValueFailure<T, E>) then) =
+      _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>;
   $Res call({T failedValue});
 }
 
 /// @nodoc
-class _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
-  _$OrderObjectValueFailureCopyWithImpl(this._value, this._then);
+class _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
+  _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl(
+      this._value, this._then);
 
-  final OrderObjectValueFailure<T, E> _value;
+  final CraetePaymentCardInfoObjectValueFailure<T, E> _value;
   // ignore: unused_field
-  final $Res Function(OrderObjectValueFailure<T, E>) _then;
+  final $Res Function(CraetePaymentCardInfoObjectValueFailure<T, E>) _then;
 
   @override
   $Res call({
@@ -114,7 +117,7 @@ class _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
 
 /// @nodoc
 abstract class _$$EmptyFieldCopyWith<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$EmptyFieldCopyWith(
           _$EmptyField<T, E> value, $Res Function(_$EmptyField<T, E>) then) =
       __$$EmptyFieldCopyWithImpl<T, E, $Res>;
@@ -124,7 +127,7 @@ abstract class _$$EmptyFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$EmptyFieldCopyWithImpl<T, E, $Res>
-    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$EmptyFieldCopyWith<T, E, $Res> {
   __$$EmptyFieldCopyWithImpl(
       _$EmptyField<T, E> _value, $Res Function(_$EmptyField<T, E>) _then)
@@ -158,7 +161,7 @@ class _$EmptyField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderObjectValueFailure<$T, $E>.emptyField(failedValue: $failedValue)';
+    return 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.emptyField(failedValue: $failedValue)';
   }
 
   @override
@@ -166,7 +169,7 @@ class _$EmptyField<T, E>
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'OrderObjectValueFailure<$T, $E>.emptyField'))
+          'type', 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.emptyField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -272,7 +275,8 @@ class _$EmptyField<T, E>
   }
 }
 
-abstract class EmptyField<T, E> implements OrderObjectValueFailure<T, E> {
+abstract class EmptyField<T, E>
+    implements CraetePaymentCardInfoObjectValueFailure<T, E> {
   const factory EmptyField({required final T failedValue}) = _$EmptyField<T, E>;
 
   @override
@@ -285,7 +289,7 @@ abstract class EmptyField<T, E> implements OrderObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$NotIntFieldCopyWith<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NotIntFieldCopyWith(
           _$NotIntField<T, E> value, $Res Function(_$NotIntField<T, E>) then) =
       __$$NotIntFieldCopyWithImpl<T, E, $Res>;
@@ -295,7 +299,7 @@ abstract class _$$NotIntFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NotIntFieldCopyWithImpl<T, E, $Res>
-    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NotIntFieldCopyWith<T, E, $Res> {
   __$$NotIntFieldCopyWithImpl(
       _$NotIntField<T, E> _value, $Res Function(_$NotIntField<T, E>) _then)
@@ -329,15 +333,15 @@ class _$NotIntField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderObjectValueFailure<$T, $E>.notIntField(failedValue: $failedValue)';
+    return 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.notIntField(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'OrderObjectValueFailure<$T, $E>.notIntField'))
+      ..add(DiagnosticsProperty('type',
+          'CraetePaymentCardInfoObjectValueFailure<$T, $E>.notIntField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -443,7 +447,8 @@ class _$NotIntField<T, E>
   }
 }
 
-abstract class NotIntField<T, E> implements OrderObjectValueFailure<T, E> {
+abstract class NotIntField<T, E>
+    implements CraetePaymentCardInfoObjectValueFailure<T, E> {
   const factory NotIntField({required final T failedValue}) =
       _$NotIntField<T, E>;
 
@@ -457,7 +462,7 @@ abstract class NotIntField<T, E> implements OrderObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$NotDoubleFieldCopyWith<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NotDoubleFieldCopyWith(_$NotDoubleField<T, E> value,
           $Res Function(_$NotDoubleField<T, E>) then) =
       __$$NotDoubleFieldCopyWithImpl<T, E, $Res>;
@@ -467,7 +472,7 @@ abstract class _$$NotDoubleFieldCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NotDoubleFieldCopyWithImpl<T, E, $Res>
-    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NotDoubleFieldCopyWith<T, E, $Res> {
   __$$NotDoubleFieldCopyWithImpl(_$NotDoubleField<T, E> _value,
       $Res Function(_$NotDoubleField<T, E>) _then)
@@ -501,15 +506,15 @@ class _$NotDoubleField<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderObjectValueFailure<$T, $E>.notDoubleField(failedValue: $failedValue)';
+    return 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.notDoubleField(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'OrderObjectValueFailure<$T, $E>.notDoubleField'))
+      ..add(DiagnosticsProperty('type',
+          'CraetePaymentCardInfoObjectValueFailure<$T, $E>.notDoubleField'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -616,7 +621,8 @@ class _$NotDoubleField<T, E>
   }
 }
 
-abstract class NotDoubleField<T, E> implements OrderObjectValueFailure<T, E> {
+abstract class NotDoubleField<T, E>
+    implements CraetePaymentCardInfoObjectValueFailure<T, E> {
   const factory NotDoubleField({required final T failedValue}) =
       _$NotDoubleField<T, E>;
 
@@ -630,7 +636,7 @@ abstract class NotDoubleField<T, E> implements OrderObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$NoSpaceAllowedCopyWith<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$NoSpaceAllowedCopyWith(_$NoSpaceAllowed<T, E> value,
           $Res Function(_$NoSpaceAllowed<T, E>) then) =
       __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>;
@@ -640,7 +646,7 @@ abstract class _$$NoSpaceAllowedCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$NoSpaceAllowedCopyWithImpl<T, E, $Res>
-    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$NoSpaceAllowedCopyWith<T, E, $Res> {
   __$$NoSpaceAllowedCopyWithImpl(_$NoSpaceAllowed<T, E> _value,
       $Res Function(_$NoSpaceAllowed<T, E>) _then)
@@ -674,15 +680,15 @@ class _$NoSpaceAllowed<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderObjectValueFailure<$T, $E>.noSpaceAllowed(failedValue: $failedValue)';
+    return 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.noSpaceAllowed(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'OrderObjectValueFailure<$T, $E>.noSpaceAllowed'))
+      ..add(DiagnosticsProperty('type',
+          'CraetePaymentCardInfoObjectValueFailure<$T, $E>.noSpaceAllowed'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -789,7 +795,8 @@ class _$NoSpaceAllowed<T, E>
   }
 }
 
-abstract class NoSpaceAllowed<T, E> implements OrderObjectValueFailure<T, E> {
+abstract class NoSpaceAllowed<T, E>
+    implements CraetePaymentCardInfoObjectValueFailure<T, E> {
   const factory NoSpaceAllowed({required final T failedValue}) =
       _$NoSpaceAllowed<T, E>;
 
@@ -803,7 +810,7 @@ abstract class NoSpaceAllowed<T, E> implements OrderObjectValueFailure<T, E> {
 
 /// @nodoc
 abstract class _$$ExceptOneToNineAllowedCopyWith<T, E, $Res>
-    implements $OrderObjectValueFailureCopyWith<T, E, $Res> {
+    implements $CraetePaymentCardInfoObjectValueFailureCopyWith<T, E, $Res> {
   factory _$$ExceptOneToNineAllowedCopyWith(
           _$ExceptOneToNineAllowed<T, E> value,
           $Res Function(_$ExceptOneToNineAllowed<T, E>) then) =
@@ -814,7 +821,7 @@ abstract class _$$ExceptOneToNineAllowedCopyWith<T, E, $Res>
 
 /// @nodoc
 class __$$ExceptOneToNineAllowedCopyWithImpl<T, E, $Res>
-    extends _$OrderObjectValueFailureCopyWithImpl<T, E, $Res>
+    extends _$CraetePaymentCardInfoObjectValueFailureCopyWithImpl<T, E, $Res>
     implements _$$ExceptOneToNineAllowedCopyWith<T, E, $Res> {
   __$$ExceptOneToNineAllowedCopyWithImpl(_$ExceptOneToNineAllowed<T, E> _value,
       $Res Function(_$ExceptOneToNineAllowed<T, E>) _then)
@@ -849,15 +856,15 @@ class _$ExceptOneToNineAllowed<T, E>
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'OrderObjectValueFailure<$T, $E>.exceptOneToNineAllowed(failedValue: $failedValue)';
+    return 'CraetePaymentCardInfoObjectValueFailure<$T, $E>.exceptOneToNineAllowed(failedValue: $failedValue)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'OrderObjectValueFailure<$T, $E>.exceptOneToNineAllowed'))
+      ..add(DiagnosticsProperty('type',
+          'CraetePaymentCardInfoObjectValueFailure<$T, $E>.exceptOneToNineAllowed'))
       ..add(DiagnosticsProperty('failedValue', failedValue));
   }
 
@@ -965,7 +972,7 @@ class _$ExceptOneToNineAllowed<T, E>
 }
 
 abstract class ExceptOneToNineAllowed<T, E>
-    implements OrderObjectValueFailure<T, E> {
+    implements CraetePaymentCardInfoObjectValueFailure<T, E> {
   const factory ExceptOneToNineAllowed({required final T failedValue}) =
       _$ExceptOneToNineAllowed<T, E>;
 

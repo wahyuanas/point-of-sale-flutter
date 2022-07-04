@@ -3,11 +3,11 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
-import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:pos/domain/vehicle_type/object_value/object_value.dart';
 import 'package:pos/domain/vehicle_type/object_value/vehicle_type_object_value.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
+import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
 import 'package:uuid/uuid.dart';
 
@@ -23,7 +23,7 @@ class VehicleTypeFormCreateCubit extends Cubit<VehicleTypeFormCreateState> {
 
   final VehicleTypeListCubit _vehicleTypeListCubit;
 
-  void onCreateVehicleTypeManufactureChanged(VehicleManufacture? v) {
+  void onCreateVehicleTypeManufactureChanged(VehicleManufactureModel? v) {
     emit(state.copyWith(
       createVehicleType: state.createVehicleType
           .copyWith(manufacture: CreateVehicleTypeManufacture(v)),

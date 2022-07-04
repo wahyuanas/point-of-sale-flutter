@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
-import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:uuid/uuid.dart';
 
 import '../object_value/vehicle_type_object_value.dart';
@@ -14,7 +13,7 @@ class VehicleType with _$VehicleType implements IEntity {
   const factory VehicleType({
     required int id,
     required String uuid,
-    required VehicleManufacture manufacture,
+    required int manufacture,
     required String model,
     required int year,
     required String color,
@@ -27,7 +26,7 @@ class VehicleType with _$VehicleType implements IEntity {
     return VehicleType(
       id: id,
       uuid: const Uuid().v4(),
-      manufacture: createVehicleType.manufacture.getOrCrash()!,
+      manufacture: createVehicleType.manufacture.getOrCrash()!.id,
       model: createVehicleType.model.getOrCrash(),
       description: createVehicleType.description.getOrCrash(),
       accountId: 1,

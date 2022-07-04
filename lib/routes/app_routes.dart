@@ -13,6 +13,8 @@ import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_owner/form/create/screen/pos_vehicle_owner_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_owner/list/screen/pos_vehicle_owner_list_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -33,7 +35,7 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => const PageViewMainScreen());
       case '/posCatalogList':
         return MaterialPageRoute(builder: (_) => const PosCatalogListScreen());
-      case '/posCatalogform':
+      case '/posCatalogForm':
         return MaterialPageRoute(builder: (_) => const PosCatalogFormScreen());
       case '/purchase':
         return MaterialPageRoute(builder: (_) => const PosPaymentScreen());
@@ -45,13 +47,20 @@ class RouteGenerator {
                 ));
       case '/posCustomerList':
         return MaterialPageRoute(builder: (_) => const PosCustomerListScreen());
-      case '/posCustomerform':
+      case '/posCustomerForm':
         return MaterialPageRoute(builder: (_) => const PosCustomerFormScreen());
 
       case '/posVehicleList':
         return MaterialPageRoute(builder: (_) => const PosVehicleListScreen());
-      case '/posVehicleform':
+      case '/posVehicleForm':
         return MaterialPageRoute(builder: (_) => const PosVehicleFormScreen());
+
+      case '/posVehicleOwnerList':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleOwnerListScreen());
+      case '/posVehicleOwnerForm':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleOwnerFormScreen());
 
       default:
         return _errorRoute();

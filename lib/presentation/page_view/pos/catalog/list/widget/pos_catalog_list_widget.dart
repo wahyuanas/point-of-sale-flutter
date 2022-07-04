@@ -87,7 +87,7 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
             // width: 40,
             child: GestureDetector(
                 onTap: () => context.read<PosRouteCubit>().onRoute(
-                    const PosOnRouteState.posCatalogform(r: '/posCatalogform'),
+                    const PosOnRouteState.posCatalogForm(r: '/posCatalogForm'),
                     null),
                 key: const Key('pos-catalog-list'),
                 child: const Padding(

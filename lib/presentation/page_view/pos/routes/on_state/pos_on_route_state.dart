@@ -7,8 +7,8 @@ part 'pos_on_route_state.freezed.dart';
 class PosOnRouteState<T> with _$PosOnRouteState<T> {
   const factory PosOnRouteState.posCatalogList({required T r}) =
       _PosCatalogList<T>;
-  const factory PosOnRouteState.posCatalogform({required T r}) =
-      _PosCatalogform<T>;
+  const factory PosOnRouteState.posCatalogForm({required T r}) =
+      _PosCatalogForm<T>;
   const factory PosOnRouteState.purchase({required T r}) = _Purchase<T>;
   const factory PosOnRouteState.posCatalogItemDetail({required T r}) =
       _PosCatalogItemDetail<T>;
@@ -20,4 +20,16 @@ class PosOnRouteState<T> with _$PosOnRouteState<T> {
       _PosVehicleList<T>;
   const factory PosOnRouteState.posVehicleForm({required T r}) =
       _PosVehicleForm<T>;
+  const factory PosOnRouteState.posVehicleOwnerList({required T r}) =
+      _PosVehicleOwnerList<T>;
+  const factory PosOnRouteState.posVehicleOwnerForm({required T r}) =
+      _PosVehicleOwnerForm<T>;
+  const factory PosOnRouteState.posVehicleTypeList({required T r}) =
+      _PosVehicleTypeList<T>;
+  const factory PosOnRouteState.posVehicleTypeForm({required T r}) =
+      _PosVehicleTypeForm<T>;
+  const factory PosOnRouteState.posVehicleManufactureList({required T r}) =
+      _PosVehicleManufactureList<T>;
+  const factory PosOnRouteState.posVehicleManufactureForm({required T r}) =
+      _PosVehicleManufactureForm<T>;
 }

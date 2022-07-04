@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
-import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
-import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
+import 'package:pos/presentation/main/vehicle_owner/model/vehicle_owner_model.dart';
+import 'package:pos/presentation/main/vehicle_type/model/vehicle_type_model.dart';
 
 import 'object_value_failure.dart';
 import 'value_object_validators.dart';
@@ -61,24 +61,24 @@ class CreateVehicleDescription extends ObjectValue<String> {
   const CreateVehicleDescription._(this.value);
 }
 
-class CreateVehicleOwner extends ObjectValue<VehicleOwner?> {
+class CreateVehicleOwner extends ObjectValue<VehicleOwnerModel?> {
   @override
-  final Either<FormVehicleObjectValueFailure<VehicleOwner?, String>,
-      VehicleOwner?> value;
+  final Either<FormVehicleObjectValueFailure<VehicleOwnerModel?, String>,
+      VehicleOwnerModel?> value;
 
-  factory CreateVehicleOwner(VehicleOwner? input) {
+  factory CreateVehicleOwner(VehicleOwnerModel? input) {
     return CreateVehicleOwner._(validateFieldNotVehicleOwnerAndNotNull(input));
   }
 
   const CreateVehicleOwner._(this.value);
 }
 
-class CreateVehicleType extends ObjectValue<VehicleType?> {
+class CreateVehicleType extends ObjectValue<VehicleTypeModel?> {
   @override
-  final Either<FormVehicleObjectValueFailure<VehicleType?, String>,
-      VehicleType?> value;
+  final Either<FormVehicleObjectValueFailure<VehicleTypeModel?, String>,
+      VehicleTypeModel?> value;
 
-  factory CreateVehicleType(VehicleType? input) {
+  factory CreateVehicleType(VehicleTypeModel? input) {
     return CreateVehicleType._(validateFieldNotVehicleTypeAndNotNull(input));
   }
 

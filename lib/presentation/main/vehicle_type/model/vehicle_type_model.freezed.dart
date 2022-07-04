@@ -22,7 +22,7 @@ VehicleTypeModel _$VehicleTypeModelFromJson(Map<String, dynamic> json) {
 mixin _$VehicleTypeModel {
   int get id => throw _privateConstructorUsedError;
   String get uuid => throw _privateConstructorUsedError;
-  VehicleManufacture get manufacture => throw _privateConstructorUsedError;
+  VehicleManufactureModel get manufacture => throw _privateConstructorUsedError;
   String get model => throw _privateConstructorUsedError;
   int get year => throw _privateConstructorUsedError;
   String get color => throw _privateConstructorUsedError;
@@ -43,14 +43,14 @@ abstract class $VehicleTypeModelCopyWith<$Res> {
   $Res call(
       {int id,
       String uuid,
-      VehicleManufacture manufacture,
+      VehicleManufactureModel manufacture,
       String model,
       int year,
       String color,
       String description,
       int accountId});
 
-  $VehicleManufactureCopyWith<$Res> get manufacture;
+  $VehicleManufactureModelCopyWith<$Res> get manufacture;
 }
 
 /// @nodoc
@@ -85,7 +85,7 @@ class _$VehicleTypeModelCopyWithImpl<$Res>
       manufacture: manufacture == freezed
           ? _value.manufacture
           : manufacture // ignore: cast_nullable_to_non_nullable
-              as VehicleManufacture,
+              as VehicleManufactureModel,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -110,8 +110,8 @@ class _$VehicleTypeModelCopyWithImpl<$Res>
   }
 
   @override
-  $VehicleManufactureCopyWith<$Res> get manufacture {
-    return $VehicleManufactureCopyWith<$Res>(_value.manufacture, (value) {
+  $VehicleManufactureModelCopyWith<$Res> get manufacture {
+    return $VehicleManufactureModelCopyWith<$Res>(_value.manufacture, (value) {
       return _then(_value.copyWith(manufacture: value));
     });
   }
@@ -127,7 +127,7 @@ abstract class _$$_VehicleTypeModelCopyWith<$Res>
   $Res call(
       {int id,
       String uuid,
-      VehicleManufacture manufacture,
+      VehicleManufactureModel manufacture,
       String model,
       int year,
       String color,
@@ -135,7 +135,7 @@ abstract class _$$_VehicleTypeModelCopyWith<$Res>
       int accountId});
 
   @override
-  $VehicleManufactureCopyWith<$Res> get manufacture;
+  $VehicleManufactureModelCopyWith<$Res> get manufacture;
 }
 
 /// @nodoc
@@ -172,7 +172,7 @@ class __$$_VehicleTypeModelCopyWithImpl<$Res>
       manufacture: manufacture == freezed
           ? _value.manufacture
           : manufacture // ignore: cast_nullable_to_non_nullable
-              as VehicleManufacture,
+              as VehicleManufactureModel,
       model: model == freezed
           ? _value.model
           : model // ignore: cast_nullable_to_non_nullable
@@ -219,7 +219,7 @@ class _$_VehicleTypeModel extends _VehicleTypeModel {
   @override
   final String uuid;
   @override
-  final VehicleManufacture manufacture;
+  final VehicleManufactureModel manufacture;
   @override
   final String model;
   @override
@@ -281,7 +281,7 @@ abstract class _VehicleTypeModel extends VehicleTypeModel {
   const factory _VehicleTypeModel(
       {required final int id,
       required final String uuid,
-      required final VehicleManufacture manufacture,
+      required final VehicleManufactureModel manufacture,
       required final String model,
       required final int year,
       required final String color,
@@ -297,7 +297,7 @@ abstract class _VehicleTypeModel extends VehicleTypeModel {
   @override
   String get uuid => throw _privateConstructorUsedError;
   @override
-  VehicleManufacture get manufacture => throw _privateConstructorUsedError;
+  VehicleManufactureModel get manufacture => throw _privateConstructorUsedError;
   @override
   String get model => throw _privateConstructorUsedError;
   @override

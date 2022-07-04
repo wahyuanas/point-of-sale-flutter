@@ -98,7 +98,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                       (r) => null),
                   title: state.createOrder?.vehicle.value.fold(
                     (l) => const Text(
-                      'pilih kedaraan...',
+                      'pilih kendaraan...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
                     ),
                     (r) => Text(

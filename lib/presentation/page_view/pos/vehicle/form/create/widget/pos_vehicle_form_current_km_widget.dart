@@ -68,6 +68,10 @@ class _PosVehicleFormCurrentKmWidgetState
                     ? state.createVehicle.currentKm.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
+                            noSpaceAllowed: (v) =>
+                                "tidak boleh mengandung spasi",
+                            exceptOneToNineAllowed: (v) => "harus berupa angka",
+                            notIntField: (v) => "harus berupa angka",
                             orElse: () => null),
                         (r) => null)
                     : null,

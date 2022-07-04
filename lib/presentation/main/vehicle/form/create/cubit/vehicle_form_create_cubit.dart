@@ -6,10 +6,10 @@ import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle/object_value/object_value.dart';
 import 'package:pos/domain/vehicle/object_value/vehicle_object_value.dart';
-import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
-import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_owner/model/vehicle_owner_model.dart';
+import 'package:pos/presentation/main/vehicle_type/model/vehicle_type_model.dart';
 import 'package:uuid/uuid.dart';
 
 part 'vehicle_form_create_state.dart';
@@ -52,14 +52,14 @@ class VehicleFormCreateCubit extends Cubit<VehicleFormCreateState> {
     ));
   }
 
-  void onCreateVehicleOwnerChanged(VehicleOwner? v) {
+  void onCreateVehicleOwnerChanged(VehicleOwnerModel? v) {
     emit(state.copyWith(
       createVehicle:
           state.createVehicle.copyWith(vehicleOwner: CreateVehicleOwner(v)),
     ));
   }
 
-  void onCreateVehicleTypeChanged(VehicleType? v) {
+  void onCreateVehicleTypeChanged(VehicleTypeModel? v) {
     emit(state.copyWith(
       createVehicle:
           state.createVehicle.copyWith(vehicleType: CreateVehicleType(v)),
