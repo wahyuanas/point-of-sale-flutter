@@ -62,7 +62,7 @@ class _PosVehicleFormCurrentKmWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createVehicle.currentKm.value.fold(

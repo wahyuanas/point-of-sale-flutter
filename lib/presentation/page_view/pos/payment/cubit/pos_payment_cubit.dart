@@ -1,13 +1,15 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/order/object_value/object_value.dart';
 import 'package:pos/domain/order/object_value/order_object_value.dart';
-import 'package:pos/domain/vehicle/entity/vehicle.dart';
+import 'package:pos/domain/payment_card_info/object_value/object_value.dart';
+import 'package:pos/domain/payment_card_info/object_value/payment_card_info_object_value.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
+import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 
 part 'pos_payment_state.dart';
 part 'pos_payment_cubit.freezed.dart';
@@ -70,14 +72,14 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     }
   }
 
-  onCustomerChanged(Customer? customer) {
+  onCustomerChanged(CustomerModel? customer) {
     emit(state.copyWith(
       createOrder:
           state.createOrder?.copyWith(customer: CreateOrderCustomer(customer)),
     ));
   }
 
-  onVehicleChanged(Vehicle? vehicle) {
+  onVehicleChanged(VehicleModel? vehicle) {
     emit(state.copyWith(
       createOrder:
           state.createOrder?.copyWith(vehicle: CreateOrderVehicle(vehicle)),

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:showcaseview/showcaseview.dart';

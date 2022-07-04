@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/customer/entity/customer.dart';
+import 'package:pos/presentation/main/customer/model/customer_model.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
 class PosCustomerListCardWidget extends StatefulWidget {
-  final Customer customer;
+  final CustomerModel customer;
   const PosCustomerListCardWidget({Key? key, required this.customer})
       : super(key: key);
 

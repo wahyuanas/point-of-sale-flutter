@@ -2,7 +2,10 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/employee/entity/employees.dart';
+import 'package:pos/domain/payment_card_info/object_value/payment_card_info_object_value.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
+import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 
 import 'object_value_failure.dart';
 import 'order_object_value.dart';
@@ -16,8 +19,8 @@ Either<OrderObjectValueFailure<String, String>, String>
   }
 }
 
-Either<OrderObjectValueFailure<Customer?, String>, Customer?>
-    validateFieldNotCustomerAndNotEmpty(Customer? input) {
+Either<OrderObjectValueFailure<CustomerModel?, String>, CustomerModel?>
+    validateFieldNotCustomerAndNotEmpty(CustomerModel? input) {
   if (input == null) {
     return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {
@@ -25,8 +28,8 @@ Either<OrderObjectValueFailure<Customer?, String>, Customer?>
   }
 }
 
-Either<OrderObjectValueFailure<Vehicle?, String>, Vehicle?>
-    validateFieldNotVehicleAndNotEmpty(Vehicle? input) {
+Either<OrderObjectValueFailure<VehicleModel?, String>, VehicleModel?>
+    validateFieldNotVehicleAndNotEmpty(VehicleModel? input) {
   if (input == null) {
     return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {

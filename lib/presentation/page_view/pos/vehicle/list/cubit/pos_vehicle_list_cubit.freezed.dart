@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PosVehicleListState {
-  List<Vehicle>? get vehicles => throw _privateConstructorUsedError;
+  List<VehicleModel>? get vehicles => throw _privateConstructorUsedError;
   String? get keyWord => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $PosVehicleListStateCopyWith<$Res> {
   factory $PosVehicleListStateCopyWith(
           PosVehicleListState value, $Res Function(PosVehicleListState) then) =
       _$PosVehicleListStateCopyWithImpl<$Res>;
-  $Res call({List<Vehicle>? vehicles, String? keyWord});
+  $Res call({List<VehicleModel>? vehicles, String? keyWord});
 }
 
 /// @nodoc
@@ -50,7 +50,7 @@ class _$PosVehicleListStateCopyWithImpl<$Res>
       vehicles: vehicles == freezed
           ? _value.vehicles
           : vehicles // ignore: cast_nullable_to_non_nullable
-              as List<Vehicle>?,
+              as List<VehicleModel>?,
       keyWord: keyWord == freezed
           ? _value.keyWord
           : keyWord // ignore: cast_nullable_to_non_nullable
@@ -66,7 +66,7 @@ abstract class _$$_PosVehicleListStateCopyWith<$Res>
           $Res Function(_$_PosVehicleListState) then) =
       __$$_PosVehicleListStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Vehicle>? vehicles, String? keyWord});
+  $Res call({List<VehicleModel>? vehicles, String? keyWord});
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class __$$_PosVehicleListStateCopyWithImpl<$Res>
       vehicles: vehicles == freezed
           ? _value._vehicles
           : vehicles // ignore: cast_nullable_to_non_nullable
-              as List<Vehicle>?,
+              as List<VehicleModel>?,
       keyWord: keyWord == freezed
           ? _value.keyWord
           : keyWord // ignore: cast_nullable_to_non_nullable
@@ -104,12 +104,12 @@ class _$_PosVehicleListState
     with DiagnosticableTreeMixin
     implements _PosVehicleListState {
   const _$_PosVehicleListState(
-      {required final List<Vehicle>? vehicles, required this.keyWord})
+      {required final List<VehicleModel>? vehicles, required this.keyWord})
       : _vehicles = vehicles;
 
-  final List<Vehicle>? _vehicles;
+  final List<VehicleModel>? _vehicles;
   @override
-  List<Vehicle>? get vehicles {
+  List<VehicleModel>? get vehicles {
     final value = _vehicles;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -157,11 +157,11 @@ class _$_PosVehicleListState
 
 abstract class _PosVehicleListState implements PosVehicleListState {
   const factory _PosVehicleListState(
-      {required final List<Vehicle>? vehicles,
+      {required final List<VehicleModel>? vehicles,
       required final String? keyWord}) = _$_PosVehicleListState;
 
   @override
-  List<Vehicle>? get vehicles => throw _privateConstructorUsedError;
+  List<VehicleModel>? get vehicles => throw _privateConstructorUsedError;
   @override
   String? get keyWord => throw _privateConstructorUsedError;
   @override

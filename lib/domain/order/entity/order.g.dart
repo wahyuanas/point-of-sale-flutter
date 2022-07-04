@@ -19,8 +19,7 @@ _$_Order _$$_OrderFromJson(Map<String, dynamic> json) => _$_Order(
       grandAmount: json['grandAmount'] as int,
       disc: json['disc'] as int,
       paymentType: json['paymentType'] as int,
-      paymentCardInfo: PaymentCardInfo.fromJson(
-          json['paymentCardInfo'] as Map<String, dynamic>),
+      paymentCardInfo: json['paymentCardInfo'] as int,
       charge: json['charge'] as int,
       paidAmount: json['paidAmount'] as int,
       changeAmount: json['changeAmount'] as int,
@@ -50,22 +49,4 @@ Map<String, dynamic> _$$_OrderToJson(_$_Order instance) => <String, dynamic>{
       'tax': instance.tax,
       'itemNumber': instance.itemNumber,
       'paidStatus': instance.paidStatus,
-    };
-
-_$_PaymentCardInfo _$$_PaymentCardInfoFromJson(Map<String, dynamic> json) =>
-    _$_PaymentCardInfo(
-      id: json['id'] as int,
-      name: json['name'] as String,
-      number: json['number'] as String,
-      numberRef: json['numberRef'] as String,
-      remarks: json['remarks'] as String,
-    );
-
-Map<String, dynamic> _$$_PaymentCardInfoToJson(_$_PaymentCardInfo instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'name': instance.name,
-      'number': instance.number,
-      'numberRef': instance.numberRef,
-      'remarks': instance.remarks,
     };

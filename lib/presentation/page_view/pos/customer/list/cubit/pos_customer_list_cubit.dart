@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
+import 'package:pos/presentation/main/customer/model/customer_model.dart';
 
 part 'pos_customer_list_state.dart';
 part 'pos_customer_list_cubit.freezed.dart';
@@ -23,20 +23,29 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
   late StreamSubscription _customerListSubscription;
 
   onStarted() {
-    emit(state.copyWith(customers: _customerListCubit.state.customers));
+    List<CustomerModel> customers =
+        _customerListCubit.state.customers!.map((customer) {
+      return CustomerModel.fromCustomer(customer);
+    }).toList();
+
+    emit(state.copyWith(customers: customers));
   }
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<Customer>? listCustomer; //= List.from(state.customers!.toList());
-      listCustomer = customerListCubit.state.customers
-          ?.where((customer) =>
-              customer.name.toLowerCase().contains(v.toLowerCase()))
-          .toList();
-      emit(state.copyWith(customers: listCustomer, keyWord: v));
+      List<CustomerModel> customers = [];
+      _customerListCubit.state.customers?.forEach((customer) {
+        if (customer.name.toLowerCase().contains(v.toLowerCase())) {
+          customers.add(CustomerModel.fromCustomer(customer));
+        }
+      });
+      emit(state.copyWith(customers: customers, keyWord: v));
     } else {
-      List<Customer>? listCustomer = customerListCubit.state.customers;
-      emit(state.copyWith(customers: listCustomer));
+      List<CustomerModel> customers =
+          _customerListCubit.state.customers!.map((customer) {
+        return CustomerModel.fromCustomer(customer);
+      }).toList();
+      emit(state.copyWith(customers: customers));
     }
   }
 
@@ -46,15 +55,21 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
 
   onCustomerChannged(CustomerListState customerListState) {
     if (state.keyWord == null) {
-      emit(state.copyWith(customers: customerListState.customers));
+      List<CustomerModel> customers =
+          _customerListCubit.state.customers!.map((customer) {
+        return CustomerModel.fromCustomer(customer);
+      }).toList();
+      emit(state.copyWith(customers: customers));
     } else {
-      List<Customer>? listCustomer; //= List.from(state.customers!.toList());
-      listCustomer = customerListCubit.state.customers
-          ?.where((customer) => customer.name
-              .toLowerCase()
-              .contains(state.keyWord!.toLowerCase()))
-          .toList();
-      emit(state.copyWith(customers: listCustomer));
+      List<CustomerModel> customers = [];
+      _customerListCubit.state.customers?.forEach((customer) {
+        if (customer.name
+            .toLowerCase()
+            .contains(state.keyWord!.toLowerCase())) {
+          customers.add(CustomerModel.fromCustomer(customer));
+        }
+      });
+      emit(state.copyWith(customers: customers));
     }
   }
 

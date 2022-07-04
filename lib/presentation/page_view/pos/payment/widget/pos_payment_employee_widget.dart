@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/routes/cubit/route_cubit.dart';
-import 'package:pos/routes/on_state/on_route_state.dart';
 
 class PosPaymentEmployeeWidget extends StatefulWidget {
   const PosPaymentEmployeeWidget({Key? key}) : super(key: key);

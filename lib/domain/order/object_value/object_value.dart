@@ -1,11 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:pos/domain/core/object_value/object_value.dart';
-import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/employee/entity/employees.dart';
-import 'package:pos/domain/vehicle/entity/vehicle.dart';
+import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 
 import 'object_value_failure.dart';
-import 'order_object_value.dart';
 import 'value_object_validators.dart';
 
 class CreateOrderUuid extends ObjectValue<String> {
@@ -41,22 +40,24 @@ class CreateOrderDescription extends ObjectValue<String> {
   const CreateOrderDescription._(this.value);
 }
 
-class CreateOrderCustomer extends ObjectValue<Customer?> {
+class CreateOrderCustomer extends ObjectValue<CustomerModel?> {
   @override
-  final Either<OrderObjectValueFailure<Customer?, String>, Customer?> value;
+  final Either<OrderObjectValueFailure<CustomerModel?, String>, CustomerModel?>
+      value;
 
-  factory CreateOrderCustomer(Customer? input) {
+  factory CreateOrderCustomer(CustomerModel? input) {
     return CreateOrderCustomer._(validateFieldNotCustomerAndNotEmpty(input));
   }
 
   const CreateOrderCustomer._(this.value);
 }
 
-class CreateOrderVehicle extends ObjectValue<Vehicle?> {
+class CreateOrderVehicle extends ObjectValue<VehicleModel?> {
   @override
-  final Either<OrderObjectValueFailure<Vehicle?, String>, Vehicle?> value;
+  final Either<OrderObjectValueFailure<VehicleModel?, String>, VehicleModel?>
+      value;
 
-  factory CreateOrderVehicle(Vehicle? input) {
+  factory CreateOrderVehicle(VehicleModel? input) {
     return CreateOrderVehicle._(validateFieldNotVehicleAndNotEmpty(input));
   }
 
@@ -193,60 +194,4 @@ class CreateOrderDate extends ObjectValue<DateTime> {
   }
 
   const CreateOrderDate._(this.value);
-}
-
-class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
-  @override
-  final Either<OrderObjectValueFailure<String, String>, CraetePaymentCardInfo?>
-      value;
-
-  factory CreateOrderPaymentCardInfo(CraetePaymentCardInfo? input) {
-    return CreateOrderPaymentCardInfo._(validateFieldPaymentCardInfo(input));
-  }
-
-  const CreateOrderPaymentCardInfo._(this.value);
-}
-
-class CraetePaymentCardInfoName extends ObjectValue<String> {
-  @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
-
-  factory CraetePaymentCardInfoName(String input) {
-    return CraetePaymentCardInfoName._(validateFieldStringNotEmpty(input));
-  }
-
-  const CraetePaymentCardInfoName._(this.value);
-}
-
-class CraetePaymentCardInfoNumber extends ObjectValue<String> {
-  @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
-
-  factory CraetePaymentCardInfoNumber(String input) {
-    return CraetePaymentCardInfoNumber._(validateFieldStringNotEmpty(input));
-  }
-
-  const CraetePaymentCardInfoNumber._(this.value);
-}
-
-class CraetePaymentCardInfoNumberRef extends ObjectValue<String> {
-  @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
-
-  factory CraetePaymentCardInfoNumberRef(String input) {
-    return CraetePaymentCardInfoNumberRef._(validateFieldStringNotEmpty(input));
-  }
-
-  const CraetePaymentCardInfoNumberRef._(this.value);
-}
-
-class CraetePaymentCardInfoRemarks extends ObjectValue<String> {
-  @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
-
-  factory CraetePaymentCardInfoRemarks(String input) {
-    return CraetePaymentCardInfoRemarks._(validateFieldStringNotEmpty(input));
-  }
-
-  const CraetePaymentCardInfoRemarks._(this.value);
 }

@@ -27,8 +27,8 @@ mixin _$Vehicle {
   int get currentKm => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
   int get accountId => throw _privateConstructorUsedError;
-  VehicleOwner? get vehicleOwner => throw _privateConstructorUsedError;
-  VehicleType? get vehicleType => throw _privateConstructorUsedError;
+  int get vehicleOwner => throw _privateConstructorUsedError;
+  int get vehicleType => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -47,11 +47,8 @@ abstract class $VehicleCopyWith<$Res> {
       int currentKm,
       String description,
       int accountId,
-      VehicleOwner? vehicleOwner,
-      VehicleType? vehicleType});
-
-  $VehicleOwnerCopyWith<$Res>? get vehicleOwner;
-  $VehicleTypeCopyWith<$Res>? get vehicleType;
+      int vehicleOwner,
+      int vehicleType});
 }
 
 /// @nodoc
@@ -106,34 +103,12 @@ class _$VehicleCopyWithImpl<$Res> implements $VehicleCopyWith<$Res> {
       vehicleOwner: vehicleOwner == freezed
           ? _value.vehicleOwner
           : vehicleOwner // ignore: cast_nullable_to_non_nullable
-              as VehicleOwner?,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
-              as VehicleType?,
+              as int,
     ));
-  }
-
-  @override
-  $VehicleOwnerCopyWith<$Res>? get vehicleOwner {
-    if (_value.vehicleOwner == null) {
-      return null;
-    }
-
-    return $VehicleOwnerCopyWith<$Res>(_value.vehicleOwner!, (value) {
-      return _then(_value.copyWith(vehicleOwner: value));
-    });
-  }
-
-  @override
-  $VehicleTypeCopyWith<$Res>? get vehicleType {
-    if (_value.vehicleType == null) {
-      return null;
-    }
-
-    return $VehicleTypeCopyWith<$Res>(_value.vehicleType!, (value) {
-      return _then(_value.copyWith(vehicleType: value));
-    });
   }
 }
 
@@ -151,13 +126,8 @@ abstract class _$$_VehicleCopyWith<$Res> implements $VehicleCopyWith<$Res> {
       int currentKm,
       String description,
       int accountId,
-      VehicleOwner? vehicleOwner,
-      VehicleType? vehicleType});
-
-  @override
-  $VehicleOwnerCopyWith<$Res>? get vehicleOwner;
-  @override
-  $VehicleTypeCopyWith<$Res>? get vehicleType;
+      int vehicleOwner,
+      int vehicleType});
 }
 
 /// @nodoc
@@ -213,11 +183,11 @@ class __$$_VehicleCopyWithImpl<$Res> extends _$VehicleCopyWithImpl<$Res>
       vehicleOwner: vehicleOwner == freezed
           ? _value.vehicleOwner
           : vehicleOwner // ignore: cast_nullable_to_non_nullable
-              as VehicleOwner?,
+              as int,
       vehicleType: vehicleType == freezed
           ? _value.vehicleType
           : vehicleType // ignore: cast_nullable_to_non_nullable
-              as VehicleType?,
+              as int,
     ));
   }
 }
@@ -255,9 +225,9 @@ class _$_Vehicle extends _Vehicle {
   @override
   final int accountId;
   @override
-  final VehicleOwner? vehicleOwner;
+  final int vehicleOwner;
   @override
-  final VehicleType? vehicleType;
+  final int vehicleType;
 
   @override
   String toString() {
@@ -319,8 +289,8 @@ abstract class _Vehicle extends Vehicle {
       required final int currentKm,
       required final String description,
       required final int accountId,
-      required final VehicleOwner? vehicleOwner,
-      required final VehicleType? vehicleType}) = _$_Vehicle;
+      required final int vehicleOwner,
+      required final int vehicleType}) = _$_Vehicle;
   const _Vehicle._() : super._();
 
   factory _Vehicle.fromJson(Map<String, dynamic> json) = _$_Vehicle.fromJson;
@@ -340,9 +310,9 @@ abstract class _Vehicle extends Vehicle {
   @override
   int get accountId => throw _privateConstructorUsedError;
   @override
-  VehicleOwner? get vehicleOwner => throw _privateConstructorUsedError;
+  int get vehicleOwner => throw _privateConstructorUsedError;
   @override
-  VehicleType? get vehicleType => throw _privateConstructorUsedError;
+  int get vehicleType => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleCopyWith<_$_Vehicle> get copyWith =>

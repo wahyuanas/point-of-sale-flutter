@@ -71,7 +71,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Container(
-              height: 50,
+              //height: 50,
               //margin: const EdgeInsets.all(10.0),
               decoration: const BoxDecoration(
                   //color: Colors.blue,

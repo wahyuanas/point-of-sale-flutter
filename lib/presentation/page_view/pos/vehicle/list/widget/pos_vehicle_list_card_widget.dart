@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/vehicle/entity/vehicle.dart';
+import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
 class PosVehicleListCardWidget extends StatefulWidget {
-  final Vehicle vehicle;
+  final VehicleModel vehicle;
   const PosVehicleListCardWidget({Key? key, required this.vehicle})
       : super(key: key);
 
@@ -103,7 +103,7 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                                 height: 5.0,
                               ),
                               Text(
-                                '${widget.vehicle.vehicleType!.manufacture}',
+                                '${widget.vehicle.vehicleTypeModel?.manufacture}',
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 14.0),
                               ),
@@ -114,7 +114,9 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                                 children: [
                                   Wrap(
                                     children: [
-                                      Text(widget.vehicle.vehicleType!.model,
+                                      Text(
+                                          widget
+                                              .vehicle.vehicleTypeModel!.model,
                                           style: const TextStyle(
                                               decoration:
                                                   TextDecoration.underline,
@@ -122,14 +124,16 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                                       const SizedBox(
                                         width: 5.0,
                                       ),
-                                      Text(widget.vehicle.vehicleType!.color,
+                                      Text(
+                                          widget
+                                              .vehicle.vehicleTypeModel!.color,
                                           style: const TextStyle(
                                               color: Colors.blue, height: 1.2)),
                                       const SizedBox(
                                         width: 5.0,
                                       ),
                                       Text(
-                                          '${widget.vehicle.vehicleType!.year}',
+                                          '${widget.vehicle.vehicleTypeModel!.year}',
                                           style: const TextStyle(
                                               color: Colors.blue, height: 1.2)),
                                     ],

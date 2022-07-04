@@ -84,67 +84,48 @@ class _PosVehicleFormVehicleOwnerWidgetState
             ),
             Padding(
               padding: const EdgeInsets.only(left: 40, right: 15.0),
-              child: Container(
-                //height: 50,
-                //margin: const EdgeInsets.all(10.0),
-                // decoration: BoxDecoration(
-                //     //color: Colors.blue,
-                //     border: Border(
-                //   bottom: BorderSide(
-                //     color: _initial == false
-                //         ? state.createVehicle.vehicleOwner.value.fold(
-                //             (l) => l.maybeWhen(
-                //                   emptyField: (f) => Colors.red,
-                //                   orElse: () => Colors.red,
-                //                 ),
-                //             (r) => Colors.blue)
-                //         : Colors.blue,
-                //     width: 1,
-                //   ),
-                // )),
-                child: ListTile(
-                    // leading: const Icon(
-                    //   Icons.person_outline,
-                    //   color: Colors.blue,
-                    // ),
-                    trailing: state.createVehicle.vehicleOwner.value.fold(
-                      (l) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: GestureDetector(
-                          onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                              .onRoute(
-                                  const PosOnRouteState.posCustomerList(
-                                      r: '/posVehicleOwnerList'),
-                                  null),
-                          child: const Icon(
-                            Icons.search_outlined,
-                            size: 25.0,
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ),
-                      (r) => GestureDetector(
-                        onTap: () =>
-                            BlocProvider.of<VehicleFormCreateCubit>(context)
-                                .onCreateVehicleOwnerChanged(null),
+              child: ListTile(
+                  // leading: const Icon(
+                  //   Icons.person_outline,
+                  //   color: Colors.blue,
+                  // ),
+                  trailing: state.createVehicle.vehicleOwner.value.fold(
+                    (l) => Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: GestureDetector(
+                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                            .onRoute(
+                                const PosOnRouteState.posCustomerList(
+                                    r: '/posVehicleOwnerList'),
+                                null),
                         child: const Icon(
-                          Icons.delete_outlined,
+                          Icons.search_outlined,
                           size: 25.0,
                           color: Colors.blue,
                         ),
                       ),
                     ),
-                    title: state.createVehicle.vehicleOwner.value.fold(
-                      (l) => const Text(
-                        'Pilih Owner...',
-                        style: TextStyle(fontSize: 15, color: Colors.black38),
+                    (r) => GestureDetector(
+                      onTap: () =>
+                          BlocProvider.of<VehicleFormCreateCubit>(context)
+                              .onCreateVehicleOwnerChanged(null),
+                      child: const Icon(
+                        Icons.delete_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
                       ),
-                      (r) => Text(
-                        r!.name,
-                        style: const TextStyle(fontSize: 15),
-                      ),
-                    )),
-              ),
+                    ),
+                  ),
+                  title: state.createVehicle.vehicleOwner.value.fold(
+                    (l) => const Text(
+                      'Pilih Owner...',
+                      style: TextStyle(fontSize: 15, color: Colors.black38),
+                    ),
+                    (r) => Text(
+                      r!.name,
+                      style: const TextStyle(fontSize: 15),
+                    ),
+                  )),
             ),
             Padding(
                 padding: const EdgeInsets.only(left: 55, right: 15.0),

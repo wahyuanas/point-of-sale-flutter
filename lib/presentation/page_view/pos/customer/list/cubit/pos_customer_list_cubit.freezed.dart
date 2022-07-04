@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$PosCustomerListState {
-  List<Customer>? get customers => throw _privateConstructorUsedError;
+  List<CustomerModel>? get customers => throw _privateConstructorUsedError;
   String? get keyWord => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +29,7 @@ abstract class $PosCustomerListStateCopyWith<$Res> {
   factory $PosCustomerListStateCopyWith(PosCustomerListState value,
           $Res Function(PosCustomerListState) then) =
       _$PosCustomerListStateCopyWithImpl<$Res>;
-  $Res call({List<Customer>? customers, String? keyWord});
+  $Res call({List<CustomerModel>? customers, String? keyWord});
 }
 
 /// @nodoc
@@ -50,7 +50,7 @@ class _$PosCustomerListStateCopyWithImpl<$Res>
       customers: customers == freezed
           ? _value.customers
           : customers // ignore: cast_nullable_to_non_nullable
-              as List<Customer>?,
+              as List<CustomerModel>?,
       keyWord: keyWord == freezed
           ? _value.keyWord
           : keyWord // ignore: cast_nullable_to_non_nullable
@@ -66,7 +66,7 @@ abstract class _$$_PosCustomerListStateCopyWith<$Res>
           $Res Function(_$_PosCustomerListState) then) =
       __$$_PosCustomerListStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Customer>? customers, String? keyWord});
+  $Res call({List<CustomerModel>? customers, String? keyWord});
 }
 
 /// @nodoc
@@ -89,7 +89,7 @@ class __$$_PosCustomerListStateCopyWithImpl<$Res>
       customers: customers == freezed
           ? _value._customers
           : customers // ignore: cast_nullable_to_non_nullable
-              as List<Customer>?,
+              as List<CustomerModel>?,
       keyWord: keyWord == freezed
           ? _value.keyWord
           : keyWord // ignore: cast_nullable_to_non_nullable
@@ -104,12 +104,12 @@ class _$_PosCustomerListState
     with DiagnosticableTreeMixin
     implements _PosCustomerListState {
   const _$_PosCustomerListState(
-      {required final List<Customer>? customers, required this.keyWord})
+      {required final List<CustomerModel>? customers, required this.keyWord})
       : _customers = customers;
 
-  final List<Customer>? _customers;
+  final List<CustomerModel>? _customers;
   @override
-  List<Customer>? get customers {
+  List<CustomerModel>? get customers {
     final value = _customers;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -158,11 +158,11 @@ class _$_PosCustomerListState
 
 abstract class _PosCustomerListState implements PosCustomerListState {
   const factory _PosCustomerListState(
-      {required final List<Customer>? customers,
+      {required final List<CustomerModel>? customers,
       required final String? keyWord}) = _$_PosCustomerListState;
 
   @override
-  List<Customer>? get customers => throw _privateConstructorUsedError;
+  List<CustomerModel>? get customers => throw _privateConstructorUsedError;
   @override
   String? get keyWord => throw _privateConstructorUsedError;
   @override

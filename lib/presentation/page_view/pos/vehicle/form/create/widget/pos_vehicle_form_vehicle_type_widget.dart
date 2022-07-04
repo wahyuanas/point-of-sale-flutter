@@ -83,79 +83,60 @@ class _PosVehicleFormVehicleTypeWidgetState
             ),
             Padding(
               padding: const EdgeInsets.only(left: 40, right: 15.0),
-              child: Container(
-                //height: 50,
-                //margin: const EdgeInsets.all(10.0),
-                // decoration: BoxDecoration(
-                //     //color: Colors.blue,
-                //     border: Border(
-                //   bottom: BorderSide(
-                //     color: _initial == false
-                //         ? state.createVehicle.vehicleOwner.value.fold(
-                //             (l) => l.maybeWhen(
-                //                   emptyField: (f) => Colors.red,
-                //                   orElse: () => Colors.red,
-                //                 ),
-                //             (r) => Colors.blue)
-                //         : Colors.blue,
-                //     width: 1,
-                //   ),
-                // )),
-                child: ListTile(
-                    trailing: state.createVehicle.vehicleType.value.fold(
-                      (l) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: GestureDetector(
-                          onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                              .onRoute(
-                                  const PosOnRouteState.posCustomerList(
-                                      r: '/posVehicleTypeList'),
-                                  null),
-                          child: const Icon(
-                            Icons.search_outlined,
-                            size: 25.0,
-                            color: Colors.blue,
-                          ),
-                        ),
-                      ),
-                      (r) => GestureDetector(
-                        onTap: () =>
-                            BlocProvider.of<VehicleFormCreateCubit>(context)
-                                .onCreateVehicleTypeChanged(null),
+              child: ListTile(
+                  trailing: state.createVehicle.vehicleType.value.fold(
+                    (l) => Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: GestureDetector(
+                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                            .onRoute(
+                                const PosOnRouteState.posCustomerList(
+                                    r: '/posVehicleTypeList'),
+                                null),
                         child: const Icon(
-                          Icons.delete_outlined,
+                          Icons.search_outlined,
                           size: 25.0,
                           color: Colors.blue,
                         ),
                       ),
                     ),
-                    title: state.createVehicle.vehicleType.value.fold(
-                      (l) => const Text(
-                        'Pilih Tipe...',
-                        style: TextStyle(fontSize: 15, color: Colors.black38),
+                    (r) => GestureDetector(
+                      onTap: () =>
+                          BlocProvider.of<VehicleFormCreateCubit>(context)
+                              .onCreateVehicleTypeChanged(null),
+                      child: const Icon(
+                        Icons.delete_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
                       ),
-                      (r) => Wrap(
-                        children: [
-                          Text(
-                            r!.manufacture.name,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          Text(
-                            r.model,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          Text(
-                            r.color,
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                          Text(
-                            '${r.year}',
-                            style: const TextStyle(fontSize: 15),
-                          ),
-                        ],
-                      ),
-                    )),
-              ),
+                    ),
+                  ),
+                  title: state.createVehicle.vehicleType.value.fold(
+                    (l) => const Text(
+                      'Pilih Tipe...',
+                      style: TextStyle(fontSize: 15, color: Colors.black38),
+                    ),
+                    (r) => Wrap(
+                      children: [
+                        Text(
+                          r!.manufacture.name,
+                          style: const TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          r.model,
+                          style: const TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          r.color,
+                          style: const TextStyle(fontSize: 15),
+                        ),
+                        Text(
+                          '${r.year}',
+                          style: const TextStyle(fontSize: 15),
+                        ),
+                      ],
+                    ),
+                  )),
             ),
             Padding(
                 padding: const EdgeInsets.only(left: 55, right: 15.0),

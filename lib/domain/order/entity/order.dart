@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
+import 'package:pos/domain/payment_card_info/entity/payment_card_info.dart';
 
 part 'order.freezed.dart';
 part 'order.g.dart';
@@ -19,7 +20,7 @@ class Order with _$Order implements IEntity {
     required int grandAmount,
     required int disc,
     required int paymentType,
-    required PaymentCardInfo paymentCardInfo,
+    required int paymentCardInfo,
     required int charge,
     required int paidAmount,
     required int changeAmount,
@@ -30,19 +31,4 @@ class Order with _$Order implements IEntity {
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
-}
-
-@freezed
-class PaymentCardInfo with _$PaymentCardInfo implements IEntity {
-  const PaymentCardInfo._();
-  const factory PaymentCardInfo({
-    required int id,
-    required String name,
-    required String number,
-    required String numberRef,
-    required String remarks,
-  }) = _PaymentCardInfo;
-
-  factory PaymentCardInfo.fromJson(Map<String, dynamic> json) =>
-      _$PaymentCardInfoFromJson(json);
 }

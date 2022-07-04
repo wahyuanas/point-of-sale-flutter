@@ -19,6 +19,8 @@ import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
 import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_owner/list/cubit/vehicle_owner_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
 import 'package:pos/presentation/page_view/home/main/cubit/home_inventory_cubit.dart';
 import 'package:pos/presentation/page_view/home/main/cubit/home_order_cubit.dart';
 import 'package:pos/presentation/page_view/main/cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';
@@ -55,6 +57,8 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<CustomerListCubit>(() => CustomerListCubit());
   g.registerLazySingleton<EmployeeCubit>(() => EmployeeCubit());
   g.registerLazySingleton<VehicleListCubit>(() => VehicleListCubit());
+  g.registerLazySingleton<VehicleTypeListCubit>(() => VehicleTypeListCubit());
+  g.registerLazySingleton<VehicleOwnerListCubit>(() => VehicleOwnerListCubit());
   g.registerLazySingleton<OrderCubit>(() => OrderCubit());
   g.registerLazySingleton<OrderDetailCubit>(() => OrderDetailCubit());
   g.registerLazySingleton<PosRouteCubit>(() => PosRouteCubit());

@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
-import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
-import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:uuid/uuid.dart';
 
 import '../object_value/vehicle_object_value.dart';
@@ -20,8 +18,8 @@ class Vehicle with _$Vehicle implements IEntity {
     required int currentKm,
     required String description,
     required int accountId,
-    required VehicleOwner? vehicleOwner,
-    required VehicleType? vehicleType,
+    required int vehicleOwner,
+    required int vehicleType,
   }) = _Vehicle;
 
   factory Vehicle.createVehicle(int id, CreateVehicle createVehicle) {
@@ -33,8 +31,8 @@ class Vehicle with _$Vehicle implements IEntity {
       description: createVehicle.description.getOrCrash(),
       accountId: 1,
       currentKm: createVehicle.currentKm.getOrCrash(),
-      vehicleOwner: createVehicle.vehicleOwner.getOrCrash(),
-      vehicleType: createVehicle.vehicleType.getOrCrash(),
+      vehicleOwner: createVehicle.vehicleOwner.getOrCrash()!.id,
+      vehicleType: createVehicle.vehicleType.getOrCrash()!.id,
     );
   }
 

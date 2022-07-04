@@ -1,0 +1,29 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
+import 'package:pos/domain/core/object_value/failures.dart';
+
+part 'object_value_failure.freezed.dart';
+
+@freezed
+class OrderObjectValueFailure<T, E>
+    with _$OrderObjectValueFailure<T, E>, ObjectValueFailure {
+  const factory OrderObjectValueFailure.emptyField({
+    required T failedValue,
+  }) = EmptyField<T, E>;
+
+  const factory OrderObjectValueFailure.notIntField({
+    required T failedValue,
+  }) = NotIntField<T, E>;
+
+  const factory OrderObjectValueFailure.notDoubleField({
+    required T failedValue,
+  }) = NotDoubleField<T, E>;
+
+  const factory OrderObjectValueFailure.noSpaceAllowed({
+    required T failedValue,
+  }) = NoSpaceAllowed<T, E>;
+
+  const factory OrderObjectValueFailure.exceptOneToNineAllowed({
+    required T failedValue,
+  }) = ExceptOneToNineAllowed<T, E>;
+}

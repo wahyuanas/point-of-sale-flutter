@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_intro/flutter_intro.dart';
 import 'package:pos/di/injection.dart';
-import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_owner/list/cubit/vehicle_owner_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 import '../cubit/pos_vehicle_list_cubit.dart';
@@ -16,9 +16,11 @@ class PosVehicleListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     bool onF = false;
     return BlocProvider(
-        create: ((context) =>
-            PosVehicleListCubit(vehicleListCubit: getIt<VehicleListCubit>())
-              ..onStarted()),
+        create: ((context) => PosVehicleListCubit(
+            vehicleListCubit: getIt<VehicleListCubit>(),
+            vehicleTypeListCubit: getIt<VehicleTypeListCubit>(),
+            vehicleOwnerListCubit: getIt<VehicleOwnerListCubit>())
+          ..onStarted()),
         child: ShowCaseWidget(
           onFinish: () => onF = true,
           builder: Builder(

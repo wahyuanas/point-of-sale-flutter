@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:flutter_intro/flutter_intro.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 import '../cubit/pos_customer_list_cubit.dart';

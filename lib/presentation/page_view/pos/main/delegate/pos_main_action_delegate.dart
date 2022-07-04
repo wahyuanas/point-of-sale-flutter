@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_intro/flutter_intro.dart';
 import 'package:showcaseview/showcaseview.dart';
 
 import '../widget/pos_main_action_widget.dart';

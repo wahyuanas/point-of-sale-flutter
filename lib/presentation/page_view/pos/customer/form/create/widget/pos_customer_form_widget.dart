@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
-import 'package:pos/presentation/main/catalog/form/create/cubit/catalog_form_create_cubit.dart';
 import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 
