@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pos/domain/core/object_value/entity.dart';
 
 part 'employees_model.freezed.dart';
 part 'employees_model.g.dart';
@@ -9,10 +8,13 @@ class EmployeesModel with _$EmployeesModel {
   const EmployeesModel._();
   const factory EmployeesModel({
     required int id,
+    required int uuid,
+    required String code,
     required String name,
     required String phoneNumber,
     required String email,
-    required int idAccount,
+    required int accountId,
+    required int departmentId,
   }) = _EmployeesModel;
 
   factory EmployeesModel.fromJson(Map<String, dynamic> json) =>

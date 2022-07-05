@@ -1,15 +1,17 @@
 part of 'employee_list_cubit.dart';
 
 @freezed
-class EmployeeState with _$EmployeeState {
-  const factory EmployeeState({required List<Employees>? employees}) =
-      _EmployeeState;
+class EmployeeListState with _$EmployeeListState {
+  const factory EmployeeListState({required List<Employees>? employees}) =
+      _EmployeeListState;
 
-  factory EmployeeState.initial() => const EmployeeState(employees: null);
-  factory EmployeeState.reLoad(List<Employees>? employees) => EmployeeState(
+  factory EmployeeListState.initial() =>
+      const EmployeeListState(employees: null);
+  factory EmployeeListState.reLoad(List<Employees>? employees) =>
+      EmployeeListState(
         employees: employees,
       );
 
-  factory EmployeeState.fromJson(Map<String, dynamic> json) =>
-      _$EmployeeStateFromJson(json);
+  factory EmployeeListState.fromJson(Map<String, dynamic> json) =>
+      _$EmployeeListStateFromJson(json);
 }

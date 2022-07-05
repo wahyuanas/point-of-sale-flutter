@@ -14,36 +14,36 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-EmployeeState _$EmployeeStateFromJson(Map<String, dynamic> json) {
-  return _EmployeeState.fromJson(json);
+EmployeeListState _$EmployeeListStateFromJson(Map<String, dynamic> json) {
+  return _EmployeeListState.fromJson(json);
 }
 
 /// @nodoc
-mixin _$EmployeeState {
+mixin _$EmployeeListState {
   List<Employees>? get employees => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmployeeStateCopyWith<EmployeeState> get copyWith =>
+  $EmployeeListStateCopyWith<EmployeeListState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $EmployeeStateCopyWith<$Res> {
-  factory $EmployeeStateCopyWith(
-          EmployeeState value, $Res Function(EmployeeState) then) =
-      _$EmployeeStateCopyWithImpl<$Res>;
+abstract class $EmployeeListStateCopyWith<$Res> {
+  factory $EmployeeListStateCopyWith(
+          EmployeeListState value, $Res Function(EmployeeListState) then) =
+      _$EmployeeListStateCopyWithImpl<$Res>;
   $Res call({List<Employees>? employees});
 }
 
 /// @nodoc
-class _$EmployeeStateCopyWithImpl<$Res>
-    implements $EmployeeStateCopyWith<$Res> {
-  _$EmployeeStateCopyWithImpl(this._value, this._then);
+class _$EmployeeListStateCopyWithImpl<$Res>
+    implements $EmployeeListStateCopyWith<$Res> {
+  _$EmployeeListStateCopyWithImpl(this._value, this._then);
 
-  final EmployeeState _value;
+  final EmployeeListState _value;
   // ignore: unused_field
-  final $Res Function(EmployeeState) _then;
+  final $Res Function(EmployeeListState) _then;
 
   @override
   $Res call({
@@ -59,31 +59,31 @@ class _$EmployeeStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$$_EmployeeStateCopyWith<$Res>
-    implements $EmployeeStateCopyWith<$Res> {
-  factory _$$_EmployeeStateCopyWith(
-          _$_EmployeeState value, $Res Function(_$_EmployeeState) then) =
-      __$$_EmployeeStateCopyWithImpl<$Res>;
+abstract class _$$_EmployeeListStateCopyWith<$Res>
+    implements $EmployeeListStateCopyWith<$Res> {
+  factory _$$_EmployeeListStateCopyWith(_$_EmployeeListState value,
+          $Res Function(_$_EmployeeListState) then) =
+      __$$_EmployeeListStateCopyWithImpl<$Res>;
   @override
   $Res call({List<Employees>? employees});
 }
 
 /// @nodoc
-class __$$_EmployeeStateCopyWithImpl<$Res>
-    extends _$EmployeeStateCopyWithImpl<$Res>
-    implements _$$_EmployeeStateCopyWith<$Res> {
-  __$$_EmployeeStateCopyWithImpl(
-      _$_EmployeeState _value, $Res Function(_$_EmployeeState) _then)
-      : super(_value, (v) => _then(v as _$_EmployeeState));
+class __$$_EmployeeListStateCopyWithImpl<$Res>
+    extends _$EmployeeListStateCopyWithImpl<$Res>
+    implements _$$_EmployeeListStateCopyWith<$Res> {
+  __$$_EmployeeListStateCopyWithImpl(
+      _$_EmployeeListState _value, $Res Function(_$_EmployeeListState) _then)
+      : super(_value, (v) => _then(v as _$_EmployeeListState));
 
   @override
-  _$_EmployeeState get _value => super._value as _$_EmployeeState;
+  _$_EmployeeListState get _value => super._value as _$_EmployeeListState;
 
   @override
   $Res call({
     Object? employees = freezed,
   }) {
-    return _then(_$_EmployeeState(
+    return _then(_$_EmployeeListState(
       employees: employees == freezed
           ? _value._employees
           : employees // ignore: cast_nullable_to_non_nullable
@@ -94,12 +94,14 @@ class __$$_EmployeeStateCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_EmployeeState with DiagnosticableTreeMixin implements _EmployeeState {
-  const _$_EmployeeState({required final List<Employees>? employees})
+class _$_EmployeeListState
+    with DiagnosticableTreeMixin
+    implements _EmployeeListState {
+  const _$_EmployeeListState({required final List<Employees>? employees})
       : _employees = employees;
 
-  factory _$_EmployeeState.fromJson(Map<String, dynamic> json) =>
-      _$$_EmployeeStateFromJson(json);
+  factory _$_EmployeeListState.fromJson(Map<String, dynamic> json) =>
+      _$$_EmployeeListStateFromJson(json);
 
   final List<Employees>? _employees;
   @override
@@ -112,14 +114,14 @@ class _$_EmployeeState with DiagnosticableTreeMixin implements _EmployeeState {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'EmployeeState(employees: $employees)';
+    return 'EmployeeListState(employees: $employees)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'EmployeeState'))
+      ..add(DiagnosticsProperty('type', 'EmployeeListState'))
       ..add(DiagnosticsProperty('employees', employees));
   }
 
@@ -127,7 +129,7 @@ class _$_EmployeeState with DiagnosticableTreeMixin implements _EmployeeState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_EmployeeState &&
+            other is _$_EmployeeListState &&
             const DeepCollectionEquality()
                 .equals(other._employees, _employees));
   }
@@ -139,26 +141,27 @@ class _$_EmployeeState with DiagnosticableTreeMixin implements _EmployeeState {
 
   @JsonKey(ignore: true)
   @override
-  _$$_EmployeeStateCopyWith<_$_EmployeeState> get copyWith =>
-      __$$_EmployeeStateCopyWithImpl<_$_EmployeeState>(this, _$identity);
+  _$$_EmployeeListStateCopyWith<_$_EmployeeListState> get copyWith =>
+      __$$_EmployeeListStateCopyWithImpl<_$_EmployeeListState>(
+          this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_EmployeeStateToJson(this);
+    return _$$_EmployeeListStateToJson(this);
   }
 }
 
-abstract class _EmployeeState implements EmployeeState {
-  const factory _EmployeeState({required final List<Employees>? employees}) =
-      _$_EmployeeState;
+abstract class _EmployeeListState implements EmployeeListState {
+  const factory _EmployeeListState(
+      {required final List<Employees>? employees}) = _$_EmployeeListState;
 
-  factory _EmployeeState.fromJson(Map<String, dynamic> json) =
-      _$_EmployeeState.fromJson;
+  factory _EmployeeListState.fromJson(Map<String, dynamic> json) =
+      _$_EmployeeListState.fromJson;
 
   @override
   List<Employees>? get employees => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$$_EmployeeStateCopyWith<_$_EmployeeState> get copyWith =>
+  _$$_EmployeeListStateCopyWith<_$_EmployeeListState> get copyWith =>
       throw _privateConstructorUsedError;
 }

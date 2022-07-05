@@ -21,10 +21,13 @@ Employees _$EmployeesFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Employees {
   int get id => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
+  String get code => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
+  int get departmentId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -37,7 +40,14 @@ abstract class $EmployeesCopyWith<$Res> {
   factory $EmployeesCopyWith(Employees value, $Res Function(Employees) then) =
       _$EmployeesCopyWithImpl<$Res>;
   $Res call(
-      {int id, String name, String phoneNumber, String email, int idAccount});
+      {int id,
+      String uuid,
+      String code,
+      String name,
+      String phoneNumber,
+      String email,
+      int accountId,
+      int departmentId});
 }
 
 /// @nodoc
@@ -51,16 +61,27 @@ class _$EmployeesCopyWithImpl<$Res> implements $EmployeesCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
+    Object? code = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
+    Object? departmentId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -73,9 +94,13 @@ class _$EmployeesCopyWithImpl<$Res> implements $EmployeesCopyWith<$Res> {
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
+      departmentId: departmentId == freezed
+          ? _value.departmentId
+          : departmentId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -88,7 +113,14 @@ abstract class _$$_EmployeesCopyWith<$Res> implements $EmployeesCopyWith<$Res> {
       __$$_EmployeesCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id, String name, String phoneNumber, String email, int idAccount});
+      {int id,
+      String uuid,
+      String code,
+      String name,
+      String phoneNumber,
+      String email,
+      int accountId,
+      int departmentId});
 }
 
 /// @nodoc
@@ -104,16 +136,27 @@ class __$$_EmployeesCopyWithImpl<$Res> extends _$EmployeesCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
+    Object? code = freezed,
     Object? name = freezed,
     Object? phoneNumber = freezed,
     Object? email = freezed,
-    Object? idAccount = freezed,
+    Object? accountId = freezed,
+    Object? departmentId = freezed,
   }) {
     return _then(_$_Employees(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+      code: code == freezed
+          ? _value.code
+          : code // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -126,9 +169,13 @@ class __$$_EmployeesCopyWithImpl<$Res> extends _$EmployeesCopyWithImpl<$Res>
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
-      idAccount: idAccount == freezed
-          ? _value.idAccount
-          : idAccount // ignore: cast_nullable_to_non_nullable
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
+      departmentId: departmentId == freezed
+          ? _value.departmentId
+          : departmentId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -139,10 +186,13 @@ class __$$_EmployeesCopyWithImpl<$Res> extends _$EmployeesCopyWithImpl<$Res>
 class _$_Employees extends _Employees {
   const _$_Employees(
       {required this.id,
+      required this.uuid,
+      required this.code,
       required this.name,
       required this.phoneNumber,
       required this.email,
-      required this.idAccount})
+      required this.accountId,
+      required this.departmentId})
       : super._();
 
   factory _$_Employees.fromJson(Map<String, dynamic> json) =>
@@ -151,17 +201,23 @@ class _$_Employees extends _Employees {
   @override
   final int id;
   @override
+  final String uuid;
+  @override
+  final String code;
+  @override
   final String name;
   @override
   final String phoneNumber;
   @override
   final String email;
   @override
-  final int idAccount;
+  final int accountId;
+  @override
+  final int departmentId;
 
   @override
   String toString() {
-    return 'Employees(id: $id, name: $name, phoneNumber: $phoneNumber, email: $email, idAccount: $idAccount)';
+    return 'Employees(id: $id, uuid: $uuid, code: $code, name: $name, phoneNumber: $phoneNumber, email: $email, accountId: $accountId, departmentId: $departmentId)';
   }
 
   @override
@@ -170,11 +226,15 @@ class _$_Employees extends _Employees {
         (other.runtimeType == runtimeType &&
             other is _$_Employees &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
+            const DeepCollectionEquality().equals(other.code, code) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality()
                 .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.email, email) &&
-            const DeepCollectionEquality().equals(other.idAccount, idAccount));
+            const DeepCollectionEquality().equals(other.accountId, accountId) &&
+            const DeepCollectionEquality()
+                .equals(other.departmentId, departmentId));
   }
 
   @JsonKey(ignore: true)
@@ -182,10 +242,13 @@ class _$_Employees extends _Employees {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
+      const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(idAccount));
+      const DeepCollectionEquality().hash(accountId),
+      const DeepCollectionEquality().hash(departmentId));
 
   @JsonKey(ignore: true)
   @override
@@ -201,10 +264,13 @@ class _$_Employees extends _Employees {
 abstract class _Employees extends Employees {
   const factory _Employees(
       {required final int id,
+      required final String uuid,
+      required final String code,
       required final String name,
       required final String phoneNumber,
       required final String email,
-      required final int idAccount}) = _$_Employees;
+      required final int accountId,
+      required final int departmentId}) = _$_Employees;
   const _Employees._() : super._();
 
   factory _Employees.fromJson(Map<String, dynamic> json) =
@@ -213,13 +279,19 @@ abstract class _Employees extends Employees {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  String get uuid => throw _privateConstructorUsedError;
+  @override
+  String get code => throw _privateConstructorUsedError;
+  @override
   String get name => throw _privateConstructorUsedError;
   @override
   String get phoneNumber => throw _privateConstructorUsedError;
   @override
   String get email => throw _privateConstructorUsedError;
   @override
-  int get idAccount => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
+  @override
+  int get departmentId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EmployeesCopyWith<_$_Employees> get copyWith =>

@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 
 import 'object_value_failure.dart';
