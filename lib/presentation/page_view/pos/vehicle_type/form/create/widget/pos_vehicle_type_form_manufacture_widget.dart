@@ -19,7 +19,17 @@ class _PosVehicleTypeFormManufactureWidgetState
   @override
   void initState() {
     _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    context
+        .read<VehicleTypeFormCreateCubit>()
+        .state
+        .createVehicleType
+        .manufacture
+        .value
+        .fold(
+            (l) => null,
+            (r) => context
+                .read<VehicleTypeFormCreateCubit>()
+                .onCreateVehicleTypeManufactureChanged(null));
     super.initState();
   }
 
@@ -43,7 +53,7 @@ class _PosVehicleTypeFormManufactureWidgetState
                 if (_initial == false) _initial = true;
               },
               orElse: () => null);
-          return false;
+          return true;
         } else if (p.createVehicleType.manufacture !=
             c.createVehicleType.manufacture) {
           if (_initial == true) _initial = false;
@@ -68,14 +78,14 @@ class _PosVehicleTypeFormManufactureWidgetState
                   child: Row(
                     children: const [
                       Icon(
-                        Icons.person_outline,
+                        Icons.factory_outlined,
                         color: Colors.blue,
                       ),
                       SizedBox(
                         width: 15.0,
                       ),
                       Text(
-                        'Tipe',
+                        'Manufaktur',
                         style: TextStyle(color: Colors.blue, fontSize: 15.0),
                       ),
                     ],
@@ -92,8 +102,8 @@ class _PosVehicleTypeFormManufactureWidgetState
                       child: GestureDetector(
                         onTap: () => BlocProvider.of<PosRouteCubit>(context)
                             .onRoute(
-                                const PosOnRouteState.posCustomerList(
-                                    r: '/posVehicleTypeList'),
+                                const PosOnRouteState.posVehicleManufactureList(
+                                    r: '/posVehicleManufactureList'),
                                 null),
                         child: const Icon(
                           Icons.search_outlined,

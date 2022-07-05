@@ -77,7 +77,7 @@ class _PosVehicleOwnerFormNameWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nomor Polisi",
+                labelText: "Nama",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',

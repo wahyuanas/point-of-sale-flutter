@@ -19,7 +19,17 @@ class _PosVehicleFormVehicleOwnerWidgetState
   @override
   void initState() {
     _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    context
+        .read<VehicleFormCreateCubit>()
+        .state
+        .createVehicle
+        .vehicleOwner
+        .value
+        .fold(
+            (l) => null,
+            (r) => context
+                .read<VehicleFormCreateCubit>()
+                .onCreateVehicleOwnerChanged(null));
     super.initState();
   }
 
@@ -42,7 +52,7 @@ class _PosVehicleFormVehicleOwnerWidgetState
                 if (_initial == false) _initial = true;
               },
               orElse: () => null);
-          return false;
+          return true;
         } else if (p.createVehicle.vehicleOwner !=
             c.createVehicle.vehicleOwner) {
           if (_initial == true) _initial = false;

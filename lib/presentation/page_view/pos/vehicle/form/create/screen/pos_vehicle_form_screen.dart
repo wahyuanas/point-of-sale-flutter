@@ -11,10 +11,11 @@ class PosVehicleFormScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: ((context) =>
-          VehicleFormCreateCubit(vehicleListCubit: getIt<VehicleListCubit>())),
-      child: const PosVehicleFormWidget(),
-    );
+    return const PosVehicleFormWidget();
+    // return BlocProvider(
+    //   create: ((context) =>
+    //       VehicleFormCreateCubit(vehicleListCubit: getIt<VehicleListCubit>())),
+    //   child: const PosVehicleFormWidget(),
+    // );
   }
 }

@@ -103,8 +103,8 @@ class _PosVehicleOwnerListWidgetState extends State<PosVehicleOwnerListWidget> {
           ),
 
           title: const Text(
-            "List Kendaraan",
-            style: TextStyle(color: Colors.blue),
+            "List Owner Kendaraan",
+            style: TextStyle(color: Colors.blue, fontSize: 18.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.blue, // navigation bar color
@@ -144,11 +144,14 @@ class _PosVehicleOwnerListWidgetState extends State<PosVehicleOwnerListWidget> {
                 builder: (context, state) {
               if (state.vehicleOwners == null) {
                 return SliverFillRemaining(
-                  child: Center(
-                    child: Text(
-                      "Tidak ada data kepemilikan kendaraan",
-                      style:
-                          GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Center(
+                      child: Text(
+                        "Tidak ada data kepemilikan kendaraan",
+                        style: GoogleFonts.raleway(
+                            fontSize: 20, color: Colors.blue),
+                      ),
                     ),
                   ),
                 );

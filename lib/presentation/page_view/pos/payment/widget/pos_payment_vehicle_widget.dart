@@ -83,28 +83,105 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
               )),
               child: ListTile(
                   trailing: state.createOrder?.vehicle.value.fold(
-                      (l) => GestureDetector(
-                            onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                                .onRoute(
-                                    const PosOnRouteState.posVehicleList(
-                                        r: '/posVehicleList'),
-                                    null),
-                            child: const Icon(
-                              Icons.search_outlined,
-                              size: 25.0,
-                              color: Colors.blue,
-                            ),
-                          ),
-                      (r) => null),
+                    (l) => GestureDetector(
+                      onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                          .onRoute(
+                              const PosOnRouteState.posVehicleList(
+                                  r: '/posVehicleList'),
+                              null),
+                      child: const Icon(
+                        Icons.search_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
+                      ),
+                    ),
+                    (r) => GestureDetector(
+                      onTap: () => BlocProvider.of<PosPaymentCubit>(context)
+                          .onVehicleChanged(null),
+                      child: const Icon(
+                        Icons.delete_outlined,
+                        size: 25.0,
+                        color: Colors.blue,
+                      ),
+                    ),
+                  ),
                   title: state.createOrder?.vehicle.value.fold(
                     (l) => const Text(
                       'pilih kendaraan...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
                     ),
-                    (r) => Text(
-                      r!.description,
-                      style: const TextStyle(fontSize: 15),
-                    ),
+                    (r) => Column(
+                        mainAxisSize: MainAxisSize.min,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const SizedBox(
+                            height: 10.0,
+                          ),
+                          Text(
+                            r!.policyNumber,
+                            style: const TextStyle(
+                                color: Colors.blue, fontSize: 15.0),
+                          ),
+                          // Text(
+                          //   '${r.vehicleOwnerModel?.name}',
+                          //   style: const TextStyle(
+                          //       color: Colors.black, fontSize: 15.0),
+                          // ),
+                          Wrap(
+                            children: [
+                              Text(
+                                '${r.vehicleTypeModel?.manufacture.name}',
+                                style: const TextStyle(
+                                    color: Colors.black, fontSize: 15.0),
+                              ),
+                              const SizedBox(
+                                width: 5.0,
+                              ),
+                              Text(r.vehicleTypeModel!.model,
+                                  style: const TextStyle(height: 1.2)),
+                            ],
+                          ),
+                          Wrap(
+                            children: [
+                              Wrap(
+                                children: [
+                                  const Text('Warna',
+                                      style: TextStyle(height: 1.2)),
+                                  const SizedBox(
+                                    width: 5.0,
+                                  ),
+                                  Text(r.vehicleTypeModel!.color,
+                                      style: const TextStyle(
+                                          color: Colors.blue, height: 1.2)),
+                                ],
+                              ),
+                              const SizedBox(
+                                width: 5.0,
+                              ),
+                              Wrap(
+                                children: [
+                                  const Text('Tahun',
+                                      style: TextStyle(height: 1.2)),
+                                  const SizedBox(
+                                    width: 5.0,
+                                  ),
+                                  Text('${r.vehicleTypeModel!.year}',
+                                      style: const TextStyle(
+                                          color: Colors.blue, height: 1.2)),
+                                ],
+                              ),
+                            ],
+                          ),
+                          Wrap(
+                            children: [
+                              const Text('Kilometer',
+                                  style: TextStyle(height: 1.2)),
+                              Text('${r.currentKm}',
+                                  style: const TextStyle(
+                                      color: Colors.blue, height: 1.2)),
+                            ],
+                          ),
+                        ]),
                   )),
             ),
           ),

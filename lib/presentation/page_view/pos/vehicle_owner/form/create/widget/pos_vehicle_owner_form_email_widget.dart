@@ -63,7 +63,7 @@ class _PosVehicleOwnerFormEmailWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.emailAddress,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createVehicleOwner.email.value.fold(
@@ -74,7 +74,7 @@ class _PosVehicleOwnerFormEmailWidgetState
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.sms_outlined,
+                  Icons.email_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

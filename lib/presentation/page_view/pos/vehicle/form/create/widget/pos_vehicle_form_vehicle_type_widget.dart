@@ -19,7 +19,18 @@ class _PosVehicleFormVehicleTypeWidgetState
   @override
   void initState() {
     _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    context
+        .read<VehicleFormCreateCubit>()
+        .state
+        .createVehicle
+        .vehicleType
+        .value
+        .fold(
+            (l) => null,
+            (r) => context
+                .read<VehicleFormCreateCubit>()
+                .onCreateVehicleTypeChanged(null));
+
     super.initState();
   }
 
@@ -42,7 +53,7 @@ class _PosVehicleFormVehicleTypeWidgetState
                 if (_initial == false) _initial = true;
               },
               orElse: () => null);
-          return false;
+          return true;
         } else if (p.createVehicle.vehicleType != c.createVehicle.vehicleType) {
           if (_initial == true) _initial = false;
           return true;
@@ -54,7 +65,7 @@ class _PosVehicleFormVehicleTypeWidgetState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 30.0,
+              height: 40.0,
               child: ListTile(
                 // trailing: Icon(
                 //   Icons.expand_more_outlined,
@@ -90,7 +101,7 @@ class _PosVehicleFormVehicleTypeWidgetState
                       child: GestureDetector(
                         onTap: () => BlocProvider.of<PosRouteCubit>(context)
                             .onRoute(
-                                const PosOnRouteState.posCustomerList(
+                                const PosOnRouteState.posVehicleTypeList(
                                     r: '/posVehicleTypeList'),
                                 null),
                         child: const Icon(
@@ -122,13 +133,22 @@ class _PosVehicleFormVehicleTypeWidgetState
                           r!.manufacture.name,
                           style: const TextStyle(fontSize: 15),
                         ),
+                        const SizedBox(
+                          width: 5.0,
+                        ),
                         Text(
                           r.model,
                           style: const TextStyle(fontSize: 15),
                         ),
+                        const SizedBox(
+                          width: 5.0,
+                        ),
                         Text(
                           r.color,
                           style: const TextStyle(fontSize: 15),
+                        ),
+                        const SizedBox(
+                          width: 5.0,
                         ),
                         Text(
                           '${r.year}',
@@ -148,7 +168,7 @@ class _PosVehicleFormVehicleTypeWidgetState
                         border: Border(
                             top: BorderSide(
                   color: _initial == false
-                      ? state.createVehicle.vehicleOwner.value.fold(
+                      ? state.createVehicle.vehicleType.value.fold(
                           (l) => l.maybeWhen(
                                 emptyField: (f) => Colors.red,
                                 orElse: () => Colors.red,

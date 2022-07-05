@@ -62,7 +62,8 @@ class _PosVehicleManufactureListWidgetState
           // ),
           leading: Showcase(
             key: _one,
-            description: "Tekan Tombol Tambah Untuk Menambah Data Kendaraan",
+            description:
+                "Tekan Tombol Tambah Untuk Menambah Data Manufaktur Kendaraan",
             //shapeBorder: const CircleBorder(),
             // container: Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +105,7 @@ class _PosVehicleManufactureListWidgetState
           ),
 
           title: const Text(
-            "List Kendaraan",
+            "List Manufaktur Kendaraan",
             style: TextStyle(color: Colors.blue),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -145,11 +146,14 @@ class _PosVehicleManufactureListWidgetState
                 PosVehicleManufactureListState>(builder: (context, state) {
               if (state.vehicleManufactures == null) {
                 return SliverFillRemaining(
-                  child: Center(
-                    child: Text(
-                      "Tidak ada data kepemilikan kendaraan",
-                      style:
-                          GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Center(
+                      child: Text(
+                        "Tidak ada data manufaktur kendaraan",
+                        style: GoogleFonts.raleway(
+                            fontSize: 20, color: Colors.blue),
+                      ),
                     ),
                   ),
                 );

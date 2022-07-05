@@ -19,7 +19,8 @@ class PosVehicleOwnerFormWidget extends StatefulWidget {
 class _PosVehicleOwnerFormWidgetState extends State<PosVehicleOwnerFormWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<VehicleFormCreateCubit, VehicleFormCreateState>(
+    return BlocListener<VehicleOwnerFormCreateCubit,
+        VehicleOwnerFormCreateState>(
       listener: (context, state) {
         state.status.when(
             initial: (() => null),
@@ -34,7 +35,7 @@ class _PosVehicleOwnerFormWidgetState extends State<PosVehicleOwnerFormWidget> {
               await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
-              BlocProvider.of<VehicleFormCreateCubit>(context).onInitial();
+              BlocProvider.of<VehicleOwnerFormCreateCubit>(context).onInitial();
             },
             failure: (f) {
               BlocProvider.of<ModalCubit>(context)
@@ -67,7 +68,7 @@ class _PosVehicleOwnerFormWidgetState extends State<PosVehicleOwnerFormWidget> {
           //   onTap: () => const PosVehicleOwnerFormWidget(),
           // ),
           title: const Text(
-            "Form Tambah Kendaraan",
+            "Form Tambah Owner Kendaraan",
             style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -105,6 +106,7 @@ class _PosVehicleOwnerFormWidgetState extends State<PosVehicleOwnerFormWidget> {
           const PosVehicleOwnerFormPhoneNumberWidget(),
           const PosVehicleOwnerFormEmailWidget(),
           const PosVehicleOwnerFormIdNumberWidget(),
+          const PosVehicleOwnerFormAddressWidget(),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 20.0,

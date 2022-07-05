@@ -62,7 +62,6 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
 
       VehicleOwner? owner = _vehicleOwnerListCubit.state.vehicleOwners
           ?.firstWhere((owner) => owner.id == vehicle.vehicleOwner);
-
       VehicleOwnerModel ownerModal =
           VehicleOwnerModel.createVehicleOwnerModel(owner);
 

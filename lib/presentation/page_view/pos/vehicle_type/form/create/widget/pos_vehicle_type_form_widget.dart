@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
-import 'package:pos/presentation/main/vehicle/form/create/cubit/vehicle_form_create_cubit.dart';
 import 'package:pos/presentation/main/vehicle_type/form/create/cubit/vehicle_type_form_create_cubit.dart';
 
 import 'pos_vehicle_type_form_export_widget.dart';
@@ -19,7 +18,7 @@ class PosVehicleTypeFormWidget extends StatefulWidget {
 class _PosVehicleTypeFormWidgetState extends State<PosVehicleTypeFormWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<VehicleFormCreateCubit, VehicleFormCreateState>(
+    return BlocListener<VehicleTypeFormCreateCubit, VehicleTypeFormCreateState>(
       listener: (context, state) {
         state.status.when(
             initial: (() => null),
@@ -34,7 +33,7 @@ class _PosVehicleTypeFormWidgetState extends State<PosVehicleTypeFormWidget> {
               await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
-              BlocProvider.of<VehicleFormCreateCubit>(context).onInitial();
+              BlocProvider.of<VehicleTypeFormCreateCubit>(context).onInitial();
             },
             failure: (f) {
               BlocProvider.of<ModalCubit>(context)
@@ -67,7 +66,7 @@ class _PosVehicleTypeFormWidgetState extends State<PosVehicleTypeFormWidget> {
           //   onTap: () => const PosVehicleTypeFormWidget(),
           // ),
           title: const Text(
-            "Form Tambah Kendaraan",
+            "Form Tambah Tipe Kendaraan",
             style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -140,6 +139,10 @@ class _PosVehicleTypeFormWidgetState extends State<PosVehicleTypeFormWidget> {
                   ),
                   onPressed: () async {
                     context.read<VehicleTypeFormCreateCubit>().onCreate();
+                    FocusScopeNode currentFocus = FocusScope.of(context);
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
                   },
                   child: const Text(
                     "S i m p a n",

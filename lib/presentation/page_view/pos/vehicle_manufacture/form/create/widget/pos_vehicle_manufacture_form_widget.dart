@@ -20,7 +20,8 @@ class _PosVehicleManufactureFormWidgetState
     extends State<PosVehicleManufactureFormWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<VehicleFormCreateCubit, VehicleFormCreateState>(
+    return BlocListener<VehicleManufactureFormCreateCubit,
+        VehicleManufactureFormCreateState>(
       listener: (context, state) {
         state.status.when(
             initial: (() => null),
@@ -35,7 +36,8 @@ class _PosVehicleManufactureFormWidgetState
               await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
-              BlocProvider.of<VehicleFormCreateCubit>(context).onInitial();
+              BlocProvider.of<VehicleManufactureFormCreateCubit>(context)
+                  .onInitial();
             },
             failure: (f) {
               BlocProvider.of<ModalCubit>(context)

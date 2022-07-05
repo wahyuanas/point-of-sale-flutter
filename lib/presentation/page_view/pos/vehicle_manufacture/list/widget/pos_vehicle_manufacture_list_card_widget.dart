@@ -27,9 +27,9 @@ class _PosVehicleManufactureListCardWidgetState
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<PosPaymentCubit, PosPaymentState>(
+    return BlocListener<VehicleTypeFormCreateCubit, VehicleTypeFormCreateState>(
       listener: (context, state) async {
-        state.createOrder?.vehicle.value.fold((l) {
+        state.createVehicleType.manufacture.value.fold((l) {
           if (_itsMe == true) {
             _itsMe = false;
             setState(() {});
@@ -53,71 +53,57 @@ class _PosVehicleManufactureListCardWidgetState
       child: Card(
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () async {
-                  // BlocProvider.of<RouteCubit>(context).onRoute(
-                  //     const OnRouteState.posCatalogItemDetail(
-                  //         r: '/posCatalogItemDetail'),
-                  //     widget.pos.item);
-                },
-                child: ListTile(
-                  trailing: GestureDetector(
-                    onTap: () {
-                      if (_itsMe == false) {
-                        BlocProvider.of<VehicleTypeFormCreateCubit>(context)
-                            .onCreateVehicleTypeManufactureChanged(
-                                widget.vehicleManufacture);
-                        //Navigator.of(context).pop();
-                      } else {
-                        BlocProvider.of<PosPaymentCubit>(context)
-                            .onVehicleChanged(null);
-                      }
-                    },
-                    child: Icon(
-                      Icons.done_outlined,
-                      size: 35.0,
-                      color: _itsMe == true ? Colors.blue : Colors.black38,
-                    ),
-                  ),
-                  title: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.person_outline,
-                        size: 50,
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.vehicleManufacture.name,
-                                style: const TextStyle(
-                                    color: Colors.blue, fontSize: 15.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                widget.vehicleManufacture.name,
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14.0),
-                              ),
-                            ]),
-                      )
-                    ],
-                  ),
-                ),
+          child: ListTile(
+            trailing: GestureDetector(
+              onTap: () {
+                if (_itsMe == false) {
+                  BlocProvider.of<VehicleTypeFormCreateCubit>(context)
+                      .onCreateVehicleTypeManufactureChanged(
+                          widget.vehicleManufacture);
+                  //Navigator.of(context).pop();
+                } else {
+                  BlocProvider.of<PosPaymentCubit>(context)
+                      .onVehicleChanged(null);
+                }
+              },
+              child: Icon(
+                Icons.done_outlined,
+                size: 35.0,
+                color: _itsMe == true ? Colors.blue : Colors.black38,
               ),
-            ],
+            ),
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.person_outline,
+                  size: 50,
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Expanded(
+                  child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.vehicleManufacture.name,
+                          style: const TextStyle(
+                              color: Colors.blue, fontSize: 15.0),
+                        ),
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Text(
+                          widget.vehicleManufacture.name,
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 14.0),
+                        ),
+                      ]),
+                )
+              ],
+            ),
           ),
         ),
       ),

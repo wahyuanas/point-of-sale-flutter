@@ -50,103 +50,110 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () async {
-                  // BlocProvider.of<RouteCubit>(context).onRoute(
-                  //     const OnRouteState.posCatalogItemDetail(
-                  //         r: '/posCatalogItemDetail'),
-                  //     widget.pos.item);
-                },
-                child: ListTile(
-                  trailing: GestureDetector(
-                    onTap: () {
-                      if (_itsMe == false) {
-                        BlocProvider.of<PosPaymentCubit>(context)
-                            .onVehicleChanged(widget.vehicle);
-                        //Navigator.of(context).pop();
-                      } else {
-                        BlocProvider.of<PosPaymentCubit>(context)
-                            .onVehicleChanged(null);
-                      }
-                    },
-                    child: Icon(
-                      Icons.done_outlined,
-                      size: 35.0,
-                      color: _itsMe == true ? Colors.blue : Colors.black38,
-                    ),
-                  ),
-                  title: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.person_outline,
-                        size: 50,
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.vehicle.policyNumber,
-                                style: const TextStyle(
-                                    color: Colors.blue, fontSize: 15.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                '${widget.vehicle.vehicleTypeModel?.manufacture}',
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Wrap(
-                                children: [
-                                  Wrap(
-                                    children: [
-                                      Text(
-                                          widget
-                                              .vehicle.vehicleTypeModel!.model,
-                                          style: const TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              height: 1.2)),
-                                      const SizedBox(
-                                        width: 5.0,
-                                      ),
-                                      Text(
-                                          widget
-                                              .vehicle.vehicleTypeModel!.color,
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
-                                      const SizedBox(
-                                        width: 5.0,
-                                      ),
-                                      Text(
-                                          '${widget.vehicle.vehicleTypeModel!.year}',
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ]),
-                      )
-                    ],
-                  ),
-                ),
+          child: ListTile(
+            trailing: GestureDetector(
+              onTap: () {
+                if (_itsMe == false) {
+                  BlocProvider.of<PosPaymentCubit>(context)
+                      .onVehicleChanged(widget.vehicle);
+                  //Navigator.of(context).pop();
+                } else {
+                  BlocProvider.of<PosPaymentCubit>(context)
+                      .onVehicleChanged(null);
+                }
+              },
+              child: Icon(
+                Icons.done_outlined,
+                size: 35.0,
+                color: _itsMe == true ? Colors.blue : Colors.black38,
               ),
-            ],
+            ),
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.directions_car_outlined,
+                  size: 50,
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Expanded(
+                  child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.vehicle.policyNumber,
+                          style: const TextStyle(
+                              color: Colors.blue, fontSize: 15.0),
+                        ),
+                        const SizedBox(
+                          height: 5.0,
+                        ),
+                        Text(
+                          '${widget.vehicle.vehicleOwnerModel?.name}',
+                          style: const TextStyle(
+                              color: Colors.black, fontSize: 15.0),
+                        ),
+                        Wrap(
+                          children: [
+                            Text(
+                              '${widget.vehicle.vehicleTypeModel?.manufacture.name}',
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 15.0),
+                            ),
+                            const SizedBox(
+                              width: 5.0,
+                            ),
+                            Text(widget.vehicle.vehicleTypeModel!.model,
+                                style: const TextStyle(height: 1.2)),
+                          ],
+                        ),
+                        Wrap(
+                          children: [
+                            Wrap(
+                              children: [
+                                const Text('Warna',
+                                    style: TextStyle(height: 1.2)),
+                                const SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text(widget.vehicle.vehicleTypeModel!.color,
+                                    style: const TextStyle(
+                                        color: Colors.blue, height: 1.2)),
+                              ],
+                            ),
+                            const SizedBox(
+                              width: 5.0,
+                            ),
+                            Wrap(
+                              children: [
+                                const Text('Tahun',
+                                    style: TextStyle(height: 1.2)),
+                                const SizedBox(
+                                  width: 5.0,
+                                ),
+                                Text('${widget.vehicle.vehicleTypeModel!.year}',
+                                    style: const TextStyle(
+                                        color: Colors.blue, height: 1.2)),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Wrap(
+                          children: [
+                            const Text('Kilometer',
+                                style: TextStyle(height: 1.2)),
+                            Text('${widget.vehicle.currentKm}',
+                                style: const TextStyle(
+                                    color: Colors.blue, height: 1.2)),
+                          ],
+                        ),
+                      ]),
+                )
+              ],
+            ),
           ),
         ),
       ),

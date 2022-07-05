@@ -13,8 +13,12 @@ import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_manufacture/form/create/screen/pos_vehicle_manufacture_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_manufacture/list/screen/pos_vehicle_manufacture_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle_owner/form/create/screen/pos_vehicle_owner_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle_owner/list/screen/pos_vehicle_owner_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_type/form/create/screen/pos_vehicle_type_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/vehicle_type/list/screen/pos_vehicle_type_list_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -61,6 +65,20 @@ class RouteGenerator {
       case '/posVehicleOwnerForm':
         return MaterialPageRoute(
             builder: (_) => const PosVehicleOwnerFormScreen());
+
+      case '/posVehicleTypeList':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleTypeListScreen());
+      case '/posVehicleTypeForm':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleTypeFormScreen());
+
+      case '/posVehicleManufactureList':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleManufactureListScreen());
+      case '/posVehicleManufactureForm':
+        return MaterialPageRoute(
+            builder: (_) => const PosVehicleManufactureFormScreen());
 
       default:
         return _errorRoute();

@@ -64,7 +64,7 @@ class _PosVehicleOwnerFormPhoneNumberWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 errorText: _initial == false
                     ? state.createVehicleOwner.phoneNumber.value.fold(
@@ -74,7 +74,7 @@ class _PosVehicleOwnerFormPhoneNumberWidgetState
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.sms_outlined,
+                  Icons.phone_android_outlined,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),

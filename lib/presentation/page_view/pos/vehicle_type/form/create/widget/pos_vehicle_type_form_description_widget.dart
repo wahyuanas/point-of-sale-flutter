@@ -62,6 +62,7 @@ class _PosVehicleTypeFormDescriptionWidgetState
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: TextFormField(
+              maxLines: 2,
               controller: _controller,
               autofocus: false,
               keyboardType: TextInputType.text,
