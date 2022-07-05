@@ -13,6 +13,7 @@ import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
+import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
