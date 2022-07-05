@@ -26,7 +26,7 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
   Widget build(BuildContext context) {
     return BlocListener<PosPaymentCubit, PosPaymentState>(
       listener: (context, state) async {
-        state.createOrder?.vehicle.value.fold((l) {
+        state.createOrder.vehicle.value.fold((l) {
           if (_itsMe == true) {
             _itsMe = false;
             setState(() {});

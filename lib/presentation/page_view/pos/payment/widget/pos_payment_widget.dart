@@ -151,8 +151,8 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                           },
                           orElse: () => null);
                       return false;
-                    } else if (p.createOrder?.paymentCardInfo?.name !=
-                        c.createOrder?.paymentCardInfo?.name) {
+                    } else if (p.createOrder.paymentCardInfo?.name !=
+                        c.createOrder.paymentCardInfo?.name) {
                       if (_initial == true) _initial = false;
                       return true;
                     }

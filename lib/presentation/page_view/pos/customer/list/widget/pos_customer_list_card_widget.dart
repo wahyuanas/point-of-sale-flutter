@@ -26,7 +26,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
   Widget build(BuildContext context) {
     return BlocListener<PosPaymentCubit, PosPaymentState>(
       listener: (context, state) async {
-        state.createOrder?.customer.value.fold((l) {
+        state.createOrder.customer.value.fold((l) {
           if (_itsMe == true) {
             _itsMe = false;
             setState(() {});

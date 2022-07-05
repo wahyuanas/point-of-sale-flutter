@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:showcaseview/showcaseview.dart';
 
 import '../config/tab_config.dart';
 import '../cubit/bottom_navigation_bar/bottom_navigation_bar_cubit.dart';

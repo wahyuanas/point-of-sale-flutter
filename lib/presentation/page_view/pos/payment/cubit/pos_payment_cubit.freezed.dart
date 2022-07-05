@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$PosPaymentState {
   StateStatus<FailureExceptions, Order> get status =>
       throw _privateConstructorUsedError;
-  CreateOrder? get createOrder => throw _privateConstructorUsedError;
+  CreateOrder get createOrder => throw _privateConstructorUsedError;
   bool get initial => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -33,11 +33,11 @@ abstract class $PosPaymentStateCopyWith<$Res> {
       _$PosPaymentStateCopyWithImpl<$Res>;
   $Res call(
       {StateStatus<FailureExceptions, Order> status,
-      CreateOrder? createOrder,
+      CreateOrder createOrder,
       bool initial});
 
   $StateStatusCopyWith<FailureExceptions, Order, $Res> get status;
-  $CreateOrderCopyWith<$Res>? get createOrder;
+  $CreateOrderCopyWith<$Res> get createOrder;
 }
 
 /// @nodoc
@@ -63,7 +63,7 @@ class _$PosPaymentStateCopyWithImpl<$Res>
       createOrder: createOrder == freezed
           ? _value.createOrder
           : createOrder // ignore: cast_nullable_to_non_nullable
-              as CreateOrder?,
+              as CreateOrder,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -80,12 +80,8 @@ class _$PosPaymentStateCopyWithImpl<$Res>
   }
 
   @override
-  $CreateOrderCopyWith<$Res>? get createOrder {
-    if (_value.createOrder == null) {
-      return null;
-    }
-
-    return $CreateOrderCopyWith<$Res>(_value.createOrder!, (value) {
+  $CreateOrderCopyWith<$Res> get createOrder {
+    return $CreateOrderCopyWith<$Res>(_value.createOrder, (value) {
       return _then(_value.copyWith(createOrder: value));
     });
   }
@@ -100,13 +96,13 @@ abstract class _$$_PosPaymentStateCopyWith<$Res>
   @override
   $Res call(
       {StateStatus<FailureExceptions, Order> status,
-      CreateOrder? createOrder,
+      CreateOrder createOrder,
       bool initial});
 
   @override
   $StateStatusCopyWith<FailureExceptions, Order, $Res> get status;
   @override
-  $CreateOrderCopyWith<$Res>? get createOrder;
+  $CreateOrderCopyWith<$Res> get createOrder;
 }
 
 /// @nodoc
@@ -134,7 +130,7 @@ class __$$_PosPaymentStateCopyWithImpl<$Res>
       createOrder: createOrder == freezed
           ? _value.createOrder
           : createOrder // ignore: cast_nullable_to_non_nullable
-              as CreateOrder?,
+              as CreateOrder,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -154,7 +150,7 @@ class _$_PosPaymentState
   @override
   final StateStatus<FailureExceptions, Order> status;
   @override
-  final CreateOrder? createOrder;
+  final CreateOrder createOrder;
   @override
   final bool initial;
 
@@ -200,14 +196,14 @@ class _$_PosPaymentState
 abstract class _PosPaymentState implements PosPaymentState {
   const factory _PosPaymentState(
       {required final StateStatus<FailureExceptions, Order> status,
-      required final CreateOrder? createOrder,
+      required final CreateOrder createOrder,
       required final bool initial}) = _$_PosPaymentState;
 
   @override
   StateStatus<FailureExceptions, Order> get status =>
       throw _privateConstructorUsedError;
   @override
-  CreateOrder? get createOrder => throw _privateConstructorUsedError;
+  CreateOrder get createOrder => throw _privateConstructorUsedError;
   @override
   bool get initial => throw _privateConstructorUsedError;
   @override

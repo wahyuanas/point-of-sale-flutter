@@ -39,6 +39,7 @@ abstract class $EmployeeDepartmentFormCreateStateCopyWith<$Res> {
       bool initial});
 
   $StateStatusCopyWith<FailureExceptions, EmployeesDepartment, $Res> get status;
+  $CreateEmployeeDepartmentCopyWith<$Res> get createEmployeeDepartment;
 }
 
 /// @nodoc
@@ -80,6 +81,14 @@ class _$EmployeeDepartmentFormCreateStateCopyWithImpl<$Res>
       return _then(_value.copyWith(status: value));
     });
   }
+
+  @override
+  $CreateEmployeeDepartmentCopyWith<$Res> get createEmployeeDepartment {
+    return $CreateEmployeeDepartmentCopyWith<$Res>(
+        _value.createEmployeeDepartment, (value) {
+      return _then(_value.copyWith(createEmployeeDepartment: value));
+    });
+  }
 }
 
 /// @nodoc
@@ -97,6 +106,8 @@ abstract class _$$_EmployeeDepartmentFormCreateStateCopyWith<$Res>
 
   @override
   $StateStatusCopyWith<FailureExceptions, EmployeesDepartment, $Res> get status;
+  @override
+  $CreateEmployeeDepartmentCopyWith<$Res> get createEmployeeDepartment;
 }
 
 /// @nodoc

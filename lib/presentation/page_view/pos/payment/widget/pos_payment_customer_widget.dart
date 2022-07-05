@@ -19,7 +19,9 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
   @override
   void initState() {
     _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    context.read<PosPaymentCubit>().state.createOrder.customer.value.fold(
+        (l) => null,
+        (r) => context.read<PosPaymentCubit>().onCustomerChanged(null));
     super.initState();
   }
 
@@ -41,7 +43,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
             },
             orElse: () => null);
         return false;
-      } else if (p.createOrder?.customer != c.createOrder?.customer) {
+      } else if (p.createOrder.customer != c.createOrder.customer) {
         if (_initial == true) _initial = false;
         return true;
       }
@@ -82,7 +84,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                 ),
               )),
               child: ListTile(
-                  trailing: state.createOrder?.customer.value.fold(
+                  trailing: state.createOrder.customer.value.fold(
                     (l) => GestureDetector(
                       onTap: () => BlocProvider.of<PosRouteCubit>(context)
                           .onRoute(
@@ -105,7 +107,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                       ),
                     ),
                   ),
-                  title: state.createOrder?.customer.value.fold(
+                  title: state.createOrder.customer.value.fold(
                     (l) => const Text(
                       'pilih konsumen...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
@@ -118,7 +120,7 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
             ),
           ),
           _initial == false
-              ? state.createOrder!.customer.value.fold(
+              ? state.createOrder.customer.value.fold(
                   (l) => l.maybeWhen(
                       emptyField: (f) => const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),

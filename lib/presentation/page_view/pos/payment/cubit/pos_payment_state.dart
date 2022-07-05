@@ -4,7 +4,7 @@ part of 'pos_payment_cubit.dart';
 class PosPaymentState with _$PosPaymentState {
   const factory PosPaymentState(
       {required StateStatus<FailureExceptions, Order> status,
-      required CreateOrder? createOrder,
+      required CreateOrder createOrder,
       required bool initial}) = _PosPaymentState;
 
   factory PosPaymentState.initial() => PosPaymentState(

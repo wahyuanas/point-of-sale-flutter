@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:pos/domain/core/object_value/entity.dart';
 import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:uuid/uuid.dart';
 

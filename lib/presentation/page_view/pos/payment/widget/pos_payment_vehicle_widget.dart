@@ -19,7 +19,10 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
   @override
   void initState() {
     _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
+    context.read<PosPaymentCubit>().state.createOrder.vehicle.value.fold(
+        (l) => null,
+        (r) => context.read<PosPaymentCubit>().onVehicleChanged(null));
+
     super.initState();
   }
 
@@ -41,7 +44,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
             },
             orElse: () => null);
         return false;
-      } else if (p.createOrder?.vehicle != c.createOrder?.vehicle) {
+      } else if (p.createOrder.vehicle != c.createOrder.vehicle) {
         if (_initial == true) _initial = false;
         return true;
       }
@@ -82,7 +85,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                 ),
               )),
               child: ListTile(
-                  trailing: state.createOrder?.vehicle.value.fold(
+                  trailing: state.createOrder.vehicle.value.fold(
                     (l) => GestureDetector(
                       onTap: () => BlocProvider.of<PosRouteCubit>(context)
                           .onRoute(
@@ -105,7 +108,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                       ),
                     ),
                   ),
-                  title: state.createOrder?.vehicle.value.fold(
+                  title: state.createOrder.vehicle.value.fold(
                     (l) => const Text(
                       'pilih kendaraan...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
@@ -186,7 +189,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
             ),
           ),
           _initial == false
-              ? state.createOrder!.vehicle.value.fold(
+              ? state.createOrder.vehicle.value.fold(
                   (l) => l.maybeWhen(
                       emptyField: (f) => const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),
