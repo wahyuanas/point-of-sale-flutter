@@ -33,13 +33,15 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<CustomerModel>? customers;
+      List<CustomerModel>? customers = [];
       _customerListCubit.state.customers?.forEach((customer) {
         if (customer.name.toLowerCase().contains(v.toLowerCase())) {
-          customers ?? [];
           customers?.add(CustomerModel.fromCustomer(customer));
         }
       });
+      if (customers.isEmpty) {
+        customers = null;
+      }
       emit(state.copyWith(customers: customers, keyWord: v));
     } else {
       List<CustomerModel>? customers =
@@ -51,7 +53,12 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
   }
 
   onReset() {
-    emit(PosCustomerListState.initial());
+    List<CustomerModel>? customers =
+        _customerListCubit.state.customers?.map((customer) {
+      return CustomerModel.fromCustomer(customer);
+    }).toList();
+
+    emit(state.copyWith(customers: customers, keyWord: null));
   }
 
   onCustomerChannged(CustomerListState customerListState) {
@@ -62,16 +69,17 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
       }).toList();
       emit(state.copyWith(customers: customers));
     } else {
-      List<CustomerModel>? customers;
+      List<CustomerModel>? customers = [];
       _customerListCubit.state.customers?.forEach((customer) {
         if (customer.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          customers ??= [];
-
           customers?.add(CustomerModel.fromCustomer(customer));
         }
       });
+      if (customers.isEmpty) {
+        customers = null;
+      }
       emit(state.copyWith(customers: customers));
     }
   }

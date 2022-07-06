@@ -51,7 +51,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleOwnerModel? vehicleOwnerModal;
     VehicleManufacture? vehicleManufacture;
 
-    List<VehicleModel>? vehicles =
+    List<VehicleModel>? vehicleModels =
         _vehicleListCubit.state.vehicles?.map((vehicle) {
       vehicleType = _vehicleTypeListCubit.state.vehicleTypes
           ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
@@ -77,7 +77,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
       return VehicleModel.createVehicleModel(
           vehicle, vehicleTypeModal, vehicleOwnerModal);
     }).toList();
-    emit(state.copyWith(vehicles: vehicles));
+    emit(state.copyWith(vehicles: vehicleModels));
   }
 
   onSearchKeyChanged(String v) {
@@ -88,7 +88,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleManufacture? vehicleManufacture;
 
     if (v.isNotEmpty) {
-      List<VehicleModel>? vehicles = [];
+      List<VehicleModel>? vehicleModels = [];
       _vehicleListCubit.state.vehicles?.forEach((vehicle) {
         vehicleType = _vehicleTypeListCubit.state.vehicleTypes
             ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
@@ -103,7 +103,8 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
           if (vehicleType != null) {
             vehicleManufacture = _vehicleManufactureListCubit
                 .state.vehicleManufactures
-                ?.firstWhere((manuf) => manuf.id == vehicleType?.manufacture);
+                ?.firstWhereOrNull(
+                    (manuf) => manuf.id == vehicleType?.manufacture);
           }
 
           if (vehicleManufacture != null) {
@@ -116,17 +117,17 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
                 VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
           }
 
-          vehicles?.add(VehicleModel.createVehicleModel(
+          vehicleModels?.add(VehicleModel.createVehicleModel(
               vehicle, vehicleTypeModal, vehicleOwnerModal));
         }
       });
-      if (vehicles.isEmpty) {
-        vehicles = null;
+      if (vehicleModels.isEmpty) {
+        vehicleModels = null;
       }
-      emit(state.copyWith(vehicles: vehicles, keyWord: v));
+      emit(state.copyWith(vehicles: vehicleModels, keyWord: v));
     } else {
-      List<VehicleModel>? vehicles = [];
-      vehicles = _vehicleListCubit.state.vehicles?.map((vehicle) {
+      List<VehicleModel>? vehicleModels = [];
+      vehicleModels = _vehicleListCubit.state.vehicles?.map((vehicle) {
         vehicleType = _vehicleTypeListCubit.state.vehicleTypes
             ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
 
@@ -136,7 +137,8 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         if (vehicleType != null) {
           vehicleManufacture = _vehicleManufactureListCubit
               .state.vehicleManufactures
-              ?.firstWhere((manuf) => manuf.id == vehicleType?.manufacture);
+              ?.firstWhereOrNull(
+                  (manuf) => manuf.id == vehicleType?.manufacture);
         }
         if (vehicleManufacture != null) {
           vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
@@ -151,15 +153,47 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         return VehicleModel.createVehicleModel(
             vehicle, vehicleTypeModal, vehicleOwnerModal);
       }).toList();
-      if (vehicles!.isEmpty) {
-        vehicles = null;
+      if (vehicleModels!.isEmpty) {
+        vehicleModels = null;
       }
-      emit(state.copyWith(vehicles: vehicles, keyWord: null));
+      emit(state.copyWith(vehicles: vehicleModels, keyWord: null));
     }
   }
 
   onReset() {
-    emit(PosVehicleListState.initial());
+    VehicleType? vehicleType;
+    VehicleOwner? vehicleOwner;
+    VehicleTypeModel? vehicleTypeModal;
+    VehicleOwnerModel? vehicleOwnerModal;
+    VehicleManufacture? vehicleManufacture;
+
+    List<VehicleModel>? vehicleModels =
+        _vehicleListCubit.state.vehicles?.map((vehicle) {
+      vehicleType = _vehicleTypeListCubit.state.vehicleTypes
+          ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
+
+      vehicleOwner = _vehicleOwnerListCubit.state.vehicleOwners
+          ?.firstWhereOrNull((owner) => owner.id == vehicle.vehicleOwner);
+
+      if (vehicleType != null) {
+        vehicleManufacture = _vehicleManufactureListCubit
+            .state.vehicleManufactures
+            ?.firstWhereOrNull((manuf) => manuf.id == vehicleType?.manufacture);
+      }
+      if (vehicleManufacture != null) {
+        vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
+            vehicleType, vehicleManufacture);
+      }
+
+      if (vehicleOwner != null) {
+        vehicleOwnerModal =
+            VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
+      }
+
+      return VehicleModel.createVehicleModel(
+          vehicle, vehicleTypeModal, vehicleOwnerModal);
+    }).toList();
+    emit(state.copyWith(vehicles: vehicleModels, keyWord: null));
   }
 
   onVehicleChanged(VehicleListState vehicleListState) {
@@ -170,7 +204,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleManufacture? vehicleManufacture;
 
     if (state.keyWord != null) {
-      List<VehicleModel>? vehicles = [];
+      List<VehicleModel>? vehicleModels = [];
       _vehicleListCubit.state.vehicles?.forEach((vehicle) {
         vehicleType = _vehicleTypeListCubit.state.vehicleTypes
             ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
@@ -189,7 +223,8 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
           if (vehicleType != null) {
             vehicleManufacture = _vehicleManufactureListCubit
                 .state.vehicleManufactures
-                ?.firstWhere((manuf) => manuf.id == vehicleType?.manufacture);
+                ?.firstWhereOrNull(
+                    (manuf) => manuf.id == vehicleType?.manufacture);
           }
           if (vehicleManufacture != null) {
             vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
@@ -201,17 +236,17 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
                 VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
           }
 
-          vehicles?.add(VehicleModel.createVehicleModel(
+          vehicleModels?.add(VehicleModel.createVehicleModel(
               vehicle, vehicleTypeModal, vehicleOwnerModal));
         }
       });
-      if (vehicles.isEmpty) {
-        vehicles = null;
+      if (vehicleModels.isEmpty) {
+        vehicleModels = null;
       }
-      emit(state.copyWith(vehicles: vehicles));
+      emit(state.copyWith(vehicles: vehicleModels));
     } else {
-      List<VehicleModel>? vehicles = [];
-      vehicles = _vehicleListCubit.state.vehicles?.map((vehicle) {
+      List<VehicleModel>? vehicleModels = [];
+      vehicleModels = _vehicleListCubit.state.vehicles?.map((vehicle) {
         vehicleType = _vehicleTypeListCubit.state.vehicleTypes
             ?.firstWhereOrNull((type) => type.id == vehicle.vehicleType);
 
@@ -221,7 +256,8 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         if (vehicleType != null) {
           vehicleManufacture = _vehicleManufactureListCubit
               .state.vehicleManufactures
-              ?.firstWhere((manuf) => manuf.id == vehicleType?.manufacture);
+              ?.firstWhereOrNull(
+                  (manuf) => manuf.id == vehicleType?.manufacture);
         }
         if (vehicleManufacture != null) {
           vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
@@ -236,10 +272,10 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         return VehicleModel.createVehicleModel(
             vehicle, vehicleTypeModal, vehicleOwnerModal);
       }).toList();
-      if (vehicles!.isEmpty) {
-        vehicles = null;
+      if (vehicleModels!.isEmpty) {
+        vehicleModels = null;
       }
-      emit(state.copyWith(vehicles: vehicles));
+      emit(state.copyWith(vehicles: vehicleModels));
     }
   }
 

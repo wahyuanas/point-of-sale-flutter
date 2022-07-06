@@ -24,64 +24,64 @@ class PosVehicleOwnerListCubit extends Cubit<PosVehicleOwnerListState> {
   late StreamSubscription _customerListSubscription;
 
   onStarted() {
-    List<VehicleOwnerModel>? vehicleOwners =
+    List<VehicleOwnerModel>? vehicleOwnerModels =
         _vehicleOwnerListCubit.state.vehicleOwners?.map((vehicleOwner) {
       return VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
     }).toList();
-    emit(state.copyWith(vehicleOwners: vehicleOwners));
+    emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
   }
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<VehicleOwnerModel>? vehicleOwners;
+      List<VehicleOwnerModel>? vehicleOwnerModels;
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name.toLowerCase().contains(v.toLowerCase())) {
-          vehicleOwners ?? [];
-          vehicleOwners!
+          vehicleOwnerModels ?? [];
+          vehicleOwnerModels!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });
 
-      emit(state.copyWith(vehicleOwners: vehicleOwners, keyWord: v));
+      emit(state.copyWith(vehicleOwners: vehicleOwnerModels, keyWord: v));
     } else {
-      List<VehicleOwnerModel>? vehicleOwners =
+      List<VehicleOwnerModel>? vehicleOwnerModels =
           _vehicleOwnerListCubit.state.vehicleOwners?.map((vehicleOwner) {
         return VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
       }).toList();
 
-      emit(state.copyWith(vehicleOwners: vehicleOwners));
+      emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
     }
   }
 
   onReset() {
-    List<VehicleOwnerModel>? vehicleOwners =
+    List<VehicleOwnerModel>? vehicleOwnerModels =
         _vehicleOwnerListCubit.state.vehicleOwners?.map((vehicleOwner) {
       return VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
     }).toList();
-    emit(state.copyWith(vehicleOwners: vehicleOwners, keyWord: null));
+    emit(state.copyWith(vehicleOwners: vehicleOwnerModels, keyWord: null));
   }
 
   onVehicleChanged() {
     if (state.keyWord == null) {
-      List<VehicleOwnerModel>? vehicleOwners =
+      List<VehicleOwnerModel>? vehicleOwnerModels =
           _vehicleOwnerListCubit.state.vehicleOwners?.map((vehicleOwner) {
         return VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner);
       }).toList();
 
-      emit(state.copyWith(vehicleOwners: vehicleOwners));
+      emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
     } else {
-      List<VehicleOwnerModel>? vehicleOwners;
+      List<VehicleOwnerModel>? vehicleOwnerModels;
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          vehicleOwners ?? [];
-          vehicleOwners!
+          vehicleOwnerModels ?? [];
+          vehicleOwnerModels!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });
 
-      emit(state.copyWith(vehicleOwners: vehicleOwners));
+      emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
     }
   }
 

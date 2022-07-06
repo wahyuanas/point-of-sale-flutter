@@ -25,29 +25,31 @@ class PosVehicleManufactureListCubit
   late StreamSubscription _customerListSubscription;
 
   onStarted() {
-    List<VehicleManufactureModel>? vehicleManufactures =
+    List<VehicleManufactureModel>? vehicleManufactureModels =
         _vehicleManufactureListCubit.state.vehicleManufactures
             ?.map((vehicleManufacture) {
       return VehicleManufactureModel.createVehicleManufactureModel(
           vehicleManufacture);
     }).toList();
-    emit(state.copyWith(vehicleManufactures: vehicleManufactures));
+    emit(state.copyWith(vehicleManufactures: vehicleManufactureModels));
   }
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<VehicleManufactureModel> vehicleManufactures = [];
+      List<VehicleManufactureModel>? vehicleManufactureModels = [];
       _vehicleManufactureListCubit.state.vehicleManufactures
           ?.forEach((vehicleManufacture) {
         if (vehicleManufacture.name.toLowerCase().contains(v.toLowerCase())) {
-          vehicleManufactures.add(
+          vehicleManufactureModels?.add(
               VehicleManufactureModel.createVehicleManufactureModel(
                   vehicleManufacture));
         }
       });
-
-      emit(
-          state.copyWith(vehicleManufactures: vehicleManufactures, keyWord: v));
+      if (vehicleManufactureModels.isEmpty) {
+        vehicleManufactureModels = null;
+      }
+      emit(state.copyWith(
+          vehicleManufactures: vehicleManufactureModels, keyWord: v));
     } else {
       List<VehicleManufactureModel>? vehicleManufactures =
           _vehicleManufactureListCubit.state.vehicleManufactures
@@ -82,19 +84,21 @@ class PosVehicleManufactureListCubit
 
       emit(state.copyWith(vehicleManufactures: vehicleManufactures));
     } else {
-      List<VehicleManufactureModel> vehicleManufactures = [];
+      List<VehicleManufactureModel>? vehicleManufactureModels = [];
       _vehicleManufactureListCubit.state.vehicleManufactures
           ?.forEach((vehicleManufacture) {
         if (vehicleManufacture.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          vehicleManufactures.add(
+          vehicleManufactureModels?.add(
               VehicleManufactureModel.createVehicleManufactureModel(
                   vehicleManufacture));
         }
       });
-
-      emit(state.copyWith(vehicleManufactures: vehicleManufactures));
+      if (vehicleManufactureModels.isEmpty) {
+        vehicleManufactureModels = null;
+      }
+      emit(state.copyWith(vehicleManufactures: vehicleManufactureModels));
     }
   }
 
