@@ -40,7 +40,7 @@ class PosCatalogListCubit extends Cubit<PosCatalogListState> {
   }
 
   onReset() {
-    emit(PosCatalogListState.initial());
+    emit(state.copyWith(items: _catalogListCubit.state.items, keyWord: null));
   }
 
   onCatalogChannged(CatalogListState catalogListState) {

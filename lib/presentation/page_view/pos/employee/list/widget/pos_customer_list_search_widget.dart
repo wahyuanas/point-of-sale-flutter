@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/pos/customer/list/cubit/pos_customer_list_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
-
-import '../cubit/pos_customer_list_cubit.dart';
 
 class PosCustomerListSearchWidget extends StatefulWidget {
   const PosCustomerListSearchWidget({Key? key}) : super(key: key);
