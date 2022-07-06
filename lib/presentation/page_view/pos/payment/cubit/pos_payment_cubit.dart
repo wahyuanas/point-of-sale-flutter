@@ -9,6 +9,7 @@ import 'package:pos/domain/payment_card_info/object_value/object_value.dart';
 import 'package:pos/domain/payment_card_info/object_value/payment_card_info_object_value.dart';
 import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 
 part 'pos_payment_state.dart';
@@ -83,6 +84,13 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
       createOrder:
           state.createOrder.copyWith(vehicle: CreateOrderVehicle(vehicle)),
+    ));
+  }
+
+  onEmployeeChanged(List<EmployeesModel>? vehicle) {
+    emit(state.copyWith(
+      createOrder:
+          state.createOrder.copyWith(employees: CreateOrderEmployees(vehicle)),
     ));
   }
 

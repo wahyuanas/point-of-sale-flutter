@@ -34,6 +34,24 @@ class VehicleOwnerModel with _$VehicleOwnerModel implements IEntity {
     );
   }
 
+  // static VehicleOwnerModel? createVehicleOwnerModel(
+  //     VehicleOwner? vehicleOwner) {
+  //   if (vehicleOwner != null) {
+  //     return VehicleOwnerModel(
+  //       id: vehicleOwner.id,
+  //       uuid: vehicleOwner.uuid,
+  //       name: vehicleOwner.name,
+  //       phoneNumber: vehicleOwner.phoneNumber,
+  //       email: vehicleOwner.email,
+  //       accountId: vehicleOwner.accountId,
+  //       idNumber: vehicleOwner.idNumber,
+  //       address: vehicleOwner.address,
+  //     );
+  //   } else {
+  //     return null;
+  //   }
+  // }
+
   factory VehicleOwnerModel.fromJson(Map<String, dynamic> json) =>
       _$VehicleOwnerModelFromJson(json);
 }

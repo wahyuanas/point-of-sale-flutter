@@ -145,6 +145,9 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                           children: [
                             const Text('Kilometer',
                                 style: TextStyle(height: 1.2)),
+                            const SizedBox(
+                              width: 5.0,
+                            ),
                             Text('${widget.vehicle.currentKm}',
                                 style: const TextStyle(
                                     color: Colors.blue, height: 1.2)),

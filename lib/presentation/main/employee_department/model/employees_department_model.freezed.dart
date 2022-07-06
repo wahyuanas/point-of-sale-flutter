@@ -22,7 +22,7 @@ EmployeesDepartmentModel _$EmployeesDepartmentModelFromJson(
 /// @nodoc
 mixin _$EmployeesDepartmentModel {
   int get id => throw _privateConstructorUsedError;
-  int get uuid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   int get accountId => throw _privateConstructorUsedError;
@@ -38,7 +38,7 @@ abstract class $EmployeesDepartmentModelCopyWith<$Res> {
   factory $EmployeesDepartmentModelCopyWith(EmployeesDepartmentModel value,
           $Res Function(EmployeesDepartmentModel) then) =
       _$EmployeesDepartmentModelCopyWithImpl<$Res>;
-  $Res call({int id, int uuid, String code, String name, int accountId});
+  $Res call({int id, String uuid, String code, String name, int accountId});
 }
 
 /// @nodoc
@@ -66,7 +66,7 @@ class _$EmployeesDepartmentModelCopyWithImpl<$Res>
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -91,7 +91,7 @@ abstract class _$$_EmployeesDepartmentModelCopyWith<$Res>
           $Res Function(_$_EmployeesDepartmentModel) then) =
       __$$_EmployeesDepartmentModelCopyWithImpl<$Res>;
   @override
-  $Res call({int id, int uuid, String code, String name, int accountId});
+  $Res call({int id, String uuid, String code, String name, int accountId});
 }
 
 /// @nodoc
@@ -122,7 +122,7 @@ class __$$_EmployeesDepartmentModelCopyWithImpl<$Res>
       uuid: uuid == freezed
           ? _value.uuid
           : uuid // ignore: cast_nullable_to_non_nullable
-              as int,
+              as String,
       code: code == freezed
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
@@ -156,7 +156,7 @@ class _$_EmployeesDepartmentModel extends _EmployeesDepartmentModel {
   @override
   final int id;
   @override
-  final int uuid;
+  final String uuid;
   @override
   final String code;
   @override
@@ -206,7 +206,7 @@ class _$_EmployeesDepartmentModel extends _EmployeesDepartmentModel {
 abstract class _EmployeesDepartmentModel extends EmployeesDepartmentModel {
   const factory _EmployeesDepartmentModel(
       {required final int id,
-      required final int uuid,
+      required final String uuid,
       required final String code,
       required final String name,
       required final int accountId}) = _$_EmployeesDepartmentModel;
@@ -218,7 +218,7 @@ abstract class _EmployeesDepartmentModel extends EmployeesDepartmentModel {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
-  int get uuid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   @override
   String get code => throw _privateConstructorUsedError;
   @override

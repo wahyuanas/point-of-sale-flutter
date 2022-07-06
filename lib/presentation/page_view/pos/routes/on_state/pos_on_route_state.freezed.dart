@@ -33,6 +33,8 @@ mixin _$PosOnRouteState<T> {
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,6 +53,8 @@ mixin _$PosOnRouteState<T> {
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +73,8 @@ mixin _$PosOnRouteState<T> {
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,6 +99,8 @@ mixin _$PosOnRouteState<T> {
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -113,6 +121,8 @@ mixin _$PosOnRouteState<T> {
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -133,6 +143,8 @@ mixin _$PosOnRouteState<T> {
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -264,6 +276,8 @@ class _$_PosCatalogList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posCatalogList(r);
   }
@@ -285,6 +299,8 @@ class _$_PosCatalogList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posCatalogList?.call(r);
   }
@@ -306,6 +322,8 @@ class _$_PosCatalogList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogList != null) {
@@ -336,6 +354,8 @@ class _$_PosCatalogList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posCatalogList(this);
   }
@@ -359,6 +379,8 @@ class _$_PosCatalogList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posCatalogList?.call(this);
   }
@@ -382,6 +404,8 @@ class _$_PosCatalogList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogList != null) {
@@ -494,6 +518,8 @@ class _$_PosCatalogForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posCatalogForm(r);
   }
@@ -515,6 +541,8 @@ class _$_PosCatalogForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posCatalogForm?.call(r);
   }
@@ -536,6 +564,8 @@ class _$_PosCatalogForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogForm != null) {
@@ -566,6 +596,8 @@ class _$_PosCatalogForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posCatalogForm(this);
   }
@@ -589,6 +621,8 @@ class _$_PosCatalogForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posCatalogForm?.call(this);
   }
@@ -612,6 +646,8 @@ class _$_PosCatalogForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogForm != null) {
@@ -721,6 +757,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return purchase(r);
   }
@@ -742,6 +780,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return purchase?.call(r);
   }
@@ -763,6 +803,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -793,6 +835,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return purchase(this);
   }
@@ -816,6 +860,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return purchase?.call(this);
   }
@@ -839,6 +885,8 @@ class _$_Purchase<T> with DiagnosticableTreeMixin implements _Purchase<T> {
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (purchase != null) {
@@ -954,6 +1002,8 @@ class _$_PosCatalogItemDetail<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posCatalogItemDetail(r);
   }
@@ -975,6 +1025,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posCatalogItemDetail?.call(r);
   }
@@ -996,6 +1048,8 @@ class _$_PosCatalogItemDetail<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1026,6 +1080,8 @@ class _$_PosCatalogItemDetail<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posCatalogItemDetail(this);
   }
@@ -1049,6 +1105,8 @@ class _$_PosCatalogItemDetail<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posCatalogItemDetail?.call(this);
   }
@@ -1072,6 +1130,8 @@ class _$_PosCatalogItemDetail<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCatalogItemDetail != null) {
@@ -1185,6 +1245,8 @@ class _$_PosCustomerList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posCustomerList(r);
   }
@@ -1206,6 +1268,8 @@ class _$_PosCustomerList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posCustomerList?.call(r);
   }
@@ -1227,6 +1291,8 @@ class _$_PosCustomerList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCustomerList != null) {
@@ -1257,6 +1323,8 @@ class _$_PosCustomerList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posCustomerList(this);
   }
@@ -1280,6 +1348,8 @@ class _$_PosCustomerList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posCustomerList?.call(this);
   }
@@ -1303,6 +1373,8 @@ class _$_PosCustomerList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCustomerList != null) {
@@ -1415,6 +1487,8 @@ class _$_PosCustomerForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posCustomerForm(r);
   }
@@ -1436,6 +1510,8 @@ class _$_PosCustomerForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posCustomerForm?.call(r);
   }
@@ -1457,6 +1533,8 @@ class _$_PosCustomerForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCustomerForm != null) {
@@ -1487,6 +1565,8 @@ class _$_PosCustomerForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posCustomerForm(this);
   }
@@ -1510,6 +1590,8 @@ class _$_PosCustomerForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posCustomerForm?.call(this);
   }
@@ -1533,6 +1615,8 @@ class _$_PosCustomerForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posCustomerForm != null) {
@@ -1645,6 +1729,8 @@ class _$_PosVehicleList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleList(r);
   }
@@ -1666,6 +1752,8 @@ class _$_PosVehicleList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleList?.call(r);
   }
@@ -1687,6 +1775,8 @@ class _$_PosVehicleList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleList != null) {
@@ -1717,6 +1807,8 @@ class _$_PosVehicleList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleList(this);
   }
@@ -1740,6 +1832,8 @@ class _$_PosVehicleList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleList?.call(this);
   }
@@ -1763,6 +1857,8 @@ class _$_PosVehicleList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleList != null) {
@@ -1875,6 +1971,8 @@ class _$_PosVehicleForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleForm(r);
   }
@@ -1896,6 +1994,8 @@ class _$_PosVehicleForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleForm?.call(r);
   }
@@ -1917,6 +2017,8 @@ class _$_PosVehicleForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleForm != null) {
@@ -1947,6 +2049,8 @@ class _$_PosVehicleForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleForm(this);
   }
@@ -1970,6 +2074,8 @@ class _$_PosVehicleForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleForm?.call(this);
   }
@@ -1993,6 +2099,8 @@ class _$_PosVehicleForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleForm != null) {
@@ -2107,6 +2215,8 @@ class _$_PosVehicleOwnerList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleOwnerList(r);
   }
@@ -2128,6 +2238,8 @@ class _$_PosVehicleOwnerList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleOwnerList?.call(r);
   }
@@ -2149,6 +2261,8 @@ class _$_PosVehicleOwnerList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleOwnerList != null) {
@@ -2179,6 +2293,8 @@ class _$_PosVehicleOwnerList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleOwnerList(this);
   }
@@ -2202,6 +2318,8 @@ class _$_PosVehicleOwnerList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleOwnerList?.call(this);
   }
@@ -2225,6 +2343,8 @@ class _$_PosVehicleOwnerList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleOwnerList != null) {
@@ -2340,6 +2460,8 @@ class _$_PosVehicleOwnerForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleOwnerForm(r);
   }
@@ -2361,6 +2483,8 @@ class _$_PosVehicleOwnerForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleOwnerForm?.call(r);
   }
@@ -2382,6 +2506,8 @@ class _$_PosVehicleOwnerForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleOwnerForm != null) {
@@ -2412,6 +2538,8 @@ class _$_PosVehicleOwnerForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleOwnerForm(this);
   }
@@ -2435,6 +2563,8 @@ class _$_PosVehicleOwnerForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleOwnerForm?.call(this);
   }
@@ -2458,6 +2588,8 @@ class _$_PosVehicleOwnerForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleOwnerForm != null) {
@@ -2573,6 +2705,8 @@ class _$_PosVehicleTypeList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleTypeList(r);
   }
@@ -2594,6 +2728,8 @@ class _$_PosVehicleTypeList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleTypeList?.call(r);
   }
@@ -2615,6 +2751,8 @@ class _$_PosVehicleTypeList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleTypeList != null) {
@@ -2645,6 +2783,8 @@ class _$_PosVehicleTypeList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleTypeList(this);
   }
@@ -2668,6 +2808,8 @@ class _$_PosVehicleTypeList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleTypeList?.call(this);
   }
@@ -2691,6 +2833,8 @@ class _$_PosVehicleTypeList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleTypeList != null) {
@@ -2806,6 +2950,8 @@ class _$_PosVehicleTypeForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleTypeForm(r);
   }
@@ -2827,6 +2973,8 @@ class _$_PosVehicleTypeForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleTypeForm?.call(r);
   }
@@ -2848,6 +2996,8 @@ class _$_PosVehicleTypeForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleTypeForm != null) {
@@ -2878,6 +3028,8 @@ class _$_PosVehicleTypeForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleTypeForm(this);
   }
@@ -2901,6 +3053,8 @@ class _$_PosVehicleTypeForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleTypeForm?.call(this);
   }
@@ -2924,6 +3078,8 @@ class _$_PosVehicleTypeForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleTypeForm != null) {
@@ -3041,6 +3197,8 @@ class _$_PosVehicleManufactureList<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleManufactureList(r);
   }
@@ -3062,6 +3220,8 @@ class _$_PosVehicleManufactureList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleManufactureList?.call(r);
   }
@@ -3083,6 +3243,8 @@ class _$_PosVehicleManufactureList<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleManufactureList != null) {
@@ -3113,6 +3275,8 @@ class _$_PosVehicleManufactureList<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleManufactureList(this);
   }
@@ -3136,6 +3300,8 @@ class _$_PosVehicleManufactureList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleManufactureList?.call(this);
   }
@@ -3159,6 +3325,8 @@ class _$_PosVehicleManufactureList<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleManufactureList != null) {
@@ -3276,6 +3444,8 @@ class _$_PosVehicleManufactureForm<T>
     required TResult Function(T r) posVehicleTypeForm,
     required TResult Function(T r) posVehicleManufactureList,
     required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
   }) {
     return posVehicleManufactureForm(r);
   }
@@ -3297,6 +3467,8 @@ class _$_PosVehicleManufactureForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
   }) {
     return posVehicleManufactureForm?.call(r);
   }
@@ -3318,6 +3490,8 @@ class _$_PosVehicleManufactureForm<T>
     TResult Function(T r)? posVehicleTypeForm,
     TResult Function(T r)? posVehicleManufactureList,
     TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleManufactureForm != null) {
@@ -3348,6 +3522,8 @@ class _$_PosVehicleManufactureForm<T>
         posVehicleManufactureList,
     required TResult Function(_PosVehicleManufactureForm<T> value)
         posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
   }) {
     return posVehicleManufactureForm(this);
   }
@@ -3371,6 +3547,8 @@ class _$_PosVehicleManufactureForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
   }) {
     return posVehicleManufactureForm?.call(this);
   }
@@ -3394,6 +3572,8 @@ class _$_PosVehicleManufactureForm<T>
         posVehicleManufactureList,
     TResult Function(_PosVehicleManufactureForm<T> value)?
         posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
     required TResult orElse(),
   }) {
     if (posVehicleManufactureForm != null) {
@@ -3413,4 +3593,488 @@ abstract class _PosVehicleManufactureForm<T> implements PosOnRouteState<T> {
   @JsonKey(ignore: true)
   _$$_PosVehicleManufactureFormCopyWith<T, _$_PosVehicleManufactureForm<T>>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PosEmployeeListCopyWith<T, $Res>
+    implements $PosOnRouteStateCopyWith<T, $Res> {
+  factory _$$_PosEmployeeListCopyWith(_$_PosEmployeeList<T> value,
+          $Res Function(_$_PosEmployeeList<T>) then) =
+      __$$_PosEmployeeListCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T r});
+}
+
+/// @nodoc
+class __$$_PosEmployeeListCopyWithImpl<T, $Res>
+    extends _$PosOnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PosEmployeeListCopyWith<T, $Res> {
+  __$$_PosEmployeeListCopyWithImpl(
+      _$_PosEmployeeList<T> _value, $Res Function(_$_PosEmployeeList<T>) _then)
+      : super(_value, (v) => _then(v as _$_PosEmployeeList<T>));
+
+  @override
+  _$_PosEmployeeList<T> get _value => super._value as _$_PosEmployeeList<T>;
+
+  @override
+  $Res call({
+    Object? r = freezed,
+  }) {
+    return _then(_$_PosEmployeeList<T>(
+      r: r == freezed
+          ? _value.r
+          : r // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PosEmployeeList<T>
+    with DiagnosticableTreeMixin
+    implements _PosEmployeeList<T> {
+  const _$_PosEmployeeList({required this.r});
+
+  @override
+  final T r;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'PosOnRouteState<$T>.posEmployeeList(r: $r)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PosOnRouteState<$T>.posEmployeeList'))
+      ..add(DiagnosticsProperty('r', r));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PosEmployeeList<T> &&
+            const DeepCollectionEquality().equals(other.r, r));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(r));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PosEmployeeListCopyWith<T, _$_PosEmployeeList<T>> get copyWith =>
+      __$$_PosEmployeeListCopyWithImpl<T, _$_PosEmployeeList<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T r) posCatalogList,
+    required TResult Function(T r) posCatalogForm,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posCustomerForm,
+    required TResult Function(T r) posVehicleList,
+    required TResult Function(T r) posVehicleForm,
+    required TResult Function(T r) posVehicleOwnerList,
+    required TResult Function(T r) posVehicleOwnerForm,
+    required TResult Function(T r) posVehicleTypeList,
+    required TResult Function(T r) posVehicleTypeForm,
+    required TResult Function(T r) posVehicleManufactureList,
+    required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
+  }) {
+    return posEmployeeList(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T r)? posCatalogList,
+    TResult Function(T r)? posCatalogForm,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posCustomerForm,
+    TResult Function(T r)? posVehicleList,
+    TResult Function(T r)? posVehicleForm,
+    TResult Function(T r)? posVehicleOwnerList,
+    TResult Function(T r)? posVehicleOwnerForm,
+    TResult Function(T r)? posVehicleTypeList,
+    TResult Function(T r)? posVehicleTypeForm,
+    TResult Function(T r)? posVehicleManufactureList,
+    TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
+  }) {
+    return posEmployeeList?.call(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T r)? posCatalogList,
+    TResult Function(T r)? posCatalogForm,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posCustomerForm,
+    TResult Function(T r)? posVehicleList,
+    TResult Function(T r)? posVehicleForm,
+    TResult Function(T r)? posVehicleOwnerList,
+    TResult Function(T r)? posVehicleOwnerForm,
+    TResult Function(T r)? posVehicleTypeList,
+    TResult Function(T r)? posVehicleTypeForm,
+    TResult Function(T r)? posVehicleManufactureList,
+    TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
+    required TResult orElse(),
+  }) {
+    if (posEmployeeList != null) {
+      return posEmployeeList(r);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PosCatalogList<T> value) posCatalogList,
+    required TResult Function(_PosCatalogForm<T> value) posCatalogForm,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PosCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosCustomerForm<T> value) posCustomerForm,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
+    required TResult Function(_PosVehicleForm<T> value) posVehicleForm,
+    required TResult Function(_PosVehicleOwnerList<T> value)
+        posVehicleOwnerList,
+    required TResult Function(_PosVehicleOwnerForm<T> value)
+        posVehicleOwnerForm,
+    required TResult Function(_PosVehicleTypeList<T> value) posVehicleTypeList,
+    required TResult Function(_PosVehicleTypeForm<T> value) posVehicleTypeForm,
+    required TResult Function(_PosVehicleManufactureList<T> value)
+        posVehicleManufactureList,
+    required TResult Function(_PosVehicleManufactureForm<T> value)
+        posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
+  }) {
+    return posEmployeeList(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_PosCatalogList<T> value)? posCatalogList,
+    TResult Function(_PosCatalogForm<T> value)? posCatalogForm,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PosCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosCustomerForm<T> value)? posCustomerForm,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+    TResult Function(_PosVehicleForm<T> value)? posVehicleForm,
+    TResult Function(_PosVehicleOwnerList<T> value)? posVehicleOwnerList,
+    TResult Function(_PosVehicleOwnerForm<T> value)? posVehicleOwnerForm,
+    TResult Function(_PosVehicleTypeList<T> value)? posVehicleTypeList,
+    TResult Function(_PosVehicleTypeForm<T> value)? posVehicleTypeForm,
+    TResult Function(_PosVehicleManufactureList<T> value)?
+        posVehicleManufactureList,
+    TResult Function(_PosVehicleManufactureForm<T> value)?
+        posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
+  }) {
+    return posEmployeeList?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PosCatalogList<T> value)? posCatalogList,
+    TResult Function(_PosCatalogForm<T> value)? posCatalogForm,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PosCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosCustomerForm<T> value)? posCustomerForm,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+    TResult Function(_PosVehicleForm<T> value)? posVehicleForm,
+    TResult Function(_PosVehicleOwnerList<T> value)? posVehicleOwnerList,
+    TResult Function(_PosVehicleOwnerForm<T> value)? posVehicleOwnerForm,
+    TResult Function(_PosVehicleTypeList<T> value)? posVehicleTypeList,
+    TResult Function(_PosVehicleTypeForm<T> value)? posVehicleTypeForm,
+    TResult Function(_PosVehicleManufactureList<T> value)?
+        posVehicleManufactureList,
+    TResult Function(_PosVehicleManufactureForm<T> value)?
+        posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
+    required TResult orElse(),
+  }) {
+    if (posEmployeeList != null) {
+      return posEmployeeList(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PosEmployeeList<T> implements PosOnRouteState<T> {
+  const factory _PosEmployeeList({required final T r}) = _$_PosEmployeeList<T>;
+
+  @override
+  T get r => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PosEmployeeListCopyWith<T, _$_PosEmployeeList<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_PosEmployeeFormCopyWith<T, $Res>
+    implements $PosOnRouteStateCopyWith<T, $Res> {
+  factory _$$_PosEmployeeFormCopyWith(_$_PosEmployeeForm<T> value,
+          $Res Function(_$_PosEmployeeForm<T>) then) =
+      __$$_PosEmployeeFormCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T r});
+}
+
+/// @nodoc
+class __$$_PosEmployeeFormCopyWithImpl<T, $Res>
+    extends _$PosOnRouteStateCopyWithImpl<T, $Res>
+    implements _$$_PosEmployeeFormCopyWith<T, $Res> {
+  __$$_PosEmployeeFormCopyWithImpl(
+      _$_PosEmployeeForm<T> _value, $Res Function(_$_PosEmployeeForm<T>) _then)
+      : super(_value, (v) => _then(v as _$_PosEmployeeForm<T>));
+
+  @override
+  _$_PosEmployeeForm<T> get _value => super._value as _$_PosEmployeeForm<T>;
+
+  @override
+  $Res call({
+    Object? r = freezed,
+  }) {
+    return _then(_$_PosEmployeeForm<T>(
+      r: r == freezed
+          ? _value.r
+          : r // ignore: cast_nullable_to_non_nullable
+              as T,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PosEmployeeForm<T>
+    with DiagnosticableTreeMixin
+    implements _PosEmployeeForm<T> {
+  const _$_PosEmployeeForm({required this.r});
+
+  @override
+  final T r;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'PosOnRouteState<$T>.posEmployeeForm(r: $r)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'PosOnRouteState<$T>.posEmployeeForm'))
+      ..add(DiagnosticsProperty('r', r));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_PosEmployeeForm<T> &&
+            const DeepCollectionEquality().equals(other.r, r));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(r));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_PosEmployeeFormCopyWith<T, _$_PosEmployeeForm<T>> get copyWith =>
+      __$$_PosEmployeeFormCopyWithImpl<T, _$_PosEmployeeForm<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(T r) posCatalogList,
+    required TResult Function(T r) posCatalogForm,
+    required TResult Function(T r) purchase,
+    required TResult Function(T r) posCatalogItemDetail,
+    required TResult Function(T r) posCustomerList,
+    required TResult Function(T r) posCustomerForm,
+    required TResult Function(T r) posVehicleList,
+    required TResult Function(T r) posVehicleForm,
+    required TResult Function(T r) posVehicleOwnerList,
+    required TResult Function(T r) posVehicleOwnerForm,
+    required TResult Function(T r) posVehicleTypeList,
+    required TResult Function(T r) posVehicleTypeForm,
+    required TResult Function(T r) posVehicleManufactureList,
+    required TResult Function(T r) posVehicleManufactureForm,
+    required TResult Function(T r) posEmployeeList,
+    required TResult Function(T r) posEmployeeForm,
+  }) {
+    return posEmployeeForm(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T r)? posCatalogList,
+    TResult Function(T r)? posCatalogForm,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posCustomerForm,
+    TResult Function(T r)? posVehicleList,
+    TResult Function(T r)? posVehicleForm,
+    TResult Function(T r)? posVehicleOwnerList,
+    TResult Function(T r)? posVehicleOwnerForm,
+    TResult Function(T r)? posVehicleTypeList,
+    TResult Function(T r)? posVehicleTypeForm,
+    TResult Function(T r)? posVehicleManufactureList,
+    TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
+  }) {
+    return posEmployeeForm?.call(r);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T r)? posCatalogList,
+    TResult Function(T r)? posCatalogForm,
+    TResult Function(T r)? purchase,
+    TResult Function(T r)? posCatalogItemDetail,
+    TResult Function(T r)? posCustomerList,
+    TResult Function(T r)? posCustomerForm,
+    TResult Function(T r)? posVehicleList,
+    TResult Function(T r)? posVehicleForm,
+    TResult Function(T r)? posVehicleOwnerList,
+    TResult Function(T r)? posVehicleOwnerForm,
+    TResult Function(T r)? posVehicleTypeList,
+    TResult Function(T r)? posVehicleTypeForm,
+    TResult Function(T r)? posVehicleManufactureList,
+    TResult Function(T r)? posVehicleManufactureForm,
+    TResult Function(T r)? posEmployeeList,
+    TResult Function(T r)? posEmployeeForm,
+    required TResult orElse(),
+  }) {
+    if (posEmployeeForm != null) {
+      return posEmployeeForm(r);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PosCatalogList<T> value) posCatalogList,
+    required TResult Function(_PosCatalogForm<T> value) posCatalogForm,
+    required TResult Function(_Purchase<T> value) purchase,
+    required TResult Function(_PosCatalogItemDetail<T> value)
+        posCatalogItemDetail,
+    required TResult Function(_PosCustomerList<T> value) posCustomerList,
+    required TResult Function(_PosCustomerForm<T> value) posCustomerForm,
+    required TResult Function(_PosVehicleList<T> value) posVehicleList,
+    required TResult Function(_PosVehicleForm<T> value) posVehicleForm,
+    required TResult Function(_PosVehicleOwnerList<T> value)
+        posVehicleOwnerList,
+    required TResult Function(_PosVehicleOwnerForm<T> value)
+        posVehicleOwnerForm,
+    required TResult Function(_PosVehicleTypeList<T> value) posVehicleTypeList,
+    required TResult Function(_PosVehicleTypeForm<T> value) posVehicleTypeForm,
+    required TResult Function(_PosVehicleManufactureList<T> value)
+        posVehicleManufactureList,
+    required TResult Function(_PosVehicleManufactureForm<T> value)
+        posVehicleManufactureForm,
+    required TResult Function(_PosEmployeeList<T> value) posEmployeeList,
+    required TResult Function(_PosEmployeeForm<T> value) posEmployeeForm,
+  }) {
+    return posEmployeeForm(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_PosCatalogList<T> value)? posCatalogList,
+    TResult Function(_PosCatalogForm<T> value)? posCatalogForm,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PosCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosCustomerForm<T> value)? posCustomerForm,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+    TResult Function(_PosVehicleForm<T> value)? posVehicleForm,
+    TResult Function(_PosVehicleOwnerList<T> value)? posVehicleOwnerList,
+    TResult Function(_PosVehicleOwnerForm<T> value)? posVehicleOwnerForm,
+    TResult Function(_PosVehicleTypeList<T> value)? posVehicleTypeList,
+    TResult Function(_PosVehicleTypeForm<T> value)? posVehicleTypeForm,
+    TResult Function(_PosVehicleManufactureList<T> value)?
+        posVehicleManufactureList,
+    TResult Function(_PosVehicleManufactureForm<T> value)?
+        posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
+  }) {
+    return posEmployeeForm?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PosCatalogList<T> value)? posCatalogList,
+    TResult Function(_PosCatalogForm<T> value)? posCatalogForm,
+    TResult Function(_Purchase<T> value)? purchase,
+    TResult Function(_PosCatalogItemDetail<T> value)? posCatalogItemDetail,
+    TResult Function(_PosCustomerList<T> value)? posCustomerList,
+    TResult Function(_PosCustomerForm<T> value)? posCustomerForm,
+    TResult Function(_PosVehicleList<T> value)? posVehicleList,
+    TResult Function(_PosVehicleForm<T> value)? posVehicleForm,
+    TResult Function(_PosVehicleOwnerList<T> value)? posVehicleOwnerList,
+    TResult Function(_PosVehicleOwnerForm<T> value)? posVehicleOwnerForm,
+    TResult Function(_PosVehicleTypeList<T> value)? posVehicleTypeList,
+    TResult Function(_PosVehicleTypeForm<T> value)? posVehicleTypeForm,
+    TResult Function(_PosVehicleManufactureList<T> value)?
+        posVehicleManufactureList,
+    TResult Function(_PosVehicleManufactureForm<T> value)?
+        posVehicleManufactureForm,
+    TResult Function(_PosEmployeeList<T> value)? posEmployeeList,
+    TResult Function(_PosEmployeeForm<T> value)? posEmployeeForm,
+    required TResult orElse(),
+  }) {
+    if (posEmployeeForm != null) {
+      return posEmployeeForm(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PosEmployeeForm<T> implements PosOnRouteState<T> {
+  const factory _PosEmployeeForm({required final T r}) = _$_PosEmployeeForm<T>;
+
+  @override
+  T get r => throw _privateConstructorUsedError;
+  @override
+  @JsonKey(ignore: true)
+  _$$_PosEmployeeFormCopyWith<T, _$_PosEmployeeForm<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }

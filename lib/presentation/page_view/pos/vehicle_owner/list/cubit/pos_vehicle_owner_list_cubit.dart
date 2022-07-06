@@ -33,10 +33,11 @@ class PosVehicleOwnerListCubit extends Cubit<PosVehicleOwnerListState> {
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<VehicleOwnerModel> vehicleOwners = [];
+      List<VehicleOwnerModel>? vehicleOwners;
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name.toLowerCase().contains(v.toLowerCase())) {
-          vehicleOwners
+          vehicleOwners ?? [];
+          vehicleOwners!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });
@@ -69,12 +70,13 @@ class PosVehicleOwnerListCubit extends Cubit<PosVehicleOwnerListState> {
 
       emit(state.copyWith(vehicleOwners: vehicleOwners));
     } else {
-      List<VehicleOwnerModel> vehicleOwners = [];
+      List<VehicleOwnerModel>? vehicleOwners;
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          vehicleOwners
+          vehicleOwners ?? [];
+          vehicleOwners!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });

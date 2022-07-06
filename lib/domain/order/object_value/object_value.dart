@@ -64,12 +64,12 @@ class CreateOrderVehicle extends ObjectValue<VehicleModel?> {
   const CreateOrderVehicle._(this.value);
 }
 
-class CreateOrderEmployees extends ObjectValue<EmployeesModel?> {
+class CreateOrderEmployees extends ObjectValue<List<EmployeesModel>?> {
   @override
-  final Either<OrderObjectValueFailure<EmployeesModel?, String>,
-      EmployeesModel?> value;
+  final Either<OrderObjectValueFailure<List<EmployeesModel>?, String>,
+      List<EmployeesModel>?> value;
 
-  factory CreateOrderEmployees(EmployeesModel? input) {
+  factory CreateOrderEmployees(List<EmployeesModel>? input) {
     return CreateOrderEmployees._(validateFieldNotEmployeesAndNotEmpty(input));
   }
 

@@ -10,7 +10,7 @@ _$_EmployeesDepartmentModel _$$_EmployeesDepartmentModelFromJson(
         Map<String, dynamic> json) =>
     _$_EmployeesDepartmentModel(
       id: json['id'] as int,
-      uuid: json['uuid'] as int,
+      uuid: json['uuid'] as String,
       code: json['code'] as String,
       name: json['name'] as String,
       accountId: json['accountId'] as int,

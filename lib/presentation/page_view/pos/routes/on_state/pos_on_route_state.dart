@@ -32,4 +32,8 @@ class PosOnRouteState<T> with _$PosOnRouteState<T> {
       _PosVehicleManufactureList<T>;
   const factory PosOnRouteState.posVehicleManufactureForm({required T r}) =
       _PosVehicleManufactureForm<T>;
+  const factory PosOnRouteState.posEmployeeList({required T r}) =
+      _PosEmployeeList<T>;
+  const factory PosOnRouteState.posEmployeeForm({required T r}) =
+      _PosEmployeeForm<T>;
 }

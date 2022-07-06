@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
+import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:uuid/uuid.dart';
@@ -13,7 +14,7 @@ class VehicleTypeModel with _$VehicleTypeModel implements IEntity {
   const factory VehicleTypeModel({
     required int id,
     required String uuid,
-    required VehicleManufactureModel manufacture,
+    required VehicleManufactureModel? manufacture,
     required String model,
     required int year,
     required String color,
@@ -21,15 +22,15 @@ class VehicleTypeModel with _$VehicleTypeModel implements IEntity {
     required int accountId,
   }) = _VehicleTypeModel;
 
-  factory VehicleTypeModel.createVehicleTypeModel(VehicleType? vehicleType,
-      VehicleManufactureModel vehicleManufactureModel) {
+  factory VehicleTypeModel.createVehicleTypeModel(
+      VehicleType? vehicleType, VehicleManufacture? vehicleManufacture) {
     return VehicleTypeModel(
       id: vehicleType!.id,
       uuid: vehicleType.uuid,
       manufacture: VehicleManufactureModel(
-          id: vehicleManufactureModel.id,
-          uuid: vehicleManufactureModel.uuid,
-          name: vehicleManufactureModel.name),
+          id: vehicleManufacture!.id,
+          uuid: vehicleManufacture.uuid,
+          name: vehicleManufacture.name),
       model: vehicleType.model,
       description: vehicleType.description,
       accountId: vehicleType.accountId,
@@ -37,6 +38,28 @@ class VehicleTypeModel with _$VehicleTypeModel implements IEntity {
       color: vehicleType.color,
     );
   }
+
+  // static VehicleTypeModel? createVehicleTypeModel(
+  //     VehicleType? vehicleType, VehicleManufacture? vehicleManufacture) {
+  //   if (vehicleType != null) {
+  //     return VehicleTypeModel(
+  //         id: vehicleType.id,
+  //         uuid: vehicleType.uuid,
+  //         manufacture: vehicleManufacture != null
+  //             ? VehicleManufactureModel(
+  //                 id: vehicleManufacture.id,
+  //                 uuid: vehicleManufacture.uuid,
+  //                 name: vehicleManufacture.name)
+  //             : null,
+  //         model: vehicleType.model,
+  //         year: vehicleType.year,
+  //         color: vehicleType.color,
+  //         description: vehicleType.description,
+  //         accountId: vehicleType.accountId);
+  //   } else {
+  //     return null;
+  //   }
+  // }
 
   factory VehicleTypeModel.fromJson(Map<String, dynamic> json) =>
       _$VehicleTypeModelFromJson(json);

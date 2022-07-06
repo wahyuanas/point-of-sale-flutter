@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/list/cubit/vehicle_manufacture_list_cubit.dart';
-import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle_type/model/vehicle_type_model.dart';
 
@@ -33,14 +32,12 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
   onStarted() {
     List<VehicleTypeModel>? vehicleTypes =
         _vehicleTypeListCubit.state.vehicleTypes?.map((vehicleType) {
-      VehicleManufacture? manufacture = _vehicleManufactureListCubit
+      VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
           .state.vehicleManufactures
           ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-      VehicleManufactureModel manufactureModal =
-          VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
       return VehicleTypeModel.createVehicleTypeModel(
-          vehicleType, manufactureModal);
+          vehicleType, vehicleManufacture);
     }).toList();
     emit(state.copyWith(vehicleTypes: vehicleTypes));
   }
@@ -49,16 +46,14 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
     if (v.isNotEmpty) {
       List<VehicleTypeModel> vehicleTypes = [];
       _vehicleTypeListCubit.state.vehicleTypes?.forEach((vehicleType) {
-        VehicleManufacture? manufacture = _vehicleManufactureListCubit
+        VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
             .state.vehicleManufactures
             ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-        VehicleManufactureModel manufactureModal =
-            VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
-        if (manufactureModal.name.toLowerCase().contains(v.toLowerCase()) ||
+        if (vehicleManufacture!.name.toLowerCase().contains(v.toLowerCase()) ||
             vehicleType.model.toLowerCase().contains(v.toLowerCase())) {
           vehicleTypes.add(VehicleTypeModel.createVehicleTypeModel(
-              vehicleType, manufactureModal));
+              vehicleType, vehicleManufacture));
         }
       });
 
@@ -66,14 +61,12 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
     } else {
       List<VehicleTypeModel>? vehicleTypes =
           _vehicleTypeListCubit.state.vehicleTypes?.map((vehicleType) {
-        VehicleManufacture? manufacture = _vehicleManufactureListCubit
+        VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
             .state.vehicleManufactures
             ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-        VehicleManufactureModel manufactureModal =
-            VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
         return VehicleTypeModel.createVehicleTypeModel(
-            vehicleType, manufactureModal);
+            vehicleType, vehicleManufacture);
       }).toList();
       emit(state.copyWith(vehicleTypes: vehicleTypes));
     }
@@ -82,14 +75,12 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
   onReset() {
     List<VehicleTypeModel>? vehicleTypes =
         _vehicleTypeListCubit.state.vehicleTypes?.map((vehicleType) {
-      VehicleManufacture? manufacture = _vehicleManufactureListCubit
+      VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
           .state.vehicleManufactures
           ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-      VehicleManufactureModel manufactureModal =
-          VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
       return VehicleTypeModel.createVehicleTypeModel(
-          vehicleType, manufactureModal);
+          vehicleType, vehicleManufacture);
     }).toList();
     emit(state.copyWith(vehicleTypes: vehicleTypes, keyWord: null));
   }
@@ -98,33 +89,30 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
     if (state.keyWord == null) {
       List<VehicleTypeModel>? vehicleTypes =
           _vehicleTypeListCubit.state.vehicleTypes?.map((vehicleType) {
-        VehicleManufacture? manufacture = _vehicleManufactureListCubit
+        VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
             .state.vehicleManufactures
             ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-        VehicleManufactureModel manufactureModal =
-            VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
         return VehicleTypeModel.createVehicleTypeModel(
-            vehicleType, manufactureModal);
+            vehicleType, vehicleManufacture);
       }).toList();
       emit(state.copyWith(vehicleTypes: vehicleTypes));
     } else {
-      List<VehicleTypeModel> vehicleTypes = [];
+      List<VehicleTypeModel>? vehicleTypes;
       _vehicleTypeListCubit.state.vehicleTypes?.forEach((vehicleType) {
-        VehicleManufacture? manufacture = _vehicleManufactureListCubit
+        VehicleManufacture? vehicleManufacture = _vehicleManufactureListCubit
             .state.vehicleManufactures
             ?.firstWhere((manuf) => manuf.id == vehicleType.manufacture);
-        VehicleManufactureModel manufactureModal =
-            VehicleManufactureModel.createVehicleManufactureModel(manufacture);
 
-        if (manufactureModal.name
+        if (vehicleManufacture!.name
                 .toLowerCase()
                 .contains(state.keyWord!.toLowerCase()) ||
             vehicleType.model
                 .toLowerCase()
                 .contains(state.keyWord!.toLowerCase())) {
-          vehicleTypes.add(VehicleTypeModel.createVehicleTypeModel(
-              vehicleType, manufactureModal));
+          vehicleTypes ?? [];
+          vehicleTypes?.add(VehicleTypeModel.createVehicleTypeModel(
+              vehicleType, vehicleManufacture));
         }
       });
 

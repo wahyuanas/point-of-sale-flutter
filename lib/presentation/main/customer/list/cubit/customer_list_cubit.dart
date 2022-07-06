@@ -16,12 +16,13 @@ class CustomerListCubit extends HydratedCubit<CustomerListState> {
   // }
 
   onAddCustomer(Customer customer) {
-    List<Customer> customers = [];
+    List<Customer>? customers;
     if (state.customers != null) {
       customers = List.from(state.customers!.toList());
       customers.add(customer);
     } else {
-      customers.add(customer);
+      customers ?? [];
+      customers?.add(customer);
     }
     emit(state.copyWith(
       customers: customers,

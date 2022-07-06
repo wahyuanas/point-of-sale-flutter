@@ -10,8 +10,10 @@ _$_VehicleTypeModel _$$_VehicleTypeModelFromJson(Map<String, dynamic> json) =>
     _$_VehicleTypeModel(
       id: json['id'] as int,
       uuid: json['uuid'] as String,
-      manufacture: VehicleManufactureModel.fromJson(
-          json['manufacture'] as Map<String, dynamic>),
+      manufacture: json['manufacture'] == null
+          ? null
+          : VehicleManufactureModel.fromJson(
+              json['manufacture'] as Map<String, dynamic>),
       model: json['model'] as String,
       year: json['year'] as int,
       color: json['color'] as String,

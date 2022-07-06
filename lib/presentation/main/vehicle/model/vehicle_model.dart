@@ -22,8 +22,48 @@ class VehicleModel with _$VehicleModel {
     required VehicleTypeModel? vehicleTypeModel,
   }) = _VehicleModel;
 
-  factory VehicleModel.createVehicleModel(Vehicle vehicle,
-      VehicleTypeModel vehicleTypeModel, VehicleOwnerModel vehicleOwnerModel) {
+  // factory VehicleModel.createVehicleModel(Vehicle vehicle,
+  //     VehicleTypeModel vehicleTypeModel, VehicleOwnerModel vehicleOwnerModel) {
+  //   return VehicleModel(
+  //     id: vehicle.id,
+  //     uuid: vehicle.uuid,
+  //     policyNumber: vehicle.policyNumber,
+  //     machineNumber: vehicle.machineNumber,
+  //     description: vehicle.description,
+  //     accountId: vehicle.accountId,
+  //     currentKm: vehicle.currentKm,
+  //     vehicleOwnerModel: vehicleOwnerModel,
+  //     // VehicleOwnerModel(
+  //     //     id: vehicleOwnerModel.id,
+  //     //     uuid: vehicleOwnerModel.uuid,
+  //     //     name: vehicleOwnerModel.name,
+  //     //     phoneNumber: vehicleOwnerModel.phoneNumber,
+  //     //     email: vehicleOwnerModel.email,
+  //     //     idNumber: vehicleOwnerModel.idNumber,
+  //     //     address: vehicleOwnerModel.address,
+  //     //     accountId: vehicleOwnerModel.accountId),
+  //     vehicleTypeModel: vehicleTypeModel,
+  //     // VehicleTypeModel(
+  //     //     id: vehicleTypeModel.id,
+  //     //     uuid: vehicleTypeModel.uuid,
+  //     //     manufacture: vehicleTypeModel.manufacture,
+  //     //     // VehicleManufactureModel(
+  //     //     //     id: vehicleTypeModel.manufacture.id,
+  //     //     //     uuid: vehicleTypeModel.manufacture.uuid,
+  //     //     //     name: vehicleTypeModel.manufacture.name),
+  //     //     model: vehicleTypeModel.model,
+  //     //     year: vehicleTypeModel.year,
+  //     //     color: vehicleTypeModel.color,
+  //     //     description: vehicleTypeModel.description,
+  //     //     accountId: vehicleTypeModel.accountId),
+  //   );
+  // }
+
+  static VehicleModel createVehicleModel(
+      Vehicle vehicle,
+      VehicleTypeModel? vehicleTypeModel,
+      VehicleOwnerModel? vehicleOwnerModel) {
+    //if (vehicle != null) {
     return VehicleModel(
       id: vehicle.id,
       uuid: vehicle.uuid,
@@ -32,25 +72,11 @@ class VehicleModel with _$VehicleModel {
       description: vehicle.description,
       accountId: vehicle.accountId,
       currentKm: vehicle.currentKm,
-      vehicleOwnerModel: VehicleOwnerModel(
-          id: vehicleOwnerModel.id,
-          uuid: vehicleOwnerModel.uuid,
-          name: vehicleOwnerModel.name,
-          phoneNumber: vehicleOwnerModel.phoneNumber,
-          email: vehicleOwnerModel.email,
-          idNumber: vehicleOwnerModel.idNumber,
-          address: vehicleOwnerModel.address,
-          accountId: vehicleOwnerModel.accountId),
-      vehicleTypeModel: VehicleTypeModel(
-          id: vehicleTypeModel.id,
-          uuid: vehicleTypeModel.uuid,
-          manufacture: vehicleTypeModel.manufacture,
-          model: vehicleTypeModel.model,
-          year: vehicleTypeModel.year,
-          color: vehicleTypeModel.color,
-          description: vehicleTypeModel.description,
-          accountId: vehicleTypeModel.accountId),
+      vehicleOwnerModel: vehicleOwnerModel,
+      vehicleTypeModel: vehicleTypeModel,
     );
+    //}
+    //return null;
   }
 
   factory VehicleModel.fromJson(Map<String, dynamic> json) =>

@@ -34,8 +34,9 @@ Either<OrderObjectValueFailure<VehicleModel?, String>, VehicleModel?>
   }
 }
 
-Either<OrderObjectValueFailure<EmployeesModel?, String>, EmployeesModel?>
-    validateFieldNotEmployeesAndNotEmpty(EmployeesModel? input) {
+Either<OrderObjectValueFailure<List<EmployeesModel>?, String>,
+        List<EmployeesModel>?>
+    validateFieldNotEmployeesAndNotEmpty(List<EmployeesModel>? input) {
   if (input == null) {
     return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {

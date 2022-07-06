@@ -23,8 +23,8 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
   late StreamSubscription _customerListSubscription;
 
   onStarted() {
-    List<CustomerModel> customers =
-        _customerListCubit.state.customers!.map((customer) {
+    List<CustomerModel>? customers =
+        _customerListCubit.state.customers?.map((customer) {
       return CustomerModel.fromCustomer(customer);
     }).toList();
 
@@ -33,15 +33,16 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<CustomerModel> customers = [];
+      List<CustomerModel>? customers;
       _customerListCubit.state.customers?.forEach((customer) {
         if (customer.name.toLowerCase().contains(v.toLowerCase())) {
-          customers.add(CustomerModel.fromCustomer(customer));
+          customers ?? [];
+          customers?.add(CustomerModel.fromCustomer(customer));
         }
       });
       emit(state.copyWith(customers: customers, keyWord: v));
     } else {
-      List<CustomerModel> customers =
+      List<CustomerModel>? customers =
           _customerListCubit.state.customers!.map((customer) {
         return CustomerModel.fromCustomer(customer);
       }).toList();
@@ -55,18 +56,20 @@ class PosCustomerListCubit extends Cubit<PosCustomerListState> {
 
   onCustomerChannged(CustomerListState customerListState) {
     if (state.keyWord == null) {
-      List<CustomerModel> customers =
+      List<CustomerModel>? customers =
           _customerListCubit.state.customers!.map((customer) {
         return CustomerModel.fromCustomer(customer);
       }).toList();
       emit(state.copyWith(customers: customers));
     } else {
-      List<CustomerModel> customers = [];
+      List<CustomerModel>? customers;
       _customerListCubit.state.customers?.forEach((customer) {
         if (customer.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          customers.add(CustomerModel.fromCustomer(customer));
+          customers ??= [];
+
+          customers?.add(CustomerModel.fromCustomer(customer));
         }
       });
       emit(state.copyWith(customers: customers));

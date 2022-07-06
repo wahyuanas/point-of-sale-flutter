@@ -16,12 +16,13 @@ class VehicleTypeListCubit extends HydratedCubit<VehicleTypeListState> {
   // }
 
   onAddVehicleType(VehicleType vehicleType) {
-    List<VehicleType> vehicleTypes = [];
+    List<VehicleType>? vehicleTypes;
     if (state.vehicleTypes != null) {
       vehicleTypes = List.from(state.vehicleTypes!.toList());
       vehicleTypes.add(vehicleType);
     } else {
-      vehicleTypes.add(vehicleType);
+      vehicleTypes ?? [];
+      vehicleTypes?.add(vehicleType);
     }
     emit(state.copyWith(
       vehicleTypes: vehicleTypes,
