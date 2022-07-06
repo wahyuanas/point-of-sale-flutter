@@ -27,6 +27,20 @@ class _PosVehicleManufactureListCardWidgetState
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<VehicleTypeFormCreateCubit>(context)
+        .state
+        .createVehicleType
+        .manufacture
+        .value
+        .fold((l) => null, (r) {
+      if (r?.id == widget.vehicleManufacture.id) {
+        //if (_itsMe == false) {
+        _itsMe = true;
+        //}
+      } else {
+        _itsMe = false;
+      }
+    });
     return BlocListener<VehicleTypeFormCreateCubit, VehicleTypeFormCreateState>(
       listener: (context, state) async {
         state.createVehicleType.manufacture.value.fold((l) {

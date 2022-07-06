@@ -24,6 +24,20 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<PosPaymentCubit>(context)
+        .state
+        .createOrder
+        .vehicle
+        .value
+        .fold((l) => null, (r) {
+      if (r?.id == widget.vehicle.id) {
+        //if (_itsMe == false) {
+        _itsMe = true;
+        //}
+      } else {
+        _itsMe = false;
+      }
+    });
     return BlocListener<PosPaymentCubit, PosPaymentState>(
       listener: (context, state) async {
         state.createOrder.vehicle.value.fold((l) {
@@ -99,7 +113,7 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                         Wrap(
                           children: [
                             Text(
-                              '${widget.vehicle.vehicleTypeModel?.manufacture.name}',
+                              '${widget.vehicle.vehicleTypeModel?.manufacture?.name}',
                               style: const TextStyle(
                                   color: Colors.black, fontSize: 15.0),
                             ),

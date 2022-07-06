@@ -99,11 +99,16 @@ class _PosVehicleFormVehicleTypeWidgetState
                     (l) => Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: GestureDetector(
-                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                            .onRoute(
-                                const PosOnRouteState.posVehicleTypeList(
-                                    r: '/posVehicleTypeList'),
-                                null),
+                        onTap: () {
+                          BlocProvider.of<PosRouteCubit>(context).onRoute(
+                              const PosOnRouteState.posVehicleTypeList(
+                                  r: '/posVehicleTypeList'),
+                              null);
+                          FocusScopeNode currentFocus = FocusScope.of(context);
+                          if (!currentFocus.hasPrimaryFocus) {
+                            currentFocus.unfocus();
+                          }
+                        },
                         child: const Icon(
                           Icons.search_outlined,
                           size: 25.0,
@@ -130,7 +135,7 @@ class _PosVehicleFormVehicleTypeWidgetState
                     (r) => Wrap(
                       children: [
                         Text(
-                          r!.manufacture.name,
+                          r!.manufacture!.name,
                           style: const TextStyle(fontSize: 15),
                         ),
                         const SizedBox(

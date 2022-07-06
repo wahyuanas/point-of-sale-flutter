@@ -25,6 +25,20 @@ class _PosVehicleTypeListCardWidgetState
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<VehicleFormCreateCubit>(context)
+        .state
+        .createVehicle
+        .vehicleType
+        .value
+        .fold((l) => null, (r) {
+      if (r?.id == widget.vehicleType.id) {
+        //if (_itsMe == false) {
+        _itsMe = true;
+        //}
+      } else {
+        _itsMe = false;
+      }
+    });
     return BlocListener<VehicleFormCreateCubit, VehicleFormCreateState>(
       listener: (context, state) async {
         state.createVehicle.vehicleType.value.fold((l) {
@@ -85,7 +99,7 @@ class _PosVehicleTypeListCardWidgetState
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.vehicleType.manufacture.name,
+                          widget.vehicleType.manufacture!.name,
                           style: const TextStyle(
                               color: Colors.blue, fontSize: 15.0),
                         ),

@@ -112,6 +112,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
 
   onEmployeeChanged1(EmployeesModel employeeModel) {
     state.createOrder.employees.value.fold((l) {}, (r) {
+      debugPrint("POS EMPLOYEE CUBIT ");
       List<EmployeesModel>? employeeModels = [];
       if (r != null) {
         employeeModels = List.from(r.toList());
@@ -128,6 +129,13 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
             .copyWith(employees: CreateOrderEmployees(employeeModels)),
       ));
     });
+  }
+
+  onEmployeeReset() {
+    emit(state.copyWith(
+      createOrder:
+          state.createOrder.copyWith(employees: CreateOrderEmployees(null)),
+    ));
   }
 
   onReset() {

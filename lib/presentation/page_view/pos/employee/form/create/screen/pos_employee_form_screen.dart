@@ -12,10 +12,12 @@ class PosEmployeeFormScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: ((context) => EmployeeFormCreateCubit(
-          employeeListCubit: getIt<EmployeeListCubit>())),
-      child: const PosEmployeeFormWidget(),
-    );
+    return const PosEmployeeFormWidget();
+
+    // BlocProvider(
+    //   create: ((context) => EmployeeFormCreateCubit(
+    //       employeeListCubit: getIt<EmployeeListCubit>())),
+    //   child: const PosEmployeeFormWidget(),
+    // );
   }
 }

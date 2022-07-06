@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../cubit/pos_payment_cubit.dart';
 import '../delegate/pos_payment_action_delegate.dart';
 import 'pos_payment_export_widget.dart';
 
@@ -128,57 +125,57 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                 delegate: PosPaymentActionDelegate()),
             SliverToBoxAdapter(
               child: Column(
-                children: [
-                  const PosPaymentCustomerWidget(),
-                  const PosPaymentVehicleWidget(),
-                  const PosPaymentEmployeeWidget(),
-                  BlocBuilder<PosPaymentCubit, PosPaymentState>(
-                      buildWhen: (p, c) {
-                    if (p.initial != c.initial) {
-                      if (c.initial == false) {
-                        if (_initial == true) _initial = false;
-                        return true;
-                      } else if (c.initial == true) {
-                        if (_initial == false) _initial = true;
-                        _controller.text = '';
-                        return false;
-                      }
-                    } else if (p.status != c.status) {
-                      c.status.maybeWhen(
-                          initial: () {
-                            if (_initial == false) _initial = true;
-                            _controller.text = '';
-                          },
-                          orElse: () => null);
-                      return false;
-                    } else if (p.createOrder.paymentCardInfo?.name !=
-                        c.createOrder.paymentCardInfo?.name) {
-                      if (_initial == true) _initial = false;
-                      return true;
-                    }
-                    return false;
-                  }, builder: (context, state) {
-                    debugPrint("POS PAYMENT WIDGET");
-                    return TextFormField(
-                        controller: _controller,
-                        autofocus: false,
-                        keyboardType: TextInputType.text,
-                        decoration: const InputDecoration(
-                          labelText: "Keterangan",
-                          labelStyle:
-                              TextStyle(color: Colors.black54, fontSize: 15.0),
-                          hintText: '',
-                          //enabledBorder: InputBorder.none,
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.black54),
-                          ),
+                children: const [
+                  PosPaymentCustomerWidget(),
+                  PosPaymentVehicleWidget(),
+                  PosPaymentEmployeeWidget(),
+                  // BlocBuilder<PosPaymentCubit, PosPaymentState>(
+                  //     buildWhen: (p, c) {
+                  //   if (p.initial != c.initial) {
+                  //     if (c.initial == false) {
+                  //       if (_initial == true) _initial = false;
+                  //       return true;
+                  //     } else if (c.initial == true) {
+                  //       if (_initial == false) _initial = true;
+                  //       _controller.text = '';
+                  //       return false;
+                  //     }
+                  //   } else if (p.status != c.status) {
+                  //     c.status.maybeWhen(
+                  //         initial: () {
+                  //           if (_initial == false) _initial = true;
+                  //           _controller.text = '';
+                  //         },
+                  //         orElse: () => null);
+                  //     return false;
+                  //   } else if (p.createOrder.paymentCardInfo?.name !=
+                  //       c.createOrder.paymentCardInfo?.name) {
+                  //     if (_initial == true) _initial = false;
+                  //     return true;
+                  //   }
+                  //   return false;
+                  // }, builder: (context, state) {
+                  //   debugPrint("POS PAYMENT WIDGET");
+                  //   return TextFormField(
+                  //       controller: _controller,
+                  //       autofocus: false,
+                  //       keyboardType: TextInputType.text,
+                  //       decoration: const InputDecoration(
+                  //         labelText: "Keterangan",
+                  //         labelStyle:
+                  //             TextStyle(color: Colors.black54, fontSize: 15.0),
+                  //         hintText: '',
+                  //         //enabledBorder: InputBorder.none,
+                  //         focusedBorder: UnderlineInputBorder(
+                  //           borderSide: BorderSide(color: Colors.black54),
+                  //         ),
 
-                          //border: InputBorder.none,
-                        ),
-                        onChanged: (v) =>
-                            BlocProvider.of<PosPaymentCubit>(context)
-                                .onPaymentCardInfoNameChanged(v));
-                  }),
+                  //         //border: InputBorder.none,
+                  //       ),
+                  //       onChanged: (v) =>
+                  //           BlocProvider.of<PosPaymentCubit>(context)
+                  //               .onPaymentCardInfoNameChanged(v));
+                  // }),
                 ],
               ),
             )

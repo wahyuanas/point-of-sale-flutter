@@ -12,6 +12,8 @@ import 'package:pos/presentation/page_view/pos/customer/form/create/screen/pos_c
 import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/employee/form/create/screen/pos_employee_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/employee/list/screen/pos_employee_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/employee_department/form/create/screen/pos_employee_department_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/employee_department/list/screen/pos_employee_department_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';

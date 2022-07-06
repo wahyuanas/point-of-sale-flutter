@@ -25,6 +25,20 @@ class _PosVehicleOwnerListCardWidgetState
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<VehicleFormCreateCubit>(context)
+        .state
+        .createVehicle
+        .vehicleOwner
+        .value
+        .fold((l) => null, (r) {
+      if (r?.id == widget.vehicleOwner.id) {
+        //if (_itsMe == false) {
+        _itsMe = true;
+        // }
+      } else {
+        _itsMe = false;
+      }
+    });
     return BlocListener<VehicleFormCreateCubit, VehicleFormCreateState>(
       listener: (context, state) async {
         state.createVehicle.vehicleOwner.value.fold((l) {

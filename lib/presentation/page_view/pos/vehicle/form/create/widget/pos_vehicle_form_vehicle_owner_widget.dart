@@ -103,11 +103,16 @@ class _PosVehicleFormVehicleOwnerWidgetState
                     (l) => Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: GestureDetector(
-                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                            .onRoute(
-                                const PosOnRouteState.posVehicleOwnerList(
-                                    r: '/posVehicleOwnerList'),
-                                null),
+                        onTap: () {
+                          BlocProvider.of<PosRouteCubit>(context).onRoute(
+                              const PosOnRouteState.posVehicleOwnerList(
+                                  r: '/posVehicleOwnerList'),
+                              null);
+                          FocusScopeNode currentFocus = FocusScope.of(context);
+                          if (!currentFocus.hasPrimaryFocus) {
+                            currentFocus.unfocus();
+                          }
+                        },
                         child: const Icon(
                           Icons.search_outlined,
                           size: 25.0,

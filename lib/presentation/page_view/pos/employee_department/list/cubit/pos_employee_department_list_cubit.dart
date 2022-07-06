@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/employee_department/entity/employees_department.dart';
-import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:collection/collection.dart';
 import 'package:pos/presentation/main/employee_department/model/employees_department_model.dart';
@@ -19,9 +18,9 @@ class PosEmployeeDepartmentListCubit
     required this.employeeDepartmentListCubit,
   })  : _employeeDepartmentListCubit = employeeDepartmentListCubit,
         super(PosEmployeeDepartmentListState.initial()) {
-    _employeeListSubscription =
-        _employeeDepartmentListCubit.stream.listen((employeeListState) {
-      //onEmployeeDepartmentChannged(employeeDepartmentListState);
+    _employeeListSubscription = _employeeDepartmentListCubit.stream
+        .listen((employeeDepartmentListState) {
+      onEmployeeDepartmentChannged(employeeDepartmentListState);
     });
   }
   final EmployeeDepartmentListCubit _employeeDepartmentListCubit;
@@ -83,7 +82,8 @@ class PosEmployeeDepartmentListCubit
         employeesDepartments: employeeDepartmentModels, keyWord: null));
   }
 
-  onEmployeeChannged(EmployeeListState employeeListState) {
+  onEmployeeDepartmentChannged(
+      EmployeeDepartmentListState employeeDepartmentListState) {
     if (state.keyWord != null) {
       List<EmployeesDepartmentModel>? employeesDepartmentModels = [];
       _employeeDepartmentListCubit.state.employeesDepartments

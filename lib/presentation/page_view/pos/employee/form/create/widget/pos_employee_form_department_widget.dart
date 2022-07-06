@@ -38,6 +38,7 @@ class _PosEmployeeFormDepartmentWidgetState
     return SliverToBoxAdapter(
       child: BlocBuilder<EmployeeFormCreateCubit, EmployeeFormCreateState>(
           buildWhen: (p, c) {
+        debugPrint("POS EMPLOYEE FORM DEPARTMENT");
         if (p.initial != c.initial) {
           if (c.initial == false) {
             if (_initial == true) _initial = false;
@@ -98,11 +99,16 @@ class _PosEmployeeFormDepartmentWidgetState
                     (l) => Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: GestureDetector(
-                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                            .onRoute(
-                                const PosOnRouteState.posEmployeeDepartmentList(
-                                    r: '/posEmployeeDepartmentList'),
-                                null),
+                        onTap: () {
+                          BlocProvider.of<PosRouteCubit>(context).onRoute(
+                              const PosOnRouteState.posEmployeeDepartmentList(
+                                  r: '/posEmployeeDepartmentList'),
+                              null);
+                          FocusScopeNode currentFocus = FocusScope.of(context);
+                          if (!currentFocus.hasPrimaryFocus) {
+                            currentFocus.unfocus();
+                          }
+                        },
                         child: const Icon(
                           Icons.search_outlined,
                           size: 25.0,

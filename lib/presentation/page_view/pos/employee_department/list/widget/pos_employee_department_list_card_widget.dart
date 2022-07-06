@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/main/employee/form/create/cubit/employee_form_create_cubit.dart';
-import 'package:pos/presentation/main/employee_department/form/cubit/employees_department_form_create_cubit.dart';
 import 'package:pos/presentation/main/employee_department/model/employees_department_model.dart';
-import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
 class PosEmployeeDepartmentListCardWidget extends StatefulWidget {
   final EmployeesDepartmentModel employeeDepartment;
@@ -28,6 +26,20 @@ class _PosEmployeeDepartmentListCardWidgetState
 
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<EmployeeFormCreateCubit>(context)
+        .state
+        .createEmployee
+        .department
+        .value
+        .fold((l) => null, (r) {
+      if (r?.id == widget.employeeDepartment.id) {
+        //if (_itsMe == false) {
+        _itsMe = true;
+        //}
+      } else {
+        _itsMe = false;
+      }
+    });
     return BlocListener<EmployeeFormCreateCubit, EmployeeFormCreateState>(
       listener: (context, state) async {
         state.createEmployee.department.value.fold((l) {
@@ -68,6 +80,7 @@ class _PosEmployeeDepartmentListCardWidgetState
                 child: ListTile(
                   trailing: GestureDetector(
                     onTap: () {
+                      debugPrint("POS EMPLOYEE DEPARTMENT LIST CARD $_itsMe");
                       if (_itsMe == false) {
                         BlocProvider.of<EmployeeFormCreateCubit>(context)
                             .onCreateEmployeeDepartmentChanged(

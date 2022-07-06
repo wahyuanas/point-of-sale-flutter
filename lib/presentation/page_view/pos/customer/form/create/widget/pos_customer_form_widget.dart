@@ -134,6 +134,10 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
                   ),
                   onPressed: () async {
                     context.read<CustomerFormCreateCubit>().onCreate();
+                    FocusScopeNode currentFocus = FocusScope.of(context);
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
                   },
                   child: const Text(
                     "S i m p a n",

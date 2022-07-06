@@ -136,6 +136,10 @@ class _PosEmployeeDepartmentFormWidgetState
                     context
                         .read<EmployeeDepartmentFormCreateCubit>()
                         .onCreate();
+                    FocusScopeNode currentFocus = FocusScope.of(context);
+                    if (!currentFocus.hasPrimaryFocus) {
+                      currentFocus.unfocus();
+                    }
                   },
                   child: const Text(
                     "S i m p a n",

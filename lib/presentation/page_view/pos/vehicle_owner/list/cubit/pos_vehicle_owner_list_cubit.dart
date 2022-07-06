@@ -33,14 +33,17 @@ class PosVehicleOwnerListCubit extends Cubit<PosVehicleOwnerListState> {
 
   onSearchKeyChanged(String v) {
     if (v.isNotEmpty) {
-      List<VehicleOwnerModel>? vehicleOwnerModels;
+      List<VehicleOwnerModel>? vehicleOwnerModels = [];
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name.toLowerCase().contains(v.toLowerCase())) {
-          vehicleOwnerModels ?? [];
           vehicleOwnerModels!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });
+
+      if (vehicleOwnerModels.isEmpty) {
+        vehicleOwnerModels = null;
+      }
 
       emit(state.copyWith(vehicleOwners: vehicleOwnerModels, keyWord: v));
     } else {
@@ -70,16 +73,18 @@ class PosVehicleOwnerListCubit extends Cubit<PosVehicleOwnerListState> {
 
       emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
     } else {
-      List<VehicleOwnerModel>? vehicleOwnerModels;
+      List<VehicleOwnerModel>? vehicleOwnerModels = [];
       _vehicleOwnerListCubit.state.vehicleOwners?.forEach((vehicleOwner) {
         if (vehicleOwner.name
             .toLowerCase()
             .contains(state.keyWord!.toLowerCase())) {
-          vehicleOwnerModels ?? [];
           vehicleOwnerModels!
               .add(VehicleOwnerModel.createVehicleOwnerModel(vehicleOwner));
         }
       });
+      if (vehicleOwnerModels.isEmpty) {
+        vehicleOwnerModels = null;
+      }
 
       emit(state.copyWith(vehicleOwners: vehicleOwnerModels));
     }

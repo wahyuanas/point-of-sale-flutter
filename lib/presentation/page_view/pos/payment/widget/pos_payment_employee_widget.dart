@@ -19,9 +19,8 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
   @override
   void initState() {
     _initial = true;
-    // context.read<PosPaymentCubit>().state.createOrder.employees.value.fold(
-    //     (l) => null,
-    //     (r) => context.read<PosPaymentCubit>().onEmployeeChanged(null));
+    context.read<PosPaymentCubit>().state.createOrder.employees.value.fold(
+        (l) => null, (r) => context.read<PosPaymentCubit>().onEmployeeReset());
 
     super.initState();
   }
@@ -54,18 +53,24 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(
-            height: 30.0,
+          SizedBox(
+            height: 50.0,
             child: ListTile(
               trailing: Padding(
-                padding: EdgeInsets.only(right: 20.0),
-                child: Icon(
-                  Icons.search_outlined,
-                  size: 25.0,
-                  color: Colors.blue,
+                padding: const EdgeInsets.only(right: 20.0),
+                child: GestureDetector(
+                  onTap: () => BlocProvider.of<PosRouteCubit>(context).onRoute(
+                      const PosOnRouteState.posEmployeeList(
+                          r: '/posEmployeeList'),
+                      null),
+                  child: const Icon(
+                    Icons.search_outlined,
+                    size: 25.0,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
-              title: Padding(
+              title: const Padding(
                 padding: EdgeInsets.only(bottom: 6.0),
                 child: Text(
                   'Mekanik',
@@ -76,42 +81,59 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
-              //height: 50,
-              //margin: const EdgeInsets.all(10.0),
-              decoration: const BoxDecoration(
-                  //color: Colors.blue,
-                  border: Border(
-                bottom: BorderSide(
-                  color: Colors.blue,
-                  width: 0.5,
+            child: state.createOrder.employees.value.fold(
+              (l) =>
+                  // ListTile(
+                  //   trailing: GestureDetector(
+                  //     onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                  //         .onRoute(
+                  //             const PosOnRouteState.posEmployeeList(
+                  //                 r: '/posEmployeeList'),
+                  //             null),
+                  //     child: const Icon(
+                  //       Icons.search_outlined,
+                  //       size: 25.0,
+                  //       color: Colors.blue,
+                  //     ),
+                  //   ),
+                  //   title: const Text(
+                  //     'pilih mekanik...',
+                  //     style: TextStyle(fontSize: 15, color: Colors.black38),
+                  //   ),
+                  // ),
+                  Container(
+                //height: 50,
+                //margin: const EdgeInsets.all(10.0),
+                decoration: const BoxDecoration(
+                    //color: Colors.blue,
+                    border: Border(
+                  bottom: BorderSide(
+                    color: Colors.blue,
+                    width: 0.5,
+                  ),
+                )),
+                child: const ListTile(
+                  title: Text(
+                    'Pilih Mekanik',
+                    style: TextStyle(fontSize: 15, color: Colors.black38),
+                  ),
                 ),
-              )),
-              child: state.createOrder.employees.value.fold(
-                (l) =>
-                    // ListTile(
-                    //   trailing: GestureDetector(
-                    //     onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                    //         .onRoute(
-                    //             const PosOnRouteState.posEmployeeList(
-                    //                 r: '/posEmployeeList'),
-                    //             null),
-                    //     child: const Icon(
-                    //       Icons.search_outlined,
-                    //       size: 25.0,
-                    //       color: Colors.blue,
-                    //     ),
-                    //   ),
-                    //   title: const Text(
-                    //     'pilih mekanik...',
-                    //     style: TextStyle(fontSize: 15, color: Colors.black38),
-                    //   ),
-                    // ),
-                    null,
-                (r) => Column(
-                  children: r!.map(
-                    (e) {
-                      return ListTile(
+              ),
+              (r) => Column(
+                children: r!.map(
+                  (e) {
+                    return Container(
+                      //height: 50,
+                      //margin: const EdgeInsets.all(10.0),
+                      decoration: const BoxDecoration(
+                          //color: Colors.blue,
+                          border: Border(
+                        bottom: BorderSide(
+                          color: Colors.blue,
+                          width: 0.5,
+                        ),
+                      )),
+                      child: ListTile(
                         trailing: GestureDetector(
                           onTap: () => BlocProvider.of<PosPaymentCubit>(context)
                               .onEmployeeChanged1(e),
@@ -124,12 +146,12 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
                         title: Text(
                           e.name,
                           style: const TextStyle(
-                              fontSize: 15, color: Colors.black38),
+                              fontSize: 15, color: Colors.black),
                         ),
-                      );
-                    },
-                  ).toList(),
-                ),
+                      ),
+                    );
+                  },
+                ).toList(),
               ),
             ),
           ),

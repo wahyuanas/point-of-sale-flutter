@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/domain/employee/entity/employees.dart';
 import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:collection/collection.dart';
@@ -22,8 +21,21 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
   @override
   void initState() {
     _itsMe = false;
-    context
-        .read<PosPaymentCubit>()
+    // context
+    //     .read<PosPaymentCubit>()
+    //     .state
+    //     .createOrder
+    //     .employees
+    //     .value
+    //     .fold((l) => null, (r) {
+    //   em = r?.firstWhereOrNull((e) => e.id == widget.employee.id);
+    // });
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    BlocProvider.of<PosPaymentCubit>(context)
         .state
         .createOrder
         .employees
@@ -31,11 +43,6 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
         .fold((l) => null, (r) {
       em = r?.firstWhereOrNull((e) => e.id == widget.employee.id);
     });
-    super.initState();
-  }
-
-  @override
-  Widget build(BuildContext context) {
     if (em?.id != widget.employee.id) {
       em = null;
     }
@@ -43,6 +50,7 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
       listener: (context, state) async {
         state.createOrder.employees.value.fold((l) {
           em = null;
+          setState(() {});
         }, (r) {
           EmployeesModel? em1 =
               r?.firstWhereOrNull((e) => e.id == widget.employee.id);
@@ -88,7 +96,7 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
                     child: Icon(
                       Icons.done_outlined,
                       size: 35.0,
-                      color: _itsMe == true ? Colors.blue : Colors.black38,
+                      color: em != null ? Colors.blue : Colors.black38,
                     ),
                   ),
                   title: Row(

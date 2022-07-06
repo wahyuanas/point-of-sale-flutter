@@ -80,7 +80,7 @@ class _PosEmployeeListSearchWidgetState
 
             filled: true,
             fillColor: Colors.white,
-            hintText: "Cari Konsumen...",
+            hintText: "Cari Karyawan...",
             //hintTextDirection: TextDirection.ltr,
             alignLabelWithHint: true,
             hintStyle: const TextStyle(fontSize: 13.0),

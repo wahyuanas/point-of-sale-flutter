@@ -104,7 +104,7 @@ class _PosEmployeeDepartmentListWidgetState
           ),
 
           title: const Text(
-            "List Karyawan",
+            "List Departemen",
             style: TextStyle(color: Colors.blue),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -147,7 +147,7 @@ class _PosEmployeeDepartmentListWidgetState
                 return SliverFillRemaining(
                   child: Center(
                     child: Text(
-                      "Tidak ada data karyawan",
+                      "Tidak ada data Departemen",
                       style:
                           GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
                     ),

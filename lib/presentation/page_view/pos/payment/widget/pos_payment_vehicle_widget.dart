@@ -133,7 +133,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                           Wrap(
                             children: [
                               Text(
-                                '${r.vehicleTypeModel?.manufacture.name}',
+                                '${r.vehicleTypeModel?.manufacture?.name}',
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 15.0),
                               ),
