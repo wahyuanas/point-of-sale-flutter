@@ -36,4 +36,8 @@ class PosOnRouteState<T> with _$PosOnRouteState<T> {
       _PosEmployeeList<T>;
   const factory PosOnRouteState.posEmployeeForm({required T r}) =
       _PosEmployeeForm<T>;
+  const factory PosOnRouteState.posEmployeeDepartmentList({required T r}) =
+      _PosEmployeeDepartmentList<T>;
+  const factory PosOnRouteState.posEmployeeDepartmentForm({required T r}) =
+      _PosEmployeeDepartmentForm<T>;
 }

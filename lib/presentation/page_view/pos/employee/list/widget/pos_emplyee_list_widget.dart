@@ -7,18 +7,18 @@ import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_stat
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../cubit/pos_customer_list_cubit.dart';
-import '../delegate/pos_customer_list_search_delegate.dart';
-import 'pos_customer_list_card_widget.dart';
+import '../cubit/pos_employee_list_cubit.dart';
+import '../delegate/pos_employee_list_search_delegate.dart';
+import 'pos_employee_list_card_widget.dart';
 
-class PosCustomerListWidget extends StatefulWidget {
-  const PosCustomerListWidget({Key? key}) : super(key: key);
+class PosEmployeeListWidget extends StatefulWidget {
+  const PosEmployeeListWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerListWidget> createState() => _PosCustomerListWidgetState();
+  State<PosEmployeeListWidget> createState() => _PosEmployeeListWidgetState();
 }
 
-class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
+class _PosEmployeeListWidgetState extends State<PosEmployeeListWidget> {
   final RefreshController _refreshController =
       RefreshController(initialRefresh: false);
   final GlobalKey _one = GlobalKey();
@@ -26,9 +26,9 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      //if (context.read<IntroCubit>().state.posCustomerList == false) {
+      //if (context.read<IntroCubit>().state.posEmployeeList == false) {
       ShowCaseWidget.of(context).startShowCase([_one]);
-      //context.read<IntroCubit>().onPosCustomerListChanged(true);
+      //context.read<IntroCubit>().onPosEmployeeListChanged(true);
       //}
     });
     super.initState();
@@ -60,7 +60,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
           // ),
           leading: Showcase(
             key: _one,
-            description: "Tekan Tombol Tambah Untuk Menambah Data Konsumen",
+            description: "Tekan Tombol Tambah Untuk Menambah Data Karyawan",
             //shapeBorder: const CircleBorder(),
             // container: Column(
             //   crossAxisAlignment: CrossAxisAlignment.start,
@@ -86,8 +86,8 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
             child: GestureDetector(
                 onTap: () {
                   context.read<PosRouteCubit>().onRoute(
-                      const PosOnRouteState.posCustomerForm(
-                          r: '/posCustomerForm'),
+                      const PosOnRouteState.posEmployeeForm(
+                          r: '/posEmployeeForm'),
                       null);
                 },
                 child: const Padding(
@@ -102,7 +102,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
           ),
 
           title: const Text(
-            "List Konsumen",
+            "List Karyawan",
             style: TextStyle(color: Colors.blue),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -138,14 +138,14 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
             SliverPersistentHeader(
                 //pinned: true,
                 floating: true,
-                delegate: PosCustomerListSearchDelegate()),
-            BlocBuilder<PosCustomerListCubit, PosCustomerListState>(
+                delegate: PosEmployeeListSearchDelegate()),
+            BlocBuilder<PosEmployeeListCubit, PosEmployeeListState>(
                 builder: (context, state) {
-              if (state.customers == null) {
+              if (state.employees == null) {
                 return SliverFillRemaining(
                   child: Center(
                     child: Text(
-                      "Tidak ada data konsumen",
+                      "Tidak ada data karyawan",
                       style:
                           GoogleFonts.raleway(fontSize: 20, color: Colors.blue),
                     ),
@@ -157,10 +157,10 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
                   sliver: SliverList(
                       delegate: SliverChildBuilderDelegate(
                     (BuildContext context, int index) {
-                      return PosCustomerListCardWidget(
-                          customer: state.customers![index]);
+                      return PosEmployeeListCardWidget(
+                          employee: state.employees![index]);
                     },
-                    childCount: state.customers?.length, // 1000 list customers
+                    childCount: state.employees?.length, // 1000 list customers
                   )),
                 );
               }

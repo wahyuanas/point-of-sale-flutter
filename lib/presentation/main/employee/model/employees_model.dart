@@ -17,7 +17,7 @@ class EmployeesModel with _$EmployeesModel {
     required String phoneNumber,
     required String email,
     required int accountId,
-    required EmployeesDepartmentModel department,
+    required EmployeesDepartmentModel? department,
   }) = _EmployeesModel;
 
   factory EmployeesModel.createEmployeesModel(
@@ -27,15 +27,17 @@ class EmployeesModel with _$EmployeesModel {
       uuid: employee.uuid,
       code: employee.code,
       name: employee.name,
-      accountId: 1,
+      accountId: employee.accountId,
       phoneNumber: employee.phoneNumber,
       email: employee.email,
-      department: EmployeesDepartmentModel(
-          id: employeesDepartment!.id,
-          uuid: employeesDepartment.uuid,
-          name: employeesDepartment.name,
-          code: employeesDepartment.code,
-          accountId: employeesDepartment.accountId),
+      department: employeesDepartment != null
+          ? EmployeesDepartmentModel(
+              id: employeesDepartment.id,
+              uuid: employeesDepartment.uuid,
+              name: employeesDepartment.name,
+              code: employeesDepartment.code,
+              accountId: employeesDepartment.accountId)
+          : null,
     );
   }
 

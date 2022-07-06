@@ -10,6 +10,8 @@ import 'package:pos/presentation/page_view/pos/catalog/item/screen/pos_catalog_i
 import 'package:pos/presentation/page_view/pos/catalog/list/screen/pos_catalog_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/customer/form/create/screen/pos_customer_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/customer/list/screen/pos_customer_list_screen.dart';
+import 'package:pos/presentation/page_view/pos/employee/form/create/screen/pos_employee_form_screen.dart';
+import 'package:pos/presentation/page_view/pos/employee/list/screen/pos_employee_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';
@@ -79,6 +81,18 @@ class RouteGenerator {
       case '/posVehicleManufactureForm':
         return MaterialPageRoute(
             builder: (_) => const PosVehicleManufactureFormScreen());
+
+      case '/posEmployeeList':
+        return MaterialPageRoute(builder: (_) => const PosEmployeeListScreen());
+      case '/posEmployeeForm':
+        return MaterialPageRoute(builder: (_) => const PosEmployeeFormScreen());
+
+      case '/posEmployeeDepartmentList':
+        return MaterialPageRoute(
+            builder: (_) => const PosEmployeeDepartmentListScreen());
+      case '/posEmployeeDepartmentForm':
+        return MaterialPageRoute(
+            builder: (_) => const PosEmployeeDepartmentFormScreen());
 
       default:
         return _errorRoute();

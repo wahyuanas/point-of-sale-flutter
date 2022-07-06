@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
+import 'package:pos/presentation/main/employee/form/create/cubit/employee_form_create_cubit.dart';
 
-class PosCustomerFormEmailWidget extends StatefulWidget {
-  const PosCustomerFormEmailWidget({Key? key}) : super(key: key);
+class PosEmployeeFormPhoneNumberWidget extends StatefulWidget {
+  const PosEmployeeFormPhoneNumberWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerFormEmailWidget> createState() =>
-      _PosCustomerFormEmailWidgetState();
+  State<PosEmployeeFormPhoneNumberWidget> createState() =>
+      _PosEmployeeFormPhoneNumberWidgetState();
 }
 
-class _PosCustomerFormEmailWidgetState
-    extends State<PosCustomerFormEmailWidget> {
+class _PosEmployeeFormPhoneNumberWidgetState
+    extends State<PosEmployeeFormPhoneNumberWidget> {
   late bool _initial;
   final TextEditingController _controller = TextEditingController();
 
@@ -31,7 +31,7 @@ class _PosCustomerFormEmailWidgetState
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: BlocBuilder<CustomerFormCreateCubit, CustomerFormCreateState>(
+      child: BlocBuilder<EmployeeFormCreateCubit, EmployeeFormCreateState>(
           buildWhen: (p, c) {
         if (p.initial != c.initial) {
           if (c.initial == false) {
@@ -50,7 +50,8 @@ class _PosCustomerFormEmailWidgetState
               },
               orElse: () => null);
           return false;
-        } else if (p.createCustomer.email != c.createCustomer.email) {
+        } else if (p.createEmployee.phoneNumber !=
+            c.createEmployee.phoneNumber) {
           if (_initial == true) _initial = false;
           return true;
         }
@@ -62,13 +63,12 @@ class _PosCustomerFormEmailWidgetState
           child: TextFormField(
               controller: _controller,
               autofocus: false,
-              keyboardType: TextInputType.emailAddress,
+              keyboardType: TextInputType.phone,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createCustomer.email.value.fold(
+                    ? state.createEmployee.phoneNumber.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
-                            invalidEmail: (v) => "email tidak valid",
                             orElse: () => null),
                         (r) => null)
                     : null,
@@ -77,7 +77,7 @@ class _PosCustomerFormEmailWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Email",
+                labelText: "Nomor Handphone",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -89,8 +89,8 @@ class _PosCustomerFormEmailWidgetState
                 //border: InputBorder.none,
               ),
               onChanged: (v) =>
-                  BlocProvider.of<CustomerFormCreateCubit>(context)
-                      .onCreateCustomerEmailChanged(v)),
+                  BlocProvider.of<EmployeeFormCreateCubit>(context)
+                      .onCreateEmployeePhoneNumberChanged(v)),
         );
       }),
     );

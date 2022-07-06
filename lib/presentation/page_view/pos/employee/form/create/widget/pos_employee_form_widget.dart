@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
-import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
+import 'package:pos/presentation/main/employee/form/create/cubit/employee_form_create_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
 
-import 'pos_customer_form_export_widget.dart';
+import 'pos_employee_form_export_widget.dart';
 
-class PosCustomerFormWidget extends StatefulWidget {
-  const PosCustomerFormWidget({Key? key}) : super(key: key);
+class PosEmployeeFormWidget extends StatefulWidget {
+  const PosEmployeeFormWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerFormWidget> createState() => _PosCustomerFormWidgetState();
+  State<PosEmployeeFormWidget> createState() => _PosEmployeeFormWidgetState();
 }
 
-class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
+class _PosEmployeeFormWidgetState extends State<PosEmployeeFormWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocListener<CustomerFormCreateCubit, CustomerFormCreateState>(
+    return BlocListener<EmployeeFormCreateCubit, EmployeeFormCreateState>(
       listener: (context, state) {
         state.status.when(
             initial: (() => null),
@@ -32,7 +32,7 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
               await Future.delayed(const Duration(milliseconds: 1000));
               if (!mounted) return;
               BlocProvider.of<ModalCubit>(context).onModalPop();
-              BlocProvider.of<CustomerFormCreateCubit>(context).onInitial();
+              BlocProvider.of<EmployeeFormCreateCubit>(context).onInitial();
             },
             failure: (f) {
               BlocProvider.of<ModalCubit>(context)
@@ -62,10 +62,10 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
           //       color: Colors.blue,
           //     ),
           //   ),
-          //   onTap: () => const PosCustomerFormWidget(),
+          //   onTap: () => const PosEmployeeFormWidget(),
           // ),
           title: const Text(
-            "Form Tambah Konsumen",
+            "Form Tambah Karyawan",
             style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
@@ -94,12 +94,11 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
           // ],
         ),
         body: CustomScrollView(slivers: [
-          const PosCustomerFormCodeWidget(),
-          const PosCustomerFormNameWidget(),
-          const PosCustomerFormPhoneNumberWidget(),
-          const PosCustomerFormEmailWidget(),
-          const PosCustomerFormTypeWidget(),
-          const PosCustomerFormAddressWidget(),
+          const PosEmployeeFormCodeWidget(),
+          const PosEmployeeFormNameWidget(),
+          const PosEmployeeFormPhoneNumberWidget(),
+          const PosEmployeeFormEmailWidget(),
+          const PosEmployeeFormDepartmentWidget(),
           const SliverToBoxAdapter(
             child: SizedBox(
               height: 20.0,
@@ -133,7 +132,7 @@ class _PosCustomerFormWidgetState extends State<PosCustomerFormWidget> {
                     //  TextStyle(fontSize: 30, fontWeight: FontWeight.bold)
                   ),
                   onPressed: () async {
-                    context.read<CustomerFormCreateCubit>().onCreate();
+                    context.read<EmployeeFormCreateCubit>().onCreate();
                   },
                   child: const Text(
                     "S i m p a n",

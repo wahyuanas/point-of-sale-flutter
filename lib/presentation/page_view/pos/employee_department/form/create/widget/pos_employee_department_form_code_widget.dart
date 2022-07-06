@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
+import 'package:pos/presentation/main/employee_department/form/cubit/employees_department_form_create_cubit.dart';
 
-class PosCustomerFormNameWidget extends StatefulWidget {
-  const PosCustomerFormNameWidget({Key? key}) : super(key: key);
+class PosEmployeeDepartmentFormCodeWidget extends StatefulWidget {
+  const PosEmployeeDepartmentFormCodeWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerFormNameWidget> createState() =>
-      _PosCustomerFormNameWidgetState();
+  State<PosEmployeeDepartmentFormCodeWidget> createState() =>
+      _PosEmployeeDepartmentFormCodeWidgetState();
 }
 
-class _PosCustomerFormNameWidgetState extends State<PosCustomerFormNameWidget> {
+class _PosEmployeeDepartmentFormCodeWidgetState
+    extends State<PosEmployeeDepartmentFormCodeWidget> {
   late bool _initial;
   final TextEditingController _controller = TextEditingController();
 
@@ -30,8 +31,8 @@ class _PosCustomerFormNameWidgetState extends State<PosCustomerFormNameWidget> {
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: BlocBuilder<CustomerFormCreateCubit, CustomerFormCreateState>(
-          buildWhen: (p, c) {
+      child: BlocBuilder<EmployeeDepartmentFormCreateCubit,
+          EmployeeDepartmentFormCreateState>(buildWhen: (p, c) {
         if (p.initial != c.initial) {
           if (c.initial == false) {
             if (_initial == true) _initial = false;
@@ -49,7 +50,8 @@ class _PosCustomerFormNameWidgetState extends State<PosCustomerFormNameWidget> {
               },
               orElse: () => null);
           return false;
-        } else if (p.createCustomer.name != c.createCustomer.name) {
+        } else if (p.createEmployeeDepartment.code !=
+            c.createEmployeeDepartment.code) {
           if (_initial == true) _initial = false;
           return true;
         }
@@ -64,18 +66,18 @@ class _PosCustomerFormNameWidgetState extends State<PosCustomerFormNameWidget> {
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createCustomer.name.value.fold(
+                    ? state.createEmployeeDepartment.code.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.sms_outlined,
+                  Icons.code,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nama",
+                labelText: "Kode",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -87,8 +89,8 @@ class _PosCustomerFormNameWidgetState extends State<PosCustomerFormNameWidget> {
                 //border: InputBorder.none,
               ),
               onChanged: (v) =>
-                  BlocProvider.of<CustomerFormCreateCubit>(context)
-                      .onCreateCustomerNameChanged(v)),
+                  BlocProvider.of<EmployeeDepartmentFormCreateCubit>(context)
+                      .onCreateEmployeeDepartmentCodeChanged(v)),
         );
       }),
     );

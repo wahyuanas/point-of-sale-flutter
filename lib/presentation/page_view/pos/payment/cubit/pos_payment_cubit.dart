@@ -87,11 +87,47 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     ));
   }
 
-  onEmployeeChanged(List<EmployeesModel>? vehicle) {
-    emit(state.copyWith(
-      createOrder:
-          state.createOrder.copyWith(employees: CreateOrderEmployees(vehicle)),
-    ));
+  onEmployeeChanged(EmployeesModel employeeModel) {
+    List<EmployeesModel> employeeModels = [];
+
+    state.createOrder.employees.value.fold((l) {
+      employeeModels.add(employeeModel);
+      emit(state.copyWith(
+        createOrder: state.createOrder
+            .copyWith(employees: CreateOrderEmployees(employeeModels)),
+      ));
+    }, (r) {
+      if (r != null) {
+        employeeModels = List.from(r.toList());
+        employeeModels.add(employeeModel);
+      } else {
+        employeeModels.add(employeeModel);
+      }
+      emit(state.copyWith(
+        createOrder: state.createOrder
+            .copyWith(employees: CreateOrderEmployees(employeeModels)),
+      ));
+    });
+  }
+
+  onEmployeeChanged1(EmployeesModel employeeModel) {
+    state.createOrder.employees.value.fold((l) {}, (r) {
+      List<EmployeesModel>? employeeModels = [];
+      if (r != null) {
+        employeeModels = List.from(r.toList());
+        int index = employeeModels.indexWhere((e) => e.id == employeeModel.id);
+        if (index != -1) {
+          employeeModels.removeAt(index);
+        }
+      }
+      if (employeeModels.isEmpty) {
+        employeeModels = null;
+      }
+      emit(state.copyWith(
+        createOrder: state.createOrder
+            .copyWith(employees: CreateOrderEmployees(employeeModels)),
+      ));
+    });
   }
 
   onReset() {

@@ -23,6 +23,13 @@ class EmployeeDepartmentFormCreateCubit
 
   final EmployeeDepartmentListCubit _employeeDepartmentListCubit;
 
+  void onCreateEmployeeDepartmentUuidChanged(String v) {
+    emit(state.copyWith(
+      createEmployeeDepartment: state.createEmployeeDepartment
+          .copyWith(uuid: CreateEmployeeDepartmentUuid(v)),
+    ));
+  }
+
   void onCreateEmployeeDepartmentCodeChanged(String v) {
     emit(state.copyWith(
       createEmployeeDepartment: state.createEmployeeDepartment

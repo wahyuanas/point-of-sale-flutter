@@ -71,7 +71,7 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
             employee, employeeDepartment);
       }).toList();
 
-      emit(state.copyWith(employees: employeeModels));
+      emit(state.copyWith(employees: employeeModels, keyWord: null));
     }
   }
 

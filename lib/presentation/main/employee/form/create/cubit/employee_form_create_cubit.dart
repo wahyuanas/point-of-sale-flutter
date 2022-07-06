@@ -23,6 +23,13 @@ class EmployeeFormCreateCubit extends Cubit<EmployeeFormCreateState> {
 
   final EmployeeListCubit _employeeListCubit;
 
+  void onCreateEmployeeUuidChanged(String v) {
+    emit(state.copyWith(
+      createEmployee:
+          state.createEmployee.copyWith(uuid: CreateEmployeeUuid(v)),
+    ));
+  }
+
   void onCreateEmployeeCodeChanged(String v) {
     emit(state.copyWith(
       createEmployee:
@@ -34,6 +41,20 @@ class EmployeeFormCreateCubit extends Cubit<EmployeeFormCreateState> {
     emit(state.copyWith(
       createEmployee:
           state.createEmployee.copyWith(name: CreateEmployeeName(v)),
+    ));
+  }
+
+  void onCreateEmployeePhoneNumberChanged(String v) {
+    emit(state.copyWith(
+      createEmployee: state.createEmployee
+          .copyWith(phoneNumber: CreateEmployeePhoneNumber(v)),
+    ));
+  }
+
+  void onCreateEmployeeEmailChanged(String v) {
+    emit(state.copyWith(
+      createEmployee:
+          state.createEmployee.copyWith(email: CreateEmployeeEmail(v)),
     ));
   }
 

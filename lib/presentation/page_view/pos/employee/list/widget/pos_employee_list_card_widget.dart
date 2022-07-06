@@ -1,47 +1,59 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/customer/model/customer_model.dart';
+import 'package:pos/domain/employee/entity/employees.dart';
+import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
+import 'package:collection/collection.dart';
 
-class PosCustomerListCardWidget extends StatefulWidget {
-  final CustomerModel customer;
-  const PosCustomerListCardWidget({Key? key, required this.customer})
+class PosEmployeeListCardWidget extends StatefulWidget {
+  final EmployeesModel employee;
+  const PosEmployeeListCardWidget({Key? key, required this.employee})
       : super(key: key);
 
   @override
-  State<PosCustomerListCardWidget> createState() =>
-      _PosCustomerListCardWidgetState();
+  State<PosEmployeeListCardWidget> createState() =>
+      _PosEmployeeListCardWidgetState();
 }
 
-class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
+class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
   bool? _itsMe;
+  EmployeesModel? em;
 
   @override
   void initState() {
     _itsMe = false;
+    context
+        .read<PosPaymentCubit>()
+        .state
+        .createOrder
+        .employees
+        .value
+        .fold((l) => null, (r) {
+      em = r?.firstWhereOrNull((e) => e.id == widget.employee.id);
+    });
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    if (em?.id != widget.employee.id) {
+      em = null;
+    }
     return BlocListener<PosPaymentCubit, PosPaymentState>(
       listener: (context, state) async {
-        state.createOrder.customer.value.fold((l) {
-          if (_itsMe == true) {
-            _itsMe = false;
-            setState(() {});
-          }
+        state.createOrder.employees.value.fold((l) {
+          em = null;
         }, (r) {
-          if (r?.id == widget.customer.id) {
-            if (_itsMe == false) {
-              _itsMe = true;
-            } else if (_itsMe == true) {
-              _itsMe = false;
+          EmployeesModel? em1 =
+              r?.firstWhereOrNull((e) => e.id == widget.employee.id);
+          if (em1 != null) {
+            if (em == null) {
+              em = em1;
+              setState(() {});
             }
-            setState(() {});
           } else {
-            if (_itsMe == true) {
-              _itsMe = false;
+            if (em != null) {
+              em = null;
               setState(() {});
             }
           }
@@ -64,13 +76,13 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                 child: ListTile(
                   trailing: GestureDetector(
                     onTap: () {
-                      if (_itsMe == false) {
+                      if (em == null) {
                         BlocProvider.of<PosPaymentCubit>(context)
-                            .onCustomerChanged(widget.customer);
+                            .onEmployeeChanged(widget.employee);
                         //Navigator.of(context).pop();
                       } else {
                         BlocProvider.of<PosPaymentCubit>(context)
-                            .onCustomerChanged(null);
+                            .onEmployeeChanged1(widget.employee);
                       }
                     },
                     child: Icon(
@@ -95,7 +107,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                widget.customer.code,
+                                widget.employee.code,
                                 style: const TextStyle(
                                     color: Colors.blue, fontSize: 15.0),
                               ),
@@ -103,7 +115,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                                 height: 5.0,
                               ),
                               Text(
-                                widget.customer.name,
+                                widget.employee.name,
                                 style: const TextStyle(
                                     color: Colors.black, fontSize: 14.0),
                               ),
@@ -119,7 +131,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                                               decoration:
                                                   TextDecoration.underline,
                                               height: 1.2)),
-                                      Text(widget.customer.phoneNumber,
+                                      Text(widget.employee.phoneNumber,
                                           style: const TextStyle(
                                               color: Colors.blue, height: 1.2)),
                                     ],
@@ -141,7 +153,7 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                                               decoration:
                                                   TextDecoration.underline,
                                               height: 1.2)),
-                                      Text(widget.customer.email,
+                                      Text(widget.employee.email,
                                           style: const TextStyle(
                                               color: Colors.blue, height: 1.2)),
                                     ],

@@ -114,7 +114,7 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
                       return ListTile(
                         trailing: GestureDetector(
                           onTap: () => BlocProvider.of<PosPaymentCubit>(context)
-                              .onEmployeeChanged(null),
+                              .onEmployeeChanged1(e),
                           child: const Icon(
                             Icons.delete_outline,
                             size: 25.0,

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../widget/pos_customer_list_search_widget.dart';
+import '../widget/pos_employee_list_search_widget.dart';
 
-class PosCustomerListSearchDelegate extends SliverPersistentHeaderDelegate {
+class PosEmployeeListSearchDelegate extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
       height: 65.0,
       color: const Color.fromARGB(255, 253, 254, 254),
-      child: const PosCustomerListSearchWidget(),
+      child: const PosEmployeeListSearchWidget(),
     );
   }
 

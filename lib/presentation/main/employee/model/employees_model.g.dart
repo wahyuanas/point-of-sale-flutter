@@ -15,8 +15,10 @@ _$_EmployeesModel _$$_EmployeesModelFromJson(Map<String, dynamic> json) =>
       phoneNumber: json['phoneNumber'] as String,
       email: json['email'] as String,
       accountId: json['accountId'] as int,
-      department: EmployeesDepartmentModel.fromJson(
-          json['department'] as Map<String, dynamic>),
+      department: json['department'] == null
+          ? null
+          : EmployeesDepartmentModel.fromJson(
+              json['department'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_EmployeesModelToJson(_$_EmployeesModel instance) =>

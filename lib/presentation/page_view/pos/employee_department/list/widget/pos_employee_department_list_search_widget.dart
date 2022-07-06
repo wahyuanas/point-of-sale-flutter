@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/page_view/pos/customer/list/cubit/pos_customer_list_cubit.dart';
 import 'package:pos/presentation/utils/colors.dart';
 
-class PosCustomerListSearchWidget extends StatefulWidget {
-  const PosCustomerListSearchWidget({Key? key}) : super(key: key);
+import '../cubit/pos_employee_department_list_cubit.dart';
+
+class PosEmployeeDepartmentListSearchWidget extends StatefulWidget {
+  const PosEmployeeDepartmentListSearchWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerListSearchWidget> createState() =>
-      _PosCustomerListSearchWidgetState();
+  State<PosEmployeeDepartmentListSearchWidget> createState() =>
+      _PosEmployeeDepartmentListSearchWidgetState();
 }
 
-class _PosCustomerListSearchWidgetState
-    extends State<PosCustomerListSearchWidget> {
+class _PosEmployeeDepartmentListSearchWidgetState
+    extends State<PosEmployeeDepartmentListSearchWidget> {
   late TextEditingController _controller;
   bool _textFilled = false;
   late FocusNode _focusNode;
@@ -41,7 +42,9 @@ class _PosCustomerListSearchWidgetState
         child: TextFormField(
           focusNode: _focusNode,
           onChanged: ((value) {
-            context.read<PosCustomerListCubit>().onSearchKeyChanged(value);
+            context
+                .read<PosEmployeeDepartmentListCubit>()
+                .onSearchKeyChanged(value);
             if (value.isNotEmpty) {
               if (_textFilled == false) {
                 setState(() {
@@ -66,7 +69,7 @@ class _PosCustomerListSearchWidgetState
                     onTap: () {
                       _controller.text = "";
                       FocusScope.of(context).requestFocus(_focusNode);
-                      context.read<PosCustomerListCubit>().onReset();
+                      context.read<PosEmployeeDepartmentListCubit>().onReset();
                       setState(() {
                         _textFilled = false;
                       });

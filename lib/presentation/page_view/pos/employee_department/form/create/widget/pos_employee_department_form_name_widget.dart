@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:pos/presentation/main/customer/form/create/cubit/customer_form_create_cubit.dart';
+import 'package:pos/presentation/main/employee_department/form/cubit/employees_department_form_create_cubit.dart';
 
-class PosCustomerFormAddressWidget extends StatefulWidget {
-  const PosCustomerFormAddressWidget({Key? key}) : super(key: key);
+class PosEmployeeDepartmentFormNameWidget extends StatefulWidget {
+  const PosEmployeeDepartmentFormNameWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosCustomerFormAddressWidget> createState() =>
-      _PosCustomerFormAddressWidgetState();
+  State<PosEmployeeDepartmentFormNameWidget> createState() =>
+      _PosEmployeeDepartmentFormNameWidgetState();
 }
 
-class _PosCustomerFormAddressWidgetState
-    extends State<PosCustomerFormAddressWidget> {
+class _PosEmployeeDepartmentFormNameWidgetState
+    extends State<PosEmployeeDepartmentFormNameWidget> {
   late bool _initial;
   final TextEditingController _controller = TextEditingController();
 
@@ -31,8 +31,8 @@ class _PosCustomerFormAddressWidgetState
   @override
   Widget build(BuildContext context) {
     return SliverToBoxAdapter(
-      child: BlocBuilder<CustomerFormCreateCubit, CustomerFormCreateState>(
-          buildWhen: (p, c) {
+      child: BlocBuilder<EmployeeDepartmentFormCreateCubit,
+          EmployeeDepartmentFormCreateState>(buildWhen: (p, c) {
         if (p.initial != c.initial) {
           if (c.initial == false) {
             if (_initial == true) _initial = false;
@@ -50,7 +50,8 @@ class _PosCustomerFormAddressWidgetState
               },
               orElse: () => null);
           return false;
-        } else if (p.createCustomer.address != c.createCustomer.address) {
+        } else if (p.createEmployeeDepartment.name !=
+            c.createEmployeeDepartment.name) {
           if (_initial == true) _initial = false;
           return true;
         }
@@ -65,18 +66,18 @@ class _PosCustomerFormAddressWidgetState
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createCustomer.address.value.fold(
+                    ? state.createEmployeeDepartment.name.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
                         (r) => null)
                     : null,
                 icon: const Icon(
-                  Icons.sms_outlined,
+                  Icons.code,
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Alamat",
+                labelText: "nama",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -88,8 +89,8 @@ class _PosCustomerFormAddressWidgetState
                 //border: InputBorder.none,
               ),
               onChanged: (v) =>
-                  BlocProvider.of<CustomerFormCreateCubit>(context)
-                      .onCreateCustomerAddressChanged(v)),
+                  BlocProvider.of<EmployeeDepartmentFormCreateCubit>(context)
+                      .onCreateEmployeeDepartmentNameChanged(v)),
         );
       }),
     );

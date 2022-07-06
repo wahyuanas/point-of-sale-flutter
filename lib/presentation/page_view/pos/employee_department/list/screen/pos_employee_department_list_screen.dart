@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/di/injection.dart';
-import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
-import 'package:pos/presentation/page_view/pos/customer/list/cubit/pos_customer_list_cubit.dart';
+import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:showcaseview/showcaseview.dart';
 
-import '../widget/pos_customer_list_widget.dart';
+import '../cubit/pos_employee_department_list_cubit.dart';
+import '../widget/pos_emplyee_department_list_widget.dart';
 
-class PosCustomerListScreen extends StatelessWidget {
-  const PosCustomerListScreen({Key? key}) : super(key: key);
+class PosEmployeeDepartmentListScreen extends StatelessWidget {
+  const PosEmployeeDepartmentListScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     bool onF = false;
     return BlocProvider(
-        create: ((context) =>
-            PosCustomerListCubit(customerListCubit: getIt<CustomerListCubit>())
-              ..onStarted()),
+        create: ((context) => PosEmployeeDepartmentListCubit(
+              employeeDepartmentListCubit: getIt<EmployeeDepartmentListCubit>(),
+            )..onStarted()),
         child: ShowCaseWidget(
           onFinish: () => onF = true,
           builder: Builder(
@@ -29,7 +29,7 @@ class PosCustomerListScreen extends StatelessWidget {
                     }
                     return true;
                   }),
-                  child: const PosCustomerListWidget())),
+                  child: const PosEmployeeDepartmentListWidget())),
         ));
   }
 }

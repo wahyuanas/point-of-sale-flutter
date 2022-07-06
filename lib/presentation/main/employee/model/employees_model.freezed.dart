@@ -27,7 +27,8 @@ mixin _$EmployeesModel {
   String get phoneNumber => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   int get accountId => throw _privateConstructorUsedError;
-  EmployeesDepartmentModel get department => throw _privateConstructorUsedError;
+  EmployeesDepartmentModel? get department =>
+      throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,9 +49,9 @@ abstract class $EmployeesModelCopyWith<$Res> {
       String phoneNumber,
       String email,
       int accountId,
-      EmployeesDepartmentModel department});
+      EmployeesDepartmentModel? department});
 
-  $EmployeesDepartmentModelCopyWith<$Res> get department;
+  $EmployeesDepartmentModelCopyWith<$Res>? get department;
 }
 
 /// @nodoc
@@ -105,13 +106,17 @@ class _$EmployeesModelCopyWithImpl<$Res>
       department: department == freezed
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as EmployeesDepartmentModel,
+              as EmployeesDepartmentModel?,
     ));
   }
 
   @override
-  $EmployeesDepartmentModelCopyWith<$Res> get department {
-    return $EmployeesDepartmentModelCopyWith<$Res>(_value.department, (value) {
+  $EmployeesDepartmentModelCopyWith<$Res>? get department {
+    if (_value.department == null) {
+      return null;
+    }
+
+    return $EmployeesDepartmentModelCopyWith<$Res>(_value.department!, (value) {
       return _then(_value.copyWith(department: value));
     });
   }
@@ -132,10 +137,10 @@ abstract class _$$_EmployeesModelCopyWith<$Res>
       String phoneNumber,
       String email,
       int accountId,
-      EmployeesDepartmentModel department});
+      EmployeesDepartmentModel? department});
 
   @override
-  $EmployeesDepartmentModelCopyWith<$Res> get department;
+  $EmployeesDepartmentModelCopyWith<$Res>? get department;
 }
 
 /// @nodoc
@@ -192,7 +197,7 @@ class __$$_EmployeesModelCopyWithImpl<$Res>
       department: department == freezed
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
-              as EmployeesDepartmentModel,
+              as EmployeesDepartmentModel?,
     ));
   }
 }
@@ -229,7 +234,7 @@ class _$_EmployeesModel extends _EmployeesModel {
   @override
   final int accountId;
   @override
-  final EmployeesDepartmentModel department;
+  final EmployeesDepartmentModel? department;
 
   @override
   String toString() {
@@ -286,7 +291,7 @@ abstract class _EmployeesModel extends EmployeesModel {
       required final String phoneNumber,
       required final String email,
       required final int accountId,
-      required final EmployeesDepartmentModel department}) = _$_EmployeesModel;
+      required final EmployeesDepartmentModel? department}) = _$_EmployeesModel;
   const _EmployeesModel._() : super._();
 
   factory _EmployeesModel.fromJson(Map<String, dynamic> json) =
@@ -307,7 +312,8 @@ abstract class _EmployeesModel extends EmployeesModel {
   @override
   int get accountId => throw _privateConstructorUsedError;
   @override
-  EmployeesDepartmentModel get department => throw _privateConstructorUsedError;
+  EmployeesDepartmentModel? get department =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_EmployeesModelCopyWith<_$_EmployeesModel> get copyWith =>

@@ -12,6 +12,7 @@ import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/auth/cubit/auth_cubit.dart';
 import 'package:pos/presentation/main/catalog/list/cubit/catalog_list_cubit.dart';
 import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
+import 'package:pos/presentation/main/employee/form/create/cubit/employee_form_create_cubit.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
@@ -69,7 +70,8 @@ void $initGetIt(GetIt g) {
       () => VehicleFormCreateCubit(vehicleListCubit: g()));
   g.registerLazySingleton<VehicleTypeFormCreateCubit>(
       () => VehicleTypeFormCreateCubit(vehicleTypeListCubit: g()));
-
+  g.registerLazySingleton<EmployeeFormCreateCubit>(
+      () => EmployeeFormCreateCubit(employeeListCubit: g()));
   g.registerLazySingleton<VehicleManufactureListCubit>(
       () => VehicleManufactureListCubit());
   g.registerLazySingleton<OrderCubit>(() => OrderCubit());
