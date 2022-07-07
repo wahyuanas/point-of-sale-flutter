@@ -80,7 +80,6 @@ class _PosEmployeeDepartmentListCardWidgetState
                 child: ListTile(
                   trailing: GestureDetector(
                     onTap: () {
-                      debugPrint("POS EMPLOYEE DEPARTMENT LIST CARD $_itsMe");
                       if (_itsMe == false) {
                         BlocProvider.of<EmployeeFormCreateCubit>(context)
                             .onCreateEmployeeDepartmentChanged(
@@ -91,11 +90,17 @@ class _PosEmployeeDepartmentListCardWidgetState
                             .onCreateEmployeeDepartmentChanged(null);
                       }
                     },
-                    child: Icon(
-                      Icons.done_outlined,
-                      size: 35.0,
-                      color: _itsMe == true ? Colors.blue : Colors.black38,
-                    ),
+                    child: _itsMe == true
+                        ? const Icon(
+                            Icons.done_outlined,
+                            size: 35.0,
+                            color: Colors.blue,
+                          )
+                        : const Icon(
+                            Icons.radio_button_checked_outlined,
+                            size: 20.0,
+                            color: Colors.black38,
+                          ),
                   ),
                   title: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -108,24 +113,40 @@ class _PosEmployeeDepartmentListCardWidgetState
                         width: 10.0,
                       ),
                       Expanded(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.employeeDepartment.code,
-                                style: const TextStyle(
-                                    color: Colors.blue, fontSize: 15.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                widget.employeeDepartment.name,
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14.0),
-                              ),
-                            ]),
+                        child: GestureDetector(
+                          onTap: () {
+                            if (_itsMe == false) {
+                              BlocProvider.of<EmployeeFormCreateCubit>(context)
+                                  .onCreateEmployeeDepartmentChanged(
+                                      widget.employeeDepartment);
+                              //Navigator.of(context).pop();
+                            } else {
+                              BlocProvider.of<EmployeeFormCreateCubit>(context)
+                                  .onCreateEmployeeDepartmentChanged(null);
+                            }
+                          },
+                          child: Container(
+                            color: Colors.white,
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    widget.employeeDepartment.code,
+                                    style: const TextStyle(
+                                        color: Colors.blue, fontSize: 15.0),
+                                  ),
+                                  const SizedBox(
+                                    height: 5.0,
+                                  ),
+                                  Text(
+                                    widget.employeeDepartment.name,
+                                    style: const TextStyle(
+                                        color: Colors.black, fontSize: 14.0),
+                                  ),
+                                ]),
+                          ),
+                        ),
                       )
                     ],
                   ),

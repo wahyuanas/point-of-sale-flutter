@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/domain/catalog/item/object_value/value_object_validators.dart';
 import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/order/object_value/object_value.dart';
@@ -29,32 +30,47 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     //   debugPrint("POS PAYMENT CUBIT 1");
     //   return r?.copyWithName(v);
     // })))));
-
     emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
-            paymentCardInfo: state.createOrder.paymentCardInfo
-                ?.copyWith(name: CraetePaymentCardInfoName(v)))));
+            paymentCardInfo: CraetePaymentCardInfo(
+      name: CraetePaymentCardInfoName(v),
+      number: state.createOrder.paymentCardInfo!.number,
+      numberRef: state.createOrder.paymentCardInfo!.numberRef,
+      remarks: state.createOrder.paymentCardInfo!.remarks,
+    ))));
   }
 
   void onPaymentCardInfoNumberChanged(String v) {
-    state.copyWith(
+    debugPrint('POS PAYMENT CUBIT $v');
+    emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
-            paymentCardInfo: state.createOrder.paymentCardInfo
-                ?.copyWith(number: CraetePaymentCardInfoNumber(v))));
+            paymentCardInfo: CraetePaymentCardInfo(
+      name: state.createOrder.paymentCardInfo!.name,
+      number: CraetePaymentCardInfoNumber(v),
+      numberRef: state.createOrder.paymentCardInfo!.numberRef,
+      remarks: state.createOrder.paymentCardInfo!.remarks,
+    ))));
   }
 
   void onPaymentCardInfoNumberRefChanged(String v) {
-    state.copyWith(
+    emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
-            paymentCardInfo: state.createOrder.paymentCardInfo
-                ?.copyWith(numberRef: CraetePaymentCardInfoNumberRef(v))));
+            paymentCardInfo: CraetePaymentCardInfo(
+      name: state.createOrder.paymentCardInfo!.name,
+      number: state.createOrder.paymentCardInfo!.number,
+      numberRef: CraetePaymentCardInfoNumberRef(v),
+      remarks: state.createOrder.paymentCardInfo!.remarks,
+    ))));
   }
 
   void onPaymentCardInfoRemarksChanged(String v) {
-    state.copyWith(
+    emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
-            paymentCardInfo: state.createOrder.paymentCardInfo
-                ?.copyWith(remarks: CraetePaymentCardInfoRemarks(v))));
+            paymentCardInfo: CraetePaymentCardInfo(
+                name: state.createOrder.paymentCardInfo!.name,
+                number: state.createOrder.paymentCardInfo!.number,
+                numberRef: state.createOrder.paymentCardInfo!.numberRef,
+                remarks: CraetePaymentCardInfoRemarks(v)))));
   }
 
   void onPaymentTypeChanged(int? v) {
@@ -62,13 +78,16 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
       emit(
         state.copyWith(
             createOrder: state.createOrder.copyWith(
-                paymentType: CreateOrderPaymentType(v),
-                paymentCardInfo: CraetePaymentCardInfo.empty())),
+          paymentType: CreateOrderPaymentType(v),
+          // paymentCardInfo: CraetePaymentCardInfo.empty()
+        )),
       );
     } else {
       emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
-            paymentType: CreateOrderPaymentType(v), paymentCardInfo: null),
+          paymentType: CreateOrderPaymentType(v),
+          //paymentCardInfo: null
+        ),
       ));
     }
   }
@@ -112,7 +131,6 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
 
   onEmployeeChanged1(EmployeesModel employeeModel) {
     state.createOrder.employees.value.fold((l) {}, (r) {
-      debugPrint("POS EMPLOYEE CUBIT ");
       List<EmployeesModel>? employeeModels = [];
       if (r != null) {
         employeeModels = List.from(r.toList());
@@ -136,6 +154,25 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
       createOrder:
           state.createOrder.copyWith(employees: CreateOrderEmployees(null)),
     ));
+  }
+
+  onPaymentCardInfoInit() {
+    emit(state.copyWith(
+      createOrder: state.createOrder
+          .copyWith(paymentCardInfo: CraetePaymentCardInfo.empty()),
+    ));
+  }
+
+  onPaymentCardInfoReset() {
+    emit(state.copyWith(
+      createOrder: state.createOrder.copyWith(paymentCardInfo: null),
+    ));
+  }
+
+  onResetInitial() {
+    emit(
+      state.copyWith(initial: true),
+    );
   }
 
   onReset() {

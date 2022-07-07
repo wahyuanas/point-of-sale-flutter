@@ -96,10 +96,10 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         vehicleOwner = _vehicleOwnerListCubit.state.vehicleOwners
             ?.firstWhereOrNull((owner) => owner.id == vehicle.vehicleOwner);
 
-        if (vehicle.policyNumber.toLowerCase().contains(v.toLowerCase()) ||
-                vehicleOwner != null
-            ? vehicleOwner!.name.toLowerCase().contains(v.toLowerCase())
-            : false) {
+        if ((vehicle.policyNumber.toLowerCase().contains(v.toLowerCase())) ||
+            (vehicleOwner != null
+                ? vehicleOwner!.name.toLowerCase().contains(v.toLowerCase())
+                : false)) {
           if (vehicleType != null) {
             vehicleManufacture = _vehicleManufactureListCubit
                 .state.vehicleManufactures
@@ -212,14 +212,14 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
         vehicleOwner = _vehicleOwnerListCubit.state.vehicleOwners
             ?.firstWhereOrNull((owner) => owner.id == vehicle.vehicleOwner);
 
-        if (vehicle.policyNumber
-                    .toLowerCase()
-                    .contains(state.keyWord!.toLowerCase()) ||
-                vehicleOwner != null
-            ? vehicleOwner!.name
+        if ((vehicle.policyNumber
                 .toLowerCase()
-                .contains(state.keyWord!.toLowerCase())
-            : false) {
+                .contains(state.keyWord!.toLowerCase())) ||
+            (vehicleOwner != null
+                ? vehicleOwner!.name
+                    .toLowerCase()
+                    .contains(state.keyWord!.toLowerCase())
+                : false)) {
           if (vehicleType != null) {
             vehicleManufacture = _vehicleManufactureListCubit
                 .state.vehicleManufactures

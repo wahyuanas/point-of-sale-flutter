@@ -32,146 +32,146 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
         if (c.initial == false) {
           if (_initial == true) _initial = false;
           return true;
-        } else if (c.initial == true) {
-          if (_initial == false) _initial = true;
-          return false;
         }
-      } else if (p.status != c.status) {
-        c.status.maybeWhen(
-            initial: () {
-              if (_initial == false) _initial = true;
-            },
-            orElse: () => null);
-        return false;
       } else if (p.createOrder.employees != c.createOrder.employees) {
         if (_initial == true) _initial = false;
         return true;
       }
       return false;
     }, builder: (context, state) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SizedBox(
-            height: 50.0,
-            child: ListTile(
-              trailing: Padding(
-                padding: const EdgeInsets.only(right: 20.0),
-                child: GestureDetector(
-                  onTap: () => BlocProvider.of<PosRouteCubit>(context).onRoute(
-                      const PosOnRouteState.posEmployeeList(
-                          r: '/posEmployeeList'),
-                      null),
-                  child: const Icon(
-                    Icons.search_outlined,
-                    size: 25.0,
-                    color: Colors.blue,
+      return Card(
+        elevation: 0.3,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 50.0,
+              child: ListTile(
+                trailing: Padding(
+                  padding: const EdgeInsets.only(right: 20.0),
+                  child: GestureDetector(
+                    onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                        .onRoute(
+                            const PosOnRouteState.posEmployeeList(
+                                r: '/posEmployeeList'),
+                            null),
+                    child: const Icon(
+                      Icons.search_outlined,
+                      size: 25.0,
+                      color: Colors.blue,
+                    ),
                   ),
                 ),
-              ),
-              title: const Padding(
-                padding: EdgeInsets.only(bottom: 6.0),
-                child: Text(
-                  'Mekanik',
-                  style: TextStyle(color: Colors.blue, fontSize: 15),
+                title: const Padding(
+                  padding: EdgeInsets.only(bottom: 6.0),
+                  child: Text(
+                    'Mekanik',
+                    style: TextStyle(color: Colors.blue, fontSize: 15),
+                  ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: state.createOrder.employees.value.fold(
-              (l) =>
-                  // ListTile(
-                  //   trailing: GestureDetector(
-                  //     onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                  //         .onRoute(
-                  //             const PosOnRouteState.posEmployeeList(
-                  //                 r: '/posEmployeeList'),
-                  //             null),
-                  //     child: const Icon(
-                  //       Icons.search_outlined,
-                  //       size: 25.0,
-                  //       color: Colors.blue,
-                  //     ),
-                  //   ),
-                  //   title: const Text(
-                  //     'pilih mekanik...',
-                  //     style: TextStyle(fontSize: 15, color: Colors.black38),
-                  //   ),
-                  // ),
-                  Container(
-                //height: 50,
-                //margin: const EdgeInsets.all(10.0),
-                decoration: const BoxDecoration(
-                    //color: Colors.blue,
-                    border: Border(
-                  bottom: BorderSide(
-                    color: Colors.blue,
-                    width: 0.5,
-                  ),
-                )),
-                child: const ListTile(
-                  title: Text(
-                    'Pilih Mekanik',
-                    style: TextStyle(fontSize: 15, color: Colors.black38),
+            Padding(
+              padding: const EdgeInsets.only(right: 20, left: 20, bottom: 5.0),
+              child: state.createOrder.employees.value.fold(
+                (l) =>
+                    // ListTile(
+                    //   trailing: GestureDetector(
+                    //     onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                    //         .onRoute(
+                    //             const PosOnRouteState.posEmployeeList(
+                    //                 r: '/posEmployeeList'),
+                    //             null),
+                    //     child: const Icon(
+                    //       Icons.search_outlined,
+                    //       size: 25.0,
+                    //       color: Colors.blue,
+                    //     ),
+                    //   ),
+                    //   title: const Text(
+                    //     'pilih mekanik...',
+                    //     style: TextStyle(fontSize: 15, color: Colors.black38),
+                    //   ),
+                    // ),
+                    Container(
+                  //height: 50,
+                  //margin: const EdgeInsets.all(10.0),
+                  decoration: const BoxDecoration(
+                      //color: Colors.blue,
+                      border: Border(
+                    bottom: BorderSide(
+                      color: Colors.blue,
+                      width: 0.5,
+                    ),
+                  )),
+                  child: const ListTile(
+                    title: Text(
+                      'Pilih Mekanik...',
+                      style: TextStyle(fontSize: 15, color: Colors.black38),
+                    ),
                   ),
                 ),
-              ),
-              (r) => Column(
-                children: r!.map(
-                  (e) {
-                    return Container(
-                      //height: 50,
-                      //margin: const EdgeInsets.all(10.0),
-                      decoration: const BoxDecoration(
-                          //color: Colors.blue,
-                          border: Border(
-                        bottom: BorderSide(
-                          color: Colors.blue,
-                          width: 0.5,
-                        ),
-                      )),
-                      child: ListTile(
-                        trailing: GestureDetector(
-                          onTap: () => BlocProvider.of<PosPaymentCubit>(context)
-                              .onEmployeeChanged1(e),
-                          child: const Icon(
-                            Icons.delete_outline,
-                            size: 25.0,
+                (r) => Column(
+                  children: r!.map(
+                    (e) {
+                      return Container(
+                        //height: 50,
+                        //margin: const EdgeInsets.all(10.0),
+                        decoration: const BoxDecoration(
+                            //color: Colors.blue,
+                            border: Border(
+                          bottom: BorderSide(
                             color: Colors.blue,
+                            width: 0.5,
                           ),
-                        ),
-                        title: Text(
-                          e.name,
-                          style: const TextStyle(
-                              fontSize: 15, color: Colors.black),
-                        ),
-                      ),
-                    );
-                  },
-                ).toList(),
-              ),
-            ),
-          ),
-          _initial == false
-              ? state.createOrder.employees.value.fold(
-                  (l) => l.maybeWhen(
-                      emptyField: (f) => const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Text(
-                              '*wajib dipilih',
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.red,
-                              ),
+                        )),
+                        child: ListTile(
+                          trailing: GestureDetector(
+                            onTap: () =>
+                                BlocProvider.of<PosPaymentCubit>(context)
+                                    .onEmployeeChanged1(e),
+                            child: const Icon(
+                              Icons.delete_outline,
+                              size: 25.0,
+                              color: Colors.blue,
                             ),
                           ),
-                      orElse: () => Container()),
-                  (r) => Container())
-              : Container()
-        ],
+                          title: Text(
+                            e.name,
+                            style: const TextStyle(
+                                fontSize: 15, color: Colors.black),
+                          ),
+                        ),
+                      );
+                    },
+                  ).toList(),
+                ),
+              ),
+            ),
+            _initial == false
+                ? state.createOrder.employees.value.fold(
+                    (l) => l.maybeWhen(
+                        emptyField: (f) => const Padding(
+                              padding: EdgeInsets.only(
+                                  right: 20, left: 20, bottom: 5.0, top: 5.0),
+                              child: Text(
+                                '*wajib dipilih',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Colors.red,
+                                ),
+                              ),
+                            ),
+                        orElse: () => Container()),
+                    (r) => Container())
+                : Container()
+          ],
+        ),
       );
     });
   }

@@ -31,9 +31,7 @@ class _PosPaymentActionWidgetState extends State<PosPaymentActionWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-              onTap: () => BlocProvider.of<RouteCubit>(context).onRoute(
-                  const OnRouteState.postCatalogList(r: '/postCatalogList'),
-                  null),
+              onTap: () => Navigator.of(context).pop(),
               child: Card(
                 shape: RoundedRectangleBorder(
                     side: const BorderSide(color: Colors.blue, width: 0.5),

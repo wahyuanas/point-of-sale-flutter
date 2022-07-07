@@ -51,10 +51,12 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
             .state.vehicleManufactures
             ?.firstWhereOrNull((manuf) => manuf.id == vehicleType.manufacture);
 
-        if (vehicleManufacture != null
-            ? vehicleManufacture.name.toLowerCase().contains(v.toLowerCase())
-            : false ||
-                vehicleType.model.toLowerCase().contains(v.toLowerCase())) {
+        if ((vehicleManufacture != null
+                ? vehicleManufacture.name
+                    .toLowerCase()
+                    .contains(v.toLowerCase())
+                : false) ||
+            (vehicleType.model.toLowerCase().contains(v.toLowerCase()))) {
           vehicleTypeModels?.add(VehicleTypeModel.createVehicleTypeModel(
               vehicleType, vehicleManufacture));
         }
@@ -109,14 +111,14 @@ class PosVehicleTypeListCubit extends Cubit<PosVehicleTypeListState> {
             .state.vehicleManufactures
             ?.firstWhereOrNull((manuf) => manuf.id == vehicleType.manufacture);
 
-        if (vehicleManufacture != null
-            ? vehicleManufacture.name
-                .toLowerCase()
-                .contains(state.keyWord!.toLowerCase())
-            : false ||
-                vehicleType.model
+        if ((vehicleManufacture != null
+                ? vehicleManufacture.name
                     .toLowerCase()
-                    .contains(state.keyWord!.toLowerCase())) {
+                    .contains(state.keyWord!.toLowerCase())
+                : false) ||
+            (vehicleType.model
+                .toLowerCase()
+                .contains(state.keyWord!.toLowerCase()))) {
           vehicleTypeModels?.add(VehicleTypeModel.createVehicleTypeModel(
               vehicleType, vehicleManufacture));
         }

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:pos/presentation/main/vehicle_type/form/create/cubit/vehicle_type_form_create_cubit.dart';
-import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
 class PosVehicleManufactureListCardWidget extends StatefulWidget {
   final VehicleManufactureModel vehicleManufacture;
@@ -76,45 +75,67 @@ class _PosVehicleManufactureListCardWidgetState
                           widget.vehicleManufacture);
                   //Navigator.of(context).pop();
                 } else {
-                  BlocProvider.of<PosPaymentCubit>(context)
-                      .onVehicleChanged(null);
+                  BlocProvider.of<VehicleTypeFormCreateCubit>(context)
+                      .onCreateVehicleTypeManufactureChanged(null);
                 }
               },
-              child: Icon(
-                Icons.done_outlined,
-                size: 35.0,
-                color: _itsMe == true ? Colors.blue : Colors.black38,
-              ),
+              child: _itsMe == true
+                  ? const Icon(
+                      Icons.done_outlined,
+                      size: 35.0,
+                      color: Colors.blue,
+                    )
+                  : const Icon(
+                      Icons.radio_button_checked_outlined,
+                      size: 20.0,
+                      color: Colors.black38,
+                    ),
             ),
             title: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
                 const Icon(
-                  Icons.person_outline,
+                  Icons.directions_car_outlined,
                   size: 50,
                 ),
                 const SizedBox(
                   width: 10.0,
                 ),
                 Expanded(
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.vehicleManufacture.name,
-                          style: const TextStyle(
-                              color: Colors.blue, fontSize: 15.0),
-                        ),
-                        const SizedBox(
-                          height: 5.0,
-                        ),
-                        Text(
-                          widget.vehicleManufacture.name,
-                          style: const TextStyle(
-                              color: Colors.black, fontSize: 14.0),
-                        ),
-                      ]),
+                  child: GestureDetector(
+                    onTap: () {
+                      if (_itsMe == false) {
+                        BlocProvider.of<VehicleTypeFormCreateCubit>(context)
+                            .onCreateVehicleTypeManufactureChanged(
+                                widget.vehicleManufacture);
+                        //Navigator.of(context).pop();
+                      } else {
+                        BlocProvider.of<VehicleTypeFormCreateCubit>(context)
+                            .onCreateVehicleTypeManufactureChanged(null);
+                      }
+                    },
+                    child: Container(
+                      color: Colors.white,
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.vehicleManufacture.name,
+                              style: const TextStyle(
+                                  color: Colors.blue, fontSize: 15.0),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              widget.vehicleManufacture.name,
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 14.0),
+                            ),
+                          ]),
+                    ),
+                  ),
                 )
               ],
             ),

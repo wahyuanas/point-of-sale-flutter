@@ -61,6 +61,7 @@ class _PosVehicleFormPolicyNumberWidgetState
           alignment: Alignment.center,
           margin: const EdgeInsets.symmetric(horizontal: 15),
           child: TextFormField(
+              textCapitalization: TextCapitalization.words,
               controller: _controller,
               autofocus: false,
               keyboardType: TextInputType.text,

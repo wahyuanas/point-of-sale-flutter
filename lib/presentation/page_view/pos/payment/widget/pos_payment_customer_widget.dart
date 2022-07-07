@@ -32,110 +32,108 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
         if (c.initial == false) {
           if (_initial == true) _initial = false;
           return true;
-        } else if (c.initial == true) {
-          if (_initial == false) _initial = true;
-          return false;
         }
-      } else if (p.status != c.status) {
-        c.status.maybeWhen(
-            initial: () {
-              if (_initial == false) _initial = true;
-            },
-            orElse: () => null);
-        return false;
       } else if (p.createOrder.customer != c.createOrder.customer) {
         if (_initial == true) _initial = false;
         return true;
       }
       return false;
     }, builder: (context, state) {
-      return Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(
-            height: 30.0,
-            child: ListTile(
-              // trailing: Icon(
-              //   Icons.expand_more_outlined,
-              //   size: 30.0,
-              //   color: Colors.blue,
-              // ),
-              title: Padding(
-                padding: EdgeInsets.only(bottom: 6.0),
-                child: Text(
-                  'Konsumen',
-                  style: TextStyle(color: Colors.blue, fontSize: 15.0),
+      return Card(
+        elevation: 0.3,
+        margin: EdgeInsets.zero,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(
+              height: 30.0,
+              child: ListTile(
+                // trailing: Icon(
+                //   Icons.expand_more_outlined,
+                //   size: 30.0,
+                //   color: Colors.blue,
+                // ),
+                title: Padding(
+                  padding: EdgeInsets.only(bottom: 6.0),
+                  child: Text(
+                    'Konsumen',
+                    style: TextStyle(color: Colors.blue, fontSize: 15.0),
+                  ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Container(
-              //height: 50,
-              //margin: const EdgeInsets.all(10.0),
-              decoration: const BoxDecoration(
-                  //color: Colors.blue,
-                  border: Border(
-                bottom: BorderSide(
-                  color: Colors.blue,
-                  width: 0.5,
-                ),
-              )),
-              child: ListTile(
-                  trailing: state.createOrder.customer.value.fold(
-                    (l) => GestureDetector(
-                      onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                          .onRoute(
-                              const PosOnRouteState.posCustomerList(
-                                  r: '/posCustomerList'),
-                              null),
-                      child: const Icon(
-                        Icons.search_outlined,
-                        size: 25.0,
-                        color: Colors.blue,
-                      ),
-                    ),
-                    (r) => GestureDetector(
-                      onTap: () => BlocProvider.of<PosPaymentCubit>(context)
-                          .onCustomerChanged(null),
-                      child: const Icon(
-                        Icons.delete_outlined,
-                        size: 25.0,
-                        color: Colors.blue,
-                      ),
-                    ),
+            Padding(
+              padding: const EdgeInsets.only(right: 20, left: 20, bottom: 5.0),
+              child: Container(
+                //height: 50,
+                //margin: const EdgeInsets.all(10.0),
+                decoration: const BoxDecoration(
+                    //color: Colors.blue,
+                    border: Border(
+                  bottom: BorderSide(
+                    color: Colors.blue,
+                    width: 0.5,
                   ),
-                  title: state.createOrder.customer.value.fold(
-                    (l) => const Text(
-                      'pilih konsumen...',
-                      style: TextStyle(fontSize: 15, color: Colors.black38),
+                )),
+                child: ListTile(
+                    trailing: state.createOrder.customer.value.fold(
+                      (l) => GestureDetector(
+                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
+                            .onRoute(
+                                const PosOnRouteState.posCustomerList(
+                                    r: '/posCustomerList'),
+                                null),
+                        child: const Icon(
+                          Icons.search_outlined,
+                          size: 25.0,
+                          color: Colors.blue,
+                        ),
+                      ),
+                      (r) => GestureDetector(
+                        onTap: () => BlocProvider.of<PosPaymentCubit>(context)
+                            .onCustomerChanged(null),
+                        child: const Icon(
+                          Icons.delete_outlined,
+                          size: 25.0,
+                          color: Colors.blue,
+                        ),
+                      ),
                     ),
-                    (r) => Text(
-                      r!.name,
-                      style: const TextStyle(fontSize: 15),
-                    ),
-                  )),
+                    title: state.createOrder.customer.value.fold(
+                      (l) => const Text(
+                        'Pilih Konsumen...',
+                        style: TextStyle(fontSize: 15, color: Colors.black38),
+                      ),
+                      (r) => Text(
+                        r!.name,
+                        style: const TextStyle(fontSize: 15),
+                      ),
+                    )),
+              ),
             ),
-          ),
-          _initial == false
-              ? state.createOrder.customer.value.fold(
-                  (l) => l.maybeWhen(
-                      emptyField: (f) => const Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            child: Text(
-                              '*wajib dipilih',
-                              style: TextStyle(
-                                fontSize: 11,
-                                color: Colors.red,
+            _initial == false
+                ? state.createOrder.customer.value.fold(
+                    (l) => l.maybeWhen(
+                        emptyField: (f) => const Padding(
+                              padding: EdgeInsets.only(
+                                  right: 20, left: 20, bottom: 5.0),
+                              child: Text(
+                                '*wajib dipilih',
+                                style: TextStyle(
+                                  fontSize: 11,
+                                  color: Colors.red,
+                                ),
                               ),
                             ),
-                          ),
-                      orElse: () => Container()),
-                  (r) => Container())
-              : Container()
-        ],
+                        orElse: () => Container()),
+                    (r) => Container())
+                : Container()
+          ],
+        ),
       );
     });
   }

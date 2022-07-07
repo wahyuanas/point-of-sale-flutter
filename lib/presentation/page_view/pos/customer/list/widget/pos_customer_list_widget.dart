@@ -103,7 +103,7 @@ class _PosCustomerListWidgetState extends State<PosCustomerListWidget> {
 
           title: const Text(
             "List Konsumen",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.blue, // navigation bar color

@@ -11,13 +11,8 @@ class PosPaymentWidget extends StatefulWidget {
 }
 
 class _PosPaymentWidgetState extends State<PosPaymentWidget> {
-  late bool _initial;
-  final TextEditingController _controller = TextEditingController();
-
   @override
   void initState() {
-    _initial = true;
-    //BlocProvider.of<SignUpCubit>(context).onCompanyNameChanged("");
     super.initState();
   }
 
@@ -60,7 +55,7 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                       const Spacer(),
                       const Text(
                         "Pembayaran",
-                        style: TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.blue, fontSize: 17.0),
                       ),
                       const Spacer(),
                       Row(
@@ -129,53 +124,8 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                   PosPaymentCustomerWidget(),
                   PosPaymentVehicleWidget(),
                   PosPaymentEmployeeWidget(),
-                  // BlocBuilder<PosPaymentCubit, PosPaymentState>(
-                  //     buildWhen: (p, c) {
-                  //   if (p.initial != c.initial) {
-                  //     if (c.initial == false) {
-                  //       if (_initial == true) _initial = false;
-                  //       return true;
-                  //     } else if (c.initial == true) {
-                  //       if (_initial == false) _initial = true;
-                  //       _controller.text = '';
-                  //       return false;
-                  //     }
-                  //   } else if (p.status != c.status) {
-                  //     c.status.maybeWhen(
-                  //         initial: () {
-                  //           if (_initial == false) _initial = true;
-                  //           _controller.text = '';
-                  //         },
-                  //         orElse: () => null);
-                  //     return false;
-                  //   } else if (p.createOrder.paymentCardInfo?.name !=
-                  //       c.createOrder.paymentCardInfo?.name) {
-                  //     if (_initial == true) _initial = false;
-                  //     return true;
-                  //   }
-                  //   return false;
-                  // }, builder: (context, state) {
-                  //   debugPrint("POS PAYMENT WIDGET");
-                  //   return TextFormField(
-                  //       controller: _controller,
-                  //       autofocus: false,
-                  //       keyboardType: TextInputType.text,
-                  //       decoration: const InputDecoration(
-                  //         labelText: "Keterangan",
-                  //         labelStyle:
-                  //             TextStyle(color: Colors.black54, fontSize: 15.0),
-                  //         hintText: '',
-                  //         //enabledBorder: InputBorder.none,
-                  //         focusedBorder: UnderlineInputBorder(
-                  //           borderSide: BorderSide(color: Colors.black54),
-                  //         ),
-
-                  //         //border: InputBorder.none,
-                  //       ),
-                  //       onChanged: (v) =>
-                  //           BlocProvider.of<PosPaymentCubit>(context)
-                  //               .onPaymentCardInfoNameChanged(v));
-                  // }),
+                  PosPaymentTypeWidget(),
+                  PosPaymentCardInfoWidget()
                 ],
               ),
             )

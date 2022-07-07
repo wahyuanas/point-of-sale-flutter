@@ -105,7 +105,7 @@ class _PosEmployeeDepartmentListWidgetState
 
           title: const Text(
             "List Departemen",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.blue, // navigation bar color

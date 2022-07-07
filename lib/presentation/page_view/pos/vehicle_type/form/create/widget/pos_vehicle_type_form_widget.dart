@@ -17,6 +17,14 @@ class PosVehicleTypeFormWidget extends StatefulWidget {
 
 class _PosVehicleTypeFormWidgetState extends State<PosVehicleTypeFormWidget> {
   @override
+  void initState() {
+    if (context.read<VehicleTypeFormCreateCubit>().state.initial == false) {
+      context.read<VehicleTypeFormCreateCubit>().onInitial();
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocListener<VehicleTypeFormCreateCubit, VehicleTypeFormCreateState>(
       listener: (context, state) {

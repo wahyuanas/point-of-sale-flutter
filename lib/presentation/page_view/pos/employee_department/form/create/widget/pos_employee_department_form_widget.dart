@@ -69,7 +69,7 @@ class _PosEmployeeDepartmentFormWidgetState
           //   onTap: () => const PosEmployeeDepartmentFormWidget(),
           // ),
           title: const Text(
-            "Form Tambah Karyawan",
+            "Form Tambah Departemen",
             style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(

@@ -64,19 +64,42 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.only(left: 10.0, top: 10.0, bottom: 10.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              GestureDetector(
-                onTap: () async {
-                  // BlocProvider.of<RouteCubit>(context).onRoute(
-                  //     const OnRouteState.posCatalogItemDetail(
-                  //         r: '/posCatalogItemDetail'),
-                  //     widget.pos.item);
-                },
-                child: ListTile(
-                  trailing: GestureDetector(
+          child: ListTile(
+            trailing: GestureDetector(
+              onTap: () {
+                if (_itsMe == false) {
+                  BlocProvider.of<PosPaymentCubit>(context)
+                      .onCustomerChanged(widget.customer);
+                  //Navigator.of(context).pop();
+                } else {
+                  BlocProvider.of<PosPaymentCubit>(context)
+                      .onCustomerChanged(null);
+                }
+              },
+              child: _itsMe == true
+                  ? const Icon(
+                      Icons.done_outlined,
+                      size: 35.0,
+                      color: Colors.blue,
+                    )
+                  : const Icon(
+                      Icons.radio_button_checked_outlined,
+                      size: 20.0,
+                      color: Colors.black38,
+                    ),
+            ),
+            title: Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Icon(
+                  Icons.person_outline,
+                  size: 50,
+                ),
+                const SizedBox(
+                  width: 10.0,
+                ),
+                Expanded(
+                  child: GestureDetector(
                     onTap: () {
                       if (_itsMe == false) {
                         BlocProvider.of<PosPaymentCubit>(context)
@@ -87,88 +110,72 @@ class _PosCustomerListCardWidgetState extends State<PosCustomerListCardWidget> {
                             .onCustomerChanged(null);
                       }
                     },
-                    child: Icon(
-                      Icons.done_outlined,
-                      size: 35.0,
-                      color: _itsMe == true ? Colors.blue : Colors.black38,
+                    child: Container(
+                      color: Colors.white,
+                      child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              widget.customer.code,
+                              style: const TextStyle(
+                                  color: Colors.blue, fontSize: 15.0),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Text(
+                              widget.customer.name,
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 14.0),
+                            ),
+                            const SizedBox(
+                              height: 5.0,
+                            ),
+                            Wrap(
+                              children: [
+                                Wrap(
+                                  children: [
+                                    const Text("HP ",
+                                        style: TextStyle(
+                                            decoration:
+                                                TextDecoration.underline,
+                                            height: 1.2)),
+                                    Text(widget.customer.phoneNumber,
+                                        style: const TextStyle(
+                                            color: Colors.blue, height: 1.2)),
+                                  ],
+                                ),
+                                const SizedBox(
+                                  width: 10.0,
+                                ),
+                                const Text(
+                                  "|",
+                                  style: TextStyle(height: 1.2),
+                                ),
+                                const SizedBox(
+                                  width: 10.0,
+                                ),
+                                Wrap(
+                                  children: [
+                                    const Text("Email ",
+                                        style: TextStyle(
+                                            decoration:
+                                                TextDecoration.underline,
+                                            height: 1.2)),
+                                    Text(widget.customer.email,
+                                        style: const TextStyle(
+                                            color: Colors.blue, height: 1.2)),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ]),
                     ),
                   ),
-                  title: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      const Icon(
-                        Icons.person_outline,
-                        size: 50,
-                      ),
-                      const SizedBox(
-                        width: 10.0,
-                      ),
-                      Expanded(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.customer.code,
-                                style: const TextStyle(
-                                    color: Colors.blue, fontSize: 15.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                widget.customer.name,
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Wrap(
-                                children: [
-                                  Wrap(
-                                    children: [
-                                      const Text("HP ",
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              height: 1.2)),
-                                      Text(widget.customer.phoneNumber,
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
-                                    ],
-                                  ),
-                                  const SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  const Text(
-                                    "|",
-                                    style: TextStyle(height: 1.2),
-                                  ),
-                                  const SizedBox(
-                                    width: 10.0,
-                                  ),
-                                  Wrap(
-                                    children: [
-                                      const Text("Email ",
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              height: 1.2)),
-                                      Text(widget.customer.email,
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ]),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

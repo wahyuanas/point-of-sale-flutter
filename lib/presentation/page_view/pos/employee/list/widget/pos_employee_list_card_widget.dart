@@ -93,11 +93,17 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
                             .onEmployeeChanged1(widget.employee);
                       }
                     },
-                    child: Icon(
-                      Icons.done_outlined,
-                      size: 35.0,
-                      color: em != null ? Colors.blue : Colors.black38,
-                    ),
+                    child: em != null
+                        ? const Icon(
+                            Icons.done_outlined,
+                            size: 35.0,
+                            color: Colors.blue,
+                          )
+                        : const Icon(
+                            Icons.radio_button_checked_outlined,
+                            size: 20.0,
+                            color: Colors.black38,
+                          ),
                   ),
                   title: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -110,65 +116,82 @@ class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
                         width: 10.0,
                       ),
                       Expanded(
-                        child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                widget.employee.code,
-                                style: const TextStyle(
-                                    color: Colors.blue, fontSize: 15.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Text(
-                                widget.employee.name,
-                                style: const TextStyle(
-                                    color: Colors.black, fontSize: 14.0),
-                              ),
-                              const SizedBox(
-                                height: 5.0,
-                              ),
-                              Wrap(
+                        child: GestureDetector(
+                          onTap: () {
+                            if (em == null) {
+                              BlocProvider.of<PosPaymentCubit>(context)
+                                  .onEmployeeChanged(widget.employee);
+                              //Navigator.of(context).pop();
+                            } else {
+                              BlocProvider.of<PosPaymentCubit>(context)
+                                  .onEmployeeChanged1(widget.employee);
+                            }
+                          },
+                          child: Container(
+                            color: Colors.white,
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Wrap(
-                                    children: [
-                                      const Text("HP ",
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              height: 1.2)),
-                                      Text(widget.employee.phoneNumber,
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
-                                    ],
+                                  Text(
+                                    widget.employee.code,
+                                    style: const TextStyle(
+                                        color: Colors.blue, fontSize: 15.0),
                                   ),
                                   const SizedBox(
-                                    width: 10.0,
+                                    height: 5.0,
                                   ),
-                                  const Text(
-                                    "|",
-                                    style: TextStyle(height: 1.2),
+                                  Text(
+                                    widget.employee.name,
+                                    style: const TextStyle(
+                                        color: Colors.black, fontSize: 14.0),
                                   ),
                                   const SizedBox(
-                                    width: 10.0,
+                                    height: 5.0,
                                   ),
                                   Wrap(
                                     children: [
-                                      const Text("Email ",
-                                          style: TextStyle(
-                                              decoration:
-                                                  TextDecoration.underline,
-                                              height: 1.2)),
-                                      Text(widget.employee.email,
-                                          style: const TextStyle(
-                                              color: Colors.blue, height: 1.2)),
+                                      Wrap(
+                                        children: [
+                                          const Text("HP ",
+                                              style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  height: 1.2)),
+                                          Text(widget.employee.phoneNumber,
+                                              style: const TextStyle(
+                                                  color: Colors.blue,
+                                                  height: 1.2)),
+                                        ],
+                                      ),
+                                      const SizedBox(
+                                        width: 10.0,
+                                      ),
+                                      const Text(
+                                        "|",
+                                        style: TextStyle(height: 1.2),
+                                      ),
+                                      const SizedBox(
+                                        width: 10.0,
+                                      ),
+                                      Wrap(
+                                        children: [
+                                          const Text("Email ",
+                                              style: TextStyle(
+                                                  decoration:
+                                                      TextDecoration.underline,
+                                                  height: 1.2)),
+                                          Text(widget.employee.email,
+                                              style: const TextStyle(
+                                                  color: Colors.blue,
+                                                  height: 1.2)),
+                                        ],
+                                      ),
                                     ],
                                   ),
-                                ],
-                              ),
-                            ]),
+                                ]),
+                          ),
+                        ),
                       )
                     ],
                   ),

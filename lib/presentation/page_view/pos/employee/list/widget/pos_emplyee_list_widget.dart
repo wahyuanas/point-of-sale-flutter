@@ -103,7 +103,7 @@ class _PosEmployeeListWidgetState extends State<PosEmployeeListWidget> {
 
           title: const Text(
             "List Karyawan",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(
             systemNavigationBarColor: Colors.blue, // navigation bar color

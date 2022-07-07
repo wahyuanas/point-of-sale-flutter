@@ -16,6 +16,14 @@ class PosEmployeeFormWidget extends StatefulWidget {
 
 class _PosEmployeeFormWidgetState extends State<PosEmployeeFormWidget> {
   @override
+  void initState() {
+    if (context.read<EmployeeFormCreateCubit>().state.initial == false) {
+      context.read<EmployeeFormCreateCubit>().onInitial();
+    }
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocListener<EmployeeFormCreateCubit, EmployeeFormCreateState>(
       listener: (context, state) {
