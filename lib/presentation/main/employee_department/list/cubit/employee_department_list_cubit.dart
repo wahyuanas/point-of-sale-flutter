@@ -17,12 +17,15 @@ class EmployeeDepartmentListCubit
   }
 
   onAddEmployeeDepartment(EmployeesDepartment employeesDepartment) {
-    List<EmployeesDepartment> employeesDepartments = [];
+    List<EmployeesDepartment>? employeesDepartments = [];
     if (state.employeesDepartments != null) {
       employeesDepartments = List.from(state.employeesDepartments!.toList());
       employeesDepartments.add(employeesDepartment);
     } else {
       employeesDepartments.add(employeesDepartment);
+    }
+    if (employeesDepartments.isEmpty) {
+      employeesDepartments = null;
     }
     emit(state.copyWith(
       employeesDepartments: employeesDepartments,

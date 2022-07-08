@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../delegate/pos_payment_action_delegate.dart';
-import 'pos_payment_export_widget.dart';
+import 'card_info/pos_payment_card_info_widget.dart';
+import 'customer/pos_payment_customer_widget.dart';
+import 'employee/pos_payment_employee_widget.dart';
+import 'extended/pos_payment_extended_export_widget.dart';
+import 'type/pos_payment_type_widget.dart';
+import 'vehicle/pos_payment_vehicle_widget.dart';
 
 class PosPaymentWidget extends StatefulWidget {
   const PosPaymentWidget({Key? key}) : super(key: key);
@@ -125,7 +130,8 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                   PosPaymentVehicleWidget(),
                   PosPaymentEmployeeWidget(),
                   PosPaymentTypeWidget(),
-                  PosPaymentCardInfoWidget()
+                  PosPaymentCardInfoWidget(),
+                  PosPaymentExtendedSubPriceWidget()
                 ],
               ),
             )

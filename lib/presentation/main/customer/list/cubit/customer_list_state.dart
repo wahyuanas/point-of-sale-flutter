@@ -7,10 +7,6 @@ class CustomerListState with _$CustomerListState {
 
   factory CustomerListState.initial() =>
       const CustomerListState(customers: null);
-  factory CustomerListState.reLoad(List<Customer>? customers) =>
-      CustomerListState(
-        customers: customers,
-      );
 
   factory CustomerListState.fromJson(Map<String, dynamic> json) =>
       _$CustomerListStateFromJson(json);

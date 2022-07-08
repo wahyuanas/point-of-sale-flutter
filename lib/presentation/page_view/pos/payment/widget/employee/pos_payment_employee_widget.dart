@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
-
-import '../cubit/pos_payment_cubit.dart';
 
 class PosPaymentEmployeeWidget extends StatefulWidget {
   const PosPaymentEmployeeWidget({Key? key}) : super(key: key);
@@ -50,16 +49,21 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 50.0,
+              height: 40.0,
               child: ListTile(
                 trailing: Padding(
                   padding: const EdgeInsets.only(right: 20.0),
                   child: GestureDetector(
-                    onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                        .onRoute(
-                            const PosOnRouteState.posEmployeeList(
-                                r: '/posEmployeeList'),
-                            null),
+                    onTap: () {
+                      BlocProvider.of<PosRouteCubit>(context).onRoute(
+                          const PosOnRouteState.posEmployeeList(
+                              r: '/posEmployeeList'),
+                          null);
+                      FocusScopeNode currentFocus = FocusScope.of(context);
+                      if (!currentFocus.hasPrimaryFocus) {
+                        currentFocus.unfocus();
+                      }
+                    },
                     child: const Icon(
                       Icons.search_outlined,
                       size: 25.0,

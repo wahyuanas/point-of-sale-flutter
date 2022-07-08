@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
-
-import '../cubit/pos_payment_cubit.dart';
 
 class PosPaymentCustomerWidget extends StatefulWidget {
   const PosPaymentCustomerWidget({Key? key}) : super(key: key);
@@ -82,11 +81,16 @@ class _PosPaymentCustomerWidgetState extends State<PosPaymentCustomerWidget> {
                 child: ListTile(
                     trailing: state.createOrder.customer.value.fold(
                       (l) => GestureDetector(
-                        onTap: () => BlocProvider.of<PosRouteCubit>(context)
-                            .onRoute(
-                                const PosOnRouteState.posCustomerList(
-                                    r: '/posCustomerList'),
-                                null),
+                        onTap: () {
+                          BlocProvider.of<PosRouteCubit>(context).onRoute(
+                              const PosOnRouteState.posCustomerList(
+                                  r: '/posCustomerList'),
+                              null);
+                          FocusScopeNode currentFocus = FocusScope.of(context);
+                          if (!currentFocus.hasPrimaryFocus) {
+                            currentFocus.unfocus();
+                          }
+                        },
                         child: const Icon(
                           Icons.search_outlined,
                           size: 25.0,

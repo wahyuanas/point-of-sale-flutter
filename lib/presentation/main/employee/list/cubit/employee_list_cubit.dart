@@ -16,12 +16,15 @@ class EmployeeListCubit extends HydratedCubit<EmployeeListState> {
   }
 
   onAddEmployee(Employees employee) {
-    List<Employees> employees = [];
+    List<Employees>? employees = [];
     if (state.employees != null) {
       employees = List.from(state.employees!.toList());
       employees.add(employee);
     } else {
       employees.add(employee);
+    }
+    if (employees.isEmpty) {
+      employees = null;
     }
     emit(state.copyWith(
       employees: employees,

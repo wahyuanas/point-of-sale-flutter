@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../widget/pos_payment_action_widget.dart';
+import '../widget/action/pos_payment_action_widget.dart';
 
 class PosPaymentActionDelegate extends SliverPersistentHeaderDelegate {
   @override

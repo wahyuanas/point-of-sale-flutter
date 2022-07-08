@@ -11,6 +11,7 @@ part "payment_card_info_object_value.freezed.dart";
 class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
   const CraetePaymentCardInfo._();
   const factory CraetePaymentCardInfo({
+    required CraetePaymentCardInfoId id,
     required CraetePaymentCardInfoName name,
     required CraetePaymentCardInfoNumber number,
     required CraetePaymentCardInfoNumberRef numberRef,
@@ -18,6 +19,7 @@ class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
   }) = _CraetePaymentCardInfo;
 
   factory CraetePaymentCardInfo.empty() => CraetePaymentCardInfo(
+        id: CraetePaymentCardInfoId(null),
         name: CraetePaymentCardInfoName(''),
         number: CraetePaymentCardInfoNumber(''),
         numberRef: CraetePaymentCardInfoNumberRef(''),
@@ -25,24 +27,28 @@ class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
       );
 
   CraetePaymentCardInfo copyWithName(String? v) => CraetePaymentCardInfo(
+      id: CraetePaymentCardInfoId(null),
       name: CraetePaymentCardInfoName(v ?? ''),
       number: number,
       numberRef: numberRef,
       remarks: remarks);
 
   CraetePaymentCardInfo copyWithNumber(String? v) => CraetePaymentCardInfo(
+      id: CraetePaymentCardInfoId(null),
       name: name,
       number: CraetePaymentCardInfoNumber(v ?? ''),
       numberRef: numberRef,
       remarks: remarks);
 
   CraetePaymentCardInfo copyWithNumberRef(String? v) => CraetePaymentCardInfo(
+      id: CraetePaymentCardInfoId(null),
       name: name,
       number: number,
       numberRef: CraetePaymentCardInfoNumberRef(v ?? ''),
       remarks: remarks);
 
   CraetePaymentCardInfo copyWithRemarks(String? v) => CraetePaymentCardInfo(
+      id: CraetePaymentCardInfoId(null),
       name: name,
       number: number,
       numberRef: numberRef,

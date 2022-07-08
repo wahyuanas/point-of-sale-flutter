@@ -16,13 +16,15 @@ class VehicleOwnerListCubit extends HydratedCubit<VehicleOwnerListState> {
   // }
 
   onAddVehicleOwner(VehicleOwner vehicleOwner) {
-    List<VehicleOwner>? vehicleOwners;
+    List<VehicleOwner>? vehicleOwners = [];
     if (state.vehicleOwners != null) {
       vehicleOwners = List.from(state.vehicleOwners!.toList());
       vehicleOwners.add(vehicleOwner);
     } else {
-      vehicleOwners ?? [];
-      vehicleOwners?.add(vehicleOwner);
+      vehicleOwners.add(vehicleOwner);
+    }
+    if (vehicleOwners.isEmpty) {
+      vehicleOwners = null;
     }
     emit(state.copyWith(
       vehicleOwners: vehicleOwners,

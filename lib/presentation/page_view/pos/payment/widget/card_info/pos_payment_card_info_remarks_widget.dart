@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
-class PosPaymentCardInfoNumberRefWidget extends StatefulWidget {
-  const PosPaymentCardInfoNumberRefWidget({Key? key}) : super(key: key);
+class PosPaymentCardInfoRemarksWidget extends StatefulWidget {
+  const PosPaymentCardInfoRemarksWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosPaymentCardInfoNumberRefWidget> createState() =>
-      _PosPaymentCardInfoNumberRefWidgetState();
+  State<PosPaymentCardInfoRemarksWidget> createState() =>
+      _PosPaymentCardInfoRemarksWidgetState();
 }
 
-class _PosPaymentCardInfoNumberRefWidgetState
-    extends State<PosPaymentCardInfoNumberRefWidget> {
+class _PosPaymentCardInfoRemarksWidgetState
+    extends State<PosPaymentCardInfoRemarksWidget> {
   late bool _initial;
   final TextEditingController _controller = TextEditingController();
 
@@ -23,13 +23,13 @@ class _PosPaymentCardInfoNumberRefWidgetState
         .state
         .createOrder
         .paymentCardInfo
-        ?.numberRef
+        ?.remarks
         .value
         .fold(
             (l) => null,
             (r) => context
                 .read<PosPaymentCubit>()
-                .onPaymentCardInfoNumberRefChanged(''));
+                .onPaymentCardInfoRemarksChanged(''));
     super.initState();
   }
 
@@ -46,9 +46,11 @@ class _PosPaymentCardInfoNumberRefWidgetState
             _controller.text = '';
           }
         });
-        setState(() {
-          _initial = true;
-        });
+        // if (_initial == false) {
+        //   setState(() {
+        //     _initial = true;
+        //   });
+        // }
       }),
       child: BlocBuilder<PosPaymentCubit, PosPaymentState>(buildWhen: (p, c) {
         if (p.initial != c.initial) {
@@ -56,8 +58,8 @@ class _PosPaymentCardInfoNumberRefWidgetState
             if (_initial == true) _initial = false;
             return true;
           }
-        } else if (p.createOrder.paymentCardInfo?.numberRef !=
-            c.createOrder.paymentCardInfo?.numberRef) {
+        } else if (p.createOrder.paymentCardInfo?.remarks !=
+            c.createOrder.paymentCardInfo?.remarks) {
           //if (_initial == true) _initial = false;
           return true;
         }
@@ -71,7 +73,7 @@ class _PosPaymentCardInfoNumberRefWidgetState
               keyboardType: TextInputType.text,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createOrder.paymentCardInfo?.numberRef.value.fold(
+                    ? state.createOrder.paymentCardInfo?.remarks.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
@@ -82,7 +84,7 @@ class _PosPaymentCardInfoNumberRefWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Nomor Reference (Approved)",
+                labelText: "Remarks",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -98,7 +100,7 @@ class _PosPaymentCardInfoNumberRefWidgetState
                   _initial = false;
                 }
                 BlocProvider.of<PosPaymentCubit>(context)
-                    .onPaymentCardInfoNumberRefChanged(v);
+                    .onPaymentCardInfoRemarksChanged(v);
               }),
         );
       }),

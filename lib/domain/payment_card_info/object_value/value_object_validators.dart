@@ -24,3 +24,13 @@ Either<CraetePaymentCardInfoObjectValueFailure<String, String>,
     return right(input);
   }
 }
+
+Either<CraetePaymentCardInfoObjectValueFailure<int?, String>, int?>
+    validateFieldNotIntAndNotEmpty1(int? input) {
+  if (input == null) {
+    return left(
+        CraetePaymentCardInfoObjectValueFailure.emptyField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}

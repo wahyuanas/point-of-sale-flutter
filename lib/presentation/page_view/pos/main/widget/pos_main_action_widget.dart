@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:showcaseview/showcaseview.dart';
@@ -20,14 +21,14 @@ class _PosMainActionWidgetState extends State<PosMainActionWidget> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      ModalRoute.of(context)
-          ?.addLocalHistoryEntry(LocalHistoryEntry(onRemove: () {
-        ShowCaseWidget.of(context).dismiss();
-      }));
-      //if (context.read<IntroCubit>().state.posMain == false) {
-      ShowCaseWidget.of(context).startShowCase([_one, _two, _three]);
-      //context.read<IntroCubit>().onPosMainChanged(true);
-      //}
+      if (context.read<IntroCubit>().state.posMain == false) {
+        ModalRoute.of(context)
+            ?.addLocalHistoryEntry(LocalHistoryEntry(onRemove: () {
+          ShowCaseWidget.of(context).dismiss();
+        }));
+        ShowCaseWidget.of(context).startShowCase([_one, _two, _three]);
+        context.read<IntroCubit>().onPosMainChanged(true);
+      }
     });
     super.initState();
   }

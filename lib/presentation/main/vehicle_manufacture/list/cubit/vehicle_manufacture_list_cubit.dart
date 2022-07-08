@@ -17,12 +17,15 @@ class VehicleManufactureListCubit
   // }
 
   onAddVehicleManufacture(VehicleManufacture vehicleManufacture) {
-    List<VehicleManufacture> vehicleManufactures = [];
+    List<VehicleManufacture>? vehicleManufactures = [];
     if (state.vehicleManufactures != null) {
       vehicleManufactures = List.from(state.vehicleManufactures!.toList());
       vehicleManufactures.add(vehicleManufacture);
     } else {
       vehicleManufactures.add(vehicleManufacture);
+    }
+    if (vehicleManufactures.isEmpty) {
+      vehicleManufactures = null;
     }
     emit(state.copyWith(
       vehicleManufactures: vehicleManufactures,

@@ -46,9 +46,11 @@ class _PosPaymentCardInfoNumberWidgetState
             _controller.text = '';
           }
         });
-        setState(() {
-          _initial = true;
-        });
+        // if (_initial == false) {
+        //   setState(() {
+        //     _initial = true;
+        //   });
+        // }
       }),
       child: BlocBuilder<PosPaymentCubit, PosPaymentState>(buildWhen: (p, c) {
         if (p.initial != c.initial) {

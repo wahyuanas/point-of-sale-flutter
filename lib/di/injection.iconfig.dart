@@ -78,7 +78,8 @@ void $initGetIt(GetIt g) {
   g.registerLazySingleton<OrderDetailCubit>(() => OrderDetailCubit());
   g.registerLazySingleton<PosRouteCubit>(() => PosRouteCubit());
   g.registerLazySingleton<IntroCubit>(() => IntroCubit());
-  g.registerLazySingleton<PosPaymentCubit>(() => PosPaymentCubit());
+  g.registerLazySingleton<PosPaymentCubit>(
+      () => PosPaymentCubit(posMainBloc: g()));
 }
 
 class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

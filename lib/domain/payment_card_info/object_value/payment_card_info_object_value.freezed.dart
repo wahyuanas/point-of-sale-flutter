@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$CraetePaymentCardInfo {
+  CraetePaymentCardInfoId get id => throw _privateConstructorUsedError;
   CraetePaymentCardInfoName get name => throw _privateConstructorUsedError;
   CraetePaymentCardInfoNumber get number => throw _privateConstructorUsedError;
   CraetePaymentCardInfoNumberRef get numberRef =>
@@ -34,7 +35,8 @@ abstract class $CraetePaymentCardInfoCopyWith<$Res> {
           $Res Function(CraetePaymentCardInfo) then) =
       _$CraetePaymentCardInfoCopyWithImpl<$Res>;
   $Res call(
-      {CraetePaymentCardInfoName name,
+      {CraetePaymentCardInfoId id,
+      CraetePaymentCardInfoName name,
       CraetePaymentCardInfoNumber number,
       CraetePaymentCardInfoNumberRef numberRef,
       CraetePaymentCardInfoRemarks remarks});
@@ -51,12 +53,17 @@ class _$CraetePaymentCardInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
   }) {
     return _then(_value.copyWith(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as CraetePaymentCardInfoId,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -85,7 +92,8 @@ abstract class _$$_CraetePaymentCardInfoCopyWith<$Res>
       __$$_CraetePaymentCardInfoCopyWithImpl<$Res>;
   @override
   $Res call(
-      {CraetePaymentCardInfoName name,
+      {CraetePaymentCardInfoId id,
+      CraetePaymentCardInfoName name,
       CraetePaymentCardInfoNumber number,
       CraetePaymentCardInfoNumberRef numberRef,
       CraetePaymentCardInfoRemarks remarks});
@@ -105,12 +113,17 @@ class __$$_CraetePaymentCardInfoCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? id = freezed,
     Object? name = freezed,
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
   }) {
     return _then(_$_CraetePaymentCardInfo(
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as CraetePaymentCardInfoId,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -135,12 +148,15 @@ class __$$_CraetePaymentCardInfoCopyWithImpl<$Res>
 
 class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
   const _$_CraetePaymentCardInfo(
-      {required this.name,
+      {required this.id,
+      required this.name,
       required this.number,
       required this.numberRef,
       required this.remarks})
       : super._();
 
+  @override
+  final CraetePaymentCardInfoId id;
   @override
   final CraetePaymentCardInfoName name;
   @override
@@ -152,7 +168,7 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
 
   @override
   String toString() {
-    return 'CraetePaymentCardInfo(name: $name, number: $number, numberRef: $numberRef, remarks: $remarks)';
+    return 'CraetePaymentCardInfo(id: $id, name: $name, number: $number, numberRef: $numberRef, remarks: $remarks)';
   }
 
   @override
@@ -160,6 +176,7 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CraetePaymentCardInfo &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.number, number) &&
             const DeepCollectionEquality().equals(other.numberRef, numberRef) &&
@@ -169,6 +186,7 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(number),
       const DeepCollectionEquality().hash(numberRef),
@@ -183,13 +201,16 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
 
 abstract class _CraetePaymentCardInfo extends CraetePaymentCardInfo {
   const factory _CraetePaymentCardInfo(
-          {required final CraetePaymentCardInfoName name,
+          {required final CraetePaymentCardInfoId id,
+          required final CraetePaymentCardInfoName name,
           required final CraetePaymentCardInfoNumber number,
           required final CraetePaymentCardInfoNumberRef numberRef,
           required final CraetePaymentCardInfoRemarks remarks}) =
       _$_CraetePaymentCardInfo;
   const _CraetePaymentCardInfo._() : super._();
 
+  @override
+  CraetePaymentCardInfoId get id => throw _privateConstructorUsedError;
   @override
   CraetePaymentCardInfoName get name => throw _privateConstructorUsedError;
   @override

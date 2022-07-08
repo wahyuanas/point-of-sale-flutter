@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
-class PosPaymentCardInfoRemarksWidget extends StatefulWidget {
-  const PosPaymentCardInfoRemarksWidget({Key? key}) : super(key: key);
+class PosPaymentCardInfoNameWidget extends StatefulWidget {
+  const PosPaymentCardInfoNameWidget({Key? key}) : super(key: key);
 
   @override
-  State<PosPaymentCardInfoRemarksWidget> createState() =>
-      _PosPaymentCardInfoRemarksWidgetState();
+  State<PosPaymentCardInfoNameWidget> createState() =>
+      _PosPaymentCardInfoNameWidgetState();
 }
 
-class _PosPaymentCardInfoRemarksWidgetState
-    extends State<PosPaymentCardInfoRemarksWidget> {
+class _PosPaymentCardInfoNameWidgetState
+    extends State<PosPaymentCardInfoNameWidget> {
   late bool _initial;
   final TextEditingController _controller = TextEditingController();
 
@@ -23,13 +23,12 @@ class _PosPaymentCardInfoRemarksWidgetState
         .state
         .createOrder
         .paymentCardInfo
-        ?.remarks
+        ?.name
         .value
-        .fold(
-            (l) => null,
-            (r) => context
-                .read<PosPaymentCubit>()
-                .onPaymentCardInfoRemarksChanged(''));
+        .fold((l) => null, (r) {
+      context.read<PosPaymentCubit>().onPaymentCardInfoNameChanged('');
+    });
+
     super.initState();
   }
 
@@ -46,9 +45,11 @@ class _PosPaymentCardInfoRemarksWidgetState
             _controller.text = '';
           }
         });
-        setState(() {
-          _initial = true;
-        });
+        // if (_initial == false) {
+        //   setState(() {
+        //     _initial = true;
+        //   });
+        // }
       }),
       child: BlocBuilder<PosPaymentCubit, PosPaymentState>(buildWhen: (p, c) {
         if (p.initial != c.initial) {
@@ -56,8 +57,8 @@ class _PosPaymentCardInfoRemarksWidgetState
             if (_initial == true) _initial = false;
             return true;
           }
-        } else if (p.createOrder.paymentCardInfo?.remarks !=
-            c.createOrder.paymentCardInfo?.remarks) {
+        } else if (p.createOrder.paymentCardInfo?.name !=
+            c.createOrder.paymentCardInfo?.name) {
           //if (_initial == true) _initial = false;
           return true;
         }
@@ -69,9 +70,10 @@ class _PosPaymentCardInfoRemarksWidgetState
               controller: _controller,
               autofocus: false,
               keyboardType: TextInputType.text,
+              textCapitalization: TextCapitalization.words,
               decoration: InputDecoration(
                 errorText: _initial == false
-                    ? state.createOrder.paymentCardInfo?.remarks.value.fold(
+                    ? state.createOrder.paymentCardInfo?.name.value.fold(
                         (l) => l.maybeWhen(
                             emptyField: (v) => "*wajib diisi",
                             orElse: () => null),
@@ -82,7 +84,7 @@ class _PosPaymentCardInfoRemarksWidgetState
                   color: Colors.blue,
                   size: 26.0, /*Color(0xff224597)*/
                 ),
-                labelText: "Remarks",
+                labelText: "Nama Bank",
                 labelStyle:
                     const TextStyle(color: Colors.black54, fontSize: 15.0),
                 hintText: '',
@@ -90,15 +92,13 @@ class _PosPaymentCardInfoRemarksWidgetState
                 focusedBorder: const UnderlineInputBorder(
                   borderSide: BorderSide(color: Colors.black54),
                 ),
-
-                //border: InputBorder.none,
               ),
               onChanged: (v) {
                 if (_initial == true) {
                   _initial = false;
                 }
                 BlocProvider.of<PosPaymentCubit>(context)
-                    .onPaymentCardInfoRemarksChanged(v);
+                    .onPaymentCardInfoNameChanged(v);
               }),
         );
       }),

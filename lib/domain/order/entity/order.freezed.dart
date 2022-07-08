@@ -29,13 +29,13 @@ mixin _$Order {
   DateTime get date => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   int get grandAmount => throw _privateConstructorUsedError;
-  int get disc => throw _privateConstructorUsedError;
+  double? get disc => throw _privateConstructorUsedError;
   int get paymentType => throw _privateConstructorUsedError;
-  int get paymentCardInfo => throw _privateConstructorUsedError;
+  int? get paymentCardInfo => throw _privateConstructorUsedError;
   int get charge => throw _privateConstructorUsedError;
   int get paidAmount => throw _privateConstructorUsedError;
   int get changeAmount => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   int get tax => throw _privateConstructorUsedError;
   int get itemNumber => throw _privateConstructorUsedError;
   int get paidStatus => throw _privateConstructorUsedError;
@@ -59,13 +59,13 @@ abstract class $OrderCopyWith<$Res> {
       DateTime date,
       int amount,
       int grandAmount,
-      int disc,
+      double? disc,
       int paymentType,
-      int paymentCardInfo,
+      int? paymentCardInfo,
       int charge,
       int paidAmount,
       int changeAmount,
-      String description,
+      String? description,
       int tax,
       int itemNumber,
       int paidStatus});
@@ -141,7 +141,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       disc: disc == freezed
           ? _value.disc
           : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
       paymentType: paymentType == freezed
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
@@ -149,7 +149,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
@@ -165,7 +165,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
@@ -197,13 +197,13 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       DateTime date,
       int amount,
       int grandAmount,
-      int disc,
+      double? disc,
       int paymentType,
-      int paymentCardInfo,
+      int? paymentCardInfo,
       int charge,
       int paidAmount,
       int changeAmount,
-      String description,
+      String? description,
       int tax,
       int itemNumber,
       int paidStatus});
@@ -280,7 +280,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       disc: disc == freezed
           ? _value.disc
           : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
       paymentType: paymentType == freezed
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
@@ -288,7 +288,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
@@ -304,7 +304,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
@@ -374,11 +374,11 @@ class _$_Order extends _Order {
   @override
   final int grandAmount;
   @override
-  final int disc;
+  final double? disc;
   @override
   final int paymentType;
   @override
-  final int paymentCardInfo;
+  final int? paymentCardInfo;
   @override
   final int charge;
   @override
@@ -386,7 +386,7 @@ class _$_Order extends _Order {
   @override
   final int changeAmount;
   @override
-  final String description;
+  final String? description;
   @override
   final int tax;
   @override
@@ -482,13 +482,13 @@ abstract class _Order extends Order {
       required final DateTime date,
       required final int amount,
       required final int grandAmount,
-      required final int disc,
+      required final double? disc,
       required final int paymentType,
-      required final int paymentCardInfo,
+      required final int? paymentCardInfo,
       required final int charge,
       required final int paidAmount,
       required final int changeAmount,
-      required final String description,
+      required final String? description,
       required final int tax,
       required final int itemNumber,
       required final int paidStatus}) = _$_Order;
@@ -515,11 +515,11 @@ abstract class _Order extends Order {
   @override
   int get grandAmount => throw _privateConstructorUsedError;
   @override
-  int get disc => throw _privateConstructorUsedError;
+  double? get disc => throw _privateConstructorUsedError;
   @override
   int get paymentType => throw _privateConstructorUsedError;
   @override
-  int get paymentCardInfo => throw _privateConstructorUsedError;
+  int? get paymentCardInfo => throw _privateConstructorUsedError;
   @override
   int get charge => throw _privateConstructorUsedError;
   @override
@@ -527,7 +527,7 @@ abstract class _Order extends Order {
   @override
   int get changeAmount => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
   int get tax => throw _privateConstructorUsedError;
   @override

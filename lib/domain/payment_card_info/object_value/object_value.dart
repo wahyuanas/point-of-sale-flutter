@@ -4,6 +4,18 @@ import 'object_value_failure.dart';
 import 'payment_card_info_object_value.dart';
 import 'value_object_validators.dart';
 
+class CraetePaymentCardInfoId extends ObjectValue<int?> {
+  @override
+  final Either<CraetePaymentCardInfoObjectValueFailure<int?, String>, int?>
+      value;
+
+  factory CraetePaymentCardInfoId(int? input) {
+    return CraetePaymentCardInfoId._(validateFieldNotIntAndNotEmpty1(input));
+  }
+
+  const CraetePaymentCardInfoId._(this.value);
+}
+
 class CreateOrderPaymentCardInfo extends ObjectValue<CraetePaymentCardInfo?> {
   @override
   final Either<CraetePaymentCardInfoObjectValueFailure<String, String>,

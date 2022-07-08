@@ -19,6 +19,7 @@ mixin _$PosPaymentState {
   StateStatus<FailureExceptions, Order> get status =>
       throw _privateConstructorUsedError;
   CreateOrder get createOrder => throw _privateConstructorUsedError;
+  List<Pos>? get poss => throw _privateConstructorUsedError;
   bool get initial => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -34,6 +35,7 @@ abstract class $PosPaymentStateCopyWith<$Res> {
   $Res call(
       {StateStatus<FailureExceptions, Order> status,
       CreateOrder createOrder,
+      List<Pos>? poss,
       bool initial});
 
   $StateStatusCopyWith<FailureExceptions, Order, $Res> get status;
@@ -53,6 +55,7 @@ class _$PosPaymentStateCopyWithImpl<$Res>
   $Res call({
     Object? status = freezed,
     Object? createOrder = freezed,
+    Object? poss = freezed,
     Object? initial = freezed,
   }) {
     return _then(_value.copyWith(
@@ -64,6 +67,10 @@ class _$PosPaymentStateCopyWithImpl<$Res>
           ? _value.createOrder
           : createOrder // ignore: cast_nullable_to_non_nullable
               as CreateOrder,
+      poss: poss == freezed
+          ? _value.poss
+          : poss // ignore: cast_nullable_to_non_nullable
+              as List<Pos>?,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -97,6 +104,7 @@ abstract class _$$_PosPaymentStateCopyWith<$Res>
   $Res call(
       {StateStatus<FailureExceptions, Order> status,
       CreateOrder createOrder,
+      List<Pos>? poss,
       bool initial});
 
   @override
@@ -120,6 +128,7 @@ class __$$_PosPaymentStateCopyWithImpl<$Res>
   $Res call({
     Object? status = freezed,
     Object? createOrder = freezed,
+    Object? poss = freezed,
     Object? initial = freezed,
   }) {
     return _then(_$_PosPaymentState(
@@ -131,6 +140,10 @@ class __$$_PosPaymentStateCopyWithImpl<$Res>
           ? _value.createOrder
           : createOrder // ignore: cast_nullable_to_non_nullable
               as CreateOrder,
+      poss: poss == freezed
+          ? _value._poss
+          : poss // ignore: cast_nullable_to_non_nullable
+              as List<Pos>?,
       initial: initial == freezed
           ? _value.initial
           : initial // ignore: cast_nullable_to_non_nullable
@@ -145,18 +158,31 @@ class _$_PosPaymentState
     with DiagnosticableTreeMixin
     implements _PosPaymentState {
   const _$_PosPaymentState(
-      {required this.status, required this.createOrder, required this.initial});
+      {required this.status,
+      required this.createOrder,
+      required final List<Pos>? poss,
+      required this.initial})
+      : _poss = poss;
 
   @override
   final StateStatus<FailureExceptions, Order> status;
   @override
   final CreateOrder createOrder;
+  final List<Pos>? _poss;
+  @override
+  List<Pos>? get poss {
+    final value = _poss;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
   @override
   final bool initial;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'PosPaymentState(status: $status, createOrder: $createOrder, initial: $initial)';
+    return 'PosPaymentState(status: $status, createOrder: $createOrder, poss: $poss, initial: $initial)';
   }
 
   @override
@@ -166,6 +192,7 @@ class _$_PosPaymentState
       ..add(DiagnosticsProperty('type', 'PosPaymentState'))
       ..add(DiagnosticsProperty('status', status))
       ..add(DiagnosticsProperty('createOrder', createOrder))
+      ..add(DiagnosticsProperty('poss', poss))
       ..add(DiagnosticsProperty('initial', initial));
   }
 
@@ -177,6 +204,7 @@ class _$_PosPaymentState
             const DeepCollectionEquality().equals(other.status, status) &&
             const DeepCollectionEquality()
                 .equals(other.createOrder, createOrder) &&
+            const DeepCollectionEquality().equals(other._poss, _poss) &&
             const DeepCollectionEquality().equals(other.initial, initial));
   }
 
@@ -185,6 +213,7 @@ class _$_PosPaymentState
       runtimeType,
       const DeepCollectionEquality().hash(status),
       const DeepCollectionEquality().hash(createOrder),
+      const DeepCollectionEquality().hash(_poss),
       const DeepCollectionEquality().hash(initial));
 
   @JsonKey(ignore: true)
@@ -197,6 +226,7 @@ abstract class _PosPaymentState implements PosPaymentState {
   const factory _PosPaymentState(
       {required final StateStatus<FailureExceptions, Order> status,
       required final CreateOrder createOrder,
+      required final List<Pos>? poss,
       required final bool initial}) = _$_PosPaymentState;
 
   @override
@@ -204,6 +234,8 @@ abstract class _PosPaymentState implements PosPaymentState {
       throw _privateConstructorUsedError;
   @override
   CreateOrder get createOrder => throw _privateConstructorUsedError;
+  @override
+  List<Pos>? get poss => throw _privateConstructorUsedError;
   @override
   bool get initial => throw _privateConstructorUsedError;
   @override

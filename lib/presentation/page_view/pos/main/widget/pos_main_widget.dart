@@ -50,7 +50,6 @@ class _PosMainWidgetState extends State<PosMainWidget>
     //kToolbarHeight;
     return BlocListener<PosRouteCubit, PosRouteState>(
       listener: (context, state) {
-        debugPrint("ok vv ${state.onRoute!.r}");
         if (state.onRoute != null) {
           if (state.args == null) {
             Navigator.of(context, rootNavigator: true)
