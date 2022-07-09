@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
 
 class PosPaymentExtendedSubPriceWidget extends StatefulWidget {
@@ -18,6 +19,8 @@ class _PosPaymentExtendedSubPriceWidgetState
     context.read<PosPaymentCubit>().state.poss?.forEach((pos) {
       _subPrice = (_subPrice ?? 0) + (pos.sumPrice ?? 0);
     });
+
+    context.read<PosPaymentCubit>().onAmountChanged(_subPrice);
     super.initState();
   }
 
@@ -33,7 +36,9 @@ class _PosPaymentExtendedSubPriceWidgetState
         ),
         Expanded(
           child: Text(
-            '{$_subPrice}',
+            _subPrice == null
+                ? 'Rp 0,-'
+                : "${NumberFormat.currency(locale: 'id', symbol: 'Rp ', decimalDigits: 0).format(_subPrice)},-",
             style: const TextStyle(color: Colors.black, fontSize: 17.0),
           ),
         ),

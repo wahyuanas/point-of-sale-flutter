@@ -20,8 +20,7 @@ Either<FormVehicleObjectValueFailure<String, String>, int>
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(
         FormVehicleObjectValueFailure.noSpaceAllowed(failedValue: input));
-  }
-  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+  } else if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
     return left(FormVehicleObjectValueFailure.exceptOneToNineAllowed(
         failedValue: input));
   } else if (int.tryParse(input) == null) {

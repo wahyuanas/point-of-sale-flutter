@@ -34,7 +34,9 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
         _orderListCubit = orderListCubit,
         _paymentCardInfoListCubit = paymentCardInfoListCubit,
         super(PosPaymentState.initial()) {
+    //onGrandAmountChanged();
     _subscriptionuPosMainBloc = _posMainBloc.stream.listen((posMainState) {
+      debugPrint("POS PAYMENT CUBIT GRAND LISTEN");
       onPosChanged(posMainState);
     });
   }
@@ -150,22 +152,22 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
       createOrder: state.createOrder.copyWith(disc: CreateOrderDisc(disc)),
     ));
-    onGrandAmountChanged();
+    //onGrandAmountChanged();
   }
 
-  onChargeChanged(String charge) {
+  onChargeChanged(String? charge) {
     emit(state.copyWith(
       createOrder:
           state.createOrder.copyWith(charge: CreateOrderCharge(charge)),
     ));
-    onGrandAmountChanged();
+    //onGrandAmountChanged();
   }
 
   onTaxChanged(int? tax) {
     emit(state.copyWith(
       createOrder: state.createOrder.copyWith(tax: CreateOrderTax(tax)),
     ));
-    onGrandAmountChanged();
+    //onGrandAmountChanged();
   }
 
   onPaidAmountChanged(String paidAmount) async {
@@ -200,25 +202,26 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     ));
   }
 
-  onGrandAmountChanged() async {
-    int? grandAmount = 0;
-    int subPrice = 0;
-    state.poss?.forEach((pos) {
-      subPrice = subPrice + (pos.sumPrice ?? 0);
-    });
-    await state.createOrder.charge.value.fold(
-        (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
+  onGrandAmountChanged(int? grandAmount) async {
+    // int? grandAmount;
+    // state.poss?.forEach((pos) {
+    //   grandAmount = (grandAmount ?? 0) + (pos.sumPrice ?? 0);
+    // });
+    // await state.createOrder.charge.value.fold(
+    //     (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
 
-    await state.createOrder.disc.value.fold(
-        (l) => null,
-        (r) async => grandAmount = ((grandAmount ?? 0) -
-            ((grandAmount ?? 0) * ((r ?? 0) / 100))) as int?);
-
-    await state.createOrder.tax.value.fold(
-        (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
-    if (grandAmount == 0) {
-      grandAmount = null;
-    }
+    // await state.createOrder.disc.value.fold((l) => null, (r) async {
+    //   debugPrint("POS PAYMENT CUBIT GRAND Y $grandAmount $r");
+    //   grandAmount = ((grandAmount ?? 0) -
+    //       ((grandAmount ?? 0) * ((r ?? 0) / 100)).round());
+    //   debugPrint("POS PAYMENT CUBIT GRAND zz $grandAmount $r");
+    // });
+    // debugPrint("POS PAYMENT CUBIT GRAND $grandAmount");
+    // await state.createOrder.tax.value.fold(
+    //     (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
+    // if (grandAmount == 0) {
+    //   grandAmount = null;
+    // }
     emit(state.copyWith(
       createOrder: state.createOrder
           .copyWith(grandAmount: CreateOrderGrandAmount(grandAmount)),
@@ -244,6 +247,13 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
       createOrder: state.createOrder
           .copyWith(paidStatus: CreateOrderPaidStatus(paidStatus)),
+    ));
+  }
+
+  onAmountChanged(int? amount) {
+    emit(state.copyWith(
+      createOrder:
+          state.createOrder.copyWith(amount: CreateOrderAmount(amount)),
     ));
   }
 
@@ -327,7 +337,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
   }
 
   void onPosChanged(PosMainState posMainState) {
-    state.copyWith(poss: posMainState.poss);
+    emit(state.copyWith(poss: posMainState.poss));
   }
 
   void onPay() async {
@@ -335,7 +345,6 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
         (state.createOrder.paymentCardInfo != null
             ? state.createOrder.paymentCardInfo!.failureOption.isSome()
             : false)) {
-      debugPrint("POS PAYMENT CUBIT");
       emit(state.copyWith(initial: false));
       await Future.delayed(const Duration(microseconds: 500));
       emit(state.copyWith(initial: true));

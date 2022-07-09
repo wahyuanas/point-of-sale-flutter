@@ -30,8 +30,7 @@ Either<FormItemObjectValueFailure<String, String>, int>
     return left(FormItemObjectValueFailure.emptyField(failedValue: input));
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(FormItemObjectValueFailure.noSpaceAllowed(failedValue: input));
-  }
-  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+  } else if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
     return left(
         FormItemObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
   } else if (int.tryParse(input.replaceAll('.', '')) == null) {

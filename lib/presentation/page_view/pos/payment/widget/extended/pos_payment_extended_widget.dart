@@ -30,7 +30,7 @@ class PosPaymentExtendedWidget extends StatelessWidget {
                   PosPaymentExtendedChargeWidget(),
                   PosPaymentExtendedTaxWidget(),
                   SizedBox(
-                    height: 30,
+                    height: 10,
                   ),
                 ],
               ),
@@ -38,9 +38,25 @@ class PosPaymentExtendedWidget extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            const PosPaymentExtendedGrandPriceWidget(),
-            const PosPaymentExtendedPaidWidget(),
-            const PosPaymentExtendedChangeWidget(),
+            Container(
+              //height: 50,
+              //margin: const EdgeInsets.all(10.0),
+              decoration: const BoxDecoration(
+                  //color: Colors.blue,
+                  border: Border(
+                bottom: BorderSide(
+                  color: Colors.blue,
+                  width: 1.5,
+                ),
+              )),
+              child: Column(
+                children: const [
+                  PosPaymentExtendedGrandPriceWidget(),
+                  PosPaymentExtendedPaidWidget(),
+                  PosPaymentExtendedChangeWidget(),
+                ],
+              ),
+            ),
             const SizedBox(
               height: 30,
             ),

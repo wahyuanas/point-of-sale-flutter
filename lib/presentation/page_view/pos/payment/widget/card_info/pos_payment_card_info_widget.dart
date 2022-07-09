@@ -71,7 +71,10 @@ class _PosPaymentCardInfoWidgetState extends State<PosPaymentCardInfoWidget> {
                     PosPaymentCardInfoNameWidget(),
                     PosPaymentCardInfoNumberWidget(),
                     PosPaymentCardInfoNumberRefWidget(),
-                    PosPaymentCardInfoRemarksWidget()
+                    PosPaymentCardInfoRemarksWidget(),
+                    SizedBox(
+                      height: 10.0,
+                    )
                   ],
                 ),
               ),

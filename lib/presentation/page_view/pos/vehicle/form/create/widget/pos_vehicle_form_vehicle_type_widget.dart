@@ -77,7 +77,7 @@ class _PosVehicleFormVehicleTypeWidgetState
                   child: Row(
                     children: const [
                       Icon(
-                        Icons.person_outline,
+                        Icons.directions_car_outlined,
                         color: Colors.blue,
                       ),
                       SizedBox(

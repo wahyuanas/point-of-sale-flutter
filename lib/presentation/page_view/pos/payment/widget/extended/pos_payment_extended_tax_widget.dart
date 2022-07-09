@@ -14,7 +14,8 @@ class _PosPaymentExtendedTaxWidgetState
     extends State<PosPaymentExtendedTaxWidget> {
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder(builder: ((context, state) {
+    return BlocBuilder<PosPaymentCubit, PosPaymentState>(
+        builder: ((context, state) {
       return Row(
         children: [
           const Expanded(

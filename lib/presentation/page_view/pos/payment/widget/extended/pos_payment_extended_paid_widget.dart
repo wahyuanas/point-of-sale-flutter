@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/presentation/common/formatter/text_currency.dart';
 import 'package:pos/presentation/page_view/pos/payment/cubit/pos_payment_cubit.dart';
@@ -26,6 +27,12 @@ class _PosPaymentExtendedPaidWidgetState
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<PosPaymentCubit, PosPaymentState>(buildWhen: (p, c) {
       if (p.initial != c.initial) {
@@ -34,7 +41,8 @@ class _PosPaymentExtendedPaidWidgetState
           return true;
         }
       } else if (p.createOrder.paidAmount != c.createOrder.paidAmount) {
-        //if (_initial == true) _initial = false;
+        debugPrint("POS PAYMENT EXTENDED");
+        if (_initial == true) _initial = false;
         return true;
       }
       return false;
@@ -44,29 +52,37 @@ class _PosPaymentExtendedPaidWidgetState
           const Expanded(
             child: Text(
               'Bayar',
-              style: TextStyle(color: Colors.blue, fontSize: 15.0),
+              style: TextStyle(color: Colors.blue, fontSize: 17.0),
             ),
           ),
           Expanded(
             child: TextFormField(
+                style: const TextStyle(fontSize: 17.0),
                 controller: _controller,
                 autofocus: false,
                 keyboardType: TextInputType.number,
-                inputFormatters: [ThousandsSeparatorInputFormatter()],
+                inputFormatters: [
+                  ThousandsSeparatorInputFormatter(),
+                  //FilteringTextInputFormatter.digitsOnly
+                ],
                 decoration: InputDecoration(
                   errorText: _initial == false
-                      ? state.createOrder.paymentCardInfo?.number.value.fold(
+                      ? state.createOrder.paidAmount.value.fold(
                           (l) => l.maybeWhen(
                               emptyField: (v) => "*wajib diisi",
+                              notIntField: (v) => "*wajib berupa angka",
+                              noSpaceAllowed: (v) =>
+                                  "*tidak boleh mengandung spasi",
+                              exceptOneToNineAllowed: (v) =>
+                                  "*tidak boleh diawali selain angka 1 - 9",
                               orElse: () => null),
                           (r) => null)
                       : null,
-
-                  icon: const Icon(
-                    Icons.description_outlined,
-                    color: Colors.blue,
-                    size: 26.0, /*Color(0xff224597)*/
-                  ),
+                  // icon: const Icon(
+                  //   Icons.payment_outlined,
+                  //   color: Colors.blue,
+                  //   size: 26.0, /*Color(0xff224597)*/
+                  // ),
                   labelText: "Bayar",
                   labelStyle:
                       const TextStyle(color: Colors.black54, fontSize: 15.0),

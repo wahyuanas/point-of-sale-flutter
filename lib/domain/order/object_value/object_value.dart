@@ -122,7 +122,7 @@ class CreateOrderPaymentType extends ObjectValue<int?> {
 
 class CreateOrderCharge extends ObjectValue<int?> {
   @override
-  final Either<OrderObjectValueFailure<int?, String>, int?> value;
+  final Either<OrderObjectValueFailure<String?, String>, int?> value;
 
   factory CreateOrderCharge(String? input) {
     return CreateOrderCharge._(validateFieldNotIntAndNotEmpty2(input));

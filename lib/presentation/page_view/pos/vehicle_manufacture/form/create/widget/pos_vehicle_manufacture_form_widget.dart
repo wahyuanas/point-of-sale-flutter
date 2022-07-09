@@ -69,7 +69,7 @@ class _PosVehicleManufactureFormWidgetState
           //   onTap: () => const PosVehicleManufactureFormWidget(),
           // ),
           title: const Text(
-            "Form Tambah Kendaraan",
+            "Form Tambah Manufaktur Kendaraan",
             style: TextStyle(color: Colors.blue, fontSize: 17.0),
           ),
           systemOverlayStyle: const SystemUiOverlayStyle(

@@ -4,7 +4,7 @@ import '../delegate/pos_payment_action_delegate.dart';
 import 'card_info/pos_payment_card_info_widget.dart';
 import 'customer/pos_payment_customer_widget.dart';
 import 'employee/pos_payment_employee_widget.dart';
-import 'extended/pos_payment_extended_export_widget.dart';
+import 'extended/pos_payment_extended_widget.dart';
 import 'type/pos_payment_type_widget.dart';
 import 'vehicle/pos_payment_vehicle_widget.dart';
 
@@ -131,7 +131,7 @@ class _PosPaymentWidgetState extends State<PosPaymentWidget> {
                   PosPaymentEmployeeWidget(),
                   PosPaymentTypeWidget(),
                   PosPaymentCardInfoWidget(),
-                  PosPaymentExtendedSubPriceWidget()
+                  PosPaymentExtendedWidget()
                 ],
               ),
             )

@@ -17,8 +17,9 @@ import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.da
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:pos/presentation/main/introduction/cubit/introduction_cubit.dart';
 import 'package:pos/presentation/main/modal/cubit/modal_cubit.dart';
-import 'package:pos/presentation/main/order/cubit/order_cubit.dart';
+import 'package:pos/presentation/main/order/cubit/order_list_cubit.dart';
 import 'package:pos/presentation/main/order_detail/cubit/order_detail_cubit.dart';
+import 'package:pos/presentation/main/payment_card_info/list/cubit/payment_card_info_list_cubit.dart';
 import 'package:pos/presentation/main/sign/in_out/cubit/sign_in_cubit.dart';
 import 'package:pos/presentation/main/vehicle/form/create/cubit/vehicle_form_create_cubit.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
@@ -122,10 +123,14 @@ class PosAppState extends State<PosApp> {
       BlocProvider(create: (context) => getIt<VehicleTypeFormCreateCubit>()),
       BlocProvider(create: (context) => getIt<EmployeeFormCreateCubit>()),
       BlocProvider(create: (context) => getIt<CustomerListCubit>()),
-      BlocProvider(create: (context) => getIt<OrderCubit>()),
+      BlocProvider(create: (context) => getIt<OrderListCubit>()),
+      BlocProvider(create: (context) => getIt<PaymentCardInfoListCubit>()),
       BlocProvider(create: (context) => getIt<OrderDetailCubit>()),
       BlocProvider(create: (context) => getIt<IntroCubit>()),
-      BlocProvider(create: (context) => getIt<PosPaymentCubit>()),
+      BlocProvider(
+        create: (context) => getIt<PosPaymentCubit>(),
+        lazy: false,
+      ),
       BlocProvider(create: (context) => getIt<VehicleOwnerListCubit>()),
       BlocProvider(create: (context) => getIt<VehicleTypeListCubit>()),
       BlocProvider(create: (context) => getIt<VehicleManufactureListCubit>()),

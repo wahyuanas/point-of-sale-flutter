@@ -50,8 +50,7 @@ Either<OrderObjectValueFailure<String, String>, int>
     return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(OrderObjectValueFailure.noSpaceAllowed(failedValue: input));
-  }
-  if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+  } else if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
     return left(
         OrderObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
   } else if (int.tryParse(input.replaceAll('.', '')) == null) {
@@ -70,12 +69,21 @@ Either<OrderObjectValueFailure<int?, String>, int?>
   }
 }
 
-Either<OrderObjectValueFailure<int?, String>, int?>
+Either<OrderObjectValueFailure<String?, String>, int?>
     validateFieldNotIntAndNotEmpty2(String? input) {
   if (input == null) {
     return right(null);
+  } else if (input.isEmpty) {
+    return right(null);
+  } else if (RegExp(r"\s").hasMatch(input)) {
+    return left(OrderObjectValueFailure.noSpaceAllowed(failedValue: input));
+  } else if (!RegExp(r'^[1-9]+$').hasMatch(input.substring(0, 1))) {
+    return left(
+        OrderObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
+  } else if (int.tryParse(input.replaceAll('.', '')) == null) {
+    return left(OrderObjectValueFailure.notIntField(failedValue: input));
   } else {
-    return right(int.tryParse(input));
+    return right(int.parse(input.replaceAll('.', '')));
   }
 }
 
@@ -94,8 +102,7 @@ Either<OrderObjectValueFailure<String, String>, double>
     return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(OrderObjectValueFailure.noSpaceAllowed(failedValue: input));
-  }
-  if (!RegExp(r'^[0-9]+$').hasMatch(input.substring(0, 1))) {
+  } else if (!RegExp(r'^[0-9]+$').hasMatch(input.substring(0, 1))) {
     return left(
         OrderObjectValueFailure.exceptOneToNineAllowed(failedValue: input));
   } else if (double.tryParse(input) == null) {
@@ -109,8 +116,7 @@ Either<OrderObjectValueFailure<String, String>, double?>
     validateFieldNotDoubleAndEmpty(String? input) {
   if (input == null) {
     return right(null);
-  }
-  if (input.isEmpty) {
+  } else if (input.isEmpty) {
     return right(null);
   } else if (RegExp(r"\s").hasMatch(input)) {
     return left(OrderObjectValueFailure.noSpaceAllowed(failedValue: input));
