@@ -87,12 +87,12 @@ class CreateOrderAmount extends ObjectValue<int> {
   const CreateOrderAmount._(this.value);
 }
 
-class CreateOrderGrandAmount extends ObjectValue<int> {
+class CreateOrderGrandAmount extends ObjectValue<int?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateOrderGrandAmount(String input) {
-    return CreateOrderGrandAmount._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderGrandAmount(int? input) {
+    return CreateOrderGrandAmount._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateOrderGrandAmount._(this.value);
@@ -142,23 +142,23 @@ class CreateOrderPaidAmount extends ObjectValue<int> {
   const CreateOrderPaidAmount._(this.value);
 }
 
-class CreateOrderChangeAmount extends ObjectValue<int> {
+class CreateOrderChangeAmount extends ObjectValue<int?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateOrderChangeAmount(String input) {
-    return CreateOrderChangeAmount._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderChangeAmount(int? input) {
+    return CreateOrderChangeAmount._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateOrderChangeAmount._(this.value);
 }
 
-class CreateOrderTax extends ObjectValue<int> {
+class CreateOrderTax extends ObjectValue<int?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, int> value;
+  final Either<OrderObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateOrderTax(String input) {
-    return CreateOrderTax._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateOrderTax(int? input) {
+    return CreateOrderTax._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateOrderTax._(this.value);

@@ -150,6 +150,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
       createOrder: state.createOrder.copyWith(disc: CreateOrderDisc(disc)),
     ));
+    onGrandAmountChanged();
   }
 
   onChargeChanged(String charge) {
@@ -157,19 +158,92 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
       createOrder:
           state.createOrder.copyWith(charge: CreateOrderCharge(charge)),
     ));
+    onGrandAmountChanged();
   }
 
-  onPaidAmountChanged(String paidAmount) {
+  onTaxChanged(int? tax) {
+    emit(state.copyWith(
+      createOrder: state.createOrder.copyWith(tax: CreateOrderTax(tax)),
+    ));
+    onGrandAmountChanged();
+  }
+
+  onPaidAmountChanged(String paidAmount) async {
     emit(state.copyWith(
       createOrder: state.createOrder
           .copyWith(paidAmount: CreateOrderPaidAmount(paidAmount)),
     ));
+
+    int? grandAmount;
+    int? paidAmountt;
+    await state.createOrder.grandAmount.value.fold((l) async => grandAmount = 0,
+        (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
+
+    await state.createOrder.paidAmount.value.fold(
+        (l) async => paidAmountt = null,
+        (r) async => paidAmountt = (paidAmountt ?? 0) + r);
+
+    // if ((paidAmountt ?? 0) < (grandAmount ?? 0)) {
+    //   onChangeAmountChanged(null);
+    // }
+    if (paidAmountt == null) {
+      onChangeAmountChanged(null);
+    } else {
+      onChangeAmountChanged((paidAmountt ?? 0) - (grandAmount ?? 0));
+    }
   }
 
-  onChangeAmountChanged(String changeAmount) {
+  onChangeAmountChanged(int? changeAmount) {
     emit(state.copyWith(
       createOrder: state.createOrder
           .copyWith(changeAmount: CreateOrderChangeAmount(changeAmount)),
+    ));
+  }
+
+  onGrandAmountChanged() async {
+    int? grandAmount = 0;
+    int subPrice = 0;
+    state.poss?.forEach((pos) {
+      subPrice = subPrice + (pos.sumPrice ?? 0);
+    });
+    await state.createOrder.charge.value
+        .fold((l) => null, (r) async => grandAmount = (grandAmount ?? 0) + r);
+
+    await state.createOrder.disc.value.fold(
+        (l) => null,
+        (r) async => grandAmount = ((grandAmount ?? 0) -
+            ((grandAmount ?? 0) * ((r ?? 0) / 100))) as int?);
+
+    await state.createOrder.tax.value.fold(
+        (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
+    if (grandAmount == 0) {
+      grandAmount = null;
+    }
+    emit(state.copyWith(
+      createOrder: state.createOrder
+          .copyWith(grandAmount: CreateOrderGrandAmount(grandAmount)),
+    ));
+
+    int? paidAmountt;
+
+    await state.createOrder.paidAmount.value.fold(
+        (l) async => paidAmountt = null,
+        (r) async => paidAmountt = (paidAmountt ?? 0) + r);
+
+    // if ((paidAmountt ?? 0) < (grandAmount ?? 0)) {
+    //   onChangeAmountChanged(null);
+    // }
+    if (paidAmountt == null) {
+      onChangeAmountChanged(null);
+    } else {
+      onChangeAmountChanged((paidAmountt ?? 0) - (grandAmount ?? 0));
+    }
+  }
+
+  onPaidStatusChanged(String paidStatus) {
+    emit(state.copyWith(
+      createOrder: state.createOrder
+          .copyWith(paidStatus: CreateOrderPaidStatus(paidStatus)),
     ));
   }
 
