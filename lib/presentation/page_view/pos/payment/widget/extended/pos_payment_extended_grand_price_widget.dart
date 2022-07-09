@@ -24,13 +24,8 @@ class _PosPaymentExtendedGrandPriceWidgetState
     context.read<PosPaymentCubit>().state.poss?.forEach((pos) {
       subPrice = (subPrice ?? 0) + (pos.sumPrice ?? 0);
     });
-    await context
-        .read<PosPaymentCubit>()
-        .state
-        .createOrder
-        .charge
-        .value
-        .fold((l) => null, (r) async => _grandPrice = (_grandPrice ?? 0) + r);
+    await context.read<PosPaymentCubit>().state.createOrder.charge.value.fold(
+        (l) => null, (r) async => _grandPrice = (_grandPrice ?? 0) + (r ?? 0));
     if (!mounted) return;
     await context.read<PosPaymentCubit>().state.createOrder.disc.value.fold(
         (l) => null,

@@ -70,6 +70,15 @@ Either<OrderObjectValueFailure<int?, String>, int?>
   }
 }
 
+Either<OrderObjectValueFailure<int?, String>, int?>
+    validateFieldNotIntAndNotEmpty2(String? input) {
+  if (input == null) {
+    return right(null);
+  } else {
+    return right(int.tryParse(input));
+  }
+}
+
 Either<OrderObjectValueFailure<String, String>, DateTime>
     validateFieldNotDateTimeAndNotEmpty(String input) {
   if (input.isEmpty) {

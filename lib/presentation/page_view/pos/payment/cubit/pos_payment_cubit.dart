@@ -206,8 +206,8 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     state.poss?.forEach((pos) {
       subPrice = subPrice + (pos.sumPrice ?? 0);
     });
-    await state.createOrder.charge.value
-        .fold((l) => null, (r) async => grandAmount = (grandAmount ?? 0) + r);
+    await state.createOrder.charge.value.fold(
+        (l) => null, (r) async => grandAmount = (grandAmount ?? 0) + (r ?? 0));
 
     await state.createOrder.disc.value.fold(
         (l) => null,
@@ -240,7 +240,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     }
   }
 
-  onPaidStatusChanged(String paidStatus) {
+  onPaidStatusChanged(int? paidStatus) {
     emit(state.copyWith(
       createOrder: state.createOrder
           .copyWith(paidStatus: CreateOrderPaidStatus(paidStatus)),

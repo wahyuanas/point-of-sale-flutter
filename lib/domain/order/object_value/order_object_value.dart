@@ -38,7 +38,7 @@ class CreateOrder with _$CreateOrder {
         vehicle: CreateOrderVehicle(null),
         employees: CreateOrderEmployees(null),
         date: CreateOrderDate(''),
-        amount: CreateOrderAmount(''),
+        amount: CreateOrderAmount(null),
         grandAmount: CreateOrderGrandAmount(null),
         disc: CreateOrderDisc(''),
         paymentType: CreateOrderPaymentType(null),
@@ -48,8 +48,8 @@ class CreateOrder with _$CreateOrder {
         changeAmount: CreateOrderChangeAmount(null),
         description: CreateOrderDescription(''),
         tax: CreateOrderTax(null),
-        itemNumber: CreateOrderItemNumber(''),
-        paidStatus: CreateOrderPaidStatus(''),
+        itemNumber: CreateOrderItemNumber(null),
+        paidStatus: CreateOrderPaidStatus(null),
       );
 }
 
