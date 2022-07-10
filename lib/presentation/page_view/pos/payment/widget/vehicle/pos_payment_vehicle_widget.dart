@@ -138,14 +138,14 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                                 Wrap(
                                   children: [
                                     Text(
-                                      '${r.vehicleTypeModel?.manufacture?.name}',
+                                      '${r.vehicleType?.manufacture?.name}',
                                       style: const TextStyle(
                                           color: Colors.black, fontSize: 15.0),
                                     ),
                                     const SizedBox(
                                       width: 5.0,
                                     ),
-                                    Text(r.vehicleTypeModel!.model,
+                                    Text(r.vehicleType!.model,
                                         style: const TextStyle(height: 1.2)),
                                   ],
                                 ),
@@ -158,7 +158,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                                         const SizedBox(
                                           width: 5.0,
                                         ),
-                                        Text(r.vehicleTypeModel!.color,
+                                        Text(r.vehicleType!.color,
                                             style: const TextStyle(
                                                 color: Colors.blue,
                                                 height: 1.2)),
@@ -174,7 +174,7 @@ class _PosPaymentVehicleWidgetState extends State<PosPaymentVehicleWidget> {
                                         const SizedBox(
                                           width: 5.0,
                                         ),
-                                        Text('${r.vehicleTypeModel!.year}',
+                                        Text('${r.vehicleType!.year}',
                                             style: const TextStyle(
                                                 color: Colors.blue,
                                                 height: 1.2)),

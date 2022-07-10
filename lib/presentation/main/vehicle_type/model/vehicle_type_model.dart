@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/core/object_value/entity.dart';
-import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:uuid/uuid.dart';
@@ -22,18 +21,12 @@ class VehicleTypeModel with _$VehicleTypeModel implements IEntity {
     required int accountId,
   }) = _VehicleTypeModel;
 
-  factory VehicleTypeModel.createVehicleTypeModel(
-      VehicleType? vehicleType, VehicleManufacture? vehicleManufacture) {
+  factory VehicleTypeModel.createVehicleTypeModel(VehicleType? vehicleType,
+      VehicleManufactureModel? vehicleManufactureModel) {
     return VehicleTypeModel(
       id: vehicleType!.id,
       uuid: vehicleType.uuid,
-      manufacture: vehicleManufacture != null
-          ? VehicleManufactureModel(
-              id: vehicleManufacture.id,
-              uuid: vehicleManufacture.uuid,
-              name: vehicleManufacture.name,
-              accountId: vehicleManufacture.accountId)
-          : null,
+      manufacture: vehicleManufactureModel,
       model: vehicleType.model,
       description: vehicleType.description,
       accountId: vehicleType.accountId,

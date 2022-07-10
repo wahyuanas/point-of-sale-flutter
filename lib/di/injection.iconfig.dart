@@ -67,7 +67,8 @@ void $initGetIt(GetIt g) {
       vehicleListCubit: g(),
       vehicleManufactureListCubit: g(),
       vehicleOwnerListCubit: g(),
-      vehicleTypeListCubit: g()));
+      vehicleTypeListCubit: g(),
+      orderDetailListCubit: g()));
   g.registerLazySingleton<CatalogListCubit>(() => CatalogListCubit());
   g.registerLazySingleton<CustomerListCubit>(() => CustomerListCubit());
   g.registerLazySingleton<EmployeeListCubit>(() => EmployeeListCubit());

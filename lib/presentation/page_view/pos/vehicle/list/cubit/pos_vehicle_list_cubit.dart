@@ -9,6 +9,7 @@ import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/list/cubit/vehicle_manufacture_list_cubit.dart';
+import 'package:pos/presentation/main/vehicle_manufacture/model/vehicle_manufacture_model.dart';
 import 'package:pos/presentation/main/vehicle_owner/list/cubit/vehicle_owner_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle_owner/model/vehicle_owner_model.dart';
 import 'package:pos/presentation/main/vehicle_type/list/cubit/vehicle_type_list_cubit.dart';
@@ -40,6 +41,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
   final VehicleListCubit _vehicleListCubit;
   final VehicleTypeListCubit _vehicleTypeListCubit;
   final VehicleOwnerListCubit _vehicleOwnerListCubit;
+
   final VehicleManufactureListCubit _vehicleManufactureListCubit;
   late StreamSubscription _customerListSubscription;
 
@@ -49,6 +51,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleTypeModel? vehicleTypeModal;
     VehicleOwnerModel? vehicleOwnerModal;
     VehicleManufacture? vehicleManufacture;
+    VehicleManufactureModel? vehicleManufactureModel;
 
     List<VehicleModel>? vehicleModels =
         _vehicleListCubit.state.vehicles?.map((vehicle) {
@@ -64,8 +67,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
             ?.firstWhereOrNull((manuf) => manuf.id == vehicleType?.manufacture);
       }
       if (vehicleManufacture != null) {
+        vehicleManufactureModel =
+            VehicleManufactureModel.createVehicleManufactureModel(
+                vehicleManufacture);
+
         vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-            vehicleType, vehicleManufacture);
+            vehicleType, vehicleManufactureModel);
       }
 
       if (vehicleOwner != null) {
@@ -85,6 +92,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleTypeModel? vehicleTypeModal;
     VehicleOwnerModel? vehicleOwnerModal;
     VehicleManufacture? vehicleManufacture;
+    VehicleManufactureModel? vehicleManufactureModel;
 
     if (v.isNotEmpty) {
       List<VehicleModel>? vehicleModels = [];
@@ -107,8 +115,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
           }
 
           if (vehicleManufacture != null) {
+            vehicleManufactureModel =
+                VehicleManufactureModel.createVehicleManufactureModel(
+                    vehicleManufacture);
+
             vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-                vehicleType, vehicleManufacture);
+                vehicleType, vehicleManufactureModel);
           }
 
           if (vehicleOwner != null) {
@@ -140,8 +152,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
                   (manuf) => manuf.id == vehicleType?.manufacture);
         }
         if (vehicleManufacture != null) {
+          vehicleManufactureModel =
+              VehicleManufactureModel.createVehicleManufactureModel(
+                  vehicleManufacture);
+
           vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-              vehicleType, vehicleManufacture);
+              vehicleType, vehicleManufactureModel);
         }
 
         if (vehicleOwner != null) {
@@ -165,6 +181,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleTypeModel? vehicleTypeModal;
     VehicleOwnerModel? vehicleOwnerModal;
     VehicleManufacture? vehicleManufacture;
+    VehicleManufactureModel? vehicleManufactureModel;
 
     List<VehicleModel>? vehicleModels =
         _vehicleListCubit.state.vehicles?.map((vehicle) {
@@ -180,8 +197,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
             ?.firstWhereOrNull((manuf) => manuf.id == vehicleType?.manufacture);
       }
       if (vehicleManufacture != null) {
+        vehicleManufactureModel =
+            VehicleManufactureModel.createVehicleManufactureModel(
+                vehicleManufacture);
+
         vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-            vehicleType, vehicleManufacture);
+            vehicleType, vehicleManufactureModel);
       }
 
       if (vehicleOwner != null) {
@@ -201,6 +222,7 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
     VehicleTypeModel? vehicleTypeModal;
     VehicleOwnerModel? vehicleOwnerModal;
     VehicleManufacture? vehicleManufacture;
+    VehicleManufactureModel? vehicleManufactureModel;
 
     if (state.keyWord != null) {
       List<VehicleModel>? vehicleModels = [];
@@ -226,8 +248,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
                     (manuf) => manuf.id == vehicleType?.manufacture);
           }
           if (vehicleManufacture != null) {
+            vehicleManufactureModel =
+                VehicleManufactureModel.createVehicleManufactureModel(
+                    vehicleManufacture);
+
             vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-                vehicleType, vehicleManufacture);
+                vehicleType, vehicleManufactureModel);
           }
 
           if (vehicleOwner != null) {
@@ -259,8 +285,12 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
                   (manuf) => manuf.id == vehicleType?.manufacture);
         }
         if (vehicleManufacture != null) {
+          vehicleManufactureModel =
+              VehicleManufactureModel.createVehicleManufactureModel(
+                  vehicleManufacture);
+
           vehicleTypeModal = VehicleTypeModel.createVehicleTypeModel(
-              vehicleType, vehicleManufacture);
+              vehicleType, vehicleManufactureModel);
         }
 
         if (vehicleOwner != null) {

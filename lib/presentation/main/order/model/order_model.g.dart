@@ -37,6 +37,9 @@ _$_OrderModel _$$_OrderModelFromJson(Map<String, dynamic> json) =>
       itemNumber: json['itemNumber'] as int,
       paidStatus: json['paidStatus'] as int,
       accountId: json['accountId'] as int,
+      orderDetail: (json['orderDetail'] as List<dynamic>?)
+          ?.map((e) => OrderDetailModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
     );
 
 Map<String, dynamic> _$$_OrderModelToJson(_$_OrderModel instance) =>
@@ -61,4 +64,5 @@ Map<String, dynamic> _$$_OrderModelToJson(_$_OrderModel instance) =>
       'itemNumber': instance.itemNumber,
       'paidStatus': instance.paidStatus,
       'accountId': instance.accountId,
+      'orderDetail': instance.orderDetail,
     };

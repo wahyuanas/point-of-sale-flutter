@@ -18,8 +18,8 @@ class VehicleModel with _$VehicleModel {
     required int currentKm,
     required String description,
     required int accountId,
-    required VehicleOwnerModel? vehicleOwnerModel,
-    required VehicleTypeModel? vehicleTypeModel,
+    required VehicleOwnerModel? vehicleOwner,
+    required VehicleTypeModel? vehicleType,
   }) = _VehicleModel;
 
   // factory VehicleModel.createVehicleModel(Vehicle vehicle,
@@ -59,7 +59,7 @@ class VehicleModel with _$VehicleModel {
   //   );
   // }
 
-  static VehicleModel createVehicleModel(
+  factory VehicleModel.createVehicleModel(
       Vehicle vehicle,
       VehicleTypeModel? vehicleTypeModel,
       VehicleOwnerModel? vehicleOwnerModel) {
@@ -72,8 +72,8 @@ class VehicleModel with _$VehicleModel {
       description: vehicle.description,
       accountId: vehicle.accountId,
       currentKm: vehicle.currentKm,
-      vehicleOwnerModel: vehicleOwnerModel,
-      vehicleTypeModel: vehicleTypeModel,
+      vehicleOwner: vehicleOwnerModel,
+      vehicleType: vehicleTypeModel,
     );
     //}
     //return null;

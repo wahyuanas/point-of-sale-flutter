@@ -414,7 +414,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
       _orderListCubit.onAddOrder(o);
 
       _posMainBloc.state.poss?.forEach((pos) {
-        OrderDetail od = OrderDetail.createOrderDetail(idOd, idO, pos.item);
+        OrderDetail od = OrderDetail.createOrderDetail(idOd, idO, pos.item, 1);
         _orderDetailListCubit.onAddOrderDetail(od);
       });
 

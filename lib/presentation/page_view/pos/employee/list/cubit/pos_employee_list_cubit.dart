@@ -8,6 +8,7 @@ import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.da
 import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:collection/collection.dart';
+import 'package:pos/presentation/main/employee_department/model/employees_department_model.dart';
 
 part 'pos_employee_list_state.dart';
 part 'pos_employee_list_cubit.freezed.dart';
@@ -31,19 +32,26 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
   late StreamSubscription _employeeListSubscription;
 
   onStarted() {
+    EmployeesDepartmentModel? employeesDepartmentModel;
     List<EmployeesModel>? employeeModels =
         _employeeListCubit.state.employees?.map((employee) {
       EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
           .state.employeesDepartments
           ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
-      return EmployeesModel.createEmployeesModel(employee, employeeDepartment);
+      if (employeeDepartment != null) {
+        employeesDepartmentModel =
+            EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                employeeDepartment);
+      }
+      return EmployeesModel.createEmployeesModel(
+          employee, employeesDepartmentModel);
     }).toList();
 
     emit(state.copyWith(employees: employeeModels));
   }
 
   onSearchKeyChanged(String v) {
+    EmployeesDepartmentModel? employeesDepartmentModel;
     if (v.isNotEmpty) {
       List<EmployeesModel>? employeeModels = [];
       _employeeListCubit.state.employees?.forEach((employee) {
@@ -51,9 +59,13 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
           EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
               .state.employeesDepartments
               ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
+          if (employeeDepartment != null) {
+            employeesDepartmentModel =
+                EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                    employeeDepartment);
+          }
           employeeModels?.add(EmployeesModel.createEmployeesModel(
-              employee, employeeDepartment));
+              employee, employeesDepartmentModel));
         }
       });
       if (employeeModels.isEmpty) {
@@ -66,9 +78,13 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
         EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
             .state.employeesDepartments
             ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
+        if (employeeDepartment != null) {
+          employeesDepartmentModel =
+              EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                  employeeDepartment);
+        }
         return EmployeesModel.createEmployeesModel(
-            employee, employeeDepartment);
+            employee, employeesDepartmentModel);
       }).toList();
 
       emit(state.copyWith(employees: employeeModels, keyWord: null));
@@ -76,19 +92,26 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
   }
 
   onReset() {
+    EmployeesDepartmentModel? employeesDepartmentModel;
     List<EmployeesModel>? employeeModels =
         _employeeListCubit.state.employees?.map((employee) {
       EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
           .state.employeesDepartments
           ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
-      return EmployeesModel.createEmployeesModel(employee, employeeDepartment);
+      if (employeeDepartment != null) {
+        employeesDepartmentModel =
+            EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                employeeDepartment);
+      }
+      return EmployeesModel.createEmployeesModel(
+          employee, employeesDepartmentModel);
     }).toList();
 
     emit(state.copyWith(employees: employeeModels, keyWord: null));
   }
 
   onEmployeeChannged(EmployeeListState employeeListState) {
+    EmployeesDepartmentModel? employeesDepartmentModel;
     if (state.keyWord != null) {
       List<EmployeesModel>? employeeModels = [];
       _employeeListCubit.state.employees?.forEach((employee) {
@@ -98,9 +121,13 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
           EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
               .state.employeesDepartments
               ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
+          if (employeeDepartment != null) {
+            employeesDepartmentModel =
+                EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                    employeeDepartment);
+          }
           employeeModels?.add(EmployeesModel.createEmployeesModel(
-              employee, employeeDepartment));
+              employee, employeesDepartmentModel));
         }
       });
       if (employeeModels.isEmpty) {
@@ -113,9 +140,13 @@ class PosEmployeeListCubit extends Cubit<PosEmployeeListState> {
         EmployeesDepartment? employeeDepartment = _employeeDepartmentListCubit
             .state.employeesDepartments
             ?.firstWhereOrNull((dept) => dept.id == employee.departmentId);
-
+        if (employeeDepartment != null) {
+          employeesDepartmentModel =
+              EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                  employeeDepartment);
+        }
         return EmployeesModel.createEmployeesModel(
-            employee, employeeDepartment);
+            employee, employeesDepartmentModel);
       }).toList();
 
       emit(state.copyWith(employees: employeeModels));

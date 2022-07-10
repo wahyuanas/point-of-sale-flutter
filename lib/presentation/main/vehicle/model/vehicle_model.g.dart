@@ -15,14 +15,14 @@ _$_VehicleModel _$$_VehicleModelFromJson(Map<String, dynamic> json) =>
       currentKm: json['currentKm'] as int,
       description: json['description'] as String,
       accountId: json['accountId'] as int,
-      vehicleOwnerModel: json['vehicleOwnerModel'] == null
+      vehicleOwner: json['vehicleOwner'] == null
           ? null
           : VehicleOwnerModel.fromJson(
-              json['vehicleOwnerModel'] as Map<String, dynamic>),
-      vehicleTypeModel: json['vehicleTypeModel'] == null
+              json['vehicleOwner'] as Map<String, dynamic>),
+      vehicleType: json['vehicleType'] == null
           ? null
           : VehicleTypeModel.fromJson(
-              json['vehicleTypeModel'] as Map<String, dynamic>),
+              json['vehicleType'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_VehicleModelToJson(_$_VehicleModel instance) =>
@@ -34,6 +34,6 @@ Map<String, dynamic> _$$_VehicleModelToJson(_$_VehicleModel instance) =>
       'currentKm': instance.currentKm,
       'description': instance.description,
       'accountId': instance.accountId,
-      'vehicleOwnerModel': instance.vehicleOwnerModel,
-      'vehicleTypeModel': instance.vehicleTypeModel,
+      'vehicleOwner': instance.vehicleOwner,
+      'vehicleType': instance.vehicleType,
     };

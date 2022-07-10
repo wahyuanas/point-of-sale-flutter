@@ -6,18 +6,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/domain/customer/entity/customer.dart';
 import 'package:pos/domain/employee/entity/employees.dart';
 import 'package:pos/domain/employee_department/entity/employees_department.dart';
+import 'package:pos/domain/order_detail/entity/order_detail.dart';
 import 'package:pos/domain/payment_card_info/entity/payment_card_info.dart';
 import 'package:pos/domain/vehicle/entity/vehicle.dart';
 import 'package:pos/domain/vehicle_manufacture/entity/vehicle_manufacture.dart';
 import 'package:pos/domain/vehicle_owner/entity/vehicle_owner.dart';
 import 'package:pos/domain/vehicle_type/entity/vehicle_type.dart';
+import 'package:pos/presentation/main/catalog/model/item_model.dart';
 import 'package:pos/presentation/main/customer/list/cubit/customer_list_cubit.dart';
 import 'package:pos/presentation/main/customer/model/customer_model.dart';
 import 'package:pos/presentation/main/employee/list/cubit/employee_list_cubit.dart';
 import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
+import 'package:pos/presentation/main/employee_department/model/employees_department_model.dart';
 import 'package:pos/presentation/main/order/cubit/order_list_cubit.dart';
 import 'package:pos/presentation/main/order/model/order_model.dart';
+import 'package:pos/presentation/main/order_detail/cubit/order_detail_list_cubit.dart';
+import 'package:pos/presentation/main/order_detail/model/order_detail_model.dart';
 import 'package:pos/presentation/main/payment_card_info/list/cubit/payment_card_info_list_cubit.dart';
 import 'package:pos/presentation/main/payment_card_info/model/payment_card_info_model.dart';
 import 'package:pos/presentation/main/vehicle/list/vehicle_list_cubit.dart';
@@ -35,6 +40,7 @@ part 'home_order_cubit.freezed.dart';
 
 class HomeOrderCubit extends Cubit<HomeOrderState> {
   final OrderListCubit orderListCubit;
+  final OrderDetailListCubit orderDetailListCubit;
   final CustomerListCubit customerListCubit;
   final EmployeeListCubit employeeListCubit;
   final VehicleListCubit vehicleListCubit;
@@ -52,8 +58,10 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
       required this.vehicleListCubit,
       required this.vehicleTypeListCubit,
       required this.vehicleOwnerListCubit,
-      required this.vehicleManufactureListCubit})
+      required this.vehicleManufactureListCubit,
+      required this.orderDetailListCubit})
       : _orderListCubit = orderListCubit,
+        _orderDetailListCubit = orderDetailListCubit,
         _paymentCardInfoListCubit = paymentCardInfoListCubit,
         _customerListCubit = customerListCubit,
         _employeeListCubit = employeeListCubit,
@@ -70,6 +78,7 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
   }
 
   final OrderListCubit _orderListCubit;
+  final OrderDetailListCubit _orderDetailListCubit;
   final PaymentCardInfoListCubit _paymentCardInfoListCubit;
   final CustomerListCubit _customerListCubit;
   final EmployeeListCubit _employeeListCubit;
@@ -98,6 +107,7 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
   // }
 
   onStarted() {
+    List<OrderDetailModel>? orderDetailModels = [];
     VehicleModel? vehicleModel;
     VehicleTypeModel? vehicleTypeModel;
     VehicleManufactureModel? vehicleManufactureModel;
@@ -113,6 +123,8 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
     Customer? customer;
     PaymentCardInfo? paymentCardInfo;
     Employees? employee;
+    OrderDetail orderDetail;
+    EmployeesDepartmentModel? employeesDepartmentModel;
 
     List<OrderModel>? orderModels = _orderListCubit.state.orders?.map((order) {
       //PAYMENTCARDINFO
@@ -144,9 +156,12 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
               ?.firstWhereOrNull((edpt) => edpt.id == employee?.departmentId);
         }
         if (employeesDepartment != null) {
-          employeesModels?.add(EmployeesModel.createEmployeesModel(
-              employee!, employeesDepartment));
+          employeesDepartmentModel =
+              EmployeesDepartmentModel.createEmployeesDepartmentModel(
+                  employeesDepartment);
         }
+        employeesModels?.add(EmployeesModel.createEmployeesModel(
+            employee!, employeesDepartmentModel));
       }
 
       if (employeesModels!.isEmpty) {
@@ -154,15 +169,15 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
       }
 
       //VEHICLE
-      Vehicle? vehicle = _vehicleListCubit.state.vehicles
+      vehicle = _vehicleListCubit.state.vehicles
           ?.firstWhereOrNull((v) => v.id == order.vehicleId);
 
       if (vehicle != null) {
         vehicleType = _vehicleTypeListCubit.state.vehicleTypes
-            ?.firstWhereOrNull((vt) => vt.id == vehicle.vehicleType);
+            ?.firstWhereOrNull((vt) => vt.id == vehicle!.vehicleType);
 
         vehicleOwner = _vehicleOwnerListCubit.state.vehicleOwners
-            ?.firstWhereOrNull((vo) => vo.id == vehicle.vehicleOwner);
+            ?.firstWhereOrNull((vo) => vo.id == vehicle!.vehicleOwner);
 
         if (vehicleOwner != null) {
           vehicleOwnerModel =
@@ -174,17 +189,37 @@ class HomeOrderCubit extends Cubit<HomeOrderState> {
               .state.vehicleManufactures
               ?.firstWhereOrNull((vm) => vm.id == vehicleType?.manufacture);
 
+          if (vehicleManufacture != null) {
+            vehicleManufactureModel =
+                VehicleManufactureModel.createVehicleManufactureModel(
+                    vehicleManufacture);
+          }
+
           vehicleTypeModel = VehicleTypeModel.createVehicleTypeModel(
-              vehicleType, vehicleManufacture);
+              vehicleType, vehicleManufactureModel);
         }
 
         vehicleModel = VehicleModel.createVehicleModel(
-            vehicle, vehicleTypeModel, vehicleOwnerModel);
+            vehicle!, vehicleTypeModel, vehicleOwnerModel);
       }
 
-      return OrderModel.createOrderModel(order, vehicleModel, customerModel,
-          paymentCardInfoModel, employeesModels);
+      _orderDetailListCubit.state.orderDetails?.forEach((od) {
+        if (od.orderId == order.id) {
+          orderDetail = OrderDetail.createOrderDetail(
+              od.id, od.orderId, od.item, od.accountId);
+          orderDetailModels?.add(OrderDetailModel.createOrderDetailModel(
+              orderDetail, ItemModel.item(od.item)));
+        }
+      });
+
+      if (orderDetailModels!.isEmpty) {
+        orderDetailModels = null;
+      }
+
+      return OrderModel.createOrderModel(order, orderDetailModels, vehicleModel,
+          customerModel, paymentCardInfoModel, employeesModels);
     }).toList();
+    emit(state.copyWith(orders: orderModels));
   }
 
   onReset() {

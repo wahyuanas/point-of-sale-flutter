@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:pos/domain/employee/entity/employees.dart';
-import 'package:pos/domain/employee_department/entity/employees_department.dart';
 import 'package:pos/presentation/main/employee_department/model/employees_department_model.dart';
 
 part 'employees_model.freezed.dart';
@@ -21,7 +20,7 @@ class EmployeesModel with _$EmployeesModel {
   }) = _EmployeesModel;
 
   factory EmployeesModel.createEmployeesModel(
-      Employees employee, EmployeesDepartment? employeesDepartment) {
+      Employees employee, EmployeesDepartmentModel? employeesDepartmentModel) {
     return EmployeesModel(
       id: employee.id,
       uuid: employee.uuid,
@@ -30,14 +29,7 @@ class EmployeesModel with _$EmployeesModel {
       accountId: employee.accountId,
       phoneNumber: employee.phoneNumber,
       email: employee.email,
-      department: employeesDepartment != null
-          ? EmployeesDepartmentModel(
-              id: employeesDepartment.id,
-              uuid: employeesDepartment.uuid,
-              name: employeesDepartment.name,
-              code: employeesDepartment.code,
-              accountId: employeesDepartment.accountId)
-          : null,
+      department: employeesDepartmentModel,
     );
   }
 

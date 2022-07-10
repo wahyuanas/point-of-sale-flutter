@@ -41,6 +41,7 @@ mixin _$OrderModel {
   int get itemNumber => throw _privateConstructorUsedError;
   int get paidStatus => throw _privateConstructorUsedError;
   int get accountId => throw _privateConstructorUsedError;
+  List<OrderDetailModel>? get orderDetail => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -73,7 +74,8 @@ abstract class $OrderModelCopyWith<$Res> {
       int? tax,
       int itemNumber,
       int paidStatus,
-      int accountId});
+      int accountId,
+      List<OrderDetailModel>? orderDetail});
 
   $CustomerModelCopyWith<$Res>? get customer;
   $VehicleModelCopyWith<$Res>? get vehicle;
@@ -110,6 +112,7 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
     Object? accountId = freezed,
+    Object? orderDetail = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -192,6 +195,10 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
               as int,
+      orderDetail: orderDetail == freezed
+          ? _value.orderDetail
+          : orderDetail // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetailModel>?,
     ));
   }
 
@@ -257,7 +264,8 @@ abstract class _$$_OrderModelCopyWith<$Res>
       int? tax,
       int itemNumber,
       int paidStatus,
-      int accountId});
+      int accountId,
+      List<OrderDetailModel>? orderDetail});
 
   @override
   $CustomerModelCopyWith<$Res>? get customer;
@@ -299,6 +307,7 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
     Object? accountId = freezed,
+    Object? orderDetail = freezed,
   }) {
     return _then(_$_OrderModel(
       id: id == freezed
@@ -381,6 +390,10 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
           ? _value.accountId
           : accountId // ignore: cast_nullable_to_non_nullable
               as int,
+      orderDetail: orderDetail == freezed
+          ? _value._orderDetail
+          : orderDetail // ignore: cast_nullable_to_non_nullable
+              as List<OrderDetailModel>?,
     ));
   }
 }
@@ -408,8 +421,10 @@ class _$_OrderModel extends _OrderModel {
       required this.tax,
       required this.itemNumber,
       required this.paidStatus,
-      required this.accountId})
+      required this.accountId,
+      required final List<OrderDetailModel>? orderDetail})
       : _employee = employee,
+        _orderDetail = orderDetail,
         super._();
 
   factory _$_OrderModel.fromJson(Map<String, dynamic> json) =>
@@ -462,10 +477,18 @@ class _$_OrderModel extends _OrderModel {
   final int paidStatus;
   @override
   final int accountId;
+  final List<OrderDetailModel>? _orderDetail;
+  @override
+  List<OrderDetailModel>? get orderDetail {
+    final value = _orderDetail;
+    if (value == null) return null;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
 
   @override
   String toString() {
-    return 'OrderModel(id: $id, uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employee: $employee, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus, accountId: $accountId)';
+    return 'OrderModel(id: $id, uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employee: $employee, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus, accountId: $accountId, orderDetail: $orderDetail)';
   }
 
   @override
@@ -500,7 +523,9 @@ class _$_OrderModel extends _OrderModel {
                 .equals(other.itemNumber, itemNumber) &&
             const DeepCollectionEquality()
                 .equals(other.paidStatus, paidStatus) &&
-            const DeepCollectionEquality().equals(other.accountId, accountId));
+            const DeepCollectionEquality().equals(other.accountId, accountId) &&
+            const DeepCollectionEquality()
+                .equals(other._orderDetail, _orderDetail));
   }
 
   @JsonKey(ignore: true)
@@ -526,7 +551,8 @@ class _$_OrderModel extends _OrderModel {
         const DeepCollectionEquality().hash(tax),
         const DeepCollectionEquality().hash(itemNumber),
         const DeepCollectionEquality().hash(paidStatus),
-        const DeepCollectionEquality().hash(accountId)
+        const DeepCollectionEquality().hash(accountId),
+        const DeepCollectionEquality().hash(_orderDetail)
       ]);
 
   @JsonKey(ignore: true)
@@ -561,7 +587,8 @@ abstract class _OrderModel extends OrderModel {
       required final int? tax,
       required final int itemNumber,
       required final int paidStatus,
-      required final int accountId}) = _$_OrderModel;
+      required final int accountId,
+      required final List<OrderDetailModel>? orderDetail}) = _$_OrderModel;
   const _OrderModel._() : super._();
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
@@ -608,6 +635,8 @@ abstract class _OrderModel extends OrderModel {
   int get paidStatus => throw _privateConstructorUsedError;
   @override
   int get accountId => throw _privateConstructorUsedError;
+  @override
+  List<OrderDetailModel>? get orderDetail => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderModelCopyWith<_$_OrderModel> get copyWith =>

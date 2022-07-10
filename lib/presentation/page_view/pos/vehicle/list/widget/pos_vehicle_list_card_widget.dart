@@ -125,21 +125,21 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                               height: 5.0,
                             ),
                             Text(
-                              '${widget.vehicle.vehicleOwnerModel?.name}',
+                              '${widget.vehicle.vehicleOwner?.name}',
                               style: const TextStyle(
                                   color: Colors.black, fontSize: 15.0),
                             ),
                             Wrap(
                               children: [
                                 Text(
-                                  '${widget.vehicle.vehicleTypeModel?.manufacture?.name}',
+                                  '${widget.vehicle.vehicleType?.manufacture?.name}',
                                   style: const TextStyle(
                                       color: Colors.black, fontSize: 15.0),
                                 ),
                                 const SizedBox(
                                   width: 5.0,
                                 ),
-                                Text(widget.vehicle.vehicleTypeModel!.model,
+                                Text(widget.vehicle.vehicleType!.model,
                                     style: const TextStyle(height: 1.2)),
                               ],
                             ),
@@ -152,7 +152,7 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                                     const SizedBox(
                                       width: 5.0,
                                     ),
-                                    Text(widget.vehicle.vehicleTypeModel!.color,
+                                    Text(widget.vehicle.vehicleType!.color,
                                         style: const TextStyle(
                                             color: Colors.blue, height: 1.2)),
                                   ],
@@ -167,8 +167,7 @@ class _PosVehicleListCardWidgetState extends State<PosVehicleListCardWidget> {
                                     const SizedBox(
                                       width: 5.0,
                                     ),
-                                    Text(
-                                        '${widget.vehicle.vehicleTypeModel!.year}',
+                                    Text('${widget.vehicle.vehicleType!.year}',
                                         style: const TextStyle(
                                             color: Colors.blue, height: 1.2)),
                                   ],

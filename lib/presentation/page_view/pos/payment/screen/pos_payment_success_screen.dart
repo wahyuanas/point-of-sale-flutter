@@ -118,7 +118,7 @@ class _PosPaymentSuccessScreenState extends State<PosPaymentSuccessScreen> {
               pinned: true,
               //floating: true,
               delegate: PosPaymentSuccessActionDelegate()),
-          SliverFillRemaining(
+          const SliverFillRemaining(
             child: Padding(
               padding: EdgeInsets.only(right: 20.0, left: 20.0),
               child: Center(

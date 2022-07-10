@@ -13,20 +13,22 @@ class OrderDetail with _$OrderDetail implements IEntity {
       {required int id,
       required String uuid,
       required int orderId,
-      required Item item
+      required Item item,
+      required int accountId
       // required int itemId,
       // required int price,
       // required int qty,
       // required int disc,
       }) = _OrderDetail;
 
-  factory OrderDetail.createOrderDetail(int id, int orderId, Item item) {
+  factory OrderDetail.createOrderDetail(
+      int id, int orderId, Item item, int accountId) {
     return OrderDetail(
-      id: id,
-      uuid: const Uuid().v4(),
-      orderId: orderId,
-      item: item,
-    );
+        id: id,
+        uuid: const Uuid().v4(),
+        orderId: orderId,
+        item: item,
+        accountId: accountId);
   }
 
   factory OrderDetail.fromJson(Map<String, dynamic> json) =>
