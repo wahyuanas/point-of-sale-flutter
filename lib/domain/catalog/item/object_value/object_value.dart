@@ -152,6 +152,17 @@ class CreateCatalogItemImageFile extends ObjectValue<XFile?> {
   const CreateCatalogItemImageFile._(this.value);
 }
 
+class CreateCatalogItemAccountId extends ObjectValue<int?> {
+  @override
+  final Either<FormItemObjectValueFailure<int?, String>, int?> value;
+
+  factory CreateCatalogItemAccountId(int? input) {
+    return CreateCatalogItemAccountId._(validateFieldNotIntAndNotEmpty1(input));
+  }
+
+  const CreateCatalogItemAccountId._(this.value);
+}
+
 class EditCatalogItemId extends ObjectValue<int> {
   @override
   final Either<FormItemObjectValueFailure<String, String>, int> value;

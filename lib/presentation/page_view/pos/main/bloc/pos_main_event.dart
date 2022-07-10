@@ -20,4 +20,6 @@ class PosMainEvent with _$PosMainEvent {
 
   const factory PosMainEvent.countAllItem({required bool? value}) =
       PosCountAllItemEvent;
+
+  const factory PosMainEvent.initial() = PosInitialEvent;
 }

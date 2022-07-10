@@ -37,6 +37,7 @@ mixin _$CreateOrder {
   CreateOrderTax get tax => throw _privateConstructorUsedError;
   CreateOrderItemNumber get itemNumber => throw _privateConstructorUsedError;
   CreateOrderPaidStatus get paidStatus => throw _privateConstructorUsedError;
+  CreateOrderAccountId get accountId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateOrderCopyWith<CreateOrder> get copyWith =>
@@ -66,7 +67,8 @@ abstract class $CreateOrderCopyWith<$Res> {
       CreateOrderDescription description,
       CreateOrderTax tax,
       CreateOrderItemNumber itemNumber,
-      CreateOrderPaidStatus paidStatus});
+      CreateOrderPaidStatus paidStatus,
+      CreateOrderAccountId accountId});
 
   $CraetePaymentCardInfoCopyWith<$Res>? get paymentCardInfo;
 }
@@ -99,6 +101,7 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -173,6 +176,10 @@ class _$CreateOrderCopyWithImpl<$Res> implements $CreateOrderCopyWith<$Res> {
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
               as CreateOrderPaidStatus,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateOrderAccountId,
     ));
   }
 
@@ -214,7 +221,8 @@ abstract class _$$_CreateOrderCopyWith<$Res>
       CreateOrderDescription description,
       CreateOrderTax tax,
       CreateOrderItemNumber itemNumber,
-      CreateOrderPaidStatus paidStatus});
+      CreateOrderPaidStatus paidStatus,
+      CreateOrderAccountId accountId});
 
   @override
   $CraetePaymentCardInfoCopyWith<$Res>? get paymentCardInfo;
@@ -250,6 +258,7 @@ class __$$_CreateOrderCopyWithImpl<$Res> extends _$CreateOrderCopyWithImpl<$Res>
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateOrder(
       uuid: uuid == freezed
@@ -324,6 +333,10 @@ class __$$_CreateOrderCopyWithImpl<$Res> extends _$CreateOrderCopyWithImpl<$Res>
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
               as CreateOrderPaidStatus,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateOrderAccountId,
     ));
   }
 }
@@ -349,7 +362,8 @@ class _$_CreateOrder implements _CreateOrder {
       required this.description,
       required this.tax,
       required this.itemNumber,
-      required this.paidStatus});
+      required this.paidStatus,
+      required this.accountId});
 
   @override
   final CreateOrderUuid uuid;
@@ -388,10 +402,12 @@ class _$_CreateOrder implements _CreateOrder {
   final CreateOrderItemNumber itemNumber;
   @override
   final CreateOrderPaidStatus paidStatus;
+  @override
+  final CreateOrderAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateOrder(uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employees: $employees, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
+    return 'CreateOrder(uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employees: $employees, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus, accountId: $accountId)';
   }
 
   @override
@@ -424,30 +440,33 @@ class _$_CreateOrder implements _CreateOrder {
             const DeepCollectionEquality()
                 .equals(other.itemNumber, itemNumber) &&
             const DeepCollectionEquality()
-                .equals(other.paidStatus, paidStatus));
+                .equals(other.paidStatus, paidStatus) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(uuid),
-      const DeepCollectionEquality().hash(code),
-      const DeepCollectionEquality().hash(customer),
-      const DeepCollectionEquality().hash(vehicle),
-      const DeepCollectionEquality().hash(employees),
-      const DeepCollectionEquality().hash(date),
-      const DeepCollectionEquality().hash(amount),
-      const DeepCollectionEquality().hash(grandAmount),
-      const DeepCollectionEquality().hash(disc),
-      const DeepCollectionEquality().hash(paymentType),
-      const DeepCollectionEquality().hash(paymentCardInfo),
-      const DeepCollectionEquality().hash(charge),
-      const DeepCollectionEquality().hash(paidAmount),
-      const DeepCollectionEquality().hash(changeAmount),
-      const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(tax),
-      const DeepCollectionEquality().hash(itemNumber),
-      const DeepCollectionEquality().hash(paidStatus));
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(uuid),
+        const DeepCollectionEquality().hash(code),
+        const DeepCollectionEquality().hash(customer),
+        const DeepCollectionEquality().hash(vehicle),
+        const DeepCollectionEquality().hash(employees),
+        const DeepCollectionEquality().hash(date),
+        const DeepCollectionEquality().hash(amount),
+        const DeepCollectionEquality().hash(grandAmount),
+        const DeepCollectionEquality().hash(disc),
+        const DeepCollectionEquality().hash(paymentType),
+        const DeepCollectionEquality().hash(paymentCardInfo),
+        const DeepCollectionEquality().hash(charge),
+        const DeepCollectionEquality().hash(paidAmount),
+        const DeepCollectionEquality().hash(changeAmount),
+        const DeepCollectionEquality().hash(description),
+        const DeepCollectionEquality().hash(tax),
+        const DeepCollectionEquality().hash(itemNumber),
+        const DeepCollectionEquality().hash(paidStatus),
+        const DeepCollectionEquality().hash(accountId)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -474,7 +493,8 @@ abstract class _CreateOrder implements CreateOrder {
       required final CreateOrderDescription description,
       required final CreateOrderTax tax,
       required final CreateOrderItemNumber itemNumber,
-      required final CreateOrderPaidStatus paidStatus}) = _$_CreateOrder;
+      required final CreateOrderPaidStatus paidStatus,
+      required final CreateOrderAccountId accountId}) = _$_CreateOrder;
 
   @override
   CreateOrderUuid get uuid => throw _privateConstructorUsedError;
@@ -514,6 +534,8 @@ abstract class _CreateOrder implements CreateOrder {
   CreateOrderItemNumber get itemNumber => throw _privateConstructorUsedError;
   @override
   CreateOrderPaidStatus get paidStatus => throw _privateConstructorUsedError;
+  @override
+  CreateOrderAccountId get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateOrderCopyWith<_$_CreateOrder> get copyWith =>

@@ -107,6 +107,13 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
     ));
   }
 
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createCatalogItem: state.createCatalogItem
+          .copyWith(accountId: CreateCatalogItemAccountId(accountId)),
+    ));
+  }
+
   onCreate() async {
     if (state.createCatalogItem.failureOption.isSome()) {
       emit(state.copyWith(initial: false));
@@ -117,6 +124,7 @@ class CatalogFormCreateCubit extends Cubit<CatalogFormCreateState> {
       final id = _catalogListCubit.state.items == null
           ? 1
           : _catalogListCubit.state.items!.last.id + 1;
+      onAccountIdChanged(1);
       Item r = Item.createCatalogItem(id, state.createCatalogItem);
       await Future.delayed(const Duration(milliseconds: 500));
       emit(state.copyWith(status: StateStatus.success(data: r)));

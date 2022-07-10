@@ -19,6 +19,8 @@ mixin _$CreateEmployeeDepartment {
   CreateEmployeeDepartmentUuid get uuid => throw _privateConstructorUsedError;
   CreateEmployeeDepartmentName get name => throw _privateConstructorUsedError;
   CreateEmployeeDepartmentCode get code => throw _privateConstructorUsedError;
+  CreateEmployeeDepartmentAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateEmployeeDepartmentCopyWith<CreateEmployeeDepartment> get copyWith =>
@@ -33,7 +35,8 @@ abstract class $CreateEmployeeDepartmentCopyWith<$Res> {
   $Res call(
       {CreateEmployeeDepartmentUuid uuid,
       CreateEmployeeDepartmentName name,
-      CreateEmployeeDepartmentCode code});
+      CreateEmployeeDepartmentCode code,
+      CreateEmployeeDepartmentAccountId accountId});
 }
 
 /// @nodoc
@@ -50,6 +53,7 @@ class _$CreateEmployeeDepartmentCopyWithImpl<$Res>
     Object? uuid = freezed,
     Object? name = freezed,
     Object? code = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -64,6 +68,10 @@ class _$CreateEmployeeDepartmentCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CreateEmployeeDepartmentCode,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateEmployeeDepartmentAccountId,
     ));
   }
 }
@@ -79,7 +87,8 @@ abstract class _$$_CreateEmployeeDepartmentCopyWith<$Res>
   $Res call(
       {CreateEmployeeDepartmentUuid uuid,
       CreateEmployeeDepartmentName name,
-      CreateEmployeeDepartmentCode code});
+      CreateEmployeeDepartmentCode code,
+      CreateEmployeeDepartmentAccountId accountId});
 }
 
 /// @nodoc
@@ -99,6 +108,7 @@ class __$$_CreateEmployeeDepartmentCopyWithImpl<$Res>
     Object? uuid = freezed,
     Object? name = freezed,
     Object? code = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateEmployeeDepartment(
       uuid: uuid == freezed
@@ -113,6 +123,10 @@ class __$$_CreateEmployeeDepartmentCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as CreateEmployeeDepartmentCode,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateEmployeeDepartmentAccountId,
     ));
   }
 }
@@ -121,7 +135,10 @@ class __$$_CreateEmployeeDepartmentCopyWithImpl<$Res>
 
 class _$_CreateEmployeeDepartment implements _CreateEmployeeDepartment {
   const _$_CreateEmployeeDepartment(
-      {required this.uuid, required this.name, required this.code});
+      {required this.uuid,
+      required this.name,
+      required this.code,
+      required this.accountId});
 
   @override
   final CreateEmployeeDepartmentUuid uuid;
@@ -129,10 +146,12 @@ class _$_CreateEmployeeDepartment implements _CreateEmployeeDepartment {
   final CreateEmployeeDepartmentName name;
   @override
   final CreateEmployeeDepartmentCode code;
+  @override
+  final CreateEmployeeDepartmentAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateEmployeeDepartment(uuid: $uuid, name: $name, code: $code)';
+    return 'CreateEmployeeDepartment(uuid: $uuid, name: $name, code: $code, accountId: $accountId)';
   }
 
   @override
@@ -142,7 +161,8 @@ class _$_CreateEmployeeDepartment implements _CreateEmployeeDepartment {
             other is _$_CreateEmployeeDepartment &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
-            const DeepCollectionEquality().equals(other.code, code));
+            const DeepCollectionEquality().equals(other.code, code) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -150,7 +170,8 @@ class _$_CreateEmployeeDepartment implements _CreateEmployeeDepartment {
       runtimeType,
       const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(name),
-      const DeepCollectionEquality().hash(code));
+      const DeepCollectionEquality().hash(code),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -163,7 +184,8 @@ abstract class _CreateEmployeeDepartment implements CreateEmployeeDepartment {
   const factory _CreateEmployeeDepartment(
           {required final CreateEmployeeDepartmentUuid uuid,
           required final CreateEmployeeDepartmentName name,
-          required final CreateEmployeeDepartmentCode code}) =
+          required final CreateEmployeeDepartmentCode code,
+          required final CreateEmployeeDepartmentAccountId accountId}) =
       _$_CreateEmployeeDepartment;
 
   @override
@@ -172,6 +194,9 @@ abstract class _CreateEmployeeDepartment implements CreateEmployeeDepartment {
   CreateEmployeeDepartmentName get name => throw _privateConstructorUsedError;
   @override
   CreateEmployeeDepartmentCode get code => throw _privateConstructorUsedError;
+  @override
+  CreateEmployeeDepartmentAccountId get accountId =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateEmployeeDepartmentCopyWith<_$_CreateEmployeeDepartment>

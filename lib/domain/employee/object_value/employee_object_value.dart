@@ -15,6 +15,7 @@ class CreateEmployee with _$CreateEmployee {
     required CreateEmployeePhoneNumber phoneNumber,
     required CreateEmployeeEmail email,
     required CreateEmployeeDepartment department,
+    required CreateEmployeeAccountId accountId,
   }) = _CreateEmployee;
 
   factory CreateEmployee.empty() => CreateEmployee(
@@ -23,7 +24,8 @@ class CreateEmployee with _$CreateEmployee {
       code: CreateEmployeeCode(''),
       phoneNumber: CreateEmployeePhoneNumber(''),
       email: CreateEmployeeEmail(''),
-      department: CreateEmployeeDepartment(null));
+      department: CreateEmployeeDepartment(null),
+      accountId: CreateEmployeeAccountId(null));
 }
 
 extension CreateEmployeeX on CreateEmployee {

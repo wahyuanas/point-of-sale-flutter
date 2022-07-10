@@ -22,6 +22,7 @@ class CreateCatalogItem with _$CreateCatalogItem {
     required CreateCatalogItemCategory category,
     required CreateCatalogItemImage image,
     required CreateCatalogItemImageFile imageFile,
+    required CreateCatalogItemAccountId accountId,
   }) = _CreateCatalogItem;
 
   factory CreateCatalogItem.empty() => CreateCatalogItem(
@@ -37,7 +38,8 @@ class CreateCatalogItem with _$CreateCatalogItem {
       stock: CreateCatalogItemStock(''),
       category: CreateCatalogItemCategory(''),
       image: CreateCatalogItemImage(null),
-      imageFile: CreateCatalogItemImageFile(null));
+      imageFile: CreateCatalogItemImageFile(null),
+      accountId: CreateCatalogItemAccountId(null));
 }
 
 extension CreateCatalogItemX on CreateCatalogItem {

@@ -34,6 +34,8 @@ mixin _$CreateCatalogItem {
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
   CreateCatalogItemImageFile get imageFile =>
       throw _privateConstructorUsedError;
+  CreateCatalogItemAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateCatalogItemCopyWith<CreateCatalogItem> get copyWith =>
@@ -58,7 +60,8 @@ abstract class $CreateCatalogItemCopyWith<$Res> {
       CreateCatalogItemStock stock,
       CreateCatalogItemCategory category,
       CreateCatalogItemImage image,
-      CreateCatalogItemImageFile imageFile});
+      CreateCatalogItemImageFile imageFile,
+      CreateCatalogItemAccountId accountId});
 }
 
 /// @nodoc
@@ -85,6 +88,7 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
     Object? category = freezed,
     Object? image = freezed,
     Object? imageFile = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -139,6 +143,10 @@ class _$CreateCatalogItemCopyWithImpl<$Res>
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItemImageFile,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemAccountId,
     ));
   }
 }
@@ -163,7 +171,8 @@ abstract class _$$_CreateCatalogItemCopyWith<$Res>
       CreateCatalogItemStock stock,
       CreateCatalogItemCategory category,
       CreateCatalogItemImage image,
-      CreateCatalogItemImageFile imageFile});
+      CreateCatalogItemImageFile imageFile,
+      CreateCatalogItemAccountId accountId});
 }
 
 /// @nodoc
@@ -192,6 +201,7 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
     Object? category = freezed,
     Object? image = freezed,
     Object? imageFile = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateCatalogItem(
       uuid: uuid == freezed
@@ -246,6 +256,10 @@ class __$$_CreateCatalogItemCopyWithImpl<$Res>
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
               as CreateCatalogItemImageFile,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateCatalogItemAccountId,
     ));
   }
 }
@@ -266,7 +280,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
       required this.stock,
       required this.category,
       required this.image,
-      required this.imageFile});
+      required this.imageFile,
+      required this.accountId});
 
   @override
   final CreateCatalogItemUuid uuid;
@@ -294,10 +309,12 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
   final CreateCatalogItemImage image;
   @override
   final CreateCatalogItemImageFile imageFile;
+  @override
+  final CreateCatalogItemAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateCatalogItem(uuid: $uuid, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile)';
+    return 'CreateCatalogItem(uuid: $uuid, code: $code, barcode: $barcode, name: $name, description: $description, sellPrice: $sellPrice, sellDisc: $sellDisc, purchasePrice: $purchasePrice, purchaseDisc: $purchaseDisc, stock: $stock, category: $category, image: $image, imageFile: $imageFile, accountId: $accountId)';
   }
 
   @override
@@ -320,7 +337,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
             const DeepCollectionEquality().equals(other.stock, stock) &&
             const DeepCollectionEquality().equals(other.category, category) &&
             const DeepCollectionEquality().equals(other.image, image) &&
-            const DeepCollectionEquality().equals(other.imageFile, imageFile));
+            const DeepCollectionEquality().equals(other.imageFile, imageFile) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -338,7 +356,8 @@ class _$_CreateCatalogItem implements _CreateCatalogItem {
       const DeepCollectionEquality().hash(stock),
       const DeepCollectionEquality().hash(category),
       const DeepCollectionEquality().hash(image),
-      const DeepCollectionEquality().hash(imageFile));
+      const DeepCollectionEquality().hash(imageFile),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -361,7 +380,8 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
           required final CreateCatalogItemStock stock,
           required final CreateCatalogItemCategory category,
           required final CreateCatalogItemImage image,
-          required final CreateCatalogItemImageFile imageFile}) =
+          required final CreateCatalogItemImageFile imageFile,
+          required final CreateCatalogItemAccountId accountId}) =
       _$_CreateCatalogItem;
 
   @override
@@ -394,6 +414,9 @@ abstract class _CreateCatalogItem implements CreateCatalogItem {
   CreateCatalogItemImage get image => throw _privateConstructorUsedError;
   @override
   CreateCatalogItemImageFile get imageFile =>
+      throw _privateConstructorUsedError;
+  @override
+  CreateCatalogItemAccountId get accountId =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

@@ -24,6 +24,7 @@ mixin _$VehicleManufactureModel {
   int get id => throw _privateConstructorUsedError;
   String get uuid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $VehicleManufactureModelCopyWith<$Res> {
   factory $VehicleManufactureModelCopyWith(VehicleManufactureModel value,
           $Res Function(VehicleManufactureModel) then) =
       _$VehicleManufactureModelCopyWithImpl<$Res>;
-  $Res call({int id, String uuid, String name});
+  $Res call({int id, String uuid, String name, int accountId});
 }
 
 /// @nodoc
@@ -53,6 +54,7 @@ class _$VehicleManufactureModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? uuid = freezed,
     Object? name = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -67,6 +69,10 @@ class _$VehicleManufactureModelCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -78,7 +84,7 @@ abstract class _$$_VehicleManufactureModelCopyWith<$Res>
           $Res Function(_$_VehicleManufactureModel) then) =
       __$$_VehicleManufactureModelCopyWithImpl<$Res>;
   @override
-  $Res call({int id, String uuid, String name});
+  $Res call({int id, String uuid, String name, int accountId});
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class __$$_VehicleManufactureModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? uuid = freezed,
     Object? name = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_VehicleManufactureModel(
       id: id == freezed
@@ -112,6 +119,10 @@ class __$$_VehicleManufactureModelCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -120,7 +131,10 @@ class __$$_VehicleManufactureModelCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_VehicleManufactureModel extends _VehicleManufactureModel {
   const _$_VehicleManufactureModel(
-      {required this.id, required this.uuid, required this.name})
+      {required this.id,
+      required this.uuid,
+      required this.name,
+      required this.accountId})
       : super._();
 
   factory _$_VehicleManufactureModel.fromJson(Map<String, dynamic> json) =>
@@ -132,10 +146,12 @@ class _$_VehicleManufactureModel extends _VehicleManufactureModel {
   final String uuid;
   @override
   final String name;
+  @override
+  final int accountId;
 
   @override
   String toString() {
-    return 'VehicleManufactureModel(id: $id, uuid: $uuid, name: $name)';
+    return 'VehicleManufactureModel(id: $id, uuid: $uuid, name: $name, accountId: $accountId)';
   }
 
   @override
@@ -145,7 +161,8 @@ class _$_VehicleManufactureModel extends _VehicleManufactureModel {
             other is _$_VehicleManufactureModel &&
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -154,7 +171,8 @@ class _$_VehicleManufactureModel extends _VehicleManufactureModel {
       runtimeType,
       const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(uuid),
-      const DeepCollectionEquality().hash(name));
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -173,7 +191,8 @@ abstract class _VehicleManufactureModel extends VehicleManufactureModel {
   const factory _VehicleManufactureModel(
       {required final int id,
       required final String uuid,
-      required final String name}) = _$_VehicleManufactureModel;
+      required final String name,
+      required final int accountId}) = _$_VehicleManufactureModel;
   const _VehicleManufactureModel._() : super._();
 
   factory _VehicleManufactureModel.fromJson(Map<String, dynamic> json) =
@@ -185,6 +204,8 @@ abstract class _VehicleManufactureModel extends VehicleManufactureModel {
   String get uuid => throw _privateConstructorUsedError;
   @override
   String get name => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_VehicleManufactureModelCopyWith<_$_VehicleManufactureModel>

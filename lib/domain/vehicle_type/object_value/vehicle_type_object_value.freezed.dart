@@ -24,6 +24,8 @@ mixin _$CreateVehicleType {
   CreateVehicleTypeDescription get description =>
       throw _privateConstructorUsedError;
   CreateVehicleTypeYear get year => throw _privateConstructorUsedError;
+  CreateVehicleTypeAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateVehicleTypeCopyWith<CreateVehicleType> get copyWith =>
@@ -41,7 +43,8 @@ abstract class $CreateVehicleTypeCopyWith<$Res> {
       CreateVehicleTypeModel model,
       CreateVehicleTypeColor color,
       CreateVehicleTypeDescription description,
-      CreateVehicleTypeYear year});
+      CreateVehicleTypeYear year,
+      CreateVehicleTypeAccountId accountId});
 }
 
 /// @nodoc
@@ -61,6 +64,7 @@ class _$CreateVehicleTypeCopyWithImpl<$Res>
     Object? color = freezed,
     Object? description = freezed,
     Object? year = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -87,6 +91,10 @@ class _$CreateVehicleTypeCopyWithImpl<$Res>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as CreateVehicleTypeYear,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleTypeAccountId,
     ));
   }
 }
@@ -104,7 +112,8 @@ abstract class _$$_CreateVehicleTypeCopyWith<$Res>
       CreateVehicleTypeModel model,
       CreateVehicleTypeColor color,
       CreateVehicleTypeDescription description,
-      CreateVehicleTypeYear year});
+      CreateVehicleTypeYear year,
+      CreateVehicleTypeAccountId accountId});
 }
 
 /// @nodoc
@@ -126,6 +135,7 @@ class __$$_CreateVehicleTypeCopyWithImpl<$Res>
     Object? color = freezed,
     Object? description = freezed,
     Object? year = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateVehicleType(
       uuid: uuid == freezed
@@ -152,6 +162,10 @@ class __$$_CreateVehicleTypeCopyWithImpl<$Res>
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
               as CreateVehicleTypeYear,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleTypeAccountId,
     ));
   }
 }
@@ -165,7 +179,8 @@ class _$_CreateVehicleType implements _CreateVehicleType {
       required this.model,
       required this.color,
       required this.description,
-      required this.year});
+      required this.year,
+      required this.accountId});
 
   @override
   final CreateVehicleTypeUuid uuid;
@@ -179,10 +194,12 @@ class _$_CreateVehicleType implements _CreateVehicleType {
   final CreateVehicleTypeDescription description;
   @override
   final CreateVehicleTypeYear year;
+  @override
+  final CreateVehicleTypeAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateVehicleType(uuid: $uuid, manufacture: $manufacture, model: $model, color: $color, description: $description, year: $year)';
+    return 'CreateVehicleType(uuid: $uuid, manufacture: $manufacture, model: $model, color: $color, description: $description, year: $year, accountId: $accountId)';
   }
 
   @override
@@ -197,7 +214,8 @@ class _$_CreateVehicleType implements _CreateVehicleType {
             const DeepCollectionEquality().equals(other.color, color) &&
             const DeepCollectionEquality()
                 .equals(other.description, description) &&
-            const DeepCollectionEquality().equals(other.year, year));
+            const DeepCollectionEquality().equals(other.year, year) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -208,7 +226,8 @@ class _$_CreateVehicleType implements _CreateVehicleType {
       const DeepCollectionEquality().hash(model),
       const DeepCollectionEquality().hash(color),
       const DeepCollectionEquality().hash(description),
-      const DeepCollectionEquality().hash(year));
+      const DeepCollectionEquality().hash(year),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -219,12 +238,14 @@ class _$_CreateVehicleType implements _CreateVehicleType {
 
 abstract class _CreateVehicleType implements CreateVehicleType {
   const factory _CreateVehicleType(
-      {required final CreateVehicleTypeUuid uuid,
-      required final CreateVehicleTypeManufacture manufacture,
-      required final CreateVehicleTypeModel model,
-      required final CreateVehicleTypeColor color,
-      required final CreateVehicleTypeDescription description,
-      required final CreateVehicleTypeYear year}) = _$_CreateVehicleType;
+          {required final CreateVehicleTypeUuid uuid,
+          required final CreateVehicleTypeManufacture manufacture,
+          required final CreateVehicleTypeModel model,
+          required final CreateVehicleTypeColor color,
+          required final CreateVehicleTypeDescription description,
+          required final CreateVehicleTypeYear year,
+          required final CreateVehicleTypeAccountId accountId}) =
+      _$_CreateVehicleType;
 
   @override
   CreateVehicleTypeUuid get uuid => throw _privateConstructorUsedError;
@@ -240,6 +261,9 @@ abstract class _CreateVehicleType implements CreateVehicleType {
       throw _privateConstructorUsedError;
   @override
   CreateVehicleTypeYear get year => throw _privateConstructorUsedError;
+  @override
+  CreateVehicleTypeAccountId get accountId =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateVehicleTypeCopyWith<_$_CreateVehicleType> get copyWith =>

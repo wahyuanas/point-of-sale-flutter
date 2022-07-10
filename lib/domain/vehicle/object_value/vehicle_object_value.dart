@@ -16,6 +16,7 @@ class CreateVehicle with _$CreateVehicle {
     required CreateVehicleCurrentKm currentKm,
     required CreateVehicleOwner vehicleOwner,
     required CreateVehicleType vehicleType,
+    required CreateVehicleAccountId accountId,
   }) = _CreateVehicle;
 
   factory CreateVehicle.empty() => CreateVehicle(
@@ -25,7 +26,8 @@ class CreateVehicle with _$CreateVehicle {
       currentKm: CreateVehicleCurrentKm(''),
       description: CreateVehicleDescription(''),
       vehicleOwner: CreateVehicleOwner(null),
-      vehicleType: CreateVehicleType(null));
+      vehicleType: CreateVehicleType(null),
+      accountId: CreateVehicleAccountId(null));
 }
 
 extension CreateVehicleX on CreateVehicle {

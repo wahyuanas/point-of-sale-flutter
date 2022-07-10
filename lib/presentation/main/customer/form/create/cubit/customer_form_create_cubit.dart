@@ -64,6 +64,13 @@ class CustomerFormCreateCubit extends Cubit<CustomerFormCreateState> {
     ));
   }
 
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createCustomer: state.createCustomer
+          .copyWith(accountId: CreateCustomerAccountId(accountId)),
+    ));
+  }
+
   onCreate() async {
     if (state.createCustomer.failureOption.isSome()) {
       emit(state.copyWith(initial: false));

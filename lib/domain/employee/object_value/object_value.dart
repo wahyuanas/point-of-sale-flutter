@@ -74,12 +74,12 @@ class CreateEmployeeDepartment extends ObjectValue<EmployeesDepartmentModel?> {
   const CreateEmployeeDepartment._(this.value);
 }
 
-class CreateEmployeeAccountId extends ObjectValue<int> {
+class CreateEmployeeAccountId extends ObjectValue<int?> {
   @override
-  final Either<FormEmployeeObjectValueFailure<String, String>, int> value;
+  final Either<FormEmployeeObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateEmployeeAccountId(String input) {
-    return CreateEmployeeAccountId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateEmployeeAccountId(int? input) {
+    return CreateEmployeeAccountId._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateEmployeeAccountId._(this.value);

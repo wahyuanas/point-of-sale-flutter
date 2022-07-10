@@ -23,6 +23,7 @@ mixin _$CreateEmployee {
       throw _privateConstructorUsedError;
   CreateEmployeeEmail get email => throw _privateConstructorUsedError;
   CreateEmployeeDepartment get department => throw _privateConstructorUsedError;
+  CreateEmployeeAccountId get accountId => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateEmployeeCopyWith<CreateEmployee> get copyWith =>
@@ -40,7 +41,8 @@ abstract class $CreateEmployeeCopyWith<$Res> {
       CreateEmployeeCode code,
       CreateEmployeePhoneNumber phoneNumber,
       CreateEmployeeEmail email,
-      CreateEmployeeDepartment department});
+      CreateEmployeeDepartment department,
+      CreateEmployeeAccountId accountId});
 }
 
 /// @nodoc
@@ -60,6 +62,7 @@ class _$CreateEmployeeCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? email = freezed,
     Object? department = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -86,6 +89,10 @@ class _$CreateEmployeeCopyWithImpl<$Res>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as CreateEmployeeDepartment,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateEmployeeAccountId,
     ));
   }
 }
@@ -103,7 +110,8 @@ abstract class _$$_CreateEmployeeCopyWith<$Res>
       CreateEmployeeCode code,
       CreateEmployeePhoneNumber phoneNumber,
       CreateEmployeeEmail email,
-      CreateEmployeeDepartment department});
+      CreateEmployeeDepartment department,
+      CreateEmployeeAccountId accountId});
 }
 
 /// @nodoc
@@ -125,6 +133,7 @@ class __$$_CreateEmployeeCopyWithImpl<$Res>
     Object? phoneNumber = freezed,
     Object? email = freezed,
     Object? department = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateEmployee(
       uuid: uuid == freezed
@@ -151,6 +160,10 @@ class __$$_CreateEmployeeCopyWithImpl<$Res>
           ? _value.department
           : department // ignore: cast_nullable_to_non_nullable
               as CreateEmployeeDepartment,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateEmployeeAccountId,
     ));
   }
 }
@@ -164,7 +177,8 @@ class _$_CreateEmployee implements _CreateEmployee {
       required this.code,
       required this.phoneNumber,
       required this.email,
-      required this.department});
+      required this.department,
+      required this.accountId});
 
   @override
   final CreateEmployeeUuid uuid;
@@ -178,10 +192,12 @@ class _$_CreateEmployee implements _CreateEmployee {
   final CreateEmployeeEmail email;
   @override
   final CreateEmployeeDepartment department;
+  @override
+  final CreateEmployeeAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateEmployee(uuid: $uuid, name: $name, code: $code, phoneNumber: $phoneNumber, email: $email, department: $department)';
+    return 'CreateEmployee(uuid: $uuid, name: $name, code: $code, phoneNumber: $phoneNumber, email: $email, department: $department, accountId: $accountId)';
   }
 
   @override
@@ -196,7 +212,8 @@ class _$_CreateEmployee implements _CreateEmployee {
                 .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality()
-                .equals(other.department, department));
+                .equals(other.department, department) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -207,7 +224,8 @@ class _$_CreateEmployee implements _CreateEmployee {
       const DeepCollectionEquality().hash(code),
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(email),
-      const DeepCollectionEquality().hash(department));
+      const DeepCollectionEquality().hash(department),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -222,7 +240,8 @@ abstract class _CreateEmployee implements CreateEmployee {
       required final CreateEmployeeCode code,
       required final CreateEmployeePhoneNumber phoneNumber,
       required final CreateEmployeeEmail email,
-      required final CreateEmployeeDepartment department}) = _$_CreateEmployee;
+      required final CreateEmployeeDepartment department,
+      required final CreateEmployeeAccountId accountId}) = _$_CreateEmployee;
 
   @override
   CreateEmployeeUuid get uuid => throw _privateConstructorUsedError;
@@ -237,6 +256,8 @@ abstract class _CreateEmployee implements CreateEmployee {
   CreateEmployeeEmail get email => throw _privateConstructorUsedError;
   @override
   CreateEmployeeDepartment get department => throw _privateConstructorUsedError;
+  @override
+  CreateEmployeeAccountId get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateEmployeeCopyWith<_$_CreateEmployee> get copyWith =>

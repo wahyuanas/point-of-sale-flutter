@@ -27,10 +27,13 @@ class VehicleTypeModel with _$VehicleTypeModel implements IEntity {
     return VehicleTypeModel(
       id: vehicleType!.id,
       uuid: vehicleType.uuid,
-      manufacture: VehicleManufactureModel(
-          id: vehicleManufacture!.id,
-          uuid: vehicleManufacture.uuid,
-          name: vehicleManufacture.name),
+      manufacture: vehicleManufacture != null
+          ? VehicleManufactureModel(
+              id: vehicleManufacture.id,
+              uuid: vehicleManufacture.uuid,
+              name: vehicleManufacture.name,
+              accountId: vehicleManufacture.accountId)
+          : null,
       model: vehicleType.model,
       description: vehicleType.description,
       accountId: vehicleType.accountId,

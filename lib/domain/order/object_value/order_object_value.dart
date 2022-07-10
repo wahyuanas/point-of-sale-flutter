@@ -29,28 +29,29 @@ class CreateOrder with _$CreateOrder {
     required CreateOrderTax tax,
     required CreateOrderItemNumber itemNumber,
     required CreateOrderPaidStatus paidStatus,
+    required CreateOrderAccountId accountId,
   }) = _CreateOrder;
 
   factory CreateOrder.empty() => CreateOrder(
-        uuid: CreateOrderUuid(''),
-        code: CreateOrderCode(''),
-        customer: CreateOrderCustomer(null),
-        vehicle: CreateOrderVehicle(null),
-        employees: CreateOrderEmployees(null),
-        date: CreateOrderDate(''),
-        amount: CreateOrderAmount(null),
-        grandAmount: CreateOrderGrandAmount(null),
-        disc: CreateOrderDisc(''),
-        paymentType: CreateOrderPaymentType(null),
-        paymentCardInfo: null,
-        charge: CreateOrderCharge(''),
-        paidAmount: CreateOrderPaidAmount(''),
-        changeAmount: CreateOrderChangeAmount(null),
-        description: CreateOrderDescription(''),
-        tax: CreateOrderTax(null),
-        itemNumber: CreateOrderItemNumber(null),
-        paidStatus: CreateOrderPaidStatus(null),
-      );
+      uuid: CreateOrderUuid(''),
+      code: CreateOrderCode(''),
+      customer: CreateOrderCustomer(null),
+      vehicle: CreateOrderVehicle(null),
+      employees: CreateOrderEmployees(null),
+      date: CreateOrderDate(''),
+      amount: CreateOrderAmount(null),
+      grandAmount: CreateOrderGrandAmount(null),
+      disc: CreateOrderDisc(''),
+      paymentType: CreateOrderPaymentType(null),
+      paymentCardInfo: null,
+      charge: CreateOrderCharge(''),
+      paidAmount: CreateOrderPaidAmount(''),
+      changeAmount: CreateOrderChangeAmount(null),
+      description: CreateOrderDescription(''),
+      tax: CreateOrderTax(null),
+      itemNumber: CreateOrderItemNumber(null),
+      paidStatus: CreateOrderPaidStatus(null),
+      accountId: CreateOrderAccountId(null));
 }
 
 extension CreateOrderX on CreateOrder {
@@ -61,7 +62,7 @@ extension CreateOrderX on CreateOrder {
         .andThen(disc.failureOrUnit)
         .andThen(paymentType.failureOrUnit)
         .andThen(charge.failureOrUnit)
-        .andThen(tax.failureOrUnit)
+        //.andThen(tax.failureOrUnit)
         .andThen(paidAmount.failureOrUnit)
         .fold((l) => some(l), (r) => none());
   }

@@ -175,6 +175,7 @@ mixin _$PosMainEvent {
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -186,6 +187,7 @@ mixin _$PosMainEvent {
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -197,6 +199,7 @@ mixin _$PosMainEvent {
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -209,6 +212,7 @@ mixin _$PosMainEvent {
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -220,6 +224,7 @@ mixin _$PosMainEvent {
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -231,6 +236,7 @@ mixin _$PosMainEvent {
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -308,6 +314,7 @@ class _$PosStartedEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return started();
   }
@@ -322,6 +329,7 @@ class _$PosStartedEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return started?.call();
   }
@@ -336,6 +344,7 @@ class _$PosStartedEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -354,6 +363,7 @@ class _$PosStartedEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return started(this);
   }
@@ -368,6 +378,7 @@ class _$PosStartedEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return started?.call(this);
   }
@@ -382,6 +393,7 @@ class _$PosStartedEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -486,6 +498,7 @@ class _$PosAddItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return addItem(item);
   }
@@ -500,6 +513,7 @@ class _$PosAddItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return addItem?.call(item);
   }
@@ -514,6 +528,7 @@ class _$PosAddItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (addItem != null) {
@@ -532,6 +547,7 @@ class _$PosAddItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return addItem(this);
   }
@@ -546,6 +562,7 @@ class _$PosAddItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return addItem?.call(this);
   }
@@ -560,6 +577,7 @@ class _$PosAddItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (addItem != null) {
@@ -670,6 +688,7 @@ class _$PosIncrementItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return incrementItem(item);
   }
@@ -684,6 +703,7 @@ class _$PosIncrementItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return incrementItem?.call(item);
   }
@@ -698,6 +718,7 @@ class _$PosIncrementItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (incrementItem != null) {
@@ -716,6 +737,7 @@ class _$PosIncrementItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return incrementItem(this);
   }
@@ -730,6 +752,7 @@ class _$PosIncrementItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return incrementItem?.call(this);
   }
@@ -744,6 +767,7 @@ class _$PosIncrementItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (incrementItem != null) {
@@ -855,6 +879,7 @@ class _$PosDecrementItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return decrementItem(item);
   }
@@ -869,6 +894,7 @@ class _$PosDecrementItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return decrementItem?.call(item);
   }
@@ -883,6 +909,7 @@ class _$PosDecrementItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (decrementItem != null) {
@@ -901,6 +928,7 @@ class _$PosDecrementItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return decrementItem(this);
   }
@@ -915,6 +943,7 @@ class _$PosDecrementItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return decrementItem?.call(this);
   }
@@ -929,6 +958,7 @@ class _$PosDecrementItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (decrementItem != null) {
@@ -1040,6 +1070,7 @@ class _$PosChangeItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return changeItem(item);
   }
@@ -1054,6 +1085,7 @@ class _$PosChangeItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return changeItem?.call(item);
   }
@@ -1068,6 +1100,7 @@ class _$PosChangeItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (changeItem != null) {
@@ -1086,6 +1119,7 @@ class _$PosChangeItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return changeItem(this);
   }
@@ -1100,6 +1134,7 @@ class _$PosChangeItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return changeItem?.call(this);
   }
@@ -1114,6 +1149,7 @@ class _$PosChangeItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (changeItem != null) {
@@ -1226,6 +1262,7 @@ class _$PosCountItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return countItem(id, value);
   }
@@ -1240,6 +1277,7 @@ class _$PosCountItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return countItem?.call(id, value);
   }
@@ -1254,6 +1292,7 @@ class _$PosCountItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (countItem != null) {
@@ -1272,6 +1311,7 @@ class _$PosCountItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return countItem(this);
   }
@@ -1286,6 +1326,7 @@ class _$PosCountItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return countItem?.call(this);
   }
@@ -1300,6 +1341,7 @@ class _$PosCountItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (countItem != null) {
@@ -1404,6 +1446,7 @@ class _$PosCountAllItemEvent
     required TResult Function(Item item) changeItem,
     required TResult Function(int? id, bool? value) countItem,
     required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
   }) {
     return countAllItem(value);
   }
@@ -1418,6 +1461,7 @@ class _$PosCountAllItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
   }) {
     return countAllItem?.call(value);
   }
@@ -1432,6 +1476,7 @@ class _$PosCountAllItemEvent
     TResult Function(Item item)? changeItem,
     TResult Function(int? id, bool? value)? countItem,
     TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
     required TResult orElse(),
   }) {
     if (countAllItem != null) {
@@ -1450,6 +1495,7 @@ class _$PosCountAllItemEvent
     required TResult Function(PosChangeItemEvent value) changeItem,
     required TResult Function(PosCountItemEvent value) countItem,
     required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
   }) {
     return countAllItem(this);
   }
@@ -1464,6 +1510,7 @@ class _$PosCountAllItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
   }) {
     return countAllItem?.call(this);
   }
@@ -1478,6 +1525,7 @@ class _$PosCountAllItemEvent
     TResult Function(PosChangeItemEvent value)? changeItem,
     TResult Function(PosCountItemEvent value)? countItem,
     TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
     required TResult orElse(),
   }) {
     if (countAllItem != null) {
@@ -1495,4 +1543,153 @@ abstract class PosCountAllItemEvent implements PosMainEvent {
   @JsonKey(ignore: true)
   _$$PosCountAllItemEventCopyWith<_$PosCountAllItemEvent> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$PosInitialEventCopyWith<$Res> {
+  factory _$$PosInitialEventCopyWith(
+          _$PosInitialEvent value, $Res Function(_$PosInitialEvent) then) =
+      __$$PosInitialEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$PosInitialEventCopyWithImpl<$Res>
+    extends _$PosMainEventCopyWithImpl<$Res>
+    implements _$$PosInitialEventCopyWith<$Res> {
+  __$$PosInitialEventCopyWithImpl(
+      _$PosInitialEvent _value, $Res Function(_$PosInitialEvent) _then)
+      : super(_value, (v) => _then(v as _$PosInitialEvent));
+
+  @override
+  _$PosInitialEvent get _value => super._value as _$PosInitialEvent;
+}
+
+/// @nodoc
+
+class _$PosInitialEvent
+    with DiagnosticableTreeMixin
+    implements PosInitialEvent {
+  const _$PosInitialEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'PosMainEvent.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(DiagnosticsProperty('type', 'PosMainEvent.initial'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$PosInitialEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Item item) addItem,
+    required TResult Function(Item item) incrementItem,
+    required TResult Function(Item item) decrementItem,
+    required TResult Function(Item item) changeItem,
+    required TResult Function(int? id, bool? value) countItem,
+    required TResult Function(bool? value) countAllItem,
+    required TResult Function() initial,
+  }) {
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Item item)? addItem,
+    TResult Function(Item item)? incrementItem,
+    TResult Function(Item item)? decrementItem,
+    TResult Function(Item item)? changeItem,
+    TResult Function(int? id, bool? value)? countItem,
+    TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Item item)? addItem,
+    TResult Function(Item item)? incrementItem,
+    TResult Function(Item item)? decrementItem,
+    TResult Function(Item item)? changeItem,
+    TResult Function(int? id, bool? value)? countItem,
+    TResult Function(bool? value)? countAllItem,
+    TResult Function()? initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PosStartedEvent value) started,
+    required TResult Function(PosAddItemEvent value) addItem,
+    required TResult Function(PosIncrementItemEvent value) incrementItem,
+    required TResult Function(PosDecrementItemEvent value) decrementItem,
+    required TResult Function(PosChangeItemEvent value) changeItem,
+    required TResult Function(PosCountItemEvent value) countItem,
+    required TResult Function(PosCountAllItemEvent value) countAllItem,
+    required TResult Function(PosInitialEvent value) initial,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PosStartedEvent value)? started,
+    TResult Function(PosAddItemEvent value)? addItem,
+    TResult Function(PosIncrementItemEvent value)? incrementItem,
+    TResult Function(PosDecrementItemEvent value)? decrementItem,
+    TResult Function(PosChangeItemEvent value)? changeItem,
+    TResult Function(PosCountItemEvent value)? countItem,
+    TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PosStartedEvent value)? started,
+    TResult Function(PosAddItemEvent value)? addItem,
+    TResult Function(PosIncrementItemEvent value)? incrementItem,
+    TResult Function(PosDecrementItemEvent value)? decrementItem,
+    TResult Function(PosChangeItemEvent value)? changeItem,
+    TResult Function(PosCountItemEvent value)? countItem,
+    TResult Function(PosCountAllItemEvent value)? countAllItem,
+    TResult Function(PosInitialEvent value)? initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PosInitialEvent implements PosMainEvent {
+  const factory PosInitialEvent() = _$PosInitialEvent;
 }

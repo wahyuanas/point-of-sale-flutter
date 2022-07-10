@@ -81,12 +81,12 @@ class CreateCustomerType extends ObjectValue<String> {
   const CreateCustomerType._(this.value);
 }
 
-class CreateCustomerAccountId extends ObjectValue<int> {
+class CreateCustomerAccountId extends ObjectValue<int?> {
   @override
-  final Either<FormCustomerObjectValueFailure<String, String>, int> value;
+  final Either<FormCustomerObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateCustomerAccountId(String input) {
-    return CreateCustomerAccountId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateCustomerAccountId(int? input) {
+    return CreateCustomerAccountId._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateCustomerAccountId._(this.value);

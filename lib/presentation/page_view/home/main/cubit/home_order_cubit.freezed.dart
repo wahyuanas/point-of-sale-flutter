@@ -16,7 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$HomeOrderState {
-  List<Order>? get orders => throw _privateConstructorUsedError;
+  List<OrderModel>? get orders => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomeOrderStateCopyWith<HomeOrderState> get copyWith =>
@@ -28,7 +28,7 @@ abstract class $HomeOrderStateCopyWith<$Res> {
   factory $HomeOrderStateCopyWith(
           HomeOrderState value, $Res Function(HomeOrderState) then) =
       _$HomeOrderStateCopyWithImpl<$Res>;
-  $Res call({List<Order>? orders});
+  $Res call({List<OrderModel>? orders});
 }
 
 /// @nodoc
@@ -48,7 +48,7 @@ class _$HomeOrderStateCopyWithImpl<$Res>
       orders: orders == freezed
           ? _value.orders
           : orders // ignore: cast_nullable_to_non_nullable
-              as List<Order>?,
+              as List<OrderModel>?,
     ));
   }
 }
@@ -60,7 +60,7 @@ abstract class _$$_HomeOrderStateCopyWith<$Res>
           _$_HomeOrderState value, $Res Function(_$_HomeOrderState) then) =
       __$$_HomeOrderStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<Order>? orders});
+  $Res call({List<OrderModel>? orders});
 }
 
 /// @nodoc
@@ -82,7 +82,7 @@ class __$$_HomeOrderStateCopyWithImpl<$Res>
       orders: orders == freezed
           ? _value._orders
           : orders // ignore: cast_nullable_to_non_nullable
-              as List<Order>?,
+              as List<OrderModel>?,
     ));
   }
 }
@@ -92,12 +92,12 @@ class __$$_HomeOrderStateCopyWithImpl<$Res>
 class _$_HomeOrderState
     with DiagnosticableTreeMixin
     implements _HomeOrderState {
-  const _$_HomeOrderState({required final List<Order>? orders})
+  const _$_HomeOrderState({required final List<OrderModel>? orders})
       : _orders = orders;
 
-  final List<Order>? _orders;
+  final List<OrderModel>? _orders;
   @override
-  List<Order>? get orders {
+  List<OrderModel>? get orders {
     final value = _orders;
     if (value == null) return null;
     // ignore: implicit_dynamic_type
@@ -136,11 +136,11 @@ class _$_HomeOrderState
 }
 
 abstract class _HomeOrderState implements HomeOrderState {
-  const factory _HomeOrderState({required final List<Order>? orders}) =
+  const factory _HomeOrderState({required final List<OrderModel>? orders}) =
       _$_HomeOrderState;
 
   @override
-  List<Order>? get orders => throw _privateConstructorUsedError;
+  List<OrderModel>? get orders => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_HomeOrderStateCopyWith<_$_HomeOrderState> get copyWith =>

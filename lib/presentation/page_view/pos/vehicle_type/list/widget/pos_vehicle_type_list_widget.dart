@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/cubit/pos_route_cubit.dart';
 import 'package:pos/presentation/page_view/pos/routes/on_state/pos_on_route_state.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
@@ -27,10 +28,10 @@ class _PosVehicleTypeListWidgetState extends State<PosVehicleTypeListWidget> {
   @override
   void initState() {
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      //if (context.read<IntroCubit>().state.posVehicleList == false) {
+      if (context.read<IntroCubit>().state.posVehicleTypeList == false) {
       ShowCaseWidget.of(context).startShowCase([_one]);
-      //context.read<IntroCubit>().onPosVehicleListChanged(true);
-      //}
+      context.read<IntroCubit>().onPosVehicleTypeListChanged(true);
+      }
     });
     super.initState();
   }

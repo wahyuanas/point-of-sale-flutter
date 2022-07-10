@@ -15,6 +15,7 @@ class CreateVehicleType with _$CreateVehicleType {
     required CreateVehicleTypeColor color,
     required CreateVehicleTypeDescription description,
     required CreateVehicleTypeYear year,
+    required CreateVehicleTypeAccountId accountId,
   }) = _CreateVehicleType;
 
   factory CreateVehicleType.empty() => CreateVehicleType(
@@ -23,7 +24,8 @@ class CreateVehicleType with _$CreateVehicleType {
       model: CreateVehicleTypeModel(''),
       color: CreateVehicleTypeColor(''),
       description: CreateVehicleTypeDescription(''),
-      year: CreateVehicleTypeYear(''));
+      year: CreateVehicleTypeYear(''),
+      accountId: CreateVehicleTypeAccountId(null));
 }
 
 extension CreateVehicleTypeX on CreateVehicleType {

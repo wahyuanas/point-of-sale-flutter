@@ -42,7 +42,7 @@ class Item with _$Item implements IEntity {
         stock: createCatalogItem.stock.getOrCrash(),
         category: createCatalogItem.category.getOrCrash(),
         image: createCatalogItem.image.getOrCrash(),
-        accountId: 1);
+        accountId: createCatalogItem.accountId.getOrCrash()!);
   }
 
   factory Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);

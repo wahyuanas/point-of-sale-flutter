@@ -13,6 +13,14 @@ class PosPaymentExtendedTaxWidget extends StatefulWidget {
 class _PosPaymentExtendedTaxWidgetState
     extends State<PosPaymentExtendedTaxWidget> {
   @override
+  void initState() {
+    context.read<PosPaymentCubit>().state.createOrder.tax.value.fold(
+        (l) => null, (r) => context.read<PosPaymentCubit>().onTaxChanged(null));
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BlocBuilder<PosPaymentCubit, PosPaymentState>(
         builder: ((context, state) {

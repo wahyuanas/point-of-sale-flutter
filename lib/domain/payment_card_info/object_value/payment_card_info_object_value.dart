@@ -16,43 +16,44 @@ class CraetePaymentCardInfo with _$CraetePaymentCardInfo implements IEntity {
     required CraetePaymentCardInfoNumber number,
     required CraetePaymentCardInfoNumberRef numberRef,
     required CraetePaymentCardInfoRemarks remarks,
+    required CraetePaymentCardInfoAccountId accountId,
   }) = _CraetePaymentCardInfo;
 
   factory CraetePaymentCardInfo.empty() => CraetePaymentCardInfo(
-        id: CraetePaymentCardInfoId(null),
-        name: CraetePaymentCardInfoName(''),
-        number: CraetePaymentCardInfoNumber(''),
-        numberRef: CraetePaymentCardInfoNumberRef(''),
-        remarks: CraetePaymentCardInfoRemarks(''),
-      );
-
-  CraetePaymentCardInfo copyWithName(String? v) => CraetePaymentCardInfo(
       id: CraetePaymentCardInfoId(null),
-      name: CraetePaymentCardInfoName(v ?? ''),
-      number: number,
-      numberRef: numberRef,
-      remarks: remarks);
+      name: CraetePaymentCardInfoName(''),
+      number: CraetePaymentCardInfoNumber(''),
+      numberRef: CraetePaymentCardInfoNumberRef(''),
+      remarks: CraetePaymentCardInfoRemarks(''),
+      accountId: CraetePaymentCardInfoAccountId(null));
 
-  CraetePaymentCardInfo copyWithNumber(String? v) => CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: name,
-      number: CraetePaymentCardInfoNumber(v ?? ''),
-      numberRef: numberRef,
-      remarks: remarks);
+  // CraetePaymentCardInfo copyWithName(String? v) => CraetePaymentCardInfo(
+  //     id: CraetePaymentCardInfoId(null),
+  //     name: CraetePaymentCardInfoName(v ?? ''),
+  //     number: number,
+  //     numberRef: numberRef,
+  //     remarks: remarks);
 
-  CraetePaymentCardInfo copyWithNumberRef(String? v) => CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: name,
-      number: number,
-      numberRef: CraetePaymentCardInfoNumberRef(v ?? ''),
-      remarks: remarks);
+  // CraetePaymentCardInfo copyWithNumber(String? v) => CraetePaymentCardInfo(
+  //     id: CraetePaymentCardInfoId(null),
+  //     name: name,
+  //     number: CraetePaymentCardInfoNumber(v ?? ''),
+  //     numberRef: numberRef,
+  //     remarks: remarks);
 
-  CraetePaymentCardInfo copyWithRemarks(String? v) => CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: name,
-      number: number,
-      numberRef: numberRef,
-      remarks: CraetePaymentCardInfoRemarks(v ?? ''));
+  // CraetePaymentCardInfo copyWithNumberRef(String? v) => CraetePaymentCardInfo(
+  //     id: CraetePaymentCardInfoId(null),
+  //     name: name,
+  //     number: number,
+  //     numberRef: CraetePaymentCardInfoNumberRef(v ?? ''),
+  //     remarks: remarks);
+
+  // CraetePaymentCardInfo copyWithRemarks(String? v) => CraetePaymentCardInfo(
+  //     id: CraetePaymentCardInfoId(null),
+  //     name: name,
+  //     number: number,
+  //     numberRef: numberRef,
+  //     remarks: CraetePaymentCardInfoRemarks(v ?? ''));
 }
 
 extension CraetePaymentCardInfoX on CraetePaymentCardInfo {

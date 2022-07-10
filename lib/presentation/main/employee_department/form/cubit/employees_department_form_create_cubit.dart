@@ -44,6 +44,13 @@ class EmployeeDepartmentFormCreateCubit
     ));
   }
 
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createEmployeeDepartment: state.createEmployeeDepartment
+          .copyWith(accountId: CreateEmployeeDepartmentAccountId(accountId)),
+    ));
+  }
+
   onCreate() async {
     if (state.createEmployeeDepartment.failureOption.isSome()) {
       emit(state.copyWith(initial: false));

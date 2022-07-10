@@ -75,3 +75,16 @@ class CraetePaymentCardInfoRemarks extends ObjectValue<String> {
 
   const CraetePaymentCardInfoRemarks._(this.value);
 }
+
+class CraetePaymentCardInfoAccountId extends ObjectValue<int?> {
+  @override
+  final Either<CraetePaymentCardInfoObjectValueFailure<int?, String>, int?>
+      value;
+
+  factory CraetePaymentCardInfoAccountId(int? input) {
+    return CraetePaymentCardInfoAccountId._(
+        validateFieldNotIntAndNotEmpty1(input));
+  }
+
+  const CraetePaymentCardInfoAccountId._(this.value);
+}

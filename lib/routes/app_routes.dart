@@ -15,6 +15,7 @@ import 'package:pos/presentation/page_view/pos/employee/list/screen/pos_employee
 import 'package:pos/presentation/page_view/pos/employee_department/form/create/screen/pos_employee_department_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/employee_department/list/screen/pos_employee_department_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_screen.dart';
+import 'package:pos/presentation/page_view/pos/payment/screen/pos_payment_success_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/form/create/screen/pos_vehicle_form_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle/list/screen/pos_vehicle_list_screen.dart';
 import 'package:pos/presentation/page_view/pos/vehicle_manufacture/form/create/screen/pos_vehicle_manufacture_form_screen.dart';
@@ -95,7 +96,9 @@ class RouteGenerator {
       case '/posEmployeeDepartmentForm':
         return MaterialPageRoute(
             builder: (_) => const PosEmployeeDepartmentFormScreen());
-
+      case '/posPaymentSuccess':
+        return MaterialPageRoute(
+            builder: (_) => const PosPaymentSuccessScreen());
       default:
         return _errorRoute();
     }

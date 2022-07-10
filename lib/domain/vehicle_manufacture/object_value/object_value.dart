@@ -28,14 +28,14 @@ class CreateVehicleManufactureName extends ObjectValue<String> {
   const CreateVehicleManufactureName._(this.value);
 }
 
-class CreateVehicleManufactureAccountId extends ObjectValue<int> {
+class CreateVehicleManufactureAccountId extends ObjectValue<int?> {
   @override
-  final Either<FormVehicleManufactureObjectValueFailure<String, String>, int>
+  final Either<FormVehicleManufactureObjectValueFailure<int?, String>, int?>
       value;
 
-  factory CreateVehicleManufactureAccountId(String input) {
+  factory CreateVehicleManufactureAccountId(int? input) {
     return CreateVehicleManufactureAccountId._(
-        validateFieldNotIntAndNotEmpty(input));
+        validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateVehicleManufactureAccountId._(this.value);

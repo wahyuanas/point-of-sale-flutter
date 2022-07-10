@@ -40,7 +40,6 @@ class PosVehicleListCubit extends Cubit<PosVehicleListState> {
   final VehicleListCubit _vehicleListCubit;
   final VehicleTypeListCubit _vehicleTypeListCubit;
   final VehicleOwnerListCubit _vehicleOwnerListCubit;
-
   final VehicleManufactureListCubit _vehicleManufactureListCubit;
   late StreamSubscription _customerListSubscription;
 

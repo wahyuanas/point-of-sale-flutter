@@ -50,6 +50,23 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
+    final ort = MediaQuery.of(context).orientation;
+    int? exp;
+    if (ort == Orientation.portrait) {
+      if (size.shortestSide < 600) {
+        exp = 2;
+      } else {
+        exp = 4;
+      }
+    } else if (ort == Orientation.landscape) {
+      if (size.shortestSide < 1200) {
+        exp = 4;
+      } else {
+        exp = 6;
+      }
+    }
+
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -160,14 +177,11 @@ class _PosCatalogListWidgetState extends State<PosCatalogListWidget> {
                 return SliverPadding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   sliver: SliverAlignedGrid.count(
-                    crossAxisCount: MediaQuery.of(context).orientation ==
-                            Orientation.portrait
-                        ? 2
-                        : 4,
+                    crossAxisCount: exp ?? 2,
                     itemCount: state.items?.length,
                     itemBuilder: (context, index) {
                       // debugPrint(
-                      //     "PAGE VIEW HOME WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
+                      //     "POS CATALOG LIST WIDGET VVVV ${state.items![index].id} ${state.items![index].name}");
                       return PosCatalogListCardWidget(
                           item: state.items![index]);
                     },

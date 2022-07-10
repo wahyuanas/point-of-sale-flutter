@@ -59,10 +59,16 @@ class EmployeeFormCreateCubit extends Cubit<EmployeeFormCreateState> {
   }
 
   void onCreateEmployeeDepartmentChanged(EmployeesDepartmentModel? v) {
-    debugPrint("POS EMPLOYEE FORM CREATE CUBIT");
     emit(state.copyWith(
       createEmployee: state.createEmployee
           .copyWith(department: CreateEmployeeDepartment(v)),
+    ));
+  }
+
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createEmployee: state.createEmployee
+          .copyWith(accountId: CreateEmployeeAccountId(accountId)),
     ));
   }
 

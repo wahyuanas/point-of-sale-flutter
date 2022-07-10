@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/di/injection.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/vehicle_manufacture/list/cubit/vehicle_manufacture_list_cubit.dart';
 import 'package:showcaseview/showcaseview.dart';
 
@@ -12,7 +13,11 @@ class PosVehicleManufactureListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool onF = false;
+    bool onF =
+        BlocProvider.of<IntroCubit>(context).state.posVehicleManufactureList ==
+                false
+            ? false
+            : true;
     return BlocProvider(
         create: ((context) => PosVehicleManufactureListCubit(
             vehicleManufactureListCubit: getIt<VehicleManufactureListCubit>())

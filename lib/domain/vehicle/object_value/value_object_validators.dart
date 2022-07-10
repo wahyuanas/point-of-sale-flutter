@@ -30,6 +30,16 @@ Either<FormVehicleObjectValueFailure<String, String>, int>
   }
 }
 
+Either<FormVehicleObjectValueFailure<int?, String>, int?>
+    validateFieldNotIntAndNotEmpty1(int? input) {
+  if (input == null) {
+    return right(input);
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
 Either<FormVehicleObjectValueFailure<VehicleOwnerModel?, String>,
         VehicleOwnerModel?>
     validateFieldNotVehicleOwnerAndNotNull(VehicleOwnerModel? input) {

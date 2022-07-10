@@ -22,6 +22,7 @@ class PosMainBloc extends Bloc<PosMainEvent, PosMainState> {
             onIncrementItem(event as PosIncrementItemEvent, emit),
         decrementItem: (i) async =>
             onDecrementItem(event as PosDecrementItemEvent, emit),
+        initial: () async => onInitial(event as PosInitialEvent, emit),
         orElse: () {},
       );
     }, transformer: restartable());
@@ -145,5 +146,9 @@ class PosMainBloc extends Bloc<PosMainEvent, PosMainState> {
         ));
       }
     }
+  }
+
+  onInitial(PosInitialEvent event, Emitter<PosMainState> emit) {
+    emit(PosMainState.initial());
   }
 }

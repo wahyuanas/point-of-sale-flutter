@@ -23,6 +23,8 @@ mixin _$CreateVehicleOwner {
   CreateVehicleOwnerEmail get email => throw _privateConstructorUsedError;
   CreateVehicleOwnerIdNumber get idNumber => throw _privateConstructorUsedError;
   CreateVehicleOwnerAddress get address => throw _privateConstructorUsedError;
+  CreateVehicleOwnerAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateVehicleOwnerCopyWith<CreateVehicleOwner> get copyWith =>
@@ -40,7 +42,8 @@ abstract class $CreateVehicleOwnerCopyWith<$Res> {
       CreateVehicleOwnerPhoneNumber phoneNumber,
       CreateVehicleOwnerEmail email,
       CreateVehicleOwnerIdNumber idNumber,
-      CreateVehicleOwnerAddress address});
+      CreateVehicleOwnerAddress address,
+      CreateVehicleOwnerAccountId accountId});
 }
 
 /// @nodoc
@@ -60,6 +63,7 @@ class _$CreateVehicleOwnerCopyWithImpl<$Res>
     Object? email = freezed,
     Object? idNumber = freezed,
     Object? address = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -86,6 +90,10 @@ class _$CreateVehicleOwnerCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as CreateVehicleOwnerAddress,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleOwnerAccountId,
     ));
   }
 }
@@ -103,7 +111,8 @@ abstract class _$$_CreateVehicleOwnerCopyWith<$Res>
       CreateVehicleOwnerPhoneNumber phoneNumber,
       CreateVehicleOwnerEmail email,
       CreateVehicleOwnerIdNumber idNumber,
-      CreateVehicleOwnerAddress address});
+      CreateVehicleOwnerAddress address,
+      CreateVehicleOwnerAccountId accountId});
 }
 
 /// @nodoc
@@ -125,6 +134,7 @@ class __$$_CreateVehicleOwnerCopyWithImpl<$Res>
     Object? email = freezed,
     Object? idNumber = freezed,
     Object? address = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateVehicleOwner(
       uuid: uuid == freezed
@@ -151,6 +161,10 @@ class __$$_CreateVehicleOwnerCopyWithImpl<$Res>
           ? _value.address
           : address // ignore: cast_nullable_to_non_nullable
               as CreateVehicleOwnerAddress,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleOwnerAccountId,
     ));
   }
 }
@@ -164,7 +178,8 @@ class _$_CreateVehicleOwner implements _CreateVehicleOwner {
       required this.phoneNumber,
       required this.email,
       required this.idNumber,
-      required this.address});
+      required this.address,
+      required this.accountId});
 
   @override
   final CreateVehicleOwnerUuid uuid;
@@ -178,10 +193,12 @@ class _$_CreateVehicleOwner implements _CreateVehicleOwner {
   final CreateVehicleOwnerIdNumber idNumber;
   @override
   final CreateVehicleOwnerAddress address;
+  @override
+  final CreateVehicleOwnerAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateVehicleOwner(uuid: $uuid, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address)';
+    return 'CreateVehicleOwner(uuid: $uuid, name: $name, phoneNumber: $phoneNumber, email: $email, idNumber: $idNumber, address: $address, accountId: $accountId)';
   }
 
   @override
@@ -195,7 +212,8 @@ class _$_CreateVehicleOwner implements _CreateVehicleOwner {
                 .equals(other.phoneNumber, phoneNumber) &&
             const DeepCollectionEquality().equals(other.email, email) &&
             const DeepCollectionEquality().equals(other.idNumber, idNumber) &&
-            const DeepCollectionEquality().equals(other.address, address));
+            const DeepCollectionEquality().equals(other.address, address) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -206,7 +224,8 @@ class _$_CreateVehicleOwner implements _CreateVehicleOwner {
       const DeepCollectionEquality().hash(phoneNumber),
       const DeepCollectionEquality().hash(email),
       const DeepCollectionEquality().hash(idNumber),
-      const DeepCollectionEquality().hash(address));
+      const DeepCollectionEquality().hash(address),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -222,7 +241,8 @@ abstract class _CreateVehicleOwner implements CreateVehicleOwner {
           required final CreateVehicleOwnerPhoneNumber phoneNumber,
           required final CreateVehicleOwnerEmail email,
           required final CreateVehicleOwnerIdNumber idNumber,
-          required final CreateVehicleOwnerAddress address}) =
+          required final CreateVehicleOwnerAddress address,
+          required final CreateVehicleOwnerAccountId accountId}) =
       _$_CreateVehicleOwner;
 
   @override
@@ -238,6 +258,9 @@ abstract class _CreateVehicleOwner implements CreateVehicleOwner {
   CreateVehicleOwnerIdNumber get idNumber => throw _privateConstructorUsedError;
   @override
   CreateVehicleOwnerAddress get address => throw _privateConstructorUsedError;
+  @override
+  CreateVehicleOwnerAccountId get accountId =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateVehicleOwnerCopyWith<_$_CreateVehicleOwner> get copyWith =>

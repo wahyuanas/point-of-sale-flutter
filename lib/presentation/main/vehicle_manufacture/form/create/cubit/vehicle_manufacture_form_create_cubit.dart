@@ -30,6 +30,13 @@ class VehicleManufactureFormCreateCubit
     ));
   }
 
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createVehicleManufacture: state.createVehicleManufacture
+          .copyWith(accountId: CreateVehicleManufactureAccountId(accountId)),
+    ));
+  }
+
   onCreate() async {
     if (state.createVehicleManufacture.failureOption.isSome()) {
       emit(state.copyWith(initial: false));

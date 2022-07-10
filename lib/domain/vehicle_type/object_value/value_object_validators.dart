@@ -44,3 +44,13 @@ Either<FormVehicleTypeObjectValueFailure<VehicleManufactureModel?, String>,
     return right(input);
   }
 }
+
+Either<FormVehicleTypeObjectValueFailure<int?, String>, int?>
+    validateFieldNotIntAndNotEmpty1(int? input) {
+  if (input == null) {
+    return right(input);
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}

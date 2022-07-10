@@ -23,6 +23,8 @@ mixin _$CraetePaymentCardInfo {
       throw _privateConstructorUsedError;
   CraetePaymentCardInfoRemarks get remarks =>
       throw _privateConstructorUsedError;
+  CraetePaymentCardInfoAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CraetePaymentCardInfoCopyWith<CraetePaymentCardInfo> get copyWith =>
@@ -39,7 +41,8 @@ abstract class $CraetePaymentCardInfoCopyWith<$Res> {
       CraetePaymentCardInfoName name,
       CraetePaymentCardInfoNumber number,
       CraetePaymentCardInfoNumberRef numberRef,
-      CraetePaymentCardInfoRemarks remarks});
+      CraetePaymentCardInfoRemarks remarks,
+      CraetePaymentCardInfoAccountId accountId});
 }
 
 /// @nodoc
@@ -58,6 +61,7 @@ class _$CraetePaymentCardInfoCopyWithImpl<$Res>
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -80,6 +84,10 @@ class _$CraetePaymentCardInfoCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as CraetePaymentCardInfoRemarks,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CraetePaymentCardInfoAccountId,
     ));
   }
 }
@@ -96,7 +104,8 @@ abstract class _$$_CraetePaymentCardInfoCopyWith<$Res>
       CraetePaymentCardInfoName name,
       CraetePaymentCardInfoNumber number,
       CraetePaymentCardInfoNumberRef numberRef,
-      CraetePaymentCardInfoRemarks remarks});
+      CraetePaymentCardInfoRemarks remarks,
+      CraetePaymentCardInfoAccountId accountId});
 }
 
 /// @nodoc
@@ -118,6 +127,7 @@ class __$$_CraetePaymentCardInfoCopyWithImpl<$Res>
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CraetePaymentCardInfo(
       id: id == freezed
@@ -140,6 +150,10 @@ class __$$_CraetePaymentCardInfoCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as CraetePaymentCardInfoRemarks,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CraetePaymentCardInfoAccountId,
     ));
   }
 }
@@ -152,7 +166,8 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
       required this.name,
       required this.number,
       required this.numberRef,
-      required this.remarks})
+      required this.remarks,
+      required this.accountId})
       : super._();
 
   @override
@@ -165,10 +180,12 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
   final CraetePaymentCardInfoNumberRef numberRef;
   @override
   final CraetePaymentCardInfoRemarks remarks;
+  @override
+  final CraetePaymentCardInfoAccountId accountId;
 
   @override
   String toString() {
-    return 'CraetePaymentCardInfo(id: $id, name: $name, number: $number, numberRef: $numberRef, remarks: $remarks)';
+    return 'CraetePaymentCardInfo(id: $id, name: $name, number: $number, numberRef: $numberRef, remarks: $remarks, accountId: $accountId)';
   }
 
   @override
@@ -180,7 +197,8 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.number, number) &&
             const DeepCollectionEquality().equals(other.numberRef, numberRef) &&
-            const DeepCollectionEquality().equals(other.remarks, remarks));
+            const DeepCollectionEquality().equals(other.remarks, remarks) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
@@ -190,7 +208,8 @@ class _$_CraetePaymentCardInfo extends _CraetePaymentCardInfo {
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(number),
       const DeepCollectionEquality().hash(numberRef),
-      const DeepCollectionEquality().hash(remarks));
+      const DeepCollectionEquality().hash(remarks),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -205,7 +224,8 @@ abstract class _CraetePaymentCardInfo extends CraetePaymentCardInfo {
           required final CraetePaymentCardInfoName name,
           required final CraetePaymentCardInfoNumber number,
           required final CraetePaymentCardInfoNumberRef numberRef,
-          required final CraetePaymentCardInfoRemarks remarks}) =
+          required final CraetePaymentCardInfoRemarks remarks,
+          required final CraetePaymentCardInfoAccountId accountId}) =
       _$_CraetePaymentCardInfo;
   const _CraetePaymentCardInfo._() : super._();
 
@@ -220,6 +240,9 @@ abstract class _CraetePaymentCardInfo extends CraetePaymentCardInfo {
       throw _privateConstructorUsedError;
   @override
   CraetePaymentCardInfoRemarks get remarks =>
+      throw _privateConstructorUsedError;
+  @override
+  CraetePaymentCardInfoAccountId get accountId =>
       throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)

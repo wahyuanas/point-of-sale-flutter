@@ -7,6 +7,7 @@ import 'package:pos/domain/exception/failure/failure_exceptions.dart';
 import 'package:pos/domain/order/entity/order.dart';
 import 'package:pos/domain/order/object_value/object_value.dart';
 import 'package:pos/domain/order/object_value/order_object_value.dart';
+import 'package:pos/domain/order_detail/entity/order_detail.dart';
 import 'package:pos/domain/payment_card_info/entity/payment_card_info.dart';
 import 'package:pos/domain/payment_card_info/object_value/object_value.dart';
 import 'package:pos/domain/payment_card_info/object_value/payment_card_info_object_value.dart';
@@ -15,6 +16,7 @@ import 'package:pos/presentation/common/state/state_status.dart';
 import 'package:pos/presentation/main/customer/model/customer_model.dart';
 import 'package:pos/presentation/main/employee/model/employees_model.dart';
 import 'package:pos/presentation/main/order/cubit/order_list_cubit.dart';
+import 'package:pos/presentation/main/order_detail/cubit/order_detail_list_cubit.dart';
 import 'package:pos/presentation/main/payment_card_info/list/cubit/payment_card_info_list_cubit.dart';
 import 'package:pos/presentation/main/vehicle/model/vehicle_model.dart';
 import 'package:pos/presentation/page_view/pos/main/bloc/pos_main_bloc.dart';
@@ -25,13 +27,17 @@ part 'pos_payment_cubit.freezed.dart';
 class PosPaymentCubit extends Cubit<PosPaymentState> {
   final PosMainBloc posMainBloc;
   final OrderListCubit orderListCubit;
+
+  final OrderDetailListCubit orderDetailListCubit;
   final PaymentCardInfoListCubit paymentCardInfoListCubit;
   PosPaymentCubit(
       {required this.posMainBloc,
       required this.orderListCubit,
+      required this.orderDetailListCubit,
       required this.paymentCardInfoListCubit})
       : _posMainBloc = posMainBloc,
         _orderListCubit = orderListCubit,
+        _orderDetailListCubit = orderDetailListCubit,
         _paymentCardInfoListCubit = paymentCardInfoListCubit,
         super(PosPaymentState.initial()) {
     //onGrandAmountChanged();
@@ -43,6 +49,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
 
   final PosMainBloc _posMainBloc;
   final OrderListCubit _orderListCubit;
+  final OrderDetailListCubit _orderDetailListCubit;
   final PaymentCardInfoListCubit _paymentCardInfoListCubit;
   late StreamSubscription _subscriptionuPosMainBloc;
 
@@ -50,12 +57,12 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
             paymentCardInfo: CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(v),
-      name: state.createOrder.paymentCardInfo!.name,
-      number: state.createOrder.paymentCardInfo!.number,
-      numberRef: state.createOrder.paymentCardInfo!.numberRef,
-      remarks: state.createOrder.paymentCardInfo!.remarks,
-    ))));
+                id: CraetePaymentCardInfoId(v),
+                name: state.createOrder.paymentCardInfo!.name,
+                number: state.createOrder.paymentCardInfo!.number,
+                numberRef: state.createOrder.paymentCardInfo!.numberRef,
+                remarks: state.createOrder.paymentCardInfo!.remarks,
+                accountId: state.createOrder.paymentCardInfo!.accountId))));
   }
 
   void onPaymentCardInfoNameChanged(String v) {
@@ -72,36 +79,36 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
             paymentCardInfo: CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: CraetePaymentCardInfoName(v),
-      number: state.createOrder.paymentCardInfo!.number,
-      numberRef: state.createOrder.paymentCardInfo!.numberRef,
-      remarks: state.createOrder.paymentCardInfo!.remarks,
-    ))));
+                id: CraetePaymentCardInfoId(null),
+                name: CraetePaymentCardInfoName(v),
+                number: state.createOrder.paymentCardInfo!.number,
+                numberRef: state.createOrder.paymentCardInfo!.numberRef,
+                remarks: state.createOrder.paymentCardInfo!.remarks,
+                accountId: state.createOrder.paymentCardInfo!.accountId))));
   }
 
   void onPaymentCardInfoNumberChanged(String v) {
     emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
             paymentCardInfo: CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: state.createOrder.paymentCardInfo!.name,
-      number: CraetePaymentCardInfoNumber(v),
-      numberRef: state.createOrder.paymentCardInfo!.numberRef,
-      remarks: state.createOrder.paymentCardInfo!.remarks,
-    ))));
+                id: CraetePaymentCardInfoId(null),
+                name: state.createOrder.paymentCardInfo!.name,
+                number: CraetePaymentCardInfoNumber(v),
+                numberRef: state.createOrder.paymentCardInfo!.numberRef,
+                remarks: state.createOrder.paymentCardInfo!.remarks,
+                accountId: state.createOrder.paymentCardInfo!.accountId))));
   }
 
   void onPaymentCardInfoNumberRefChanged(String v) {
     emit(state.copyWith(
         createOrder: state.createOrder.copyWith(
             paymentCardInfo: CraetePaymentCardInfo(
-      id: CraetePaymentCardInfoId(null),
-      name: state.createOrder.paymentCardInfo!.name,
-      number: state.createOrder.paymentCardInfo!.number,
-      numberRef: CraetePaymentCardInfoNumberRef(v),
-      remarks: state.createOrder.paymentCardInfo!.remarks,
-    ))));
+                id: CraetePaymentCardInfoId(null),
+                name: state.createOrder.paymentCardInfo!.name,
+                number: state.createOrder.paymentCardInfo!.number,
+                numberRef: CraetePaymentCardInfoNumberRef(v),
+                remarks: state.createOrder.paymentCardInfo!.remarks,
+                accountId: state.createOrder.paymentCardInfo!.accountId))));
   }
 
   void onPaymentCardInfoRemarksChanged(String v) {
@@ -112,7 +119,8 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
                 name: state.createOrder.paymentCardInfo!.name,
                 number: state.createOrder.paymentCardInfo!.number,
                 numberRef: state.createOrder.paymentCardInfo!.numberRef,
-                remarks: CraetePaymentCardInfoRemarks(v)))));
+                remarks: CraetePaymentCardInfoRemarks(v),
+                accountId: state.createOrder.paymentCardInfo!.accountId))));
   }
 
   void onPaymentTypeChanged(int? v) {
@@ -151,6 +159,14 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
   onDiscChanged(String? disc) {
     emit(state.copyWith(
       createOrder: state.createOrder.copyWith(disc: CreateOrderDisc(disc)),
+    ));
+    //onGrandAmountChanged();
+  }
+
+  onItemNumberChanged(int? itemNumber) {
+    emit(state.copyWith(
+      createOrder: state.createOrder
+          .copyWith(itemNumber: CreateOrderItemNumber(itemNumber)),
     ));
     //onGrandAmountChanged();
   }
@@ -257,6 +273,19 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     ));
   }
 
+  onCodeChanged(String? code) {
+    emit(state.copyWith(
+      createOrder: state.createOrder.copyWith(code: CreateOrderCode(code)),
+    ));
+  }
+
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createOrder: state.createOrder
+          .copyWith(accountId: CreateOrderAccountId(accountId)),
+    ));
+  }
+
   onEmployeeChanged(EmployeesModel employeeModel) {
     List<EmployeesModel> employeeModels = [];
 
@@ -326,7 +355,7 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     );
   }
 
-  onReset() {
+  onInitial() {
     emit(PosPaymentState.initial());
   }
 
@@ -351,25 +380,49 @@ class PosPaymentCubit extends Cubit<PosPaymentState> {
     } else {
       emit(state.copyWith(status: const StateStatus.loading()));
       //final failureOrSuccess = await accountService.signUp(state.signUp);
-      await Future.delayed(const Duration(microseconds: 500));
+      await Future.delayed(const Duration(microseconds: 300));
+      int? idCi;
+      if (state.createOrder.paymentCardInfo != null) {
+        idCi = _paymentCardInfoListCubit.state.paymentCardInfos == null
+            ? 1
+            : _paymentCardInfoListCubit.state.paymentCardInfos!.last.id + 1;
+        onPaymentCardInfoIdChanged(idCi);
+      }
+      onAccountIdChanged(1);
+      onItemNumberChanged(state.poss?.length);
 
-      final id = _paymentCardInfoListCubit.state.paymentCardInfos == null
-          ? 1
-          : _paymentCardInfoListCubit.state.paymentCardInfos!.last.id + 1;
-
-      PaymentCardInfo r = PaymentCardInfo.createPaymentCardInfo(
-          id, state.createOrder.paymentCardInfo);
-      onPaymentCardInfoIdChanged(id);
-      final ids = _orderListCubit.state.orders == null
+      final idO = _orderListCubit.state.orders == null
           ? 1
           : _orderListCubit.state.orders!.last.id + 1;
 
-      Order o = Order.createOrder(ids, state.createOrder);
-      await Future.delayed(const Duration(milliseconds: 500));
-      _paymentCardInfoListCubit.onAddPaymentCardInfo(r);
+      final code = idO.toString().padLeft(5, '0');
+      onCodeChanged(code);
+
+      Order o = Order.createOrder(idO, state.createOrder);
+
+      if (state.createOrder.paymentCardInfo != null) {
+        PaymentCardInfo r = PaymentCardInfo.createPaymentCardInfo(
+            idCi!, state.createOrder.paymentCardInfo);
+
+        _paymentCardInfoListCubit.onAddPaymentCardInfo(r);
+      }
+
+      final idOd = _orderDetailListCubit.state.orderDetails == null
+          ? 1
+          : _orderDetailListCubit.state.orderDetails!.last.id + 1;
+
+      _orderListCubit.onAddOrder(o);
+
+      _posMainBloc.state.poss?.forEach((pos) {
+        OrderDetail od = OrderDetail.createOrderDetail(idOd, idO, pos.item);
+        _orderDetailListCubit.onAddOrderDetail(od);
+      });
+
+      _posMainBloc.add(const PosMainEvent.initial());
+
+      await Future.delayed(const Duration(milliseconds: 300));
 
       emit(state.copyWith(status: StateStatus.success(data: o)));
-      _orderListCubit.onAddOrder(o);
 
       // failureOrSuccess.fold(
       //     (l) => emit(state.copyWith(status: StateStatus.failure(failure: l))),

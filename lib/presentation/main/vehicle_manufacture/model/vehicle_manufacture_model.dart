@@ -8,19 +8,19 @@ part 'vehicle_manufacture_model.g.dart';
 @freezed
 class VehicleManufactureModel with _$VehicleManufactureModel {
   const VehicleManufactureModel._();
-  const factory VehicleManufactureModel({
-    required int id,
-    required String uuid,
-    required String name,
-  }) = _VehicleManufactureModel;
+  const factory VehicleManufactureModel(
+      {required int id,
+      required String uuid,
+      required String name,
+      required int accountId}) = _VehicleManufactureModel;
 
   factory VehicleManufactureModel.createVehicleManufactureModel(
       VehicleManufacture? vehicleManufacture) {
     return VehicleManufactureModel(
-      id: vehicleManufacture!.id,
-      uuid: vehicleManufacture.uuid,
-      name: vehicleManufacture.name,
-    );
+        id: vehicleManufacture!.id,
+        uuid: vehicleManufacture.uuid,
+        name: vehicleManufacture.name,
+        accountId: vehicleManufacture.id);
   }
 
   factory VehicleManufactureModel.fromJson(Map<String, dynamic> json) =>

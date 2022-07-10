@@ -23,23 +23,24 @@ mixin _$OrderModel {
   int get id => throw _privateConstructorUsedError;
   String get uuid => throw _privateConstructorUsedError;
   String get code => throw _privateConstructorUsedError;
-  int get customerId => throw _privateConstructorUsedError;
-  int get vehicleId => throw _privateConstructorUsedError;
-  List<int> get employeeId => throw _privateConstructorUsedError;
+  CustomerModel? get customer => throw _privateConstructorUsedError;
+  VehicleModel? get vehicle => throw _privateConstructorUsedError;
+  List<EmployeesModel>? get employee => throw _privateConstructorUsedError;
   DateTime get date => throw _privateConstructorUsedError;
   int get amount => throw _privateConstructorUsedError;
   int get grandAmount => throw _privateConstructorUsedError;
-  int get disc => throw _privateConstructorUsedError;
+  double? get disc => throw _privateConstructorUsedError;
   int get paymentType => throw _privateConstructorUsedError;
-  PaymentCardInfoModel get paymentCardInfo =>
+  PaymentCardInfoModel? get paymentCardInfo =>
       throw _privateConstructorUsedError;
-  int get charge => throw _privateConstructorUsedError;
+  int? get charge => throw _privateConstructorUsedError;
   int get paidAmount => throw _privateConstructorUsedError;
   int get changeAmount => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  int? get tax => throw _privateConstructorUsedError;
   int get itemNumber => throw _privateConstructorUsedError;
   int get paidStatus => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -56,24 +57,27 @@ abstract class $OrderModelCopyWith<$Res> {
       {int id,
       String uuid,
       String code,
-      int customerId,
-      int vehicleId,
-      List<int> employeeId,
+      CustomerModel? customer,
+      VehicleModel? vehicle,
+      List<EmployeesModel>? employee,
       DateTime date,
       int amount,
       int grandAmount,
-      int disc,
+      double? disc,
       int paymentType,
-      PaymentCardInfoModel paymentCardInfo,
-      int charge,
+      PaymentCardInfoModel? paymentCardInfo,
+      int? charge,
       int paidAmount,
       int changeAmount,
-      String description,
-      int tax,
+      String? description,
+      int? tax,
       int itemNumber,
-      int paidStatus});
+      int paidStatus,
+      int accountId});
 
-  $PaymentCardInfoModelCopyWith<$Res> get paymentCardInfo;
+  $CustomerModelCopyWith<$Res>? get customer;
+  $VehicleModelCopyWith<$Res>? get vehicle;
+  $PaymentCardInfoModelCopyWith<$Res>? get paymentCardInfo;
 }
 
 /// @nodoc
@@ -89,9 +93,9 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
     Object? id = freezed,
     Object? uuid = freezed,
     Object? code = freezed,
-    Object? customerId = freezed,
-    Object? vehicleId = freezed,
-    Object? employeeId = freezed,
+    Object? customer = freezed,
+    Object? vehicle = freezed,
+    Object? employee = freezed,
     Object? date = freezed,
     Object? amount = freezed,
     Object? grandAmount = freezed,
@@ -105,6 +109,7 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -119,18 +124,18 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      customerId: customerId == freezed
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as int,
-      vehicleId: vehicleId == freezed
-          ? _value.vehicleId
-          : vehicleId // ignore: cast_nullable_to_non_nullable
-              as int,
-      employeeId: employeeId == freezed
-          ? _value.employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+      customer: customer == freezed
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as CustomerModel?,
+      vehicle: vehicle == freezed
+          ? _value.vehicle
+          : vehicle // ignore: cast_nullable_to_non_nullable
+              as VehicleModel?,
+      employee: employee == freezed
+          ? _value.employee
+          : employee // ignore: cast_nullable_to_non_nullable
+              as List<EmployeesModel>?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -146,7 +151,7 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
       disc: disc == freezed
           ? _value.disc
           : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
       paymentType: paymentType == freezed
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
@@ -154,11 +159,11 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as PaymentCardInfoModel,
+              as PaymentCardInfoModel?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       paidAmount: paidAmount == freezed
           ? _value.paidAmount
           : paidAmount // ignore: cast_nullable_to_non_nullable
@@ -170,11 +175,11 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       itemNumber: itemNumber == freezed
           ? _value.itemNumber
           : itemNumber // ignore: cast_nullable_to_non_nullable
@@ -183,12 +188,43 @@ class _$OrderModelCopyWithImpl<$Res> implements $OrderModelCopyWith<$Res> {
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
               as int,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 
   @override
-  $PaymentCardInfoModelCopyWith<$Res> get paymentCardInfo {
-    return $PaymentCardInfoModelCopyWith<$Res>(_value.paymentCardInfo, (value) {
+  $CustomerModelCopyWith<$Res>? get customer {
+    if (_value.customer == null) {
+      return null;
+    }
+
+    return $CustomerModelCopyWith<$Res>(_value.customer!, (value) {
+      return _then(_value.copyWith(customer: value));
+    });
+  }
+
+  @override
+  $VehicleModelCopyWith<$Res>? get vehicle {
+    if (_value.vehicle == null) {
+      return null;
+    }
+
+    return $VehicleModelCopyWith<$Res>(_value.vehicle!, (value) {
+      return _then(_value.copyWith(vehicle: value));
+    });
+  }
+
+  @override
+  $PaymentCardInfoModelCopyWith<$Res>? get paymentCardInfo {
+    if (_value.paymentCardInfo == null) {
+      return null;
+    }
+
+    return $PaymentCardInfoModelCopyWith<$Res>(_value.paymentCardInfo!,
+        (value) {
       return _then(_value.copyWith(paymentCardInfo: value));
     });
   }
@@ -205,25 +241,30 @@ abstract class _$$_OrderModelCopyWith<$Res>
       {int id,
       String uuid,
       String code,
-      int customerId,
-      int vehicleId,
-      List<int> employeeId,
+      CustomerModel? customer,
+      VehicleModel? vehicle,
+      List<EmployeesModel>? employee,
       DateTime date,
       int amount,
       int grandAmount,
-      int disc,
+      double? disc,
       int paymentType,
-      PaymentCardInfoModel paymentCardInfo,
-      int charge,
+      PaymentCardInfoModel? paymentCardInfo,
+      int? charge,
       int paidAmount,
       int changeAmount,
-      String description,
-      int tax,
+      String? description,
+      int? tax,
       int itemNumber,
-      int paidStatus});
+      int paidStatus,
+      int accountId});
 
   @override
-  $PaymentCardInfoModelCopyWith<$Res> get paymentCardInfo;
+  $CustomerModelCopyWith<$Res>? get customer;
+  @override
+  $VehicleModelCopyWith<$Res>? get vehicle;
+  @override
+  $PaymentCardInfoModelCopyWith<$Res>? get paymentCardInfo;
 }
 
 /// @nodoc
@@ -241,9 +282,9 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
     Object? id = freezed,
     Object? uuid = freezed,
     Object? code = freezed,
-    Object? customerId = freezed,
-    Object? vehicleId = freezed,
-    Object? employeeId = freezed,
+    Object? customer = freezed,
+    Object? vehicle = freezed,
+    Object? employee = freezed,
     Object? date = freezed,
     Object? amount = freezed,
     Object? grandAmount = freezed,
@@ -257,6 +298,7 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_OrderModel(
       id: id == freezed
@@ -271,18 +313,18 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
           ? _value.code
           : code // ignore: cast_nullable_to_non_nullable
               as String,
-      customerId: customerId == freezed
-          ? _value.customerId
-          : customerId // ignore: cast_nullable_to_non_nullable
-              as int,
-      vehicleId: vehicleId == freezed
-          ? _value.vehicleId
-          : vehicleId // ignore: cast_nullable_to_non_nullable
-              as int,
-      employeeId: employeeId == freezed
-          ? _value._employeeId
-          : employeeId // ignore: cast_nullable_to_non_nullable
-              as List<int>,
+      customer: customer == freezed
+          ? _value.customer
+          : customer // ignore: cast_nullable_to_non_nullable
+              as CustomerModel?,
+      vehicle: vehicle == freezed
+          ? _value.vehicle
+          : vehicle // ignore: cast_nullable_to_non_nullable
+              as VehicleModel?,
+      employee: employee == freezed
+          ? _value._employee
+          : employee // ignore: cast_nullable_to_non_nullable
+              as List<EmployeesModel>?,
       date: date == freezed
           ? _value.date
           : date // ignore: cast_nullable_to_non_nullable
@@ -298,7 +340,7 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
       disc: disc == freezed
           ? _value.disc
           : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double?,
       paymentType: paymentType == freezed
           ? _value.paymentType
           : paymentType // ignore: cast_nullable_to_non_nullable
@@ -306,11 +348,11 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
       paymentCardInfo: paymentCardInfo == freezed
           ? _value.paymentCardInfo
           : paymentCardInfo // ignore: cast_nullable_to_non_nullable
-              as PaymentCardInfoModel,
+              as PaymentCardInfoModel?,
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       paidAmount: paidAmount == freezed
           ? _value.paidAmount
           : paidAmount // ignore: cast_nullable_to_non_nullable
@@ -322,11 +364,11 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
       description: description == freezed
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       itemNumber: itemNumber == freezed
           ? _value.itemNumber
           : itemNumber // ignore: cast_nullable_to_non_nullable
@@ -334,6 +376,10 @@ class __$$_OrderModelCopyWithImpl<$Res> extends _$OrderModelCopyWithImpl<$Res>
       paidStatus: paidStatus == freezed
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
+              as int,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -346,9 +392,9 @@ class _$_OrderModel extends _OrderModel {
       {required this.id,
       required this.uuid,
       required this.code,
-      required this.customerId,
-      required this.vehicleId,
-      required final List<int> employeeId,
+      required this.customer,
+      required this.vehicle,
+      required final List<EmployeesModel>? employee,
       required this.date,
       required this.amount,
       required this.grandAmount,
@@ -361,8 +407,9 @@ class _$_OrderModel extends _OrderModel {
       required this.description,
       required this.tax,
       required this.itemNumber,
-      required this.paidStatus})
-      : _employeeId = employeeId,
+      required this.paidStatus,
+      required this.accountId})
+      : _employee = employee,
         super._();
 
   factory _$_OrderModel.fromJson(Map<String, dynamic> json) =>
@@ -375,14 +422,16 @@ class _$_OrderModel extends _OrderModel {
   @override
   final String code;
   @override
-  final int customerId;
+  final CustomerModel? customer;
   @override
-  final int vehicleId;
-  final List<int> _employeeId;
+  final VehicleModel? vehicle;
+  final List<EmployeesModel>? _employee;
   @override
-  List<int> get employeeId {
+  List<EmployeesModel>? get employee {
+    final value = _employee;
+    if (value == null) return null;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_employeeId);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -392,29 +441,31 @@ class _$_OrderModel extends _OrderModel {
   @override
   final int grandAmount;
   @override
-  final int disc;
+  final double? disc;
   @override
   final int paymentType;
   @override
-  final PaymentCardInfoModel paymentCardInfo;
+  final PaymentCardInfoModel? paymentCardInfo;
   @override
-  final int charge;
+  final int? charge;
   @override
   final int paidAmount;
   @override
   final int changeAmount;
   @override
-  final String description;
+  final String? description;
   @override
-  final int tax;
+  final int? tax;
   @override
   final int itemNumber;
   @override
   final int paidStatus;
+  @override
+  final int accountId;
 
   @override
   String toString() {
-    return 'OrderModel(id: $id, uuid: $uuid, code: $code, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
+    return 'OrderModel(id: $id, uuid: $uuid, code: $code, customer: $customer, vehicle: $vehicle, employee: $employee, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus, accountId: $accountId)';
   }
 
   @override
@@ -425,11 +476,9 @@ class _$_OrderModel extends _OrderModel {
             const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.code, code) &&
-            const DeepCollectionEquality()
-                .equals(other.customerId, customerId) &&
-            const DeepCollectionEquality().equals(other.vehicleId, vehicleId) &&
-            const DeepCollectionEquality()
-                .equals(other._employeeId, _employeeId) &&
+            const DeepCollectionEquality().equals(other.customer, customer) &&
+            const DeepCollectionEquality().equals(other.vehicle, vehicle) &&
+            const DeepCollectionEquality().equals(other._employee, _employee) &&
             const DeepCollectionEquality().equals(other.date, date) &&
             const DeepCollectionEquality().equals(other.amount, amount) &&
             const DeepCollectionEquality()
@@ -450,7 +499,8 @@ class _$_OrderModel extends _OrderModel {
             const DeepCollectionEquality()
                 .equals(other.itemNumber, itemNumber) &&
             const DeepCollectionEquality()
-                .equals(other.paidStatus, paidStatus));
+                .equals(other.paidStatus, paidStatus) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -460,9 +510,9 @@ class _$_OrderModel extends _OrderModel {
         const DeepCollectionEquality().hash(id),
         const DeepCollectionEquality().hash(uuid),
         const DeepCollectionEquality().hash(code),
-        const DeepCollectionEquality().hash(customerId),
-        const DeepCollectionEquality().hash(vehicleId),
-        const DeepCollectionEquality().hash(_employeeId),
+        const DeepCollectionEquality().hash(customer),
+        const DeepCollectionEquality().hash(vehicle),
+        const DeepCollectionEquality().hash(_employee),
         const DeepCollectionEquality().hash(date),
         const DeepCollectionEquality().hash(amount),
         const DeepCollectionEquality().hash(grandAmount),
@@ -475,7 +525,8 @@ class _$_OrderModel extends _OrderModel {
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(tax),
         const DeepCollectionEquality().hash(itemNumber),
-        const DeepCollectionEquality().hash(paidStatus)
+        const DeepCollectionEquality().hash(paidStatus),
+        const DeepCollectionEquality().hash(accountId)
       ]);
 
   @JsonKey(ignore: true)
@@ -494,22 +545,23 @@ abstract class _OrderModel extends OrderModel {
       {required final int id,
       required final String uuid,
       required final String code,
-      required final int customerId,
-      required final int vehicleId,
-      required final List<int> employeeId,
+      required final CustomerModel? customer,
+      required final VehicleModel? vehicle,
+      required final List<EmployeesModel>? employee,
       required final DateTime date,
       required final int amount,
       required final int grandAmount,
-      required final int disc,
+      required final double? disc,
       required final int paymentType,
-      required final PaymentCardInfoModel paymentCardInfo,
-      required final int charge,
+      required final PaymentCardInfoModel? paymentCardInfo,
+      required final int? charge,
       required final int paidAmount,
       required final int changeAmount,
-      required final String description,
-      required final int tax,
+      required final String? description,
+      required final int? tax,
       required final int itemNumber,
-      required final int paidStatus}) = _$_OrderModel;
+      required final int paidStatus,
+      required final int accountId}) = _$_OrderModel;
   const _OrderModel._() : super._();
 
   factory _OrderModel.fromJson(Map<String, dynamic> json) =
@@ -522,11 +574,11 @@ abstract class _OrderModel extends OrderModel {
   @override
   String get code => throw _privateConstructorUsedError;
   @override
-  int get customerId => throw _privateConstructorUsedError;
+  CustomerModel? get customer => throw _privateConstructorUsedError;
   @override
-  int get vehicleId => throw _privateConstructorUsedError;
+  VehicleModel? get vehicle => throw _privateConstructorUsedError;
   @override
-  List<int> get employeeId => throw _privateConstructorUsedError;
+  List<EmployeesModel>? get employee => throw _privateConstructorUsedError;
   @override
   DateTime get date => throw _privateConstructorUsedError;
   @override
@@ -534,26 +586,28 @@ abstract class _OrderModel extends OrderModel {
   @override
   int get grandAmount => throw _privateConstructorUsedError;
   @override
-  int get disc => throw _privateConstructorUsedError;
+  double? get disc => throw _privateConstructorUsedError;
   @override
   int get paymentType => throw _privateConstructorUsedError;
   @override
-  PaymentCardInfoModel get paymentCardInfo =>
+  PaymentCardInfoModel? get paymentCardInfo =>
       throw _privateConstructorUsedError;
   @override
-  int get charge => throw _privateConstructorUsedError;
+  int? get charge => throw _privateConstructorUsedError;
   @override
   int get paidAmount => throw _privateConstructorUsedError;
   @override
   int get changeAmount => throw _privateConstructorUsedError;
   @override
-  String get description => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
   @override
-  int get tax => throw _privateConstructorUsedError;
+  int? get tax => throw _privateConstructorUsedError;
   @override
   int get itemNumber => throw _privateConstructorUsedError;
   @override
   int get paidStatus => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderModelCopyWith<_$_OrderModel> get copyWith =>

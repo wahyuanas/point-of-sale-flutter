@@ -32,13 +32,14 @@ mixin _$Order {
   double? get disc => throw _privateConstructorUsedError;
   int get paymentType => throw _privateConstructorUsedError;
   int? get paymentCardInfo => throw _privateConstructorUsedError;
-  int get charge => throw _privateConstructorUsedError;
+  int? get charge => throw _privateConstructorUsedError;
   int get paidAmount => throw _privateConstructorUsedError;
   int get changeAmount => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
-  int get tax => throw _privateConstructorUsedError;
+  int? get tax => throw _privateConstructorUsedError;
   int get itemNumber => throw _privateConstructorUsedError;
   int get paidStatus => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -62,13 +63,14 @@ abstract class $OrderCopyWith<$Res> {
       double? disc,
       int paymentType,
       int? paymentCardInfo,
-      int charge,
+      int? charge,
       int paidAmount,
       int changeAmount,
       String? description,
-      int tax,
+      int? tax,
       int itemNumber,
-      int paidStatus});
+      int paidStatus,
+      int accountId});
 }
 
 /// @nodoc
@@ -100,6 +102,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -153,7 +156,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       paidAmount: paidAmount == freezed
           ? _value.paidAmount
           : paidAmount // ignore: cast_nullable_to_non_nullable
@@ -169,7 +172,7 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       itemNumber: itemNumber == freezed
           ? _value.itemNumber
           : itemNumber // ignore: cast_nullable_to_non_nullable
@@ -177,6 +180,10 @@ class _$OrderCopyWithImpl<$Res> implements $OrderCopyWith<$Res> {
       paidStatus: paidStatus == freezed
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
+              as int,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -200,13 +207,14 @@ abstract class _$$_OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
       double? disc,
       int paymentType,
       int? paymentCardInfo,
-      int charge,
+      int? charge,
       int paidAmount,
       int changeAmount,
       String? description,
-      int tax,
+      int? tax,
       int itemNumber,
-      int paidStatus});
+      int paidStatus,
+      int accountId});
 }
 
 /// @nodoc
@@ -239,6 +247,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
     Object? tax = freezed,
     Object? itemNumber = freezed,
     Object? paidStatus = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_Order(
       id: id == freezed
@@ -292,7 +301,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       charge: charge == freezed
           ? _value.charge
           : charge // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       paidAmount: paidAmount == freezed
           ? _value.paidAmount
           : paidAmount // ignore: cast_nullable_to_non_nullable
@@ -308,7 +317,7 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       tax: tax == freezed
           ? _value.tax
           : tax // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       itemNumber: itemNumber == freezed
           ? _value.itemNumber
           : itemNumber // ignore: cast_nullable_to_non_nullable
@@ -316,6 +325,10 @@ class __$$_OrderCopyWithImpl<$Res> extends _$OrderCopyWithImpl<$Res>
       paidStatus: paidStatus == freezed
           ? _value.paidStatus
           : paidStatus // ignore: cast_nullable_to_non_nullable
+              as int,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
               as int,
     ));
   }
@@ -343,7 +356,8 @@ class _$_Order extends _Order {
       required this.description,
       required this.tax,
       required this.itemNumber,
-      required this.paidStatus})
+      required this.paidStatus,
+      required this.accountId})
       : _employeeId = employeeId,
         super._();
 
@@ -380,7 +394,7 @@ class _$_Order extends _Order {
   @override
   final int? paymentCardInfo;
   @override
-  final int charge;
+  final int? charge;
   @override
   final int paidAmount;
   @override
@@ -388,15 +402,17 @@ class _$_Order extends _Order {
   @override
   final String? description;
   @override
-  final int tax;
+  final int? tax;
   @override
   final int itemNumber;
   @override
   final int paidStatus;
+  @override
+  final int accountId;
 
   @override
   String toString() {
-    return 'Order(id: $id, uuid: $uuid, code: $code, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus)';
+    return 'Order(id: $id, uuid: $uuid, code: $code, customerId: $customerId, vehicleId: $vehicleId, employeeId: $employeeId, date: $date, amount: $amount, grandAmount: $grandAmount, disc: $disc, paymentType: $paymentType, paymentCardInfo: $paymentCardInfo, charge: $charge, paidAmount: $paidAmount, changeAmount: $changeAmount, description: $description, tax: $tax, itemNumber: $itemNumber, paidStatus: $paidStatus, accountId: $accountId)';
   }
 
   @override
@@ -432,7 +448,8 @@ class _$_Order extends _Order {
             const DeepCollectionEquality()
                 .equals(other.itemNumber, itemNumber) &&
             const DeepCollectionEquality()
-                .equals(other.paidStatus, paidStatus));
+                .equals(other.paidStatus, paidStatus) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -457,7 +474,8 @@ class _$_Order extends _Order {
         const DeepCollectionEquality().hash(description),
         const DeepCollectionEquality().hash(tax),
         const DeepCollectionEquality().hash(itemNumber),
-        const DeepCollectionEquality().hash(paidStatus)
+        const DeepCollectionEquality().hash(paidStatus),
+        const DeepCollectionEquality().hash(accountId)
       ]);
 
   @JsonKey(ignore: true)
@@ -485,13 +503,14 @@ abstract class _Order extends Order {
       required final double? disc,
       required final int paymentType,
       required final int? paymentCardInfo,
-      required final int charge,
+      required final int? charge,
       required final int paidAmount,
       required final int changeAmount,
       required final String? description,
-      required final int tax,
+      required final int? tax,
       required final int itemNumber,
-      required final int paidStatus}) = _$_Order;
+      required final int paidStatus,
+      required final int accountId}) = _$_Order;
   const _Order._() : super._();
 
   factory _Order.fromJson(Map<String, dynamic> json) = _$_Order.fromJson;
@@ -521,7 +540,7 @@ abstract class _Order extends Order {
   @override
   int? get paymentCardInfo => throw _privateConstructorUsedError;
   @override
-  int get charge => throw _privateConstructorUsedError;
+  int? get charge => throw _privateConstructorUsedError;
   @override
   int get paidAmount => throw _privateConstructorUsedError;
   @override
@@ -529,11 +548,13 @@ abstract class _Order extends Order {
   @override
   String? get description => throw _privateConstructorUsedError;
   @override
-  int get tax => throw _privateConstructorUsedError;
+  int? get tax => throw _privateConstructorUsedError;
   @override
   int get itemNumber => throw _privateConstructorUsedError;
   @override
   int get paidStatus => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderCopyWith<_$_Order> get copyWith =>

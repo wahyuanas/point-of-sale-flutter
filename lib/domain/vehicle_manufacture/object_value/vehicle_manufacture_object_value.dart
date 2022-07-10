@@ -9,12 +9,15 @@ part "vehicle_manufacture_object_value.freezed.dart";
 @freezed
 class CreateVehicleManufacture with _$CreateVehicleManufacture {
   const factory CreateVehicleManufacture(
-      {required CreateVehicleManufactureUuid uuid,
-      required CreateVehicleManufactureName name}) = _CreateVehicleManufacture;
+          {required CreateVehicleManufactureUuid uuid,
+          required CreateVehicleManufactureName name,
+          required CreateVehicleManufactureAccountId accountId}) =
+      _CreateVehicleManufacture;
 
   factory CreateVehicleManufacture.empty() => CreateVehicleManufacture(
       uuid: CreateVehicleManufactureUuid(''),
-      name: CreateVehicleManufactureName(''));
+      name: CreateVehicleManufactureName(''),
+      accountId: CreateVehicleManufactureAccountId(null));
 }
 
 extension CreateVehicleManufactureX on CreateVehicleManufacture {

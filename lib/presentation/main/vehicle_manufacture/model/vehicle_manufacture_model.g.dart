@@ -12,6 +12,7 @@ _$_VehicleManufactureModel _$$_VehicleManufactureModelFromJson(
       id: json['id'] as int,
       uuid: json['uuid'] as String,
       name: json['name'] as String,
+      accountId: json['accountId'] as int,
     );
 
 Map<String, dynamic> _$$_VehicleManufactureModelToJson(
@@ -20,4 +21,5 @@ Map<String, dynamic> _$$_VehicleManufactureModelToJson(
       'id': instance.id,
       'uuid': instance.uuid,
       'name': instance.name,
+      'accountId': instance.accountId,
     };

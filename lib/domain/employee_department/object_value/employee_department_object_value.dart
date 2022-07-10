@@ -9,14 +9,17 @@ part "employee_department_object_value.freezed.dart";
 @freezed
 class CreateEmployeeDepartment with _$CreateEmployeeDepartment {
   const factory CreateEmployeeDepartment(
-      {required CreateEmployeeDepartmentUuid uuid,
-      required CreateEmployeeDepartmentName name,
-      required CreateEmployeeDepartmentCode code}) = _CreateEmployeeDepartment;
+          {required CreateEmployeeDepartmentUuid uuid,
+          required CreateEmployeeDepartmentName name,
+          required CreateEmployeeDepartmentCode code,
+          required CreateEmployeeDepartmentAccountId accountId}) =
+      _CreateEmployeeDepartment;
 
   factory CreateEmployeeDepartment.empty() => CreateEmployeeDepartment(
       uuid: CreateEmployeeDepartmentUuid(''),
       name: CreateEmployeeDepartmentName(''),
-      code: CreateEmployeeDepartmentCode(''));
+      code: CreateEmployeeDepartmentCode(''),
+      accountId: CreateEmployeeDepartmentAccountId(null));
 }
 
 extension CreateEmployeeDepartmentX on CreateEmployeeDepartment {

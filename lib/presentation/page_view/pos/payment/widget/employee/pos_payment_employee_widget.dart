@@ -51,26 +51,29 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
             SizedBox(
               height: 40.0,
               child: ListTile(
-                trailing: Padding(
-                  padding: const EdgeInsets.only(right: 20.0),
-                  child: GestureDetector(
-                    onTap: () {
-                      BlocProvider.of<PosRouteCubit>(context).onRoute(
-                          const PosOnRouteState.posEmployeeList(
-                              r: '/posEmployeeList'),
-                          null);
-                      FocusScopeNode currentFocus = FocusScope.of(context);
-                      if (!currentFocus.hasPrimaryFocus) {
-                        currentFocus.unfocus();
-                      }
-                    },
-                    child: const Icon(
-                      Icons.search_outlined,
-                      size: 25.0,
-                      color: Colors.blue,
-                    ),
-                  ),
-                ),
+                trailing: state.createOrder.employees.value.fold(
+                    (l) => const SizedBox(),
+                    ((r) => Padding(
+                          padding: const EdgeInsets.only(right: 20.0),
+                          child: GestureDetector(
+                            onTap: () {
+                              BlocProvider.of<PosRouteCubit>(context).onRoute(
+                                  const PosOnRouteState.posEmployeeList(
+                                      r: '/posEmployeeList'),
+                                  null);
+                              FocusScopeNode currentFocus =
+                                  FocusScope.of(context);
+                              if (!currentFocus.hasPrimaryFocus) {
+                                currentFocus.unfocus();
+                              }
+                            },
+                            child: const Icon(
+                              Icons.search_outlined,
+                              size: 25.0,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ))),
                 title: const Padding(
                   padding: EdgeInsets.only(bottom: 6.0),
                   child: Text(
@@ -113,8 +116,28 @@ class _PosPaymentEmployeeWidgetState extends State<PosPaymentEmployeeWidget> {
                       width: 0.5,
                     ),
                   )),
-                  child: const ListTile(
-                    title: Text(
+                  child: ListTile(
+                    trailing: Padding(
+                      padding: const EdgeInsets.only(right: 0.0),
+                      child: GestureDetector(
+                        onTap: () {
+                          BlocProvider.of<PosRouteCubit>(context).onRoute(
+                              const PosOnRouteState.posEmployeeList(
+                                  r: '/posEmployeeList'),
+                              null);
+                          FocusScopeNode currentFocus = FocusScope.of(context);
+                          if (!currentFocus.hasPrimaryFocus) {
+                            currentFocus.unfocus();
+                          }
+                        },
+                        child: const Icon(
+                          Icons.search_outlined,
+                          size: 25.0,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ),
+                    title: const Text(
                       'Pilih Mekanik...',
                       style: TextStyle(fontSize: 15, color: Colors.black38),
                     ),

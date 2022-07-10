@@ -21,11 +21,9 @@ OrderDetail _$OrderDetailFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$OrderDetail {
   int get id => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   int get orderId => throw _privateConstructorUsedError;
-  int get itemId => throw _privateConstructorUsedError;
-  int get price => throw _privateConstructorUsedError;
-  int get qty => throw _privateConstructorUsedError;
-  int get disc => throw _privateConstructorUsedError;
+  Item get item => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +36,9 @@ abstract class $OrderDetailCopyWith<$Res> {
   factory $OrderDetailCopyWith(
           OrderDetail value, $Res Function(OrderDetail) then) =
       _$OrderDetailCopyWithImpl<$Res>;
-  $Res call({int id, int orderId, int itemId, int price, int qty, int disc});
+  $Res call({int id, String uuid, int orderId, Item item});
+
+  $ItemCopyWith<$Res> get item;
 }
 
 /// @nodoc
@@ -52,38 +52,35 @@ class _$OrderDetailCopyWithImpl<$Res> implements $OrderDetailCopyWith<$Res> {
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? orderId = freezed,
-    Object? itemId = freezed,
-    Object? price = freezed,
-    Object? qty = freezed,
-    Object? disc = freezed,
+    Object? item = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
       orderId: orderId == freezed
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int,
-      itemId: itemId == freezed
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: price == freezed
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
-      qty: qty == freezed
-          ? _value.qty
-          : qty // ignore: cast_nullable_to_non_nullable
-              as int,
-      disc: disc == freezed
-          ? _value.disc
-          : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
     ));
+  }
+
+  @override
+  $ItemCopyWith<$Res> get item {
+    return $ItemCopyWith<$Res>(_value.item, (value) {
+      return _then(_value.copyWith(item: value));
+    });
   }
 }
 
@@ -94,7 +91,10 @@ abstract class _$$_OrderDetailCopyWith<$Res>
           _$_OrderDetail value, $Res Function(_$_OrderDetail) then) =
       __$$_OrderDetailCopyWithImpl<$Res>;
   @override
-  $Res call({int id, int orderId, int itemId, int price, int qty, int disc});
+  $Res call({int id, String uuid, int orderId, Item item});
+
+  @override
+  $ItemCopyWith<$Res> get item;
 }
 
 /// @nodoc
@@ -110,37 +110,27 @@ class __$$_OrderDetailCopyWithImpl<$Res> extends _$OrderDetailCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? orderId = freezed,
-    Object? itemId = freezed,
-    Object? price = freezed,
-    Object? qty = freezed,
-    Object? disc = freezed,
+    Object? item = freezed,
   }) {
     return _then(_$_OrderDetail(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
       orderId: orderId == freezed
           ? _value.orderId
           : orderId // ignore: cast_nullable_to_non_nullable
               as int,
-      itemId: itemId == freezed
-          ? _value.itemId
-          : itemId // ignore: cast_nullable_to_non_nullable
-              as int,
-      price: price == freezed
-          ? _value.price
-          : price // ignore: cast_nullable_to_non_nullable
-              as int,
-      qty: qty == freezed
-          ? _value.qty
-          : qty // ignore: cast_nullable_to_non_nullable
-              as int,
-      disc: disc == freezed
-          ? _value.disc
-          : disc // ignore: cast_nullable_to_non_nullable
-              as int,
+      item: item == freezed
+          ? _value.item
+          : item // ignore: cast_nullable_to_non_nullable
+              as Item,
     ));
   }
 }
@@ -150,11 +140,9 @@ class __$$_OrderDetailCopyWithImpl<$Res> extends _$OrderDetailCopyWithImpl<$Res>
 class _$_OrderDetail extends _OrderDetail {
   const _$_OrderDetail(
       {required this.id,
+      required this.uuid,
       required this.orderId,
-      required this.itemId,
-      required this.price,
-      required this.qty,
-      required this.disc})
+      required this.item})
       : super._();
 
   factory _$_OrderDetail.fromJson(Map<String, dynamic> json) =>
@@ -163,19 +151,15 @@ class _$_OrderDetail extends _OrderDetail {
   @override
   final int id;
   @override
+  final String uuid;
+  @override
   final int orderId;
   @override
-  final int itemId;
-  @override
-  final int price;
-  @override
-  final int qty;
-  @override
-  final int disc;
+  final Item item;
 
   @override
   String toString() {
-    return 'OrderDetail(id: $id, orderId: $orderId, itemId: $itemId, price: $price, qty: $qty, disc: $disc)';
+    return 'OrderDetail(id: $id, uuid: $uuid, orderId: $orderId, item: $item)';
   }
 
   @override
@@ -184,11 +168,9 @@ class _$_OrderDetail extends _OrderDetail {
         (other.runtimeType == runtimeType &&
             other is _$_OrderDetail &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.orderId, orderId) &&
-            const DeepCollectionEquality().equals(other.itemId, itemId) &&
-            const DeepCollectionEquality().equals(other.price, price) &&
-            const DeepCollectionEquality().equals(other.qty, qty) &&
-            const DeepCollectionEquality().equals(other.disc, disc));
+            const DeepCollectionEquality().equals(other.item, item));
   }
 
   @JsonKey(ignore: true)
@@ -196,11 +178,9 @@ class _$_OrderDetail extends _OrderDetail {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(orderId),
-      const DeepCollectionEquality().hash(itemId),
-      const DeepCollectionEquality().hash(price),
-      const DeepCollectionEquality().hash(qty),
-      const DeepCollectionEquality().hash(disc));
+      const DeepCollectionEquality().hash(item));
 
   @JsonKey(ignore: true)
   @override
@@ -216,11 +196,9 @@ class _$_OrderDetail extends _OrderDetail {
 abstract class _OrderDetail extends OrderDetail {
   const factory _OrderDetail(
       {required final int id,
+      required final String uuid,
       required final int orderId,
-      required final int itemId,
-      required final int price,
-      required final int qty,
-      required final int disc}) = _$_OrderDetail;
+      required final Item item}) = _$_OrderDetail;
   const _OrderDetail._() : super._();
 
   factory _OrderDetail.fromJson(Map<String, dynamic> json) =
@@ -229,15 +207,11 @@ abstract class _OrderDetail extends OrderDetail {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  String get uuid => throw _privateConstructorUsedError;
+  @override
   int get orderId => throw _privateConstructorUsedError;
   @override
-  int get itemId => throw _privateConstructorUsedError;
-  @override
-  int get price => throw _privateConstructorUsedError;
-  @override
-  int get qty => throw _privateConstructorUsedError;
-  @override
-  int get disc => throw _privateConstructorUsedError;
+  Item get item => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_OrderDetailCopyWith<_$_OrderDetail> get copyWith =>

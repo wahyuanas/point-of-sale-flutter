@@ -18,7 +18,41 @@ class _PosPaymentExtendedGrandPriceWidgetState
   void initState() {
     super.initState();
     _grandPrice = 0;
-    getGrandPrice();
+    getGrandPriceInit();
+  }
+
+  getGrandPriceInit() async {
+    _grandPrice = 0;
+    context.read<PosPaymentCubit>().state.poss?.forEach((pos) {
+      _grandPrice = (_grandPrice ?? 0) + (pos.sumPrice ?? 0);
+    });
+
+    if (!mounted) return;
+    context.read<PosPaymentCubit>().onGrandAmountChanged(_grandPrice);
+
+    int? paidAmountt;
+
+    await context
+        .read<PosPaymentCubit>()
+        .state
+        .createOrder
+        .paidAmount
+        .value
+        .fold((l) async => paidAmountt = null,
+            (r) async => paidAmountt = (paidAmountt ?? 0) + r);
+
+    // if ((paidAmountt ?? 0) < (grandAmount ?? 0)) {
+    //   onChangeAmountChanged(null);
+    // }
+    if (paidAmountt == null) {
+      if (!mounted) return;
+      context.read<PosPaymentCubit>().onChangeAmountChanged(null);
+    } else {
+      if (!mounted) return;
+      context
+          .read<PosPaymentCubit>()
+          .onChangeAmountChanged((paidAmountt ?? 0) - (_grandPrice ?? 0));
+    }
   }
 
   getGrandPrice() async {

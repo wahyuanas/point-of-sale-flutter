@@ -27,7 +27,7 @@ class CreateCustomer with _$CreateCustomer {
       email: CreateCustomerEmail(''),
       type: CreateCustomerType(''),
       address: CreateCustomerAddress(''),
-      accountId: CreateCustomerAccountId(''));
+      accountId: CreateCustomerAccountId(null));
 }
 
 extension CreateCustomerX on CreateCustomer {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pos/di/injection.dart';
+import 'package:pos/presentation/common/cubit/intro/intro_cubit.dart';
 import 'package:pos/presentation/main/employee_department/list/cubit/employee_department_list_cubit.dart';
 import 'package:showcaseview/showcaseview.dart';
 
@@ -12,7 +13,11 @@ class PosEmployeeDepartmentListScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    bool onF = false;
+    bool onF =
+        BlocProvider.of<IntroCubit>(context).state.posEmployeeDepartmentList ==
+                false
+            ? false
+            : true;
     return BlocProvider(
         create: ((context) => PosEmployeeDepartmentListCubit(
               employeeDepartmentListCubit: getIt<EmployeeDepartmentListCubit>(),

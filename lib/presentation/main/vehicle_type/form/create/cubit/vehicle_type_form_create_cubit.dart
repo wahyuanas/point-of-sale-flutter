@@ -58,6 +58,13 @@ class VehicleTypeFormCreateCubit extends Cubit<VehicleTypeFormCreateState> {
     ));
   }
 
+  onAccountIdChanged(int? accountId) {
+    emit(state.copyWith(
+      createVehicleType: state.createVehicleType
+          .copyWith(accountId: CreateVehicleTypeAccountId(accountId)),
+    ));
+  }
+
   onCreate() async {
     if (state.createVehicleType.failureOption.isSome()) {
       emit(state.copyWith(initial: false));

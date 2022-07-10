@@ -15,12 +15,10 @@ class PosEmployeeListCardWidget extends StatefulWidget {
 }
 
 class _PosEmployeeListCardWidgetState extends State<PosEmployeeListCardWidget> {
-  bool? _itsMe;
   EmployeesModel? em;
 
   @override
   void initState() {
-    _itsMe = false;
     // context
     //     .read<PosPaymentCubit>()
     //     .state

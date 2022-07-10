@@ -18,6 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$CreateVehicleManufacture {
   CreateVehicleManufactureUuid get uuid => throw _privateConstructorUsedError;
   CreateVehicleManufactureName get name => throw _privateConstructorUsedError;
+  CreateVehicleManufactureAccountId get accountId =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $CreateVehicleManufactureCopyWith<CreateVehicleManufacture> get copyWith =>
@@ -30,7 +32,9 @@ abstract class $CreateVehicleManufactureCopyWith<$Res> {
           $Res Function(CreateVehicleManufacture) then) =
       _$CreateVehicleManufactureCopyWithImpl<$Res>;
   $Res call(
-      {CreateVehicleManufactureUuid uuid, CreateVehicleManufactureName name});
+      {CreateVehicleManufactureUuid uuid,
+      CreateVehicleManufactureName name,
+      CreateVehicleManufactureAccountId accountId});
 }
 
 /// @nodoc
@@ -46,6 +50,7 @@ class _$CreateVehicleManufactureCopyWithImpl<$Res>
   $Res call({
     Object? uuid = freezed,
     Object? name = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       uuid: uuid == freezed
@@ -56,6 +61,10 @@ class _$CreateVehicleManufactureCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as CreateVehicleManufactureName,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleManufactureAccountId,
     ));
   }
 }
@@ -69,7 +78,9 @@ abstract class _$$_CreateVehicleManufactureCopyWith<$Res>
       __$$_CreateVehicleManufactureCopyWithImpl<$Res>;
   @override
   $Res call(
-      {CreateVehicleManufactureUuid uuid, CreateVehicleManufactureName name});
+      {CreateVehicleManufactureUuid uuid,
+      CreateVehicleManufactureName name,
+      CreateVehicleManufactureAccountId accountId});
 }
 
 /// @nodoc
@@ -88,6 +99,7 @@ class __$$_CreateVehicleManufactureCopyWithImpl<$Res>
   $Res call({
     Object? uuid = freezed,
     Object? name = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_CreateVehicleManufacture(
       uuid: uuid == freezed
@@ -98,6 +110,10 @@ class __$$_CreateVehicleManufactureCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as CreateVehicleManufactureName,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as CreateVehicleManufactureAccountId,
     ));
   }
 }
@@ -105,16 +121,19 @@ class __$$_CreateVehicleManufactureCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_CreateVehicleManufacture implements _CreateVehicleManufacture {
-  const _$_CreateVehicleManufacture({required this.uuid, required this.name});
+  const _$_CreateVehicleManufacture(
+      {required this.uuid, required this.name, required this.accountId});
 
   @override
   final CreateVehicleManufactureUuid uuid;
   @override
   final CreateVehicleManufactureName name;
+  @override
+  final CreateVehicleManufactureAccountId accountId;
 
   @override
   String toString() {
-    return 'CreateVehicleManufacture(uuid: $uuid, name: $name)';
+    return 'CreateVehicleManufacture(uuid: $uuid, name: $name, accountId: $accountId)';
   }
 
   @override
@@ -123,14 +142,16 @@ class _$_CreateVehicleManufacture implements _CreateVehicleManufacture {
         (other.runtimeType == runtimeType &&
             other is _$_CreateVehicleManufacture &&
             const DeepCollectionEquality().equals(other.uuid, uuid) &&
-            const DeepCollectionEquality().equals(other.name, name));
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(uuid),
-      const DeepCollectionEquality().hash(name));
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -142,13 +163,17 @@ class _$_CreateVehicleManufacture implements _CreateVehicleManufacture {
 abstract class _CreateVehicleManufacture implements CreateVehicleManufacture {
   const factory _CreateVehicleManufacture(
           {required final CreateVehicleManufactureUuid uuid,
-          required final CreateVehicleManufactureName name}) =
+          required final CreateVehicleManufactureName name,
+          required final CreateVehicleManufactureAccountId accountId}) =
       _$_CreateVehicleManufacture;
 
   @override
   CreateVehicleManufactureUuid get uuid => throw _privateConstructorUsedError;
   @override
   CreateVehicleManufactureName get name => throw _privateConstructorUsedError;
+  @override
+  CreateVehicleManufactureAccountId get accountId =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_CreateVehicleManufactureCopyWith<_$_CreateVehicleManufacture>

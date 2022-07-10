@@ -18,9 +18,8 @@ class _PosPaymentExtendedDiscWidgetState
   @override
   void initState() {
     _initial = true;
-    context.read<PosPaymentCubit>().state.createOrder.charge.value.fold(
-        (l) => null,
-        (r) => context.read<PosPaymentCubit>().onChargeChanged(''));
+    context.read<PosPaymentCubit>().state.createOrder.disc.value.fold(
+        (l) => null, (r) => context.read<PosPaymentCubit>().onDiscChanged(''));
 
     super.initState();
   }

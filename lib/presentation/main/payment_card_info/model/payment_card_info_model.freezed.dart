@@ -21,10 +21,12 @@ PaymentCardInfoModel _$PaymentCardInfoModelFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$PaymentCardInfoModel {
   int get id => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get number => throw _privateConstructorUsedError;
   String get numberRef => throw _privateConstructorUsedError;
   String get remarks => throw _privateConstructorUsedError;
+  int get accountId => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +40,13 @@ abstract class $PaymentCardInfoModelCopyWith<$Res> {
           $Res Function(PaymentCardInfoModel) then) =
       _$PaymentCardInfoModelCopyWithImpl<$Res>;
   $Res call(
-      {int id, String name, String number, String numberRef, String remarks});
+      {int id,
+      String uuid,
+      String name,
+      String number,
+      String numberRef,
+      String remarks,
+      int accountId});
 }
 
 /// @nodoc
@@ -53,16 +61,22 @@ class _$PaymentCardInfoModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? name = freezed,
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -79,6 +93,10 @@ class _$PaymentCardInfoModelCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -91,7 +109,13 @@ abstract class _$$_PaymentCardInfoModelCopyWith<$Res>
       __$$_PaymentCardInfoModelCopyWithImpl<$Res>;
   @override
   $Res call(
-      {int id, String name, String number, String numberRef, String remarks});
+      {int id,
+      String uuid,
+      String name,
+      String number,
+      String numberRef,
+      String remarks,
+      int accountId});
 }
 
 /// @nodoc
@@ -108,16 +132,22 @@ class __$$_PaymentCardInfoModelCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = freezed,
+    Object? uuid = freezed,
     Object? name = freezed,
     Object? number = freezed,
     Object? numberRef = freezed,
     Object? remarks = freezed,
+    Object? accountId = freezed,
   }) {
     return _then(_$_PaymentCardInfoModel(
       id: id == freezed
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -134,6 +164,10 @@ class __$$_PaymentCardInfoModelCopyWithImpl<$Res>
           ? _value.remarks
           : remarks // ignore: cast_nullable_to_non_nullable
               as String,
+      accountId: accountId == freezed
+          ? _value.accountId
+          : accountId // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -143,10 +177,12 @@ class __$$_PaymentCardInfoModelCopyWithImpl<$Res>
 class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
   const _$_PaymentCardInfoModel(
       {required this.id,
+      required this.uuid,
       required this.name,
       required this.number,
       required this.numberRef,
-      required this.remarks})
+      required this.remarks,
+      required this.accountId})
       : super._();
 
   factory _$_PaymentCardInfoModel.fromJson(Map<String, dynamic> json) =>
@@ -155,6 +191,8 @@ class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
   @override
   final int id;
   @override
+  final String uuid;
+  @override
   final String name;
   @override
   final String number;
@@ -162,10 +200,12 @@ class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
   final String numberRef;
   @override
   final String remarks;
+  @override
+  final int accountId;
 
   @override
   String toString() {
-    return 'PaymentCardInfoModel(id: $id, name: $name, number: $number, numberRef: $numberRef, remarks: $remarks)';
+    return 'PaymentCardInfoModel(id: $id, uuid: $uuid, name: $name, number: $number, numberRef: $numberRef, remarks: $remarks, accountId: $accountId)';
   }
 
   @override
@@ -174,10 +214,12 @@ class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
         (other.runtimeType == runtimeType &&
             other is _$_PaymentCardInfoModel &&
             const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.uuid, uuid) &&
             const DeepCollectionEquality().equals(other.name, name) &&
             const DeepCollectionEquality().equals(other.number, number) &&
             const DeepCollectionEquality().equals(other.numberRef, numberRef) &&
-            const DeepCollectionEquality().equals(other.remarks, remarks));
+            const DeepCollectionEquality().equals(other.remarks, remarks) &&
+            const DeepCollectionEquality().equals(other.accountId, accountId));
   }
 
   @JsonKey(ignore: true)
@@ -185,10 +227,12 @@ class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(uuid),
       const DeepCollectionEquality().hash(name),
       const DeepCollectionEquality().hash(number),
       const DeepCollectionEquality().hash(numberRef),
-      const DeepCollectionEquality().hash(remarks));
+      const DeepCollectionEquality().hash(remarks),
+      const DeepCollectionEquality().hash(accountId));
 
   @JsonKey(ignore: true)
   @override
@@ -205,10 +249,12 @@ class _$_PaymentCardInfoModel extends _PaymentCardInfoModel {
 abstract class _PaymentCardInfoModel extends PaymentCardInfoModel {
   const factory _PaymentCardInfoModel(
       {required final int id,
+      required final String uuid,
       required final String name,
       required final String number,
       required final String numberRef,
-      required final String remarks}) = _$_PaymentCardInfoModel;
+      required final String remarks,
+      required final int accountId}) = _$_PaymentCardInfoModel;
   const _PaymentCardInfoModel._() : super._();
 
   factory _PaymentCardInfoModel.fromJson(Map<String, dynamic> json) =
@@ -217,6 +263,8 @@ abstract class _PaymentCardInfoModel extends PaymentCardInfoModel {
   @override
   int get id => throw _privateConstructorUsedError;
   @override
+  String get uuid => throw _privateConstructorUsedError;
+  @override
   String get name => throw _privateConstructorUsedError;
   @override
   String get number => throw _privateConstructorUsedError;
@@ -224,6 +272,8 @@ abstract class _PaymentCardInfoModel extends PaymentCardInfoModel {
   String get numberRef => throw _privateConstructorUsedError;
   @override
   String get remarks => throw _privateConstructorUsedError;
+  @override
+  int get accountId => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_PaymentCardInfoModelCopyWith<_$_PaymentCardInfoModel> get copyWith =>

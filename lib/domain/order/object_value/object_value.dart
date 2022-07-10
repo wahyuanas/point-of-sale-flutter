@@ -18,12 +18,12 @@ class CreateOrderUuid extends ObjectValue<String> {
   const CreateOrderUuid._(this.value);
 }
 
-class CreateOrderCode extends ObjectValue<String> {
+class CreateOrderCode extends ObjectValue<String?> {
   @override
-  final Either<OrderObjectValueFailure<String, String>, String> value;
+  final Either<OrderObjectValueFailure<String?, String>, String?> value;
 
-  factory CreateOrderCode(String input) {
-    return CreateOrderCode._(validateFieldStringNotEmpty(input));
+  factory CreateOrderCode(String? input) {
+    return CreateOrderCode._(validateFieldStringEmpty(input));
   }
 
   const CreateOrderCode._(this.value);
@@ -195,4 +195,15 @@ class CreateOrderDate extends ObjectValue<DateTime> {
   }
 
   const CreateOrderDate._(this.value);
+}
+
+class CreateOrderAccountId extends ObjectValue<int?> {
+  @override
+  final Either<OrderObjectValueFailure<int?, String>, int?> value;
+
+  factory CreateOrderAccountId(int? input) {
+    return CreateOrderAccountId._(validateFieldNotIntAndNotEmpty1(input));
+  }
+
+  const CreateOrderAccountId._(this.value);
 }

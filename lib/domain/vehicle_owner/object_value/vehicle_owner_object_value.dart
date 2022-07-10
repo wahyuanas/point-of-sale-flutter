@@ -15,6 +15,7 @@ class CreateVehicleOwner with _$CreateVehicleOwner {
     required CreateVehicleOwnerEmail email,
     required CreateVehicleOwnerIdNumber idNumber,
     required CreateVehicleOwnerAddress address,
+    required CreateVehicleOwnerAccountId accountId,
   }) = _CreateVehicleOwner;
 
   factory CreateVehicleOwner.empty() => CreateVehicleOwner(
@@ -23,7 +24,8 @@ class CreateVehicleOwner with _$CreateVehicleOwner {
       phoneNumber: CreateVehicleOwnerPhoneNumber(''),
       email: CreateVehicleOwnerEmail(''),
       idNumber: CreateVehicleOwnerIdNumber(''),
-      address: CreateVehicleOwnerAddress(''));
+      address: CreateVehicleOwnerAddress(''),
+      accountId: CreateVehicleOwnerAccountId(null));
 }
 
 extension CreateVehicleOwnerX on CreateVehicleOwner {

@@ -10,7 +10,18 @@ import 'object_value_failure.dart';
 Either<OrderObjectValueFailure<String, String>, String>
     validateFieldStringNotEmpty(String input) {
   if (input.isEmpty) {
-    return left(OrderObjectValueFailure.emptyField(failedValue: input));
+    return right(input);
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
+Either<OrderObjectValueFailure<String?, String>, String?>
+    validateFieldStringEmpty(String? input) {
+  if (input == null) {
+    return right(input);
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {
     return right(input);
   }
@@ -63,7 +74,8 @@ Either<OrderObjectValueFailure<String, String>, int>
 Either<OrderObjectValueFailure<int?, String>, int?>
     validateFieldNotIntAndNotEmpty1(int? input) {
   if (input == null) {
-    return left(OrderObjectValueFailure.emptyField(failedValue: input));
+    return right(input);
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {
     return right(input);
   }
@@ -90,7 +102,8 @@ Either<OrderObjectValueFailure<String?, String>, int?>
 Either<OrderObjectValueFailure<String, String>, DateTime>
     validateFieldNotDateTimeAndNotEmpty(String input) {
   if (input.isEmpty) {
-    return left(OrderObjectValueFailure.emptyField(failedValue: input));
+    return right(DateTime(2000));
+    //return left(OrderObjectValueFailure.emptyField(failedValue: input));
   } else {
     return right(DateTime(2000));
   }

@@ -85,12 +85,12 @@ class CreateVehicleType extends ObjectValue<VehicleTypeModel?> {
   const CreateVehicleType._(this.value);
 }
 
-class CreateVehicleAccountId extends ObjectValue<int> {
+class CreateVehicleAccountId extends ObjectValue<int?> {
   @override
-  final Either<FormVehicleObjectValueFailure<String, String>, int> value;
+  final Either<FormVehicleObjectValueFailure<int?, String>, int?> value;
 
-  factory CreateVehicleAccountId(String input) {
-    return CreateVehicleAccountId._(validateFieldNotIntAndNotEmpty(input));
+  factory CreateVehicleAccountId(int? input) {
+    return CreateVehicleAccountId._(validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateVehicleAccountId._(this.value);

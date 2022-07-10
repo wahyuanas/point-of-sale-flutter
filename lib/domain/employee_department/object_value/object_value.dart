@@ -40,14 +40,14 @@ class CreateEmployeeDepartmentName extends ObjectValue<String> {
   const CreateEmployeeDepartmentName._(this.value);
 }
 
-class CreateEmployeeDepartmentAccountId extends ObjectValue<int> {
+class CreateEmployeeDepartmentAccountId extends ObjectValue<int?> {
   @override
-  final Either<FormEmployeeDepartmentObjectValueFailure<String, String>, int>
+  final Either<FormEmployeeDepartmentObjectValueFailure<int?, String>, int?>
       value;
 
-  factory CreateEmployeeDepartmentAccountId(String input) {
+  factory CreateEmployeeDepartmentAccountId(int? input) {
     return CreateEmployeeDepartmentAccountId._(
-        validateFieldNotIntAndNotEmpty(input));
+        validateFieldNotIntAndNotEmpty1(input));
   }
 
   const CreateEmployeeDepartmentAccountId._(this.value);
